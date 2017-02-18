@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace DSA_Character_Sheet.Dialogs
+namespace DSACharacterSheet.Dialogs
 {
     /// <summary>
     /// Interaktionslogik für ExceptionMessageBox.xaml

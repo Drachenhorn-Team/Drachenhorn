@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSA_Character_Sheet.Dialogs;
+using DSACharacterSheet.CharacterSheet.Enums;
+using DSACharacterSheet.Dialogs;
 
-namespace DSA_Character_Sheet.CharacterSheet
+namespace DSACharacterSheet.CharacterSheet
 {
     [Serializable]
     public class CharacterSheet : INotifyPropertyChanged
@@ -72,6 +73,21 @@ namespace DSA_Character_Sheet.CharacterSheet
                     return;
                 _profession = value;
                 OnPropertyChanged("Profession");
+            }
+        }
+
+        [XmlIgnore]
+        private CharacterInformation _characterInformation;
+        [XmlElement("CharacterInformation")]
+        public CharacterInformation CharacterInformation
+        {
+            get { return _characterInformation; }
+            set
+            {
+                if (_characterInformation == value)
+                    return;
+                _characterInformation = value;
+                OnPropertyChanged("CharacterInformation");
             }
         }
 

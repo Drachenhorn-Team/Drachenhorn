@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using DSA_Character_Sheet.Dialogs;
+using DSACharacterSheet.Dialogs;
 
-namespace DSA_Character_Sheet
+namespace DSACharacterSheet
 {
     /// <summary>
     /// Interaktionslogik für "App.xaml"

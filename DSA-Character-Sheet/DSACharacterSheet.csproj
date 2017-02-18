@@ -105,8 +105,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CharacterSheet\CharacterInformation.cs" />
     <Compile Include="CharacterSheet\CharacterSheet.cs" />
     <Compile Include="CharacterSheet\CultureInformation.cs" />
+    <Compile Include="CharacterSheet\Enums\Gender.cs" />
     <Compile Include="CharacterSheet\ProfessionInformation.cs" />
     <Compile Include="CharacterSheet\RaceInformation.cs" />
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
