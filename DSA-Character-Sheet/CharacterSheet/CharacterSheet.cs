@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSA_Character_Sheet.Dialogs;
 
 namespace DSA_Character_Sheet.CharacterSheet
 {
     [Serializable]
     public class CharacterSheet : INotifyPropertyChanged
     {
+        #region Properties
+
         [XmlIgnore]
         private string _name;
         [XmlAttribute("Name")]
@@ -70,6 +74,70 @@ namespace DSA_Character_Sheet.CharacterSheet
                 OnPropertyChanged("Profession");
             }
         }
+
+        #endregion Properties
+
+        #region Save/Load
+
+        [XmlIgnore]
+        private string _filePath;
+        [XmlIgnore]
+        protected string FilePath
+        {
+            get { return _filePath; }
+            set
+            {
+                if (_filePath == value)
+                    return;
+                _filePath = value;
+                OnPropertyChanged("FilePath");
+            }
+        }
+
+        public static CharacterSheet Load(String path)
+        {
+            try
+            {
+                using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.ReadWrite))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                    CharacterSheet temp = (CharacterSheet)serializer.Deserialize(stream);
+                    temp.FilePath = path;
+                    return temp;
+                }
+            }
+            catch (IOException e)
+            {
+                var window = new ExceptionMessageBox(e, "Die Datei \"" + path + "\" kann nicht geöffnet werden.");
+                window.Show();
+            }
+            return null;
+        }
+
+        public void Save()
+        {
+            if (!String.IsNullOrEmpty(FilePath))
+                Save(FilePath);
+        }
+
+        public void Save(String path)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(path))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                    serializer.Serialize(writer, this);
+                }
+            }
+            catch (IOException e)
+            {
+                var window = new ExceptionMessageBox(e, "Die Datei \"" + path + "\" kann nicht gespeichert werden.");
+                window.Show();
+            }
+        }
+
+        #endregion Save/Load
 
         #region OnPropertyChanged
 
