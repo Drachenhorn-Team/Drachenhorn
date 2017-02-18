@@ -25,10 +25,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://cdn.rawgit.com/lightlikeD/DSA-Character-Sheet/11b2e0e8/DSA-Character-Sheet/publish/DSA-Character-Sheet.application/</InstallUrl>
+    <InstallUrl>https://cdn.rawgit.com/lightlikeD/DSA-Character-Sheet/5baf3366/DSA-Character-Sheet/publish/setup.exe/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
