@@ -25,10 +25,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://cdn.rawgit.com/lightlikeD/DSA-Character-Sheet/tree/master/DSA-Character-Sheet/publish/</InstallUrl>
+    <InstallUrl>https://raw.githubusercontent.com/lightlikeD/DSA-Character-Sheet/master/DSA-Character-Sheet/publish/</InstallUrl>
+    <ProductName>DSA-Character-Sheet</ProductName>
+    <PublisherName>DNietfeld</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
