@@ -23,16 +23,21 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/lightlikeD/DSA-Character-Sheet/master/DSA-Character-Sheet/publish/</InstallUrl>
+    <SupportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/wiki</SupportUrl>
+    <ErrorReportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/issues</ErrorReportUrl>
     <ProductName>DSA-Character-Sheet</ProductName>
     <PublisherName>DNietfeld</PublisherName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <SuiteName>DSA-Character-Sheet</SuiteName>
+    <MinimumRequiredVersion>1.0.1.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -56,11 +61,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1AE52C3637176A1F5E168137C7E8F7B32C06FA10</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9ED6F6175E483ACB139B037D90A0575C166CBC08</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>DSA-Character-Sheet_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -120,6 +124,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DSA-Character-Sheet_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
