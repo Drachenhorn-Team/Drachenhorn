@@ -7,8 +7,8 @@
     <ProjectGuid>{27349C0E-E5A7-4641-9742-B894E92B88D0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DSA_Character_Sheet</RootNamespace>
-    <AssemblyName>DSA-Character-Sheet</AssemblyName>
+    <RootNamespace>DSACharacterSheet</RootNamespace>
+    <AssemblyName>DSACharacterSheet</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
