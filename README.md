@@ -2,5 +2,7 @@
 
 ## Installation
 
-https://raw.githubusercontent.com/lightlikeD/DSA-Character-Sheet/master/DSA-Character-Sheet/publish/setup.exe
+https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/master/DSACharacterSheet/publish/setup.exe
+
+
 Installation über ClickOnce
