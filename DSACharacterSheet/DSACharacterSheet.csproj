@@ -28,13 +28,11 @@
     <InstallUrl>https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/master/DSACharacterSheet/publish/</InstallUrl>
     <SupportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/issues</ErrorReportUrl>
-    <ProductName>DSA-Character-Sheet</ProductName>
-    <PublisherName>DNietfeld</PublisherName>
-    <SuiteName>DSA-Character-Sheet</SuiteName>
+    <ProductName>DSA Character Sheet</ProductName>
     <MinimumRequiredVersion>1.0.1.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
