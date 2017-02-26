@@ -116,12 +116,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CharacterSheet\CharacterInformation.cs" />
-    <Compile Include="CharacterSheet\CharacterSheet.cs" />
-    <Compile Include="CharacterSheet\CultureInformation.cs" />
-    <Compile Include="CharacterSheet\Enums\Gender.cs" />
-    <Compile Include="CharacterSheet\ProfessionInformation.cs" />
-    <Compile Include="CharacterSheet\RaceInformation.cs" />
+    <Compile Include="DataObjects\CharacterInformation.cs" />
+    <Compile Include="DataObjects\CharacterSheet.cs" />
+    <Compile Include="DataObjects\CultureInformation.cs" />
+    <Compile Include="DataObjects\Enums\Gender.cs" />
+    <Compile Include="DataObjects\ProfessionInformation.cs" />
+    <Compile Include="DataObjects\RaceInformation.cs" />
     <Compile Include="Dialogs\ChangeLogWindow.xaml.cs">
       <DependentUpon>ChangeLogWindow.xaml</DependentUpon>
     </Compile>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DSACharacterSheet.DataObjects;
 using DSACharacterSheet.Dialogs;
 
 namespace DSACharacterSheet
@@ -22,9 +23,13 @@ namespace DSACharacterSheet
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CharacterSheet CurrentSheet = new CharacterSheet();
+
+
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = CurrentSheet;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
