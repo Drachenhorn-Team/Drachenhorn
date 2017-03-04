@@ -25,6 +25,21 @@ namespace DSACharacterSheet.DataObjects
             }
         }
 
+        [XmlIgnore]
+        private ushort _gpCost;
+        [XmlAttribute("GPCost")]
+        public ushort GPCost
+        {
+            get { return _gpCost; }
+            set
+            {
+                if (_gpCost == value)
+                    return;
+                _gpCost = value;
+                OnPropertyChanged("GPCost");
+            }
+        }
+
 
         #region OnPropertyChanged
 

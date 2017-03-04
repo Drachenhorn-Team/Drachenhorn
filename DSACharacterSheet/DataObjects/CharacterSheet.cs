@@ -106,6 +106,21 @@ namespace DSACharacterSheet.DataObjects
             }
         }
 
+        [XmlIgnore]
+        private SocialInformation _socialInformation = new SocialInformation();
+        [XmlElement("SocialInformation")]
+        public SocialInformation SocialInformation
+        {
+            get { return _socialInformation; }
+            set
+            {
+                if (_socialInformation == value)
+                    return;
+                _socialInformation = value;
+                OnPropertyChanged("SocialInformation");
+            }
+        }
+
         #endregion Properties
 
         #region Save/Load

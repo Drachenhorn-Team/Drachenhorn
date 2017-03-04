@@ -5,6 +5,9 @@
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="Morpheus">
+            <Setter Property="TextElement.FontFamily" Value="Resources/#Morpheus"/>
+            <Setter Property="TextElement.FontSize" Value="16"/>
+        </Style>
     </Application.Resources>
 </Application>

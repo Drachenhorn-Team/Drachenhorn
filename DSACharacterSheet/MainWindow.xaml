@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:DSACharacterSheet.UserControls"
         xmlns:local="clr-namespace:DSACharacterSheet"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        Background="GhostWhite"
         Title="MainWindow" Height="800" Width="1100">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -19,7 +21,7 @@
         <StackPanel>
             <StackPanel.Resources>
                 <ResourceDictionary>
-                    <Style TargetType="TextBlock">
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource Morpheus}">
                         <Setter Property="Margin" Value="5"/>
                         <Setter Property="VerticalAlignment" Value="Center"/>
                     </Style>
@@ -27,46 +29,85 @@
                         <Setter Property="Margin" Value="5"/>
                         <Setter Property="VerticalAlignment" Value="Center"/>
                     </Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="GhostWhite"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
                 </ResourceDictionary>
             </StackPanel.Resources>
-            
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
 
-                <TextBlock Text="Name" Grid.Column="0" Grid.Row="0"/>
-                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
-                <TextBlock Text="GP-Basis" Margin="5" Grid.Column="2" Grid.Row="0"/>
-                <TextBox Text="{Binding GPBase, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="0"/>
+            <Image Source=".\Images\DSALogo.gif" Width="300"/>
+            <TextBlock Text="Heldendokument" FontSize="50" FontWeight="Bold" TextAlignment="Center"/>
 
-                <TextBlock Text="Rasse" Grid.Column="0" Grid.Row="1"/>
-                <TextBox Text="{Binding Race.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="1"/>
-                <TextBox Text="{Binding Race.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="1"/>
-
-                <TextBlock Text="Kultur" Grid.Column="0" Grid.Row="2"/>
-                <Grid Grid.Column="1" Grid.Row="2">
+            <Border>
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Text="{Binding Culture.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
-                    <TextBox Text="{Binding Culture.Spezification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
-                </Grid>
-                <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="2"/>
-                <TextBox Text="{Binding Culture.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
+                    <TextBlock Text="Name" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
+                    <TextBlock Text="GP-Basis" Margin="5" Grid.Column="2" Grid.Row="0"/>
+                    <TextBox Text="{Binding GPBase, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="0"/>
+
+                    <TextBlock Text="Rasse" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Text="{Binding Race.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="1"/>
+                    <TextBox Text="{Binding Race.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="1"/>
+
+                    <TextBlock Text="Kultur" Grid.Column="0" Grid.Row="2"/>
+                    <Grid Grid.Column="1" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="{Binding Culture.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
+                        <TextBox Text="{Binding Culture.Spezification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="2"/>
+                    <TextBox Text="{Binding Culture.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2"/>
+
+                    <TextBlock Text="Profession" Grid.Column="0" Grid.Row="3"/>
+                    <TextBox Text="{Binding Profession.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
+                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="3"/>
+                    <TextBox Text="{Binding Profession.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="3"/>
+
+                </Grid>
+            </Border>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*" IsEnabled="False"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0">
+                    <controls:CharacterInformationControl DataContext="{Binding CharacterInformation}"/>
+                </Border>
+
+                <Border Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock Text="Wappen/Portrait" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2">
+                    <controls:SocialInformationControl DataContext="{Binding SocialInformation}"/>
+                </Border>
             </Grid>
         </StackPanel>
     </DockPanel>
