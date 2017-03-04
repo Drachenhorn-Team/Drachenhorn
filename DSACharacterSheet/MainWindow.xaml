@@ -9,106 +9,120 @@
         Loaded="Window_Loaded"
         Background="GhostWhite"
         Title="MainWindow" Height="800" Width="1100">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewCommand_Executed"/>
+        <CommandBinding Command="Open" Executed="OpenCommand_Executed"/>
+        <CommandBinding Command="Save" Executed="SaveCommand_Executed"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAsCommand_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
+        <KeyBinding Key="O" Modifiers="Ctrl" Command="Open"/>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="Save"/>
+        <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="SaveAs"/>
+    </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Datei">
-                <MenuItem Header="_Neu"/>
-                <MenuItem Header="_Öffnen"/>
-                <MenuItem Header="_Speichern"/>
-                <MenuItem Header="Speichern _unter"/>
+                <MenuItem Header="_Neu" Command="New" InputGestureText="Strg + N"/>
+                <MenuItem Header="_Öffnen" Command="Open" InputGestureText="Strg + O"/>
+                <MenuItem Header="_Speichern" Command="Save" InputGestureText="Strg + S"/>
+                <MenuItem Header="Speichern _unter" Command="SaveAs" InputGestureText="Strg + Shift + S"/>
             </MenuItem>
         </Menu>
-        <StackPanel>
-            <StackPanel.Resources>
-                <ResourceDictionary>
-                    <Style TargetType="TextBlock" BasedOn="{StaticResource Morpheus}">
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="VerticalAlignment" Value="Center"/>
-                    </Style>
-                    <Style TargetType="TextBox">
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="VerticalAlignment" Value="Center"/>
-                    </Style>
-                    <Style TargetType="Border">
-                        <Setter Property="Background" Value="GhostWhite"/>
-                        <Setter Property="BorderBrush" Value="Gray"/>
-                        <Setter Property="BorderThickness" Value="2"/>
-                        <Setter Property="CornerRadius" Value="5"/>
-                        <Setter Property="Margin" Value="5"/>
-                    </Style>
-                </ResourceDictionary>
-            </StackPanel.Resources>
+        <ScrollViewer>
+            <StackPanel>
+                <StackPanel.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="TextBlock" BasedOn="{StaticResource Morpheus}">
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="GhostWhite"/>
+                            <Setter Property="BorderBrush" Value="Gray"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="CornerRadius" Value="5"/>
+                            <Setter Property="Margin" Value="5"/>
+                        </Style>
+                    </ResourceDictionary>
+                </StackPanel.Resources>
 
-            <Image Source=".\Images\DSALogo.gif" Width="300"/>
-            <TextBlock Text="Heldendokument" FontSize="50" FontWeight="Bold" TextAlignment="Center"/>
+                <Image Source=".\Images\DSALogo.gif" Width="300"/>
+                <TextBlock Text="Heldendokument" FontSize="50" FontWeight="Bold" TextAlignment="Center"/>
 
-            <Border>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Text="Name" Grid.Column="0" Grid.Row="0"/>
-                    <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
-                    <TextBlock Text="GP-Basis" Margin="5" Grid.Column="2" Grid.Row="0"/>
-                    <TextBox Text="{Binding GPBase, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="0"/>
-
-                    <TextBlock Text="Rasse" Grid.Column="0" Grid.Row="1"/>
-                    <TextBox Text="{Binding Race.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
-                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="1"/>
-                    <TextBox Text="{Binding Race.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="1"/>
-
-                    <TextBlock Text="Kultur" Grid.Column="0" Grid.Row="2"/>
-                    <Grid Grid.Column="1" Grid.Row="2">
+                <Border>
+                    <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Text="{Binding Culture.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
-                        <TextBox Text="{Binding Culture.Spezification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Name" Grid.Column="0" Grid.Row="0"/>
+                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="GP-Basis" Margin="5" Grid.Column="2" Grid.Row="0"/>
+                        <TextBox Text="{Binding GPBase, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="0"/>
+
+                        <TextBlock Text="Rasse" Grid.Column="0" Grid.Row="1"/>
+                        <TextBox Text="{Binding Race.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="1"/>
+                        <TextBox Text="{Binding Race.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="1"/>
+
+                        <TextBlock Text="Kultur" Grid.Column="0" Grid.Row="2"/>
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding Culture.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
+                            <TextBox Text="{Binding Culture.Spezification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
+                        </Grid>
+                        <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="2"/>
+                        <TextBox Text="{Binding Culture.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2"/>
+
+                        <TextBlock Text="Profession" Grid.Column="0" Grid.Row="3"/>
+                        <TextBox Text="{Binding Profession.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="3"/>
+                        <TextBox Text="{Binding Profession.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="3"/>
+
                     </Grid>
-                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="2"/>
-                    <TextBox Text="{Binding Culture.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2"/>
+                </Border>
 
-                    <TextBlock Text="Profession" Grid.Column="0" Grid.Row="3"/>
-                    <TextBox Text="{Binding Profession.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
-                    <TextBlock Text="Modifikator" Grid.Column="2" Grid.Row="3"/>
-                    <TextBox Text="{Binding Profession.GPCost, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="3"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*" IsEnabled="False"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
 
+                    <Border Grid.Column="0">
+                        <controls:CharacterInformationControl DataContext="{Binding CharacterInformation}"/>
+                    </Border>
+
+                    <Border Grid.Column="1">
+                        <StackPanel>
+                            <TextBlock Text="Wappen/Portrait" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2">
+                        <controls:SocialInformationControl DataContext="{Binding SocialInformation}"/>
+                    </Border>
                 </Grid>
-            </Border>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*" IsEnabled="False"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="0">
-                    <controls:CharacterInformationControl DataContext="{Binding CharacterInformation}"/>
-                </Border>
-
-                <Border Grid.Column="1">
-                    <StackPanel>
-                        <TextBlock Text="Wappen/Portrait" TextAlignment="Center"/>
-                    </StackPanel>
-                </Border>
-
-                <Border Grid.Column="2">
-                    <controls:SocialInformationControl DataContext="{Binding SocialInformation}"/>
-                </Border>
-            </Grid>
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </DockPanel>
 </Window>

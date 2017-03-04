@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Deployment.Application;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DSACharacterSheet.DataObjects;
 using DSACharacterSheet.Dialogs;
+using Microsoft.Win32;
 
 namespace DSACharacterSheet
 {
@@ -29,6 +31,14 @@ namespace DSACharacterSheet
         public MainWindow()
         {
             InitializeComponent();
+
+            if (ApplicationDeployment.IsNetworkDeployed && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Count() > 0)
+            {
+                var uri = new Uri(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0]);
+                if (File.Exists(uri.LocalPath))
+                    CurrentSheet = CharacterSheet.Load(uri.LocalPath);
+            }
+
             this.DataContext = CurrentSheet;
         }
 
@@ -36,6 +46,52 @@ namespace DSACharacterSheet
         {
             if (ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun)
                 new ChangeLogWindow().ShowDialog();
+        }
+
+        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(CurrentSheet.FilePath))
+                CurrentSheet.Save();
+            else
+                SaveAsCommand_Executed(sender, e);
+        }
+
+        private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            if (!String.IsNullOrEmpty(CurrentSheet.Name))
+                fileDialog.FileName = CurrentSheet.Name;
+            else
+                fileDialog.FileName = "Charakterbogen";
+            fileDialog.Filter = "DSA-Charakterbogen (*.dsac)|*.dsac";
+            fileDialog.FilterIndex = 1;
+            fileDialog.AddExtension = true;
+            fileDialog.Title = "Charakterbogen speichern";
+
+            if (fileDialog.ShowDialog() == true)
+                CurrentSheet.Save(fileDialog.FileName);
+        }
+
+        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "DSA-Charakterbogen (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*";
+            fileDialog.FilterIndex = 1;
+            fileDialog.Multiselect = false;
+            fileDialog.Title = "Charakterbogen öffnen.";
+            fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            if (fileDialog.ShowDialog(this) == true)
+            {
+                CurrentSheet = CharacterSheet.Load(fileDialog.FileName);
+                this.DataContext = CurrentSheet;
+            }
+        }
+
+        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            CurrentSheet = new CharacterSheet();
+            this.DataContext = CurrentSheet;
         }
     }
 }

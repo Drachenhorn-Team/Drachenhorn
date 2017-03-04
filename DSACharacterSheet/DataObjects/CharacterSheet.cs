@@ -128,10 +128,10 @@ namespace DSACharacterSheet.DataObjects
         [XmlIgnore]
         private string _filePath;
         [XmlIgnore]
-        protected string FilePath
+        public string FilePath
         {
             get { return _filePath; }
-            set
+            private set
             {
                 if (_filePath == value)
                     return;
