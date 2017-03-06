@@ -32,13 +32,6 @@ namespace DSACharacterSheet
         {
             InitializeComponent();
 
-            if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Count() > 0)
-            {
-                var uri = new Uri(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0]);
-                if (File.Exists(uri.LocalPath))
-                    CurrentSheet = CharacterSheet.Load(uri.LocalPath);
-            }
-
             this.DataContext = CurrentSheet;
         }
 
