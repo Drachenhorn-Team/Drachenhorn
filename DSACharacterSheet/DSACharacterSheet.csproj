@@ -29,11 +29,11 @@
     <SupportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/lightlikeD/DSA-Character-Sheet/issues</ErrorReportUrl>
     <ProductName>DSA Character Sheet</ProductName>
-    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -100,9 +100,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataObjects\SocialInformation.cs" />
+    <Compile Include="DataObjects\Advantages\Advantage.cs" />
+    <Compile Include="DataObjects\Advantages\AdvantageBase.cs" />
+    <Compile Include="DataObjects\Advantages\Disadvantage.cs" />
+    <Compile Include="DataObjects\Common\SocialInformation.cs" />
+    <Compile Include="UserControls\AdvantageInformationControl.xaml.cs">
+      <DependentUpon>AdvantageInformationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CharacterInformationControl.xaml.cs">
       <DependentUpon>CharacterInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DisadvantageInformationControl.xaml.cs">
+      <DependentUpon>DisadvantageInformationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SocialInformationControl.xaml.cs">
       <DependentUpon>SocialInformationControl.xaml</DependentUpon>
@@ -123,12 +132,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataObjects\CharacterInformation.cs" />
+    <Compile Include="DataObjects\Common\CharacterInformation.cs" />
     <Compile Include="DataObjects\CharacterSheet.cs" />
-    <Compile Include="DataObjects\CultureInformation.cs" />
+    <Compile Include="DataObjects\Common\CultureInformation.cs" />
     <Compile Include="DataObjects\Enums\Gender.cs" />
-    <Compile Include="DataObjects\ProfessionInformation.cs" />
-    <Compile Include="DataObjects\RaceInformation.cs" />
+    <Compile Include="DataObjects\Common\ProfessionInformation.cs" />
+    <Compile Include="DataObjects\Common\RaceInformation.cs" />
     <Compile Include="Dialogs\ChangeLogWindow.xaml.cs">
       <DependentUpon>ChangeLogWindow.xaml</DependentUpon>
     </Compile>
@@ -139,7 +148,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\AdvantageInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\CharacterInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DisadvantageInformationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

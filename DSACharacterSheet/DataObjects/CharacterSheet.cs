@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.DataObjects.Advantages;
+using DSACharacterSheet.DataObjects.Common;
 using DSACharacterSheet.DataObjects.Enums;
 using DSACharacterSheet.Dialogs;
 
@@ -118,6 +121,36 @@ namespace DSACharacterSheet.DataObjects
                     return;
                 _socialInformation = value;
                 OnPropertyChanged("SocialInformation");
+            }
+        }
+
+        [XmlIgnore]
+        private ObservableCollection<Advantage> _advantages = new ObservableCollection<Advantage>();
+        [XmlAttribute("Advantage")]
+        public ObservableCollection<Advantage> Advantages
+        {
+            get { return _advantages; }
+            set
+            {
+                if (_advantages == value)
+                    return;
+                _advantages = value;
+                OnPropertyChanged("Advantages");
+            }
+        }
+
+        [XmlIgnore]
+        private ObservableCollection<Disadvantage> _disadvantages = new ObservableCollection<Disadvantage>();
+        [XmlAttribute("Disadvantage")]
+        public ObservableCollection<Disadvantage> Disadvantages
+        {
+            get { return _disadvantages; }
+            set
+            {
+                if (_disadvantages == value)
+                    return;
+                _disadvantages = value;
+                OnPropertyChanged("Disadvantages");
             }
         }
 

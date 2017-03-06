@@ -30,11 +30,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Geschlecht" Grid.Column="0" Grid.Row="0"/>
-        <TextBox Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
+        <ComboBox Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" Margin="5"/>
 
         <TextBlock Text="Alter" Grid.Column="0" Grid.Row="1"/>
         <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
@@ -52,7 +52,7 @@
         <TextBox Text="{Binding EyeColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5"/>
 
         <TextBlock Text="Aussehen" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" Height="100"/>
+        <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" VerticalAlignment="Stretch"/>
 
     </Grid>
 </UserControl>

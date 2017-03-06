@@ -103,9 +103,9 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*" IsEnabled="False"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="0">
@@ -120,6 +120,21 @@
 
                     <Border Grid.Column="2">
                         <controls:SocialInformationControl DataContext="{Binding SocialInformation}"/>
+                    </Border>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0">
+                        <controls:AdvantageInformationControl DataContext="{Binding Advantages}"/>
+                    </Border>
+
+                    <Border Grid.Column="1">
+                        <controls:DisadvantageInformationControl DataContext="{Binding Disadvantages}"/>
                     </Border>
                 </Grid>
             </StackPanel>
