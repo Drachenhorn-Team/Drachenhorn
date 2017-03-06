@@ -32,7 +32,7 @@ namespace DSACharacterSheet
         {
             InitializeComponent();
 
-            if (ApplicationDeployment.IsNetworkDeployed && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Count() > 0)
+            if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Count() > 0)
             {
                 var uri = new Uri(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0]);
                 if (File.Exists(uri.LocalPath))
