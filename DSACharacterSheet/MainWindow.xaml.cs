@@ -32,6 +32,15 @@ namespace DSACharacterSheet
         {
             InitializeComponent();
 
+            var args = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
+            if (args != null)
+                foreach (var item in args)
+                {
+                    var temp = new Uri(item).LocalPath;
+                    if (temp.EndsWith(".dsac"))
+                        CurrentSheet = CharacterSheet.Load(temp);
+                }
+
             this.DataContext = CurrentSheet;
         }
 
