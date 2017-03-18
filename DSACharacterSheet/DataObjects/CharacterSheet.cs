@@ -127,7 +127,7 @@ namespace DSACharacterSheet.DataObjects
 
         [XmlIgnore]
         private ObservableCollection<Advantage> _advantages = new ObservableCollection<Advantage>();
-        [XmlAttribute("Advantage")]
+        [XmlElement("Advantage")]
         public ObservableCollection<Advantage> Advantages
         {
             get { return _advantages; }
@@ -142,7 +142,7 @@ namespace DSACharacterSheet.DataObjects
 
         [XmlIgnore]
         private ObservableCollection<Disadvantage> _disadvantages = new ObservableCollection<Disadvantage>();
-        [XmlAttribute("Disadvantage")]
+        [XmlElement("Disadvantage")]
         public ObservableCollection<Disadvantage> Disadvantages
         {
             get { return _disadvantages; }
