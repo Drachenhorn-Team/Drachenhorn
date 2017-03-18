@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using DSACharacterSheet.DataObjects.Advantages;
 using DSACharacterSheet.DataObjects.Common;
 using DSACharacterSheet.DataObjects.Enums;
+using DSACharacterSheet.DataObjects.Skills;
 using DSACharacterSheet.Dialogs;
 
 namespace DSACharacterSheet.DataObjects
@@ -151,6 +152,21 @@ namespace DSACharacterSheet.DataObjects
                     return;
                 _disadvantages = value;
                 OnPropertyChanged("Disadvantages");
+            }
+        }
+
+        [XmlIgnore]
+        private CharacterAttributes _attributes = new CharacterAttributes();
+        [XmlElement("Attributes")]
+        public CharacterAttributes Attributes
+        {
+            get { return _attributes; }
+            set
+            {
+                if (_attributes == value)
+                    return;
+                _attributes = value;
+                OnPropertyChanged("Attributes");
             }
         }
 

@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -104,8 +104,13 @@
     <Compile Include="DataObjects\Advantages\AdvantageBase.cs" />
     <Compile Include="DataObjects\Advantages\Disadvantage.cs" />
     <Compile Include="DataObjects\Common\SocialInformation.cs" />
+    <Compile Include="DataObjects\Skills\Attribute.cs" />
+    <Compile Include="DataObjects\Skills\CharacterAttributes.cs" />
     <Compile Include="UserControls\AdvantageInformationControl.xaml.cs">
       <DependentUpon>AdvantageInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttributeControl.xaml.cs">
+      <DependentUpon>AttributeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CharacterInformationControl.xaml.cs">
       <DependentUpon>CharacterInformationControl.xaml</DependentUpon>
@@ -149,6 +154,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\AdvantageInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AttributeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

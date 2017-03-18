@@ -1,5 +1,10 @@
 ﻿# ChangeLog
 
+## 1.0.3.0
+
+- Laden einer Datei mit Doppelklick eingefügt
+- Eigenschaften zu Charakterbogen hinzugefügt
+
 ## 1.0.2.2
 
 - Einbauen der Speichern/Laden-Funktionen

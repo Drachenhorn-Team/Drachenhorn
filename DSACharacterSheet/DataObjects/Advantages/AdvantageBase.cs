@@ -29,17 +29,17 @@ namespace DSACharacterSheet.DataObjects.Advantages
         }
 
         [XmlIgnore]
-        private string _description;
-        [XmlAttribute("Description")]
-        public string Description
+        private string _specialisation;
+        [XmlAttribute("Specialisation")]
+        public string Specialisation
         {
-            get { return _description; }
+            get { return _specialisation; }
             set
             {
-                if (_description == value)
+                if (_specialisation == value)
                     return;
-                _description = value;
-                OnPropertyChanged("Description");
+                _specialisation = value;
+                OnPropertyChanged("Specialisation");
             }
         }
 

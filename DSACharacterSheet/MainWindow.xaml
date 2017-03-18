@@ -137,6 +137,19 @@
                         <controls:DisadvantageInformationControl DataContext="{Binding Disadvantages}"/>
                     </Border>
                 </Grid>
+
+                <TextBlock Text="Eigenschaften &amp; Basiswerte" FontSize="45" FontWeight="Bold" TextAlignment="Center"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0">
+                        <controls:AttributeControl DataContext="{Binding Attributes}"/>
+                    </Border>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </DockPanel>

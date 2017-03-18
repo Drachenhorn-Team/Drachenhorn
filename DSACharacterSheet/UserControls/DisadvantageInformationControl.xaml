@@ -9,7 +9,7 @@
     <DataGrid MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding .}" Margin="5">
         <DataGrid.Columns>
             <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="Auto"/>
-            <DataGridTextColumn Header="Beschreibung" Binding="{Binding Description}" Width="*"/>
+            <DataGridTextColumn Header="Spezialisierung" Binding="{Binding Specialisation}" Width="*"/>
             <DataGridTextColumn Header="GP-Kosten" Binding="{Binding GPCost}" Width="Auto"/>
         </DataGrid.Columns>
     </DataGrid>
