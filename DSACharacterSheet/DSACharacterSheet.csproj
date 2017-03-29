@@ -103,14 +103,20 @@
     <Compile Include="DataObjects\Advantages\Advantage.cs" />
     <Compile Include="DataObjects\Advantages\AdvantageBase.cs" />
     <Compile Include="DataObjects\Advantages\Disadvantage.cs" />
+    <Compile Include="DataObjects\Calculation\Formula.cs" />
     <Compile Include="DataObjects\Common\SocialInformation.cs" />
     <Compile Include="DataObjects\Skills\Attribute.cs" />
+    <Compile Include="DataObjects\Skills\BaseValue.cs" />
+    <Compile Include="DataObjects\Skills\BaseValues.cs" />
     <Compile Include="DataObjects\Skills\CharacterAttributes.cs" />
     <Compile Include="UserControls\AdvantageInformationControl.xaml.cs">
       <DependentUpon>AdvantageInformationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\AttributeControl.xaml.cs">
-      <DependentUpon>AttributeControl.xaml</DependentUpon>
+    <Compile Include="UserControls\AttributesControl.xaml.cs">
+      <DependentUpon>AttributesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseValuesControl.xaml.cs">
+      <DependentUpon>BaseValuesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CharacterInformationControl.xaml.cs">
       <DependentUpon>CharacterInformationControl.xaml</DependentUpon>
@@ -157,7 +163,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\AttributeControl.xaml">
+    <Page Include="UserControls\AttributesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseValuesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

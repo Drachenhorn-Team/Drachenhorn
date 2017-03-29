@@ -143,11 +143,15 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="0">
-                        <controls:AttributeControl DataContext="{Binding Attributes}"/>
+                        <controls:AttributesControl DataContext="{Binding Attributes}"/>
+                    </Border>
+
+                    <Border Grid.Column="1">
+                        <controls:BaseValuesControl DataContext="{Binding BaseValues}"/>
                     </Border>
                 </Grid>
             </StackPanel>

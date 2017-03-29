@@ -18,9 +18,9 @@ namespace DSACharacterSheet.UserControls
     /// <summary>
     /// Interaktionslogik für AttributeControl.xaml
     /// </summary>
-    public partial class AttributeControl : UserControl
+    public partial class AttributesControl : UserControl
     {
-        public AttributeControl()
+        public AttributesControl()
         {
             InitializeComponent();
         }

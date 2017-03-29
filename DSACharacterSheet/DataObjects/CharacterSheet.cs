@@ -157,7 +157,7 @@ namespace DSACharacterSheet.DataObjects
 
         [XmlIgnore]
         private CharacterAttributes _attributes = new CharacterAttributes();
-        [XmlElement("Attributes")]
+        [XmlElement("Attribute")]
         public CharacterAttributes Attributes
         {
             get { return _attributes; }
@@ -167,6 +167,21 @@ namespace DSACharacterSheet.DataObjects
                     return;
                 _attributes = value;
                 OnPropertyChanged("Attributes");
+            }
+        }
+
+        [XmlIgnore]
+        private BaseValues _baseValues = new BaseValues();
+        [XmlElement("BaseValue")]
+        public BaseValues BaseValues
+        {
+            get { return _baseValues; }
+            set
+            {
+                if (_baseValues == value)
+                    return;
+                _baseValues = value;
+                OnPropertyChanged("BaseValues");
             }
         }
 
