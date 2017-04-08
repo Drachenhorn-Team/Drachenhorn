@@ -44,9 +44,9 @@ namespace DSACharacterSheet.DataObjects.Advantages
         }
 
         [XmlIgnore]
-        private ushort _gpCost;
+        private double _gpCost;
         [XmlAttribute("GPCost")]
-        public ushort GPCost
+        public double GPCost
         {
             get { return _gpCost; }
             set

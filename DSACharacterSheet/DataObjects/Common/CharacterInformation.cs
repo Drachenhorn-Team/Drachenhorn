@@ -30,9 +30,9 @@ namespace DSACharacterSheet.DataObjects.Common
         }
 
         [XmlIgnore]
-        private ushort _age;
+        private double _age;
         [XmlAttribute("Age")]
-        public ushort Age
+        public double Age
         {
             get { return _age; }
             set
@@ -60,9 +60,9 @@ namespace DSACharacterSheet.DataObjects.Common
         }
 
         [XmlIgnore]
-        private ushort _weight;
+        private double _weight;
         [XmlAttribute("Weight")]
-        public ushort Weight
+        public double Weight
         {
             get { return _weight; }
             set
@@ -150,9 +150,9 @@ namespace DSACharacterSheet.DataObjects.Common
         }
 
         [XmlIgnore]
-        private ushort _socialStatus;
+        private double _socialStatus;
         [XmlAttribute("SocialStatus")]
-        public ushort SocialStatus
+        public double SocialStatus
         {
             get { return _socialStatus; }
             set

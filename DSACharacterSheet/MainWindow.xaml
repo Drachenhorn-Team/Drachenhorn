@@ -154,6 +154,10 @@
                         <controls:BaseValuesControl DataContext="{Binding BaseValues}"/>
                     </Border>
                 </Grid>
+
+                <Border>
+                    <controls:AdventurePointsControl DataContext="{Binding AdventurePoints}"/>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </DockPanel>

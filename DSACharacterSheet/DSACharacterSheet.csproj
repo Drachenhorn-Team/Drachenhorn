@@ -100,6 +100,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataObjects\AdventurePoints.cs" />
     <Compile Include="DataObjects\Advantages\Advantage.cs" />
     <Compile Include="DataObjects\Advantages\AdvantageBase.cs" />
     <Compile Include="DataObjects\Advantages\Disadvantage.cs" />
@@ -111,6 +112,9 @@
     <Compile Include="DataObjects\Skills\CharacterAttributes.cs" />
     <Compile Include="UserControls\AdvantageInformationControl.xaml.cs">
       <DependentUpon>AdvantageInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdventurePointsControl.xaml.cs">
+      <DependentUpon>AdventurePointsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AttributesControl.xaml.cs">
       <DependentUpon>AttributesControl.xaml</DependentUpon>
@@ -160,6 +164,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\AdvantageInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AdventurePointsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

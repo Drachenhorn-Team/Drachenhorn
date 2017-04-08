@@ -44,9 +44,9 @@ namespace DSACharacterSheet.DataObjects.Common
         }
 
         [XmlIgnore]
-        private ushort _socialClass;
+        private double _socialClass;
         [XmlAttribute("SocialClass")]
-        public ushort SocialClass
+        public double SocialClass
         {
             get { return _socialClass; }
             set

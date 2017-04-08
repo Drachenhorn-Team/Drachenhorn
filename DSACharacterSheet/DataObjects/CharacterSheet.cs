@@ -36,9 +36,9 @@ namespace DSACharacterSheet.DataObjects
         }
 
         [XmlIgnore]
-        private ushort _gpBase;
+        private double _gpBase;
         [XmlAttribute("GPBase")]
-        public ushort GPBase
+        public double GPBase
         {
             get { return _gpBase; }
             set
@@ -182,6 +182,21 @@ namespace DSACharacterSheet.DataObjects
                     return;
                 _baseValues = value;
                 OnPropertyChanged("BaseValues");
+            }
+        }
+
+        [XmlIgnore]
+        private AdventurePoints _adventurePoints = new AdventurePoints();
+        [XmlElement("AdventurePoints")]
+        public AdventurePoints AdventurePoints
+        {
+            get { return _adventurePoints; }
+            set
+            {
+                if (_adventurePoints == value)
+                    return;
+                _adventurePoints = value;
+                OnPropertyChanged("AdventurePoints");
             }
         }
 

@@ -12,9 +12,9 @@ namespace DSACharacterSheet.DataObjects.Skills
     public class Attribute : INotifyPropertyChanged
     {
         [XmlIgnore]
-        private ushort _startValue;
+        private double _startValue;
         [XmlAttribute("StartValue")]
-        public ushort StartValue
+        public double StartValue
         {
             get { return _startValue; }
             set
@@ -27,9 +27,9 @@ namespace DSACharacterSheet.DataObjects.Skills
         }
 
         [XmlIgnore]
-        private ushort _modifier;
+        private double _modifier;
         [XmlAttribute("Modifier")]
-        public ushort Modifier
+        public double Modifier
         {
             get { return _modifier; }
             set
@@ -42,9 +42,9 @@ namespace DSACharacterSheet.DataObjects.Skills
         }
 
         [XmlIgnore]
-        private ushort _currentValue;
+        private double _currentValue;
         [XmlAttribute("CurrentValue")]
-        public ushort CurrentValue
+        public double CurrentValue
         {
             get { return _currentValue; }
             set

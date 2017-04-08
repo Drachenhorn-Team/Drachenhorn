@@ -5,54 +5,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSACharacterSheet.DataObjects.Calculation;
 
-namespace DSACharacterSheet.DataObjects.Skills
+namespace DSACharacterSheet.DataObjects
 {
     [Serializable]
-    public class BaseValue : INotifyPropertyChanged
+    public class AdventurePoints : INotifyPropertyChanged
     {
         #region Properties
 
         [XmlIgnore]
-        private double _modifier;
-        [XmlAttribute("Modifier")]
-        public double Modifier
+        private int _total;
+        [XmlAttribute("Total")]
+        public int Total
         {
-            get { return _modifier; }
+            get { return _total; }
             set
             {
-                if (_modifier == value)
+                if (_total == value)
                     return;
-                _modifier = value;
+                _total = value;
                 OnPropertyChanged(null);
             }
         }
 
         [XmlIgnore]
-        private Formula _formula = new Formula();
-        [XmlElement("Formula")]
-        public Formula Formula
+        private int _used;
+        [XmlAttribute("Used")]
+        public int Used
         {
-            get { return _formula; }
+            get { return _used; }
             set
             {
-                if (_formula == value)
+                if (_used == value)
                     return;
-                _formula = value;
-                OnPropertyChanged("null");
+                _used = value;
+                OnPropertyChanged(null);
             }
         }
 
         [XmlIgnore]
-        public double Value
+        public int CurrentLeft
         {
-            //TODO: Implementieren
-            get { return 0; }
+            get { return Total - Used; }
         }
 
         #endregion Properties
-
 
         #region OnPropertyChanged
 
