@@ -1,5 +1,7 @@
 # DSACharacterSheet
 
+[![Build Status](https://lightliked.visualstudio.com/_apis/public/build/definitions/2579b68c-0c76-414d-9e0f-d91a149781f3/1/badge)](https://lightliked.visualstudio.com/DSACharacterSheet/_build/index?context=Mine&path=%5CDSACharacterSheet&definitionId=1&_a=completed)
+
 Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
 
 
