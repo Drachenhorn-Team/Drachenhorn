@@ -1,3 +1,4 @@
+![DSACharacterSheet Icon](DSACharacterSheet/Images/DSALogo.gif)
 # DSACharacterSheet
 
 [![Build Status](https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge)](https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed)
