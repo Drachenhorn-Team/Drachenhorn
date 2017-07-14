@@ -1,7 +1,12 @@
-![DSACharacterSheet Icon](DSACharacterSheet/Images/DSALogo.gif)
-# DSACharacterSheet
+<p align="center"><img src="DSACharacterSheet/Images/DSALogo.gif" alt="DSACharacterSheet Icon" width="350"></p>
+<h1 align="center">DSACharacterSheet</h1>
 
-[![Build Status](https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge)](https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed)
+<p align="center">
+<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed"><img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge" alt="Build Status"></a>
+<a href="https://github.com/lightlike/DSACharacterSheet/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
+<a href="https://github.com/lightlike/DSACharacterSheet/tree/publish"><img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg" alt="Publish"></a>
+</p>
+
 
 Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
 
