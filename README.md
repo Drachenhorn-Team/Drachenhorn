@@ -2,9 +2,15 @@
 <h1 align="center">DSACharacterSheet</h1>
 
 <p align="center">
-<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed"><img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge" alt="Build Status"></a>
 <a href="https://github.com/lightlike/DSACharacterSheet/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
 <a href="https://github.com/lightlike/DSACharacterSheet/tree/publish"><img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg" alt="Publish"></a>
+</p>
+
+<p align="center">
+<a>Release: </a>
+<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed"><img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge" alt="Build Status"></a>
+<a>Beta: </a>
+<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=allDefinitions&path=%5C&definitionId=4&_a=completed"><img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/4/badge" alt="Build Status"></a>
 </p>
 
 
@@ -18,7 +24,9 @@ Und so hat das alles angefangen.
 
 ## Installation
 
-https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe
+[Release](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe)
+
+[Beta](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/beta/setup.exe)
 
 Einfach das Setup herunterladen und ausführen
 
