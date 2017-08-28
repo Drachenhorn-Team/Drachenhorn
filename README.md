@@ -10,14 +10,14 @@
 
 <p align="center">
 <a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed">
-  <img src="https://img.shields.io/badge/publish-Release-yellowgreen.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Type-Release-yellowgreen.svg?style=flat-square">
   <img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge" alt="Build Status">
 </a>
 </p>
 <p align="center">
-<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=allDefinitions&path=%5C&definitionId=4&_a=completed">
-  <img src="https://img.shields.io/badge/publish-Beta-yellowgreen.svg?style=flat-square">
-  <img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/4/badge" alt="Build Status"></a>
+<a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=5&_a=completed">
+  <img src="https://img.shields.io/badge/Type-Beta-yellowgreen.svg?style=flat-square">
+  <img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/5/badge" alt="Build Status"></a>
 </p>
 
 
@@ -31,9 +31,7 @@ Und so hat das alles angefangen.
 
 ## Installation
 
-[Release](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe)
-
-[Beta](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/beta/setup.exe)
+[Download](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe)
 
 Einfach das Setup herunterladen und ausführen
 
