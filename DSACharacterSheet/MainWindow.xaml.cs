@@ -32,7 +32,7 @@ namespace DSACharacterSheet
         {
             InitializeComponent();
 
-            var args = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
+            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
             if (args != null)
                 foreach (var item in args)
                 {
