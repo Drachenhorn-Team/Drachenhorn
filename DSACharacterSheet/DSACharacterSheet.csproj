@@ -59,16 +59,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9ED6F6175E483ACB139B037D90A0575C166CBC08</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4F66CDEA1DA2BD939DB41A6E5E7ABA77E1435745</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>DSA-Character-Sheet_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DSACharacterSheet_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Images\DSAIcon.ico</ApplicationIcon>
@@ -213,7 +213,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DSA-Character-Sheet_TemporaryKey.pfx" />
+    <None Include="DSACharacterSheet_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
