@@ -134,7 +134,7 @@
                     </Border>
 
                     <Border Grid.Column="1">
-                        <controls:DisadvantageInformationControl DataContext="{Binding Disadvantages}"/>
+                        <controls:AdvantageInformationControl DataContext="{Binding Disadvantages}"/>
                     </Border>
                 </Grid>
 

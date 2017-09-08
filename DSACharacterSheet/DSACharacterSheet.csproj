@@ -128,9 +128,6 @@
     <Compile Include="UserControls\CharacterInformationControl.xaml.cs">
       <DependentUpon>CharacterInformationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\DisadvantageInformationControl.xaml.cs">
-      <DependentUpon>DisadvantageInformationControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\SocialInformationControl.xaml.cs">
       <DependentUpon>SocialInformationControl.xaml</DependentUpon>
     </Compile>
@@ -183,10 +180,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CharacterInformationControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\DisadvantageInformationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
