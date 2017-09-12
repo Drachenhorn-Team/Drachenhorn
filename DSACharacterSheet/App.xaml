@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:DSACharacterSheet"
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
-             StartupUri="MainWindow.xaml">
+             Startup="Application_Startup">
     <Application.Resources>
         <Style x:Key="Morpheus">
             <Setter Property="TextElement.FontFamily" Value="Resources/#Morpheus"/>

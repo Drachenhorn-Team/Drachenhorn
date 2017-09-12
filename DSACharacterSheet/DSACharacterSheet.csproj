@@ -113,6 +113,9 @@
     <Compile Include="DataObjects\Skills\BaseValue.cs" />
     <Compile Include="DataObjects\Skills\BaseValues.cs" />
     <Compile Include="DataObjects\Skills\CharacterAttributes.cs" />
+    <Compile Include="Splash\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
       <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Splash\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\AdvantageInformationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
