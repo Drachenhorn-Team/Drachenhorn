@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent"
         Title="SplashScreen" Height="250" Width="500">
-    <Border Background="Wheat" CornerRadius="50" BorderThickness="3">
+    <Border Background="LightGray" CornerRadius="50" BorderThickness="2" BorderBrush="DarkGray">
         <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
