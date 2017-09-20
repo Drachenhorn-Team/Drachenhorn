@@ -6,7 +6,6 @@
         xmlns:controls="clr-namespace:DSACharacterSheet.UserControls"
         xmlns:local="clr-namespace:DSACharacterSheet"
         mc:Ignorable="d"
-        Loaded="Window_Loaded"
         Background="GhostWhite"
         WindowState="Maximized"
         Title="MainWindow" Height="800" Width="1100">

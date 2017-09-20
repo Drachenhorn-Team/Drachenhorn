@@ -44,12 +44,6 @@ namespace DSACharacterSheet
             this.DataContext = CurrentSheet;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun)
-                new ChangeLogWindow().ShowDialog();
-        }
-
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             if (!String.IsNullOrEmpty(CurrentSheet.FilePath))
@@ -76,12 +70,14 @@ namespace DSACharacterSheet
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "DSA-Charakterbogen (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*";
-            fileDialog.FilterIndex = 1;
-            fileDialog.Multiselect = false;
-            fileDialog.Title = "Charakterbogen öffnen.";
-            fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            OpenFileDialog fileDialog = new OpenFileDialog
+            {
+                Filter = "DSA-Charakterbogen (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*",
+                FilterIndex = 1,
+                Multiselect = false,
+                Title = "Charakterbogen öffnen.",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            };
 
             if (fileDialog.ShowDialog(this) == true)
             {

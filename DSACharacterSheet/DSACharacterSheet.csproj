@@ -71,8 +71,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -142,10 +141,6 @@
     <Compile Include="UserControls\SocialInformationControl.xaml.cs">
       <DependentUpon>SocialInformationControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dialogs\ChangeLogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Dialogs\ExceptionMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,9 +159,6 @@
     <Compile Include="DataObjects\Enums\Gender.cs" />
     <Compile Include="DataObjects\Common\ProfessionInformation.cs" />
     <Compile Include="DataObjects\Common\RaceInformation.cs" />
-    <Compile Include="Dialogs\ChangeLogWindow.xaml.cs">
-      <DependentUpon>ChangeLogWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
