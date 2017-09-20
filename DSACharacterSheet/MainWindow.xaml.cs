@@ -54,15 +54,14 @@ namespace DSACharacterSheet
 
         private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            SaveFileDialog fileDialog = new SaveFileDialog();
-            if (!String.IsNullOrEmpty(CurrentSheet.Name))
-                fileDialog.FileName = CurrentSheet.Name;
-            else
-                fileDialog.FileName = "Charakterbogen";
-            fileDialog.Filter = "DSA-Charakterbogen (*.dsac)|*.dsac";
-            fileDialog.FilterIndex = 1;
-            fileDialog.AddExtension = true;
-            fileDialog.Title = "Charakterbogen speichern";
+            var fileDialog = new SaveFileDialog
+            {
+                FileName = String.IsNullOrEmpty(CurrentSheet.Name) ? "Charakterbogen" : CurrentSheet.Name,
+                Filter = "DSA-Charakterbogen (*.dsac)|*.dsac",
+                FilterIndex = 1,
+                AddExtension = true,
+                Title = "Charakterbogen speichern"
+            };
 
             if (fileDialog.ShowDialog() == true)
                 CurrentSheet.Save(fileDialog.FileName);
@@ -70,7 +69,7 @@ namespace DSACharacterSheet
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog
+            var fileDialog = new OpenFileDialog
             {
                 Filter = "DSA-Charakterbogen (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*",
                 FilterIndex = 1,
