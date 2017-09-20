@@ -236,7 +236,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Images\Icon.ico" />
+    <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
     <Content Include="Resources\Morpheus.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -266,7 +266,7 @@
       <Visible>False</Visible>
       <Description>DSA Charakterbogen</Description>
       <Progid>DSA Character Sheet</Progid>
-      <DefaultIcon>Images\DSAIcon.ico</DefaultIcon>
+      <DefaultIcon>Images\Icon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
   <ItemGroup />
