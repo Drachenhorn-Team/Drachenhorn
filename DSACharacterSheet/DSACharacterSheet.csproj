@@ -231,7 +231,9 @@
     <AppDesigner Include="Properties\" />
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
-    <Content Include="Images\SaveIcon.ico" />
+    <Content Include="Images\SaveFileIcon.ico" />
+    <Content Include="Images\SaveFileIcon.svg" />
+    <Resource Include="Images\SaveIcon.ico" />
     <Content Include="Images\SaveIcon.svg" />
     <Content Include="Resources\Morpheus.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -258,7 +260,7 @@
       <Visible>False</Visible>
       <Description>DSA Charakterbogen</Description>
       <Progid>DSA Character Sheet</Progid>
-      <DefaultIcon>Images\SaveIcon.ico</DefaultIcon>
+      <DefaultIcon>Images\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
   <ItemGroup />
