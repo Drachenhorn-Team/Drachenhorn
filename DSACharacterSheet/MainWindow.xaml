@@ -26,7 +26,7 @@
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu KeyTip="D">
                     <RibbonApplicationMenuItem Header="Neu" Command="New" InputGestureText="Strg + N"/>
-                    <RibbonApplicationMenuItem Header="Öffnen" Command="Open" InputGestureText="Strg + O"/>
+                    <RibbonApplicationMenuItem Header="Öffnen" Command="Open" ImageSource="Images\OpenIcon.ico" InputGestureText="Strg + O"/>
                     <RibbonApplicationMenuItem Header="Speichern" Command="Save" ImageSource="Images\SaveIcon.ico" InputGestureText="Strg + S"/>
                     <RibbonApplicationMenuItem Header="Speichern unter" Command="SaveAs" ImageSource="Images\SaveIcon.ico" InputGestureText="Strg + Shift + S"/>
                 </RibbonApplicationMenu>

@@ -231,6 +231,8 @@
     <AppDesigner Include="Properties\" />
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
+    <Resource Include="Images\OpenIcon.ico" />
+    <Content Include="Images\OpenIcon.svg" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
     <Resource Include="Images\SaveIcon.ico" />
