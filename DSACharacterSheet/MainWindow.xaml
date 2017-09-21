@@ -22,15 +22,17 @@
         <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="SaveAs"/>
     </Window.InputBindings>
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Datei">
-                <MenuItem Header="_Neu" Command="New" InputGestureText="Strg + N"/>
-                <MenuItem Header="_Öffnen" Command="Open" InputGestureText="Strg + O"/>
-                <MenuItem Header="_Speichern" Command="Save" InputGestureText="Strg + S"/>
-                <MenuItem Header="Speichern _unter" Command="SaveAs" InputGestureText="Strg + Shift + S"/>
-            </MenuItem>
-        </Menu>
-        <ScrollViewer>
+        <Ribbon DockPanel.Dock="Top" IsMinimized="True">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="D">
+                    <RibbonApplicationMenuItem Header="Neu" Command="New" InputGestureText="Strg + N"/>
+                    <RibbonApplicationMenuItem Header="Öffnen" Command="Open" InputGestureText="Strg + O"/>
+                    <RibbonApplicationMenuItem Header="Speichern" Command="Save" InputGestureText="Strg + S"/>
+                    <RibbonApplicationMenuItem Header="Speichern unter" Command="SaveAs" InputGestureText="Strg + Shift + S"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+        </Ribbon>
+        <ScrollViewer PanningMode="VerticalOnly">
             <controls:CharacterSheetControl/>
         </ScrollViewer>
     </DockPanel>
