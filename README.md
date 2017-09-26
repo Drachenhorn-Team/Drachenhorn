@@ -53,5 +53,3 @@ Für Unterstützung bitte ein neues [Issue](https://github.com/lightlikeD/DSACha
 ## Entwickeln
 
 Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [1.1.0.0](https://github.com/lightlikeD/DSACharacterSheet/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.
-
-## [Changelog](https://github.com/lightlikeD/DSACharacterSheet/blob/master/DSACharacterSheet/Resources/ChangeLog.md)
