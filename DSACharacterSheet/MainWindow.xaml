@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Background="GhostWhite"
         WindowState="Maximized"
-        Title="MainWindow" Height="800" Width="1100">
+        Title="{Binding Name}" Height="800" Width="1100">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewCommand_Executed"/>
         <CommandBinding Command="Open" Executed="OpenCommand_Executed"/>
@@ -24,7 +24,7 @@
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" IsMinimized="True">
             <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu KeyTip="D">
+                <RibbonApplicationMenu KeyTip="D" Background="{x:Static SystemParameters.WindowGlassBrush}">
                     <RibbonApplicationMenuItem Header="Neu" Command="New" InputGestureText="Strg + N"/>
                     <RibbonApplicationMenuItem Header="Öffnen" Command="Open" ImageSource="Images\OpenIcon.ico" InputGestureText="Strg + O"/>
                     <RibbonApplicationMenuItem Header="Speichern" Command="Save" ImageSource="Images\SaveIcon.ico" InputGestureText="Strg + S"/>
