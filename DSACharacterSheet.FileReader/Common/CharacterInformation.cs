@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSACharacterSheet.DataObjects.Enums;
+using DSACharacterSheet.FileReader.Enums;
 
-namespace DSACharacterSheet.DataObjects.Common
+namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
     public class CharacterInformation : INotifyPropertyChanged

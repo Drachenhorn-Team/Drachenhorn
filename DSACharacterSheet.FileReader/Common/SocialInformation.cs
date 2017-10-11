@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Common
+namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
     public class SocialInformation : INotifyPropertyChanged

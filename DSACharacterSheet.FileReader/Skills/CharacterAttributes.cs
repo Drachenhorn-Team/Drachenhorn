@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Skills
+namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
     public class CharacterAttributes : INotifyPropertyChanged

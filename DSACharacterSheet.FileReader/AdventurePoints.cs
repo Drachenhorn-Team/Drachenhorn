@@ -6,40 +6,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Common
+namespace DSACharacterSheet.FileReader
 {
-    public class ProfessionInformation : INotifyPropertyChanged
+    [Serializable]
+    public class AdventurePoints : INotifyPropertyChanged
     {
+        #region Properties
+
         [XmlIgnore]
-        private string _name;
-        [XmlAttribute("Name")]
-        public string Name
+        private int _total;
+        [XmlAttribute("Total")]
+        public int Total
         {
-            get { return _name; }
+            get { return _total; }
             set
             {
-                if (_name == value)
+                if (_total == value)
                     return;
-                _name = value;
-                OnPropertyChanged("Name");
+                _total = value;
+                OnPropertyChanged(null);
             }
         }
 
         [XmlIgnore]
-        private double _gpCost;
-        [XmlAttribute("GPCost")]
-        public double GPCost
+        private int _used;
+        [XmlAttribute("Used")]
+        public int Used
         {
-            get { return _gpCost; }
+            get { return _used; }
             set
             {
-                if (_gpCost == value)
+                if (_used == value)
                     return;
-                _gpCost = value;
-                OnPropertyChanged("GPCost");
+                _used = value;
+                OnPropertyChanged(null);
             }
         }
 
+        [XmlIgnore]
+        public int CurrentLeft
+        {
+            get { return Total - Used; }
+        }
+
+        #endregion Properties
 
         #region OnPropertyChanged
 

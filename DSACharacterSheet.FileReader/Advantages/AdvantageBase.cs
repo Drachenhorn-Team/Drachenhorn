@@ -6,11 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Common
+namespace DSACharacterSheet.FileReader.Advantages
 {
     [Serializable]
-    public class CultureInformation : INotifyPropertyChanged
+    public class AdvantageBase : INotifyPropertyChanged
     {
+        #region Properties
+
         [XmlIgnore]
         private string _name;
         [XmlAttribute("Name")]
@@ -27,17 +29,17 @@ namespace DSACharacterSheet.DataObjects.Common
         }
 
         [XmlIgnore]
-        private string _spezification;
-        [XmlAttribute("Spezification")]
-        public string Spezification
+        private string _specialisation;
+        [XmlAttribute("Specialisation")]
+        public string Specialisation
         {
-            get { return _spezification; }
+            get { return _specialisation; }
             set
             {
-                if (_spezification == value)
+                if (_specialisation == value)
                     return;
-                _spezification = value;
-                OnPropertyChanged("Spezification");
+                _specialisation = value;
+                OnPropertyChanged("Specialisation");
             }
         }
 
@@ -56,6 +58,7 @@ namespace DSACharacterSheet.DataObjects.Common
             }
         }
 
+        #endregion Properties
 
         #region OnPropertyChanged
 

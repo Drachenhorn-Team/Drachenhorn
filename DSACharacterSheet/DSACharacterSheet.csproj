@@ -104,16 +104,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataObjects\AdventurePoints.cs" />
-    <Compile Include="DataObjects\Advantages\Advantage.cs" />
-    <Compile Include="DataObjects\Advantages\AdvantageBase.cs" />
-    <Compile Include="DataObjects\Advantages\Disadvantage.cs" />
-    <Compile Include="DataObjects\Calculation\Formula.cs" />
-    <Compile Include="DataObjects\Common\SocialInformation.cs" />
-    <Compile Include="DataObjects\Skills\Attribute.cs" />
-    <Compile Include="DataObjects\Skills\BaseValue.cs" />
-    <Compile Include="DataObjects\Skills\BaseValues.cs" />
-    <Compile Include="DataObjects\Skills\CharacterAttributes.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
@@ -154,12 +144,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataObjects\Common\CharacterInformation.cs" />
-    <Compile Include="DataObjects\CharacterSheet.cs" />
-    <Compile Include="DataObjects\Common\CultureInformation.cs" />
-    <Compile Include="DataObjects\Enums\Gender.cs" />
-    <Compile Include="DataObjects\Common\ProfessionInformation.cs" />
-    <Compile Include="DataObjects\Common\RaceInformation.cs" />
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
@@ -222,7 +206,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DSACharacterSheet_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -265,7 +248,12 @@
       <DefaultIcon>Images\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DSACharacterSheet.FileReader\DSACharacterSheet.FileReader.csproj">
+      <Project>{17ca60a7-cc56-431b-b8d8-0358c8bbc697}</Project>
+      <Name>DSACharacterSheet.FileReader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

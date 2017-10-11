@@ -6,13 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Advantages
+namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
-    public class AdvantageBase : INotifyPropertyChanged
+    public class RaceInformation : INotifyPropertyChanged
     {
-        #region Properties
-
         [XmlIgnore]
         private string _name;
         [XmlAttribute("Name")]
@@ -25,21 +23,6 @@ namespace DSACharacterSheet.DataObjects.Advantages
                     return;
                 _name = value;
                 OnPropertyChanged("Name");
-            }
-        }
-
-        [XmlIgnore]
-        private string _specialisation;
-        [XmlAttribute("Specialisation")]
-        public string Specialisation
-        {
-            get { return _specialisation; }
-            set
-            {
-                if (_specialisation == value)
-                    return;
-                _specialisation = value;
-                OnPropertyChanged("Specialisation");
             }
         }
 
@@ -57,8 +40,6 @@ namespace DSACharacterSheet.DataObjects.Advantages
                 OnPropertyChanged("GPCost");
             }
         }
-
-        #endregion Properties
 
         #region OnPropertyChanged
 

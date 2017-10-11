@@ -6,10 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.DataObjects.Common
+namespace DSACharacterSheet.FileReader.Common
 {
-    [Serializable]
-    public class RaceInformation : INotifyPropertyChanged
+    public class ProfessionInformation : INotifyPropertyChanged
     {
         [XmlIgnore]
         private string _name;
@@ -40,6 +39,7 @@ namespace DSACharacterSheet.DataObjects.Common
                 OnPropertyChanged("GPCost");
             }
         }
+
 
         #region OnPropertyChanged
 

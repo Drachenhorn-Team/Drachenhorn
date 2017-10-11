@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSACharacterSheet.DataObjects.Skills;
+using DSACharacterSheet.FileReader.Skills;
 
-namespace DSACharacterSheet.DataObjects.Calculation
+namespace DSACharacterSheet.FileReader.Calculation
 {
     public class Formula : INotifyPropertyChanged
     {

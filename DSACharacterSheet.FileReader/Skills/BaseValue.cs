@@ -5,26 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.FileReader.Calculation;
 
-namespace DSACharacterSheet.DataObjects.Skills
+namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class Attribute : INotifyPropertyChanged
+    public class BaseValue : INotifyPropertyChanged
     {
-        [XmlIgnore]
-        private double _startValue;
-        [XmlAttribute("StartValue")]
-        public double StartValue
-        {
-            get { return _startValue; }
-            set
-            {
-                if (_startValue == value)
-                    return;
-                _startValue = value;
-                OnPropertyChanged("StartValue");
-            }
-        }
+        #region Properties
 
         [XmlIgnore]
         private double _modifier;
@@ -37,24 +25,33 @@ namespace DSACharacterSheet.DataObjects.Skills
                 if (_modifier == value)
                     return;
                 _modifier = value;
-                OnPropertyChanged("Modifier");
+                OnPropertyChanged(null);
             }
         }
 
         [XmlIgnore]
-        private double _currentValue;
-        [XmlAttribute("CurrentValue")]
-        public double CurrentValue
+        private Formula _formula = new Formula();
+        [XmlElement("Formula")]
+        public Formula Formula
         {
-            get { return _currentValue; }
+            get { return _formula; }
             set
             {
-                if (_currentValue == value)
+                if (_formula == value)
                     return;
-                _currentValue = value;
-                OnPropertyChanged("CurrentValue");
+                _formula = value;
+                OnPropertyChanged("null");
             }
         }
+
+        [XmlIgnore]
+        public double Value
+        {
+            //TODO: Implementieren
+            get { return 0; }
+        }
+
+        #endregion Properties
 
 
         #region OnPropertyChanged
