@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.Dialogs;
 using Microsoft.Win32;
+using DSACharacterSheet.FileReader.Exceptions;
 
 namespace DSACharacterSheet
 {
@@ -47,7 +48,14 @@ namespace DSACharacterSheet
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             if (!String.IsNullOrEmpty(CurrentSheet.FilePath))
-                CurrentSheet.Save();
+                try
+                {
+                    CurrentSheet.Save();
+                }
+                catch(SheetSavingException ex)
+                {
+                    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                }
             else
                 SaveAsCommand_Executed(sender, e);
         }
@@ -64,7 +72,14 @@ namespace DSACharacterSheet
             };
 
             if (fileDialog.ShowDialog() == true)
-                CurrentSheet.Save(fileDialog.FileName);
+                try
+                {
+                    CurrentSheet.Save(fileDialog.FileName);
+                }
+                catch (SheetSavingException ex)
+                {
+                    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                }
         }
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -80,8 +95,15 @@ namespace DSACharacterSheet
 
             if (fileDialog.ShowDialog(this) == true)
             {
-                CurrentSheet = CharacterSheet.Load(fileDialog.FileName);
-                this.DataContext = CurrentSheet;
+                try
+                {
+                    CurrentSheet = CharacterSheet.Load(fileDialog.FileName);
+                    this.DataContext = CurrentSheet;
+                }
+                catch (SheetLoadingException ex)
+                {
+                    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                }
             }
         }
 
