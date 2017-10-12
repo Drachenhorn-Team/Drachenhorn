@@ -1,4 +1,4 @@
-<p align="center"><img src="DSACharacterSheet/Images/DSALogo.gif" alt="DSACharacterSheet Icon" width="350"></p>
+<p align="center"><img src="DSACharacterSheet.Core/Images/DSALogo.gif" alt="DSACharacterSheet Icon" width="350"></p>
 <h1 align="center">DSACharacterSheet</h1>
 
 <p align="center">
