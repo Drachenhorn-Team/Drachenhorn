@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.AttributesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource Morpheus}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="TextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Modifikator" HorizontalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Start" HorizontalAlignment="Center" Grid.Column="2"/>
+        <TextBlock Text="Aktuell" HorizontalAlignment="Center" Grid.Column="3"/>
+
+        <TextBlock Text="Mut" Grid.Column="0" Grid.Row="1"/>
+        <TextBox Text="{Binding Courage.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Text="{Binding Courage.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="1"/>
+        <TextBox Text="{Binding Courage.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="1"/>
+
+        <TextBlock Text="Klugheit" Grid.Column="0" Grid.Row="2"/>
+        <TextBox Text="{Binding Wisdom.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="2"/>
+        <TextBox Text="{Binding Wisdom.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="2"/>
+        <TextBox Text="{Binding Wisdom.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="2"/>
+
+        <TextBlock Text="Intuition" Grid.Column="0" Grid.Row="3"/>
+        <TextBox Text="{Binding Intuition.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="3"/>
+        <TextBox Text="{Binding Intuition.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="3"/>
+        <TextBox Text="{Binding Intuition.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="3"/>
+
+        <TextBlock Text="Charisma" Grid.Column="0" Grid.Row="4"/>
+        <TextBox Text="{Binding Charisma.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="4"/>
+        <TextBox Text="{Binding Charisma.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="4"/>
+        <TextBox Text="{Binding Charisma.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="4"/>
+
+        <TextBlock Text="Fingerfertigkeit" Grid.Column="0" Grid.Row="5"/>
+        <TextBox Text="{Binding Prestidigitation.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="5"/>
+        <TextBox Text="{Binding Prestidigitation.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="5"/>
+        <TextBox Text="{Binding Prestidigitation.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="5"/>
+
+        <TextBlock Text="Gewandtheit" Grid.Column="0" Grid.Row="6"/>
+        <TextBox Text="{Binding Finesse.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="6"/>
+        <TextBox Text="{Binding Finesse.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="6"/>
+        <TextBox Text="{Binding Finesse.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="6"/>
+
+        <TextBlock Text="Kunstitution" Grid.Column="0" Grid.Row="7"/>
+        <TextBox Text="{Binding Constitution.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="7"/>
+        <TextBox Text="{Binding Constitution.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="7"/>
+        <TextBox Text="{Binding Constitution.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="7"/>
+
+        <TextBlock Text="Körperkraft" Grid.Column="0" Grid.Row="8"/>
+        <TextBox Text="{Binding PhysicalStrength.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="8"/>
+        <TextBox Text="{Binding PhysicalStrength.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="8"/>
+        <TextBox Text="{Binding PhysicalStrength.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="8"/>
+
+        <Separator Grid.Row="9" Grid.ColumnSpan="4"/>
+
+        <TextBlock Text="Geschwindigkeit" Grid.Column="0" Grid.Row="10"/>
+        <TextBox Text="{Binding Speed.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="10"/>
+        <TextBox Text="{Binding Speed.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="10"/>
+        <TextBox Text="{Binding Speed.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="10"/>
+    </Grid>
+</UserControl>

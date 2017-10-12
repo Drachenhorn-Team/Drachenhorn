@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.BaseValuesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource Morpheus}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Modifikator" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock Text="Aktuell" Grid.Column="2" Grid.Row="0"/>
+
+        <TextBlock Text="Lebenspunkte" Grid.Column="0" Grid.Row="1"/>
+        <TextBox Text="{Binding HealthPoints.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="{Binding HealthPoints.Value}" Grid.Column="2" Grid.Row="1" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="Ausdauer" Grid.Column="0" Grid.Row="2"/>
+        <TextBox Text="{Binding Endurance.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="{Binding Endurance.Value}" Grid.Column="2" Grid.Row="2" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="Astralenergie" Grid.Column="0" Grid.Row="3"/>
+        <TextBox Text="{Binding AstralEnergy.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock Text="{Binding AstralEnergy.Value}" Grid.Column="2" Grid.Row="3" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="Karmaenergie" Grid.Column="0" Grid.Row="4"/>
+        <TextBox Text="{Binding KarmaEnergy.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4"/>
+        <TextBlock Text="{Binding KarmaEnergy.Value}" Grid.Column="2" Grid.Row="4" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="Magieresistenz" Grid.Column="0" Grid.Row="5"/>
+        <TextBox Text="{Binding MagicResitance.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5"/>
+        <TextBlock Text="{Binding MagicResitance.Value}" Grid.Column="2" Grid.Row="5" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="INI-Basiswert" Grid.Column="0" Grid.Row="6"/>
+        <TextBox Text="{Binding BaseInitiative.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="6"/>
+        <TextBlock Text="{Binding BaseInitiative.Value}" Grid.Column="2" Grid.Row="6" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="AT-Basiswert" Grid.Column="0" Grid.Row="7"/>
+        <TextBox Text="{Binding BaseAttack.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="7"/>
+        <TextBlock Text="{Binding BaseAttack.Value}" Grid.Column="2" Grid.Row="7" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="PA-Basiswert" Grid.Column="0" Grid.Row="8"/>
+        <TextBox Text="{Binding BaseParry.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="8"/>
+        <TextBlock Text="{Binding BaseParry.Value}" Grid.Column="2" Grid.Row="8" Margin="5" TextAlignment="Center"/>
+
+        <TextBlock Text="FK-Basiswert" Grid.Column="0" Grid.Row="9"/>
+        <TextBox Text="{Binding BaseLongRangeAttack.Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="9"/>
+        <TextBlock Text="{Binding BaseLongRangeAttack.Value}" Grid.Column="2" Grid.Row="9" Margin="5" TextAlignment="Center"/>
+
+    </Grid>
+</UserControl>
