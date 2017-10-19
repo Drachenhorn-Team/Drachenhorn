@@ -1,4 +1,5 @@
 ﻿using DSACharacterSheet.Desktop.Dialogs;
+using DSACharacterSheet.Desktop.IOService;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using Microsoft.Win32;
@@ -37,7 +38,7 @@ namespace DSACharacterSheet.Desktop
                 {
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(".dsac"))
-                        CurrentSheet = CharacterSheet.Load(temp);
+                        CurrentSheet = CharacterSheet.Load(new SaveIOService(temp).GetStream());
                 }
 
             this.DataContext = CurrentSheet;
@@ -48,7 +49,7 @@ namespace DSACharacterSheet.Desktop
             if (!String.IsNullOrEmpty(CurrentSheet.FilePath))
                 try
                 {
-                    CurrentSheet.Save();
+                    CurrentSheet.Save(new SaveIOService(CurrentSheet.FilePath).GetStream());
                 }
                 catch (SheetSavingException ex)
                 {
@@ -72,7 +73,7 @@ namespace DSACharacterSheet.Desktop
             if (fileDialog.ShowDialog() == true)
                 try
                 {
-                    CurrentSheet.Save(fileDialog.FileName);
+                    CurrentSheet.Save(new SaveIOService(fileDialog.FileName).GetStream());
                 }
                 catch (SheetSavingException ex)
                 {
@@ -91,11 +92,13 @@ namespace DSACharacterSheet.Desktop
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
             };
 
+            var loadService = new LoadIOService(fileDialog);
+
             if (fileDialog.ShowDialog(this) == true)
             {
                 try
                 {
-                    CurrentSheet = CharacterSheet.Load(fileDialog.FileName);
+                    CurrentSheet = CharacterSheet.Load(new LoadIOService(fileDialog.FileName).GetStream());
                     this.DataContext = CurrentSheet;
                 }
                 catch (SheetLoadingException ex)

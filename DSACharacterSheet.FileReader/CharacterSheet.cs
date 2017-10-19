@@ -219,43 +219,31 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
-        public static CharacterSheet Load(String path)
+        public static CharacterSheet Load(FileStream fileStream)
         {
             try
             {
-                using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.ReadWrite))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
-                    CharacterSheet temp = (CharacterSheet)serializer.Deserialize(stream);
-                    temp.FilePath = path;
-                    return temp;
-                }
+                XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                CharacterSheet temp = (CharacterSheet)serializer.Deserialize(fileStream);
+                temp.FilePath = fileStream.Name;
+                return temp;
             }
             catch (IOException e)
             {
-                throw new SheetLoadingException(path, e);
+                throw new SheetLoadingException(fileStream.Name, e);
             }
         }
 
-        public void Save()
-        {
-            if (!String.IsNullOrEmpty(FilePath))
-                Save(FilePath);
-        }
-
-        public void Save(String path)
+        public void Save(FileStream fileStream)
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter(path))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
-                    serializer.Serialize(writer, this);
-                }
+                XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                serializer.Serialize(fileStream, this);
             }
             catch (IOException e)
             {
-                throw new SheetSavingException(path, e);
+                throw new SheetSavingException(fileStream.Name, e);
             }
         }
 
