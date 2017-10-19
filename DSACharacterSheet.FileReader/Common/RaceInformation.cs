@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
-    public class RaceInformation : INotifyPropertyChanged
+    public class RaceInformation : BindableBase
     {
         [XmlIgnore]
         private string _name;
@@ -22,7 +22,7 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_name == value)
                     return;
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged();
             }
         }
 
@@ -37,19 +37,8 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_gpCost == value)
                     return;
                 _gpCost = value;
-                OnPropertyChanged("GPCost");
+                OnPropertyChanged();
             }
         }
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

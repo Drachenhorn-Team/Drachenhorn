@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class Attribute : INotifyPropertyChanged
+    public class Attribute : BindableBase
     {
         [XmlIgnore]
         private double _startValue;
@@ -22,7 +22,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_startValue == value)
                     return;
                 _startValue = value;
-                OnPropertyChanged("StartValue");
+                OnPropertyChanged();
             }
         }
 
@@ -37,7 +37,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_modifier == value)
                     return;
                 _modifier = value;
-                OnPropertyChanged("Modifier");
+                OnPropertyChanged();
             }
         }
 
@@ -52,20 +52,8 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_currentValue == value)
                     return;
                 _currentValue = value;
-                OnPropertyChanged("CurrentValue");
+                OnPropertyChanged();
             }
         }
-
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

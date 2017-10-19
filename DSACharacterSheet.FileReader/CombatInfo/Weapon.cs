@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.FileReader.Common
+namespace DSACharacterSheet.FileReader.CombatInfo
 {
     [Serializable]
-    public class CultureInformation : BindableBase
+    public class Weapon : BindableBase
     {
+        #region Properties
+
         [XmlIgnore]
         private string _name;
         [XmlAttribute("Name")]
@@ -22,38 +23,40 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_name == value)
                     return;
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged();
             }
         }
 
         [XmlIgnore]
-        private string _spezification;
-        [XmlAttribute("Spezification")]
-        public string Spezification
+        private int _handicap;
+        [XmlAttribute("Handicap")]
+        public int Handicap
         {
-            get { return _spezification; }
+            get { return _handicap; }
             set
             {
-                if (_spezification == value)
+                if (_handicap == value)
                     return;
-                _spezification = value;
-                OnPropertyChanged("Spezification");
+                _handicap = value;
+                OnPropertyChanged();
             }
         }
 
         [XmlIgnore]
-        private double _gpCost;
-        [XmlAttribute("GPCost")]
-        public double GPCost
+        private WeaponType _type;
+        [XmlAttribute("Type")]
+        public WeaponType Type
         {
-            get { return _gpCost; }
+            get { return _type; }
             set
             {
-                if (_gpCost == value)
+                if (_type == value)
                     return;
-                _gpCost = value;
-                OnPropertyChanged("GPCost");
+                _type = value;
+                OnPropertyChanged();
             }
         }
+
+        #endregion Properties
     }
 }

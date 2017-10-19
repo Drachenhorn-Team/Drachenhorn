@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DSACharacterSheet.FileReader.Advantages
 {
-    public class Disadvantage : AdvantageBase, INotifyPropertyChanged
+    public class Disadvantage : AdvantageBase
     {
     }
 }

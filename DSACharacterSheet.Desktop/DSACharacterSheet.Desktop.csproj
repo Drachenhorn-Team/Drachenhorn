@@ -138,6 +138,9 @@
     <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
       <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CombatView.xaml.cs">
+      <DependentUpon>CombatView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SkillListControl.xaml.cs">
       <DependentUpon>SkillListControl.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,10 @@
     <Page Include="UserControls\CharacterSheetControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CombatView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SkillListControl.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -10,7 +10,7 @@ using DSACharacterSheet.FileReader.Calculation;
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class BaseValue : INotifyPropertyChanged
+    public class BaseValue : BindableBase
     {
         #region Properties
 
@@ -40,7 +40,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_formula == value)
                     return;
                 _formula = value;
-                OnPropertyChanged("null");
+                OnPropertyChanged(null);
             }
         }
 
@@ -52,17 +52,5 @@ namespace DSACharacterSheet.FileReader.Skills
         }
 
         #endregion Properties
-
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
-    public class SocialInformation : INotifyPropertyChanged
+    public class SocialInformation : BindableBase
     {
         #region Properties
 
@@ -24,7 +24,7 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_class == value)
                     return;
                 _class = value;
-                OnPropertyChanged("Class");
+                OnPropertyChanged();
             }
         }
 
@@ -39,7 +39,7 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_title == value)
                     return;
                 _title = value;
-                OnPropertyChanged("Title");
+                OnPropertyChanged();
             }
         }
 
@@ -54,7 +54,7 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_socialClass == value)
                     return;
                 _socialClass = value;
-                OnPropertyChanged("SocialClass");
+                OnPropertyChanged();
             }
         }
 
@@ -69,21 +69,10 @@ namespace DSACharacterSheet.FileReader.Common
                 if (_background == value)
                     return;
                 _background = value;
-                OnPropertyChanged("Background");
+                OnPropertyChanged();
             }
         }
 
         #endregion Properties
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

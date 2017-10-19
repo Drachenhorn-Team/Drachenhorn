@@ -10,7 +10,7 @@ using DSACharacterSheet.FileReader.Enums;
 namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
-    public class CharacterInformation : INotifyPropertyChanged
+    public class CharacterInformation : BindableBase
     {
         #region Properties
 
@@ -180,16 +180,5 @@ namespace DSACharacterSheet.FileReader.Common
         }
 
         #endregion Properties
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

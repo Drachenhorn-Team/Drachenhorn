@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Advantages
 {
     [Serializable]
-    public class AdvantageBase : INotifyPropertyChanged
+    public class AdvantageBase : BindableBase
     {
         #region Properties
 
@@ -59,16 +59,5 @@ namespace DSACharacterSheet.FileReader.Advantages
         }
 
         #endregion Properties
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

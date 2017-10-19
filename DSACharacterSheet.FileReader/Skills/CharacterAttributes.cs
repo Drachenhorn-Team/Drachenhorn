@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class CharacterAttributes : INotifyPropertyChanged
+    public class CharacterAttributes : BindableBase
     {
         #region Properties
 
@@ -24,7 +24,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_courage == value)
                     return;
                 _courage = value;
-                OnPropertyChanged("Courage");
+                OnPropertyChanged();
             }
         }
 
@@ -39,7 +39,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_wisdom == value)
                     return;
                 _wisdom = value;
-                OnPropertyChanged("Wisdom");
+                OnPropertyChanged();
             }
         }
 
@@ -54,7 +54,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_intuition == value)
                     return;
                 _intuition = value;
-                OnPropertyChanged("Intuition");
+                OnPropertyChanged();
             }
         }
 
@@ -69,7 +69,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_charisma == value)
                     return;
                 _charisma = value;
-                OnPropertyChanged("Charisma");
+                OnPropertyChanged();
             }
         }
 
@@ -84,7 +84,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_prestidigitation == value)
                     return;
                 _prestidigitation = value;
-                OnPropertyChanged("Prestidigitation");
+                OnPropertyChanged();
             }
         }
 
@@ -99,7 +99,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_finesse == value)
                     return;
                 _finesse = value;
-                OnPropertyChanged("Finesse");
+                OnPropertyChanged();
             }
         }
 
@@ -114,7 +114,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_constitution == value)
                     return;
                 _constitution = value;
-                OnPropertyChanged("Constitution");
+                OnPropertyChanged();
             }
         }
 
@@ -129,7 +129,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_physicalStrength == value)
                     return;
                 _physicalStrength = value;
-                OnPropertyChanged("PhysicalStrength");
+                OnPropertyChanged();
             }
         }
 
@@ -144,22 +144,10 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_speed == value)
                     return;
                 _speed = value;
-                OnPropertyChanged("Speed");
+                OnPropertyChanged();
             }
         }
 
         #endregion Properties
-
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

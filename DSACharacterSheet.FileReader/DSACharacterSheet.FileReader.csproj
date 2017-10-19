@@ -45,8 +45,12 @@
     <Compile Include="Advantages\AdvantageBase.cs" />
     <Compile Include="Advantages\Disadvantage.cs" />
     <Compile Include="AdventurePoints.cs" />
+    <Compile Include="BindableBase.cs" />
     <Compile Include="Calculation\Formula.cs" />
     <Compile Include="CharacterSheet.cs" />
+    <Compile Include="CombatInfo\CombatInformation.cs" />
+    <Compile Include="CombatInfo\Weapon.cs" />
+    <Compile Include="CombatInfo\WeaponType.cs" />
     <Compile Include="Common\CharacterInformation.cs" />
     <Compile Include="Common\CultureInformation.cs" />
     <Compile Include="Common\ProfessionInformation.cs" />

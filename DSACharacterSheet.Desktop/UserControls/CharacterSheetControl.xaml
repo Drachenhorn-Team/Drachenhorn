@@ -134,5 +134,13 @@
         <Border>
             <controls:AdventurePointsControl DataContext="{Binding AdventurePoints}"/>
         </Border>
+
+        <Border>
+            <TextBlock Text="Skills"/>
+        </Border>
+        
+        <Border>
+            <controls:CombatView DataContext="{Binding CombatInformation}"/>
+        </Border>
     </StackPanel>
 </UserControl>

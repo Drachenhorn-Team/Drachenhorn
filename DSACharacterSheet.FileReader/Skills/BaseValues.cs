@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class BaseValues : INotifyPropertyChanged
+    public class BaseValues : BindableBase
     {
         #region Properties
 
@@ -24,7 +24,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_healthPoints == value)
                     return;
                 _healthPoints = value;
-                OnPropertyChanged("HealthPoints");
+                OnPropertyChanged();
             }
         }
 
@@ -39,7 +39,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_endurance == value)
                     return;
                 _endurance = value;
-                OnPropertyChanged("Endurance");
+                OnPropertyChanged();
             }
         }
 
@@ -54,7 +54,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_astralEnergy == value)
                     return;
                 _astralEnergy = value;
-                OnPropertyChanged("AstralEnergy");
+                OnPropertyChanged();
             }
         }
 
@@ -69,7 +69,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_karmaEnergy == value)
                     return;
                 _karmaEnergy = value;
-                OnPropertyChanged("KarmaEnergy");
+                OnPropertyChanged();
             }
         }
 
@@ -84,7 +84,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_magicResistance == value)
                     return;
                 _magicResistance = value;
-                OnPropertyChanged("MagicResistance");
+                OnPropertyChanged();
             }
         }
 
@@ -99,7 +99,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_baseInitiative == value)
                     return;
                 _baseInitiative = value;
-                OnPropertyChanged("BaseInitiative");
+                OnPropertyChanged();
             }
         }
 
@@ -114,7 +114,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_baseAttack == value)
                     return;
                 _baseAttack = value;
-                OnPropertyChanged("BaseAttack");
+                OnPropertyChanged();
             }
         }
 
@@ -129,7 +129,7 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_baseParry == value)
                     return;
                 _baseParry = value;
-                OnPropertyChanged("BaseParry");
+                OnPropertyChanged();
             }
         }
 
@@ -144,23 +144,10 @@ namespace DSACharacterSheet.FileReader.Skills
                 if (_baseLongRangeAttack == value)
                     return;
                 _baseLongRangeAttack = value;
-                OnPropertyChanged("BaseLongRangeAttack");
+                OnPropertyChanged();
             }
         }
 
         #endregion Properties
-
-
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }

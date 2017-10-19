@@ -12,11 +12,12 @@ using DSACharacterSheet.FileReader.Common;
 using DSACharacterSheet.FileReader.Enums;
 using DSACharacterSheet.FileReader.Skills;
 using DSACharacterSheet.FileReader.Exceptions;
+using DSACharacterSheet.FileReader.CombatInfo;
 
 namespace DSACharacterSheet.FileReader
 {
     [Serializable]
-    public class CharacterSheet : INotifyPropertyChanged
+    public class CharacterSheet : BindableBase
     {
         #region Properties
 
@@ -200,6 +201,21 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
+        [XmlIgnore]
+        private CombatInformation _combatInformation = new CombatInformation();
+        [XmlElement("CombatInformation")]
+        public CombatInformation CombatInformation
+        {
+            get { return _combatInformation; }
+            set
+            {
+                if (_combatInformation == value)
+                    return;
+                _combatInformation = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
         #region Save/Load
@@ -248,15 +264,5 @@ namespace DSACharacterSheet.FileReader
         }
 
         #endregion Save/Load
-
-        #region OnPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion OnPropertyChanged
     }
 }
