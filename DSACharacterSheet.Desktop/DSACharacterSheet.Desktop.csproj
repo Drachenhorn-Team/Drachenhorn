@@ -115,8 +115,6 @@
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IOService\LoadIOService.cs" />
-    <Compile Include="IOService\SaveIOService.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
@@ -138,8 +136,8 @@
     <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
       <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CombatView.xaml.cs">
-      <DependentUpon>CombatView.xaml</DependentUpon>
+    <Compile Include="UserControls\CombatControl.xaml.cs">
+      <DependentUpon>CombatControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SkillListControl.xaml.cs">
       <DependentUpon>SkillListControl.xaml</DependentUpon>
@@ -148,20 +146,15 @@
       <DependentUpon>SocialInformationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\SkillButton.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Dialogs\ExceptionMessageBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Splash\SplashScreen.xaml">
@@ -192,7 +185,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\CombatView.xaml">
+    <Page Include="UserControls\CombatControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +196,10 @@
     <Page Include="UserControls\SocialInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

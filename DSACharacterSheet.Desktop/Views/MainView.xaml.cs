@@ -1,5 +1,5 @@
-﻿using DSACharacterSheet.Desktop.Dialogs;
-using DSACharacterSheet.Desktop.IOService;
+﻿using DSACharacterSheet.Core.ViewModel;
+using DSACharacterSheet.Desktop.Dialogs;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using Microsoft.Win32;
@@ -18,18 +18,36 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DSACharacterSheet.Desktop
+namespace DSACharacterSheet.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für MainView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : Window
     {
-        private CharacterSheet CurrentSheet = new CharacterSheet();
-
-
-        public MainWindow()
+        private CharacterSheet CurrentCharacterSheet
         {
+            get
+            {
+                if (this.DataContext != null && !(this.DataContext is CharacterSheetViewModel))
+                    return null;
+
+                return ((CharacterSheetViewModel)this.DataContext).CurrentSheet;
+            }
+            set
+            {
+                if (this.DataContext != null && !(this.DataContext is CharacterSheetViewModel))
+                    return;
+
+                ((CharacterSheetViewModel)this.DataContext).CurrentSheet = value;
+            }
+        }
+
+
+        public MainView()
+        {
+            this.DataContext = new CharacterSheetViewModel();
+
             InitializeComponent();
 
             var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
@@ -38,18 +56,17 @@ namespace DSACharacterSheet.Desktop
                 {
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(".dsac"))
-                        CurrentSheet = CharacterSheet.Load(new SaveIOService(temp).GetStream());
+                        CurrentCharacterSheet = CharacterSheet.Load(temp);
                 }
-
-            this.DataContext = CurrentSheet;
         }
+
 
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(CurrentSheet.FilePath))
+            if (!String.IsNullOrEmpty(CurrentCharacterSheet.FilePath))
                 try
                 {
-                    CurrentSheet.Save(new SaveIOService(CurrentSheet.FilePath).GetStream());
+                    CurrentCharacterSheet.Save(CurrentCharacterSheet.FilePath);
                 }
                 catch (SheetSavingException ex)
                 {
@@ -63,7 +80,7 @@ namespace DSACharacterSheet.Desktop
         {
             var fileDialog = new SaveFileDialog
             {
-                FileName = String.IsNullOrEmpty(CurrentSheet.Name) ? "Charakterbogen" : CurrentSheet.Name,
+                FileName = String.IsNullOrEmpty(CurrentCharacterSheet.Name) ? "Charakterbogen" : CurrentCharacterSheet.Name,
                 Filter = "DSA-Charakterbogen (*.dsac)|*.dsac",
                 FilterIndex = 1,
                 AddExtension = true,
@@ -73,7 +90,7 @@ namespace DSACharacterSheet.Desktop
             if (fileDialog.ShowDialog() == true)
                 try
                 {
-                    CurrentSheet.Save(new SaveIOService(fileDialog.FileName).GetStream());
+                    CurrentCharacterSheet.Save(fileDialog.FileName);
                 }
                 catch (SheetSavingException ex)
                 {
@@ -92,14 +109,12 @@ namespace DSACharacterSheet.Desktop
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
             };
 
-            var loadService = new LoadIOService(fileDialog);
-
             if (fileDialog.ShowDialog(this) == true)
             {
                 try
                 {
-                    CurrentSheet = CharacterSheet.Load(new LoadIOService(fileDialog.FileName).GetStream());
-                    this.DataContext = CurrentSheet;
+                    CurrentCharacterSheet = CharacterSheet.Load(fileDialog.FileName);
+                    this.DataContext = CurrentCharacterSheet;
                 }
                 catch (SheetLoadingException ex)
                 {
@@ -110,8 +125,7 @@ namespace DSACharacterSheet.Desktop
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            CurrentSheet = new CharacterSheet();
-            this.DataContext = CurrentSheet;
+            CurrentCharacterSheet = new CharacterSheet();
         }
     }
 }

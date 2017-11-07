@@ -235,31 +235,37 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
-        public static CharacterSheet Load(FileStream fileStream)
+        public static CharacterSheet Load(string path)
         {
             try
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
-                CharacterSheet temp = (CharacterSheet)serializer.Deserialize(fileStream);
-                temp.FilePath = fileStream.Name;
-                return temp;
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                    CharacterSheet temp = (CharacterSheet)serializer.Deserialize(stream);
+                    temp.FilePath = path;
+                    return temp;
+                }
             }
             catch (IOException e)
             {
-                throw new SheetLoadingException(fileStream.Name, e);
+                throw new SheetLoadingException(path, e);
             }
         }
 
-        public void Save(FileStream fileStream)
+        public void Save(string path)
         {
             try
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
-                serializer.Serialize(fileStream, this);
+                using (var stream = new StreamWriter(path))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(CharacterSheet));
+                    serializer.Serialize(stream, this);
+                }
             }
             catch (IOException e)
             {
-                throw new SheetSavingException(fileStream.Name, e);
+                throw new SheetSavingException(path, e);
             }
         }
 
