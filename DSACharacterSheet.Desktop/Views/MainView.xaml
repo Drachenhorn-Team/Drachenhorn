@@ -33,7 +33,7 @@
             </Ribbon.ApplicationMenu>
         </Ribbon>
         <ScrollViewer PanningMode="VerticalOnly">
-            <controls:CharacterSheetControl/>
+            <controls:CharacterSheetControl DataContext="{Binding CurrentSheet}"/>
         </ScrollViewer>
     </DockPanel>
 </Window>

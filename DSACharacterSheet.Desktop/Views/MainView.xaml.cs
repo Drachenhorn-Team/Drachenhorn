@@ -90,7 +90,7 @@ namespace DSACharacterSheet.Desktop.Views
             if (fileDialog.ShowDialog() == true)
                 try
                 {
-                    CurrentCharacterSheet.Save(fileDialog.FileName);
+                    CurrentCharacterSheet?.Save(fileDialog.FileName);
                 }
                 catch (SheetSavingException ex)
                 {
@@ -114,7 +114,6 @@ namespace DSACharacterSheet.Desktop.Views
                 try
                 {
                     CurrentCharacterSheet = CharacterSheet.Load(fileDialog.FileName);
-                    this.DataContext = CurrentCharacterSheet;
                 }
                 catch (SheetLoadingException ex)
                 {

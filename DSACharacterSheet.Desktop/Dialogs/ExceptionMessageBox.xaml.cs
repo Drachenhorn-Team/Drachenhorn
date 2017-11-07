@@ -31,14 +31,16 @@ namespace DSACharacterSheet.Desktop.Dialogs
             this.userExceptionMessage = userExceptionMessage;
             textBox1.Text = userExceptionMessage;
 
-            TreeViewItem treeViewItem = new TreeViewItem();
-            treeViewItem.Header = "Exception";
+            var treeViewItem = new TreeViewItem
+            {
+                Header = "Exception"
+            };
             treeViewItem.ExpandSubtree();
-            buildTreeLayer(e, treeViewItem);
+            BuildTreeLayer(e, treeViewItem);
             treeView1.Items.Add(treeViewItem);
         }
 
-        void buildTreeLayer(Exception e, TreeViewItem parent)
+        void BuildTreeLayer(Exception e, TreeViewItem parent)
         {
             String exceptionInformation = "\n\r\n\r" + e.GetType().ToString() + "\n\r\n\r";
             parent.DisplayMemberPath = "Header";
@@ -51,9 +53,11 @@ namespace DSACharacterSheet.Desktop.Dialogs
                 {
                     if (info.Name == "InnerException")
                     {
-                        TreeViewItem treeViewItem = new TreeViewItem();
-                        treeViewItem.Header = info.Name;
-                        buildTreeLayer(e.InnerException, treeViewItem);
+                        var treeViewItem = new TreeViewItem
+                        {
+                            Header = info.Name
+                        };
+                        BuildTreeLayer(e.InnerException, treeViewItem);
                         parent.Items.Add(treeViewItem);
                     }
                     else
@@ -68,7 +72,7 @@ namespace DSACharacterSheet.Desktop.Dialogs
         }
 
 
-        private void treeView1_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void TreeView1_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (e.NewValue.GetType() == typeof(TreeViewItem)) textBox1.Text = "Exception";
             else textBox1.Text = e.NewValue.ToString();
@@ -85,14 +89,14 @@ namespace DSACharacterSheet.Desktop.Dialogs
             }
         }
 
-        private void buttonClipboard_Click(object sender, RoutedEventArgs e)
+        private void ButtonClipboard_Click(object sender, RoutedEventArgs e)
         {
             string clipboardMessage = userExceptionMessage + "\n\r\n\r";
             foreach (string info in ExceptionInformationList) clipboardMessage += info;
             Clipboard.SetText(clipboardMessage);
         }
 
-        private void buttonExit_Click(object sender, RoutedEventArgs e)
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
