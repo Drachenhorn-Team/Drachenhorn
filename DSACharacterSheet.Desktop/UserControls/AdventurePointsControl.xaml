@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="800">
@@ -26,11 +27,11 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Gesamt: " Grid.Column="0"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.TotalAP}" Grid.Column="0"/>
         <TextBox Text="{Binding Total, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="5"/>
-        <TextBlock Text="Eingesetzte AP: " Grid.Column="2"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.UsedAP}" Grid.Column="2"/>
         <TextBox Text="{Binding Used, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Margin="5"/>
-        <TextBlock Text="Guthaben: " Grid.Column="4"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.LeftoverAP}" Grid.Column="4"/>
         <TextBox Text="{Binding CurrentLeft, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" IsReadOnly="True" Grid.Column="5" Margin="5"/>
     </Grid>
 </UserControl>

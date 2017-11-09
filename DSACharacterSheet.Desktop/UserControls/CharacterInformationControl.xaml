@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:enum="clr-namespace:DSACharacterSheet.FileReader.Enums;assembly=DSACharacterSheet.FileReader"
@@ -40,25 +41,25 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Geschlecht" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Gender}" Grid.Column="0" Grid.Row="0"/>
         <ComboBox Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource GenderEnum}}" Grid.Column="1" Grid.Row="0" Margin="5"/>
 
-        <TextBlock Text="Alter" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Age}" Grid.Column="0" Grid.Row="1"/>
         <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
 
-        <TextBlock Text="Größe" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Height}" Grid.Column="0" Grid.Row="2"/>
         <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2"/>
 
-        <TextBlock Text="Gewicht" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Weight}" Grid.Column="0" Grid.Row="3"/>
         <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
 
-        <TextBlock Text="Haarfarbe" Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.HairColor}" Grid.Column="0" Grid.Row="4"/>
         <TextBox Text="{Binding HairColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4"/>
 
-        <TextBlock Text="Augenfarbe" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.EyeColor}" Grid.Column="0" Grid.Row="5"/>
         <TextBox Text="{Binding EyeColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5"/>
 
-        <TextBlock Text="Aussehen" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Appeaeance}" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" VerticalAlignment="Stretch"/>
 
     </Grid>

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -31,16 +32,16 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Stand" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="{lang:Translate SocialInformation.Class}" Grid.Column="0" Grid.Row="0"/>
         <TextBox Text="{Binding Class, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
 
-        <TextBlock Text="Title" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="{lang:Translate SocialInformation.Title}" Grid.Column="0" Grid.Row="1"/>
         <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
 
-        <TextBlock Text="Sozialstatus" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="{lang:Translate SocialInformation.SocialClass}" Grid.Column="0" Grid.Row="2"/>
         <TextBox Text="{Binding SocialClass, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Grid.Column="1" Grid.Row="2"/>
 
-        <TextBlock Text="Familie/Herkunft/Hintergrund" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"/>
+        <TextBlock Text="{lang:Translate SocialInformation.Background}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"/>
         <TextBox Text="{Binding Background, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Height="200" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"/>
     </Grid>
 </UserControl>

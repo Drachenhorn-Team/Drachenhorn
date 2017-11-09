@@ -117,6 +117,81 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Attribute.Charisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="Attribute.Constitution" xml:space="preserve">
+    <value>Konstitution</value>
+  </data>
+  <data name="Attribute.Courage" xml:space="preserve">
+    <value>Mut</value>
+  </data>
+  <data name="Attribute.Finesse" xml:space="preserve">
+    <value>Gewandtheit</value>
+  </data>
+  <data name="Attribute.Intuition" xml:space="preserve">
+    <value>Intuition</value>
+  </data>
+  <data name="Attribute.PhysicalStrength" xml:space="preserve">
+    <value>Körperkraft</value>
+  </data>
+  <data name="Attribute.Prestidigitation" xml:space="preserve">
+    <value>Fingerfertigkeit</value>
+  </data>
+  <data name="Attribute.Speed" xml:space="preserve">
+    <value>Geschwindigkeit</value>
+  </data>
+  <data name="Attribute.Wisdom" xml:space="preserve">
+    <value>Klugheit</value>
+  </data>
+  <data name="BaseValue.AstralEnergy" xml:space="preserve">
+    <value>Astralenergie</value>
+  </data>
+  <data name="BaseValue.BaseAttack" xml:space="preserve">
+    <value>AT-Basiswert</value>
+  </data>
+  <data name="BaseValue.BaseInitiative" xml:space="preserve">
+    <value>INI-Basiswert</value>
+  </data>
+  <data name="BaseValue.BaseLongRangeAttack" xml:space="preserve">
+    <value>FK-Basiswert</value>
+  </data>
+  <data name="BaseValue.BaseParry" xml:space="preserve">
+    <value>PA-Basiswert</value>
+  </data>
+  <data name="BaseValue.Endurance" xml:space="preserve">
+    <value>Ausdauer</value>
+  </data>
+  <data name="BaseValue.HealthPoints" xml:space="preserve">
+    <value>Lebenspunkte</value>
+  </data>
+  <data name="BaseValue.KarmaEnergy" xml:space="preserve">
+    <value>Karmaenergie</value>
+  </data>
+  <data name="BaseValue.MagicResistance" xml:space="preserve">
+    <value>Magieresistenz</value>
+  </data>
+  <data name="CharacterInformation.Age" xml:space="preserve">
+    <value>Alter</value>
+  </data>
+  <data name="CharacterInformation.Appeaeance" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
+  <data name="CharacterInformation.EyeColor" xml:space="preserve">
+    <value>Augenfarbe</value>
+  </data>
+  <data name="CharacterInformation.Gender" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="CharacterInformation.HairColor" xml:space="preserve">
+    <value>Haarfarbe</value>
+  </data>
+  <data name="CharacterInformation.Height" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="CharacterInformation.Weight" xml:space="preserve">
+    <value>Gewicht</value>
+  </data>
   <data name="CharacterSheet.BaseValues" xml:space="preserve">
     <value>Eigenschaften &amp; Basiswerte</value>
   </data>
@@ -126,11 +201,26 @@
   <data name="CharacterSheet.Culture" xml:space="preserve">
     <value>Kultur</value>
   </data>
+  <data name="CharacterSheet.CurrentValue" xml:space="preserve">
+    <value>Aktuell</value>
+  </data>
   <data name="CharacterSheet.GPBase" xml:space="preserve">
     <value>GP-Basis</value>
   </data>
   <data name="CharacterSheet.GPCost" xml:space="preserve">
     <value>GP-Modifikator</value>
+  </data>
+  <data name="CharacterSheet.Handycap" xml:space="preserve">
+    <value>Behinderung</value>
+  </data>
+  <data name="CharacterSheet.Handycap.Abbr" xml:space="preserve">
+    <value>BE</value>
+  </data>
+  <data name="CharacterSheet.LeftoverAP" xml:space="preserve">
+    <value>AP-Guthaben</value>
+  </data>
+  <data name="CharacterSheet.Modifyer" xml:space="preserve">
+    <value>Modifikator</value>
   </data>
   <data name="CharacterSheet.Name" xml:space="preserve">
     <value>Name</value>
@@ -147,13 +237,40 @@
   <data name="CharacterSheet.Specialization" xml:space="preserve">
     <value>Spezialisierung</value>
   </data>
+  <data name="CharacterSheet.StartValue" xml:space="preserve">
+    <value>Startwert</value>
+  </data>
   <data name="CharacterSheet.Title" xml:space="preserve">
     <value>Heldendokument</value>
+  </data>
+  <data name="CharacterSheet.TotalAP" xml:space="preserve">
+    <value>Gesamt-AP</value>
+  </data>
+  <data name="CharacterSheet.UsedAP" xml:space="preserve">
+    <value>Eingesetzte AP</value>
+  </data>
+  <data name="CharacterSheet.WeaponInformation" xml:space="preserve">
+    <value>Waffen &amp; Kampfwerte</value>
+  </data>
+  <data name="SocialInformation.Background" xml:space="preserve">
+    <value>Familie/Herkunft/Hintergrund</value>
+  </data>
+  <data name="SocialInformation.Class" xml:space="preserve">
+    <value>Klasse</value>
+  </data>
+  <data name="SocialInformation.SocialClass" xml:space="preserve">
+    <value>Sozialstatus</value>
+  </data>
+  <data name="SocialInformation.Title" xml:space="preserve">
+    <value>Titel</value>
   </data>
   <data name="Splash.Loading" xml:space="preserve">
     <value>Lade. Bitte warten.</value>
   </data>
   <data name="Splash.Title" xml:space="preserve">
     <value>Splash</value>
+  </data>
+  <data name="WeaponInformation.Type" xml:space="preserve">
+    <value>Typ</value>
   </data>
 </root>
