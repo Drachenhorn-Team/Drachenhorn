@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,48 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CharacterSheet.BaseValues" xml:space="preserve">
+    <value>Eigenschaften &amp; Basiswerte</value>
+  </data>
+  <data name="CharacterSheet.CoatOfArms" xml:space="preserve">
+    <value>Wappen/Portrait</value>
+  </data>
+  <data name="CharacterSheet.Culture" xml:space="preserve">
+    <value>Kultur</value>
+  </data>
+  <data name="CharacterSheet.GPBase" xml:space="preserve">
+    <value>GP-Basis</value>
+  </data>
+  <data name="CharacterSheet.GPCost" xml:space="preserve">
+    <value>GP-Modifikator</value>
+  </data>
+  <data name="CharacterSheet.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CharacterSheet.Profession" xml:space="preserve">
+    <value>Profession</value>
+  </data>
+  <data name="CharacterSheet.Race" xml:space="preserve">
+    <value>Rasse</value>
+  </data>
+  <data name="CharacterSheet.Skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="CharacterSheet.Specialization" xml:space="preserve">
+    <value>Spezialisierung</value>
+  </data>
+  <data name="CharacterSheet.Title" xml:space="preserve">
+    <value>Heldendokument</value>
+  </data>
+  <data name="Splash.Loading" xml:space="preserve">
+    <value>Lade. Bitte warten.</value>
+  </data>
+  <data name="Splash.Title" xml:space="preserve">
+    <value>Splash</value>
+  </data>
 </root>

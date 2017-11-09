@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Splash"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent"
-        Title="SplashScreen" Height="250" Width="500">
+        Title="{lang:Translate Splash.Title}" Height="250" Width="500">
     <Border Background="LightGray" CornerRadius="50" BorderThickness="2" BorderBrush="DarkGray">
         <Grid Margin="20">
             <Grid.RowDefinitions>
@@ -16,7 +17,7 @@
             </Grid.RowDefinitions>
 
             <Image Source="/DSACharacterSheet.Core;component\Images\DSALogo.gif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
-            <TextBlock Text="Lade. Bitte warten." HorizontalAlignment="Center" Grid.Row="1" FontSize="25" Style="{StaticResource Morpheus}"/>
+            <TextBlock Text="{lang:Translate Splash.Loading}" HorizontalAlignment="Center" Grid.Row="1" FontSize="25" Style="{StaticResource Morpheus}"/>
 
         </Grid>
     </Border>

@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <DataGrid MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding .}" Margin="5" PreviewMouseWheel="DataGrid_PreviewMouseWheel" ScrollViewer.PanningMode="None">
         <DataGrid.Columns>
-            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="Auto"/>
-            <DataGridTextColumn Header="Spezialisierung" Binding="{Binding Specialisation}" Width="*"/>
-            <DataGridTextColumn Header="GP-Kosten" Binding="{Binding GPCost}" Width="Auto"/>
+            <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Binding="{Binding Name}" Width="Auto"/>
+            <DataGridTextColumn Header="{lang:Translate CharacterSheet.Specialization}" Binding="{Binding Specialisation}" Width="*"/>
+            <DataGridTextColumn Header="{lang:Translate CharacterSheet.GPCost}" Binding="{Binding GPCost}" Width="Auto"/>
         </DataGrid.Columns>
     </DataGrid>
 </UserControl>
