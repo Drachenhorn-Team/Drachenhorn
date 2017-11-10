@@ -15,7 +15,7 @@ namespace DSACharacterSheet.Desktop.Settings
     {
         #region Properties
 
-        [XmlAttribute("CurrentCulture")]
+        [XmlElement("CurrentCulture")]
         public string CurrentCulture
         {
             get { return LanguageManager.CurrentCulture.DisplayName; }
@@ -60,9 +60,10 @@ namespace DSACharacterSheet.Desktop.Settings
                     return temp;
                 }
             }
-            catch (IOException e) { }
-
-            return new Properties();
+            catch (IOException)
+            {
+                return new Properties();
+            }
         }
 
         public void Save()
@@ -78,7 +79,7 @@ namespace DSACharacterSheet.Desktop.Settings
                     serializer.Serialize(stream, this);
                 }
             }
-            catch (IOException e) { }
+            catch (IOException) { }
         }
 
         #endregion Save/Load
