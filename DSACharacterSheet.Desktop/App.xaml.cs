@@ -1,4 +1,5 @@
 ﻿using DSACharacterSheet.Desktop.Dialogs;
+using DSACharacterSheet.Desktop.Settings;
 using DSACharacterSheet.Desktop.Views;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace DSACharacterSheet.Desktop
         {
             Splash.SplashScreen splash = new Splash.SplashScreen();
             splash.Show();
+            PropertiesManager.Initialize();
             mainWindow = new MainView();
             mainWindow.Show();
             splash.Close();

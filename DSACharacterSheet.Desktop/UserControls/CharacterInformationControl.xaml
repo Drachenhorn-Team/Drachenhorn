@@ -59,7 +59,7 @@
         <TextBlock Text="{lang:Translate CharacterInformation.EyeColor}" Grid.Column="0" Grid.Row="5"/>
         <TextBox Text="{Binding EyeColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5"/>
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Appeaeance}" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Appearance}" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" VerticalAlignment="Stretch"/>
 
     </Grid>

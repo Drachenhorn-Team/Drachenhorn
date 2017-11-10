@@ -126,5 +126,10 @@ namespace DSACharacterSheet.Desktop.Views
         {
             CurrentCharacterSheet = new CharacterSheet();
         }
+
+        private void PropertiesCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            new PropertiesView().ShowDialog();
+        }
     }
 }
