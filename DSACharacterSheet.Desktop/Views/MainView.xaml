@@ -25,13 +25,21 @@
     </Window.InputBindings>
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" IsMinimized="True">
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png" Command="New"/>
+                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png" Command="Open"/>
+                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png" Command="Save"/>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu KeyTip="D" Background="{x:Static SystemParameters.WindowGlassBrush}">
-                    <RibbonApplicationMenuItem Header="{lang:Translate UI.New}" Command="New" InputGestureText="Strg + N"/>
-                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Open}" Command="Open" ImageSource="/DSACharacterSheet.Core;component\Images\OpenIcon.ico" InputGestureText="Strg + O"/>
-                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Save}" Command="Save" ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.ico" InputGestureText="Strg + S"/>
-                    <RibbonApplicationMenuItem Header="{lang:Translate UI.SaveAs}" Command="SaveAs" ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.ico" InputGestureText="Strg + Shift + S"/>
-                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Properties}" Command="Properties"/>
+                <RibbonApplicationMenu KeyTip="D" SmallImageSource="/DSACharacterSheet.Core;component\Images\MenuIcon.png" Background="{x:Static SystemParameters.WindowGlassBrush}">
+                    <RibbonApplicationMenuItem Header="{lang:Translate UI.New}" Command="New" ImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png" InputGestureText="Strg + N"/>
+                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Open}" Command="Open" ImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png" InputGestureText="Strg + O"/>
+                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Save}" Command="Save" ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png" InputGestureText="Strg + S"/>
+                    <RibbonApplicationMenuItem Header="{lang:Translate UI.SaveAs}" Command="SaveAs" ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png" InputGestureText="Strg + Shift + S"/>
+                    <RibbonSeparator/>
+                    <RibbonApplicationMenuItem Header="{lang:Translate UI.Properties}" Command="Properties" ImageSource="/DSACharacterSheet.Core;component\Images\PropertiesIcon.png"/>
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
         </Ribbon>

@@ -73,12 +73,13 @@
   <ItemGroup>
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
-    <Content Include="Images\OpenIcon.svg" />
+    <Resource Include="Images\EditIcon.png" />
+    <Resource Include="Images\NewIcon.png" />
+    <Resource Include="Images\SaveIcon.png" />
+    <Resource Include="Images\PropertiesIcon.png" />
+    <Resource Include="Images\MenuIcon.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
-    <Content Include="Images\SaveIcon.svg" />
-    <Resource Include="Images\SaveIcon.ico" />
-    <Resource Include="Images\OpenIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSACharacterSheet.FileReader\DSACharacterSheet.FileReader.csproj">

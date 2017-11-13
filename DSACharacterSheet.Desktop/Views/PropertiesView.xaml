@@ -7,22 +7,55 @@
         xmlns:glob="clr-namespace:DSACharacterSheet.Core.Lang;assembly=DSACharacterSheet.Core"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         mc:Ignorable="d"
-        Title="{lang:Translate UI.Properties}" Height="200"  Width="400">
+        Title="{lang:Translate UI.Properties}" Height="500"  Width="700">
     <Window.Resources>
         <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultureStrings"/>
     </Window.Resources>
-    <DockPanel LastChildFill="False">
-        <Grid DockPanel.Dock="Top" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <TabControl>
+        <TabItem Header="{lang:Translate UI.Properties.Misc}">
+            <DockPanel LastChildFill="False">
+                <Grid DockPanel.Dock="Top" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}" SelectedItem="{Binding CurrentCulture}" Grid.Column="1"/>
-            <TextBlock Text="{lang:Translate UI.RequiersRestart}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        </Grid>
-    </DockPanel>
+                    <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}" SelectedItem="{Binding CurrentCulture}" Grid.Column="1"/>
+                    <TextBlock Text="{lang:Translate UI.RequiersRestart}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="{lang:Translate UI.Properties.About}">
+            <Border BorderBrush="Gray" BorderThickness="2" Margin="5" Background="LightGray">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                    <TextBlock Margin="5" Grid.Row="0" Grid.Column="1">
+                        <Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate">
+                            lightlike (DanielN)
+                        </Hyperlink>
+                    </TextBlock>
+                    
+                    
+                    <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                    <TextBlock Margin="5" Grid.Row="1" Grid.Column="1">
+                        <Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate">
+                            icons8
+                        </Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </TabItem>
+    </TabControl>
 </Window>
 

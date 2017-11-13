@@ -297,4 +297,16 @@
   <data name="UI.RequiersRestart" xml:space="preserve">
     <value>Requiers Restart</value>
   </data>
+  <data name="UI.Properties.Misc" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="UI.Properties.About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About.Publisher" xml:space="preserve">
+    <value>Publisher:</value>
+  </data>
+  <data name="About.IconsBy" xml:space="preserve">
+    <value>Icons by:</value>
+  </data>
 </root>
