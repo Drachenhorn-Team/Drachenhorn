@@ -44,21 +44,7 @@ namespace DSACharacterSheet.Core.Lang
 
         public static List<string> GetAllCultureStrings()
         {
-            var result = new List<string>();
-
-            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (CultureInfo culture in cultures)
-            {
-                try
-                {
-                    ResourceSet rs = resourceManager.GetResourceSet(culture, true, false);
-                    if (rs != null)
-                        result.Add(culture.DisplayName);
-                }
-                catch (CultureNotFoundException) { }
-            }
-
-            return result;
+            return GetAllCultures().ConvertAll<string>(x => x.DisplayName);
         }
 
         public static List<CultureInfo> GetAllCultures()
@@ -75,6 +61,7 @@ namespace DSACharacterSheet.Core.Lang
                         result.Add(culture);
                 }
                 catch (CultureNotFoundException) { }
+                catch (ArgumentException) { }
             }
 
             return result;
