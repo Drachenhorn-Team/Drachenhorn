@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
@@ -11,6 +13,8 @@ namespace DSACharacterSheet.Core.Lang
 {
     public class LanguageManager
     {
+        private static readonly string[] CULTURES = { "de-DE", "en", "nds-DE" };
+
         private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
         public static CultureInfo CurrentCulture
         {
@@ -51,18 +55,12 @@ namespace DSACharacterSheet.Core.Lang
         {
             var result = new List<CultureInfo>();
 
-            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (CultureInfo culture in cultures)
-            {
+            foreach (var culture in CULTURES)
                 try
                 {
-                    ResourceSet rs = resourceManager.GetResourceSet(culture, true, false);
-                    if (rs != null)
-                        result.Add(culture);
+                    result.Add(new CultureInfo(culture));
                 }
                 catch (CultureNotFoundException) { }
-                catch (ArgumentException) { }
-            }
 
             return result;
         }
