@@ -29,6 +29,7 @@
     <SupportUrl>https://github.com/lightlikeD/DSACharacterSheet/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/lightlikeD/DSACharacterSheet/issues</ErrorReportUrl>
     <ProductName>DSA Character Sheet</ProductName>
+    <PublisherName>lightlike</PublisherName>
     <SuiteName>DSA</SuiteName>
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
