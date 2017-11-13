@@ -27,9 +27,9 @@ namespace DSACharacterSheet.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            PropertiesManager.Initialize();
             Splash.SplashScreen splash = new Splash.SplashScreen();
             splash.Show();
-            PropertiesManager.Initialize();
             mainWindow = new MainView();
             mainWindow.Show();
             splash.Close();

@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Lang\lang.nds-DE.resx" />
     <EmbeddedResource Include="Lang\lang.en.resx" />
     <EmbeddedResource Include="Lang\lang.de-DE.resx" />
   </ItemGroup>
