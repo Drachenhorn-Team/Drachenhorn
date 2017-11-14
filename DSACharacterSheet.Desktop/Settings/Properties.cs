@@ -16,14 +16,30 @@ namespace DSACharacterSheet.Desktop.Settings
         #region Properties
 
         [XmlElement("CurrentCulture")]
-        public string CurrentCulture
+        public string CurrentCultureString
         {
-            get { return LanguageManager.CurrentCulture.DisplayName; }
+            get { return CurrentCulture.Name; }
             set
             {
-                if (LanguageManager.CurrentCulture.DisplayName == value)
+                try
+                {
+                    CurrentCulture = new CultureInfo(value);
+                }
+                catch (Exception)
+                {
+                    CurrentCulture = CultureInfo.CurrentUICulture;
+                }
+            }
+        }
+        [XmlIgnore]
+        public CultureInfo CurrentCulture
+        {
+            get { return LanguageManager.CurrentCulture; }
+            set
+            {
+                if (LanguageManager.CurrentCulture == value)
                     return;
-                LanguageManager.CurrentCulture = LanguageManager.GetAllCultures().First(x => x.DisplayName == value);
+                LanguageManager.CurrentCulture = value;
                 OnPropertyChanged();
             }
         }
