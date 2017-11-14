@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Attribute.Charisma" xml:space="preserve">
-    <value>Charisma</value>
-  </data>
   <data name="Attribute.Constitution" xml:space="preserve">
     <value>Constitution</value>
   </data>
@@ -308,5 +305,8 @@
   </data>
   <data name="About.IconsBy" xml:space="preserve">
     <value>Icons by:</value>
+  </data>
+  <data name="Attribute.Charisma" xml:space="preserve">
+    <value>Charisma</value>
   </data>
 </root>

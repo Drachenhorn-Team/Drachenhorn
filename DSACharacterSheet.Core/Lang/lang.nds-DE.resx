@@ -117,31 +117,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Attribute.Charisma" xml:space="preserve">
-    <value>Charisma</value>
+  <data name="BaseValue.Endurance" xml:space="preserve">
+    <value>Utdüür</value>
   </data>
-  <data name="Attribute.Constitution" xml:space="preserve">
-    <value>Konstitution</value>
+  <data name="CharacterInformation.Age" xml:space="preserve">
+    <value>Oller</value>
+  </data>
+  <data name="CharacterInformation.Appearance" xml:space="preserve">
+    <value>Utsehn</value>
+  </data>
+  <data name="CharacterInformation.Gender" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="CharacterInformation.Height" xml:space="preserve">
+    <value>Grötte</value>
+  </data>
+  <data name="CharacterInformation.Weight" xml:space="preserve">
+    <value>Gewicht</value>
+  </data>
+  <data name="About.Publisher" xml:space="preserve">
+    <value>Maker:</value>
+  </data>
+  <data name="BaseValue.HealthPoints" xml:space="preserve">
+    <value>Levenspunkte</value>
+  </data>
+  <data name="BaseValue.HealthPoints.Abbr" xml:space="preserve">
+    <value>LP</value>
+  </data>
+  <data name="CharacterInformation.EyeColor" xml:space="preserve">
+    <value>Oogenfarv</value>
+  </data>
+  <data name="CharacterInformation.HairColor" xml:space="preserve">
+    <value>Harenfarv</value>
+  </data>
+  <data name="CharacterSheet.BaseValues" xml:space="preserve">
+    <value>Können &amp; Baamwerten</value>
+  </data>
+  <data name="CharacterSheet.CoatOfArms" xml:space="preserve">
+    <value>Wapen/Bild</value>
+  </data>
+  <data name="CharacterSheet.Culture" xml:space="preserve">
+    <value>Kultuur</value>
+  </data>
+  <data name="CharacterSheet.CurrentValue" xml:space="preserve">
+    <value>Aktuell</value>
+  </data>
+  <data name="CharacterSheet.Handycap" xml:space="preserve">
+    <value>Behinnerung</value>
+  </data>
+  <data name="CharacterSheet.Handycap.Abbr" xml:space="preserve">
+    <value>BE</value>
+  </data>
+  <data name="CharacterSheet.Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="CharacterSheet.Profession" xml:space="preserve">
+    <value>Beruf</value>
+  </data>
+  <data name="CharacterSheet.Race" xml:space="preserve">
+    <value>Rassen</value>
+  </data>
+  <data name="CharacterSheet.Skills" xml:space="preserve">
+    <value>Könen</value>
+  </data>
+  <data name="CharacterSheet.Specialization" xml:space="preserve">
+    <value>Spezialisierung</value>
+  </data>
+  <data name="CharacterSheet.StartValue" xml:space="preserve">
+    <value>Begünnweert</value>
+  </data>
+  <data name="CharacterSheet.Title" xml:space="preserve">
+    <value>Heldenpapier</value>
+  </data>
+  <data name="CharacterSheet.TotalAP" xml:space="preserve">
+    <value>AP-Summ</value>
+  </data>
+  <data name="CharacterSheet.UsedAP" xml:space="preserve">
+    <value>AP-Bruukt</value>
+  </data>
+  <data name="SocialInformation.Background" xml:space="preserve">
+    <value>Familie/Herkomen/Histoorje</value>
+  </data>
+  <data name="SocialInformation.Class" xml:space="preserve">
+    <value>Klass</value>
+  </data>
+  <data name="SocialInformation.SocialClass" xml:space="preserve">
+    <value>Soziaalstand</value>
+  </data>
+  <data name="SocialInformation.Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Splash.Loading" xml:space="preserve">
+    <value>Lade. Bidde luren.</value>
+  </data>
+  <data name="Splash.Title" xml:space="preserve">
+    <value>Splash</value>
+  </data>
+  <data name="UI.Language" xml:space="preserve">
+    <value>Spraaken</value>
+  </data>
+  <data name="UI.New" xml:space="preserve">
+    <value>Neei</value>
+  </data>
+  <data name="UI.Open" xml:space="preserve">
+    <value>Opendoon</value>
+  </data>
+  <data name="UI.Properties.Misc" xml:space="preserve">
+    <value>Allgemeen</value>
+  </data>
+  <data name="UI.RequiersRestart" xml:space="preserve">
+    <value>Bruukt Neustart</value>
+  </data>
+  <data name="UI.Save" xml:space="preserve">
+    <value>Sekern</value>
+  </data>
+  <data name="UI.SaveAs" xml:space="preserve">
+    <value>Sekern as</value>
+  </data>
+  <data name="WeaponInformation.Type" xml:space="preserve">
+    <value>Soort</value>
+  </data>
+  <data name="About.IconsBy" xml:space="preserve">
+    <value>Biller sünd van:</value>
   </data>
   <data name="Attribute.Courage" xml:space="preserve">
-    <value>Mut</value>
-  </data>
-  <data name="Attribute.Finesse" xml:space="preserve">
-    <value>Gewandheit</value>
-  </data>
-  <data name="Attribute.Intuition" xml:space="preserve">
-    <value>Intuition</value>
+    <value>Mood</value>
   </data>
   <data name="Attribute.PhysicalStrength" xml:space="preserve">
-    <value>Körperkraft</value>
-  </data>
-  <data name="Attribute.Prestidigitation" xml:space="preserve">
-    <value>Fingerfertigkeit</value>
+    <value>Kraft</value>
   </data>
   <data name="Attribute.Speed" xml:space="preserve">
-    <value>Geschwindigkeit</value>
+    <value>Gauheid</value>
   </data>
-  <data name="Attribute.Wisdom" xml:space="preserve">
-    <value>Klugheit</value>
+  <data name="UI.Properties.About" xml:space="preserve">
+    <value>Over</value>
+  </data>
+  <data name="CharacterSheet.GPBase" xml:space="preserve">
+    <value>GP-Grundlaag</value>
+  </data>
+  <data name="CharacterSheet.GPCost" xml:space="preserve">
+    <value>GP-Kösten</value>
   </data>
 </root>

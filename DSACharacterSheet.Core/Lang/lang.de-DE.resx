@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Attribute.Charisma" xml:space="preserve">
-    <value>Charisma</value>
-  </data>
   <data name="Attribute.Constitution" xml:space="preserve">
     <value>Konstitution</value>
   </data>
@@ -232,7 +229,7 @@
     <value>Rasse</value>
   </data>
   <data name="CharacterSheet.Skills" xml:space="preserve">
-    <value>Skills</value>
+    <value>Fähigkeiten</value>
   </data>
   <data name="CharacterSheet.Specialization" xml:space="preserve">
     <value>Spezialisierung</value>
@@ -308,5 +305,8 @@
   </data>
   <data name="About.IconsBy" xml:space="preserve">
     <value>Bilder von:</value>
+  </data>
+  <data name="Attribute.Charisma" xml:space="preserve">
+    <value>Charisma</value>
   </data>
 </root>
