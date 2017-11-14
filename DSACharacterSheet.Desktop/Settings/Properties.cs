@@ -1,6 +1,7 @@
 ﻿using DSACharacterSheet.Core.Lang;
 using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -45,6 +46,23 @@ namespace DSACharacterSheet.Desktop.Settings
         }
 
         #endregion Properties
+
+        #region ClickOnceInfo
+
+        public string Version
+        {
+            get
+            {
+
+                if (ApplicationDeployment.IsNetworkDeployed)
+                    return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+                else
+                    return "Application not installed.";
+            }
+        }
+
+
+        #endregion ClickOnceInfo
 
 
         #region c'tor
