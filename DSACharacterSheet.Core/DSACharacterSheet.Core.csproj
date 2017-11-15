@@ -92,6 +92,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\ImageSource.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

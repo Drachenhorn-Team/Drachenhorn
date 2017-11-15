@@ -261,4 +261,7 @@
   <data name="About.Version" xml:space="preserve">
     <value>Version:</value>
   </data>
+  <data name="About.FlagsBy" xml:space="preserve">
+    <value>Flaggen sünd von:</value>
+  </data>
 </root>
