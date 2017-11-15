@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,20 @@ namespace DSACharacterSheet.Desktop.Views
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                FlagImage.Source = new BitmapImage(
+                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/" + PropertiesManager.Properties.CurrentCulture.Name + ".png"));
+            }
+            catch (IOException)
+            {
+                FlagImage.Source = new BitmapImage(
+                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/invariant.png"));
+            }
         }
     }
 }

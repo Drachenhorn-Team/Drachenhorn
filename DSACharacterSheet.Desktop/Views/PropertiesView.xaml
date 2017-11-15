@@ -14,22 +14,37 @@
     <TabControl>
         <TabItem Header="{lang:Translate UI.Properties.Misc}">
             <DockPanel LastChildFill="False">
+                <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                    <TextBlock Text="*" VerticalAlignment="Center"/>
+                    <TextBlock Text="{lang:Translate UI.RequiersRestart}" VerticalAlignment="Center"/>
+                </WrapPanel>
+                
                 <Grid DockPanel.Dock="Top" Margin="10">
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="5"/>
+                        </Style>
+                    </Grid.Resources>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}" SelectedItem="{Binding CurrentCulture}" Grid.Column="1">
+                    <TextBlock Text="*" Grid.Column="1"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}"
+                              SelectedItem="{Binding CurrentCulture}"
+                              SelectionChanged="LanguageComboBox_SelectionChanged"
+                              VerticalAlignment="Center" Grid.Column="2">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding DisplayName}"/>
+                                <TextBlock Text="{Binding NativeName}"/>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <TextBlock Text="{lang:Translate UI.RequiersRestart}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image Name="FlagImage" Width="20" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
                 </Grid>
             </DockPanel>
         </TabItem>

@@ -9,14 +9,14 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSACharacterSheet.Core.Lang
+namespace DSACharacterSheet.Desktop.Lang
 {
     public class LanguageManager
     {
         private static readonly string[] CULTURES = { "de-DE", "en", "nds-DE" };
 
-        private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
-        public static CultureInfo CurrentCulture
+        private static FlagCultureInfo _currentCulture = new FlagCultureInfo(CultureInfo.CurrentUICulture);
+        public static FlagCultureInfo CurrentCulture
         {
             get { return _currentCulture; }
             set
@@ -51,19 +51,16 @@ namespace DSACharacterSheet.Core.Lang
             return GetAllCultures().ConvertAll<string>(x => x.DisplayName);
         }
 
-        public static List<CultureInfo> GetAllCultures()
+        public static List<FlagCultureInfo> GetAllCultures()
         {
-            var result = new List<CultureInfo>();
+            var result = new List<FlagCultureInfo>();
 
             foreach (var culture in CULTURES)
                 try
                 {
-                    result.Add(new CultureInfo(culture));
+                    result.Add(new FlagCultureInfo(culture));
                 }
-                catch (CultureNotFoundException)
-                {
-                    result.Add(CultureInfo.CreateSpecificCulture(culture));
-                }
+                catch (CultureNotFoundException) { }
 
             return result;
         }
