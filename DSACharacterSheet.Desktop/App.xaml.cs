@@ -21,6 +21,8 @@ namespace DSACharacterSheet.Desktop
 
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
+            e.Handled = true;
+
             var window = new ExceptionMessageBox(e.Exception, "Im Programm ist ein Fehler aufgetreten.");
             window.Show();
         }
