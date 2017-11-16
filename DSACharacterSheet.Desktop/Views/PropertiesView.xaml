@@ -81,8 +81,8 @@
                             <TextBlock Text="{lang:Translate Update.Version}" Grid.Row="1" Grid.Column="0" Margin="5"/>
                             <TextBlock Text="{Binding Version}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                            <TextBlock Text="{lang:Translate Update.NeedUpdate}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                            <TextBlock Text="{Binding NeedUpdate}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                            <TextBlock Text="{lang:Translate Update.IsUpdateAvailable}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding IsUpdateAvailable}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
                             <TextBlock Text="{lang:Translate Update.NewVersion}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                             <TextBlock Text="{Binding NewVersion}" Grid.Row="3" Grid.Column="1" Margin="5"/>

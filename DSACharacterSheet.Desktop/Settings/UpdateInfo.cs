@@ -37,15 +37,15 @@ namespace DSACharacterSheet.Desktop.Settings
             }
         }
 
-        private bool _needUpdate = false;
-        public bool NeedUpdate
+        private bool _isUpdateAvailable = false;
+        public bool IsUpdateAvailable
         {
-            get { return _needUpdate; }
+            get { return _isUpdateAvailable; }
             private set
             {
-                if (_needUpdate == value)
+                if (_isUpdateAvailable == value)
                     return;
-                _needUpdate = value;
+                _isUpdateAvailable = value;
                 OnPropertyChanged();
             }
         }
@@ -55,46 +55,47 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region Update
 
-        public bool CheckForUpdate()
+        public void CheckForUpdateAsync()
         {
             try
             {
                 if (ApplicationDeployment.IsNetworkDeployed)
                 {
                     ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
-                    UpdateCheckInfo info = ad.CheckForDetailedUpdate();
-                    NeedUpdate = info.IsUpdateRequired;
-                    NewVersion = info.AvailableVersion.ToString();
+                    ad.CheckForUpdateCompleted += (sender, args) =>
+                    {
+                        IsUpdateAvailable = args.UpdateAvailable;
+                        NewVersion = args.AvailableVersion.ToString();
+                    };
+                    ad.CheckForUpdateAsync();
                 }
-                
-                return true;
             }
             catch (Exception e)
             {
                 new ExceptionMessageBox(e, "test").Show();
-                return false;
             }
         }
 
-        public bool DoUpdate()
+        public void DoUpdateAsync(AsyncCompletedEventHandler handler)
         {
-            if (NeedUpdate)
+            if (IsUpdateAvailable)
                 try
                 {
                     if (ApplicationDeployment.IsNetworkDeployed)
                     {
                         ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
+                        ad.UpdateCompleted += handler;
                         UpdateCheckInfo info = ad.CheckForDetailedUpdate();
                         if (info.UpdateAvailable)
                         {
-                            ad.Update();
+                            ad.UpdateAsync();
                         }
                     }
-
-                    return true;
                 }
-                catch (Exception) { }
-            return false;
+                catch (Exception e)
+                {
+                    new ExceptionMessageBox(e, "test").Show();
+                }
         }
 
         #endregion Update

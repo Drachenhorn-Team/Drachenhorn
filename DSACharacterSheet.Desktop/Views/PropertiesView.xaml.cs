@@ -54,52 +54,57 @@ namespace DSACharacterSheet.Desktop.Views
 
         private void CheckUpdate_Click(object sender, RoutedEventArgs e)
         {
-            if (!PropertiesManager.Properties.UpdateInfo.CheckForUpdate())
-                MessageBox.Show(this,
-                    LanguageManager.GetLanguageText("Update.CheckFailed.Text"),
-                    LanguageManager.GetLanguageText("Update.CheckFailed.Title"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error,
-                    MessageBoxResult.OK
-                    );
-            else
-                MessageBox.Show(this,
-                    LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
-                    LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information,
-                    MessageBoxResult.OK
-                    );
+            PropertiesManager.Properties.UpdateInfo.CheckForUpdateAsync();
+
+            //if (!PropertiesManager.Properties.UpdateInfo.CheckForUpdate())
+            //    MessageBox.Show(this,
+            //        LanguageManager.GetLanguageText("Update.CheckFailed.Text"),
+            //        LanguageManager.GetLanguageText("Update.CheckFailed.Title"),
+            //        MessageBoxButton.OK,
+            //        MessageBoxImage.Error,
+            //        MessageBoxResult.OK
+            //        );
+            //else
+            //    MessageBox.Show(this,
+            //        LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
+            //        LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
+            //        MessageBoxButton.OK,
+            //        MessageBoxImage.Information,
+            //        MessageBoxResult.OK
+            //        );
         }
 
         private void DoUpdate_Click(object sender, RoutedEventArgs e)
         {
-            if (!PropertiesManager.Properties.UpdateInfo.DoUpdate())
-            {
-                MessageBox.Show(this,
-                    LanguageManager.GetLanguageText("Update.UpdateFailed.Text"),
-                    LanguageManager.GetLanguageText("Update.UpdateFailed.Title"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error,
-                    MessageBoxResult.OK
-                    );
-                return;
-            }
+            PropertiesManager.Properties.UpdateInfo.DoUpdateAsync(
+                (obj, args) =>
+                {
+                    var result = MessageBox.Show(this,
+                        LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.RestartQuestion"),
+                        LanguageManager.GetLanguageText("Update.UpdateFinished.Title"),
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Information,
+                        MessageBoxResult.Yes
+                        );
 
-            var result = MessageBox.Show(this,
-                LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.RestartQuestion"),
-                LanguageManager.GetLanguageText("Update.UpdateFinished.Title"),
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Information,
-                MessageBoxResult.Yes
-                );
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        String ApplicationEntryPoint = ApplicationDeployment.CurrentDeployment.UpdatedApplicationFullName;
+                        Process.Start(ApplicationEntryPoint);
+                    }
+                });
 
-            if (result == MessageBoxResult.Yes)
-            {
-                String ApplicationEntryPoint = ApplicationDeployment.CurrentDeployment.UpdatedApplicationFullName;
-                Process.Start(ApplicationEntryPoint);
-            }
-                
+            //if (!PropertiesManager.Properties.UpdateInfo.DoUpdate())
+            //{
+            //    MessageBox.Show(this,
+            //        LanguageManager.GetLanguageText("Update.UpdateFailed.Text"),
+            //        LanguageManager.GetLanguageText("Update.UpdateFailed.Title"),
+            //        MessageBoxButton.OK,
+            //        MessageBoxImage.Error,
+            //        MessageBoxResult.OK
+            //        );
+            //    return;
+            //} 
         }
     }
 }
