@@ -62,14 +62,14 @@ namespace DSACharacterSheet.Desktop.Views
                     MessageBoxImage.Error,
                     MessageBoxResult.OK
                     );
-
-            MessageBox.Show(this,
-                LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
-                LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
-                MessageBoxButton.OK,
-                MessageBoxImage.Information,
-                MessageBoxResult.OK
-                );
+            else
+                MessageBox.Show(this,
+                    LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
+                    LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information,
+                    MessageBoxResult.OK
+                    );
         }
 
         private void DoUpdate_Click(object sender, RoutedEventArgs e)
