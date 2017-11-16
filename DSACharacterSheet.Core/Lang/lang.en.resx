@@ -345,4 +345,13 @@
   <data name="Update.UpdateFinished.Title" xml:space="preserve">
     <value>Update finished</value>
   </data>
+  <data name="Update.CheckUpdate" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="Update.DoUpdate" xml:space="preserve">
+    <value>Load Update</value>
+  </data>
+  <data name="Update.UpdateFinished.CloseQuestion" xml:space="preserve">
+    <value>Do you want to close the application?</value>
+  </data>
 </root>

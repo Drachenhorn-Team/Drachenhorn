@@ -50,6 +50,19 @@ namespace DSACharacterSheet.Desktop.Settings
             }
         }
 
+        private int _progressPercentage = -1;
+        public int ProgressPercentage
+        {
+            get { return _progressPercentage; }
+            set
+            {
+                if (_progressPercentage == value)
+                    return;
+                _progressPercentage = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
 
@@ -84,7 +97,12 @@ namespace DSACharacterSheet.Desktop.Settings
                     if (ApplicationDeployment.IsNetworkDeployed)
                     {
                         ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
+                        ad.UpdateProgressChanged += (sender, args) =>
+                        {
+                            ProgressPercentage = args.ProgressPercentage;
+                        };
                         ad.UpdateCompleted += handler;
+                        ad.UpdateCompleted += (sender, args) => { ProgressPercentage = -1; };
                         UpdateCheckInfo info = ad.CheckForDetailedUpdate();
                         if (info.UpdateAvailable)
                         {

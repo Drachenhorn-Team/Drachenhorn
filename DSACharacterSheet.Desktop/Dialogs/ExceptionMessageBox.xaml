@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Dialogs"
         mc:Ignorable="d"
         Title="Fehler"
-        Height="800" Width="600">
+        Height="600" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="557*" />

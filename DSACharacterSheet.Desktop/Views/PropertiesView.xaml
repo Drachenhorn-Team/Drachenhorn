@@ -4,12 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:glob="clr-namespace:DSACharacterSheet.Core.Lang;assembly=DSACharacterSheet.Core"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         mc:Ignorable="d"
         Title="{lang:Translate UI.Properties}" Height="500"  Width="700">
     <Window.Resources>
         <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultures"/>
+        <converter:IntToPercentageConverter x:Key="IntToPercentageConverter"/>
     </Window.Resources>
     <TabControl>
         <TabItem Header="{lang:Translate UI.Properties.Misc}">
@@ -73,7 +75,6 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock Text="{lang:Translate Update.Title}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" FontSize="16"/>
@@ -81,16 +82,15 @@
                             <TextBlock Text="{lang:Translate Update.Version}" Grid.Row="1" Grid.Column="0" Margin="5"/>
                             <TextBlock Text="{Binding Version}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                            <TextBlock Text="{lang:Translate Update.IsUpdateAvailable}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                            <TextBlock Text="{Binding IsUpdateAvailable}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                            <TextBlock Text="{lang:Translate Update.NewVersion}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding NewVersion}" Foreground="OrangeRed" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
-                            <TextBlock Text="{lang:Translate Update.NewVersion}" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                            <TextBlock Text="{Binding NewVersion}" Grid.Row="3" Grid.Column="1" Margin="5"/>
-
-                            <WrapPanel HorizontalAlignment="Right" Grid.Row="3" Grid.ColumnSpan="2">
-                                <Button Content="{lang:Translate Update.CheckUpdate}" Click="CheckUpdate_Click" Margin="5"/>
-                                <Button Content="{lang:Translate Update.DoUpdate}" Click="DoUpdate_Click" Margin="5"/>
-                            </WrapPanel>
+                            <DockPanel Grid.Row="3" Grid.ColumnSpan="2">
+                                <Button Content="{lang:Translate Update.DoUpdate}" Click="DoUpdate_Click" Margin="5" DockPanel.Dock="Right"/>
+                                <Button Content="{lang:Translate Update.CheckUpdate}" Click="CheckUpdate_Click" Margin="5" DockPanel.Dock="Right"/>
+                                <TextBlock Text="{Binding ProgressPercentage, Converter={StaticResource IntToPercentageConverter}, Mode=OneWay}" Width="30" Margin="5 5 20 5" DockPanel.Dock="Right"/>
+                                <ProgressBar Value="{Binding ProgressPercentage}" Minimum="0" Maximum="100" Margin="5"/>
+                            </DockPanel>
                         </Grid>
                     </Border>
 

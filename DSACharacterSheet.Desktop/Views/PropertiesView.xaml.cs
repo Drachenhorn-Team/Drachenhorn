@@ -55,23 +55,6 @@ namespace DSACharacterSheet.Desktop.Views
         private void CheckUpdate_Click(object sender, RoutedEventArgs e)
         {
             PropertiesManager.Properties.UpdateInfo.CheckForUpdateAsync();
-
-            //if (!PropertiesManager.Properties.UpdateInfo.CheckForUpdate())
-            //    MessageBox.Show(this,
-            //        LanguageManager.GetLanguageText("Update.CheckFailed.Text"),
-            //        LanguageManager.GetLanguageText("Update.CheckFailed.Title"),
-            //        MessageBoxButton.OK,
-            //        MessageBoxImage.Error,
-            //        MessageBoxResult.OK
-            //        );
-            //else
-            //    MessageBox.Show(this,
-            //        LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
-            //        LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
-            //        MessageBoxButton.OK,
-            //        MessageBoxImage.Information,
-            //        MessageBoxResult.OK
-            //        );
         }
 
         private void DoUpdate_Click(object sender, RoutedEventArgs e)
@@ -92,18 +75,6 @@ namespace DSACharacterSheet.Desktop.Views
                         Application.Current.Shutdown();
                     }
                 });
-
-            //if (!PropertiesManager.Properties.UpdateInfo.DoUpdate())
-            //{
-            //    MessageBox.Show(this,
-            //        LanguageManager.GetLanguageText("Update.UpdateFailed.Text"),
-            //        LanguageManager.GetLanguageText("Update.UpdateFailed.Title"),
-            //        MessageBoxButton.OK,
-            //        MessageBoxImage.Error,
-            //        MessageBoxResult.OK
-            //        );
-            //    return;
-            //} 
         }
     }
 }
