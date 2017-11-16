@@ -73,6 +73,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock Text="{lang:Translate Update.Title}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" FontSize="16"/>
@@ -80,8 +81,11 @@
                             <TextBlock Text="{lang:Translate Update.Version}" Grid.Row="1" Grid.Column="0" Margin="5"/>
                             <TextBlock Text="{Binding Version}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                            <TextBlock Text="{lang:Translate Update.NewVersion}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                            <TextBlock Text="{Binding NewVersion}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                            <TextBlock Text="{lang:Translate Update.NeedUpdate}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding NeedUpdate}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                            <TextBlock Text="{lang:Translate Update.NewVersion}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding NewVersion}" Grid.Row="3" Grid.Column="1" Margin="5"/>
 
                             <WrapPanel HorizontalAlignment="Right" Grid.Row="3" Grid.ColumnSpan="2">
                                 <Button Content="{lang:Translate Update.CheckUpdate}" Click="CheckUpdate_Click" Margin="5"/>
