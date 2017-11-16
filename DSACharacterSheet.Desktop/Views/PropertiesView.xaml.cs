@@ -80,7 +80,7 @@ namespace DSACharacterSheet.Desktop.Views
                 (obj, args) =>
                 {
                     var result = MessageBox.Show(this,
-                        LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.RestartQuestion"),
+                        LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.CloseQuestion"),
                         LanguageManager.GetLanguageText("Update.UpdateFinished.Title"),
                         MessageBoxButton.YesNo,
                         MessageBoxImage.Information,
@@ -89,8 +89,7 @@ namespace DSACharacterSheet.Desktop.Views
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        String ApplicationEntryPoint = ApplicationDeployment.CurrentDeployment.UpdatedApplicationFullName;
-                        Process.Start(ApplicationEntryPoint);
+                        Application.Current.Shutdown();
                     }
                 });
 

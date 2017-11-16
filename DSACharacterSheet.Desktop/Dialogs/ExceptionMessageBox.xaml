@@ -16,16 +16,16 @@
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="435*" />
         </Grid.ColumnDefinitions>
-        <TreeView   Name="treeView1" Margin="5" SelectedItemChanged="TreeView1_SelectedItemChanged" />
+        <TreeView Name="treeView1" Margin="5" SelectedItemChanged="TreeView1_SelectedItemChanged" />
         <GridSplitter Width="2" Grid.RowSpan="1" />
         <TextBox Grid.Column="1" Name="textBox1" Margin="5" IsReadOnly="True" TextWrapping="Wrap" />
-        <Grid Grid.Row ="1">
+        <Grid Grid.Row ="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <Button Content="Copy Exception To Clipboard" Name="buttonClipboard" Click="ButtonClipboard_Click" Margin="3" />
-            <Button Content="Close" Name="buttonExit" Grid.Column="1" Margin="3" Click="ButtonExit_Click" />
+            <Button Content="Close Application" Name="buttonExit" Grid.Column="1" Margin="3" Click="ButtonExit_Click" />
         </Grid>
     </Grid>
 </Window>

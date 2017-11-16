@@ -20,8 +20,10 @@ namespace DSACharacterSheet.Desktop.Dialogs
     /// </summary>
     public partial class ExceptionMessageBox : Window
     {
-        string userExceptionMessage;
-        List<string> ExceptionInformationList = new List<string>();
+        private string userExceptionMessage;
+        private List<string> ExceptionInformationList = new List<string>();
+
+        public bool CloseApp = false;
 
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage)
@@ -98,6 +100,7 @@ namespace DSACharacterSheet.Desktop.Dialogs
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
+            CloseApp = true;
             this.Close();
         }
 
