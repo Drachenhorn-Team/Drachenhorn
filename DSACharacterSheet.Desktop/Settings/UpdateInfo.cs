@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSACharacterSheet.Desktop.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Deployment.Application;
@@ -68,8 +69,9 @@ namespace DSACharacterSheet.Desktop.Settings
                 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                new ExceptionMessageBox(e, "test").Show();
                 return false;
             }
         }
