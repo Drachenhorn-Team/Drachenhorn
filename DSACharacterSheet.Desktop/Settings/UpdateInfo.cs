@@ -83,10 +83,7 @@ namespace DSACharacterSheet.Desktop.Settings
                     ad.CheckForUpdateAsync();
                 }
             }
-            catch (Exception)
-            {
-                //new ExceptionMessageBox(e, "test").Show();
-            }
+            catch (InvalidOperationException) { }
         }
 
         public void DoUpdateAsync(AsyncCompletedEventHandler handler)

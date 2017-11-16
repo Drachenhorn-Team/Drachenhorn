@@ -23,8 +23,6 @@ namespace DSACharacterSheet.Desktop.Dialogs
         private string userExceptionMessage;
         private List<string> ExceptionInformationList = new List<string>();
 
-        public bool CloseApp = false;
-
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage)
         {
@@ -100,8 +98,7 @@ namespace DSACharacterSheet.Desktop.Dialogs
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
-            CloseApp = true;
-            this.Close();
+            Application.Current.Shutdown();
         }
 
     }
