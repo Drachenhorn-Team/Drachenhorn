@@ -1,6 +1,8 @@
-﻿using DSACharacterSheet.Desktop.Settings;
+﻿using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Desktop.Settings;
 using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -48,6 +50,56 @@ namespace DSACharacterSheet.Desktop.Views
                 FlagImage.Source = new BitmapImage(
                     new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/invariant.png"));
             }
+        }
+
+        private void CheckUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            if (!PropertiesManager.Properties.UpdateInfo.CheckForUpdate())
+                MessageBox.Show(this,
+                    LanguageManager.GetLanguageText("Update.CheckFailed.Text"),
+                    LanguageManager.GetLanguageText("Update.CheckFailed.Title"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error,
+                    MessageBoxResult.OK
+                    );
+
+            MessageBox.Show(this,
+                LanguageManager.GetLanguageText("Update.CheckFinished.Text"),
+                LanguageManager.GetLanguageText("Update.CheckFinished.Title"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Information,
+                MessageBoxResult.OK
+                );
+        }
+
+        private void DoUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            if (!PropertiesManager.Properties.UpdateInfo.DoUpdate())
+            {
+                MessageBox.Show(this,
+                    LanguageManager.GetLanguageText("Update.UpdateFailed.Text"),
+                    LanguageManager.GetLanguageText("Update.UpdateFailed.Title"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error,
+                    MessageBoxResult.OK
+                    );
+                return;
+            }
+
+            var result = MessageBox.Show(this,
+                LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.RestartQuestion"),
+                LanguageManager.GetLanguageText("Update.UpdateFinished.Title"),
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Information,
+                MessageBoxResult.Yes
+                );
+
+            if (result == MessageBoxResult.Yes)
+            {
+                String ApplicationEntryPoint = ApplicationDeployment.CurrentDeployment.UpdatedApplicationFullName;
+                Process.Start(ApplicationEntryPoint);
+            }
+                
         }
     }
 }

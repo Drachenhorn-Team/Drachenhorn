@@ -258,7 +258,7 @@
   <data name="CharacterSheet.GPCost" xml:space="preserve">
     <value>GP-Kösten</value>
   </data>
-  <data name="About.Version" xml:space="preserve">
+  <data name="Update.Version" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="About.FlagsBy" xml:space="preserve">
