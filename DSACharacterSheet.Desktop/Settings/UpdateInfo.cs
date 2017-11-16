@@ -70,9 +70,9 @@ namespace DSACharacterSheet.Desktop.Settings
                     ad.CheckForUpdateAsync();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                new ExceptionMessageBox(e, "test").Show();
+                //new ExceptionMessageBox(e, "test").Show();
             }
         }
 
@@ -92,9 +92,9 @@ namespace DSACharacterSheet.Desktop.Settings
                         }
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    new ExceptionMessageBox(e, "test").Show();
+                    //new ExceptionMessageBox(e, "test").Show();
                 }
         }
 
