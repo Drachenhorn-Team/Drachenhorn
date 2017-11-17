@@ -68,7 +68,7 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region Update
 
-        public void CheckForUpdateAsync()
+        public void CheckForUpdate()
         {
             try
             {
@@ -80,7 +80,7 @@ namespace DSACharacterSheet.Desktop.Settings
                         IsUpdateAvailable = args.UpdateAvailable;
                         NewVersion = args.AvailableVersion.ToString();
                     };
-                    ad.CheckForUpdateAsync();
+                    ad.CheckForUpdate();
                 }
             }
             catch (InvalidOperationException) { }
@@ -99,7 +99,10 @@ namespace DSACharacterSheet.Desktop.Settings
                             ProgressPercentage = args.ProgressPercentage;
                         };
                         ad.UpdateCompleted += handler;
-                        ad.UpdateCompleted += (sender, args) => { ProgressPercentage = -1; };
+                        ad.UpdateCompleted += (sender, args) =>
+                        {
+                            ProgressPercentage = -1;
+                        };
                         UpdateCheckInfo info = ad.CheckForDetailedUpdate();
                         if (info.UpdateAvailable)
                         {

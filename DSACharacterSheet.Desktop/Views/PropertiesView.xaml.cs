@@ -54,7 +54,7 @@ namespace DSACharacterSheet.Desktop.Views
 
         private void CheckUpdate_Click(object sender, RoutedEventArgs e)
         {
-            PropertiesManager.Properties.UpdateInfo.CheckForUpdateAsync();
+            PropertiesManager.Properties.UpdateInfo.CheckForUpdate();
         }
 
         private void DoUpdate_Click(object sender, RoutedEventArgs e)

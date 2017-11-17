@@ -60,10 +60,7 @@ namespace DSACharacterSheet.Core.Lang
                 {
                     result.Add(new CultureInfo(culture));
                 }
-                catch (CultureNotFoundException)
-                {
-                    result.Add(CultureInfo.CreateSpecificCulture(culture));
-                }
+                catch (CultureNotFoundException) { }
 
             return result;
         }
