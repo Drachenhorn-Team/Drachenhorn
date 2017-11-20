@@ -84,7 +84,7 @@ namespace DSACharacterSheet.Desktop.Settings
 
             var path = Path.Combine(Environment.CurrentDirectory, "commit");
             if (File.Exists(path))
-                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit"));
+                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "").Replace("\n", "");
             else
                 GitCommit = "No Commit found";
         }
