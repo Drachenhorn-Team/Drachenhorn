@@ -51,30 +51,5 @@ namespace DSACharacterSheet.Desktop.Views
                     new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/invariant.png"));
             }
         }
-
-        private void CheckUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            PropertiesManager.Properties.UpdateInfo.CheckForUpdate();
-        }
-
-        private void DoUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            PropertiesManager.Properties.UpdateInfo.DoUpdateAsync(
-                (obj, args) =>
-                {
-                    var result = MessageBox.Show(this,
-                        LanguageManager.GetLanguageText("Update.UpdateFinished.Text") + "\n\n" + LanguageManager.GetLanguageText("Update.UpdateFinished.CloseQuestion"),
-                        LanguageManager.GetLanguageText("Update.UpdateFinished.Title"),
-                        MessageBoxButton.YesNo,
-                        MessageBoxImage.Information,
-                        MessageBoxResult.Yes
-                        );
-
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        Application.Current.Shutdown();
-                    }
-                });
-        }
     }
 }

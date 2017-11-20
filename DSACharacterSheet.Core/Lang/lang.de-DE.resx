@@ -309,49 +309,10 @@
   <data name="Attribute.Charisma" xml:space="preserve">
     <value>Charisma</value>
   </data>
-  <data name="Update.Version" xml:space="preserve">
+  <data name="Version" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="About.FlagsBy" xml:space="preserve">
     <value>Flaggen von:</value>
-  </data>
-  <data name="Update.Title" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="Update.NewVersion" xml:space="preserve">
-    <value>Neue Version:</value>
-  </data>
-  <data name="Update.CheckFailed.Text" xml:space="preserve">
-    <value>Die Überprüfung auf Updates ist fehlgeschlagen. Bitte versuchen sie es später erneut oder wenden sie sich an den Entwickler.</value>
-  </data>
-  <data name="Update.CheckFailed.Title" xml:space="preserve">
-    <value>Überprüfung auf Updates fehlgeschlagen</value>
-  </data>
-  <data name="Update.UpdateFailed.Text" xml:space="preserve">
-    <value>Das Update ist fehlgeschlagen. Bitte versuchen sie es später erneut oder wenden sie sich an den Entwickler.</value>
-  </data>
-  <data name="Update.UpdateFailed.Title" xml:space="preserve">
-    <value>Update fehlgeschlagen</value>
-  </data>
-  <data name="Update.CheckFinished.Text" xml:space="preserve">
-    <value>Überprüfung auf Updates wurde erfolgreich abgeschlossen.</value>
-  </data>
-  <data name="Update.CheckFinished.Title" xml:space="preserve">
-    <value>Überprüfung abgeschlossen</value>
-  </data>
-  <data name="Update.UpdateFinished.Text" xml:space="preserve">
-    <value>Update wurde erfolgreich abgeschlossen.</value>
-  </data>
-  <data name="Update.UpdateFinished.Title" xml:space="preserve">
-    <value>Update abgeschlossen</value>
-  </data>
-  <data name="Update.CheckUpdate" xml:space="preserve">
-    <value>Überprüfe auf Updates</value>
-  </data>
-  <data name="Update.DoUpdate" xml:space="preserve">
-    <value>Update ausführen</value>
-  </data>
-  <data name="Update.UpdateFinished.CloseQuestion" xml:space="preserve">
-    <value>Wollen sie das Programm schließen, um die neue Version zu verwenden?</value>
   </data>
 </root>

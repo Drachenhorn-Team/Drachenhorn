@@ -1,6 +1,7 @@
 ﻿using DSACharacterSheet.Core.Lang;
 using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace DSACharacterSheet.Desktop.Settings
                 }
             }
         }
+
         [XmlIgnore]
         public CultureInfo CurrentCulture
         {
@@ -45,11 +47,15 @@ namespace DSACharacterSheet.Desktop.Settings
         }
 
         [XmlIgnore]
-        private UpdateInfo _updateInfo = new UpdateInfo();
-        [XmlIgnore]
-        public UpdateInfo UpdateInfo
+        public string Version
         {
-            get { return _updateInfo; }
+            get
+            {
+                if (ApplicationDeployment.IsNetworkDeployed)
+                    return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+                else
+                    return "Application not installed.";
+            }
         }
 
         #endregion Properties

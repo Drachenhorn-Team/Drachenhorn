@@ -309,49 +309,10 @@
   <data name="Attribute.Charisma" xml:space="preserve">
     <value>Charisma</value>
   </data>
-  <data name="Update.Version" xml:space="preserve">
+  <data name="Version" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="About.FlagsBy" xml:space="preserve">
     <value>Flags by:</value>
-  </data>
-  <data name="Update.Title" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="Update.NewVersion" xml:space="preserve">
-    <value>New Version:</value>
-  </data>
-  <data name="Update.CheckFailed.Title" xml:space="preserve">
-    <value>Check for updates failed</value>
-  </data>
-  <data name="Update.UpdateFailed.Text" xml:space="preserve">
-    <value>The update has failed. Please try again later or contact the developer.</value>
-  </data>
-  <data name="Update.CheckFailed.Text" xml:space="preserve">
-    <value>The check for updates has failed. Please try again later or contact the developer.</value>
-  </data>
-  <data name="Update.UpdateFailed.Title" xml:space="preserve">
-    <value>Update failed</value>
-  </data>
-  <data name="Update.CheckFinished.Text" xml:space="preserve">
-    <value>Check for updates was finished successfully.</value>
-  </data>
-  <data name="Update.CheckFinished.Title" xml:space="preserve">
-    <value>Check finished</value>
-  </data>
-  <data name="Update.UpdateFinished.Text" xml:space="preserve">
-    <value>Update was finished successfully.</value>
-  </data>
-  <data name="Update.UpdateFinished.Title" xml:space="preserve">
-    <value>Update finished</value>
-  </data>
-  <data name="Update.CheckUpdate" xml:space="preserve">
-    <value>Check for updates</value>
-  </data>
-  <data name="Update.DoUpdate" xml:space="preserve">
-    <value>Load Update</value>
-  </data>
-  <data name="Update.UpdateFinished.CloseQuestion" xml:space="preserve">
-    <value>Do you want to close the application?</value>
   </data>
 </root>
