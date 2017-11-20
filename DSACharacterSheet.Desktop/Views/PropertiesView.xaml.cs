@@ -51,5 +51,14 @@ namespace DSACharacterSheet.Desktop.Views
                     new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/invariant.png"));
             }
         }
+
+        private void GitCommit_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Button))
+                return;
+
+            var button = (Button)sender;
+            Process.Start(new ProcessStartInfo(@"https://github.com/lightlike/DSACharacterSheet/commit/" + button.Content));
+        }
     }
 }

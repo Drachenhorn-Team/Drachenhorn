@@ -67,8 +67,7 @@
                     <TextBlock Text="{Binding Version}" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
                     <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                    <TextBlock Text="{Binding GitCommit}" Grid.Row="1" Grid.Column="1" Margin="5"/>
-
+                    <Button Content="{Binding GitCommit}" Click="GitCommit_Click" Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Left"/>
 
                     <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="2" Grid.Column="0" Margin="5"/>
                     <TextBlock Margin="5" Grid.Row="2" Grid.Column="1">
