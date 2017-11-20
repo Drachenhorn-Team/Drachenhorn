@@ -315,4 +315,7 @@
   <data name="About.FlagsBy" xml:space="preserve">
     <value>Flags by:</value>
   </data>
+  <data name="About.GitCommit" xml:space="preserve">
+    <value>Git Commit:</value>
+  </data>
 </root>

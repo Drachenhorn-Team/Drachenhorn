@@ -58,6 +58,21 @@ namespace DSACharacterSheet.Desktop.Settings
             }
         }
 
+        [XmlIgnore]
+        private string _gitCommit;
+        [XmlIgnore]
+        public string GitCommit
+        {
+            get { return _gitCommit; }
+            private set
+            {
+                if (_gitCommit == value)
+                    return;
+                _gitCommit = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
 
@@ -66,6 +81,12 @@ namespace DSACharacterSheet.Desktop.Settings
         public Properties()
         {
             this.PropertyChanged += (sender, args) => { this.Save(); };
+
+            var path = Path.Combine(Environment.CurrentDirectory, "commit");
+            if (File.Exists(path))
+                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit"));
+            else
+                GitCommit = "No Commit found";
         }
 
         #endregion c'tor

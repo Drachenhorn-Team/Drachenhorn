@@ -60,28 +60,32 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="{lang:Translate About.Version}" Grid.Row="0" Grid.Column="0" Margin="5"/>
                     <TextBlock Text="{Binding Version}" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
+                    <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                    <TextBlock Text="{Binding GitCommit}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-                    <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                    <TextBlock Margin="5" Grid.Row="1" Grid.Column="1">
+
+                    <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                    <TextBlock Margin="5" Grid.Row="2" Grid.Column="1">
                         <Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate">
                             lightlike (DanielN)
                         </Hyperlink>
                     </TextBlock>
 
-                    <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                    <TextBlock Margin="5" Grid.Row="2" Grid.Column="1">
+                    <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                    <TextBlock Margin="5" Grid.Row="3" Grid.Column="1">
                         <Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate">
                             icons8
                         </Hyperlink>
                     </TextBlock>
 
-                    <TextBlock Text="{lang:Translate About.FlagsBy}" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                    <TextBlock Margin="5" Grid.Row="3" Grid.Column="1">
+                    <TextBlock Text="{lang:Translate About.FlagsBy}" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                    <TextBlock Margin="5" Grid.Row="4" Grid.Column="1">
                         <Hyperlink NavigateUri="http://www.famfamfam.com" RequestNavigate="Hyperlink_RequestNavigate">
                             famfamfam
                         </Hyperlink>
