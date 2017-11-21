@@ -321,4 +321,7 @@
   <data name="Update.Available.ToolTip" xml:space="preserve">
     <value>Update ist verfügbar. Neu starten zum updaten.</value>
   </data>
+  <data name="Update.Available" xml:space="preserve">
+    <value>Update verfügbar.</value>
+  </data>
 </root>
