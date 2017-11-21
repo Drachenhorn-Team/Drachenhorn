@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
+        xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         mc:Ignorable="d" 
         Background="GhostWhite"
@@ -23,6 +24,11 @@
         <KeyBinding Key="S" Modifiers="Ctrl" Command="Save"/>
         <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="SaveAs"/>
     </Window.InputBindings>
+
+    <Window.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+    
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" IsMinimized="True">
             <Ribbon.QuickAccessToolBar>
@@ -43,6 +49,17 @@
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
         </Ribbon>
+
+        <StatusBar Name="StatusBar" DockPanel.Dock="Bottom" Height="25" Background="LightGray" BorderBrush="Gray" BorderThickness="0 2 0 0">
+            <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}">
+                <Border Background="Orange">
+                    <Image Source="/DSACharacterSheet.Core;component\Images\UpdateAvailable.png"
+                           ToolTip="{lang:Translate UpdateSourceTrigger.Available}"
+                           Visibility="{Binding IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </Border>
+            </StatusBarItem>
+        </StatusBar>
+
         <ScrollViewer PanningMode="VerticalOnly">
             <controls:CharacterSheetControl DataContext="{Binding CurrentSheet}"/>
         </ScrollViewer>

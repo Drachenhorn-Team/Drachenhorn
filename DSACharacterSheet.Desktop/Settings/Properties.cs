@@ -73,6 +73,21 @@ namespace DSACharacterSheet.Desktop.Settings
             }
         }
 
+        [XmlIgnore]
+        private bool _isUpdateAvailable;
+        [XmlIgnore]
+        public bool IsUpdateAvailable
+        {
+            get { return _isUpdateAvailable; }
+            private set
+            {
+                if (_isUpdateAvailable == value)
+                    return;
+                _isUpdateAvailable = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
 
@@ -87,9 +102,27 @@ namespace DSACharacterSheet.Desktop.Settings
                 GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "").Replace("\n", "");
             else
                 GitCommit = "No Commit found";
+
+            IsUpdateAvailable = CheckUpdate();
         }
 
         #endregion c'tor
+
+
+        #region Update
+
+        private bool CheckUpdate()
+        {
+            try
+            {
+                if (ApplicationDeployment.IsNetworkDeployed)
+                    return ApplicationDeployment.CurrentDeployment.CheckForUpdate();
+            }
+            catch (Exception) { }
+            return false;
+        }
+
+        #endregion Update
 
 
         #region Save/Load

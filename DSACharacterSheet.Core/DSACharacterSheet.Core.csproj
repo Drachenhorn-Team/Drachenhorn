@@ -82,6 +82,7 @@
     <Resource Include="Images\SaveIcon.png" />
     <Resource Include="Images\PropertiesIcon.png" />
     <Resource Include="Images\MenuIcon.png" />
+    <Resource Include="Images\UpdateAvailable.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

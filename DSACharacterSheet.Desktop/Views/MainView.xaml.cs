@@ -1,5 +1,6 @@
 ﻿using DSACharacterSheet.Core.ViewModel;
 using DSACharacterSheet.Desktop.Dialogs;
+using DSACharacterSheet.Desktop.Settings;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using Microsoft.Win32;
@@ -49,6 +50,8 @@ namespace DSACharacterSheet.Desktop.Views
             this.DataContext = new CharacterSheetViewModel();
 
             InitializeComponent();
+
+            StatusBar.DataContext = PropertiesManager.Properties;
 
             var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
             if (args != null)

@@ -318,4 +318,7 @@
   <data name="About.GitCommit" xml:space="preserve">
     <value>Git Commit:</value>
   </data>
+  <data name="Update.Available.ToolTip" xml:space="preserve">
+    <value>Update is available. Restart to update.</value>
+  </data>
 </root>
