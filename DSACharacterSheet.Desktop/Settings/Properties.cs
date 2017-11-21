@@ -111,6 +111,10 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region Update
 
+        /// <summary>
+        /// Checks for a ClickOnce-Update
+        /// </summary>
+        /// <returns>True if update is available.</returns>
         private bool CheckUpdate()
         {
             try
@@ -130,6 +134,10 @@ namespace DSACharacterSheet.Desktop.Settings
         private static readonly string PROPERTIESDIRECTORY = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DSACharacterSheet");
         private static string PropertiesPath { get { return Path.Combine(PROPERTIESDIRECTORY, "config.xml"); } }
 
+        /// <summary>
+        /// Loads the Properties from the "PROPERTIESDIRECTORY".
+        /// </summary>
+        /// <returns>The Loaded Properties.</returns>
         public static Properties Load()
         {
             if (!Directory.Exists(PROPERTIESDIRECTORY))
@@ -150,6 +158,9 @@ namespace DSACharacterSheet.Desktop.Settings
             }
         }
 
+        /// <summary>
+        /// Saves the Properties to the "PROPERTIESDIRECTORY"
+        /// </summary>
         public void Save()
         {
             if (!Directory.Exists(PROPERTIESDIRECTORY))

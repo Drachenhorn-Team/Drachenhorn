@@ -235,6 +235,12 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
+        /// <summary>
+        /// Loads a CharacterSheet from a selected path.
+        /// </summary>
+        /// <param name="path">Path to file.</param>
+        /// <returns>Loaded CharacterSheet</returns>
+        /// <exception cref="SheetLoadingException"/>
         public static CharacterSheet Load(string path)
         {
             try
@@ -253,6 +259,11 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
+        /// <summary>
+        /// Saves the current CharacterSheet to a selected path.
+        /// </summary>
+        /// <param name="path">Path to file.</param>
+        /// <exception cref="SheetSavingException"/>
         public void Save(string path)
         {
             try

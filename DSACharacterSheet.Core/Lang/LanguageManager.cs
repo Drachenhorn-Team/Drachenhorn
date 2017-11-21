@@ -13,7 +13,7 @@ namespace DSACharacterSheet.Core.Lang
 {
     public class LanguageManager
     {
-        private static readonly string[] CULTURES = { "de-DE", "en", "nds-DE" };
+        private static readonly string[] CULTURES = { "de-DE", "en" };
 
         private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
         public static CultureInfo CurrentCulture
@@ -27,6 +27,11 @@ namespace DSACharacterSheet.Core.Lang
             }
         }
 
+        /// <summary>
+        /// Returns the translated Text for the TranslateID.
+        /// </summary>
+        /// <param name="key">TranslateID</param>
+        /// <returns>Translated Text</returns>
         public string this[string key]
         {
             get { return GetLanguageText(key); }
@@ -34,6 +39,11 @@ namespace DSACharacterSheet.Core.Lang
 
         private static ResourceManager resourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
+        /// <summary>
+        /// Returns the translated Text for the TranslateID.
+        /// </summary>
+        /// <param name="identifier">TranslateID</param>
+        /// <returns>Translated Text.</returns>
         public static string GetLanguageText(string identifier)
         {
             try
@@ -46,11 +56,19 @@ namespace DSACharacterSheet.Core.Lang
             }
         }
 
+        /// <summary>
+        /// Returns the Native Names of all supported cultures.
+        /// </summary>
+        /// <returns>List of native culture names</returns>
         public static List<string> GetAllCultureStrings()
         {
-            return GetAllCultures().ConvertAll<string>(x => x.DisplayName);
+            return GetAllCultures().ConvertAll<string>(x => x.NativeName);
         }
 
+        /// <summary>
+        /// Returns all supported cultures.
+        /// </summary>
+        /// <returns>List of supported cultures.</returns>
         public static List<CultureInfo> GetAllCultures()
         {
             var result = new List<CultureInfo>();
@@ -64,7 +82,5 @@ namespace DSACharacterSheet.Core.Lang
 
             return result;
         }
-
-
     }
 }

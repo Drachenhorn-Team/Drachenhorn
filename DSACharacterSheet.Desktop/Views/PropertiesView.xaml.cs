@@ -58,7 +58,8 @@ namespace DSACharacterSheet.Desktop.Views
                 return;
 
             var button = (Button)sender;
-            Process.Start(new ProcessStartInfo(@"https://github.com/lightlike/DSACharacterSheet/commit/" + button.Content));
+            if (button.Content.ToString() != "Application not published")
+                Process.Start(new ProcessStartInfo(@"https://github.com/lightlike/DSACharacterSheet/commit/" + button.Content));
         }
     }
 }

@@ -39,7 +39,7 @@
                 </RibbonQuickAccessToolBar>
             </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu KeyTip="D" SmallImageSource="/DSACharacterSheet.Core;component\Images\MenuIcon.png" Background="{x:Static SystemParameters.WindowGlassBrush}">
+                <RibbonApplicationMenu KeyTip="D" SmallImageSource="/DSACharacterSheet.Core;component\Images\MenuIcon.png" Background="Green"><!--Background="{x:Static SystemParameters.WindowGlassBrush}">-->
                     <RibbonApplicationMenuItem Header="{lang:Translate UI.New}" Command="New" ImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png" InputGestureText="Strg + N"/>
                     <RibbonApplicationMenuItem Header="{lang:Translate UI.Open}" Command="Open" ImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png" InputGestureText="Strg + O"/>
                     <RibbonApplicationMenuItem Header="{lang:Translate UI.Save}" Command="Save" ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png" InputGestureText="Strg + S"/>
@@ -51,11 +51,12 @@
         </Ribbon>
 
         <StatusBar Name="StatusBar" DockPanel.Dock="Bottom" Height="25" Background="LightGray" BorderBrush="Gray" BorderThickness="0 2 0 0">
-            <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}">
-                <Border Background="Orange">
+            <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}" >
+                <Border Background="Orange" CornerRadius="10">
                     <Image Source="/DSACharacterSheet.Core;component\Images\UpdateAvailable.png"
-                           ToolTip="{lang:Translate UpdateSourceTrigger.Available}"
-                           Visibility="{Binding IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                           ToolTip="{lang:Translate Update.Available}"
+                           Visibility="{Binding IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Margin="1"/>
                 </Border>
             </StatusBarItem>
         </StatusBar>
