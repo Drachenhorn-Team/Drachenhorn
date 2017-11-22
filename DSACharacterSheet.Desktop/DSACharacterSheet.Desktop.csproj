@@ -153,6 +153,9 @@
     <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
       <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CoatOfArmsControl.xaml.cs">
+      <DependentUpon>CoatOfArmsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CombatControl.xaml.cs">
       <DependentUpon>CombatControl.xaml</DependentUpon>
     </Compile>
@@ -204,6 +207,10 @@
     <Page Include="UserControls\CharacterSheetControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CoatOfArmsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CombatControl.xaml">
       <SubType>Designer</SubType>

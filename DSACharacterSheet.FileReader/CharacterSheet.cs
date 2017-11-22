@@ -112,6 +112,21 @@ namespace DSACharacterSheet.FileReader
         }
 
         [XmlIgnore]
+        private CoatOfArms _coatOfArms = new CoatOfArms();
+        [XmlElement("CoatOfArms")]
+        public CoatOfArms CoatOfArms
+        {
+            get { return _coatOfArms; }
+            set
+            {
+                if (_coatOfArms == value)
+                    return;
+                _coatOfArms = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private SocialInformation _socialInformation = new SocialInformation();
         [XmlElement("SocialInformation")]
         public SocialInformation SocialInformation

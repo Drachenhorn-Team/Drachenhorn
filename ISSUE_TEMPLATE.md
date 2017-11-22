@@ -12,5 +12,5 @@
 
 ## Specifications
 
-  - ClickOnce-Version:
+  - ClickOnce-Version: [Version](https://github.com/lightlike/DSACharacterSheet/commit/ <!-- git-Commit -->)
   - Platform: <!-- If I get to implementing it on more than normal Windows -->
