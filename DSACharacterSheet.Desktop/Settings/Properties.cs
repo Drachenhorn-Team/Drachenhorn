@@ -103,13 +103,18 @@ namespace DSACharacterSheet.Desktop.Settings
             else
                 GitCommit = "No Commit found";
 
-            IsUpdateAvailable = CheckUpdate();
+            CheckUpdateAsync();
         }
 
         #endregion c'tor
 
 
         #region Update
+
+        private void CheckUpdateAsync()
+        {
+            new Task(() => { IsUpdateAvailable = CheckUpdate(); }).Start();
+        }
 
         /// <summary>
         /// Checks for a ClickOnce-Update
