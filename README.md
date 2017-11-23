@@ -1,4 +1,4 @@
-<p align="center"><img src="DSACharacterSheet.Core/Images/DSALogo.gif" alt="DSACharacterSheet Icon" width="350"></p>
+<p align="center"><img src="DSACharacterSheet.Core/Images/DSAFanLogo.png" alt="DSACharacterSheet Icon" width="350"></p>
 <h1 align="center">DSACharacterSheet</h1>
 
 <p align="center">
@@ -29,7 +29,6 @@
 
 
 Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
-
 
 >"Das PDF ist echt nervig und langwierig auszufüllen, kannst du da nicht mal was schreiben Daniel?" - Unser Spielleiter
 

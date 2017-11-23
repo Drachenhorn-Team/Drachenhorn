@@ -68,9 +68,6 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DSALogo.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Flags\de-DE.png" />
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />
@@ -83,6 +80,7 @@
     <Resource Include="Images\PropertiesIcon.png" />
     <Resource Include="Images\MenuIcon.png" />
     <Resource Include="Images\UpdateAvailable.png" />
+    <Resource Include="Images\DSAFanLogo.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

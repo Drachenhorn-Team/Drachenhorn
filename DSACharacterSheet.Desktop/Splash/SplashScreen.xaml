@@ -16,7 +16,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Image Source="/DSACharacterSheet.Core;component\Images\DSALogo.gif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
+            <Image Source="/DSACharacterSheet.Core;component\Images\DSAFanLogo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
             <TextBlock Text="{lang:Translate Splash.Loading}" HorizontalAlignment="Center" Grid.Row="1" FontSize="25" Style="{StaticResource Morpheus}"/>
 
         </Grid>

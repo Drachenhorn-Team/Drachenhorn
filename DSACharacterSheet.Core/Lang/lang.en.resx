@@ -324,4 +324,10 @@
   <data name="Update.Available" xml:space="preserve">
     <value>Update available.</value>
   </data>
+  <data name="About.OfficialImagesBy" xml:space="preserve">
+    <value>Offical Images by:</value>
+  </data>
+  <data name="About.Images" xml:space="preserve">
+    <value>Images</value>
+  </data>
 </root>

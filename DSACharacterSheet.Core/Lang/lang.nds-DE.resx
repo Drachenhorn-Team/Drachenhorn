@@ -264,4 +264,7 @@
   <data name="About.FlagsBy" xml:space="preserve">
     <value>Flaggen sünd von:</value>
   </data>
+  <data name="About.Images" xml:space="preserve">
+    <value>Biller</value>
+  </data>
 </root>
