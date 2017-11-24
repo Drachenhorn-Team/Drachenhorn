@@ -50,7 +50,7 @@
         </WrapPanel>
         
         <Border Background="White" BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" MouseMove="Canvas_MouseMove" StylusMove="Canvas_StylusMove" TouchMove="Canvas_TouchMove" ClipToBounds="True" Width="300" Height="200" Margin="1"/>
+            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="300" Height="200" Margin="1"/>
         </Border>
     </DockPanel>
 </Window>
