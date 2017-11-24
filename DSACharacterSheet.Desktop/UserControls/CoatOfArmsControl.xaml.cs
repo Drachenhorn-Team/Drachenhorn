@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSACharacterSheet.Desktop.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace DSACharacterSheet.Desktop.UserControls
         public CoatOfArmsControl()
         {
             InitializeComponent();
+        }
+
+        private T FindParent<T>(DependencyObject child) where T : DependencyObject
+        {
+            T parent = VisualTreeHelper.GetParent(child) as T;
+
+            if (parent != null)
+                return parent;
+            else
+                return FindParent<T>(parent);
+
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            var view = new CoatOfArmsPainterView();
+            view.DataContext = this.DataContext;
+            view.Show();
         }
     }
 }

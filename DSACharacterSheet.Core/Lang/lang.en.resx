@@ -330,4 +330,16 @@
   <data name="About.Images" xml:space="preserve">
     <value>Images</value>
   </data>
+  <data name="UI.Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Painter.Pencil" xml:space="preserve">
+    <value>Pencil</value>
+  </data>
+  <data name="Painter.Eraser" xml:space="preserve">
+    <value>Eraser</value>
+  </data>
+  <data name="Painter.Clear" xml:space="preserve">
+    <value>Clear all</value>
+  </data>
 </root>

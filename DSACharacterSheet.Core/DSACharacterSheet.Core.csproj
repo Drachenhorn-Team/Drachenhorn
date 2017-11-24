@@ -81,6 +81,10 @@
     <Resource Include="Images\MenuIcon.png" />
     <Resource Include="Images\UpdateAvailable.png" />
     <Resource Include="Images\DSAFanLogo.png" />
+    <Resource Include="Images\Painting\Brush.png" />
+    <Resource Include="Images\Painting\Pencil.png" />
+    <Resource Include="Images\Painting\Eraser.png" />
+    <Resource Include="Images\Painting\Clear.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>
