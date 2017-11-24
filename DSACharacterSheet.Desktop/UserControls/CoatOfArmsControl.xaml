@@ -31,7 +31,7 @@
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}" TextAlignment="Center" DockPanel.Dock="Top"/>
         <Button Content="{lang:Translate UI.Edit}" Click="EditButton_Click" Margin="5" DockPanel.Dock="Bottom"/>
         <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <InkPresenter Strokes="{Binding Strokes}" Width="300" Height="200" Margin="2"/>
+            <InkPresenter Strokes="{Binding Strokes}" ClipToBounds="True" Width="300" Height="200" Margin="2"/>
         </Border>
     </DockPanel>
 </UserControl>
