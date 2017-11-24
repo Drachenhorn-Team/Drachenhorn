@@ -91,5 +91,26 @@ namespace DSACharacterSheet.Desktop.Views
         {
             Canvas.Strokes.Clear();
         }
+
+        private void Canvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            InkCanvas ink = sender as InkCanvas;
+            if (ink != null && !ink.IsAncestorOf((VisualTreeHelper.HitTest(this, e.GetPosition(this)).VisualHit)))
+                ink.ReleaseMouseCapture();
+        }
+
+        private void Canvas_StylusMove(object sender, StylusEventArgs e)
+        {
+            InkCanvas ink = sender as InkCanvas;
+            if (ink != null && !ink.IsAncestorOf((VisualTreeHelper.HitTest(this, e.GetPosition(this)).VisualHit)))
+                ink.ReleaseStylusCapture();
+        }
+
+        private void Canvas_TouchMove(object sender, TouchEventArgs e)
+        {
+            InkCanvas ink = sender as InkCanvas;
+            if (ink != null && !ink.IsAncestorOf((VisualTreeHelper.HitTest(this, e.GetTouchPoint(this).Position).VisualHit)))
+                ink.ReleaseTouchCapture(e.TouchDevice);
+        }
     }
 }
