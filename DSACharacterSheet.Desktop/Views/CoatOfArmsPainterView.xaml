@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Background="LightGray"
         ResizeMode="CanMinimize"
-        Title="{lang:Translate CharacterSheet.CoatOfArms}" Height="270" Width="450">
+        Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
             <WrapPanel.Resources>
@@ -49,8 +49,12 @@
             <xctk:ColorPicker Name="ClrPcker_Brush" SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged" Width="200" Margin="2"/>
         </WrapPanel>
         
-        <Border Background="White" BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="300" Height="200" Margin="1"/>
+        <Border Background="White" BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="610" Height="410">
+            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="300" Height="200" Margin="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <InkCanvas.RenderTransform>
+                    <ScaleTransform x:Name="InkCanvasScaleTransform" />
+                </InkCanvas.RenderTransform>
+            </InkCanvas>
         </Border>
     </DockPanel>
 </Window>

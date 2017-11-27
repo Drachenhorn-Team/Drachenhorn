@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -19,9 +22,29 @@ namespace DSACharacterSheet.Desktop.Views
     /// </summary>
     public partial class CoatOfArmsPainterView : Window
     {
-        public CoatOfArmsPainterView()
+        private StrokeCollection _strokes;
+        public StrokeCollection Strokes
         {
+            get { return _strokes; }
+            private set
+            {
+                if (_strokes == value)
+                    return;
+                _strokes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public CoatOfArmsPainterView(StrokeCollection strokes)
+        {
+            this.DataContext = this;
+            Strokes = strokes;
+
             InitializeComponent();
+
+            InkCanvasScaleTransform.ScaleX = 2;
+            InkCanvasScaleTransform.ScaleY = 2;
+
             ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
         }
 
@@ -53,12 +76,21 @@ namespace DSACharacterSheet.Desktop.Views
         {
             if (Canvas != null)
             {
+                Canvas.DefaultDrawingAttributes.Height = 1;
+                Canvas.DefaultDrawingAttributes.Width = 1;
+            }
+        }
+
+        private void BrushStrength_Checked_2(object sender, RoutedEventArgs e)
+        {
+            if (Canvas != null)
+            {
                 Canvas.DefaultDrawingAttributes.Height = 2;
                 Canvas.DefaultDrawingAttributes.Width = 2;
             }
         }
 
-        private void BrushStrength_Checked_2(object sender, RoutedEventArgs e)
+        private void BrushStrength_Checked_3(object sender, RoutedEventArgs e)
         {
             if (Canvas != null)
             {
@@ -67,21 +99,12 @@ namespace DSACharacterSheet.Desktop.Views
             }
         }
 
-        private void BrushStrength_Checked_3(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-            {
-                Canvas.DefaultDrawingAttributes.Height = 8;
-                Canvas.DefaultDrawingAttributes.Width = 8;
-            }
-        }
-
         private void BrushStrength_Checked_4(object sender, RoutedEventArgs e)
         {
             if (Canvas != null)
             {
-                Canvas.DefaultDrawingAttributes.Height = 12;
-                Canvas.DefaultDrawingAttributes.Width = 12;
+                Canvas.DefaultDrawingAttributes.Height = 6;
+                Canvas.DefaultDrawingAttributes.Width = 6;
             }
         }
 
@@ -91,5 +114,18 @@ namespace DSACharacterSheet.Desktop.Views
         {
             Canvas.Strokes.Clear();
         }
+
+
+
+
+        #region OnPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion OnPropertyChanged
     }
 }

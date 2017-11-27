@@ -1,4 +1,5 @@
 ﻿using DSACharacterSheet.Desktop.Views;
+using DSACharacterSheet.FileReader.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,10 @@ namespace DSACharacterSheet.Desktop.UserControls
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            var view = new CoatOfArmsPainterView();
-            view.DataContext = this.DataContext;
+            if (!(this.DataContext is CoatOfArms))
+                return;
+
+            var view = new CoatOfArmsPainterView(((CoatOfArms)this.DataContext).Strokes);
             view.Show();
         }
     }
