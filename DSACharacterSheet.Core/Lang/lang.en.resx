@@ -342,4 +342,7 @@
   <data name="Painter.Clear" xml:space="preserve">
     <value>Clear all</value>
   </data>
+  <data name="About.CheckForUpdate" xml:space="preserve">
+    <value>Check for Updates</value>
+  </data>
 </root>

@@ -50,5 +50,10 @@ namespace DSACharacterSheet.Desktop.Views
             if (button.Content.ToString() != "Application not published")
                 Process.Start(new ProcessStartInfo(@"https://github.com/lightlike/DSACharacterSheet/commit/" + button.Content));
         }
+
+        private void CheckForUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            PropertiesManager.Properties.CheckUpdateAsync();
+        }
     }
 }

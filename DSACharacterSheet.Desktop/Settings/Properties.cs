@@ -111,7 +111,7 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region Update
 
-        private void CheckUpdateAsync()
+        public void CheckUpdateAsync()
         {
             new Task(() => { IsUpdateAvailable = CheckUpdate(); }).Start();
         }

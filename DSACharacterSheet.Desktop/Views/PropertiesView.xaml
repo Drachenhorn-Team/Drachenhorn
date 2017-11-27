@@ -66,6 +66,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock Text="{lang:Translate About.Version}" Grid.Row="0" Grid.Column="0" Margin="5"/>
@@ -80,10 +81,15 @@
 
                             <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                             <TextBlock Margin="5" Grid.Row="3" Grid.Column="1">
-                        <Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate">
-                            lightlike (DanielN)
-                        </Hyperlink>
+                                <Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate">
+                                    lightlike (DanielN)
+                                </Hyperlink>
                             </TextBlock>
+
+                            <Button Content="{lang:Translate About.CheckForUpdate}"
+                                    Click="CheckForUpdate_Click"
+                                    Grid.ColumnSpan="2" Grid.Row="4"
+                                    Margin="5" HorizontalAlignment="Right"/>
                         </Grid>
                     </Border>
 
