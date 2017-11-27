@@ -46,7 +46,16 @@
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
 
-            <xctk:ColorPicker Name="ClrPcker_Brush" SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged" Width="200" Margin="2"/>
+            <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
+                              DisplayColorAndName="True"
+                              AdvancedButtonHeader="{lang:Translate Colors.Advanced.Header}"
+                              StandardButtonHeader="{lang:Translate Colors.Standard.Header}"
+                              StandardColorsHeader="{lang:Translate Colors.Standard}"
+                              RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
+                              ShowRecentColors="True"
+                              UsingAlphaChannel="True"
+                              SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged"
+                              Width="200" Margin="2"/>
         </WrapPanel>
         
         <Border Background="White" BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="910" Height="610">

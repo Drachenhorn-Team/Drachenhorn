@@ -61,7 +61,7 @@ namespace DSACharacterSheet.Desktop.Views
                 MessageBoxImage.Information,
                 MessageBoxResult.OK);
 
-            PropertiesManager.Properties.OnUpdateChecked += (obj, args) =>
+            PropertiesManager.Properties.UpdateChecked += (obj, args) =>
             {
                 string text;
 

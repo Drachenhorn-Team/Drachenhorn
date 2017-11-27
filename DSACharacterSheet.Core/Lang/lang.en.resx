@@ -360,4 +360,16 @@
   <data name="Update.CheckForUpdate.Finished.Caption" xml:space="preserve">
     <value>Finished searching for Update</value>
   </data>
+  <data name="Colors.Standard.Header" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Colors.Advanced.Header" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="Colors.Standard" xml:space="preserve">
+    <value>Default colors</value>
+  </data>
+  <data name="Colors.Recent.Header" xml:space="preserve">
+    <value>Recent</value>
+  </data>
 </root>

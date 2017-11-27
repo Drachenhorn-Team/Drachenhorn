@@ -110,6 +110,15 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region Update
 
+        public event UpdateCheckedHandler UpdateChecked;
+        private void OnUpdateChecked(object sender, UpdateCheckedEventArgs args)
+        {
+            if (UpdateChecked == null)
+                return;
+
+            UpdateChecked(sender, args);
+        }
+
         public void CheckUpdateAsync()
         {
             new Task(() => {
@@ -132,8 +141,6 @@ namespace DSACharacterSheet.Desktop.Settings
             catch (Exception) { }
             return false;
         }
-
-        public event UpdateCheckedHandler OnUpdateChecked;
 
         #endregion Update
 

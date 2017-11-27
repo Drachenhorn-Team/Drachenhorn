@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -14,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -46,6 +48,15 @@ namespace DSACharacterSheet.Desktop.Views
             InkCanvasScaleTransform.ScaleY = 3;
 
             ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
+            ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>()
+            {
+                new ColorItem(Color.FromRgb(220, 20,  60), "Crimson"),
+                new ColorItem(Color.FromRgb(67,  110, 238), "Royal Blue"),
+                new ColorItem(Color.FromRgb(0,   201, 87), "Emerald Green"),
+                new ColorItem(Color.FromRgb(255, 215, 0), "Gold"),
+                new ColorItem(Color.FromRgb(192, 192, 192), "Silver"),
+                new ColorItem(Color.FromRgb(41,  36,  33), "Ivory Black"),
+            };
         }
 
         private void ClrPcker_Brush_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)

@@ -360,4 +360,16 @@
   <data name="Update.CheckForUpdate.Finished.Caption" xml:space="preserve">
     <value>Überprüfung auf Update abgeschlossen</value>
   </data>
+  <data name="Colors.Standard.Header" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Colors.Advanced.Header" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="Colors.Standard" xml:space="preserve">
+    <value>Standardfarben</value>
+  </data>
+  <data name="Colors.Recent.Header" xml:space="preserve">
+    <value>Zuletzt verwendet</value>
+  </data>
 </root>
