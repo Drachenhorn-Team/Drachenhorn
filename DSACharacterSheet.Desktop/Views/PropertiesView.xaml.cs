@@ -1,4 +1,5 @@
-﻿using DSACharacterSheet.Desktop.Settings;
+﻿using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Desktop.Settings;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -53,6 +54,31 @@ namespace DSACharacterSheet.Desktop.Views
 
         private void CheckForUpdate_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show(this,
+                LanguageManager.GetLanguageText("Update.CheckForUpdate.Text"),
+                LanguageManager.GetLanguageText("Update.CheckForUpdate.Caption"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Information,
+                MessageBoxResult.OK);
+
+            PropertiesManager.Properties.OnUpdateChecked += (obj, args) =>
+            {
+                string text;
+
+                if (args.IsUpdateAvailable)
+                    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful");
+                else
+                    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Failed");
+
+                MessageBox.Show(this,
+                    text,
+                    LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information,
+                    MessageBoxResult.OK);
+            };
+
+
             PropertiesManager.Properties.CheckUpdateAsync();
         }
     }

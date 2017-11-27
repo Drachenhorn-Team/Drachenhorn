@@ -345,4 +345,19 @@
   <data name="About.CheckForUpdate" xml:space="preserve">
     <value>Check for Updates</value>
   </data>
+  <data name="Update.CheckForUpdate.Text" xml:space="preserve">
+    <value>Program is searching for Update.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Caption" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
+    <value>Update was found. Please restart to apply.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Failed" xml:space="preserve">
+    <value>No Update found.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Caption" xml:space="preserve">
+    <value>Finished searching for Update</value>
+  </data>
 </root>

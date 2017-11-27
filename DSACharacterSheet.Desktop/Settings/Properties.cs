@@ -111,14 +111,17 @@ namespace DSACharacterSheet.Desktop.Settings
 
         public void CheckUpdateAsync()
         {
-            new Task(() => { IsUpdateAvailable = CheckUpdate(); }).Start();
+            new Task(() => {
+                IsUpdateAvailable = NeedsUpdate();
+                OnUpdateChecked(this, new UpdateCheckedEventArgs(IsUpdateAvailable));
+            }).Start();
         }
 
         /// <summary>
         /// Checks for a ClickOnce-Update
         /// </summary>
         /// <returns>True if update is available.</returns>
-        private bool CheckUpdate()
+        public bool NeedsUpdate()
         {
             try
             {
@@ -128,6 +131,8 @@ namespace DSACharacterSheet.Desktop.Settings
             catch (Exception) { }
             return false;
         }
+
+        public event UpdateCheckedHandler OnUpdateChecked;
 
         #endregion Update
 

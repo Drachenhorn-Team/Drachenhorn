@@ -345,4 +345,19 @@
   <data name="About.CheckForUpdate" xml:space="preserve">
     <value>Auf Updates prüfen</value>
   </data>
+  <data name="Update.CheckForUpdate.Text" xml:space="preserve">
+    <value>Es wird auf ein Update geprüft.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Caption" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
+    <value>Es wurde ein Update gefunden. Bitte starten sie das Programm neu, um dies zu installieren.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Failed" xml:space="preserve">
+    <value>Es wurde kein Update gefunden.</value>
+  </data>
+  <data name="Update.CheckForUpdate.Finished.Caption" xml:space="preserve">
+    <value>Überprüfung auf Update abgeschlossen</value>
+  </data>
 </root>

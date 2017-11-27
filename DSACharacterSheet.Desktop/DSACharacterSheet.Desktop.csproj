@@ -150,6 +150,7 @@
     <Compile Include="Lang\TranslateExtension.cs" />
     <Compile Include="Settings\Properties.cs" />
     <Compile Include="Settings\PropertiesManager.cs" />
+    <Compile Include="Settings\UpdateCheckedEventArgs.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
