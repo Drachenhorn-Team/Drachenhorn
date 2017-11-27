@@ -102,8 +102,6 @@ namespace DSACharacterSheet.Desktop.Settings
                 GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "").Replace("\n", "");
             else
                 GitCommit = "No Commit found";
-
-            CheckUpdateAsync();
         }
 
         #endregion c'tor

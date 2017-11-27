@@ -34,6 +34,8 @@ namespace DSACharacterSheet.Desktop
             mainWindow = new MainView();
             mainWindow.Show();
             splash.Close();
+
+            PropertiesManager.Properties.CheckUpdateAsync();
         }
     }
 }
