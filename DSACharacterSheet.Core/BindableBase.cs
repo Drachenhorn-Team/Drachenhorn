@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSACharacterSheet.Desktop
+namespace DSACharacterSheet.Core
 {
-    public abstract class BindableBase : INotifyPropertyChanged
+    public class BindableBase : INotifyPropertyChanged
     {
         #region OnPropertyChanged
 

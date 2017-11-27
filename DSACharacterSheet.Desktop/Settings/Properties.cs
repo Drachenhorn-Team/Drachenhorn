@@ -1,4 +1,5 @@
-﻿using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core;
+using DSACharacterSheet.Core.Lang;
 using System;
 using System.Collections.Generic;
 using System.Deployment.Application;

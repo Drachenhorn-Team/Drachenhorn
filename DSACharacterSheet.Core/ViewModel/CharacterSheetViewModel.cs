@@ -1,7 +1,5 @@
 ﻿using DSACharacterSheet.Core.ViewModel;
 using DSACharacterSheet.FileReader;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
