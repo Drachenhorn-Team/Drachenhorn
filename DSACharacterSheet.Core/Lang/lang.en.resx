@@ -345,12 +345,6 @@
   <data name="About.CheckForUpdate" xml:space="preserve">
     <value>Check for Updates</value>
   </data>
-  <data name="Update.CheckForUpdate.Text" xml:space="preserve">
-    <value>Program is searching for Update.</value>
-  </data>
-  <data name="Update.CheckForUpdate.Caption" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
     <value>Update was found. Please restart to apply.</value>
   </data>
@@ -371,5 +365,8 @@
   </data>
   <data name="Colors.Recent.Header" xml:space="preserve">
     <value>Recent</value>
+  </data>
+  <data name="UpdateSourceTrigger.CheckForUpdate.Text" xml:space="preserve">
+    <value>Searching for Update.</value>
   </data>
 </root>

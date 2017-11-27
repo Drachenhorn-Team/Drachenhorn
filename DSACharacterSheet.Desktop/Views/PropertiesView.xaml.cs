@@ -54,32 +54,37 @@ namespace DSACharacterSheet.Desktop.Views
 
         private void CheckForUpdate_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this,
-                LanguageManager.GetLanguageText("Update.CheckForUpdate.Text"),
-                LanguageManager.GetLanguageText("Update.CheckForUpdate.Caption"),
-                MessageBoxButton.OK,
-                MessageBoxImage.Information,
-                MessageBoxResult.OK);
+            BusyIndicator.IsBusy = true;
 
-            PropertiesManager.Properties.UpdateChecked += (obj, args) =>
-            {
-                string text;
-
-                if (args.IsUpdateAvailable)
-                    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful");
-                else
-                    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Failed");
-
-                MessageBox.Show(this,
-                    text,
-                    LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information,
-                    MessageBoxResult.OK);
-            };
-
+            PropertiesManager.Properties.UpdateChecked += UpdateCheckFinished;
 
             PropertiesManager.Properties.CheckUpdateAsync();
+        }
+
+        private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
+        {
+            string text;
+
+            if (args.IsUpdateAvailable)
+                text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful");
+            else
+                text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Failed");
+
+
+            Application.Current.Dispatcher.Invoke(
+                new Action(() =>
+                {
+                    BusyIndicator.IsBusy = false;
+
+                    MessageBox.Show(this,
+                        text,
+                        LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information,
+                        MessageBoxResult.OK);
+                }));
+
+            PropertiesManager.Properties.UpdateChecked -= UpdateCheckFinished;
         }
     }
 }

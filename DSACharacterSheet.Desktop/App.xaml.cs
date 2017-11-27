@@ -1,4 +1,5 @@
-﻿using DSACharacterSheet.Desktop.Dialogs;
+﻿using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Desktop.Dialogs;
 using DSACharacterSheet.Desktop.Settings;
 using DSACharacterSheet.Desktop.Views;
 using System;
@@ -36,6 +37,21 @@ namespace DSACharacterSheet.Desktop
             splash.Close();
 
             PropertiesManager.Properties.CheckUpdateAsync();
+        }
+
+        private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
+        {
+            if (args.IsUpdateAvailable)
+                Application.Current.Dispatcher.Invoke(
+                    new Action(() =>
+                    {
+                        MessageBox.Show(
+                            LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful"),
+                            LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information,
+                            MessageBoxResult.OK);
+                    }));
         }
     }
 }

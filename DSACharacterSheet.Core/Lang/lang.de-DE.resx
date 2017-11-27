@@ -345,12 +345,6 @@
   <data name="About.CheckForUpdate" xml:space="preserve">
     <value>Auf Updates prüfen</value>
   </data>
-  <data name="Update.CheckForUpdate.Text" xml:space="preserve">
-    <value>Es wird auf ein Update geprüft.</value>
-  </data>
-  <data name="Update.CheckForUpdate.Caption" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
     <value>Es wurde ein Update gefunden. Bitte starten sie das Programm neu, um dies zu installieren.</value>
   </data>
@@ -371,5 +365,8 @@
   </data>
   <data name="Colors.Recent.Header" xml:space="preserve">
     <value>Zuletzt verwendet</value>
+  </data>
+  <data name="UpdateSourceTrigger.CheckForUpdate.Text" xml:space="preserve">
+    <value>Suche nach Update.</value>
   </data>
 </root>
