@@ -42,8 +42,8 @@ namespace DSACharacterSheet.Desktop.Views
 
             InitializeComponent();
 
-            InkCanvasScaleTransform.ScaleX = 2;
-            InkCanvasScaleTransform.ScaleY = 2;
+            InkCanvasScaleTransform.ScaleX = 3;
+            InkCanvasScaleTransform.ScaleY = 3;
 
             ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
         }
@@ -76,8 +76,8 @@ namespace DSACharacterSheet.Desktop.Views
         {
             if (Canvas != null)
             {
-                Canvas.DefaultDrawingAttributes.Height = 1;
-                Canvas.DefaultDrawingAttributes.Width = 1;
+                Canvas.DefaultDrawingAttributes.Height = .7;
+                Canvas.DefaultDrawingAttributes.Width = .7;
             }
         }
 
@@ -85,8 +85,8 @@ namespace DSACharacterSheet.Desktop.Views
         {
             if (Canvas != null)
             {
-                Canvas.DefaultDrawingAttributes.Height = 2;
-                Canvas.DefaultDrawingAttributes.Width = 2;
+                Canvas.DefaultDrawingAttributes.Height = 1.5;
+                Canvas.DefaultDrawingAttributes.Width = 1.5;
             }
         }
 
@@ -94,8 +94,8 @@ namespace DSACharacterSheet.Desktop.Views
         {
             if (Canvas != null)
             {
-                Canvas.DefaultDrawingAttributes.Height = 4;
-                Canvas.DefaultDrawingAttributes.Width = 4;
+                Canvas.DefaultDrawingAttributes.Height = 3;
+                Canvas.DefaultDrawingAttributes.Width = 3;
             }
         }
 
@@ -103,8 +103,8 @@ namespace DSACharacterSheet.Desktop.Views
         {
             if (Canvas != null)
             {
-                Canvas.DefaultDrawingAttributes.Height = 6;
-                Canvas.DefaultDrawingAttributes.Width = 6;
+                Canvas.DefaultDrawingAttributes.Height = 5.5;
+                Canvas.DefaultDrawingAttributes.Width = 5.5;
             }
         }
 
