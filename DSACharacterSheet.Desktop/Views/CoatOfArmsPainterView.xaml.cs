@@ -78,6 +78,12 @@ namespace DSACharacterSheet.Desktop.Views
                 Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
 
+        private void BrushType_Checked_3(object sender, RoutedEventArgs e)
+        {
+            if (Canvas != null)
+                Canvas.EditingMode = InkCanvasEditingMode.Select;
+        }
+
         #endregion BrushType
 
 

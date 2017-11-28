@@ -22,6 +22,9 @@
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_2" ToolTip="{lang:Translate Painter.Eraser}">
                 <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Eraser.png"/>
             </RadioButton>
+            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_3" ToolTip="{lang:Translate Painter.Select}">
+                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Select.png"/>
+            </RadioButton>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
 

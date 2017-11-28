@@ -65,6 +65,7 @@
     <Resource Include="Images\Painting\Pencil.png" />
     <Resource Include="Images\Painting\Eraser.png" />
     <Resource Include="Images\Painting\Clear.png" />
+    <Resource Include="Images\Painting\Select.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

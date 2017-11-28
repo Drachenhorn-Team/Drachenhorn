@@ -369,4 +369,7 @@
   <data name="UpdateSourceTrigger.CheckForUpdate.Text" xml:space="preserve">
     <value>Searching for Update.</value>
   </data>
+  <data name="Painter.Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
 </root>
