@@ -123,6 +123,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\EnumListStringConverter.cs" />
+    <Compile Include="Converter\EnumToStringConverter.cs" />
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>

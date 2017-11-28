@@ -50,6 +50,7 @@ namespace DSACharacterSheet.Desktop.Views
             ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
             ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>()
             {
+                new ColorItem(Colors.Transparent, "Transparent"),
                 new ColorItem(Color.FromRgb(220, 20,  60), "Crimson"),
                 new ColorItem(Color.FromRgb(67,  110, 238), "Royal Blue"),
                 new ColorItem(Color.FromRgb(0,   201, 87), "Emerald Green"),

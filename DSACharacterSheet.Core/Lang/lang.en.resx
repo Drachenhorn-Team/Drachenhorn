@@ -372,4 +372,13 @@
   <data name="Painter.Select" xml:space="preserve">
     <value>Select</value>
   </data>
+  <data name="Gender.None" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Gender.Male" xml:space="preserve">
+    <value>male</value>
+  </data>
+  <data name="Gender.Female" xml:space="preserve">
+    <value>female</value>
+  </data>
 </root>
