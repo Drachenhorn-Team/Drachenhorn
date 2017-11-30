@@ -45,7 +45,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="{lang:Translate CharacterInformation.Gender}" Grid.Column="0" Grid.Row="0"/>
-        <ComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}, UpdateSourceTrigger=PropertyChanged}"
+        <ComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}}"
                   ItemsSource="{Binding Source={StaticResource GenderEnum}, Converter={StaticResource EnumListStringConverter}}"
                   Grid.Column="1" Grid.Row="0" Margin="5"/>
 

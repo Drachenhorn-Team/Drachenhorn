@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -10,22 +11,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
+        <converter:EnumToStringConverter x:Key="EnumToStringConverter"/>
+        <converter:EnumListStringConverter x:Key="EnumListStringConverter"/>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="combatInfo:WeaponType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ArmorRegionEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="combatInfo:ArmorRegion"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
-    
-    <StackPanel>
-        <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
-        <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}" Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridComboBoxColumn Header="{lang:Translate WeaponInformation.Type}" ItemsSource="{Binding Source={StaticResource ResourceKey=WeaponTypeEnum}}"
-                                        SelectedItemBinding="{Binding Type}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </StackPanel>
+
+    <UniformGrid Columns="2">
+        <StackPanel>
+            <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
+                                        Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="*"/>
+                    <DataGridComboBoxColumn Header="{lang:Translate WeaponInformation.Type}"
+                                        ItemsSource="{Binding Source={StaticResource ResourceKey=WeaponTypeEnum}, Converter={StaticResource EnumListStringConverter}}"
+                                        SelectedItemBinding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"/>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}" Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="*" Binding="{Binding IsActive}"/>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
+                                        Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="*"/>
+                    <DataGridComboBoxColumn Header="{lang:Translate ArmorInformation.Region}"
+                                        ItemsSource="{Binding Source={StaticResource ResourceKey=ArmorRegionEnum}, Converter={StaticResource EnumListStringConverter}}"
+                                        SelectedItemBinding="{Binding Region, Converter={StaticResource EnumToStringConverter}}"/>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}" Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </UniformGrid>
 </UserControl>

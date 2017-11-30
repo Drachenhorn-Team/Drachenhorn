@@ -56,6 +56,7 @@ namespace DSACharacterSheet.Desktop.Views
                 new ColorItem(Color.FromRgb(0,   201, 87), "Emerald Green"),
                 new ColorItem(Color.FromRgb(255, 215, 0), "Gold"),
                 new ColorItem(Color.FromRgb(192, 192, 192), "Silver"),
+                new ColorItem(Color.FromRgb(139, 69,  19), "Brown"),
                 new ColorItem(Color.FromRgb(41,  36,  33), "Ivory Black"),
             };
         }

@@ -28,6 +28,21 @@ namespace DSACharacterSheet.FileReader.CombatInfo
             }
         }
 
+        [XmlIgnore]
+        private ObservableCollection<ArmorPart> _armorParts = new ObservableCollection<ArmorPart>();
+        [XmlElement("ArmorPart")]
+        public ObservableCollection<ArmorPart> ArmorParts
+        {
+            get { return _armorParts; }
+            set
+            {
+                if (_armorParts == value)
+                    return;
+                _armorParts = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
     }
 }

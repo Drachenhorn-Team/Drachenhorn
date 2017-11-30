@@ -361,7 +361,7 @@
     <value>Advanced</value>
   </data>
   <data name="Colors.Standard" xml:space="preserve">
-    <value>Default colors</value>
+    <value>Coat of Arms Colors</value>
   </data>
   <data name="Colors.Recent.Header" xml:space="preserve">
     <value>Recent</value>
@@ -380,5 +380,35 @@
   </data>
   <data name="Gender.Female" xml:space="preserve">
     <value>female</value>
+  </data>
+  <data name="ArmorInformation.Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="WeaponType.None" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="WeaponType.Melee" xml:space="preserve">
+    <value>Melee</value>
+  </data>
+  <data name="WeaponType.Ranged" xml:space="preserve">
+    <value>Ranged</value>
+  </data>
+  <data name="CharacterSheet.ArmorInformation" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="ArmorRegion.None" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="ArmorRegion.Head" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="ArmorRegion.Body" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="ArmorRegion.Hands" xml:space="preserve">
+    <value>Hands</value>
+  </data>
+  <data name="ArmorRegion.Legs" xml:space="preserve">
+    <value>Legs</value>
   </data>
 </root>
