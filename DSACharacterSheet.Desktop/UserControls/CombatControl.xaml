@@ -9,7 +9,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:combatInfo="clr-namespace:DSACharacterSheet.FileReader.CombatInfo;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:EnumToStringConverter x:Key="EnumToStringConverter"/>
         <converter:EnumListStringConverter x:Key="EnumListStringConverter"/>
@@ -28,31 +28,37 @@
     <UniformGrid Columns="2">
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}" CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                         Width="*"/>
                     <DataGridComboBoxColumn Header="{lang:Translate WeaponInformation.Type}"
-                                        ItemsSource="{Binding Source={StaticResource ResourceKey=WeaponTypeEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                        SelectedItemBinding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"/>
-                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}" Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"/>
+                                            ItemsSource="{Binding Source={StaticResource ResourceKey=WeaponTypeEnum}, Converter={StaticResource EnumListStringConverter}}"
+                                            SelectedItemBinding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"
+                                            Width="Auto" MinWidth="100"/>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
+                                        Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="Auto" MinWidth="40"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
 
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center"/>
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}" CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="*" Binding="{Binding IsActive}"/>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                         Width="*"/>
                     <DataGridComboBoxColumn Header="{lang:Translate ArmorInformation.Region}"
-                                        ItemsSource="{Binding Source={StaticResource ResourceKey=ArmorRegionEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                        SelectedItemBinding="{Binding Region, Converter={StaticResource EnumToStringConverter}}"/>
-                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}" Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"/>
+                                            ItemsSource="{Binding Source={StaticResource ResourceKey=ArmorRegionEnum}, Converter={StaticResource EnumListStringConverter}}"
+                                            SelectedItemBinding="{Binding Region, Converter={StaticResource EnumToStringConverter}}"
+                                            Width="Auto" MinWidth="100"/>
+                    <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
+                                        Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="Auto" MinWidth="40"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

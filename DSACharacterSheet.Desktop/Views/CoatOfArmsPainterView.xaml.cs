@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSACharacterSheet.Core.Objects;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -132,6 +133,26 @@ namespace DSACharacterSheet.Desktop.Views
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             Canvas.Strokes.Clear();
+        }
+
+        public LimitedList<Stroke> _undoneStrokes = new LimitedList<Stroke>(50);
+
+        private void UndoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Strokes.Count == 0)
+                return;
+
+            _undoneStrokes.Add(Strokes.ElementAt(Strokes.Count - 1));
+            Strokes.RemoveAt(Strokes.Count - 1);
+        }
+
+        private void RedoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_undoneStrokes.Count == 0)
+                return;
+
+            Strokes.Add(_undoneStrokes.Last());
+            _undoneStrokes.Remove(_undoneStrokes.Last());
         }
 
 

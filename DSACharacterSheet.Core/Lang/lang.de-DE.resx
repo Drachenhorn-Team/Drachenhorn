@@ -411,4 +411,10 @@
   <data name="ArmorRegion.Legs" xml:space="preserve">
     <value>Beine</value>
   </data>
+  <data name="UI.Undo" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="UI.Redo" xml:space="preserve">
+    <value>Wiederholen</value>
+  </data>
 </root>

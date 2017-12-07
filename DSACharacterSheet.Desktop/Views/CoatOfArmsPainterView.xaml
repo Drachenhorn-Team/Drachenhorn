@@ -28,6 +28,12 @@
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
 
+            <Button Width="20" Height="20" Margin="2" Click="UndoButton_Click" ToolTip="{lang:Translate UI.Undo}">
+                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Undo.png" Width="16"/>
+            </Button>
+            <Button Width="20" Height="20" Margin="2" Click="RedoButton_Click" ToolTip="{lang:Translate UI.Redo}">
+                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Redo.png" Width="16"/>
+            </Button>
             <Button Width="20" Height="20" Margin="2" Click="ClearButton_Click" ToolTip="{lang:Translate Painter.Clear}">
                 <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Clear.png" Width="16"/>
             </Button>
