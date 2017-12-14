@@ -17,32 +17,32 @@ using System.Windows.Shapes;
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für SkillListControl.xaml
+    /// Interaktionslogik für SpecialSkillControl.xaml
     /// </summary>
-    public partial class SkillListControl : UserControl
+    public partial class SpecialSkillControl : UserControl
     {
-        public SkillListControl()
+        public SpecialSkillControl()
         {
             InitializeComponent();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(List.ItemsSource is IList<Skill>))
+            if (!(List.ItemsSource is IList<SpecialSkill>))
                 return;
 
-            var newItem = new Skill();
+            var newItem = new SpecialSkill();
 
-            ((IList<Skill>)List.ItemsSource).Add(newItem);
+            ((IList<SpecialSkill>)List.ItemsSource).Add(newItem);
             List.SelectedItem = newItem;
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(List.ItemsSource is IList<Skill>))
+            if (!(List.ItemsSource is IList<SpecialSkill>))
                 return;
 
-            ((IList<Skill>)List.ItemsSource).Remove((Skill)List.SelectedItem);
+            ((IList<SpecialSkill>)List.ItemsSource).Remove((SpecialSkill)List.SelectedItem);
         }
     }
 }

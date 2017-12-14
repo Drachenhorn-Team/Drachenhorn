@@ -217,6 +217,36 @@ namespace DSACharacterSheet.FileReader
         }
 
         [XmlIgnore]
+        private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
+        [XmlElement("Skill")]
+        public ObservableCollection<Skill> Skills
+        {
+            get { return _skills; }
+            set
+            {
+                if (_skills == value)
+                    return;
+                _skills = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
+        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
+        [XmlElement("SpecialSkill")]
+        public ObservableCollection<SpecialSkill> SpecialSkills
+        {
+            get { return _specialSkills; }
+            set
+            {
+                if (_specialSkills == value)
+                    return;
+                _specialSkills = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private CombatInformation _combatInformation = new CombatInformation();
         [XmlElement("CombatInformation")]
         public CombatInformation CombatInformation

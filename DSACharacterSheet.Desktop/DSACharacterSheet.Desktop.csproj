@@ -124,6 +124,7 @@
     </ApplicationDefinition>
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\EnumListStringConverter.cs" />
+    <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
     <Compile Include="Converter\EnumToStringConverter.cs" />
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
@@ -164,6 +165,9 @@
     </Compile>
     <Compile Include="UserControls\SocialInformationControl.xaml.cs">
       <DependentUpon>SocialInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
+      <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="Views\CoatOfArmsPainterView.xaml.cs">
@@ -226,6 +230,10 @@
     <Page Include="UserControls\SocialInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SpecialSkillControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CoatOfArmsPainterView.xaml">
       <SubType>Designer</SubType>

@@ -13,6 +13,9 @@ namespace DSACharacterSheet.Desktop.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null)
+                return null;
+
             Array values = (Array)value;
             var result = new List<string>();
 

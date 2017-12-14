@@ -43,42 +43,42 @@
         <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" HorizontalAlignment="Center" Grid.Column="2"/>
         <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" HorizontalAlignment="Center" Grid.Column="3"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Courage}" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="{lang:Translate AttributeType.Courage}" Grid.Column="0" Grid.Row="1"/>
         <TextBox Text="{Binding Courage.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="1"/>
         <TextBox Text="{Binding Courage.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="1"/>
         <TextBox Text="{Binding Courage.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="1"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Wisdom}" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="{lang:Translate AttributeType.Wisdom}" Grid.Column="0" Grid.Row="2"/>
         <TextBox Text="{Binding Wisdom.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="2"/>
         <TextBox Text="{Binding Wisdom.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="2"/>
         <TextBox Text="{Binding Wisdom.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="2"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Intuition}" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="{lang:Translate AttributeType.Intuition}" Grid.Column="0" Grid.Row="3"/>
         <TextBox Text="{Binding Intuition.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="3"/>
         <TextBox Text="{Binding Intuition.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="3"/>
         <TextBox Text="{Binding Intuition.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="3"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Charisma}" Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="{lang:Translate AttributeType.Charisma}" Grid.Column="0" Grid.Row="4"/>
         <TextBox Text="{Binding Charisma.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="4"/>
         <TextBox Text="{Binding Charisma.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="4"/>
         <TextBox Text="{Binding Charisma.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="4"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Prestidigitation}" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="{lang:Translate AttributeType.Prestidigitation}" Grid.Column="0" Grid.Row="5"/>
         <TextBox Text="{Binding Prestidigitation.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="5"/>
         <TextBox Text="{Binding Prestidigitation.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="5"/>
         <TextBox Text="{Binding Prestidigitation.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="5"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Finesse}" Grid.Column="0" Grid.Row="6"/>
+        <TextBlock Text="{lang:Translate AttributeType.Finesse}" Grid.Column="0" Grid.Row="6"/>
         <TextBox Text="{Binding Finesse.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="6"/>
         <TextBox Text="{Binding Finesse.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="6"/>
         <TextBox Text="{Binding Finesse.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="6"/>
 
-        <TextBlock Text="{lang:Translate Attribute.Constitution}" Grid.Column="0" Grid.Row="7"/>
+        <TextBlock Text="{lang:Translate AttributeType.Constitution}" Grid.Column="0" Grid.Row="7"/>
         <TextBox Text="{Binding Constitution.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="7"/>
         <TextBox Text="{Binding Constitution.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="7"/>
         <TextBox Text="{Binding Constitution.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="7"/>
 
-        <TextBlock Text="{lang:Translate Attribute.PhysicalStrength}" Grid.Column="0" Grid.Row="8"/>
+        <TextBlock Text="{lang:Translate AttributeType.PhysicalStrength}" Grid.Column="0" Grid.Row="8"/>
         <TextBox Text="{Binding PhysicalStrength.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="8"/>
         <TextBox Text="{Binding PhysicalStrength.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="8"/>
         <TextBox Text="{Binding PhysicalStrength.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="8"/>

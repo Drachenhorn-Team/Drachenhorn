@@ -61,14 +61,20 @@
     <Compile Include="Common\ProfessionInformation.cs" />
     <Compile Include="Common\RaceInformation.cs" />
     <Compile Include="Common\SocialInformation.cs" />
+    <Compile Include="Enums\AttributeType.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Exceptions\SheetLoadingException.cs" />
     <Compile Include="Exceptions\SheetSavingException.cs" />
+    <Compile Include="Objects\DSADate.cs" />
+    <Compile Include="Objects\DSAMonth.cs" />
+    <Compile Include="Roll\RollAttributes.cs" />
     <Compile Include="Skills\Attribute.cs" />
     <Compile Include="Skills\BaseValue.cs" />
     <Compile Include="Skills\BaseValues.cs" />
     <Compile Include="Skills\CharacterAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skills\Skill.cs" />
+    <Compile Include="Skills\SpecialSkill.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

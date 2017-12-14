@@ -240,10 +240,10 @@
   <data name="About.IconsBy" xml:space="preserve">
     <value>Biller sünd van:</value>
   </data>
-  <data name="Attribute.Courage" xml:space="preserve">
+  <data name="AttributeType.Courage" xml:space="preserve">
     <value>Mood</value>
   </data>
-  <data name="Attribute.PhysicalStrength" xml:space="preserve">
+  <data name="AttributeType.PhysicalStrength" xml:space="preserve">
     <value>Kraft</value>
   </data>
   <data name="Attribute.Speed" xml:space="preserve">

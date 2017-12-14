@@ -53,6 +53,8 @@
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />
     <Resource Include="Images\Flags\en.png" />
+    <Resource Include="Images\Common\Add.png" />
+    <Resource Include="Images\Common\Remove.png" />
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
     <Resource Include="Images\EditIcon.png" />

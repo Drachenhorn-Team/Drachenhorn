@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Attribute.Constitution" xml:space="preserve">
+  <data name="AttributeType.Constitution" xml:space="preserve">
     <value>Konstitution</value>
   </data>
-  <data name="Attribute.Courage" xml:space="preserve">
+  <data name="AttributeType.Courage" xml:space="preserve">
     <value>Mut</value>
   </data>
-  <data name="Attribute.Finesse" xml:space="preserve">
+  <data name="AttributeType.Finesse" xml:space="preserve">
     <value>Gewandtheit</value>
   </data>
-  <data name="Attribute.Intuition" xml:space="preserve">
+  <data name="AttributeType.Intuition" xml:space="preserve">
     <value>Intuition</value>
   </data>
-  <data name="Attribute.PhysicalStrength" xml:space="preserve">
+  <data name="AttributeType.PhysicalStrength" xml:space="preserve">
     <value>Körperkraft</value>
   </data>
-  <data name="Attribute.Prestidigitation" xml:space="preserve">
+  <data name="AttributeType.Prestidigitation" xml:space="preserve">
     <value>Fingerfertigkeit</value>
   </data>
   <data name="Attribute.Speed" xml:space="preserve">
     <value>Geschwindigkeit</value>
   </data>
-  <data name="Attribute.Wisdom" xml:space="preserve">
+  <data name="AttributeType.Wisdom" xml:space="preserve">
     <value>Klugheit</value>
   </data>
   <data name="BaseValue.AstralEnergy" xml:space="preserve">
@@ -306,7 +306,7 @@
   <data name="About.IconsBy" xml:space="preserve">
     <value>Bilder von:</value>
   </data>
-  <data name="Attribute.Charisma" xml:space="preserve">
+  <data name="AttributeType.Charisma" xml:space="preserve">
     <value>Charisma</value>
   </data>
   <data name="About.Version" xml:space="preserve">
@@ -416,5 +416,47 @@
   </data>
   <data name="UI.Redo" xml:space="preserve">
     <value>Wiederholen</value>
+  </data>
+  <data name="CharacterSheet.SpecialSkills" xml:space="preserve">
+    <value>Sonderfertigkeiten</value>
+  </data>
+  <data name="UI.Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="UI.Remove" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="AttributeType.None" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="AttributeType.None.Abbr" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="AttributeType.Charisma.Abbr" xml:space="preserve">
+    <value>CH</value>
+  </data>
+  <data name="AttributeType.Constitution.Abbr" xml:space="preserve">
+    <value>KO</value>
+  </data>
+  <data name="AttributeType.Courage.Abbr" xml:space="preserve">
+    <value>MU</value>
+  </data>
+  <data name="AttributeType.Finesse.Abbr" xml:space="preserve">
+    <value>GE</value>
+  </data>
+  <data name="AttributeType.Intuition.Abbr" xml:space="preserve">
+    <value>IN</value>
+  </data>
+  <data name="AttributeType.PhysicalStrength.Abbr" xml:space="preserve">
+    <value>KO</value>
+  </data>
+  <data name="AttributeType.Prestidigitation.Abbr" xml:space="preserve">
+    <value>FF</value>
+  </data>
+  <data name="AttributeType.Wisdom.Abbr" xml:space="preserve">
+    <value>KL</value>
+  </data>
+  <data name="CharacterSheet.RollAttributes" xml:space="preserve">
+    <value>Attribute</value>
   </data>
 </root>

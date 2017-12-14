@@ -136,9 +136,13 @@
         </Border>
 
         <Border>
-            <TextBlock Text="{lang:Translate CharacterSheet.Skills}"/>
+            <controls:SkillListControl DataContext="{Binding Skills}"/>
         </Border>
-        
+
+        <Border>
+            <controls:SpecialSkillControl DataContext="{Binding SpecialSkills}"/>
+        </Border>
+
         <Border>
             <controls:CombatControl DataContext="{Binding CombatInformation}"/>
         </Border>
