@@ -33,23 +33,46 @@
 
         <TextBlock Text="{lang:Translate CharacterSheet.Skills}" Grid.ColumnSpan="2" Margin="5" HorizontalAlignment="Center"/>
 
-        <ListBox Name="List" ItemsSource="{Binding .}" MinHeight="100" Margin="5" Grid.Row="1">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text="(" Margin="10 0 0 0"/>
-                        <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}"/>
-                        <TextBlock Text="|"/>
-                        <TextBlock Text="{Binding RollAttributes.Roll_2, Converter={StaticResource EnumToAbbreviationConverter}}"/>
-                        <TextBlock Text="|"/>
-                        <TextBlock Text="{Binding RollAttributes.Roll_3, Converter={StaticResource EnumToAbbreviationConverter}}"/>
-                        <TextBlock Text=")"/>
-                        <TextBlock Text="{Binding Value}" HorizontalAlignment="Right"/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView Name="List" ItemsSource="{Binding .}" PreviewMouseWheel="List_PreviewMouseWheel" MinHeight="150" Margin="5" Grid.Row="1">
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" Background="LightGray" FontSize="14" Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.Name}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.RollAttributes}" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="("/>
+                                    <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}"/>
+                                    <TextBlock Text="|"/>
+                                    <TextBlock Text="{Binding RollAttributes.Roll_2, Converter={StaticResource EnumToAbbreviationConverter}}"/>
+                                    <TextBlock Text="|"/>
+                                    <TextBlock Text="{Binding RollAttributes.Roll_3, Converter={StaticResource EnumToAbbreviationConverter}}"/>
+                                    <TextBlock Text=")"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.Value}" DisplayMemberBinding="{Binding Value}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
         <WrapPanel HorizontalAlignment="Right" Grid.Row="2">
             <Button Click="AddButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Add}">
                 <Image Source="/DSACharacterSheet.Core;component\Images\Common\Add.png"/>
@@ -73,7 +96,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="{lang:Translate CharacterSheet.Name}" Margin="5" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Margin="5" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
 
             <TextBlock Text="{lang:Translate CharacterSheet.RollAttributes}" Margin="5" Grid.Row="1" Grid.Column="0"/>
             <ComboBox Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToStringConverter}}"
@@ -85,6 +108,9 @@
             <ComboBox Text="{Binding RollAttributes.Roll_3, Converter={StaticResource EnumToStringConverter}}"
                       ItemsSource="{Binding Source={StaticResource AttributeTypeEnum}, Converter={StaticResource EnumListStringConverter}}"
                       Margin="5" Grid.Row="1" Grid.Column="3"/>
+
+            <TextBlock Text="{lang:Translate CharacterSheet.Skill.Category}" Margin="5" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}" TextChanged="CategoryBox_TextChanged" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
         </Grid>
     </Grid>
 </UserControl>

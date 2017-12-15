@@ -29,6 +29,21 @@ namespace DSACharacterSheet.FileReader.Skills
         }
 
         [XmlIgnore]
+        private string _category;
+        [XmlAttribute("Category")]
+        public string Category
+        {
+            get { return _category; }
+            set
+            {
+                if (_category == value)
+                    return;
+                _category = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private RollAttributes _rollAttributes = new RollAttributes();
         [XmlElement("RolleAttributes")]
         public RollAttributes RollAttributes

@@ -1,6 +1,7 @@
 ﻿using DSACharacterSheet.FileReader.Skills;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,9 @@ namespace DSACharacterSheet.Desktop.UserControls
         public SkillListControl()
         {
             InitializeComponent();
+
+            TypeDescriptor.GetProperties(this.List)["ItemsSource"]
+                .AddValueChanged(this.List, new EventHandler(UpdateList));
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +47,51 @@ namespace DSACharacterSheet.Desktop.UserControls
                 return;
 
             ((IList<Skill>)List.ItemsSource).Remove((Skill)List.SelectedItem);
+        }
+
+        private void UpdateList(object sender, EventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(List.ItemsSource);
+            view.GroupDescriptions.Clear();
+            PropertyGroupDescription groupDescription = new PropertyGroupDescription("Category");
+            view.GroupDescriptions.Add(groupDescription);
+
+            UpdateListViewColumns(sender, e);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateListViewColumns(sender, e);
+        }
+
+        private void CategoryBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateList(sender, e);
+        }
+
+        private void UpdateListViewColumns(object sender, EventArgs args)
+        {
+            GridView gridView = List.View as GridView;
+
+            if (gridView != null)
+                foreach (GridViewColumn column in gridView.Columns)
+                {
+                    column.Width = column.ActualWidth;
+                    column.Width = double.NaN;
+                }
+        }
+
+        private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Handled || e.MouseDevice.Captured is ComboBox)
+                return;
+
+            e.Handled = true;
+            var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.Source = sender;
+            var parent = ((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArg);
         }
     }
 }
