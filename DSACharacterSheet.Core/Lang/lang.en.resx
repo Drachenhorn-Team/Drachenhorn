@@ -459,4 +459,16 @@
   <data name="CharacterSheet.RollAttributes" xml:space="preserve">
     <value>Attributes</value>
   </data>
+  <data name="CharacterSheet.Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="UI.File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="UI.GenerateHtml" xml:space="preserve">
+    <value>Generate Html</value>
+  </data>
+  <data name="UI.GeneratePdf" xml:space="preserve">
+    <value>Generate PDF</value>
+  </data>
 </root>

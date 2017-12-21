@@ -48,6 +48,13 @@
                     <RibbonApplicationMenuItem Header="{lang:Translate UI.Properties}" Command="Properties" ImageSource="/DSACharacterSheet.Core;component\Images\PropertiesIcon.png"/>
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="{lang:Translate UI.File}">
+                <RibbonGroup Header="{lang:Translate UI.Export}">
+                    <RibbonButton Label="{lang:Translate UI.GeneratePdf}" LargeImageSource="/DSACharacterSheet.Core;component\Images\Pdf.png" Click="GeneratePdf_Click"/>
+                    <RibbonButton Label="{lang:Translate UI.GenerateHtml}" SmallImageSource="/DSACharacterSheet.Core;component\Images\HTML.png" Click="GenerateHTML_Click"/>
+                </RibbonGroup>
+            </RibbonTab>
         </Ribbon>
 
         <StatusBar Name="StatusBar" DockPanel.Dock="Bottom" Height="25" Background="LightGray" BorderBrush="Gray" BorderThickness="0 2 0 0">

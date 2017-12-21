@@ -1,10 +1,13 @@
-﻿using DSACharacterSheet.Core.ViewModel;
+﻿using DSACharacterSheet.Core.Printing;
+using DSACharacterSheet.Core.Printing.Exceptions;
+using DSACharacterSheet.Core.ViewModel;
 using DSACharacterSheet.Desktop.Dialogs;
 using DSACharacterSheet.Desktop.Settings;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using Microsoft.Win32;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 
@@ -19,24 +22,24 @@ namespace DSACharacterSheet.Desktop.Views
         {
             get
             {
-                if (this.DataContext != null && !(this.DataContext is CharacterSheetViewModel))
+                if (this.DataContext != null && !(this.DataContext is MainViewModel))
                     return null;
 
-                return ((CharacterSheetViewModel)this.DataContext).CurrentSheet;
+                return ((MainViewModel)this.DataContext).CurrentSheet;
             }
             set
             {
-                if (this.DataContext != null && !(this.DataContext is CharacterSheetViewModel))
+                if (this.DataContext != null && !(this.DataContext is MainViewModel))
                     return;
 
-                ((CharacterSheetViewModel)this.DataContext).CurrentSheet = value;
+                ((MainViewModel)this.DataContext).CurrentSheet = value;
             }
         }
 
 
         public MainView()
         {
-            this.DataContext = new CharacterSheetViewModel();
+            this.DataContext = new MainViewModel();
 
             InitializeComponent();
 
@@ -122,6 +125,54 @@ namespace DSACharacterSheet.Desktop.Views
         private void PropertiesCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             new PropertiesView().ShowDialog();
+        }
+
+        private void GenerateHTML_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SaveFileDialog()
+            {
+                FileName = String.IsNullOrEmpty(CurrentCharacterSheet.Name) ? "Charakterbogen" : CurrentCharacterSheet.Name,
+                Filter = "HTML-Charakterbogen (*.html)|*.html",
+                FilterIndex = 1,
+                AddExtension = true,
+                Title = "HTML Generieren"
+            };
+
+            if (dialog.ShowDialog() == true)
+                try
+                {
+                    PrintingManager.GenerateHtml(CurrentCharacterSheet, dialog.FileName);
+
+                    Process.Start(dialog.FileName);
+                }
+                catch (PrintingException ex)
+                {
+                    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                }
+        }
+
+        private void GeneratePdf_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SaveFileDialog()
+            {
+                FileName = String.IsNullOrEmpty(CurrentCharacterSheet.Name) ? "Charakterbogen" : CurrentCharacterSheet.Name,
+                Filter = "Pdf-Charakterbogen (*.pdf)|*.pdf",
+                FilterIndex = 1,
+                AddExtension = true,
+                Title = "Pdf Generieren"
+            };
+
+            if (dialog.ShowDialog() == true)
+                try
+                {
+                    PrintingManager.GeneratePdf(CurrentCharacterSheet, dialog.FileName);
+
+                    Process.Start(dialog.FileName);
+                }
+                catch (PrintingException ex)
+                {
+                    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                }
         }
     }
 }
