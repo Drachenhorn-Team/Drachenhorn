@@ -156,10 +156,10 @@ namespace DSACharacterSheet.Desktop.Views
             var dialog = new SaveFileDialog()
             {
                 FileName = String.IsNullOrEmpty(CurrentCharacterSheet.Name) ? "Charakterbogen" : CurrentCharacterSheet.Name,
-                Filter = "Pdf-Charakterbogen (*.pdf)|*.pdf",
+                Filter = "PDF-Charakterbogen (*.pdf)|*.pdf",
                 FilterIndex = 1,
                 AddExtension = true,
-                Title = "Pdf Generieren"
+                Title = "PDF Generieren"
             };
 
             if (dialog.ShowDialog() == true)

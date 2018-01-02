@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Windows.Ink;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace DSACharacterSheet.FileReader.Common
 {
@@ -31,14 +32,40 @@ namespace DSACharacterSheet.FileReader.Common
         {
             get
             {
-                var ms = new MemoryStream();
-                Strokes.Save(ms, true);
-                ms.Position = 0;
-                return ms.ToArray();
+                byte[] result;
+                using (var ms = new MemoryStream())
+                {
+                    Strokes.Save(ms, true);
+                    ms.Position = 0;
+                    result = ms.ToArray();
+                }
+
+                return result;
             }
             set
             {
                 Strokes = new StrokeCollection(new MemoryStream(value));
+            }
+        }
+        [XmlIgnore]
+        public string Base64String
+        {
+            get
+            {
+                var arr = StrokeStream;
+
+                bitm
+
+
+            Dim gifData As Byte() = Nothing
+            Using ink2 As New Microsoft.Ink.Ink()
+                ink2.Load(inkData)
+                gifData = ink2.Save(Microsoft.Ink.PersistenceFormat.Gif)
+            End Using
+            File.WriteAllBytes("c://strokes.gif", gifData)
+
+
+                return Encoding.ASCII.GetString(StrokeStream);
             }
         }
     }

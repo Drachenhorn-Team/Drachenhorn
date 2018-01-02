@@ -105,6 +105,11 @@ namespace DSACharacterSheet.FileReader.Objects
                     && this.Year == other.Year);
         }
 
+        public override int GetHashCode()
+        {
+            return int.Parse(Year.ToString() + ((int)Month).ToString() + Day.ToString());
+        }
+
         public static bool operator!=(DSADate obj1, DSADate obj2)
         {
             return !(obj1 == obj2);
