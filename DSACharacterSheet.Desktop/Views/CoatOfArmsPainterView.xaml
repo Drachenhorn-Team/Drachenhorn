@@ -68,7 +68,7 @@
         </WrapPanel>
         
         <Border Background="White" BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="910" Height="610">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="300" Height="200" Margin="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="{Binding Width}" Height="{Binding Height}" Margin="1" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <InkCanvas.DefaultDrawingAttributes>
                     <DrawingAttributes Height=".7" Width=".7"/>
                 </InkCanvas.DefaultDrawingAttributes>

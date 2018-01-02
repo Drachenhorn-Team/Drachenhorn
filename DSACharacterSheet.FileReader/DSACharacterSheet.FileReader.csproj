@@ -34,6 +34,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,6 +66,7 @@
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Exceptions\SheetLoadingException.cs" />
     <Compile Include="Exceptions\SheetSavingException.cs" />
+    <Compile Include="Objects\CustomStroke.cs" />
     <Compile Include="Objects\DSADate.cs" />
     <Compile Include="Objects\DSAMonth.cs" />
     <Compile Include="Roll\RollAttributes.cs" />
