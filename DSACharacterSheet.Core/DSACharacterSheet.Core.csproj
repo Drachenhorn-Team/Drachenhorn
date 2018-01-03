@@ -71,7 +71,7 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Printing\PrintingTemplate.html" />
+    <EmbeddedResource Include="Printing\PrintingTemplate.cshtml" />
     <Resource Include="Images\Flags\de-DE.png" />
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />

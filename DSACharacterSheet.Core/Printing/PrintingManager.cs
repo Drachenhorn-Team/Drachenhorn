@@ -23,13 +23,13 @@ namespace DSACharacterSheet.Core.Printing
         {
             string template = "";
 
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("DSACharacterSheet.Core.Printing.PrintingTemplate.html"))
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("DSACharacterSheet.Core.Printing.PrintingTemplate.cshtml"))
                 using (var reader = new StreamReader(stream))
                 {
                     template = reader.ReadToEnd();
                 }
 
-            var result = Engine.Razor.RunCompile(template, "templateKey", null, new { CharacterSheet = sheet });
+            var result = Engine.Razor.RunCompile(template, "templateKey", null, sheet);
 
             return result;
         }

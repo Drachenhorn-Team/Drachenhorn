@@ -1,0 +1,123 @@
+﻿@using DSACharacterSheet.Core.Lang
+
+@using DSACharacterSheet.FileReader
+@*Model will always show an error but this line helps with IntelliSense in the rest of the document*@
+@{ CharacterSheet Sheet = (CharacterSheet)Model; }
+
+@helper Translate(string text)
+{
+    @LanguageManager.GetLanguageText(text)
+}
+
+<!DOCTYPE html>
+
+<html lang="@LanguageManager.CurrentCulture.TwoLetterISOLanguageName" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>@Translate("CharacterSheet.Title")</title>
+    <style>
+        body {
+            height: 29.7cm;
+            width: 21cm;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">@Translate("CharacterSheet.Title")</h1>
+
+    <div>
+        <style>
+            table, th, td{
+                border: 1px solid black;
+                padding: 2px
+            }
+        </style>
+        <p align="right">@Translate("CharacterSheet.GPBase"): @Sheet.GPBase</p>
+        <table style="width: 100%; border-collapse: collapse">
+            <tr>
+                <td>@Translate("CharacterSheet.Name"):</td>
+                <td colspan="2">@Sheet.Name</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Race"):</td>
+                <td colspan="2">@Sheet.Race.Name</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Culture"):</td>
+                <td>@Sheet.Culture.Name</td>
+                <td>@Sheet.Culture.Spezification</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Profession"):</td>
+                <td colspan="2">@Sheet.Profession.Name</td>
+            </tr>
+        </table>
+
+        <table style="width: 100%; max-width: 100%; border-collapse: collapse">
+            <tr>
+                <td style="width:40%">
+                    <table style="width:100%; border: none; border-collapse: collapse">
+                        <tr>
+                            <td>@Translate("CharacterInformation.Gender")</td>
+                            <td>@Translate("Gender." + Sheet.CharacterInformation.Gender)</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.Age")</td>
+                            <td>@Sheet.CharacterInformation.Age</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.Height")</td>
+                            <td>@Sheet.CharacterInformation.Height</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.Weight")</td>
+                            <td>@Sheet.CharacterInformation.Weight</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.HairColor")</td>
+                            <td>@Sheet.CharacterInformation.HairColor</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.EyeColor")</td>
+                            <td>@Sheet.CharacterInformation.EyeColor</td>
+                        </tr>
+                        <tr>
+                            <td>@Translate("CharacterInformation.Appearance")</td>
+                            <td>@Sheet.CharacterInformation.Appearance</td>
+                        </tr>
+                    </table>
+                </td>
+                <td align="center" style="width: 20%">
+                    <p style="align-content:center">@Translate("CharacterSheet.CoatOfArms")</p>
+                    <img src="data:image/png;base64,@Sheet.CoatOfArms.Base64String"
+                        alt='@Translate("CharacterSheet.CoatOfArms")' style="max-width: 100%"/>
+                </td>
+                <td style="width:40%">
+                    <div>
+                        <table style="width:100%; border: none; border-collapse: collapse">
+                            <tr>
+                                <td>@Translate("SocialInformation.Class")</td>
+                                <td>@Sheet.SocialInformation.Class</td>
+                            </tr>
+                            <tr>
+                                <td>@Translate("SocialInformation.Title")</td>
+                                <td>@Sheet.SocialInformation.Title</td>
+                            </tr>
+                            <tr>
+                                <td>@Translate("SocialInformation.SocialClass")</td>
+                                <td>@Sheet.SocialInformation.SocialClass</td>
+                            </tr>
+                        </table>
+                        @Translate("SocialInformation.Background")
+                        <p style="word-break: break-all">@Sheet.SocialInformation.Background</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

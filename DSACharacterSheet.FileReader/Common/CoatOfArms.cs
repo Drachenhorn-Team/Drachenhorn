@@ -15,16 +15,19 @@ namespace DSACharacterSheet.FileReader.Common
     [Serializable]
     public class CoatOfArms : BindableBase
     {
+        public const int HEIGHT = 200;
+        public const int WIDTH = 300;
+
         [XmlIgnore]
         public int Height
         {
-            get { return 200; }
+            get { return HEIGHT; }
         }
 
         [XmlIgnore]
         public int Width
         {
-            get { return 300; }
+            get { return WIDTH; }
         }
 
         [XmlIgnore]
@@ -66,7 +69,7 @@ namespace DSACharacterSheet.FileReader.Common
         {
             get
             {
-                Bitmap bitmap = new Bitmap(Width, Height);
+                Bitmap bitmap = new Bitmap(WIDTH, HEIGHT);
 
                 using (Graphics gfx = Graphics.FromImage(bitmap))
                 {

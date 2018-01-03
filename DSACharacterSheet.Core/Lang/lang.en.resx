@@ -471,4 +471,7 @@
   <data name="UI.GeneratePdf" xml:space="preserve">
     <value>Generate PDF</value>
   </data>
+  <data name="CharacterSheet.Skill.Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
 </root>
