@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8" />
     <title>@Translate("CharacterSheet.Title")</title>
-    <style>
+    <!--<style>
         body {
             height: 29.7cm;
             width: 21cm;
@@ -23,9 +23,15 @@
             margin-left: auto;
             margin-right: auto;
         }
-    </style>
+    </style>-->
 </head>
 <body>
+    <style>
+        tr {
+            page-break-inside: avoid;
+        }
+    </style>
+
     <h1 style="text-align: center">@Translate("CharacterSheet.Title")</h1>
 
     <div>
@@ -59,36 +65,30 @@
         <table style="width: 100%; max-width: 100%; border-collapse: collapse">
             <tr>
                 <td style="width:40%">
-                    <table style="width:100%; border: none; border-collapse: collapse">
-                        <tr>
-                            <td>@Translate("CharacterInformation.Gender")</td>
-                            <td>@Translate("Gender." + Sheet.CharacterInformation.Gender)</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.Age")</td>
-                            <td>@Sheet.CharacterInformation.Age</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.Height")</td>
-                            <td>@Sheet.CharacterInformation.Height</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.Weight")</td>
-                            <td>@Sheet.CharacterInformation.Weight</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.HairColor")</td>
-                            <td>@Sheet.CharacterInformation.HairColor</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.EyeColor")</td>
-                            <td>@Sheet.CharacterInformation.EyeColor</td>
-                        </tr>
-                        <tr>
-                            <td>@Translate("CharacterInformation.Appearance")</td>
-                            <td>@Sheet.CharacterInformation.Appearance</td>
-                        </tr>
-                    </table>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; height:100%">
+                        <div>@Translate("CharacterInformation.Gender")</div>
+                        <div>@Translate("Gender." + Sheet.CharacterInformation.Gender)</div>
+
+                        <div>@Translate("CharacterInformation.Age")</div>
+                        <div>@Sheet.CharacterInformation.Age</div>
+
+                        <div>@Translate("CharacterInformation.Height")</div>
+                        <div>@Sheet.CharacterInformation.Height</div>
+
+                        <div>@Translate("CharacterInformation.Weight")</div>
+                        <div>@Sheet.CharacterInformation.Weight</div>
+
+                        <div>@Translate("CharacterInformation.HairColor")</div>
+                        <div>@Sheet.CharacterInformation.HairColor</div>
+
+                        <div>@Translate("CharacterInformation.EyeColor")</div>
+                        <div>@Sheet.CharacterInformation.EyeColor</div>
+
+                        <div style="grid-column: auto / span 2">@Translate("CharacterInformation.Appearance")</div>
+                        <div style="grid-column: auto / span 2">
+                            <p>@Sheet.CharacterInformation.Appearance</p>
+                        </div>
+                    </div>
                 </td>
                 <td align="center" style="width: 20%">
                     <p style="align-content:center">@Translate("CharacterSheet.CoatOfArms")</p>
@@ -96,23 +96,20 @@
                         alt='@Translate("CharacterSheet.CoatOfArms")' style="max-width: 100%"/>
                 </td>
                 <td style="width:40%">
-                    <div>
-                        <table style="width:100%; border: none; border-collapse: collapse">
-                            <tr>
-                                <td>@Translate("SocialInformation.Class")</td>
-                                <td>@Sheet.SocialInformation.Class</td>
-                            </tr>
-                            <tr>
-                                <td>@Translate("SocialInformation.Title")</td>
-                                <td>@Sheet.SocialInformation.Title</td>
-                            </tr>
-                            <tr>
-                                <td>@Translate("SocialInformation.SocialClass")</td>
-                                <td>@Sheet.SocialInformation.SocialClass</td>
-                            </tr>
-                        </table>
-                        @Translate("SocialInformation.Background")
-                        <p style="word-break: break-all">@Sheet.SocialInformation.Background</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; height: 100%">
+                        <div>@Translate("SocialInformation.Class")</div>
+                        <div>@Sheet.SocialInformation.Class</div>
+
+                        <div>@Translate("SocialInformation.Title")</div>
+                        <div>@Sheet.SocialInformation.Title</div>
+
+                        <div>@Translate("SocialInformation.SocialClass")</div>
+                        <div>@Sheet.SocialInformation.SocialClass</div>
+
+                        <div style="grid-column: auto / span 2">@Translate("SocialInformation.Background")</div>
+                        <div style="grid-column: auto / span 2">
+                            <p style="word-break: break-all">@Sheet.SocialInformation.Background</p>
+                        </div>
                     </div>
                 </td>
             </tr>
