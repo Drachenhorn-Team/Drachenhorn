@@ -246,7 +246,7 @@
   <data name="AttributeType.PhysicalStrength" xml:space="preserve">
     <value>Kraft</value>
   </data>
-  <data name="Attribute.Speed" xml:space="preserve">
+  <data name="AttributeType.Speed" xml:space="preserve">
     <value>Gauheid</value>
   </data>
   <data name="UI.Properties.About" xml:space="preserve">

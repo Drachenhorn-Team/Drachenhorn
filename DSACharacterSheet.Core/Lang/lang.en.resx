@@ -135,7 +135,7 @@
   <data name="AttributeType.Prestidigitation" xml:space="preserve">
     <value>Prestidigiation</value>
   </data>
-  <data name="Attribute.Speed" xml:space="preserve">
+  <data name="AttributeType.Speed" xml:space="preserve">
     <value>Speed</value>
   </data>
   <data name="AttributeType.Wisdom" xml:space="preserve">
@@ -473,5 +473,8 @@
   </data>
   <data name="CharacterSheet.Skill.Category" xml:space="preserve">
     <value>Category</value>
+  </data>
+  <data name="UI.Export" xml:space="preserve">
+    <value>Export</value>
   </data>
 </root>

@@ -24,6 +24,16 @@
     }
 }
 
+@helper RenderAttribute(string name, DSACharacterSheet.FileReader.Skills.Attribute attribute)
+{
+    <tr>
+        <td>@name</td>
+        <td>@attribute.Modifier</td>
+        <td>@attribute.StartValue</td>
+        <td>@attribute.CurrentValue</td>
+    </tr>
+}
+
 <!DOCTYPE html>
 
 <html lang="@LanguageManager.CurrentCulture.TwoLetterISOLanguageName" xmlns="http://www.w3.org/1999/xhtml">
@@ -51,25 +61,33 @@
             }
         </style>
         <p align="right">@Translate("CharacterSheet.GPBase"): @Sheet.GPBase</p>
-        <table style="width: 100%; border-collapse: collapse">
-            <tr>
-                <td>@Translate("CharacterSheet.Name"):</td>
-                <td colspan="2">@Sheet.Name</td>
-            </tr>
-            <tr>
-                <td>@Translate("CharacterSheet.Race"):</td>
-                <td colspan="2">@Sheet.Race.Name</td>
-            </tr>
-            <tr>
-                <td>@Translate("CharacterSheet.Culture"):</td>
-                <td>@Sheet.Culture.Name</td>
-                <td>@Sheet.Culture.Spezification</td>
-            </tr>
-            <tr>
-                <td>@Translate("CharacterSheet.Profession"):</td>
-                <td colspan="2">@Sheet.Profession.Name</td>
-            </tr>
-        </table>
+
+        <div>
+            <style>
+                table td:first-child{
+                    white-space: nowrap
+                }
+            </style>
+            <table style="width: 100%; border-collapse: collapse">
+                <tr>
+                    <td>@Translate("CharacterSheet.Name"):</td>
+                    <td colspan="2">@Sheet.Name</td>
+                </tr>
+                <tr>
+                    <td>@Translate("CharacterSheet.Race"):</td>
+                    <td colspan="2">@Sheet.Race.Name</td>
+                </tr>
+                <tr>
+                    <td>@Translate("CharacterSheet.Culture"):</td>
+                    <td>@Sheet.Culture.Name</td>
+                    <td>@Sheet.Culture.Spezification</td>
+                </tr>
+                <tr>
+                    <td>@Translate("CharacterSheet.Profession"):</td>
+                    <td colspan="2">@Sheet.Profession.Name</td>
+                </tr>
+            </table>
+        </div>
 
         <div style="display: grid; grid-template-columns: 2fr 1fr 2fr">
             <div style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; padding: 5px; border: 0.5px solid black">
@@ -134,12 +152,33 @@
         <h2 style="width: 100%; text-align: center">@Translate("CharacterSheet.BaseValues")</h2>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <style type="text/css">
+                table.lastDouble td {
+                    text-align: center
+                }
+                table.lastDouble tr:last-child {
+                    border-top: double
+                }
+            </style>
 
-            <div>
+            <table class="lastDouble" style="width: 100%; border-collapse: collapse">
+                <tr>
+                    <th>@Translate("CharacterSheet.Value")</th>
+                    <th>@Translate("CharacterSheet.Modifyer")</th>
+                    <th>@Translate("CharacterSheet.StartValue")</th>
+                    <th>@Translate("CharacterSheet.CurrentValue")</th>
+                </tr>
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Courage"), Sheet.Attributes.Courage)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Wisdom"), Sheet.Attributes.Wisdom)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Intuition"), Sheet.Attributes.Intuition)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Charisma"), Sheet.Attributes.Charisma)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Prestidigitation"), Sheet.Attributes.Prestidigitation)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Finesse"), Sheet.Attributes.Finesse)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Constitution"), Sheet.Attributes.Constitution)
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.PhysicalStrength"), Sheet.Attributes.PhysicalStrength)
 
-            </div>
-
-
+                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Speed"), Sheet.Attributes.Speed)
+            </table>
         </div>
     </div>
 </body>
