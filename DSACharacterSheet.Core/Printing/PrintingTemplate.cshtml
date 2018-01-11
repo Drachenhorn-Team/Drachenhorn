@@ -34,6 +34,15 @@
     </tr>
 }
 
+@helper RenderBaseValue(string name, DSACharacterSheet.FileReader.Skills.BaseValue baseValue)
+{
+    <tr>
+        <td>@name</td>
+        <td>@baseValue.Modifier</td>
+        <td>@baseValue.Value</td>
+    </tr>
+}
+
 <!DOCTYPE html>
 
 <html lang="@LanguageManager.CurrentCulture.TwoLetterISOLanguageName" xmlns="http://www.w3.org/1999/xhtml">
@@ -55,6 +64,10 @@
 
     <div>
         <style>
+            table{
+                width: 100%;
+                border-collapse: collapse
+            }
             table, th, td{
                 border: 1px solid black;
                 padding: 2px
@@ -68,7 +81,7 @@
                     white-space: nowrap
                 }
             </style>
-            <table style="width: 100%; border-collapse: collapse">
+            <table>
                 <tr>
                     <td>@Translate("CharacterSheet.Name"):</td>
                     <td colspan="2">@Sheet.Name</td>
@@ -139,7 +152,7 @@
         </div>
 
 
-        <table style="width: 100%; border-collapse: collapse">
+        <table>
             <tr>
                 <th>@Translate("CharacterSheet.Name")</th>
                 <th>@Translate("CharacterSheet.Specialization")</th>
@@ -151,7 +164,7 @@
 
         <h2 style="width: 100%; text-align: center">@Translate("CharacterSheet.BaseValues")</h2>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr">
+        <div style="display: grid; grid-template-columns: 1fr 10px 1fr">
             <style type="text/css">
                 table.lastDouble td {
                     text-align: center
@@ -161,9 +174,9 @@
                 }
             </style>
 
-            <table class="lastDouble" style="width: 100%; border-collapse: collapse">
+            <table class="lastDouble">
                 <tr>
-                    <th>@Translate("CharacterSheet.Value")</th>
+                    <th/>
                     <th>@Translate("CharacterSheet.Modifyer")</th>
                     <th>@Translate("CharacterSheet.StartValue")</th>
                     <th>@Translate("CharacterSheet.CurrentValue")</th>
@@ -179,7 +192,31 @@
 
                 @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Speed"), Sheet.Attributes.Speed)
             </table>
+
+            <div>   </div>
+
+            <table>
+                <tr>
+                    <th/>
+                    <th>@Translate("CharacterSheet.Modifyer")</th>
+                    <th>@Translate("CharacterSheet.CurrentValue")</th>
+                </tr>
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.HealthPoints"), Sheet.BaseValues.HealthPoints)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.Endurance"), Sheet.BaseValues.Endurance)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.AstralEnergy"), Sheet.BaseValues.AstralEnergy)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.KarmaEnergy"), Sheet.BaseValues.KarmaEnergy)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.MagicResistance"), Sheet.BaseValues.MagicResistance)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseInitiative"), Sheet.BaseValues.BaseInitiative)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseAttack"), Sheet.BaseValues.BaseAttack)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseParry"), Sheet.BaseValues.BaseParry)
+                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseLongRangeAttack"), Sheet.BaseValues.BaseLongRangeAttack)
+
+            </table>
+
         </div>
+
+
+
     </div>
 </body>
 </html>

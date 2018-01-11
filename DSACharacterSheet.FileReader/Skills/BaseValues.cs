@@ -76,7 +76,7 @@ namespace DSACharacterSheet.FileReader.Skills
         [XmlIgnore]
         private BaseValue _magicResistance = new BaseValue();
         [XmlElement("MagicResistance")]
-        public BaseValue MagicResitance
+        public BaseValue MagicResistance
         {
             get { return _magicResistance; }
             set
