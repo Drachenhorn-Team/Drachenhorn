@@ -215,6 +215,17 @@
 
         </div>
 
+        <div style="border: 0.5px solid black; padding: 5px; margin-top: 5px">
+            <div style="width: 100%; display: grid; grid-template-columns: min-content 1fr min-content 1fr min-content 1fr">
+                <div style="white-space: nowrap">@Translate("CharacterSheet.TotalAP"): </div>
+                <div style="white-space: nowrap; text-align: center">@Sheet.AdventurePoints.Total</div>
+                <div style="white-space: nowrap">@Translate("CharacterSheet.UsedAP"): </div>
+                <div style="white-space: nowrap; text-align: center">@Sheet.AdventurePoints.Used</div>
+                <div style="white-space: nowrap">@Translate("CharacterSheet.LeftoverAP"): </div>
+                <div style="white-space: nowrap; text-align: center">@Sheet.AdventurePoints.CurrentLeft</div>
+           </div>
+        </div>
+
 
 
     </div>
