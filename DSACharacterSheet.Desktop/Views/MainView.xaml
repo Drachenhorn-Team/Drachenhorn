@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+        xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
         mc:Ignorable="d" 
         Background="GhostWhite"
         WindowState="Maximized"
@@ -89,8 +90,33 @@
             </StatusBarItem>
         </StatusBar>
 
-        <ScrollViewer PanningMode="VerticalOnly">
-            <controls:CharacterSheetControl DataContext="{Binding CurrentSheet}"/>
-        </ScrollViewer>
+
+        <xcad:DockingManager AllowMixedOrientation="True"
+                             BorderBrush="Black"
+                             BorderThickness="1"
+                             Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
+            <xcad:DockingManager.DocumentHeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>
+                        <TextBlock Text="{Binding Title}" />
+                    </StackPanel>
+                </DataTemplate>
+            </xcad:DockingManager.DocumentHeaderTemplate>
+            <xcad:LayoutRoot x:Name="_layoutRoot">
+                <xcad:LayoutPanel Orientation="Horizontal">
+                    <xcad:LayoutDocumentPaneGroup >
+                        <xcad:LayoutDocumentPane>
+                            <xcad:LayoutDocument Title="{Binding ElementName=CurrentSheet, Path=Name}">
+                                <ScrollViewer PanningMode="VerticalOnly">
+                                    <controls:CharacterSheetControl DataContext="{Binding CurrentSheet}"/>
+                                </ScrollViewer>
+                            </xcad:LayoutDocument>
+                        </xcad:LayoutDocumentPane>
+                    </xcad:LayoutDocumentPaneGroup >
+                </xcad:LayoutPanel>
+            </xcad:LayoutRoot>
+
+        </xcad:DockingManager>
     </DockPanel>
 </Window>
