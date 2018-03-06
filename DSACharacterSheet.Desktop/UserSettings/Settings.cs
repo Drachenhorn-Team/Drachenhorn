@@ -10,10 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DSACharacterSheet.Desktop.Settings
+namespace DSACharacterSheet.Desktop.UserSettings
 {
     [Serializable]
-    public class Properties : BindableBase
+    public class Settings : BindableBase
     {
         #region Properties
 
@@ -94,7 +94,7 @@ namespace DSACharacterSheet.Desktop.Settings
 
         #region c'tor
 
-        public Properties()
+        public Settings()
         {
             this.PropertyChanged += (sender, args) => { this.Save(); };
 
@@ -154,7 +154,7 @@ namespace DSACharacterSheet.Desktop.Settings
         /// Loads the Properties from the "PROPERTIESDIRECTORY".
         /// </summary>
         /// <returns>The Loaded Properties.</returns>
-        public static Properties Load()
+        public static Settings Load()
         {
             if (!Directory.Exists(PROPERTIESDIRECTORY))
                 Directory.CreateDirectory(PROPERTIESDIRECTORY);
@@ -163,14 +163,14 @@ namespace DSACharacterSheet.Desktop.Settings
             {
                 using (var stream = new FileStream(PropertiesPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(Properties));
-                    Properties temp = (Properties)serializer.Deserialize(stream);
+                    XmlSerializer serializer = new XmlSerializer(typeof(Settings));
+                    Settings temp = (Settings)serializer.Deserialize(stream);
                     return temp;
                 }
             }
             catch (IOException)
             {
-                return new Properties();
+                return new Settings();
             }
         }
 
@@ -186,7 +186,7 @@ namespace DSACharacterSheet.Desktop.Settings
             {
                 using (var stream = new StreamWriter(PropertiesPath))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(Properties));
+                    var serializer = new XmlSerializer(typeof(Settings));
                     serializer.Serialize(stream, this);
                 }
             }

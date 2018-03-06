@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommonServiceLocator;
+using DSACharacterSheet.FileReader;
 
 namespace DSACharacterSheet.Desktop.ViewModels
 {
@@ -15,7 +17,7 @@ namespace DSACharacterSheet.Desktop.ViewModels
         private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels = new ObservableCollection<CharacterSheetViewModel>();
         public ObservableCollection<CharacterSheetViewModel> CharacterSheetViewModels
         {
-            get { return _characterSheetViewModels; }
+            get => _characterSheetViewModels;
             set
             {
                 if (_characterSheetViewModels == value)
@@ -26,5 +28,25 @@ namespace DSACharacterSheet.Desktop.ViewModels
         }
 
         #endregion Properties
+
+        #region c'tor
+
+        public MainViewModel()
+        {
+            CharacterSheet sheet = null;
+
+            try
+            {
+                sheet = ServiceLocator.Current.GetInstance<CharacterSheet>("InitialSheet");
+            }
+            catch (Exception)
+            {
+                sheet = new CharacterSheet();
+            }
+
+            CharacterSheetViewModels.Add(new CharacterSheetViewModel(sheet));
+        }
+
+        #endregion c'tor
     }
 }

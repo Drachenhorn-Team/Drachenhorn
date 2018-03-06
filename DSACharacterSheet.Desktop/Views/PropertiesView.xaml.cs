@@ -1,5 +1,5 @@
 ﻿using DSACharacterSheet.Core.Lang;
-using DSACharacterSheet.Desktop.Settings;
+using DSACharacterSheet.Desktop.UserSettings;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -7,9 +7,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using CommonServiceLocator;
 
 namespace DSACharacterSheet.Desktop.Views
 {
+    /// <inheritdoc cref="Window" />
     /// <summary>
     /// Interaktionslogik für SettingsView.xaml
     /// </summary>
@@ -18,7 +20,8 @@ namespace DSACharacterSheet.Desktop.Views
         public PropertiesView()
         {
             InitializeComponent();
-            this.DataContext = PropertiesManager.Properties;
+
+            LanguageComboBox_SelectionChanged(this, null);
         }
 
 
@@ -30,10 +33,12 @@ namespace DSACharacterSheet.Desktop.Views
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (FlagImage == null) return;
+
             try
             {
                 FlagImage.Source = new BitmapImage(
-                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/" + PropertiesManager.Properties.CurrentCulture.Name + ".png"));
+                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/" + ServiceLocator.Current.GetInstance<Settings>().CurrentCulture.Name + ".png"));
             }
             catch (IOException)
             {
@@ -56,9 +61,11 @@ namespace DSACharacterSheet.Desktop.Views
         {
             BusyIndicator.IsBusy = true;
 
-            PropertiesManager.Properties.UpdateChecked += UpdateCheckFinished;
+            var settings = ServiceLocator.Current.GetInstance<Settings>();
 
-            PropertiesManager.Properties.CheckUpdateAsync();
+            settings.UpdateChecked += UpdateCheckFinished;
+
+            settings.CheckUpdateAsync();
         }
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
@@ -84,7 +91,7 @@ namespace DSACharacterSheet.Desktop.Views
                         MessageBoxResult.OK);
                 }));
 
-            PropertiesManager.Properties.UpdateChecked -= UpdateCheckFinished;
+            ServiceLocator.Current.GetInstance<Settings>().UpdateChecked -= UpdateCheckFinished;
         }
     }
 }

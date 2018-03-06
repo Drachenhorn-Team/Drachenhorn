@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSACharacterSheet.Desktop.Settings
+namespace DSACharacterSheet.Desktop.UserSettings
 {
     public class UpdateCheckedEventArgs : EventArgs
     {

@@ -1,6 +1,6 @@
 ﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.Dialogs;
-using DSACharacterSheet.Desktop.Settings;
+using DSACharacterSheet.Desktop.UserSettings;
 using DSACharacterSheet.Desktop.Views;
 using System;
 using System.Collections.Generic;
@@ -10,15 +10,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using CommonServiceLocator;
+using DSACharacterSheet.FileReader;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop
 {
+    /// <inheritdoc />
     /// <summary>
     /// Interaktionslogik für "App.xaml"
     /// </summary>
     public partial class App : Application
     {
-        private Window mainWindow = null;
+        public App()
+        {
+            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
+
+            if (args == null) return;
+
+            foreach (var item in args)
+            {
+                var temp = new Uri(item).LocalPath;
+                if (temp.EndsWith(".dsac"))
+                    SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load((temp)), "InitialSheet");
+            }
+        }
 
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
@@ -29,14 +45,13 @@ namespace DSACharacterSheet.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            PropertiesManager.Initialize();
-            Splash.SplashScreen splash = new Splash.SplashScreen();
+            var splash = new Splash.SplashScreen();
             splash.Show();
-            mainWindow = new MainView();
-            mainWindow.Show();
+            MainWindow = new MainView();
+            MainWindow.Show();
             splash.Close();
 
-            PropertiesManager.Properties.CheckUpdateAsync();
+            ServiceLocator.Current.GetInstance<Settings>().CheckUpdateAsync();
         }
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)

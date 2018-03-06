@@ -1,4 +1,5 @@
 using CommonServiceLocator;
+using DSACharacterSheet.Desktop.UserSettings;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
@@ -17,6 +18,8 @@ namespace DSACharacterSheet.Desktop.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            SimpleIoc.Default.Register<Settings>(Settings.Load);
+
             ////if (ViewModelBase.IsInDesignModeStatic)
             ////{
             ////    // Create design time view services and models
@@ -31,14 +34,10 @@ namespace DSACharacterSheet.Desktop.ViewModels
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
-        
+        public Settings Settings => ServiceLocator.Current.GetInstance<Settings>();
+
+        public MainViewModel MainView => ServiceLocator.Current.GetInstance<MainViewModel>();
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
