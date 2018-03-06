@@ -11,20 +11,12 @@
 </p>
 
 <p align="center">
-  <a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed" target="_blank">
     <img src="https://img.shields.io/badge/%20-Release-yellowgreen.svg?style=flat-square">
-  </a>
-  <a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=2&_a=completed" target="_blank">
     <img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2/badge" alt="Build Status">
-  </a>
 </p>
 <p align="center">
-  <a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=5&_a=completed" target="_blank">
     <img src="https://img.shields.io/badge/%20-Beta-yellowgreen.svg?style=flat-square">
-  </a>
-  <a href="https://lightlike.visualstudio.com/DSACharacterSheet/_build/index?context=mine&path=%5C&definitionId=5&_a=completed" target="_blank">
     <img src="https://lightlike.visualstudio.com/_apis/public/build/definitions/af40eca3-51a6-4d41-89f9-acfeafe7da4f/5/badge" alt="Build Status">
-  </a>
 </p>
 
 
