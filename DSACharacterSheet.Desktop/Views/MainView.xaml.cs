@@ -9,7 +9,9 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using static System.String;
 
 namespace DSACharacterSheet.Desktop.Views
@@ -23,45 +25,6 @@ namespace DSACharacterSheet.Desktop.Views
         public MainView()
         {
             InitializeComponent();
-        }
-
-
-        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            //if (!IsNullOrEmpty(CurrentCharacterSheet.FilePath))
-            //    try
-            //    {
-            //        CurrentCharacterSheet.Save(CurrentCharacterSheet.FilePath);
-            //    }
-            //    catch (SheetSavingException ex)
-            //    {
-            //        new ExceptionMessageBox(ex, ex.Message).ShowDialog();
-            //    }
-            //else
-            //    SaveAsCommand_Executed(sender, e);
-        }
-
-        private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            //var fileDialog = new SaveFileDialog
-            //{
-            //    FileName = IsNullOrEmpty(CurrentCharacterSheet.Name) ? "Charakterbogen" : CurrentCharacterSheet.Name,
-            //    Filter = "DSA-Charakterbogen (*.dsac)|*.dsac",
-            //    FilterIndex = 1,
-            //    AddExtension = true,
-            //    Title = "Charakterbogen speichern"
-            //};
-
-            //if (fileDialog.ShowDialog() != true) return;
-
-            //try
-            //{
-            //    CurrentCharacterSheet?.Save(fileDialog.FileName);
-            //}
-            //catch (SheetSavingException ex)
-            //{
-            //    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
-            //}
         }
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -145,6 +108,11 @@ namespace DSACharacterSheet.Desktop.Views
             //{
             //    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
             //}
+        }
+
+        private void InkPresenter_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            ((FrameworkElement)sender).RenderTransform = new ScaleTransform(0.1, 0.1);
         }
     }
 }

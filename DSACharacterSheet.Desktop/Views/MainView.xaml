@@ -4,23 +4,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
-        xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
-        xmlns:vm="clr-namespace:DSACharacterSheet.Desktop.ViewModels"
+        xmlns:viewModels="clr-namespace:DSACharacterSheet.Desktop.ViewModels"
         DataContext="{Binding MainView, Source={StaticResource Locator}}"
         mc:Ignorable="d" 
         Background="GhostWhite"
         WindowState="Maximized"
         Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
-    <Window.CommandBindings>
+    <!--<Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewCommand_Executed"/>
         <CommandBinding Command="Open" Executed="OpenCommand_Executed"/>
         <CommandBinding Command="Save" Executed="SaveCommand_Executed"/>
         <CommandBinding Command="SaveAs" Executed="SaveAsCommand_Executed"/>
         <CommandBinding Command="Properties" Executed="PropertiesCommand_Executed"/>
-    </Window.CommandBindings>
+    </Window.CommandBindings>-->
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
         <KeyBinding Key="O" Modifiers="Ctrl" Command="Open"/>
@@ -99,19 +98,24 @@
                              BorderBrush="Black"
                              BorderThickness="1"
                              DocumentsSource="{Binding CharacterSheetViewModels}"
+                             ActiveContent="{Binding CurrentSheetViewModel, Mode=TwoWay}"
                              Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
             <xcad:DockingManager.DocumentHeaderTemplate>
-                <DataTemplate DataType="vm:CharacterSheetViewModel">
+                <DataTemplate DataType="ContentPresenter">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>
-                        <TextBlock Text="{Binding CurrentSheet.Name}" />
+                        <!--<Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>-->
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="1" ClipToBounds="True" Margin="0 0 4 0">
+                            <InkPresenter Strokes="{Binding Content.CurrentSheet.CoatOfArms.Strokes}"
+                                          Width="30" Height="20" Loaded="InkPresenter_OnLoaded"/>
+                        </Border>
+                        <TextBlock Text="{Binding Content.CurrentSheet.Name}" VerticalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
             </xcad:DockingManager.DocumentHeaderTemplate>
             <xcad:DockingManager.LayoutItemTemplate>
-                <DataTemplate>
+                <DataTemplate DataType="ContentPresenter">
                     <ScrollViewer>
-                        <controls:CharacterSheetControl/>
+                        <controls:CharacterSheetControl DataContext="{Binding Content}"/>
                     </ScrollViewer>
                 </DataTemplate>
             </xcad:DockingManager.LayoutItemTemplate>

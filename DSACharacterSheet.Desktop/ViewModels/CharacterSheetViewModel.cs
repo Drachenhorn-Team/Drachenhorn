@@ -37,5 +37,18 @@ namespace DSACharacterSheet.Desktop.ViewModels
         }
 
         #endregion c'tor
+
+
+        #region Actions
+
+        public void Save(string path = null)
+        {
+            if (path == null)
+                CurrentSheet.Save();
+            else
+                CurrentSheet.Save(path);
+        }
+
+        #endregion Actions
     }
 }

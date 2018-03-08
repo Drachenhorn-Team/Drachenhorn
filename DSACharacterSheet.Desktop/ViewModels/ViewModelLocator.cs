@@ -18,18 +18,14 @@ namespace DSACharacterSheet.Desktop.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<Settings>(Settings.Load);
-
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<Settings>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register<Settings>(Settings.Load);
+            }
 
             SimpleIoc.Default.Register<MainViewModel>();
         }

@@ -13,6 +13,7 @@ using System.Windows.Threading;
 using CommonServiceLocator;
 using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace DSACharacterSheet.Desktop
 {
@@ -52,6 +53,9 @@ namespace DSACharacterSheet.Desktop
             splash.Close();
 
             ServiceLocator.Current.GetInstance<Settings>().CheckUpdateAsync();
+
+
+            Messenger.Default.Register<Exception>(this, ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
         }
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)

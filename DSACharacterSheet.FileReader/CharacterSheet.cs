@@ -304,6 +304,12 @@ namespace DSACharacterSheet.FileReader
             }
         }
 
+
+        public void Save()
+        {
+            Save(FilePath);
+        }
+
         /// <summary>
         /// Saves the current CharacterSheet to a selected path.
         /// </summary>
