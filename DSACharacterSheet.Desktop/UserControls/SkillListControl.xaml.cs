@@ -51,6 +51,8 @@ namespace DSACharacterSheet.Desktop.UserControls
 
         private void UpdateList(object sender, EventArgs e)
         {
+            if (List.ItemsSource == null) return;
+
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(List.ItemsSource);
             view.GroupDescriptions.Clear();
             PropertyGroupDescription groupDescription = new PropertyGroupDescription("Category");

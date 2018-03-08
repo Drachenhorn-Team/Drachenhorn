@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommonServiceLocator;
+using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.FileReader;
+using DSACharacterSheet.FileReader.Exceptions;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 
-namespace DSACharacterSheet.Desktop.ViewModels
+namespace DSACharacterSheet.Core.ViewModels
 {
     public class CharacterSheetViewModel : ViewModelBase
     {
         #region Properties
 
         private CharacterSheet _currentSheet = new CharacterSheet();
+
         public CharacterSheet CurrentSheet
         {
             get => _currentSheet;
@@ -29,7 +34,9 @@ namespace DSACharacterSheet.Desktop.ViewModels
 
         #region c'tor
 
-        public CharacterSheetViewModel() { }
+        public CharacterSheetViewModel()
+        {
+        }
 
         public CharacterSheetViewModel(CharacterSheet sheet)
         {
@@ -47,6 +54,34 @@ namespace DSACharacterSheet.Desktop.ViewModels
                 CurrentSheet.Save();
             else
                 CurrentSheet.Save(path);
+        }
+
+        public void SaveAs()
+        {
+            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+
+            try
+            {
+                ioService.SaveAsCharacterSheet(CurrentSheet);
+            }
+            catch (SheetSavingException ex)
+            {
+                Messenger.Default.Send<Exception>(ex);
+            }
+        }
+
+        public void Open()
+        {
+            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+
+            try
+            {
+                ioService.OpenCharacterSheet();
+            }
+            catch (SheetLoadingException ex)
+            {
+                Messenger.Default.Send<Exception>(ex);
+            }
         }
 
         #endregion Actions

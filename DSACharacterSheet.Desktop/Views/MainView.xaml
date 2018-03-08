@@ -21,10 +21,10 @@
         <CommandBinding Command="Properties" Executed="PropertiesCommand_Executed"/>
     </Window.CommandBindings>-->
     <Window.InputBindings>
-        <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
-        <KeyBinding Key="O" Modifiers="Ctrl" Command="Open"/>
-        <KeyBinding Key="S" Modifiers="Ctrl" Command="Save"/>
-        <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="SaveAs"/>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}"/>
+        <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}"/>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding Save}"/>
+        <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="{Binding SaveAll}"/>
     </Window.InputBindings>
 
     <Window.Resources>
@@ -36,11 +36,13 @@
             <Ribbon.QuickAccessToolBar>
                 <RibbonQuickAccessToolBar>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png"
-                                  Command="New"/>
+                                  Command="{Binding New}"/>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png"
-                                  Command="Open"/>
+                                  Command="{Binding Open}"/>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
-                                  Command="Save"/>
+                                  Command="{Binding Save}"/>
+                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\SaveAllIcon.png"
+                                  Command="{Binding SaveAll}"/>
                 </RibbonQuickAccessToolBar>
             </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
@@ -48,21 +50,24 @@
                     KeyTip="D" SmallImageSource="/DSACharacterSheet.Core;component\Images\MenuIcon.png"
                     Background="Green"><!--Background="{x:Static SystemParameters.WindowGlassBrush}">-->
                     <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.New}" Command="New"
+                        Header="{lang:Translate UI.New}" Command="{Binding New}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png"
                         InputGestureText="Strg + N"/>
                     <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Open}" Command="Open"
+                        Header="{lang:Translate UI.Open}" Command="{Binding Open}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png"
                         InputGestureText="Strg + O"/>
                     <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Save}" Command="Save"
+                        Header="{lang:Translate UI.Save}" Command="{Binding Save}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
                         InputGestureText="Strg + S"/>
                     <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.SaveAs}" Command="SaveAs"
-                        ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
+                        Header="{lang:Translate UI.SaveAll}" Command="{Binding Save}"
+                        ImageSource="/DSACharacterSheet.Core;component\Images\SaveAllIcon.png"
                         InputGestureText="Strg + Shift + S"/>
+                    <RibbonApplicationMenuItem
+                        Header="{lang:Translate UI.SaveAs}" Command="{Binding SaveAs}"
+                        ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"/>
                     <RibbonSeparator/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Properties}" Command="Properties"

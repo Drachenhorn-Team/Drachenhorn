@@ -1,18 +1,6 @@
-﻿using DSACharacterSheet.Core.Printing;
-using DSACharacterSheet.Core.Printing.Exceptions;
-using DSACharacterSheet.Core.ViewModel;
-using DSACharacterSheet.Desktop.Dialogs;
-using DSACharacterSheet.Desktop.UserSettings;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Exceptions;
-using Microsoft.Win32;
-using System;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using static System.String;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -25,34 +13,6 @@ namespace DSACharacterSheet.Desktop.Views
         public MainView()
         {
             InitializeComponent();
-        }
-
-        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            //var fileDialog = new OpenFileDialog
-            //{
-            //    Filter = "DSA-Charakterbogen (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*",
-            //    FilterIndex = 1,
-            //    Multiselect = false,
-            //    Title = "Charakterbogen öffnen.",
-            //    InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-            //};
-
-            //if (fileDialog.ShowDialog(this) != true) return;
-
-            //try
-            //{
-            //    CurrentCharacterSheet = CharacterSheet.Load(fileDialog.FileName);
-            //}
-            //catch (SheetLoadingException ex)
-            //{
-            //    new ExceptionMessageBox(ex, ex.Message).ShowDialog();
-            //}
-        }
-
-        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            //CurrentCharacterSheet = new CharacterSheet();
         }
 
         private void PropertiesCommand_Executed(object sender, ExecutedRoutedEventArgs e)

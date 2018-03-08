@@ -6,20 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
-using DSACharacterSheet.Desktop.Dialogs;
+using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using Microsoft.Win32;
 
-namespace DSACharacterSheet.Desktop.ViewModels
+namespace DSACharacterSheet.Core.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
         #region Properties
 
-        private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels = new ObservableCollection<CharacterSheetViewModel>();
+        private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels =
+            new ObservableCollection<CharacterSheetViewModel>();
+
         public ObservableCollection<CharacterSheetViewModel> CharacterSheetViewModels
         {
             get => _characterSheetViewModels;
@@ -48,7 +49,7 @@ namespace DSACharacterSheet.Desktop.ViewModels
 
         #endregion Properties
 
-        
+
         #region c'tor
 
         public MainViewModel()
@@ -67,6 +68,8 @@ namespace DSACharacterSheet.Desktop.ViewModels
             sheet.Name = "test";
 
             CharacterSheetViewModels.Add(new CharacterSheetViewModel(sheet));
+
+            InitializeCommands();
         }
 
         #endregion c'tor
@@ -78,6 +81,9 @@ namespace DSACharacterSheet.Desktop.ViewModels
         {
             Save = new RelayCommand(ExecuteSave);
             SaveAs = new RelayCommand(ExecuteSaveAs);
+            SaveAll = new RelayCommand(ExecuteSaveAll);
+            Open = new RelayCommand(ExecuteOpen);
+            New = new RelayCommand(ExecuteNew);
         }
 
         public RelayCommand Save { get; private set; }
@@ -87,12 +93,11 @@ namespace DSACharacterSheet.Desktop.ViewModels
             if (!string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.FilePath))
                 try
                 {
-                    CurrentSheetViewModel.CurrentSheet.Save();
+                    CurrentSheetViewModel.Save();
                 }
                 catch (SheetSavingException ex)
                 {
                     Messenger.Default.Send<Exception>(ex);
-                    //new ExceptionMessageBox(ex, ex.Message).ShowDialog();
                 }
             else
                 ExecuteSaveAs();
@@ -102,25 +107,43 @@ namespace DSACharacterSheet.Desktop.ViewModels
 
         private void ExecuteSaveAs()
         {
-            var fileDialog = new SaveFileDialog
-            {
-                FileName = string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Name) ? "Charakterbogen" : CurrentSheetViewModel.CurrentSheet.Name,
-                Filter = "DSA-Charakterbogen (*.dsac)|*.dsac",
-                FilterIndex = 1,
-                AddExtension = true,
-                Title = "Charakterbogen speichern"
-            };
+            CurrentSheetViewModel.SaveAs();
+        }
 
-            if (fileDialog.ShowDialog() != true) return;
+        public RelayCommand SaveAll { get; private set; }
+
+        private void ExecuteSaveAll()
+        {
+            foreach (var model in CharacterSheetViewModels)
+            {
+                model.Save();
+            }
+        }
+
+        public RelayCommand Open { get; private set; }
+
+        private void ExecuteOpen()
+        {
+            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
 
             try
             {
-                CurrentSheetViewModel.CurrentSheet.Save(fileDialog.FileName);
+                var temp = ioService.OpenCharacterSheet();
+
+                if (temp != null)
+                    CharacterSheetViewModels.Add(new CharacterSheetViewModel(temp));
             }
-            catch (SheetSavingException ex)
+            catch (SheetLoadingException ex)
             {
-                new ExceptionMessageBox(ex, ex.Message).ShowDialog();
+                Messenger.Default.Send<Exception>(ex);
             }
+        }
+
+        public RelayCommand New { get; private set; }
+
+        private void ExecuteNew()
+        {
+            CharacterSheetViewModels.Add(new CharacterSheetViewModel());
         }
 
         #endregion Commands

@@ -305,9 +305,9 @@ namespace DSACharacterSheet.FileReader
         }
 
 
-        public void Save()
+        public bool Save()
         {
-            Save(FilePath);
+            return !string.IsNullOrEmpty(FilePath) && Save(FilePath);
         }
 
         /// <summary>
@@ -315,7 +315,7 @@ namespace DSACharacterSheet.FileReader
         /// </summary>
         /// <param name="path">Path to file.</param>
         /// <exception cref="SheetSavingException"/>
-        public void Save(string path)
+        public bool Save(string path)
         {
             try
             {
@@ -324,6 +324,8 @@ namespace DSACharacterSheet.FileReader
                     var serializer = new XmlSerializer(typeof(CharacterSheet));
                     serializer.Serialize(stream, this);
                 }
+
+                return true;
             }
             catch (IOException e)
             {

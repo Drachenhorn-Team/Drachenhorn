@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using CommonServiceLocator;
+using DSACharacterSheet.Core.IO;
+using DSACharacterSheet.Desktop.IO;
 using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
@@ -23,20 +25,6 @@ namespace DSACharacterSheet.Desktop
     /// </summary>
     public partial class App : Application
     {
-        public App()
-        {
-            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-
-            if (args == null) return;
-
-            foreach (var item in args)
-            {
-                var temp = new Uri(item).LocalPath;
-                if (temp.EndsWith(".dsac"))
-                    SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load((temp)), "InitialSheet");
-            }
-        }
-
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
@@ -56,6 +44,21 @@ namespace DSACharacterSheet.Desktop
 
 
             Messenger.Default.Register<Exception>(this, ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
+
+
+            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
+
+            if (args != null)
+            {
+                foreach (var item in args)
+                {
+                    var temp = new Uri(item).LocalPath;
+                    if (temp.EndsWith(".dsac"))
+                        SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load((temp)), "InitialSheet");
+                }
+            }
+
+            SimpleIoc.Default.Register<IIOService>(() => new IOService());
         }
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)

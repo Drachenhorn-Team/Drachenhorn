@@ -1,4 +1,5 @@
 using CommonServiceLocator;
+using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.Desktop.UserSettings;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
@@ -28,11 +29,14 @@ namespace DSACharacterSheet.Desktop.ViewModels
             }
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<PrintViewModel>();
         }
 
         public Settings Settings => ServiceLocator.Current.GetInstance<Settings>();
 
         public MainViewModel MainView => ServiceLocator.Current.GetInstance<MainViewModel>();
+
+        public PrintViewModel PrintView => ServiceLocator.Current.GetInstance<PrintViewModel>();
 
         public static void Cleanup()
         {
