@@ -86,7 +86,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Profession")]
         public ProfessionInformation Profession
         {
-            get { return _profession };
+            get { return _profession; }
             set
             {
                 if (_profession == value)
