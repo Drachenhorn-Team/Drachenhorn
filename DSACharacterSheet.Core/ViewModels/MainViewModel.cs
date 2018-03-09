@@ -23,7 +23,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public ObservableCollection<CharacterSheetViewModel> CharacterSheetViewModels
         {
-            get => _characterSheetViewModels;
+            get { return _characterSheetViewModels; }
             set
             {
                 if (_characterSheetViewModels == value)
@@ -37,7 +37,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public CharacterSheetViewModel CurrentSheetViewModel
         {
-            get => _currentSheetViewModel;
+            get { return _currentSheetViewModel; }
             set
             {
                 if (_currentSheetViewModel == value)

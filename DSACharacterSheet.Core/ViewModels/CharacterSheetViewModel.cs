@@ -20,7 +20,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public CharacterSheet CurrentSheet
         {
-            get => _currentSheet;
+            get { return _currentSheet; }
             set
             {
                 if (_currentSheet == value)

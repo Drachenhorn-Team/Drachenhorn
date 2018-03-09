@@ -26,7 +26,7 @@ namespace DSACharacterSheet.FileReader
         [XmlAttribute("Name")]
         public string Name
         {
-            get => _name;
+            get { return _name; }
             set
             {
                 if (_name == value)
@@ -41,7 +41,7 @@ namespace DSACharacterSheet.FileReader
         [XmlAttribute("GPBase")]
         public double GPBase
         {
-            get => _gpBase;
+            get { return _gpBase };
             set
             {
                 if (_gpBase == value)
@@ -56,7 +56,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Race")]
         public RaceInformation Race
         {
-            get => _race;
+            get { return _race;}
             set
             {
                 if (_race == value)
@@ -71,7 +71,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Culture")]
         public CultureInformation Culture
         {
-            get => _culture;
+            get { return _culture; }
             set
             {
                 if (_culture == value)
@@ -86,7 +86,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Profession")]
         public ProfessionInformation Profession
         {
-            get => _profession;
+            get { return _profession };
             set
             {
                 if (_profession == value)
@@ -101,7 +101,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("CharacterInformation")]
         public CharacterInformation CharacterInformation
         {
-            get => _characterInformation;
+            get { return _characterInformation; }
             set
             {
                 if (_characterInformation == value)
@@ -116,7 +116,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("CoatOfArms")]
         public CoatOfArms CoatOfArms
         {
-            get => _coatOfArms;
+            get { return _coatOfArms; }
             set
             {
                 if (_coatOfArms == value)
@@ -131,7 +131,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("SocialInformation")]
         public SocialInformation SocialInformation
         {
-            get => _socialInformation;
+            get { return _socialInformation; }
             set
             {
                 if (_socialInformation == value)
@@ -146,7 +146,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Advantage")]
         public ObservableCollection<Advantage> Advantages
         {
-            get => _advantages;
+            get { return _advantages; }
             set
             {
                 if (_advantages == value)
@@ -161,7 +161,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Disadvantage")]
         public ObservableCollection<Disadvantage> Disadvantages
         {
-            get => _disadvantages;
+            get { return _disadvantages; }
             set
             {
                 if (_disadvantages == value)
@@ -176,7 +176,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Attribute")]
         public CharacterAttributes Attributes
         {
-            get => _attributes;
+            get { return _attributes; }
             set
             {
                 if (_attributes == value)
@@ -191,7 +191,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("BaseValue")]
         public BaseValues BaseValues
         {
-            get => _baseValues;
+            get { return _baseValues; }
             set
             {
                 if (_baseValues == value)
@@ -206,7 +206,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("AdventurePoints")]
         public AdventurePoints AdventurePoints
         {
-            get => _adventurePoints;
+            get { return _adventurePoints; }
             set
             {
                 if (_adventurePoints == value)
@@ -221,7 +221,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("Skill")]
         public ObservableCollection<Skill> Skills
         {
-            get => _skills;
+            get { return _skills; }
             set
             {
                 if (_skills == value)
@@ -236,7 +236,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("SpecialSkill")]
         public ObservableCollection<SpecialSkill> SpecialSkills
         {
-            get => _specialSkills;
+            get { return _specialSkills; }
             set
             {
                 if (_specialSkills == value)
@@ -251,7 +251,7 @@ namespace DSACharacterSheet.FileReader
         [XmlElement("CombatInformation")]
         public CombatInformation CombatInformation
         {
-            get => _combatInformation;
+            get { return _combatInformation; }
             set
             {
                 if (_combatInformation == value)
@@ -270,7 +270,7 @@ namespace DSACharacterSheet.FileReader
         [XmlIgnore]
         public string FilePath
         {
-            get => _filePath;
+            get { return _filePath; }
             private set
             {
                 if (_filePath == value)
