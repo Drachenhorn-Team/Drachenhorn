@@ -6,14 +6,17 @@ using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.Core.Settings;
+using DSACharacterSheet.Core.Settings.Update;
 
 namespace DSACharacterSheet.Desktop.UserSettings
 {
     [Serializable]
-    public class Settings : BindableBase
+    public class Settings : BindableBase, ISettings
     {
         #region Properties
 
@@ -110,13 +113,12 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         #region Update
 
+        public bool CanCheckUpdate => ApplicationDeployment.IsNetworkDeployed;
+
         public event UpdateCheckedHandler UpdateChecked;
         private void OnUpdateChecked(object sender, UpdateCheckedEventArgs args)
         {
-            if (UpdateChecked == null)
-                return;
-
-            UpdateChecked(sender, args);
+            UpdateChecked?.Invoke(sender, args);
         }
 
         public void CheckUpdateAsync()
@@ -127,18 +129,34 @@ namespace DSACharacterSheet.Desktop.UserSettings
             }).Start();
         }
 
+        public void CheckUpdateAsync(UpdateCheckedHandler checkFinished)
+        {
+            void Handler(object sender, UpdateCheckedEventArgs args)
+            {
+                checkFinished(sender, args);
+                UpdateChecked -= Handler;
+            }
+
+            UpdateChecked += Handler;
+            CheckUpdateAsync();
+        }
+
         /// <summary>
         /// Checks for a ClickOnce-Update
         /// </summary>
         /// <returns>True if update is available.</returns>
-        public bool NeedsUpdate()
+        private bool NeedsUpdate()
         {
             try
             {
                 if (ApplicationDeployment.IsNetworkDeployed)
                     return ApplicationDeployment.CurrentDeployment.CheckForUpdate();
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                return false;
+            }
+
             return false;
         }
 
@@ -147,8 +165,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         #region Save/Load
 
-        private static readonly string PROPERTIESDIRECTORY = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DSACharacterSheet");
-        private static string PropertiesPath { get { return Path.Combine(PROPERTIESDIRECTORY, "config.xml"); } }
+        private static readonly string PropertiesDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DSACharacterSheet");
+        private static string PropertiesPath => Path.Combine(PropertiesDirectory, "config.xml");
 
         /// <summary>
         /// Loads the Properties from the "PROPERTIESDIRECTORY".
@@ -156,15 +174,15 @@ namespace DSACharacterSheet.Desktop.UserSettings
         /// <returns>The Loaded Properties.</returns>
         public static Settings Load()
         {
-            if (!Directory.Exists(PROPERTIESDIRECTORY))
-                Directory.CreateDirectory(PROPERTIESDIRECTORY);
+            if (!Directory.Exists(PropertiesDirectory))
+                Directory.CreateDirectory(PropertiesDirectory);
 
             try
             {
                 using (var stream = new FileStream(PropertiesPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-                    Settings temp = (Settings)serializer.Deserialize(stream);
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    var temp = (Settings)serializer.Deserialize(stream);
                     return temp;
                 }
             }
@@ -179,8 +197,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
         /// </summary>
         public void Save()
         {
-            if (!Directory.Exists(PROPERTIESDIRECTORY))
-                Directory.CreateDirectory(PROPERTIESDIRECTORY);
+            if (!Directory.Exists(PropertiesDirectory))
+                Directory.CreateDirectory(PropertiesDirectory);
 
             try
             {

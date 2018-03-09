@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System.Runtime.Remoting.Messaging;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -13,11 +15,14 @@ namespace DSACharacterSheet.Desktop.Views
         public MainView()
         {
             InitializeComponent();
+
+            Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
         }
 
-        private void PropertiesCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void RecieveMessage(NotificationMessage message)
         {
-            new PropertiesView().ShowDialog();
+            if (message.Notification == "ShowSettingsView")
+                new SettingsView().ShowDialog();
         }
 
         private void GenerateHTML_Click(object sender, RoutedEventArgs e)

@@ -148,7 +148,6 @@
     <Compile Include="IO\IOService.cs" />
     <Compile Include="Lang\TranslateExtension.cs" />
     <Compile Include="UserSettings\Settings.cs" />
-    <Compile Include="UserSettings\UpdateCheckedEventArgs.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
@@ -186,7 +185,6 @@
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\SkillButton.cs" />
-    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\CoatOfArmsPainterView.xaml.cs">
       <DependentUpon>CoatOfArmsPainterView.xaml</DependentUpon>
     </Compile>
@@ -196,8 +194,8 @@
     <Compile Include="Views\PrintView.xaml.cs">
       <DependentUpon>PrintView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PropertiesView.xaml.cs">
-      <DependentUpon>PropertiesView.xaml</DependentUpon>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Page Include="Dialogs\ExceptionMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -267,7 +265,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PropertiesView.xaml">
+    <Page Include="Views\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

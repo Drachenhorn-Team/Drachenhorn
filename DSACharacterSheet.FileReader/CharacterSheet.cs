@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 using DSACharacterSheet.FileReader.Advantages;
 using DSACharacterSheet.FileReader.Common;
-using DSACharacterSheet.FileReader.Enums;
 using DSACharacterSheet.FileReader.Skills;
 using DSACharacterSheet.FileReader.Exceptions;
 using DSACharacterSheet.FileReader.CombatInfo;
@@ -32,7 +26,7 @@ namespace DSACharacterSheet.FileReader
                 if (_name == value)
                     return;
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged();
             }
         }
 
@@ -44,10 +38,10 @@ namespace DSACharacterSheet.FileReader
             get { return _gpBase; }
             set
             {
-                if (_gpBase == value)
+                if (Math.Abs(_gpBase - value) < double.Epsilon)
                     return;
                 _gpBase = value;
-                OnPropertyChanged("GPBase");
+                OnPropertyChanged();
             }
         }
 
@@ -62,7 +56,7 @@ namespace DSACharacterSheet.FileReader
                 if (_race == value)
                     return;
                 _race = value;
-                OnPropertyChanged("Race");
+                OnPropertyChanged();
             }
         }
 
@@ -77,7 +71,7 @@ namespace DSACharacterSheet.FileReader
                 if (_culture == value)
                     return;
                 _culture = value;
-                OnPropertyChanged("Culture");
+                OnPropertyChanged();
             }
         }
 
@@ -92,7 +86,7 @@ namespace DSACharacterSheet.FileReader
                 if (_profession == value)
                     return;
                 _profession = value;
-                OnPropertyChanged("Profession");
+                OnPropertyChanged();
             }
         }
 
@@ -107,7 +101,7 @@ namespace DSACharacterSheet.FileReader
                 if (_characterInformation == value)
                     return;
                 _characterInformation = value;
-                OnPropertyChanged("CharacterInformation");
+                OnPropertyChanged();
             }
         }
 
@@ -137,7 +131,7 @@ namespace DSACharacterSheet.FileReader
                 if (_socialInformation == value)
                     return;
                 _socialInformation = value;
-                OnPropertyChanged("SocialInformation");
+                OnPropertyChanged();
             }
         }
 
@@ -152,7 +146,7 @@ namespace DSACharacterSheet.FileReader
                 if (_advantages == value)
                     return;
                 _advantages = value;
-                OnPropertyChanged("Advantages");
+                OnPropertyChanged();
             }
         }
 
@@ -167,7 +161,7 @@ namespace DSACharacterSheet.FileReader
                 if (_disadvantages == value)
                     return;
                 _disadvantages = value;
-                OnPropertyChanged("Disadvantages");
+                OnPropertyChanged();
             }
         }
 
@@ -182,7 +176,7 @@ namespace DSACharacterSheet.FileReader
                 if (_attributes == value)
                     return;
                 _attributes = value;
-                OnPropertyChanged("Attributes");
+                OnPropertyChanged();
             }
         }
 

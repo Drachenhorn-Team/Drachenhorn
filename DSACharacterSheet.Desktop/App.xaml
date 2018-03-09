@@ -6,11 +6,11 @@
              Startup="Application_Startup"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"
-                                 xmlns:vm="clr-namespace:DSACharacterSheet.Desktop.ViewModels" />
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
 
             <Style x:Key="Morpheus">
                 <Setter Property="TextElement.FontFamily" Value="Resources/#Morpheus" />

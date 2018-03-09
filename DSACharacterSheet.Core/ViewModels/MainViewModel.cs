@@ -84,6 +84,8 @@ namespace DSACharacterSheet.Core.ViewModels
             SaveAll = new RelayCommand(ExecuteSaveAll);
             Open = new RelayCommand(ExecuteOpen);
             New = new RelayCommand(ExecuteNew);
+
+            ShowSettings = new RelayCommand(ExecuteShowSettings);
         }
 
         public RelayCommand Save { get; private set; }
@@ -144,6 +146,13 @@ namespace DSACharacterSheet.Core.ViewModels
         private void ExecuteNew()
         {
             CharacterSheetViewModels.Add(new CharacterSheetViewModel());
+        }
+
+        public RelayCommand ShowSettings { get; private set; }
+
+        private void ExecuteShowSettings()
+        {
+            Messenger.Default.Send(new NotificationMessage(this, "ShowSettingsView"));
         }
 
         #endregion Commands

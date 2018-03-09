@@ -12,8 +12,11 @@ using System.Windows;
 using System.Windows.Threading;
 using CommonServiceLocator;
 using DSACharacterSheet.Core.IO;
+using DSACharacterSheet.Core.Settings;
+using DSACharacterSheet.Core.Settings.Update;
 using DSACharacterSheet.Desktop.IO;
 using DSACharacterSheet.FileReader;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -40,9 +43,6 @@ namespace DSACharacterSheet.Desktop
             MainWindow.Show();
             splash.Close();
 
-            ServiceLocator.Current.GetInstance<Settings>().CheckUpdateAsync();
-
-
             Messenger.Default.Register<Exception>(this, ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
 
 
@@ -59,6 +59,17 @@ namespace DSACharacterSheet.Desktop
             }
 
             SimpleIoc.Default.Register<IIOService>(() => new IOService());
+            
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<ISettings>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register<ISettings>(Settings.Load);
+            }
+
+            ServiceLocator.Current.GetInstance<ISettings>().CheckUpdateAsync(UpdateCheckFinished);
         }
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)

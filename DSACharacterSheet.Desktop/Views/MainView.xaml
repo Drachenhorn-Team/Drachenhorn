@@ -7,7 +7,6 @@
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
-        xmlns:viewModels="clr-namespace:DSACharacterSheet.Desktop.ViewModels"
         DataContext="{Binding MainView, Source={StaticResource Locator}}"
         mc:Ignorable="d" 
         Background="GhostWhite"
@@ -70,7 +69,7 @@
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"/>
                     <RibbonSeparator/>
                     <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Properties}" Command="Properties"
+                        Header="{lang:Translate UI.Properties}" Command="{Binding ShowSettings}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\PropertiesIcon.png"/>
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
@@ -119,7 +118,7 @@
             </xcad:DockingManager.DocumentHeaderTemplate>
             <xcad:DockingManager.LayoutItemTemplate>
                 <DataTemplate DataType="ContentPresenter">
-                    <ScrollViewer>
+                    <ScrollViewer PanningMode="Both">
                         <controls:CharacterSheetControl DataContext="{Binding Content}"/>
                     </ScrollViewer>
                 </DataTemplate>

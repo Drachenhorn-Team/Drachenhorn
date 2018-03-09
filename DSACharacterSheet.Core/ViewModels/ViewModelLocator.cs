@@ -1,10 +1,10 @@
+using System.Configuration;
 using CommonServiceLocator;
-using DSACharacterSheet.Core.ViewModels;
-using DSACharacterSheet.Desktop.UserSettings;
+using DSACharacterSheet.Core.Settings;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace DSACharacterSheet.Desktop.ViewModels
+namespace DSACharacterSheet.Core.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -19,24 +19,23 @@ namespace DSACharacterSheet.Desktop.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            if (ViewModelBase.IsInDesignModeStatic)
-            {
-                SimpleIoc.Default.Register<Settings>();
-            }
-            else
-            {
-                SimpleIoc.Default.Register<Settings>(Settings.Load);
-            }
+            //if (ViewModelBase.IsInDesignModeStatic)
+            //{
+            //}
+            //else
+            //{
+            //}
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<PrintViewModel>();
+            SimpleIoc.Default.Register<SettingsViewModel>();
         }
-
-        public Settings Settings => ServiceLocator.Current.GetInstance<Settings>();
 
         public MainViewModel MainView => ServiceLocator.Current.GetInstance<MainViewModel>();
 
         public PrintViewModel PrintView => ServiceLocator.Current.GetInstance<PrintViewModel>();
+
+        public SettingsViewModel SettingsView => ServiceLocator.Current.GetInstance<SettingsViewModel>();
 
         public static void Cleanup()
         {

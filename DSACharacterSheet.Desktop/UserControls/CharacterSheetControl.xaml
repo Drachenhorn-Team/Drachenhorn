@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
-             xmlns:vm="clr-namespace:DSACharacterSheet.Desktop.ViewModels"
+             xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              mc:Ignorable="d" 
              d:DesignHeight="5000" d:DesignWidth="900"
              d:DataContext="{d:DesignInstance vm:CharacterSheetViewModel}">

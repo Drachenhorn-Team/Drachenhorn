@@ -32,6 +32,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #endregion Properties
 
+
         #region c'tor
 
         public CharacterSheetViewModel()
