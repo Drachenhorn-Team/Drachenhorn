@@ -41,7 +41,7 @@ namespace DSACharacterSheet.FileReader
         [XmlAttribute("GPBase")]
         public double GPBase
         {
-            get { return _gpBase };
+            get { return _gpBase; };
             set
             {
                 if (_gpBase == value)
