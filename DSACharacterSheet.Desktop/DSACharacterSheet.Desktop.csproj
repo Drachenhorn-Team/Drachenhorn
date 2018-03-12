@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="IO\IOService.cs" />
     <Compile Include="Lang\TranslateExtension.cs" />
+    <Compile Include="MVVM\DialogService.cs" />
     <Compile Include="UserSettings\Settings.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>

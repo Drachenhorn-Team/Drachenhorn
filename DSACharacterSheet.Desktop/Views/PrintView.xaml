@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
+        xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         mc:Ignorable="d"
         Title="PrintView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom">
+            <Button Content="{lang:Translate UI.Print}" Command="{Binding Print}" Margin="5"/>
+        </Grid>
+        <WebBrowser x:Name="Browser"/>
+    </DockPanel>
 </Window>

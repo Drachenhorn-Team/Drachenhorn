@@ -124,7 +124,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
         public void CheckUpdateAsync()
         {
             new Task(() => {
-                IsUpdateAvailable = NeedsUpdate();
+                IsUpdateAvailable = CheckUpdate();
                 OnUpdateChecked(this, new UpdateCheckedEventArgs(IsUpdateAvailable));
             }).Start();
         }
@@ -144,7 +144,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
         /// Checks for a ClickOnce-Update
         /// </summary>
         /// <returns>True if update is available.</returns>
-        private bool NeedsUpdate()
+        public bool CheckUpdate()
         {
             try
             {

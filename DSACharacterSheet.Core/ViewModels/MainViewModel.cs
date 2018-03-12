@@ -65,8 +65,6 @@ namespace DSACharacterSheet.Core.ViewModels
                 sheet = new CharacterSheet();
             }
 
-            sheet.Name = "test";
-
             CharacterSheetViewModels.Add(new CharacterSheetViewModel(sheet));
 
             InitializeCommands();

@@ -20,6 +20,7 @@ namespace DSACharacterSheet.Core.Settings
 
         #region Methods
 
+        bool CheckUpdate();
         void CheckUpdateAsync();
         void CheckUpdateAsync(UpdateCheckedHandler checkFinished);
 

@@ -15,10 +15,12 @@ using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
 using DSACharacterSheet.Desktop.IO;
+using DSACharacterSheet.Desktop.MVVM;
 using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Desktop
 {
@@ -68,6 +70,8 @@ namespace DSACharacterSheet.Desktop
             {
                 SimpleIoc.Default.Register<ISettings>(Settings.Load);
             }
+
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             ServiceLocator.Current.GetInstance<ISettings>().CheckUpdateAsync(UpdateCheckFinished);
         }

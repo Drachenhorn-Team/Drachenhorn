@@ -8,6 +8,7 @@ using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Core.ViewModels
 {
@@ -43,14 +44,18 @@ namespace DSACharacterSheet.Core.ViewModels
             }
         }
 
+        private IDialogService DialogService { get; set; }
+
         #endregion Properties
 
 
         #region c'tor
 
-        public SettingsViewModel(ISettings settings)
+        public SettingsViewModel(ISettings settings, IDialogService dialogService)
         {
             Settings = settings;
+
+            DialogService = dialogService;
 
             InitializeCommands();
         }
@@ -66,8 +71,7 @@ namespace DSACharacterSheet.Core.ViewModels
         }
 
         public RelayCommand CheckForUpdate { get; private set; }
-
-        //TODO: implement Message
+        
         private void ExecuteCheckForUpdate()
         {
             IsCheckingUpdate = true;
@@ -78,26 +82,9 @@ namespace DSACharacterSheet.Core.ViewModels
         {
             IsCheckingUpdate = false;
 
-            //string text;
+            var text = LanguageManager.GetLanguageText(args.IsUpdateAvailable ? "Update.CheckForUpdate.Finished.Successful" : "Update.CheckForUpdate.Finished.Failed");
 
-            //if (args.IsUpdateAvailable)
-            //    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful");
-            //else
-            //    text = LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Failed");
-
-
-            //Application.Current.Dispatcher.Invoke(
-            //    new Action(() =>
-            //    {
-            //        BusyIndicator.IsBusy = false;
-
-            //        MessageBox.Show(this,
-            //            text,
-            //            LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
-            //            MessageBoxButton.OK,
-            //            MessageBoxImage.Information,
-            //            MessageBoxResult.OK);
-            //    }));
+            DialogService.ShowMessageBox(text, LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"));
         }
 
         #endregion Commands
