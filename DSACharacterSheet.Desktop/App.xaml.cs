@@ -50,13 +50,16 @@ namespace DSACharacterSheet.Desktop
 
             var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
 
+
             if (args != null)
             {
                 foreach (var item in args)
                 {
+                    MessageBox.Show(item);
+
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(".dsac"))
-                        SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load((temp)), "InitialSheet");
+                        SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load(temp), "InitialSheet");
                 }
             }
 
