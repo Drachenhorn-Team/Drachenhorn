@@ -131,13 +131,12 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         public void CheckUpdateAsync(UpdateCheckedHandler checkFinished)
         {
-            void Handler(object sender, UpdateCheckedEventArgs args)
+            UpdateCheckedHandler handler = null;
+            UpdateChecked += handler = (sender, args) =>
             {
                 checkFinished(sender, args);
-                UpdateChecked -= Handler;
-            }
-
-            UpdateChecked += Handler;
+                UpdateChecked -= handler;
+            };
             CheckUpdateAsync();
         }
 
