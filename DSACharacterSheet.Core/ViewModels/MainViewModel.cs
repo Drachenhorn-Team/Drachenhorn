@@ -11,6 +11,7 @@ using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Core.ViewModels
 {
@@ -52,17 +53,19 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #region c'tor
 
-        public MainViewModel()
+        public MainViewModel(IDialogService dialogService)
         {
             CharacterSheet sheet = null;
 
             try
             {
                 sheet = ServiceLocator.Current.GetInstance<CharacterSheet>("InitialSheet");
+                dialogService.ShowMessageBox("InitialSheet", "title");
             }
             catch (Exception)
             {
                 sheet = new CharacterSheet();
+                dialogService.ShowMessageBox("NewSheet", "title");
             }
 
             CharacterSheetViewModels.Add(new CharacterSheetViewModel(sheet));

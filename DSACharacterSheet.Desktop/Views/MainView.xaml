@@ -84,14 +84,14 @@
             </RibbonTab>
         </Ribbon>
 
-        <StatusBar Name="StatusBar" DataContext="{Binding Settings, Source={StaticResource Locator}}"
+        <StatusBar Name="StatusBar" DataContext="{Binding SettingsView, Source={StaticResource Locator}}"
                    DockPanel.Dock="Bottom" Height="25" Background="LightGray"
                    BorderBrush="Gray" BorderThickness="0 2 0 0">
             <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}" >
                 <Border Background="Orange" CornerRadius="10">
                     <Image Source="/DSACharacterSheet.Core;component\Images\UpdateAvailable.png"
                            ToolTip="{lang:Translate Update.Available}"
-                           Visibility="{Binding IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
                            Margin="1"/>
                 </Border>
             </StatusBarItem>
