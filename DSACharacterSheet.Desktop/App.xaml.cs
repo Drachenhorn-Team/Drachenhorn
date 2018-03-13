@@ -41,15 +41,21 @@ namespace DSACharacterSheet.Desktop
         {
             var splash = new Splash.SplashScreen();
             splash.Show();
+
+            InitializeData();
+            
             MainWindow = new MainView();
             MainWindow.Show();
             splash.Close();
+        }
+
+        private void InitializeData()
+        {
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             Messenger.Default.Register<Exception>(this, ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
 
-
             var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-
 
             if (args != null)
             {
@@ -59,12 +65,12 @@ namespace DSACharacterSheet.Desktop
 
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(".dsac"))
-                        SimpleIoc.Default.Register<CharacterSheet>(() => CharacterSheet.Load(temp), "InitialSheet");
+                        SimpleIoc.Default.Register(() => CharacterSheet.Load(temp), "InitialSheet");
                 }
             }
 
             SimpleIoc.Default.Register<IIOService>(() => new IOService());
-            
+
             if (ViewModelBase.IsInDesignModeStatic)
             {
                 SimpleIoc.Default.Register<ISettings>();
@@ -74,10 +80,9 @@ namespace DSACharacterSheet.Desktop
                 SimpleIoc.Default.Register<ISettings>(Settings.Load);
             }
 
-            SimpleIoc.Default.Register<IDialogService, DialogService>();
-
             ServiceLocator.Current.GetInstance<ISettings>().CheckUpdateAsync(UpdateCheckFinished);
         }
+
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
         {

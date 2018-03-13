@@ -53,19 +53,17 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #region c'tor
 
-        public MainViewModel(IDialogService dialogService)
+        public MainViewModel()
         {
             CharacterSheet sheet = null;
 
             try
             {
                 sheet = ServiceLocator.Current.GetInstance<CharacterSheet>("InitialSheet");
-                dialogService.ShowMessageBox("InitialSheet", "title");
             }
             catch (Exception)
             {
                 sheet = new CharacterSheet();
-                dialogService.ShowMessageBox("NewSheet", "title");
             }
 
             CharacterSheetViewModels.Add(new CharacterSheetViewModel(sheet));
