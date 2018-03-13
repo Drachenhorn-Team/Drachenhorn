@@ -158,7 +158,6 @@ namespace DSACharacterSheet.Desktop
                         server.WaitForConnection();
 
                         var text = reader.ReadLine();
-                        //MessageBox.Show(text, "pipe");
 
                         Dispatcher.Invoke(() =>
                         {

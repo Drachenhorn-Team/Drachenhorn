@@ -37,6 +37,7 @@ namespace DSACharacterSheet.Desktop.Views
                 }
             }
 
+            this.WindowState = WindowState.Maximized;
             this.Activate();
         }
 
