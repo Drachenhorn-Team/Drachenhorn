@@ -98,7 +98,8 @@
         </StatusBar>
 
 
-        <xcad:DockingManager AllowMixedOrientation="True"
+        <xcad:DockingManager Name="DockingManager" 
+                             AllowMixedOrientation="True"
                              BorderBrush="Black"
                              BorderThickness="1"
                              DocumentsSource="{Binding CharacterSheetViewModels}"

@@ -6,6 +6,7 @@ using System.Windows.Media;
 using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight.Messaging;
+using Xceed.Wpf.AvalonDock.Layout;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -30,10 +31,13 @@ namespace DSACharacterSheet.Desktop.Views
                 if (this.DataContext is MainViewModel)
                 {
                     var model = (MainViewModel) this.DataContext;
-                    model.CharacterSheetViewModels.Add(new CharacterSheetViewModel(CharacterSheet.Load(path)));
+                    var sheetModel = new CharacterSheetViewModel(CharacterSheet.Load(path));
+                    model.CharacterSheetViewModels.Add(sheetModel);
+                    model.CurrentSheetViewModel = sheetModel;
                 }
-
             }
+
+            this.Activate();
         }
 
         private void RecieveMessage(NotificationMessage message)
