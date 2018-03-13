@@ -477,4 +477,7 @@
   <data name="UI.Export" xml:space="preserve">
     <value>Export</value>
   </data>
+  <data name="UI.SaveAll" xml:space="preserve">
+    <value>Save All</value>
+  </data>
 </root>

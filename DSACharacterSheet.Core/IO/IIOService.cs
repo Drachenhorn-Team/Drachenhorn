@@ -9,6 +9,18 @@ namespace DSACharacterSheet.Core.IO
 {
     public interface IIOService
     {
+        void SaveStringDialog(
+            string fileName,
+            string fileExtension,
+            string fileTypeName,
+            string title,
+            string text);
+
+        string OpenStringDialog(
+            string fileExtension,
+            string fileTypeName,
+            string title);
+
         void SaveAsCharacterSheet(CharacterSheet sheet);
         CharacterSheet OpenCharacterSheet();
     }
