@@ -61,8 +61,6 @@ namespace DSACharacterSheet.Desktop
             {
                 foreach (var item in args)
                 {
-                    MessageBox.Show(item);
-
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(".dsac"))
                         SimpleIoc.Default.Register(() => CharacterSheet.Load(temp), "InitialSheet");
