@@ -20,7 +20,7 @@ namespace DSACharacterSheet.Core.Lang
         private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
         public static CultureInfo CurrentCulture
         {
-            get => _currentCulture;
+            get { return _currentCulture; }
             set
             {
                 if (_currentCulture == value)
