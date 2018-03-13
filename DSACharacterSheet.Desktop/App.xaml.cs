@@ -71,16 +71,10 @@ namespace DSACharacterSheet.Desktop
 
             SimpleIoc.Default.Register<IIOService>(() => new IOService());
 
-            if (ViewModelBase.IsInDesignModeStatic)
-            {
-                SimpleIoc.Default.Register<ISettings>();
-            }
-            else
-            {
-                SimpleIoc.Default.Register<ISettings>(Settings.Load);
-            }
+            var settings = Settings.Load();
+            SimpleIoc.Default.Register<ISettings>(() => settings);
 
-            ServiceLocator.Current.GetInstance<ISettings>().CheckUpdateAsync(UpdateCheckFinished);
+            settings.CheckUpdateAsync(UpdateCheckFinished);
         }
 
 
