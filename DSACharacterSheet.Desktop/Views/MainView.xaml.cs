@@ -1,7 +1,10 @@
-﻿using System.Runtime.Remoting.Messaging;
+﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using DSACharacterSheet.Core.ViewModels;
+using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace DSACharacterSheet.Desktop.Views
@@ -17,6 +20,19 @@ namespace DSACharacterSheet.Desktop.Views
             InitializeComponent();
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
+        }
+
+        public void OpenFile(string path)
+        {
+            var temp = new Uri(path).LocalPath;
+            if (temp.EndsWith(".dsac"))
+            {
+                if (this.DataContext is MainViewModel model)
+                {
+                    model.CharacterSheetViewModels.Add(new CharacterSheetViewModel(CharacterSheet.Load(path)));
+                }
+
+            }
         }
 
         private void RecieveMessage(NotificationMessage message)
