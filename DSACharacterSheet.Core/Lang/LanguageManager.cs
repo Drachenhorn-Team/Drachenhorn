@@ -8,17 +8,19 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using CommonServiceLocator;
+using SimpleLogger;
 
 namespace DSACharacterSheet.Core.Lang
 {
     public class LanguageManager
     {
-        private static readonly string[] CULTURES = { "de-DE", "en" };
+        private static readonly string[] Cultures = { "de-DE", "en" };
 
         private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
         public static CultureInfo CurrentCulture
         {
-            get { return _currentCulture; }
+            get => _currentCulture;
             set
             {
                 if (_currentCulture == value)
@@ -32,12 +34,9 @@ namespace DSACharacterSheet.Core.Lang
         /// </summary>
         /// <param name="key">TranslateID</param>
         /// <returns>Translated Text</returns>
-        public string this[string key]
-        {
-            get { return GetLanguageText(key); }
-        }
+        public string this[string key] => GetLanguageText(key);
 
-        private static ResourceManager resourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
+        private static readonly ResourceManager ResourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
         /// <summary>
         /// Returns the translated Text for the TranslateID.
@@ -48,10 +47,11 @@ namespace DSACharacterSheet.Core.Lang
         {
             try
             {
-                return resourceManager.GetString(identifier, CurrentCulture);
+                return ResourceManager.GetString(identifier, CurrentCulture);
             }
             catch (MissingManifestResourceException)
             {
+                Logger.Debug.Log("Missing Transformation: " + identifier);
                 return identifier;
             }
         }
@@ -73,7 +73,7 @@ namespace DSACharacterSheet.Core.Lang
         {
             var result = new List<CultureInfo>();
 
-            foreach (var culture in CULTURES)
+            foreach (var culture in Cultures)
                 try
                 {
                     result.Add(new CultureInfo(culture));

@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
 using DSACharacterSheet.Core.IO;
+using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -80,6 +82,8 @@ namespace DSACharacterSheet.Core.ViewModels
             Open = new RelayCommand(ExecuteOpen);
             New = new RelayCommand(ExecuteNew);
 
+            GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
+
             ShowSettings = new RelayCommand(ExecuteShowSettings);
         }
 
@@ -148,6 +152,24 @@ namespace DSACharacterSheet.Core.ViewModels
         private void ExecuteShowSettings()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowSettingsView"));
+        }
+
+        public RelayCommand GenerateHtml { get; private set; }
+
+        private void ExecuteGenerateHtml()
+        {
+            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+
+            ioService.SaveStringDialog(
+                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Name) ?
+                    LanguageManager.GetLanguageText("HTML.DefaultFileName") :
+                    CurrentSheetViewModel.CurrentSheet.Name,
+                ".html",
+                LanguageManager.GetLanguageText("HTML.FileType.Name"),
+                LanguageManager.GetLanguageText("HTML.SaveDialog.Title"),
+                PrintingManager.GenerateHtml(CurrentSheetViewModel.CurrentSheet),
+                true
+                );
         }
 
         #endregion Commands

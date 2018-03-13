@@ -14,7 +14,8 @@ namespace DSACharacterSheet.Core.IO
             string fileExtension,
             string fileTypeName,
             string title,
-            string text);
+            string text,
+            bool openAfterFinished = false);
 
         string OpenStringDialog(
             string fileExtension,

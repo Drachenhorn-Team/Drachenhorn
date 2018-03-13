@@ -1,30 +1,26 @@
-﻿using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.IO;
+using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Core.Settings;
+using DSACharacterSheet.Core.Settings.Update;
 using DSACharacterSheet.Desktop.Dialogs;
+using DSACharacterSheet.Desktop.IO;
+using DSACharacterSheet.Desktop.MVVM;
 using DSACharacterSheet.Desktop.UserSettings;
 using DSACharacterSheet.Desktop.Views;
+using DSACharacterSheet.FileReader;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Views;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using CommonServiceLocator;
-using DSACharacterSheet.Core.IO;
-using DSACharacterSheet.Core.Settings;
-using DSACharacterSheet.Core.Settings.Update;
-using DSACharacterSheet.Desktop.IO;
-using DSACharacterSheet.Desktop.MVVM;
-using DSACharacterSheet.FileReader;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
+using SimpleLogger;
+using SimpleLogger.Logging.Handlers;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
 
 namespace DSACharacterSheet.Desktop
@@ -81,9 +77,21 @@ namespace DSACharacterSheet.Desktop
             var settings = Settings.Load();
             SimpleIoc.Default.Register<ISettings>(() => settings);
 
+            Logger.LoggerHandlerManager.AddHandler(
+                new FileLoggerHandler(
+                    "log.txt",
+                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        "DSACharacterSheet")));
+
+            Logger.DefaultLevel = Logger.Level.Error;
+            Logger.DebugOff();
+
+#if DEBUG
+            Logger.DebugOn();
+#endif
+
             settings.CheckUpdateAsync(UpdateCheckFinished);
         }
-
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
         {
@@ -99,7 +107,6 @@ namespace DSACharacterSheet.Desktop
                             MessageBoxResult.OK);
                     }));
         }
-
 
         #region SingleInstance
 
@@ -153,7 +160,7 @@ namespace DSACharacterSheet.Desktop
             {
                 using (var reader = new StreamReader(server))
                 {
-                    for (;;)
+                    for (; ; )
                     {
                         server.WaitForConnection();
 
@@ -169,7 +176,7 @@ namespace DSACharacterSheet.Desktop
                         });
 
                         server.Disconnect();
-                        //Dispatch the message, probably onto the thread your form 
+                        //Dispatch the message, probably onto the thread your form
                         //  was contructed on with Form.BeginInvoke
                     }
                 }

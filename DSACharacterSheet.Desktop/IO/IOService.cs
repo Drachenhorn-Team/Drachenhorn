@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,8 @@ namespace DSACharacterSheet.Desktop.IO
             string fileExtension,
             string fileTypeName,
             string title,
-            string text)
+            string text,
+            bool openAfterFinished = false)
         {
             var fileDialog = new SaveFileDialog()
             {
@@ -33,6 +35,8 @@ namespace DSACharacterSheet.Desktop.IO
             if (fileDialog.ShowDialog() != true) return;
 
             File.WriteAllText(fileDialog.FileName, text);
+
+            if (openAfterFinished) Process.Start(fileDialog.FileName);
         }
 
         public string OpenStringDialog(
