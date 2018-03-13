@@ -158,12 +158,16 @@ namespace DSACharacterSheet.Desktop
                         server.WaitForConnection();
 
                         var text = reader.ReadLine();
-                        MessageBox.Show(text, "pipe");
-                        if (MainWindow is MainView)
+                        //MessageBox.Show(text, "pipe");
+
+                        Dispatcher.Invoke(() =>
                         {
-                            var view = (MainView) MainWindow;
-                            view.OpenFile(text);
-                        }
+                            if (MainWindow is MainView)
+                            {
+                                var view = (MainView)MainWindow;
+                                view.OpenFile(text);
+                            }
+                        });
 
                         server.Disconnect();
                         //Dispatch the message, probably onto the thread your form 
