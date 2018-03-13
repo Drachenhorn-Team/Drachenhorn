@@ -27,8 +27,9 @@ namespace DSACharacterSheet.Desktop.Views
             var temp = new Uri(path).LocalPath;
             if (temp.EndsWith(".dsac"))
             {
-                if (this.DataContext is MainViewModel model)
+                if (this.DataContext is MainViewModel)
                 {
+                    var model = (MainViewModel) this.DataContext;
                     model.CharacterSheetViewModels.Add(new CharacterSheetViewModel(CharacterSheet.Load(path)));
                 }
 

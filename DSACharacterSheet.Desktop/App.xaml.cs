@@ -159,8 +159,11 @@ namespace DSACharacterSheet.Desktop
 
                         var text = reader.ReadLine();
                         MessageBox.Show(text, "pipe");
-                        if (MainWindow is MainView view)
+                        if (MainWindow is MainView)
+                        {
+                            var view = (MainView) MainWindow;
                             view.OpenFile(text);
+                        }
 
                         server.Disconnect();
                         //Dispatch the message, probably onto the thread your form 
