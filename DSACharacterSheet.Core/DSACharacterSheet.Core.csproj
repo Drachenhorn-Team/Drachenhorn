@@ -117,6 +117,7 @@
     <Resource Include="Images\Painting\Undo.png" />
     <Resource Include="Images\HTML.png" />
     <Resource Include="Images\Pdf.png" />
+    <Resource Include="Images\PrintIcon.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

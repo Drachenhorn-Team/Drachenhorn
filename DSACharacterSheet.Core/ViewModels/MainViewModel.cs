@@ -82,6 +82,8 @@ namespace DSACharacterSheet.Core.ViewModels
             Open = new RelayCommand(ExecuteOpen);
             New = new RelayCommand(ExecuteNew);
 
+            Print = new RelayCommand(ExecutePrint);
+
             GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
 
             ShowSettings = new RelayCommand(ExecuteShowSettings);
@@ -170,6 +172,13 @@ namespace DSACharacterSheet.Core.ViewModels
                 PrintingManager.GenerateHtml(CurrentSheetViewModel.CurrentSheet),
                 true
                 );
+        }
+
+        public RelayCommand Print { get; private set; }
+
+        private void ExecutePrint()
+        {
+            Messenger.Default.Send(new NotificationMessage(this, "ShowPrintView"));
         }
 
         #endregion Commands

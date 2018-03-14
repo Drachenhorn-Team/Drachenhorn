@@ -7,6 +7,7 @@
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
         DataContext="{Binding MainView, Source={StaticResource Locator}}"
         mc:Ignorable="d" 
         Background="GhostWhite"
@@ -27,21 +28,24 @@
     </Window.InputBindings>
 
     <Window.Resources>
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <ResourceDictionary>
+            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        </ResourceDictionary>
     </Window.Resources>
     
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" IsMinimized="True">
             <Ribbon.QuickAccessToolBar>
                 <RibbonQuickAccessToolBar>
-                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png"
-                                  Command="{Binding New}"/>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png"
                                   Command="{Binding Open}"/>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
                                   Command="{Binding Save}"/>
                     <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\SaveAllIcon.png"
                                   Command="{Binding SaveAll}"/>
+                    <RibbonSeparator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+                    <RibbonButton SmallImageSource="/DSACharacterSheet.Core;component\Images\PrintIcon.png"
+                                  Command="{Binding Print}"/>
                 </RibbonQuickAccessToolBar>
             </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
@@ -51,22 +55,27 @@
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.New}" Command="{Binding New}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png"
-                        InputGestureText="Strg + N"/>
+                        InputGestureText="{lang:Translate InputGesture.New}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Open}" Command="{Binding Open}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png"
-                        InputGestureText="Strg + O"/>
+                        InputGestureText="{lang:Translate InputGesture.Open}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Save}" Command="{Binding Save}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
-                        InputGestureText="Strg + S"/>
+                        InputGestureText="{lang:Translate InputGesture.Save}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAll}" Command="{Binding Save}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveAllIcon.png"
-                        InputGestureText="Strg + Shift + S"/>
+                        InputGestureText="{lang:Translate InputGesture.SaveAll}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAs}" Command="{Binding SaveAs}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"/>
+                    <RibbonSeparator/>
+                    <RibbonApplicationMenuItem
+                        Header="{lang:Translate UI.Print}" Command="{Binding Print}"
+                        ImageSource="/DSACharacterSheet.Core;component\Images\PrintIcon.png"
+                        InputGestureText="{lang:Translate InputGesture.Print}"/>
                     <RibbonSeparator/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Properties}" Command="{Binding ShowSettings}"
@@ -76,10 +85,9 @@
 
             <RibbonTab Header="{lang:Translate UI.File}">
                 <RibbonGroup Header="{lang:Translate UI.Export}">
-                    <!--<RibbonButton Label="{lang:Translate UI.GeneratePdf}" LargeImageSource="/DSACharacterSheet.Core;component\Images\Pdf.png" Click="GeneratePdf_Click"/>-->
                     <RibbonButton Label="{lang:Translate UI.GenerateHtml}"
                                   LargeImageSource="/DSACharacterSheet.Core;component\Images\HTML.png"
-                                  Click="GenerateHTML_Click"/>
+                                  Command="{Binding GenerateHtml}"/>
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
@@ -107,13 +115,15 @@
                              Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
             <xcad:DockingManager.DocumentHeaderTemplate>
                 <DataTemplate DataType="ContentPresenter">
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" DataContext="{Binding Content}"
+                                d:DataContext="{d:DesignInstance vm:CharacterSheetViewModel}">
                         <!--<Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>-->
                         <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="1" ClipToBounds="True" Margin="0 0 4 0">
-                            <InkPresenter Strokes="{Binding Content.CurrentSheet.CoatOfArms.Strokes}"
+                            <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
                                           Width="30" Height="20" Loaded="InkPresenter_OnLoaded"/>
                         </Border>
-                        <TextBlock Text="{Binding Content.CurrentSheet.Name}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CurrentSheet.Name}" VerticalAlignment="Center"/>
+                        <TextBlock Text="*" Visibility="{Binding CurrentSheet.IsChanged, Converter={StaticResource BoolToVisibilityConverter}}" VerticalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
             </xcad:DockingManager.DocumentHeaderTemplate>
