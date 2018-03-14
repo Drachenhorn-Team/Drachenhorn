@@ -17,9 +17,11 @@ namespace DSACharacterSheet.Desktop.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(string path)
         {
             InitializeComponent();
+
+            if (!String.IsNullOrEmpty(path)) OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
         }

@@ -57,15 +57,6 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public MainViewModel()
         {
-            try
-            {
-                CharacterSheetViewModels.Add(new CharacterSheetViewModel(ServiceLocator.Current.GetInstance<CharacterSheet>("InitialSheet")));
-            }
-            catch (ActivationException)
-            {
-                //TODO: Show Basic Screen
-            }
-
             InitializeCommands();
         }
 

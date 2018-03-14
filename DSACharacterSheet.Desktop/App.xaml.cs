@@ -48,7 +48,22 @@ namespace DSACharacterSheet.Desktop
 
             InitializeData();
 
-            MainWindow = new MainView();
+            var filePath = "";
+            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
+            if (args != null)
+            {
+                foreach (var item in args)
+                {
+                    var temp = new Uri(item).LocalPath;
+                    if (temp.EndsWith(".dsac"))
+                    {
+                        filePath = temp;
+                        break;
+                    }
+                }
+            }
+
+            MainWindow = new MainView(filePath);
             MainWindow.Show();
             splash.Close();
         }
@@ -59,18 +74,6 @@ namespace DSACharacterSheet.Desktop
 
             Messenger.Default.Register<Exception>(this,
                 ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
-
-            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-
-            if (args != null)
-            {
-                foreach (var item in args)
-                {
-                    var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(".dsac"))
-                        SimpleIoc.Default.Register(() => CharacterSheet.Load(temp), "InitialSheet");
-                }
-            }
 
             SimpleIoc.Default.Register<IIOService>(() => new IOService());
 
