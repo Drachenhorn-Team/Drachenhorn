@@ -8,13 +8,13 @@ using System.Windows.Data;
 
 namespace DSACharacterSheet.Desktop.Lang
 {
-    public class TranslateExtension : Binding
+    public class TranslateTextExtension : Binding
     {
         /// <summary>
         /// Translates the given TranslateID
         /// </summary>
-        /// <param name="name">TranslateID</param>
-        public TranslateExtension(string name) : base("[%" + name + "]")
+        /// <param name="text">TranslationText</param>
+        public TranslateTextExtension(string text) : base("[" + text + "]")
         {
             this.Source = new LanguageManager();
         }

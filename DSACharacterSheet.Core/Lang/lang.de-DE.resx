@@ -480,4 +480,22 @@
   <data name="UI.SaveAll" xml:space="preserve">
     <value>Alles Speichern</value>
   </data>
+  <data name="CharacterSheet.FileType.Name" xml:space="preserve">
+    <value>DSA Charakterbogen</value>
+  </data>
+  <data name="CharacterSheet.LoadDialog.Title" xml:space="preserve">
+    <value>Charakterbogen öffnen</value>
+  </data>
+  <data name="UI.Print" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="PrintView.Title" xml:space="preserve">
+    <value>Druckvorschau</value>
+  </data>
+  <data name="Keyboard.Ctrl" xml:space="preserve">
+    <value>Strg</value>
+  </data>
+  <data name="Keyboard.Shift" xml:space="preserve">
+    <value>Umschalt</value>
+  </data>
 </root>

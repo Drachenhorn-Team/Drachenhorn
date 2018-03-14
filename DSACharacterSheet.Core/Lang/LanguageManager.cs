@@ -23,7 +23,7 @@ namespace DSACharacterSheet.Core.Lang
             get { return _currentCulture; }
             set
             {
-                if (_currentCulture == value)
+                if (Equals(_currentCulture, value))
                     return;
                 _currentCulture = value;
             }
@@ -34,7 +34,7 @@ namespace DSACharacterSheet.Core.Lang
         /// </summary>
         /// <param name="key">TranslateID</param>
         /// <returns>Translated Text</returns>
-        public string this[string key] => GetLanguageText(key);
+        public string this[string key] => TranslateText(key);
 
         private static readonly ResourceManager ResourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
@@ -51,9 +51,41 @@ namespace DSACharacterSheet.Core.Lang
             }
             catch (MissingManifestResourceException)
             {
-                Logger.Debug.Log("Missing Transformation: " + identifier);
+                Logger.Debug.Log("Missing Translation: " + identifier);
                 return identifier;
             }
+        }
+
+        /// <summary>
+        /// Translates the text with the parameters
+        /// </summary>
+        /// <param name="text">The Text to translate. (% for the beginning of the parameters to translate)</param>
+        /// <returns>Translated Text</returns>
+        public static string TranslateText(string text)
+        {
+            List<int> indexes = new List<int>();
+            for (int index = 0; ; ++index)
+            {
+                index = text.IndexOf('%', index);
+                if (index == -1)
+                    break;
+                indexes.Add(index);
+            }
+
+            indexes.Reverse();
+
+            foreach (var index in indexes)
+            {
+                var tempIndex = text.IndexOf(' ', index);
+
+                if (tempIndex == -1) tempIndex = text.Length;
+
+                var temp = text.Substring(index + 1, tempIndex - index - 1);
+
+                text = text.Replace('%' + temp, GetLanguageText(temp));
+            }
+
+            return text;
         }
 
         /// <summary>

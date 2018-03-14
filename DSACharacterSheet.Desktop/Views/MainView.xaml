@@ -13,13 +13,6 @@
         Background="GhostWhite"
         WindowState="Maximized"
         Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
-    <!--<Window.CommandBindings>
-        <CommandBinding Command="New" Executed="NewCommand_Executed"/>
-        <CommandBinding Command="Open" Executed="OpenCommand_Executed"/>
-        <CommandBinding Command="Save" Executed="SaveCommand_Executed"/>
-        <CommandBinding Command="SaveAs" Executed="SaveAsCommand_Executed"/>
-        <CommandBinding Command="Properties" Executed="PropertiesCommand_Executed"/>
-    </Window.CommandBindings>-->
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}"/>
         <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}"/>
@@ -55,19 +48,19 @@
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.New}" Command="{Binding New}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\NewIcon.png"
-                        InputGestureText="{lang:Translate InputGesture.New}"/>
+                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Open}" Command="{Binding Open}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\EditIcon.png"
-                        InputGestureText="{lang:Translate InputGesture.Open}"/>
+                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Save}" Command="{Binding Save}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"
-                        InputGestureText="{lang:Translate InputGesture.Save}"/>
+                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAll}" Command="{Binding Save}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveAllIcon.png"
-                        InputGestureText="{lang:Translate InputGesture.SaveAll}"/>
+                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}"/>
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAs}" Command="{Binding SaveAs}"
                         ImageSource="/DSACharacterSheet.Core;component\Images\SaveIcon.png"/>
