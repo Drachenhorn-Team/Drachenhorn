@@ -27,6 +27,8 @@ namespace DSACharacterSheet.Desktop.Views
         public SettingsView()
         {
             InitializeComponent();
+
+            this.Loaded += (sender, args) => { LanguageComboBox_SelectionChanged(sender, null); };
         }
 
 

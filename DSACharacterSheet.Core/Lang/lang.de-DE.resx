@@ -301,7 +301,7 @@
     <value>Über</value>
   </data>
   <data name="About.Publisher" xml:space="preserve">
-    <value>Hersteller:</value>
+    <value>Author:</value>
   </data>
   <data name="About.IconsBy" xml:space="preserve">
     <value>Bilder von:</value>
@@ -346,7 +346,7 @@
     <value>Auf Updates prüfen</value>
   </data>
   <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
-    <value>Es wurde ein Update gefunden. Bitte starten sie das Programm neu, um dies zu installieren.</value>
+    <value>Es wurde ein Update gefunden. Bitte starten sie für die Installation das Programm neu.</value>
   </data>
   <data name="Update.CheckForUpdate.Finished.Failed" xml:space="preserve">
     <value>Es wurde kein Update gefunden.</value>
