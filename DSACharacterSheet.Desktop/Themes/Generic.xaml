@@ -1,0 +1,37 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DSACharacterSheet.Desktop"
+    xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Style x:Key="{x:Type userElements:InfoTextBox}" TargetType="{x:Type userElements:InfoTextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type userElements:InfoTextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            d:DataContext="{d:DesignInstance userElements:InfoTextBox}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBox Name="InfoBox" Text="{Binding Binding.Value}" Grid.Column="0"/>
+
+                            <Button Name="PART_InfoButton" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+                                <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Source="/DSACharacterSheet.Core;component\Images\InfoIcon.png"/>
+                            </Button>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

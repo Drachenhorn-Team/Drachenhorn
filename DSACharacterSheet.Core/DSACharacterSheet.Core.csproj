@@ -118,6 +118,7 @@
     <Resource Include="Images\HTML.png" />
     <Resource Include="Images\Pdf.png" />
     <Resource Include="Images\PrintIcon.png" />
+    <Resource Include="Images\InfoIcon.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

@@ -8,6 +8,7 @@
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
+        xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
         DataContext="{Binding MainView, Source={StaticResource Locator}}"
         mc:Ignorable="d" 
         Background="GhostWhite"
@@ -95,6 +96,9 @@
                            Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
                            Margin="1"/>
                 </Border>
+            </StatusBarItem>
+            <StatusBarItem>
+                <userElements:InfoTextBox MinWidth="200"/>
             </StatusBarItem>
         </StatusBar>
 

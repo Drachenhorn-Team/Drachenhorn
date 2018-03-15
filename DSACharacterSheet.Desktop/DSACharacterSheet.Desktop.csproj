@@ -155,6 +155,7 @@
     <Compile Include="Lang\TranslateTextExtension.cs" />
     <Compile Include="Lang\TranslateExtension.cs" />
     <Compile Include="MVVM\DialogService.cs" />
+    <Compile Include="UserElements\InfoTextBox.cs" />
     <Compile Include="UserSettings\Settings.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
@@ -214,6 +215,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Splash\SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

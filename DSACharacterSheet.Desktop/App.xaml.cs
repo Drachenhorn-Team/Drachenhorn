@@ -40,11 +40,11 @@ namespace DSACharacterSheet.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            if (!IsSingleInstance())
-                Application.Current.Shutdown();
-
             var splash = new Splash.SplashScreen();
             splash.Show();
+
+            if (!IsSingleInstance())
+                Application.Current.Shutdown();
 
             InitializeData();
 

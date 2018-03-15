@@ -69,6 +69,7 @@
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Exceptions\SheetLoadingException.cs" />
     <Compile Include="Exceptions\SheetSavingException.cs" />
+    <Compile Include="Interfaces\IInfoObject.cs" />
     <Compile Include="Objects\CustomStroke.cs" />
     <Compile Include="Objects\DSADate.cs" />
     <Compile Include="Objects\DSAMonth.cs" />
