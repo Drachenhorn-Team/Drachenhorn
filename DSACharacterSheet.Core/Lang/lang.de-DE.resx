@@ -498,4 +498,16 @@
   <data name="Keyboard.Shift" xml:space="preserve">
     <value>Umschalt</value>
   </data>
+  <data name="Info.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Info.GPCost" xml:space="preserve">
+    <value>GP-Kosten</value>
+  </data>
+  <data name="InfoView.Title" xml:space="preserve">
+    <value>Informationen</value>
+  </data>
+  <data name="Info.Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
 </root>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DSACharacterSheet.Desktop.Views;
 using DSACharacterSheet.FileReader.Interfaces;
 using ThicknessConverter = Xceed.Wpf.DataGrid.Converters.ThicknessConverter;
 
@@ -74,6 +75,10 @@ namespace DSACharacterSheet.Desktop.UserElements
 
         }
 
+
+
+        public bool CanShowInfo => Binding?.GetInformation()?.Any() == true;
+
         #endregion Properties
 
         #region c'tor
@@ -86,14 +91,10 @@ namespace DSACharacterSheet.Desktop.UserElements
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            this.DataContext = this;
             var button = Template.FindName("PART_InfoButton", this) as Button;
             if (button != null)
             {
-                button.Click += (s, a) =>
-                {
-
-                };
+                button.Click += (s, a) => { new InfoView(Binding).Show();};
             }
         }
 

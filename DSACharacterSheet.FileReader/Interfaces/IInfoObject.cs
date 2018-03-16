@@ -9,11 +9,6 @@ namespace DSACharacterSheet.FileReader.Interfaces
 {
     public interface IInfoObject : INotifyPropertyChanged
     {
-        string Value { get; set; }
-
-        bool CanShowInfo { get; }
-
-
         Dictionary<string, string> GetInformation();
     }
 }

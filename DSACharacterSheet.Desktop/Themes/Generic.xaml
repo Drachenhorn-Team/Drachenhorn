@@ -20,10 +20,12 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             
-                            <TextBox Name="InfoBox" Text="{Binding Binding.Value}" Grid.Column="0"/>
+                            <TextBox Name="InfoBox" Text="{TemplateBinding Text}" Grid.Column="0"/>
 
                             <Button Name="PART_InfoButton" Grid.Column="1"
-                                    IsEnabled="{Binding Binding.CanShowInfo}"
+                                    IsEnabled="{Binding CanShowInfo}"
+                                    Width="20" Height="20"
+                                    Margin="5"
                                     Background="Transparent" BorderBrush="Transparent">
                                 <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
                                        HorizontalAlignment="Center" VerticalAlignment="Center"

@@ -148,6 +148,7 @@
     <Compile Include="Converter\EnumListStringConverter.cs" />
     <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
     <Compile Include="Converter\EnumToStringConverter.cs" />
+    <Compile Include="Converter\ValueTranslationConverter.cs" />
     <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
@@ -196,6 +197,9 @@
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="Views\CoatOfArmsPainterView.xaml.cs">
       <DependentUpon>CoatOfArmsPainterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfoView.xaml.cs">
+      <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -267,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CoatOfArmsPainterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

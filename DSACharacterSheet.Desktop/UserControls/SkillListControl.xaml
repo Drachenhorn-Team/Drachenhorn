@@ -8,7 +8,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:enum="clr-namespace:DSACharacterSheet.FileReader.Enums;assembly=DSACharacterSheet.FileReader"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:EnumToStringConverter x:Key="EnumToStringConverter"/>
@@ -33,7 +33,10 @@
                 </Button>
             </WrapPanel>
 
-            <ListView Name="List" ItemsSource="{Binding .}" PreviewMouseWheel="List_PreviewMouseWheel" MinHeight="150" Margin="5" Grid.Row="1">
+            <ListView Name="List" ItemsSource="{Binding .}"
+                      PreviewMouseWheel="List_PreviewMouseWheel"
+                      
+                      MinHeight="150" Width="600" Margin="5">
                 <ListView.GroupStyle>
                     <GroupStyle>
                         <GroupStyle.HeaderTemplate>
@@ -46,6 +49,11 @@
 
                 <ListView.View>
                     <GridView>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
                         <GridViewColumn Header="{lang:Translate CharacterSheet.Name}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
