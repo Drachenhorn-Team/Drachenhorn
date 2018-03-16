@@ -65,11 +65,17 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBox Text="{Binding CurrentSheet.Culture.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
-                    <TextBox Text="{Binding CurrentSheet.Culture.Spezification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
+                    <userElements:InfoTextBox Binding="{Binding CurrentSheet.Culture}"
+                                              Text="{Binding CurrentSheet.Culture.Specification, UpdateSourceTrigger=PropertyChanged}"
+                                              Grid.Column="1"/>
+                    <!--<TextBox Text="{Binding CurrentSheet.Culture.Specification, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>-->
                 </Grid>
 
                 <TextBlock Text="{lang:Translate CharacterSheet.Profession}" Grid.Column="0" Grid.Row="3"/>
-                <TextBox Text="{Binding CurrentSheet.Profession.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
+                <userElements:InfoTextBox Binding="{Binding CurrentSheet.Profession}"
+                                          Text="{Binding CurrentSheet.Profession.Name, UpdateSourceTrigger=PropertyChanged}"
+                                          Grid.Column="1" Grid.Row="3"/>
+                <!--<TextBox Text="{Binding CurrentSheet.Profession.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>-->
 
             </Grid>
         </Border>

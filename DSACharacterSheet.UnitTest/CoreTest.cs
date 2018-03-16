@@ -19,7 +19,7 @@ namespace DSACharacterSheet.UnitTest
             {
                 Name = "test",
                 Race = new RaceInformation() { Name = "testRace"},
-                Culture = new CultureInformation() { Name = "testCulture", Spezification = "test"},
+                Culture = new CultureInformation() { Name = "testCulture", Specification = "test"},
                 Profession = new ProfessionInformation() { Name = "testProfession"}
             };
 

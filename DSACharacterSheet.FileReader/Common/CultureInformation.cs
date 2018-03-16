@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.FileReader.Interfaces;
 
 namespace DSACharacterSheet.FileReader.Common
 {
     [Serializable]
-    public class CultureInformation : BindableBase
+    public class CultureInformation : BindableBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;
@@ -27,17 +28,17 @@ namespace DSACharacterSheet.FileReader.Common
         }
 
         [XmlIgnore]
-        private string _spezification;
-        [XmlAttribute("Spezification")]
-        public string Spezification
+        private string _specification;
+        [XmlAttribute("Specification")]
+        public string Specification
         {
-            get { return _spezification; }
+            get { return _specification; }
             set
             {
-                if (_spezification == value)
+                if (_specification == value)
                     return;
-                _spezification = value;
-                OnPropertyChanged("Spezification");
+                _specification = value;
+                OnPropertyChanged();
             }
         }
 
@@ -54,6 +55,15 @@ namespace DSACharacterSheet.FileReader.Common
                 _gpCost = value;
                 OnPropertyChanged("GPCost");
             }
+        }
+
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+
+            return result;
         }
     }
 }
