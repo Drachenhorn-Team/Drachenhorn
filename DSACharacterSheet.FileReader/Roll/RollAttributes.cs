@@ -72,5 +72,22 @@ namespace DSACharacterSheet.FileReader.Roll
         }
 
         #endregion c'tor
+
+
+        #region ToString
+
+        public override string ToString()
+        {
+            return ToString("|");
+        }
+
+        public string ToString(string seperator)
+        {
+            return "%AttributeType." + Roll_1 + ".Abbr " + seperator +
+                   " %AttributeType." + Roll_2 + ".Abbr  " + seperator +
+                   " %AttributeType." + Roll_3 + ".Abbr";
+        }
+
+        #endregion ToString
     }
 }

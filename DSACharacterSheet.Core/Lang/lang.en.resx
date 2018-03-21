@@ -510,4 +510,19 @@
   <data name="Info.Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Info.RollAttributes" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="UI.VisualTheme" xml:space="preserve">
+    <value>Visual Theme</value>
+  </data>
+  <data name="VisualThemeType.System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="VisualThemeType.Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="VisualThemeType.Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
 </root>

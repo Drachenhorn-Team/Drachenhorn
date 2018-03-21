@@ -260,6 +260,22 @@ namespace DSACharacterSheet.FileReader
         #region Save/Load
 
         [XmlIgnore]
+        private bool _isChanged = false;
+
+        [XmlIgnore]
+        public bool IsChanged
+        {
+            get { return _isChanged; }
+            private set
+            {
+                if (_isChanged == value)
+                    return;
+                _isChanged = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private string _filePath;
         [XmlIgnore]
         public string FilePath

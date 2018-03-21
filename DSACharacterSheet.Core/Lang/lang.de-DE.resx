@@ -510,4 +510,19 @@
   <data name="Info.Description" xml:space="preserve">
     <value>Beschreibung</value>
   </data>
+  <data name="Info.RollAttributes" xml:space="preserve">
+    <value>Wurf</value>
+  </data>
+  <data name="UI.VisualTheme" xml:space="preserve">
+    <value>Designfarbe</value>
+  </data>
+  <data name="VisualThemeType.System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="VisualThemeType.Light" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="VisualThemeType.Dark" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
 </root>

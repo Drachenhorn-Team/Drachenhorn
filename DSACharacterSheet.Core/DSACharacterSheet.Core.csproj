@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\ISettings.cs" />
     <Compile Include="Settings\Update\UpdateChangedEventArgs.cs" />
+    <Compile Include="Settings\VisualThemeType.cs" />
     <Compile Include="ViewModels\CharacterSheetViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PrintViewModel.cs" />
@@ -91,22 +92,24 @@
     <Compile Include="ViewModels\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\SaveAllIcon.png" />
+    <Resource Include="Images\Light\SaveAllIcon.png" />
     <EmbeddedResource Include="Printing\PrintingTemplate.cshtml" />
     <Resource Include="Images\Flags\de-DE.png" />
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />
     <Resource Include="Images\Flags\en.png" />
-    <Resource Include="Images\Common\Add.png" />
-    <Resource Include="Images\Common\Remove.png" />
+    <Resource Include="Images\Light\Common\Add.png" />
+    <Resource Include="Images\Light\Common\Remove.png" />
+    <Resource Include="Images\Dark\Common\Add.png" />
+    <Resource Include="Images\Dark\Common\Remove.png" />
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
-    <Resource Include="Images\EditIcon.png" />
-    <Resource Include="Images\NewIcon.png" />
-    <Resource Include="Images\SaveIcon.png" />
-    <Resource Include="Images\PropertiesIcon.png" />
-    <Resource Include="Images\MenuIcon.png" />
-    <Resource Include="Images\UpdateAvailable.png" />
+    <Resource Include="Images\Light\EditIcon.png" />
+    <Resource Include="Images\Light\NewIcon.png" />
+    <Resource Include="Images\Light\SaveIcon.png" />
+    <Resource Include="Images\Light\PropertiesIcon.png" />
+    <Resource Include="Images\Light\MenuIcon.png" />
+    <Resource Include="Images\Light\UpdateAvailable.png" />
     <Resource Include="Images\DSAFanLogo.png" />
     <Resource Include="Images\Painting\Brush.png" />
     <Resource Include="Images\Painting\Pencil.png" />
@@ -115,10 +118,21 @@
     <Resource Include="Images\Painting\Select.png" />
     <Resource Include="Images\Painting\Redo.png" />
     <Resource Include="Images\Painting\Undo.png" />
-    <Resource Include="Images\HTML.png" />
-    <Resource Include="Images\Pdf.png" />
-    <Resource Include="Images\PrintIcon.png" />
-    <Resource Include="Images\InfoIcon.png" />
+    <Resource Include="Images\Light\HTML.png" />
+    <Resource Include="Images\Light\Pdf.png" />
+    <Resource Include="Images\Light\PrintIcon.png" />
+    <Resource Include="Images\Light\InfoIcon.png" />
+    <Resource Include="Images\Dark\EditIcon.png" />
+    <Resource Include="Images\Dark\HTML.png" />
+    <Resource Include="Images\Dark\InfoIcon.png" />
+    <Resource Include="Images\Dark\MenuIcon.png" />
+    <Resource Include="Images\Dark\NewIcon.png" />
+    <Resource Include="Images\Dark\Pdf.png" />
+    <Resource Include="Images\Dark\PrintIcon.png" />
+    <Resource Include="Images\Dark\PropertiesIcon.png" />
+    <Resource Include="Images\Dark\SaveAllIcon.png" />
+    <Resource Include="Images\Dark\SaveIcon.png" />
+    <Resource Include="Images\Dark\UpdateAvailable.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

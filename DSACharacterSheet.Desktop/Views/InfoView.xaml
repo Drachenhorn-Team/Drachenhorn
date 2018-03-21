@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
-        xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
+        xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         ResizeMode="NoResize" SizeToContent="Height"
         MinHeight="200" Height="450" Width="800"
@@ -14,6 +14,7 @@
         Title="{lang:Translate InfoView.Title}">
     <Window.Resources>
         <converter:ValueTranslationConverter x:Key="ValueTranslationConverter"/>
+        <collections:ArrayList x:Key="Information"/>
     </Window.Resources>
 
     <Grid>
@@ -29,7 +30,7 @@
                                    Text="{Binding Key, Converter={StaticResource ValueTranslationConverter}}"
                                    Grid.Column="0"/>
                         <TextBlock Margin="2" TextWrapping="Wrap"
-                                   Text="{Binding Value}"
+                                   Text="{Binding Value, Converter={StaticResource ValueTranslationConverter}}"
                                    Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>

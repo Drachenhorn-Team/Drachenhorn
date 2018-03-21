@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.FileReader.Interfaces;
 
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class Skill : BindableBase
+    public class Skill : BindableBase, IInfoObject
     {
         #region Properties
 
@@ -59,5 +60,16 @@ namespace DSACharacterSheet.FileReader.Skills
         }
 
         #endregion Properties
+
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Category)) result.Add("%Info.Description", Category);
+            if (!string.IsNullOrEmpty(RollAttributes.ToString(","))) result.Add("%Info.RollAttributes", RollAttributes.ToString(", "));
+
+            return result;
+        }
     }
 }

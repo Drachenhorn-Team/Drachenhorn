@@ -78,6 +78,22 @@ namespace DSACharacterSheet.Desktop.UserSettings
         }
 
         [XmlIgnore]
+        private VisualThemeType _visualTheme;
+        [XmlAttribute("VisualTheme")]
+        public VisualThemeType VisualTheme
+        {
+            get { return _visualTheme; }
+            set
+            {
+                if (_visualTheme == value)
+                    return;
+                _visualTheme = value;
+                OnPropertyChanged();
+            }
+        }
+        
+
+        [XmlIgnore]
         private bool _isUpdateAvailable;
         [XmlIgnore]
         public bool IsUpdateAvailable

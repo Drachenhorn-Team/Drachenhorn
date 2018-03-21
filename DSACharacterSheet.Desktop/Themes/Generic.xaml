@@ -6,34 +6,31 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
 
-    <Style x:Key="{x:Type userElements:InfoTextBox}" TargetType="{x:Type userElements:InfoTextBox}">
+    <Style TargetType="{x:Type userElements:InfoButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type userElements:InfoTextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            d:DataContext="{d:DesignInstance userElements:InfoTextBox}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            
-                            <TextBox Name="InfoBox" Text="{TemplateBinding Text}" Grid.Column="0"/>
-
-                            <Button Name="PART_InfoButton" Grid.Column="1"
-                                    IsEnabled="{Binding CanShowInfo}"
-                                    Width="20" Height="20"
-                                    Margin="5"
-                                    Background="Transparent" BorderBrush="Transparent">
-                                <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       Source="/DSACharacterSheet.Core;component\Images\InfoIcon.png"/>
-                            </Button>
-
-                        </Grid>
-                    </Border>
+                <ControlTemplate TargetType="{x:Type userElements:InfoButton}">
+                    <Button Name="PART_InfoButton" Grid.Column="1"
+                            IsEnabled="{TemplateBinding CanShowInfo}"
+                            Width="20" Height="20"
+                            Background="Transparent" BorderBrush="Transparent">
+                        <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Source="{DynamicResource InfoIcon}">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="True">
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Button>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

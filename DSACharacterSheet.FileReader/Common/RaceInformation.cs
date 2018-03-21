@@ -65,7 +65,7 @@ namespace DSACharacterSheet.FileReader.Common
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
             if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-            result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
+            if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
 
             return result;
         }

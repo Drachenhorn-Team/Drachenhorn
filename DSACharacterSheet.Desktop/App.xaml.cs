@@ -19,6 +19,8 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using CommonServiceLocator;
+using Microsoft.Win32;
 using SimpleLogger;
 using SimpleLogger.Logging.Handlers;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
@@ -79,6 +81,34 @@ namespace DSACharacterSheet.Desktop
 
             var settings = Settings.Load();
             SimpleIoc.Default.Register<ISettings>(() => settings);
+            
+            if (settings.VisualTheme == VisualThemeType.Dark)
+            {
+                Application.Current.Resources.MergedDictionaries[0] =
+                    new ResourceDictionary()
+                    {
+                        Source = new Uri("Themes/DarkTheme.xaml", UriKind.Relative)
+                    };
+            }
+            else if (settings.VisualTheme == VisualThemeType.System)
+            {
+                bool isDark = Registry.GetValue(
+                                      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                                      "AppsUseLightTheme", null)
+                                  as int? == 0;
+
+                if (isDark)
+                {
+                    Application.Current.Resources.MergedDictionaries[0] =
+                        new ResourceDictionary()
+                        {
+                            Source = new Uri("Themes/DarkTheme.xaml", UriKind.Relative)
+                        };
+                }
+            }
+
+
+
 
             Logger.LoggerHandlerManager.AddHandler(
                 new FileLoggerHandler(

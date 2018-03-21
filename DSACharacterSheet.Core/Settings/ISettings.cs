@@ -14,6 +14,8 @@ namespace DSACharacterSheet.Core.Settings
         string Version { get; }
         string GitCommit { get; }
 
+        VisualThemeType VisualTheme { get; set; }
+
         bool IsUpdateAvailable { get; }
         bool CanCheckUpdate { get; }
 

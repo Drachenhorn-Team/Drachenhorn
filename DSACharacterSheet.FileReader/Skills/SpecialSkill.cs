@@ -1,20 +1,22 @@
 ﻿using DSACharacterSheet.FileReader.Roll;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.FileReader.Interfaces;
 
 namespace DSACharacterSheet.FileReader.Skills
 {
     [Serializable]
-    public class SpecialSkill : BindableBase
+    public class SpecialSkill : BindableBase, IInfoObject
     {
         #region Properties
 
         [XmlIgnore]
-        private string _name;
+        private string _name = "";
         [XmlAttribute("Name")]
         public string Name
         {
@@ -28,13 +30,27 @@ namespace DSACharacterSheet.FileReader.Skills
             }
         }
 
+        [XmlIgnore]
+        private string _description;
+        [XmlAttribute("Description")]
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                if (_description == value)
+                    return;
+                _description = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
         #region c'tor
 
         public SpecialSkill()
         {
-            Name = "new";
         }
 
         public SpecialSkill(string name)
@@ -43,5 +59,15 @@ namespace DSACharacterSheet.FileReader.Skills
         }
 
         #endregion c'tor
+
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
+
+            return result;
+        }
     }
 }

@@ -21,6 +21,9 @@ namespace DSACharacterSheet.Desktop.Views
         {
             InitializeComponent();
 
+            //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
+
+
             if (!String.IsNullOrEmpty(path)) OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);

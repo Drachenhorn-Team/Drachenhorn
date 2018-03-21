@@ -8,6 +8,8 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:enum="clr-namespace:DSACharacterSheet.FileReader.Enums;assembly=DSACharacterSheet.FileReader"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Skills;assembly=DSACharacterSheet.FileReader"
+             xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
@@ -25,17 +27,18 @@
 
         <DockPanel DockPanel.Dock="Left">
             <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
-                <Button Click="AddButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Add}">
-                    <Image Source="/DSACharacterSheet.Core;component\Images\Common\Add.png"/>
+                <Button Click="AddButton_Click" Width="40" Height="40" Margin="5"
+                        ToolTip="{lang:Translate UI.Add}">
+                    <Image Source="{StaticResource AddIcon}"/>
                 </Button>
-                <Button Click="RemoveButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Remove}">
-                    <Image Source="/DSACharacterSheet.Core;component\Images\Common\Remove.png"/>
+                <Button Click="RemoveButton_Click" Width="40" Height="40" Margin="5"
+                        ToolTip="{lang:Translate UI.Remove}">
+                    <Image Source="{StaticResource RemoveIcon}"/>
                 </Button>
             </WrapPanel>
 
             <ListView Name="List" ItemsSource="{Binding .}"
                       PreviewMouseWheel="List_PreviewMouseWheel"
-                      
                       MinHeight="150" Width="600" Margin="5">
                 <ListView.GroupStyle>
                     <GroupStyle>
@@ -63,7 +66,7 @@
                         </GridViewColumn>
                         <GridViewColumn Header="{lang:Translate CharacterSheet.RollAttributes}">
                             <GridViewColumn.CellTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="skills:Skill">
                                     <WrapPanel MinWidth="100">
                                         <TextBlock Text="("/>
                                         <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}"/>
@@ -93,10 +96,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="{lang:Translate CharacterSheet.Name}" Margin="5" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Margin="5" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="TextBox_TextChanged" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <userElements:InfoButton InfoObject="{Binding .}" Grid.Row="0" Grid.Column="3"/>
+            <!--<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Margin="5" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>-->
 
             <TextBlock Text="{lang:Translate CharacterSheet.RollAttributes}" Margin="5" Grid.Row="1" Grid.Column="0"/>
             <ComboBox Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToStringConverter}}"

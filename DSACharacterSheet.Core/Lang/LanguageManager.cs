@@ -82,7 +82,7 @@ namespace DSACharacterSheet.Core.Lang
 
                 var temp = text.Substring(index + 1, tempIndex - index - 1);
 
-                text = text.Replace('%' + temp, GetLanguageText(temp));
+                text = text.Remove(index, temp.Length + 1).Insert(index, GetLanguageText(temp));
             }
 
             return text;

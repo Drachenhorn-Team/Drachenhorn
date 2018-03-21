@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+        <ResourceDictionary Source="MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+
+        <ResourceDictionary Source="Colors.xaml"/>
+        <ResourceDictionary Source="BaseTheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="ForegroundColor" Color="{StaticResource DarkForeground}"/>
+    <SolidColorBrush x:Key="BackgroundColor" Color="{StaticResource Dark}"/>
+    <SolidColorBrush x:Key="BorderColor" Color="{StaticResource DarkBorder}"/>
+
+    <SolidColorBrush x:Key="SeperatorColor" Color="{StaticResource DarkBorder}"/>
+
+    <SolidColorBrush x:Key="HighlightBorderColor" Color="{StaticResource DarkSpecial}"/>
+    <SolidColorBrush x:Key="HighlightBackgroundColor" Color="{StaticResource DarkSpecial}" Opacity="0.3"/>
+
+    <SolidColorBrush x:Key="DisabledBackgroundColor" Color="{StaticResource Dark}"/>
+    <SolidColorBrush x:Key="DisabledForegroundColor" Color="{StaticResource DarkForegroundDark}"/>
+
+    <!--Images-->
+
+    <BitmapImage x:Key="AddIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Common/Add.png"/>
+    <BitmapImage x:Key="RemoveIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Common/Remove.png"/>
+
+    <BitmapImage x:Key="EditIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/EditIcon.png"/>
+    <BitmapImage x:Key="HTMLIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/HTML.png"/>
+    <BitmapImage x:Key="InfoIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/InfoIcon.png"/>
+    <BitmapImage x:Key="MenuIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/MenuIcon.png"/>
+    <BitmapImage x:Key="NewIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/NewIcon.png"/>
+    <BitmapImage x:Key="PDFIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Pdf.png"/>
+    <BitmapImage x:Key="PrintIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/PrintIcon.png"/>
+    <BitmapImage x:Key="PropertiesIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/PropertiesIcon.png"/>
+    <BitmapImage x:Key="SaveAllIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/SaveAllIcon.png"/>
+    <BitmapImage x:Key="SaveIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/SaveIcon.png"/>
+    <BitmapImage x:Key="SaveAsIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/SaveIcon.png"/>
+    <BitmapImage x:Key="UpdateAvailableIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/UpdateAvailable.png"/>
+
+</ResourceDictionary>

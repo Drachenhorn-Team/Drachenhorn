@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,7 @@ namespace DSACharacterSheet.FileReader.Common
             var result = new Dictionary<string, string>();
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
 
             return result;
         }
