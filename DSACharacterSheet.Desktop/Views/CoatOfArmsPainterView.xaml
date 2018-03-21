@@ -10,6 +10,12 @@
         Background="LightGray"
         ResizeMode="CanMinimize"
         Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Image" BasedOn="{StaticResource HQImage}"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
             <WrapPanel.Resources>
