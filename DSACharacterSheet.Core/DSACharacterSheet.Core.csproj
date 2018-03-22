@@ -102,6 +102,7 @@
     <Resource Include="Images\Light\Common\Remove.png" />
     <Resource Include="Images\Dark\Common\Add.png" />
     <Resource Include="Images\Dark\Common\Remove.png" />
+    <Resource Include="Images\Dark\Common\ArrowBlockDown.png" />
     <Content Include="Images\Icon.ico" />
     <Content Include="Images\Icon.svg" />
     <Resource Include="Images\Light\EditIcon.png" />
@@ -133,6 +134,7 @@
     <Resource Include="Images\Dark\SaveAllIcon.png" />
     <Resource Include="Images\Dark\SaveIcon.png" />
     <Resource Include="Images\Dark\UpdateAvailable.png" />
+    <Resource Include="Images\Light\Common\ArrowBlockDown.png" />
     <Content Include="Images\SaveFileIcon.ico" />
     <Content Include="Images\SaveFileIcon.svg" />
   </ItemGroup>

@@ -8,7 +8,7 @@
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
-        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="DSACharacterSheet.Desktop.Views.MainView"
+        x:Class="DSACharacterSheet.Desktop.Views.MainView"
         mc:Ignorable="d" 
         WindowState="Maximized"
         Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
@@ -84,7 +84,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        
+
         <Separator DockPanel.Dock="Top"/>
 
         <ToolBarTray DockPanel.Dock="Top">
@@ -197,12 +197,15 @@
                     <StackPanel Orientation="Horizontal" DataContext="{Binding Content}"
                                 d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
                         <!--<Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>-->
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="1" ClipToBounds="True" Margin="0 0 4 0">
+                        <Border BorderBrush="{StaticResource BorderColor}"
+                                Background="White" BorderThickness="1" CornerRadius="1"
+                                ClipToBounds="True" Margin="0 2 4 2">
                             <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
                                           Width="30" Height="20" Loaded="InkPresenter_OnLoaded"/>
                         </Border>
                         <TextBlock Text="{Binding CurrentSheet.Name}"
                                    FontSize="12"
+                                   FontFamily="{StaticResource Morpheus}"
                                    VerticalAlignment="Center"/>
                         <TextBlock Text="*" FontSize="12"
                                    Visibility="{Binding CurrentSheet.IsChanged, Converter={StaticResource BoolToVisibilityConverter}}"

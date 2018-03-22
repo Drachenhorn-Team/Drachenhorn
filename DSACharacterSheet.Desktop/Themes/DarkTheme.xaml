@@ -18,12 +18,13 @@
     <SolidColorBrush x:Key="HighlightBackgroundColor" Color="{StaticResource DarkSpecial}" Opacity="0.3"/>
 
     <SolidColorBrush x:Key="DisabledBackgroundColor" Color="{StaticResource Dark}"/>
-    <SolidColorBrush x:Key="DisabledForegroundColor" Color="{StaticResource DarkForegroundDark}"/>
+    <SolidColorBrush x:Key="DisabledForegroundColor" Color="{StaticResource DarkForegroundSpecial}"/>
 
     <!--Images-->
 
     <BitmapImage x:Key="AddIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Common/Add.png"/>
     <BitmapImage x:Key="RemoveIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Common/Remove.png"/>
+    <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/Common/ArrowBlockDown.png"/>
 
     <BitmapImage x:Key="EditIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/EditIcon.png"/>
     <BitmapImage x:Key="HTMLIcon" UriSource="/DSACharacterSheet.Core;component/Images/Dark/HTML.png"/>

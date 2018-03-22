@@ -5,7 +5,7 @@
 
     <Color x:Key="White">#F2EAED</Color>
     <Color x:Key="WhiteForeground">#2A3457</Color>
-    <Color x:Key="WhiteForegroundDark">#A4A4BF</Color>
+    <Color x:Key="WhiteForegroundSpecial">#A4A4BF</Color>
     <Color x:Key="WhiteSpecial">#888C46</Color>
     <Color x:Key="WhiteBorder">#16235A</Color>
     
@@ -13,7 +13,7 @@
 
     <Color x:Key="Light">#C2D3DA</Color>
     <Color x:Key="LightForeground">#272424</Color>
-    <Color x:Key="LightForegroundDark">#81A3A7</Color>
+    <Color x:Key="LightForegroundSpecial">#81A3A7</Color>
     <Color x:Key="LightSpecial">#F1F3F2</Color>
     <Color x:Key="LightBorder">#585A56</Color>
     
@@ -21,7 +21,7 @@
 
     <Color x:Key="Dark">#212624</Color>
     <Color x:Key="DarkForeground">#9199BE</Color>
-    <Color x:Key="DarkForegroundDark">#54678F</Color>
+    <Color x:Key="DarkForegroundSpecial">#54678F</Color>
     <Color x:Key="DarkSpecial">#6C6B74</Color>
     <Color x:Key="DarkBorder">#111111</Color>
     
@@ -29,7 +29,7 @@
 
     <Color x:Key="Black">#040C0E</Color>
     <Color x:Key="BlackForeground">#A49783</Color>
-    <Color x:Key="BlackForegroundDark">#525B56</Color>
+    <Color x:Key="BlackForegroundSpecial">#525B56</Color>
     <Color x:Key="BlackSpecial">#BE9063</Color>
     <Color x:Key="BlackBorder">#132226</Color>
 </ResourceDictionary>
