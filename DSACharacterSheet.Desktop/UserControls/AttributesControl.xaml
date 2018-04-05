@@ -28,9 +28,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{lang:Translate CharacterSheet.Modifyer}" HorizontalAlignment="Center" Grid.Column="1"/>
-        <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" HorizontalAlignment="Center" Grid.Column="2"/>
-        <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" HorizontalAlignment="Center" Grid.Column="3"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.Modifyer}"
+                   HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="5"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.StartValue}"
+                   HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="5"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}"
+                   HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3" Margin="5"/>
 
         <TextBlock Text="{lang:Translate AttributeType.Courage}" Grid.Column="0" Grid.Row="1"/>
         <TextBox Text="{Binding Courage.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="1"/>

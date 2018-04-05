@@ -81,34 +81,13 @@ namespace DSACharacterSheet.Desktop
 
             var settings = Settings.Load();
             SimpleIoc.Default.Register<ISettings>(() => settings);
-            
-            if (settings.VisualTheme == VisualThemeType.Dark)
+
+            SetTheme(settings.VisualTheme);
+            settings.PropertyChanged += (sender, args) =>
             {
-                Application.Current.Resources.MergedDictionaries[0] =
-                    new ResourceDictionary()
-                    {
-                        Source = new Uri("Themes/DarkTheme.xaml", UriKind.Relative)
-                    };
-            }
-            else if (settings.VisualTheme == VisualThemeType.System)
-            {
-                bool isDark = Registry.GetValue(
-                                      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                                      "AppsUseLightTheme", null)
-                                  as int? == 0;
-
-                if (isDark)
-                {
-                    Application.Current.Resources.MergedDictionaries[0] =
-                        new ResourceDictionary()
-                        {
-                            Source = new Uri("Themes/DarkTheme.xaml", UriKind.Relative)
-                        };
-                }
-            }
-
-
-
+                if (args.PropertyName == "VisualTheme")
+                    SetTheme(settings.VisualTheme);
+            };
 
             Logger.LoggerHandlerManager.AddHandler(
                 new FileLoggerHandler(
@@ -125,6 +104,48 @@ namespace DSACharacterSheet.Desktop
 
             settings.CheckUpdateAsync(UpdateCheckFinished);
         }
+
+
+        #region Theme
+
+        public static void SetTheme(VisualThemeType theme)
+        {
+            if (theme == VisualThemeType.System)
+            {
+                var isDark = Registry.GetValue(
+                    "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                    "AppsUseLightTheme", null);
+
+                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+            }
+
+
+            string uri = "";
+
+            switch (theme)
+            {
+                case VisualThemeType.Dark:
+                    uri = "Themes/DarkTheme.xaml";
+                    break;
+                case VisualThemeType.Light:
+                    uri = "Themes/LightTheme.xaml";
+                    break;
+            }
+
+
+
+
+            if (string.IsNullOrEmpty(uri)) return;
+
+            Application.Current.Resources.MergedDictionaries[0] =
+                new ResourceDictionary()
+                {
+                    Source = new Uri(uri, UriKind.Relative)
+                };
+        }
+
+        #endregion Theme
+
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
         {

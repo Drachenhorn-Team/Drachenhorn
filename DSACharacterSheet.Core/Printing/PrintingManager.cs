@@ -11,6 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using DSACharacterSheet.FileReader.Sheet;
 using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace DSACharacterSheet.Core.Printing

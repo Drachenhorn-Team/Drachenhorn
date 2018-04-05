@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSACharacterSheet.FileReader.Skills;
+using DSACharacterSheet.FileReader.Sheet.Skills;
 
 namespace DSACharacterSheet.FileReader.Calculation
 {

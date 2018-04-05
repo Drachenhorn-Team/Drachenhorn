@@ -6,10 +6,10 @@
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:enum="clr-namespace:DSACharacterSheet.FileReader.Enums;assembly=DSACharacterSheet.FileReader"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
-             xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Skills;assembly=DSACharacterSheet.FileReader"
              xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
+             xmlns:enums="clr-namespace:DSACharacterSheet.FileReader.Sheet.Enums;assembly=DSACharacterSheet.FileReader"
+             xmlns:skills1="clr-namespace:DSACharacterSheet.FileReader.Sheet.Skills;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
@@ -18,7 +18,7 @@
         <converter:EnumToAbbreviationConverter x:Key="EnumToAbbreviationConverter"/>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="AttributeTypeEnum">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enum:AttributeType"/>
+                <x:Type TypeName="enums:AttributeType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </UserControl.Resources>
@@ -66,7 +66,7 @@
                         </GridViewColumn>
                         <GridViewColumn Header="{lang:Translate CharacterSheet.RollAttributes}">
                             <GridViewColumn.CellTemplate>
-                                <DataTemplate DataType="skills:Skill">
+                                <DataTemplate DataType="skills1:Skill">
                                     <WrapPanel MinWidth="100">
                                         <TextBlock Text="("/>
                                         <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}"/>

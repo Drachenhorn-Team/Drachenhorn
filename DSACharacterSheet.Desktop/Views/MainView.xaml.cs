@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.FileReader;
+using DSACharacterSheet.FileReader.Sheet;
 using GalaSoft.MvvmLight.Messaging;
 using Xceed.Wpf.AvalonDock.Layout;
 

@@ -9,6 +9,7 @@ using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.Lang;
 using DSACharacterSheet.FileReader;
+using DSACharacterSheet.FileReader.Sheet;
 using Microsoft.Win32;
 
 namespace DSACharacterSheet.Desktop.IO

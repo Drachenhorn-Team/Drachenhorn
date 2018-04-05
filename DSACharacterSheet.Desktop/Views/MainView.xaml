@@ -8,6 +8,7 @@
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
+        xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
         x:Class="DSACharacterSheet.Desktop.Views.MainView"
         mc:Ignorable="d" 
         WindowState="Maximized"
@@ -188,7 +189,50 @@
         </StatusBar>
 
 
-        <xcad:DockingManager x:Name="DockingManager" 
+        <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
+                    SelectedItem="{Binding CurrentSheetViewModel}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Height="30">
+                        <StackPanel Orientation="Horizontal"
+                                    d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
+                            <Border BorderBrush="{StaticResource BorderColor}"
+                                    Background="White" BorderThickness="1" CornerRadius="1"
+                                    ClipToBounds="True" Margin="0 2 4 2">
+                                <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
+                                                  Width="30" Height="20" Loaded="InkPresenter_OnLoaded"/>
+                            </Border>
+                            <TextBlock Text="{Binding CurrentSheet.Name}"
+                                       FontSize="12"
+                                       FontFamily="{StaticResource Morpheus}"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="*" FontSize="12"
+                                       Visibility="{Binding CurrentSheet.IsChanged, Converter={StaticResource BoolToVisibilityConverter}}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button Command="{Binding RelativeSource= {RelativeSource FindAncestor,
+                                            AncestorType={x:Type TabControl}},
+                                            Path= DataContext.CloseSheet}"
+                                CommandParameter="{Binding}"
+                                MinHeight="0" Height="20" MinWidth="0" Width="20"
+                                Margin="5 5 -5 5">
+                            <Image Source="{DynamicResource RemoveIcon}"
+                                   Margin="-5 1 -5 0" Width="10" Height="10"/>
+                        </Button>
+                    </WrapPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundColor}">
+                        <controls:CharacterSheetControl/>
+                    </ScrollViewer>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+
+
+        <!--<xcad:DockingManager x:Name="DockingManager" 
                              AllowMixedOrientation="True"
                              DocumentsSource="{Binding CharacterSheetViewModels}"
                              ActiveContent="{Binding CurrentSheetViewModel, Mode=TwoWay}">
@@ -196,7 +240,6 @@
                 <DataTemplate DataType="ContentPresenter">
                     <StackPanel Orientation="Horizontal" DataContext="{Binding Content}"
                                 d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
-                        <!--<Image Source="/DSACharacterSheet.Core;component\Images\EditIcon.png" Width="20" Margin="0,0,4,0"/>-->
                         <Border BorderBrush="{StaticResource BorderColor}"
                                 Background="White" BorderThickness="1" CornerRadius="1"
                                 ClipToBounds="True" Margin="0 2 4 2">
@@ -215,11 +258,18 @@
             </xcad:DockingManager.DocumentHeaderTemplate>
             <xcad:DockingManager.LayoutItemTemplate>
                 <DataTemplate DataType="ContentPresenter">
-                    <ScrollViewer PanningMode="Both">
+                    <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundColor}">
                         <controls:CharacterSheetControl DataContext="{Binding Content}"/>
                     </ScrollViewer>
                 </DataTemplate>
             </xcad:DockingManager.LayoutItemTemplate>
-        </xcad:DockingManager>
+        </xcad:DockingManager>-->
     </DockPanel>
 </Window>
+
+
+
+
+
+
+

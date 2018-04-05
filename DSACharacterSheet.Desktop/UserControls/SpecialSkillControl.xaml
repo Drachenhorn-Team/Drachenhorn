@@ -6,7 +6,7 @@
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
-             xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Skills;assembly=DSACharacterSheet.FileReader"
+             xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Sheet.Skills;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="800">
     <DockPanel>

@@ -78,6 +78,8 @@ namespace DSACharacterSheet.Core.ViewModels
             GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
 
             ShowSettings = new RelayCommand(ExecuteShowSettings);
+
+            CloseSheet = new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
         }
 
         public RelayCommand Save { get; private set; }
@@ -124,8 +126,12 @@ namespace DSACharacterSheet.Core.ViewModels
             {
                 var temp = ioService.OpenCharacterSheet();
 
-                if (temp != null)
-                    CharacterSheetViewModels.Add(new CharacterSheetViewModel(temp));
+                if (temp == null)
+                    return;
+
+                var model = new CharacterSheetViewModel(temp);
+                CharacterSheetViewModels.Add(model);
+                CurrentSheetViewModel = model;
             }
             catch (SheetLoadingException ex)
             {
@@ -137,7 +143,9 @@ namespace DSACharacterSheet.Core.ViewModels
 
         private void ExecuteNew()
         {
-            CharacterSheetViewModels.Add(new CharacterSheetViewModel());
+            var model = new CharacterSheetViewModel();
+            CharacterSheetViewModels.Add(model);
+            CurrentSheetViewModel = model;
         }
 
         public RelayCommand ShowSettings { get; private set; }
@@ -170,6 +178,13 @@ namespace DSACharacterSheet.Core.ViewModels
         private void ExecutePrint()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowPrintView"));
+        }
+
+        public RelayCommand<CharacterSheetViewModel> CloseSheet { get; private set; }
+
+        private void ExecuteCloseSheet(CharacterSheetViewModel model)
+        {
+            CharacterSheetViewModels.Remove(model);
         }
 
         #endregion Commands

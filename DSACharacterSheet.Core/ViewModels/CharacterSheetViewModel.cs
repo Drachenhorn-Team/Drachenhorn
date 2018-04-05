@@ -7,6 +7,7 @@ using CommonServiceLocator;
 using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Exceptions;
+using DSACharacterSheet.FileReader.Sheet;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 

@@ -1,5 +1,4 @@
 ﻿using DSACharacterSheet.Desktop.Views;
-using DSACharacterSheet.FileReader.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DSACharacterSheet.FileReader.Sheet.Common;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSACharacterSheet.FileReader;
+using DSACharacterSheet.FileReader.Sheet;
 
 namespace DSACharacterSheet.Core.IO
 {

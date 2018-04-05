@@ -1,7 +1,8 @@
 ﻿@using DSACharacterSheet.Core.Lang
 
-@using DSACharacterSheet.FileReader
-@using DSACharacterSheet.FileReader.Advantages
+@using DSACharacterSheet.FileReader.Sheet
+@using DSACharacterSheet.FileReader.Sheet.Advantages
+@using DSACharacterSheet.FileReader.Sheet.Skills
 
 
 @*Model will always show an error but this line helps with IntelliSense in the rest of the document*@
@@ -14,7 +15,7 @@
 
 @helper RenderAdvantages(IEnumerable<AdvantageBase> advantages)
 {
-    foreach (var item in advantages)
+    foreach (AdvantageBase item in advantages)
     {
         <tr>
             <td>@item.Name</td>
@@ -24,7 +25,7 @@
     }
 }
 
-@helper RenderAttribute(string name, DSACharacterSheet.FileReader.Skills.Attribute attribute)
+@helper RenderAttribute(string name, Attribute attribute)
 {
     <tr>
         <td>@name</td>
@@ -34,7 +35,7 @@
     </tr>
 }
 
-@helper RenderBaseValue(string name, DSACharacterSheet.FileReader.Skills.BaseValue baseValue)
+@helper RenderBaseValue(string name, BaseValue baseValue)
 {
     <tr>
         <td>@name</td>

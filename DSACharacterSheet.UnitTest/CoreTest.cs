@@ -2,10 +2,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.Core.Printing;
-using DSACharacterSheet.FileReader.Common;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using DSACharacterSheet.FileReader.Sheet;
+using DSACharacterSheet.FileReader.Sheet.Common;
 
 namespace DSACharacterSheet.UnitTest
 {

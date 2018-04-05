@@ -7,7 +7,7 @@
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:combatInfo="clr-namespace:DSACharacterSheet.FileReader.CombatInfo;assembly=DSACharacterSheet.FileReader"
+             xmlns:combatInfo1="clr-namespace:DSACharacterSheet.FileReader.Sheet.CombatInfo;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
@@ -15,12 +15,12 @@
         <converter:EnumListStringConverter x:Key="EnumListStringConverter"/>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="combatInfo:WeaponType"/>
+                <x:Type TypeName="combatInfo1:WeaponType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ArmorRegionEnum">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="combatInfo:ArmorRegion"/>
+                <x:Type TypeName="combatInfo1:ArmorRegion"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </UserControl.Resources>
