@@ -25,7 +25,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         </ObjectDataProvider>
     </Window.Resources>
     <DockPanel>
-        <StatusBar DockPanel.Dock="Bottom" Height="25" Background="LightGray" BorderBrush="Gray" BorderThickness="0 2 0 0">
+        <StatusBar DockPanel.Dock="Bottom" Height="25" BorderThickness="0 2 0 0">
             <StatusBarItem>
                 <WrapPanel DockPanel.Dock="Bottom">
                     <TextBlock Text="*" VerticalAlignment="Center"/>
@@ -37,11 +37,6 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         <TabControl>
             <TabItem Header="{lang:Translate UI.Properties.Misc}">
                 <Grid DockPanel.Dock="Top" Margin="10" VerticalAlignment="Top">
-                    <Grid.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="Margin" Value="5"/>
-                        </Style>
-                    </Grid.Resources>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -53,7 +48,8 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock Text="*" Grid.Row="0" Grid.Column="1"/>
                     <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}"
                               SelectedItem="{Binding Settings.CurrentCulture}"
@@ -79,8 +75,14 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </TabItem>
             <TabItem Header="{lang:Translate UI.Properties.About}">
                 <StackPanel>
-                    <Border Margin="5" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+                    <Border Margin="5" BorderThickness="2"
+                            BorderBrush="{StaticResource BorderColor}">
                         <Grid>
+                            <Grid.Resources>
+                                <ResourceDictionary>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}"/>
+                                </ResourceDictionary>
+                            </Grid.Resources>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
@@ -94,8 +96,10 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Text="{lang:Translate About.Version}" Grid.Row="0" Grid.Column="0" Margin="5"/>
-                            <TextBlock Text="{Binding Settings.Version}" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                            <TextBlock Text="{lang:Translate About.Version}"
+                                       Grid.Row="0" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding Settings.Version}"
+                                       Grid.Row="0" Grid.Column="1" Margin="5"/>
 
                             <TextBlock Text="{lang:Translate Update.Available}"
                                Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
@@ -122,8 +126,14 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         </Grid>
                     </Border>
 
-                    <Border Margin="5" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+                    <Border Margin="5" BorderThickness="2"
+                            BorderBrush="{StaticResource BorderColor}">
                         <Grid>
+                            <Grid.Resources>
+                                <ResourceDictionary>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}"/>
+                                </ResourceDictionary>
+                            </Grid.Resources>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>

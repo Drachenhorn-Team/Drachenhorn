@@ -6,12 +6,12 @@
                     mc:Ignorable="d">
 
     <SolidColorBrush x:Key="ForegroundColor" Color="{DynamicResource BaseForegroundColor}"/>
+    <SolidColorBrush x:Key="SpecialForegroundColor" Color="{DynamicResource BaseForegroundSpecialColor}"/>
     <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource BaseColor}"/>
+    <SolidColorBrush x:Key="SpecialBackgroundColor" Color="{DynamicResource BaseSpecialColor}"/>
     <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource BaseBorderColor}"/>
 
     <SolidColorBrush x:Key="SeperatorColor" Color="{DynamicResource BaseBorderColor}"/>
-    
-    <SolidColorBrush x:Key="SliderBackgroundColor" Color="{DynamicResource BaseSpecialColor}"/>
 
     <SolidColorBrush x:Key="HighlightBorderColor" Color="{DynamicResource BaseSpecialColor}"/>
     <SolidColorBrush x:Key="HighlightBackgroundColor" Color="{DynamicResource BaseSpecialColor}" Opacity="0.3"/>
@@ -28,6 +28,16 @@
     <SolidColorBrush x:Key="InfoColor" Color="{DynamicResource BaseInfoColor}"/>
 
     <FontFamily x:Key="Morpheus">../Resources/#Morpheus</FontFamily>
+    
+    <Style TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="{StaticResource SpecialForegroundColor}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
     <Style x:Key="FrameBorder" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>

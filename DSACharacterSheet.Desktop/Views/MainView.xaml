@@ -35,34 +35,34 @@
                           Command="{Binding New}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource NewIcon}"/>
+                        <Image Source="{DynamicResource NewIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Open}"
                           Command="{Binding Open}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource EditIcon}"/>
+                        <Image Source="{DynamicResource EditIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Save}"
                           Command="{Binding Save}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveIcon}"/>
+                        <Image Source="{DynamicResource SaveIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAs}"
                           Command="{Binding SaveAs}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveAsIcon}"/>
+                        <Image Source="{DynamicResource SaveAsIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAll}"
                           Command="{Binding SaveAll}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveAllIcon}"/>
+                        <Image Source="{DynamicResource SaveAllIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderColor}"/>
@@ -70,7 +70,7 @@
                           Command="{Binding Print}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource PrintIcon}"/>
+                        <Image Source="{DynamicResource PrintIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderColor}"/>
@@ -78,7 +78,7 @@
                           Command="{Binding ShowSettings}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource PropertiesIcon}"/>
+                        <Image Source="{DynamicResource PropertiesIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -96,21 +96,21 @@
             </ToolBarTray.Resources>
             <ToolBar>
                 <Button Command="{Binding New}">
-                    <Image Source="{StaticResource NewIcon}"/>
+                    <Image Source="{DynamicResource NewIcon}"/>
                 </Button>
                 <Button Command="{Binding Open}">
-                    <Image Source="{StaticResource EditIcon}"/>
+                    <Image Source="{DynamicResource EditIcon}"/>
                 </Button>
                 <Button Command="{Binding Save}">
-                    <Image Source="{StaticResource SaveIcon}"/>
+                    <Image Source="{DynamicResource SaveIcon}"/>
                 </Button>
                 <Button Command="{Binding SaveAll}">
-                    <Image Source="{StaticResource SaveAllIcon}"/>
+                    <Image Source="{DynamicResource SaveAllIcon}"/>
                 </Button>
             </ToolBar>
             <ToolBar>
                 <Button Command="{Binding Print}">
-                    <Image Source="{StaticResource PrintIcon}"/>
+                    <Image Source="{DynamicResource PrintIcon}"/>
                 </Button>
             </ToolBar>
         </ToolBarTray>
@@ -194,7 +194,7 @@
                         <StackPanel Orientation="Horizontal"
                                     d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
                             <Border BorderBrush="{StaticResource BorderColor}"
-                                    Background="White" BorderThickness="1" CornerRadius="1"
+                                    Background="GhostWhite" BorderThickness="1" CornerRadius="1"
                                     ClipToBounds="True" Margin="0 2 4 2">
                                 <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
                                                   Width="30" Height="20" Loaded="InkPresenter_OnLoaded"/>
