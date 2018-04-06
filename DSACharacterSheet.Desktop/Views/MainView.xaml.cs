@@ -9,7 +9,6 @@ using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.FileReader;
 using DSACharacterSheet.FileReader.Sheet;
 using GalaSoft.MvvmLight.Messaging;
-using Xceed.Wpf.AvalonDock.Layout;
 
 namespace DSACharacterSheet.Desktop.Views
 {

@@ -25,17 +25,14 @@ namespace DSACharacterSheet.UnitTest
             };
 
             var result = PrintingManager.GenerateHtml(sheet);
-
-#if DEBUG
-            try
-            {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "result.html");
-                File.WriteAllText(path, result);
-                Process.Start(path);
-            }
-            catch (Exception) { }
-#endif
-
+            
+            //try
+            //{
+            //    var path = Path.Combine(Directory.GetCurrentDirectory(), "result.html");
+            //    File.WriteAllText(path, result);
+            //    Process.Start(path);
+            //}
+            //catch (Exception) { }
         }
     }
 }
