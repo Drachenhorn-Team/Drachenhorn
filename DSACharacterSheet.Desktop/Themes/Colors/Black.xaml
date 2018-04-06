@@ -1,10 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="BaseBlackColor">#040C0E</Color>
-    <Color x:Key="BaseBlackForegroundColor">#A49783</Color>
-    <Color x:Key="BaseBlackForegroundSpecialColor">#525B56</Color>
-    <Color x:Key="BaseBlackSpecialColor">#BE9063</Color>
-    <Color x:Key="BaseBlackBorderColor">#132226</Color>
+    <Color x:Key="BaseColor">#040C0E</Color>
+    <Color x:Key="BaseForegroundColor">#A49783</Color>
+    <Color x:Key="BaseForegroundSpecialColor">#525B56</Color>
+    <Color x:Key="BaseSpecialColor">#BE9063</Color>
+    <Color x:Key="BaseBorderColor">#132226</Color>
+
+    <Color x:Key="BaseInfoColor">#ADAFBF20</Color>
     
 </ResourceDictionary>

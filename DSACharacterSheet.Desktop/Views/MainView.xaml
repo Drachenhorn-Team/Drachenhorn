@@ -174,10 +174,9 @@
         </Ribbon>-->
 
         <StatusBar x:Name="StatusBar" DataContext="{Binding SettingsView, Source={StaticResource Locator}}"
-                   DockPanel.Dock="Bottom" Height="25" Background="LightGray"
-                   BorderBrush="Gray" BorderThickness="0 2 0 0">
+                   DockPanel.Dock="Bottom" Height="25" BorderThickness="0 2 0 0">
             <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}" >
-                <Border Background="Orange" CornerRadius="10">
+                <Border Background="{StaticResource InfoColor}" CornerRadius="10">
                     <Image Source="{StaticResource UpdateAvailableIcon}"
                            ToolTip="{lang:Translate Update.Available}"
                            Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
@@ -213,9 +212,9 @@
                                             Path= DataContext.CloseSheet}"
                                 CommandParameter="{Binding}"
                                 MinHeight="0" Height="20" MinWidth="0" Width="20"
-                                Margin="5 5 -5 5">
+                                Margin="5 5 -3 5">
                             <Image Source="{DynamicResource RemoveIcon}"
-                                   Margin="-5 1 -5 0" Width="10" Height="10"/>
+                                   Margin="-10 2 -10 0" Width="16" Height="16"/>
                         </Button>
                     </WrapPanel>
                 </DataTemplate>

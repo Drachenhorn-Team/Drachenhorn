@@ -6,5 +6,7 @@
     <Color x:Key="BaseForegroundSpecialColor">#81A3A7</Color>
     <Color x:Key="BaseSpecialColor">#F1F3F2</Color>
     <Color x:Key="BaseBorderColor">#585A56</Color>
-    
+
+    <Color x:Key="BaseInfoColor">#AD8FFF0A</Color>
+
 </ResourceDictionary>

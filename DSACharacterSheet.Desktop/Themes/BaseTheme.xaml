@@ -10,6 +10,8 @@
     <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource BaseBorderColor}"/>
 
     <SolidColorBrush x:Key="SeperatorColor" Color="{DynamicResource BaseBorderColor}"/>
+    
+    <SolidColorBrush x:Key="SliderBackgroundColor" Color="{DynamicResource BaseSpecialColor}"/>
 
     <SolidColorBrush x:Key="HighlightBorderColor" Color="{DynamicResource BaseSpecialColor}"/>
     <SolidColorBrush x:Key="HighlightBackgroundColor" Color="{DynamicResource BaseSpecialColor}" Opacity="0.3"/>
@@ -19,6 +21,11 @@
 
     <SolidColorBrush x:Key="DisabledBackgroundColor" Color="{DynamicResource BaseColor}"/>
     <SolidColorBrush x:Key="DisabledForegroundColor" Color="{DynamicResource BaseForegroundSpecialColor}"/>
+
+    <SolidColorBrush x:Key="MenuBarBackgroundColor" Color="{DynamicResource BaseColor}"/>
+    <SolidColorBrush x:Key="MenuBarBorderColor" Color="{DynamicResource BaseBorderColor}"/>
+    
+    <SolidColorBrush x:Key="InfoColor" Color="{DynamicResource BaseInfoColor}"/>
 
     <FontFamily x:Key="Morpheus">../Resources/#Morpheus</FontFamily>
 
@@ -47,7 +54,7 @@
     </Style>
 
     <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
-        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
     </Style>
     
     <Style TargetType="userElements:InfoButton">
@@ -65,6 +72,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="StatusBar">
+        <Setter Property="Background" Value="{StaticResource MenuBarBackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MenuBarBorderColor}"/>
     </Style>
 
     <Style x:Key="VerticalSeperatorStyle" TargetType="Separator"
