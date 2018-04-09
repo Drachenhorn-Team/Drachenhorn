@@ -525,4 +525,10 @@
   <data name="VisualThemeType.Dark" xml:space="preserve">
     <value>Dunkel</value>
   </data>
+  <data name="Notification.Header.Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Notification.Settings.Corrupted" xml:space="preserve">
+    <value>Die Einstellungen konnten nicht ausgelesen werden und werden auf den Standard zurückgesetzt.</value>
+  </data>
 </root>

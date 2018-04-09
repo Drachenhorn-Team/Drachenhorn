@@ -525,4 +525,10 @@
   <data name="VisualThemeType.Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
+  <data name="Notification.Header.Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Notification.Settings.Corrupted" xml:space="preserve">
+    <value>Settings can not be read and will be reset.</value>
+  </data>
 </root>

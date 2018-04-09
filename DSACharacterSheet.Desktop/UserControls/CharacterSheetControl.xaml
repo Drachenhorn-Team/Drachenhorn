@@ -20,7 +20,7 @@
         <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center"/>
 
         <Border Style="{StaticResource FrameBorder}">
-            <Grid>
+            <Grid Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="3*"/>
@@ -74,15 +74,21 @@
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:CharacterInformationControl DataContext="{Binding CurrentSheet.CharacterInformation}"/>
+                <controls:CharacterInformationControl
+                    DataContext="{Binding CurrentSheet.CharacterInformation}"
+                    Margin="5"/>
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
-                <controls:CoatOfArmsControl DataContext="{Binding CurrentSheet.CoatOfArms}"/>
+                <controls:CoatOfArmsControl
+                    DataContext="{Binding CurrentSheet.CoatOfArms}"
+                    Margin="5"/>
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="2">
-                <controls:SocialInformationControl DataContext="{Binding CurrentSheet.SocialInformation}"/>
+                <controls:SocialInformationControl
+                    DataContext="{Binding CurrentSheet.SocialInformation}"
+                    Margin="5"/>
             </Border>
         </Grid>
 
@@ -93,11 +99,15 @@
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:AdvantageInformationControl DataContext="{Binding CurrentSheet.Advantages}"/>
+                <controls:AdvantageInformationControl 
+                    DataContext="{Binding CurrentSheet.Advantages}"
+                    Margin="5"/>
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
-                <controls:AdvantageInformationControl DataContext="{Binding CurrentSheet.Disadvantages}"/>
+                <controls:AdvantageInformationControl
+                    DataContext="{Binding CurrentSheet.Disadvantages}"
+                    Margin="5"/>
             </Border>
         </Grid>
 
@@ -110,28 +120,40 @@
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:AttributesControl DataContext="{Binding CurrentSheet.Attributes}"/>
+                <controls:AttributesControl
+                    DataContext="{Binding CurrentSheet.Attributes}"
+                    Margin="5"/>
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
-                <controls:BaseValuesControl DataContext="{Binding CurrentSheet.BaseValues}"/>
+                <controls:BaseValuesControl
+                    DataContext="{Binding CurrentSheet.BaseValues}"
+                    Margin="5"/>
             </Border>
         </Grid>
 
         <Border Style="{StaticResource FrameBorder}">
-            <controls:AdventurePointsControl DataContext="{Binding CurrentSheet.AdventurePoints}"/>
+            <controls:AdventurePointsControl
+                DataContext="{Binding CurrentSheet.AdventurePoints}"
+                Margin="5"/>
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
-            <controls:SkillListControl DataContext="{Binding CurrentSheet.Skills}"/>
+            <controls:SkillListControl 
+                DataContext="{Binding CurrentSheet.Skills}"
+                Margin="5"/>
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
-            <controls:SpecialSkillControl DataContext="{Binding CurrentSheet.SpecialSkills}"/>
+            <controls:SpecialSkillControl
+                DataContext="{Binding CurrentSheet.SpecialSkills}"
+                Margin="5"/>
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
-            <controls:CombatControl DataContext="{Binding CurrentSheet.CombatInformation}"/>
+            <controls:CombatControl
+                DataContext="{Binding CurrentSheet.CombatInformation}"
+                Margin="5"/>
         </Border>
     </StackPanel>
 </UserControl>

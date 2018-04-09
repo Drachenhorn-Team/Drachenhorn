@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Serialization;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
@@ -79,7 +80,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         [XmlIgnore]
         private VisualThemeType _visualTheme;
-        [XmlAttribute("VisualTheme")]
+        [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme
         {
             get { return _visualTheme; }
@@ -197,12 +198,22 @@ namespace DSACharacterSheet.Desktop.UserSettings
                 using (var stream = new FileStream(PropertiesPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var serializer = new XmlSerializer(typeof(Settings));
-                    var temp = (Settings)serializer.Deserialize(stream);
+                    var temp = (Settings) serializer.Deserialize(stream);
                     return temp;
                 }
             }
             catch (IOException)
             {
+                return new Settings();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show(
+                    LanguageManager.GetLanguageText("Notification.Settings.Corrupted"),
+                    LanguageManager.GetLanguageText("Notification.Header.Error"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error,
+                    MessageBoxResult.OK);
                 return new Settings();
             }
         }

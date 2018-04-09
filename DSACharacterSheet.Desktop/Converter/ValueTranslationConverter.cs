@@ -13,7 +13,7 @@ namespace DSACharacterSheet.Desktop.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return LanguageManager.TranslateText(value.ToString());
+            return LanguageManager.TranslateText(value?.ToString());
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
