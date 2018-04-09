@@ -11,8 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Serialization;
+using CommonServiceLocator;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Desktop.UserSettings
 {
@@ -208,12 +210,9 @@ namespace DSACharacterSheet.Desktop.UserSettings
             }
             catch (InvalidOperationException)
             {
-                MessageBox.Show(
-                    LanguageManager.GetLanguageText("Notification.Settings.Corrupted"),
-                    LanguageManager.GetLanguageText("Notification.Header.Error"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error,
-                    MessageBoxResult.OK);
+                var service = ServiceLocator.Current.GetInstance<IDialogService>();
+
+                service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
                 return new Settings();
             }
         }

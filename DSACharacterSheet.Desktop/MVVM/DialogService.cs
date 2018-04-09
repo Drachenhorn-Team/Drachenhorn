@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.Dialogs;
 using GalaSoft.MvvmLight.Views;
 
@@ -39,7 +40,13 @@ namespace DSACharacterSheet.Desktop.MVVM
 
         public async Task ShowMessageBox(string message, string title)
         {
-            await Task.Run(() => { MessageBox.Show(message, title, MessageBoxButton.OK); });
+            await Task.Run(() =>
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show(
+                    LanguageManager.TranslateText(message), 
+                    LanguageManager.TranslateText(title),
+                    MessageBoxButton.OK);
+            });
         }
     }
 }
