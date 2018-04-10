@@ -1,0 +1,41 @@
+﻿<Window x:Class="DSACharacterSheet.Desktop.Views.AttributeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
+        xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
+        mc:Ignorable="d"
+        Style="{StaticResource {x:Type Window}}"
+        ResizeMode="CanMinimize"
+        Title="{Binding Name}" MinHeight="200" Width="300" SizeToContent="Height">
+    <Window.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1"/>
+
+        <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Text="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"/>
+
+        <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Text="{Binding StartValue, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1"/>
+
+        <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" Grid.Row="3" Grid.Column="0"/>
+        <TextBox Text="{Binding CurrentValue, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1"/>
+    </Grid>
+</Window>

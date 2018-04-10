@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:glob="clr-namespace:DSACharacterSheet.Core.Lang;assembly=DSACharacterSheet.Core"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
-        xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:enum="clr-namespace:DSACharacterSheet.Core.Settings;assembly=DSACharacterSheet.Core"
         x:Class="DSACharacterSheet.Desktop.Views.SettingsView"

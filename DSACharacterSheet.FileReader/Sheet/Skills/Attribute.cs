@@ -7,6 +7,21 @@ namespace DSACharacterSheet.FileReader.Sheet.Skills
     public class Attribute : BindableBase
     {
         [XmlIgnore]
+        private string _name;
+        [XmlAttribute("Name")]
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (_name == value)
+                    return;
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private double _startValue;
         [XmlAttribute("StartValue")]
         public double StartValue

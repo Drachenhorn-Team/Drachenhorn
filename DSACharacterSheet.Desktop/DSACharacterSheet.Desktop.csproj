@@ -205,6 +205,9 @@
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\SkillButton.cs" />
+    <Compile Include="Views\AttributeView.xaml.cs">
+      <DependentUpon>AttributeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CoatOfArmsPainterView.xaml.cs">
       <DependentUpon>CoatOfArmsPainterView.xaml</DependentUpon>
     </Compile>
@@ -345,6 +348,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\SpecialSkillControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttributeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent"
-        Title="{lang:Translate Splash.Title}" Height="250" Width="500">
-    <Border Background="LightGray" CornerRadius="50" BorderThickness="2" BorderBrush="DarkGray">
+        Title="{lang:Translate Splash.Title}" Height="200" Width="500">
+    <Border Background="#212624" CornerRadius="0" BorderThickness="2" BorderBrush="#111111">
         <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -19,7 +19,7 @@
             <Image Source="/DSACharacterSheet.Core;component\Images\DSAFanLogo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
             <TextBlock Text="{lang:Translate Splash.Loading}"
                        HorizontalAlignment="Center" Grid.Row="1" FontSize="25"
-                       FontFamily="../Resources/#Morpheus"/>
+                       Foreground="#9199BE" Style="{StaticResource MorpheusTextStyle}"/>
 
         </Grid>
     </Border>

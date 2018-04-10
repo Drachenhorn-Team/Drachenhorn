@@ -4,10 +4,54 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
-             xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Sheet.Skills;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <DockPanel>
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+            <Button Click="AddButton_Click" Width="40" Height="40" Margin="5"
+                        ToolTip="{lang:Translate UI.Add}">
+                <Image Source="{StaticResource AddIcon}"/>
+            </Button>
+            <Button Click="RemoveButton_Click" Width="40" Height="40" Margin="5"
+                        ToolTip="{lang:Translate UI.Remove}">
+                <Image Source="{StaticResource RemoveIcon}"/>
+            </Button>
+        </WrapPanel>
+
+        <ListView Name="List" ItemsSource="{Binding .}"
+                      PreviewMouseWheel="List_PreviewMouseWheel"
+                      MinHeight="150" Width="600" Margin="5">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="List_MouseDoubleClick"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.Name}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="skills:Attribute">
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.Modifier}"
+                                        DisplayMemberBinding="{Binding Modifier}"/>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.StartValue}"
+                                        DisplayMemberBinding="{Binding StartValue}"/>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.CurrentValue}"
+                                        DisplayMemberBinding="{Binding CurrentValue}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+    <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -81,5 +125,5 @@
         <TextBox Text="{Binding Speed.Modifier, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="1" Grid.Row="10"/>
         <TextBox Text="{Binding Speed.StartValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="2" Grid.Row="10"/>
         <TextBox Text="{Binding Speed.CurrentValue, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5" Grid.Column="3" Grid.Row="10"/>
-    </Grid>
+    </Grid>-->
 </UserControl>

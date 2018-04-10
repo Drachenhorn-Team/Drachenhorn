@@ -7,6 +7,7 @@ using DSACharacterSheet.FileReader.Sheet.Advantages;
 using DSACharacterSheet.FileReader.Sheet.CombatInfo;
 using DSACharacterSheet.FileReader.Sheet.Common;
 using DSACharacterSheet.FileReader.Sheet.Skills;
+using Attribute = DSACharacterSheet.FileReader.Sheet.Skills.Attribute;
 
 namespace DSACharacterSheet.FileReader.Sheet
 {
@@ -166,9 +167,9 @@ namespace DSACharacterSheet.FileReader.Sheet
         }
 
         [XmlIgnore]
-        private CharacterAttributes _attributes = new CharacterAttributes();
+        private ObservableCollection<Attribute> _attributes = new ObservableCollection<Attribute>();
         [XmlElement("Attribute")]
-        public CharacterAttributes Attributes
+        public ObservableCollection<Attribute> Attributes
         {
             get { return _attributes; }
             set

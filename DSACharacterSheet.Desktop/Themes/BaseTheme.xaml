@@ -38,6 +38,11 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style TargetType="ProgressBar">
+        <Setter Property="Foreground" Value="{StaticResource InfoColor}"/>
+        <Setter Property="Background" Value="{StaticResource SpecialBackgroundColor}"/>
+    </Style>
 
     <Style x:Key="FrameBorder" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>

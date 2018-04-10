@@ -219,7 +219,7 @@
   <data name="CharacterSheet.LeftoverAP" xml:space="preserve">
     <value>Leftover AP</value>
   </data>
-  <data name="CharacterSheet.Modifyer" xml:space="preserve">
+  <data name="CharacterSheet.Modifier" xml:space="preserve">
     <value>Modifyer</value>
   </data>
   <data name="CharacterSheet.Name" xml:space="preserve">

@@ -216,7 +216,7 @@
   <data name="CharacterSheet.LeftoverAP" xml:space="preserve">
     <value>AP-Guthaben</value>
   </data>
-  <data name="CharacterSheet.Modifyer" xml:space="preserve">
+  <data name="CharacterSheet.Modifier" xml:space="preserve">
     <value>Modifikator</value>
   </data>
   <data name="CharacterSheet.Name" xml:space="preserve">
