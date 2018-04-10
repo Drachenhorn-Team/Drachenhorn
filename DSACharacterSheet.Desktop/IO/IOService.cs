@@ -50,7 +50,7 @@ namespace DSACharacterSheet.Desktop.IO
                 Filter = fileTypeName + "(*" +
                          fileExtension + ")|*" +
                          fileExtension + "|" +
-                         LanguageManager.GetLanguageText("UI.AllFiles") + "(*.*)|*.*",
+                         LanguageManager.Translate("UI.AllFiles") + "(*.*)|*.*",
                 FilterIndex = 1,
                 Multiselect = false,
                 Title = title,
@@ -67,12 +67,12 @@ namespace DSACharacterSheet.Desktop.IO
             var fileDialog = new SaveFileDialog
             {
                 FileName = string.IsNullOrEmpty(sheet.Name)
-                    ? LanguageManager.GetLanguageText("CharacterSheet.SaveDialog.DefaultFileName")
+                    ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
                     : sheet.Name,
-                Filter = LanguageManager.GetLanguageText("CharacterSheet.FileType.Name") + " (*.dsac)|*.dsac",
+                Filter = LanguageManager.Translate("CharacterSheet.FileType.Name") + " (*.dsac)|*.dsac",
                 FilterIndex = 1,
                 AddExtension = true,
-                Title = LanguageManager.GetLanguageText("CharacterSheet.SaveDialog.Title")
+                Title = LanguageManager.Translate("CharacterSheet.SaveDialog.Title")
             };
 
             if (fileDialog.ShowDialog() != true) return;
@@ -84,10 +84,10 @@ namespace DSACharacterSheet.Desktop.IO
         {
             var fileDialog = new OpenFileDialog
             {
-                Filter = LanguageManager.GetLanguageText("CharacterSheet.FileType.Name") + " (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*",
+                Filter = LanguageManager.Translate("CharacterSheet.FileType.Name") + " (*.dsac)|*.dsac|Alle Dateien (*.*)|*.*",
                 FilterIndex = 1,
                 Multiselect = false,
-                Title = LanguageManager.GetLanguageText("CharacterSheet.LoadDialog.Title"),
+                Title = LanguageManager.Translate("CharacterSheet.LoadDialog.Title"),
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
             };
 

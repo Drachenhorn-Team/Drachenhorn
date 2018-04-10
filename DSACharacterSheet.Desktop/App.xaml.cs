@@ -154,8 +154,8 @@ namespace DSACharacterSheet.Desktop
                     new Action(() =>
                     {
                         MessageBox.Show(
-                            LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Successful"),
-                            LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"),
+                            LanguageManager.Translate("Update.CheckForUpdate.Finished.Successful"),
+                            LanguageManager.Translate("Update.CheckForUpdate.Finished.Caption"),
                             MessageBoxButton.OK,
                             MessageBoxImage.Information,
                             MessageBoxResult.OK);

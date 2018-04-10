@@ -1,5 +1,6 @@
 using System.Configuration;
 using CommonServiceLocator;
+using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Settings;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
@@ -19,12 +20,14 @@ namespace DSACharacterSheet.Core.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            //if (ViewModelBase.IsInDesignModeStatic)
-            //{
-            //}
-            //else
-            //{
-            //}
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<LanguageManager>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register(() => new LanguageManager());
+            }
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<PrintViewModel>();

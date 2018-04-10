@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using CommonServiceLocator;
 
 namespace DSACharacterSheet.Desktop.Lang
 {
@@ -16,7 +17,7 @@ namespace DSACharacterSheet.Desktop.Lang
         /// <param name="name">TranslateID</param>
         public TranslateExtension(string name) : base("[%" + name + "]")
         {
-            this.Source = new LanguageManager();
+            this.Source = ServiceLocator.Current.GetInstance<LanguageManager>();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace DSACharacterSheet.Desktop.Converter
             if (value == null)
                 return null;
 
-            return LanguageManager.GetLanguageText(value.GetType().Name + "." + value.ToString() + ".Abbr");
+            return LanguageManager.Translate(value.GetType().Name + "." + value.ToString() + ".Abbr");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -25,7 +25,7 @@ namespace DSACharacterSheet.Desktop.Converter
 
             foreach (object enumValue in Enum.GetValues(targetType))
             {
-                if (str == LanguageManager.GetLanguageText(enumValue.GetType().Name + "." + enumValue.ToString() + ".Abbr"))
+                if (str == LanguageManager.Translate(enumValue.GetType().Name + "." + enumValue.ToString() + ".Abbr"))
                 { return enumValue; }
             }
 

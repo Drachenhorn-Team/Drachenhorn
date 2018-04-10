@@ -82,9 +82,9 @@ namespace DSACharacterSheet.Core.ViewModels
         {
             IsCheckingUpdate = false;
 
-            var text = LanguageManager.GetLanguageText(args.IsUpdateAvailable ? "Update.CheckForUpdate.Finished.Successful" : "Update.CheckForUpdate.Finished.Failed");
+            var text = LanguageManager.Translate(args.IsUpdateAvailable ? "Update.CheckForUpdate.Finished.Successful" : "Update.CheckForUpdate.Finished.Failed");
 
-            DialogService.ShowMessageBox(text, LanguageManager.GetLanguageText("Update.CheckForUpdate.Finished.Caption"));
+            DialogService.ShowMessageBox(text, LanguageManager.Translate("Update.CheckForUpdate.Finished.Caption"));
         }
 
         #endregion Commands

@@ -163,11 +163,11 @@ namespace DSACharacterSheet.Core.ViewModels
 
             ioService.SaveStringDialog(
                 string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Name) ?
-                    LanguageManager.GetLanguageText("HTML.DefaultFileName") :
+                    LanguageManager.Translate("HTML.DefaultFileName") :
                     CurrentSheetViewModel.CurrentSheet.Name,
                 ".html",
-                LanguageManager.GetLanguageText("HTML.FileType.Name"),
-                LanguageManager.GetLanguageText("HTML.SaveDialog.Title"),
+                LanguageManager.Translate("HTML.FileType.Name"),
+                LanguageManager.Translate("HTML.SaveDialog.Title"),
                 PrintingManager.GenerateHtml(CurrentSheetViewModel.CurrentSheet),
                 true
                 );

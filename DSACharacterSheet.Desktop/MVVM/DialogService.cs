@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using CommonServiceLocator;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.Dialogs;
 using GalaSoft.MvvmLight.Views;
@@ -42,9 +43,9 @@ namespace DSACharacterSheet.Desktop.MVVM
         {
             await Task.Run(() =>
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show(
-                    LanguageManager.TranslateText(message), 
-                    LanguageManager.TranslateText(title),
+                MessageBox.Show(
+                    LanguageManager.TextTranslate(message),
+                    LanguageManager.TextTranslate(title),
                     MessageBoxButton.OK);
             });
         }

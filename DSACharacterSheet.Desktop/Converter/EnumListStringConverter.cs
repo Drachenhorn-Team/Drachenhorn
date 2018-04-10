@@ -20,7 +20,7 @@ namespace DSACharacterSheet.Desktop.Converter
             var result = new List<string>();
 
             foreach (var val in values)
-                result.Add(LanguageManager.GetLanguageText(val.GetType().Name + "." + val.ToString()));
+                result.Add(LanguageManager.Translate(val.GetType().Name + "." + val.ToString()));
             
             return result;
         }

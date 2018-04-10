@@ -43,12 +43,13 @@ namespace DSACharacterSheet.Desktop.UserSettings
         [XmlIgnore]
         public CultureInfo CurrentCulture
         {
-            get { return LanguageManager.CurrentCulture; }
+            get { return ServiceLocator.Current.GetInstance<LanguageManager>().CurrentCulture; }
             set
             {
-                if (LanguageManager.CurrentCulture == value)
+                var temp = ServiceLocator.Current.GetInstance<LanguageManager>();
+                if (Equals(temp.CurrentCulture, value))
                     return;
-                LanguageManager.CurrentCulture = value;
+                temp.CurrentCulture = value;
                 OnPropertyChanged();
             }
         }

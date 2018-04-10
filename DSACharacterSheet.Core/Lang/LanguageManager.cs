@@ -13,12 +13,10 @@ using SimpleLogger;
 
 namespace DSACharacterSheet.Core.Lang
 {
-    public class LanguageManager
+    public class LanguageManager : BindableBase
     {
-        private static readonly string[] Cultures = { "de-DE", "en" };
-
-        private static CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
-        public static CultureInfo CurrentCulture
+        private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
+        public CultureInfo CurrentCulture
         {
             get { return _currentCulture; }
             set
@@ -26,6 +24,7 @@ namespace DSACharacterSheet.Core.Lang
                 if (Equals(_currentCulture, value))
                     return;
                 _currentCulture = value;
+                OnPropertyChanged(null);
             }
         }
 
@@ -36,14 +35,14 @@ namespace DSACharacterSheet.Core.Lang
         /// <returns>Translated Text</returns>
         public string this[string key] => TranslateText(key);
 
-        private static readonly ResourceManager ResourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
+        private readonly ResourceManager ResourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
         /// <summary>
         /// Returns the translated Text for the TranslateID.
         /// </summary>
         /// <param name="identifier">TranslateID</param>
         /// <returns>Translated Text.</returns>
-        public static string GetLanguageText(string identifier)
+        public string GetLanguageText(string identifier)
         {
             try
             {
@@ -61,7 +60,7 @@ namespace DSACharacterSheet.Core.Lang
         /// </summary>
         /// <param name="text">The Text to translate. (% for the beginning of the parameters to translate)</param>
         /// <returns>Translated Text</returns>
-        public static string TranslateText(string text)
+        public string TranslateText(string text)
         {
             List<int> indexes = new List<int>();
             for (int index = 0; ; ++index)
@@ -92,27 +91,54 @@ namespace DSACharacterSheet.Core.Lang
         /// Returns the Native Names of all supported cultures.
         /// </summary>
         /// <returns>List of native culture names</returns>
-        public static List<string> GetAllCultureStrings()
+        public IEnumerable<string> GetAllCultureStrings()
         {
-            return GetAllCultures().ConvertAll<string>(x => x.NativeName);
+            return GetAllCultures().Select(x => x.NativeName);
         }
 
         /// <summary>
         /// Returns all supported cultures.
         /// </summary>
         /// <returns>List of supported cultures.</returns>
-        public static List<CultureInfo> GetAllCultures()
+        public IEnumerable<CultureInfo> GetAllCultures()
         {
             var result = new List<CultureInfo>();
 
-            foreach (var culture in Cultures)
+            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            foreach (var culture in cultures)
+            {
                 try
                 {
-                    result.Add(new CultureInfo(culture));
+                    ResourceSet rs = ResourceManager.GetResourceSet(culture, true, false);
+
+                    if (rs != null)
+                    {
+                        result.Add(culture);
+                    }
                 }
                 catch (CultureNotFoundException) { }
+            }
 
             return result;
         }
+
+
+        #region static
+
+        public static string Translate(string key)
+        {
+            var lang = ServiceLocator.Current.GetInstance<LanguageManager>();
+
+            return lang.GetLanguageText(key);
+        }
+
+        public static string TextTranslate(string text)
+        {
+            var lang = ServiceLocator.Current.GetInstance<LanguageManager>();
+
+            return lang.TranslateText(text);
+        }
+
+        #endregion static
     }
 }
