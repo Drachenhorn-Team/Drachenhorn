@@ -3,6 +3,7 @@
                     xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
                     mc:Ignorable="d">
 
     <SolidColorBrush x:Key="ForegroundColor" Color="{DynamicResource BaseForegroundColor}"/>
@@ -28,8 +29,8 @@
     <SolidColorBrush x:Key="InfoColor" Color="{DynamicResource BaseInfoColor}"/>
 
     <FontFamily x:Key="Morpheus">../Resources/#Morpheus</FontFamily>
-    
-    <Style TargetType="Hyperlink">
+
+    <Style TargetType="{x:Type Hyperlink}">
         <Setter Property="Foreground" Value="{StaticResource SpecialForegroundColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Style.Triggers>
@@ -38,13 +39,13 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    <Style TargetType="ProgressBar">
+
+    <Style TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{StaticResource InfoColor}"/>
         <Setter Property="Background" Value="{StaticResource SpecialBackgroundColor}"/>
     </Style>
 
-    <Style x:Key="FrameBorder" TargetType="Border">
+    <Style x:Key="FrameBorder" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
         <Setter Property="BorderThickness" Value="2"/>
@@ -52,31 +53,31 @@
         <Setter Property="Margin" Value="5"/>
     </Style>
 
-    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
     </Style>
 
-    <Style TargetType="TextBlock">
+    <Style TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
     </Style>
 
-    <Style x:Key="MorpheusTextStyle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+    <Style x:Key="MorpheusTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
         <Setter Property="FontFamily" Value="{StaticResource Morpheus}"/>
         <Setter Property="FontSize" Value="16"/>
     </Style>
 
-    <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
+    <Style TargetType="{x:Type Window}" BasedOn="{StaticResource {x:Type Window}}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
     </Style>
-    
-    <Style TargetType="userElements:InfoButton">
+
+    <Style TargetType="{x:Type userElements:InfoButton}">
         <Setter Property="Margin" Value="5"/>
     </Style>
 
-    <Style TargetType="Separator">
+    <Style TargetType="{x:Type Separator}">
         <Setter Property="Background" Value="{StaticResource BorderColor}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Focusable" Value="false"/>
@@ -89,26 +90,26 @@
         </Setter>
     </Style>
 
-    <Style TargetType="StatusBar">
+    <Style TargetType="{x:Type StatusBar}">
         <Setter Property="Background" Value="{StaticResource MenuBarBackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{StaticResource MenuBarBorderColor}"/>
     </Style>
 
-    <Style x:Key="VerticalSeperatorStyle" TargetType="Separator"
+    <Style x:Key="VerticalSeperatorStyle" TargetType="{x:Type Separator}"
            BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}">
         <Setter Property="Background" Value="{StaticResource BorderColor}"/>
     </Style>
 
-    <Style TargetType="ToolBarTray">
+    <Style TargetType="{x:Type ToolBarTray}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="IsLocked" Value="True"/>
         <!--<Setter Property="Margin" Value="0 -1 0 0"/>-->
     </Style>
 
-    <Style TargetType="ToolBar">
+    <Style TargetType="{x:Type ToolBar}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
-        <Setter Property="OverflowMode" Value="Never"/>
+        <Setter Property="ToolBar.OverflowMode" Value="Never"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToolBar}">
@@ -153,14 +154,14 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <Style TargetType="Menu">
+
+    <Style TargetType="{x:Type Menu}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
-        <Setter Property="Margin" Value="0 0 0 -0.1"></Setter>
+        <Setter Property="Margin" Value="0 0 0 -0.1"/>
     </Style>
 
-    <Style TargetType="MenuItem">
+    <Style TargetType="{x:Type MenuItem}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
         <Setter Property="Template">
@@ -323,7 +324,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="{x:Type TabPanel}">
         <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
     </Style>
@@ -541,7 +542,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ComboBoxItemThemedStyle" TargetType="ComboBoxItem">
+    <Style x:Key="ComboBoxItemThemedStyle" TargetType="{x:Type ComboBoxItem}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
@@ -574,8 +575,136 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemThemedStyle}"/>
+    </Style>
+    
+
+    <Style TargetType="{x:Type ListView}">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListView}">
+                    <themes:ListBoxChrome x:Name="Bd"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          BorderThickness="{TemplateBinding BorderThickness}"
+                                          Background="{TemplateBinding Background}"
+                                          RenderMouseOver="{TemplateBinding IsMouseOver}"
+                                          RenderFocused="{TemplateBinding IsKeyboardFocusWithin}"
+                                          SnapsToDevicePixels="true">
+                        <ScrollViewer Padding="{TemplateBinding Padding}"
+                                      Style="{DynamicResource {x:Static GridView.GridViewScrollViewerStyleKey}}">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </ScrollViewer>
+                    </themes:ListBoxChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="{StaticResource DisabledBackgroundColor}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsGrouping" Value="true"/>
+                                <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping"
+                                           Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListViewItem">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+    </Style>
+
+    <Style TargetType="GridViewColumnHeader">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid SnapsToDevicePixels="True">
+                        <Border BorderThickness="1" BorderBrush="{TemplateBinding Border.BorderBrush}" 
+                             Background="{TemplateBinding Panel.Background}" Name="HeaderBorder">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition MaxHeight="7" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Rectangle Fill="#FFE3F7FF" Name="UpperHighlight" Visibility="Collapsed" />
+                                <Border Padding="{TemplateBinding Control.Padding}" Grid.Row="0" Grid.RowSpan="2">
+                                    <ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding ContentControl.Content}" 
+                                         ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" 
+                                         ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" 
+                                         Name="HeaderContent" Margin="0,0,0,1" 
+                                         HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                         VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                                         SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <Canvas>
+                            <Thumb Name="PART_HeaderGripper">
+                                <Thumb.Style>
+                                    <Style TargetType="Thumb">
+                                        <Style.Resources>
+                                            <ResourceDictionary />
+                                        </Style.Resources>
+                                        <Setter Property="Canvas.Right" Value="-9"/>
+                                        <Setter Property="FrameworkElement.Width" Value="18"/>
+                                        <Setter Property="FrameworkElement.Height">
+                                            <Setter.Value>
+                                                <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=TemplatedParent}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Control.Padding">
+                                            <Setter.Value>
+                                                <Thickness>0,0,0,0</Thickness>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Panel.Background" Value="{StaticResource BackgroundColor}"/>
+                                        <Setter Property="Control.Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Thumb">
+                                                    <Border Padding="{TemplateBinding Control.Padding}" Background="#00FFFFFF">
+                                                        <Rectangle Fill="{TemplateBinding Panel.Background}" Width="1" HorizontalAlignment="Center" />
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Thumb.Style>
+                            </Thumb>
+                        </Canvas>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource HighlightBackgroundColor}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource HighlightBorderColor}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

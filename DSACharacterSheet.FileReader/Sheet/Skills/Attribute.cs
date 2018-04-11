@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Xml.Serialization;
+using DSACharacterSheet.FileReader.Interfaces;
 
 namespace DSACharacterSheet.FileReader.Sheet.Skills
 {
     [Serializable]
-    public class Attribute : BindableBase
+    public class Attribute : BindableBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;
@@ -65,5 +68,26 @@ namespace DSACharacterSheet.FileReader.Sheet.Skills
                 OnPropertyChanged();
             }
         }
+
+
+        #region InfoObject
+
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name))
+                result.Add("%Info.Name", Name);
+            if (Math.Abs(Modifier) > Double.Epsilon)
+                result.Add("%Info.Modifier", Modifier.ToString(CultureInfo.CurrentCulture));
+            if (Math.Abs(StartValue) > Double.Epsilon)
+                result.Add("%Info.StartValue", StartValue.ToString(CultureInfo.CurrentCulture));
+            if (Math.Abs(CurrentValue) > Double.Epsilon)
+                result.Add("%Info.CurrentValue", CurrentValue.ToString(CultureInfo.CurrentCulture));
+
+            return result;
+        }
+
+        #endregion InfoObject
     }
 }

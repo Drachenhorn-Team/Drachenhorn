@@ -42,27 +42,7 @@ namespace DSACharacterSheet.Desktop.UserControls
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(List.ItemsSource is IList<Attribute>))
-                return;
-
-            ((IList<Attribute>)List.ItemsSource).Remove((Attribute)List.SelectedItem);
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            UpdateListViewColumns(sender, e);
-        }
-
-        private void UpdateListViewColumns(object sender, EventArgs args)
-        {
-            GridView gridView = List.View as GridView;
-
-            if (gridView != null)
-                foreach (GridViewColumn column in gridView.Columns)
-                {
-                    column.Width = column.ActualWidth;
-                    column.Width = double.NaN;
-                }
+            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute)List.SelectedItem);
         }
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

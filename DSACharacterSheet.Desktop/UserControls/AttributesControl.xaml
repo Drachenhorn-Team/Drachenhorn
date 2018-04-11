@@ -6,7 +6,7 @@
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:skills="clr-namespace:DSACharacterSheet.FileReader.Sheet.Skills;assembly=DSACharacterSheet.FileReader"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="600">
     <DockPanel>
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Click="AddButton_Click" Width="40" Height="40" Margin="5"
@@ -21,7 +21,7 @@
 
         <ListView Name="List" ItemsSource="{Binding .}"
                       PreviewMouseWheel="List_PreviewMouseWheel"
-                      MinHeight="150" Width="600" Margin="5">
+                      MinHeight="150" Margin="5">
             <ListView.Resources>
                 <Style TargetType="ListViewItem">
                     <EventSetter Event="MouseDoubleClick" Handler="List_MouseDoubleClick"/>
@@ -29,24 +29,18 @@
             </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridView.ColumnHeaderContainerStyle>
-                        <Style TargetType="{x:Type GridViewColumnHeader}">
-                            <Setter Property="IsEnabled" Value="False"/>
-                        </Style>
-                    </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="{lang:Translate CharacterSheet.Name}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate DataType="skills:Attribute">
-                                <TextBlock Text="{Binding Name}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn Header="{lang:Translate CharacterSheet.Name}"
+                                    Width="200"
+                                    DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="{lang:Translate CharacterSheet.Modifier}"
-                                        DisplayMemberBinding="{Binding Modifier}"/>
+                                    Width="80"
+                                    DisplayMemberBinding="{Binding Modifier}"/>
                     <GridViewColumn Header="{lang:Translate CharacterSheet.StartValue}"
-                                        DisplayMemberBinding="{Binding StartValue}"/>
+                                    Width="80"
+                                    DisplayMemberBinding="{Binding StartValue}"/>
                     <GridViewColumn Header="{lang:Translate CharacterSheet.CurrentValue}"
-                                        DisplayMemberBinding="{Binding CurrentValue}"/>
+                                    Width="80"
+                                    DisplayMemberBinding="{Binding CurrentValue}"/>
                 </GridView>
             </ListView.View>
         </ListView>
