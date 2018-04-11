@@ -26,14 +26,17 @@
     }
 }
 
-@helper RenderAttribute(string name, Attribute attribute)
+@helper RenderAttributes(IEnumerable<Attribute> attributes)
 {
-    <tr>
-        <td>@name</td>
-        <td>@attribute.Modifier</td>
-        <td>@attribute.StartValue</td>
-        <td>@attribute.CurrentValue</td>
-    </tr>
+    foreach (var item in attributes)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Modifier</td>
+            <td>@item.StartValue</td>
+            <td>@item.CurrentValue</td>
+        </tr>
+    }
 }
 
 @helper RenderBaseValue(string name, BaseValue baseValue)
@@ -183,16 +186,8 @@
                     <th>@Translate("CharacterSheet.StartValue")</th>
                     <th>@Translate("CharacterSheet.CurrentValue")</th>
                 </tr>
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Courage"), Sheet.Attributes.Courage)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Wisdom"), Sheet.Attributes.Wisdom)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Intuition"), Sheet.Attributes.Intuition)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Charisma"), Sheet.Attributes.Charisma)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Prestidigitation"), Sheet.Attributes.Prestidigitation)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Finesse"), Sheet.Attributes.Finesse)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Constitution"), Sheet.Attributes.Constitution)
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.PhysicalStrength"), Sheet.Attributes.PhysicalStrength)
-
-                @RenderAttribute(LanguageManager.GetLanguageText("AttributeType.Speed"), Sheet.Attributes.Speed)
+                
+                @RenderAttributes(Sheet.Attributes)
             </table>
 
             <div>   </div>
@@ -203,15 +198,15 @@
                     <th>@Translate("CharacterSheet.Modifyer")</th>
                     <th>@Translate("CharacterSheet.CurrentValue")</th>
                 </tr>
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.HealthPoints"), Sheet.BaseValues.HealthPoints)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.Endurance"), Sheet.BaseValues.Endurance)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.AstralEnergy"), Sheet.BaseValues.AstralEnergy)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.KarmaEnergy"), Sheet.BaseValues.KarmaEnergy)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.MagicResistance"), Sheet.BaseValues.MagicResistance)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseInitiative"), Sheet.BaseValues.BaseInitiative)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseAttack"), Sheet.BaseValues.BaseAttack)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseParry"), Sheet.BaseValues.BaseParry)
-                @RenderBaseValue(LanguageManager.GetLanguageText("BaseValue.BaseLongRangeAttack"), Sheet.BaseValues.BaseLongRangeAttack)
+                @RenderBaseValue(Translate("BaseValue.HealthPoints"), Sheet.BaseValues.HealthPoints)
+                @RenderBaseValue(Translate("BaseValue.Endurance"), Sheet.BaseValues.Endurance)
+                @RenderBaseValue(Translate("BaseValue.AstralEnergy"), Sheet.BaseValues.AstralEnergy)
+                @RenderBaseValue(Translate("BaseValue.KarmaEnergy"), Sheet.BaseValues.KarmaEnergy)
+                @RenderBaseValue(Translate("BaseValue.MagicResistance"), Sheet.BaseValues.MagicResistance)
+                @RenderBaseValue(Translate("BaseValue.BaseInitiative"), Sheet.BaseValues.BaseInitiative)
+                @RenderBaseValue(Translate("BaseValue.BaseAttack"), Sheet.BaseValues.BaseAttack)
+                @RenderBaseValue(Translate("BaseValue.BaseParry"), Sheet.BaseValues.BaseParry)
+                @RenderBaseValue(Translate("BaseValue.BaseLongRangeAttack"), Sheet.BaseValues.BaseLongRangeAttack)
 
             </table>
 
