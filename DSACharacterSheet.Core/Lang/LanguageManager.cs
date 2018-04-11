@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
@@ -124,6 +125,20 @@ namespace DSACharacterSheet.Core.Lang
 
 
         #region static
+
+        public static CultureInfo CurrentUICulture
+        {
+            get { return ServiceLocator.Current.GetInstance<LanguageManager>().CurrentCulture; }
+            set
+            {
+                var temp = ServiceLocator.Current.GetInstance<LanguageManager>();
+
+                if (temp.CurrentCulture == value)
+                    return;
+
+                temp.CurrentCulture = value;
+            }
+        }
 
         public static string Translate(string key)
         {
