@@ -125,11 +125,6 @@ namespace DSACharacterSheet.Core.Lang
 
         #region static
 
-        public static CultureInfo CurrentUICulture
-        {
-            get { return ServiceLocator.Current.GetInstance<LanguageManager>().CurrentCulture; }
-        }
-
         public static string Translate(string key)
         {
             var lang = ServiceLocator.Current.GetInstance<LanguageManager>();
