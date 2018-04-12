@@ -22,8 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSACharacterSheet.Core", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSACharacterSheet.UnitTest", "DSACharacterSheet.UnitTest\DSACharacterSheet.UnitTest.csproj", "{9DB9E8D5-882A-4F62-A133-A6E191E01EF4}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DSACharacterSheet.Desktop.Setup", "DSACharacterSheet.Desktop.Setup\DSACharacterSheet.Desktop.Setup.vdproj", "{B8D7D77B-531F-4B2F-91CF-98FDD681C018}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +44,6 @@ Global
 		{9DB9E8D5-882A-4F62-A133-A6E191E01EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB9E8D5-882A-4F62-A133-A6E191E01EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB9E8D5-882A-4F62-A133-A6E191E01EF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8D7D77B-531F-4B2F-91CF-98FDD681C018}.Debug|Any CPU.ActiveCfg = Debug
-		{B8D7D77B-531F-4B2F-91CF-98FDD681C018}.Debug|Any CPU.Build.0 = Debug
-		{B8D7D77B-531F-4B2F-91CF-98FDD681C018}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
