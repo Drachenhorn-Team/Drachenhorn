@@ -22,11 +22,11 @@
         <ListView Name="List" ItemsSource="{Binding .}"
                       PreviewMouseWheel="List_PreviewMouseWheel"
                       MinHeight="150" Margin="5">
-            <ListView.Resources>
-                <Style TargetType="ListViewItem">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
                     <EventSetter Event="MouseDoubleClick" Handler="List_MouseDoubleClick"/>
                 </Style>
-            </ListView.Resources>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{lang:Translate CharacterSheet.Name}"
