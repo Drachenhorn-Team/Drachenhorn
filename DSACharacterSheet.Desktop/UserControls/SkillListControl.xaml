@@ -27,13 +27,13 @@
 
         <DockPanel DockPanel.Dock="Left">
             <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
-                <Button Click="AddButton_Click" Width="40" Height="40" Margin="5"
+                <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Add}">
-                    <Image Source="{StaticResource AddIcon}"/>
+                    <Image Source="{StaticResource AddIcon}" Margin="2"/>
                 </Button>
-                <Button Click="RemoveButton_Click" Width="40" Height="40" Margin="5"
+                <Button Click="RemoveButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Remove}">
-                    <Image Source="{StaticResource RemoveIcon}"/>
+                    <Image Source="{StaticResource RemoveIcon}" Margin="2"/>
                 </Button>
             </WrapPanel>
 
@@ -44,7 +44,8 @@
                     <GroupStyle>
                         <GroupStyle.HeaderTemplate>
                             <DataTemplate>
-                                <TextBlock FontWeight="Bold" Background="LightGray" FontSize="14" Text="{Binding Name}"/>
+                                <TextBlock FontWeight="Bold" Background="{StaticResource SpecialBackgroundColor}"
+                                           FontSize="14" Text="{Binding Name}"/>
                             </DataTemplate>
                         </GroupStyle.HeaderTemplate>
                     </GroupStyle>
@@ -53,33 +54,27 @@
                 <ListView.View>
                     <GridView>
                         <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
                                 <Setter Property="IsEnabled" Value="False"/>
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="{lang:Translate CharacterSheet.Name}">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Name}"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <GridViewColumn Header="{lang:Translate CharacterSheet.Name}"
+                                        DisplayMemberBinding="{Binding Name}"/>
                         <GridViewColumn Header="{lang:Translate CharacterSheet.RollAttributes}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate DataType="skills1:Skill">
                                     <WrapPanel MinWidth="100">
-                                        <TextBlock Text="("/>
                                         <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}"/>
                                         <TextBlock Text="|"/>
                                         <TextBlock Text="{Binding RollAttributes.Roll_2, Converter={StaticResource EnumToAbbreviationConverter}}"/>
                                         <TextBlock Text="|"/>
                                         <TextBlock Text="{Binding RollAttributes.Roll_3, Converter={StaticResource EnumToAbbreviationConverter}}"/>
-                                        <TextBlock Text=")"/>
                                     </WrapPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="{lang:Translate CharacterSheet.Value}" DisplayMemberBinding="{Binding Value}"/>
+                        <GridViewColumn Header="{lang:Translate CharacterSheet.Value}"
+                                        DisplayMemberBinding="{Binding Value}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

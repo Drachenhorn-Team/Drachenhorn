@@ -9,13 +9,13 @@
              d:DesignHeight="300" d:DesignWidth="600">
     <DockPanel>
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
-            <Button Click="AddButton_Click" Width="40" Height="40" Margin="5"
+            <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Add}">
-                <Image Source="{StaticResource AddIcon}"/>
+                <Image Source="{StaticResource AddIcon}" Margin="2"/>
             </Button>
-            <Button Click="RemoveButton_Click" Width="40" Height="40" Margin="5"
+            <Button Click="RemoveButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Remove}">
-                <Image Source="{StaticResource RemoveIcon}"/>
+                <Image Source="{StaticResource RemoveIcon}" Margin="2"/>
             </Button>
         </WrapPanel>
 

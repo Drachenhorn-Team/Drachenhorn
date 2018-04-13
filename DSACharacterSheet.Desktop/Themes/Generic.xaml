@@ -10,11 +10,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type userElements:InfoButton}">
-                    <Button Name="PART_InfoButton" Grid.Column="1"
+                    <Button Name="PART_InfoButton"
                             IsEnabled="{TemplateBinding CanShowInfo}"
-                            Width="20" Height="20"
-                            Background="Transparent" BorderBrush="Transparent">
-                        <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
+                            Width="28" Height="28">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality"
                                HorizontalAlignment="Center" VerticalAlignment="Center"
                                Source="{DynamicResource InfoIcon}">
                             <Image.Style>

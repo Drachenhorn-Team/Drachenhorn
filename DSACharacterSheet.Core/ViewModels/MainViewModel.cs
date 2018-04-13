@@ -86,7 +86,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         private void ExecuteSave()
         {
-            if (!string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.FilePath))
+            if (!string.IsNullOrEmpty(CurrentSheetViewModel?.CurrentSheet?.FilePath))
                 try
                 {
                     CurrentSheetViewModel.Save();
