@@ -5,6 +5,28 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                     mc:Ignorable="d">
 
+    <Color x:Key="ForegroundColor">#9199BE</Color>
+    <Color x:Key="ForegroundDisabledColor">#54678F</Color>
+
+    <Color x:Key="BackgroundColor">#212624</Color>
+    <Color x:Key="BackgroundColor2">#6C6B74</Color>
+    <Color x:Key="BackgroundHightlightColor">#6C6B74</Color>
+    <Color x:Key="BackgroundClickColor">#6C6B74</Color>
+    <Color x:Key="BackgroundMouseOverColor">#6C6B74</Color>
+    <Color x:Key="BackgroundDisabledColor">#212624</Color>
+
+    <Color x:Key="BorderColor">#111111</Color>
+    <Color x:Key="BorderHightlightColor">#6C6B74</Color>
+    <Color x:Key="BorderClickColor">#54678F</Color>
+    <Color x:Key="BorderMouseOverColor">#6C6B74</Color>
+
+    <Color x:Key="SeperatorColor">#111111</Color>
+
+    <Color x:Key="MenuBackgroundColor">#212624</Color>
+    <Color x:Key="MenuBorderColor">#111111</Color>
+
+    <Color x:Key="InfoColor">#FFFF8000</Color>
+
     <SolidColorBrush x:Key="ForegroundColor" Color="{DynamicResource BaseForegroundColor}"/>
     <SolidColorBrush x:Key="SpecialForegroundColor" Color="{DynamicResource BaseForegroundSpecialColor}"/>
     <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource BaseColor}"/>
@@ -106,6 +128,11 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{StaticResource ClickedBackgroundColor}"/>
                             <Setter Property="BorderBrush" Value="{StaticResource ClickedBorderColor}"/>
+                        </Trigger>
+                        
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundColor}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
