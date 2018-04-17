@@ -36,7 +36,8 @@ namespace DSACharacterSheet.Core.Lang
         /// <returns>Translated Text</returns>
         public string this[string key] => TranslateText(key);
 
-        private readonly ResourceManager ResourceManager = new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
+        private readonly ResourceManager ResourceManager =
+            new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
         /// <summary>
         /// Returns the translated Text for the TranslateID.

@@ -5,73 +5,48 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                     mc:Ignorable="d">
 
-    <Color x:Key="ForegroundColor">#9199BE</Color>
-    <Color x:Key="ForegroundDisabledColor">#54678F</Color>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource ForegroundColor}"/>
+    <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundDisabledColor}"/>
 
-    <Color x:Key="BackgroundColor">#212624</Color>
-    <Color x:Key="BackgroundColor2">#6C6B74</Color>
-    <Color x:Key="BackgroundHightlightColor">#6C6B74</Color>
-    <Color x:Key="BackgroundClickColor">#6C6B74</Color>
-    <Color x:Key="BackgroundMouseOverColor">#6C6B74</Color>
-    <Color x:Key="BackgroundDisabledColor">#212624</Color>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
+    <SolidColorBrush x:Key="BackgroundBrush2" Color="{DynamicResource BackgroundColor2}"/>
+    <SolidColorBrush x:Key="BackgroundHightlightBrush" Color="{DynamicResource BackgroundHightlightColor}"/>
+    <SolidColorBrush x:Key="BackgroundClickBrush" Color="{DynamicResource BackgroundClickColor}"/>
+    <SolidColorBrush x:Key="BackgroundMouseOverBrush" Color="{DynamicResource BackgroundMouseOverColor}"/>
+    <SolidColorBrush x:Key="BackgroundDisabledBrush" Color="{DynamicResource BackgroundDisabledColor}"/>
 
-    <Color x:Key="BorderColor">#111111</Color>
-    <Color x:Key="BorderHightlightColor">#6C6B74</Color>
-    <Color x:Key="BorderClickColor">#54678F</Color>
-    <Color x:Key="BorderMouseOverColor">#6C6B74</Color>
+    <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}"/>
+    <SolidColorBrush x:Key="BorderHightlightBrush" Color="{DynamicResource BorderHightlightColor}"/>
+    <SolidColorBrush x:Key="BorderClickBrush" Color="{DynamicResource BorderClickColor}"/>
+    <SolidColorBrush x:Key="BorderMouseOverBrush" Color="{DynamicResource BorderMouseOverColor}"/>
 
-    <Color x:Key="SeperatorColor">#111111</Color>
+    <SolidColorBrush x:Key="SeperatorBrush" Color="{DynamicResource SeperatorColor}"/>
 
-    <Color x:Key="MenuBackgroundColor">#212624</Color>
-    <Color x:Key="MenuBorderColor">#111111</Color>
+    <SolidColorBrush x:Key="MenuBackgroundBrush" Color="{DynamicResource MenuBackgroundColor}"/>
+    <SolidColorBrush x:Key="MenuBorderBrush" Color="{DynamicResource MenuBorderColor}"/>
 
-    <Color x:Key="InfoColor">#FFFF8000</Color>
-
-    <SolidColorBrush x:Key="ForegroundColor" Color="{DynamicResource BaseForegroundColor}"/>
-    <SolidColorBrush x:Key="SpecialForegroundColor" Color="{DynamicResource BaseForegroundSpecialColor}"/>
-    <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource BaseColor}"/>
-    <SolidColorBrush x:Key="SpecialBackgroundColor" Color="{DynamicResource BaseSpecialColor}"/>
-    <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource BaseBorderColor}"/>
-
-    <SolidColorBrush x:Key="SeperatorColor" Color="{DynamicResource BaseBorderColor}"/>
-
-    <SolidColorBrush x:Key="HighlightBorderColor" Color="{DynamicResource BaseSpecialColor}"/>
-    <SolidColorBrush x:Key="HighlightBackgroundColor" Color="{DynamicResource BaseSpecialColor}" Opacity="0.3"/>
-
-    <SolidColorBrush x:Key="ClickedBackgroundColor" Color="{DynamicResource BaseSpecialColor}"/>
-    <SolidColorBrush x:Key="ClickedBorderColor" Color="{DynamicResource BaseSpecialColor}"/>
-
-    <SolidColorBrush x:Key="MouseOverBorderColor" Color="{DynamicResource BaseBorderColor}"/>
-    <SolidColorBrush x:Key="MouseOverBackgroundColor" Color="{DynamicResource BaseSpecialColor}" Opacity="0.3"/>
-
-    <SolidColorBrush x:Key="DisabledBackgroundColor" Color="{DynamicResource BaseColor}"/>
-    <SolidColorBrush x:Key="DisabledForegroundColor" Color="{DynamicResource BaseForegroundSpecialColor}"/>
-
-    <SolidColorBrush x:Key="MenuBarBackgroundColor" Color="{DynamicResource BaseColor}"/>
-    <SolidColorBrush x:Key="MenuBarBorderColor" Color="{DynamicResource BaseBorderColor}"/>
-
-    <SolidColorBrush x:Key="InfoColor" Color="{DynamicResource BaseInfoColor}"/>
+    <SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
 
     <FontFamily x:Key="Morpheus">../Resources/#Morpheus</FontFamily>
 
     <Style TargetType="{x:Type Hyperlink}">
-        <Setter Property="Foreground" Value="{StaticResource SpecialForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundDisabledBrush}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+                <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style TargetType="{x:Type ProgressBar}">
-        <Setter Property="Foreground" Value="{StaticResource InfoColor}"/>
-        <Setter Property="Background" Value="{StaticResource SpecialBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush2}"/>
     </Style>
 
     <Style x:Key="FrameBorder" TargetType="{x:Type Border}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="CornerRadius" Value="5"/>
         <Setter Property="Margin" Value="5"/>
@@ -80,12 +55,12 @@
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
     </Style>
 
     <Style TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
     </Style>
 
     <Style x:Key="MorpheusTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
@@ -94,7 +69,7 @@
     </Style>
 
     <Style TargetType="{x:Type Window}" BasedOn="{StaticResource {x:Type Window}}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
     </Style>
 
     <Style TargetType="{x:Type userElements:InfoButton}">
@@ -103,8 +78,8 @@
     
     <Style TargetType="Button">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
-        <Setter Property="Background" Value="{StaticResource BorderColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource SpecialBackgroundColor}"/>
+        <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush2}"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -121,18 +96,18 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource HighlightBackgroundColor}"/>
-                            <Setter Property="BorderBrush" Value="{StaticResource HighlightBorderColor}"/>
+                            <Setter Property="Background" Value="{StaticResource BackgroundHightlightBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHightlightBrush}"/>
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{StaticResource ClickedBackgroundColor}"/>
-                            <Setter Property="BorderBrush" Value="{StaticResource ClickedBorderColor}"/>
+                            <Setter Property="Background" Value="{StaticResource BackgroundClickBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderClickBrush}"/>
                         </Trigger>
                         
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundColor}"/>
-                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundColor}"/>
+                            <Setter Property="Background" Value="{StaticResource BackgroundDisabledBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDisabledBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -141,7 +116,7 @@
     </Style>
 
     <Style TargetType="{x:Type Separator}">
-        <Setter Property="Background" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Focusable" Value="false"/>
         <Setter Property="Template">
@@ -154,23 +129,23 @@
     </Style>
 
     <Style TargetType="{x:Type StatusBar}">
-        <Setter Property="Background" Value="{StaticResource MenuBarBackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource MenuBarBorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MenuBorderBrush}"/>
     </Style>
 
     <Style x:Key="VerticalSeperatorStyle" TargetType="{x:Type Separator}"
            BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}">
-        <Setter Property="Background" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource SeperatorBrush}"/>
     </Style>
 
     <Style TargetType="{x:Type ToolBarTray}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
         <Setter Property="IsLocked" Value="True"/>
     </Style>
 
     <Style TargetType="{x:Type ToolBar}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="ToolBar.OverflowMode" Value="Never"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -209,7 +184,7 @@
                             <Setter Property="DockPanel.Dock" TargetName="ToolBarHeader" Value="Top"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDisabledBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -218,14 +193,14 @@
     </Style>
 
     <Style TargetType="{x:Type Menu}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="Margin" Value="0 0 0 -0.1"/>
     </Style>
 
     <Style TargetType="{x:Type MenuItem}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
@@ -293,12 +268,12 @@
                             <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource HighlightBackgroundColor}"/>
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource HighlightBorderColor}"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource BackgroundHightlightBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource BorderHightlightBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{StaticResource DisabledForegroundColor}"/>
-                            <Setter Property="Fill" TargetName="GlyphPanel" Value="{StaticResource DisabledBackgroundColor}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{StaticResource ForegroundDisabledBrush}"/>
+                            <Setter Property="Fill" TargetName="GlyphPanel" Value="{StaticResource BackgroundDisabledBrush}"/>
                         </Trigger>
                         <Trigger Property="CanContentScroll" SourceName="SubMenuScrollViewer" Value="False">
                             <Setter Property="Canvas.Top" TargetName="OpaqueRect" Value="{Binding VerticalOffset, ElementName=SubMenuScrollViewer}"/>
@@ -312,15 +287,15 @@
 
 
     <Style TargetType="{x:Type TabControl}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabControl}">
                     <Grid x:Name="templateRoot" ClipToBounds="True" SnapsToDevicePixels="True"
                           KeyboardNavigation.TabNavigation="Local" Margin="0 -1 0 0"
-                          Background="{StaticResource BackgroundColor}">
+                          Background="{StaticResource BackgroundBrush}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition x:Name="ColumnDefinition0"/>
                             <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
@@ -379,7 +354,7 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="TextElement.Foreground"
                                     TargetName="templateRoot"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -388,12 +363,12 @@
     </Style>
 
     <Style TargetType="{x:Type TabPanel}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
     </Style>
 
     <Style TargetType="{x:Type TabItem}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -412,9 +387,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Left"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,1,0,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,1,0,1"/>
                         </MultiDataTrigger>
@@ -424,9 +399,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Bottom"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,0,1,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,0,1,1"/>
                         </MultiDataTrigger>
@@ -436,9 +411,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Right"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="0,1,1,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="0,1,1,1"/>
                         </MultiDataTrigger>
@@ -448,9 +423,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,1,1,0"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,1,1,0"/>
                         </MultiDataTrigger>
@@ -461,9 +436,9 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Opacity" TargetName="contentPresenter" Value="0.56"/>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource DisabledBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundDisabledBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource BorderColor}"/>
+                                    Value="{StaticResource BorderBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,1,0,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,1,0,1"/>
                         </MultiDataTrigger>
@@ -474,9 +449,9 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Opacity" TargetName="contentPresenter" Value="0.56"/>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource DisabledBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundDisabledBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource BorderColor}"/>
+                                    Value="{StaticResource BorderBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,0,1,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,0,1,1"/>
                         </MultiDataTrigger>
@@ -487,9 +462,9 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Opacity" TargetName="contentPresenter" Value="0.56"/>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource DisabledBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundDisabledBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource BorderColor}"/>
+                                    Value="{StaticResource BorderBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="0,1,1,1"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="0,1,1,1"/>
                         </MultiDataTrigger>
@@ -500,9 +475,9 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Opacity" TargetName="contentPresenter" Value="0.56"/>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource DisabledBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundDisabledBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource BorderColor}"/>
+                                    Value="{StaticResource BorderBrush}"/>
                             <Setter Property="BorderThickness" TargetName="innerBorder" Value="1,1,1,0"/>
                             <Setter Property="BorderThickness" TargetName="mainBorder" Value="1,1,1,0"/>
                         </MultiDataTrigger>
@@ -520,9 +495,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Left"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="Panel.ZIndex" Value="1"/>
                             <Setter Property="Margin" Value="-2,-2,0,-2"/>
                             <Setter Property="Opacity" TargetName="innerBorder" Value="1"/>
@@ -543,9 +518,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Bottom"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="Panel.ZIndex" Value="1"/>
                             <Setter Property="Margin" Value="-2,0,-2,-2"/>
                             <Setter Property="Opacity" TargetName="innerBorder" Value="1"/>
@@ -566,9 +541,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Right"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="Panel.ZIndex" Value="1"/>
                             <Setter Property="Margin" Value="0,-2,-2,-2"/>
                             <Setter Property="Opacity" TargetName="innerBorder" Value="1"/>
@@ -589,9 +564,9 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBackgroundColor}"/>
+                                    Value="{StaticResource BackgroundHightlightBrush}"/>
                             <Setter Property="BorderBrush" TargetName="mainBorder"
-                                    Value="{StaticResource HighlightBorderColor}"/>
+                                    Value="{StaticResource BorderHightlightBrush}"/>
                             <Setter Property="Panel.ZIndex" Value="1"/>
                             <Setter Property="Margin" Value="-2,-2,-2,0"/>
                             <Setter Property="Opacity" TargetName="innerBorder" Value="1"/>
@@ -621,16 +596,16 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
                             <Setter Property="Background"
-                                    Value="{StaticResource HighlightBackgroundColor}" />
+                                    Value="{StaticResource BackgroundHightlightBrush}" />
                             <Setter Property="Foreground"
-                                    Value="{StaticResource ForegroundColor}" />
+                                    Value="{StaticResource ForegroundBrush}" />
                             <Setter Property="BorderThickness" Value="2" />
                             <Setter Property="BorderBrush"
-                                    Value="{StaticResource HighlightBackgroundColor}" />
+                                    Value="{StaticResource BorderBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundColor}"/>
-                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundColor}"/>
+                            <Setter Property="Background" Value="{StaticResource BackgroundDisabledBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDisabledBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -644,9 +619,9 @@
 
 
     <Style TargetType="ListViewItem">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -666,28 +641,28 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource HighlightBackgroundColor}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource HighlightBorderColor}"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundHightlightBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BorderHightlightBrush}"/>
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{StaticResource HighlightBackgroundColor}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource HighlightBorderColor}"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundHightlightBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BorderHightlightBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style TargetType="{x:Type ListView}">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
     </Style>
 
     <Style TargetType="GridViewColumnHeader">
-        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -731,7 +706,7 @@
                                                 <Thickness>0,0,0,0</Thickness>
                                             </Setter.Value>
                                         </Setter>
-                                        <Setter Property="Panel.Background" Value="{StaticResource BackgroundColor}"/>
+                                        <Setter Property="Panel.Background" Value="{StaticResource BackgroundBrush}"/>
                                         <Setter Property="Control.Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="Thumb">
@@ -751,8 +726,8 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource HighlightBackgroundColor}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource HighlightBorderColor}"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundHightlightBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

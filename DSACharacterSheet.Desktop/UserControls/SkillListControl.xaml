@@ -44,7 +44,7 @@
                     <GroupStyle>
                         <GroupStyle.HeaderTemplate>
                             <DataTemplate>
-                                <TextBlock FontWeight="Bold" Background="{StaticResource SpecialBackgroundColor}"
+                                <TextBlock FontWeight="Bold" Background="{StaticResource BackgroundBrush2}"
                                            FontSize="14" Text="{Binding Name}"/>
                             </DataTemplate>
                         </GroupStyle.HeaderTemplate>

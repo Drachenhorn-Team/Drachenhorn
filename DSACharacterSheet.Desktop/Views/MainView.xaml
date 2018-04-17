@@ -65,7 +65,7 @@
                         <Image Source="{DynamicResource SaveAllIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <Separator Background="{StaticResource BorderColor}"/>
+                <Separator Background="{StaticResource BorderBrush}"/>
                 <MenuItem Header="{lang:Translate UI.Print}"
                           Command="{Binding Print}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
@@ -73,7 +73,7 @@
                         <Image Source="{DynamicResource PrintIcon}"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <Separator Background="{StaticResource BorderColor}"/>
+                <Separator Background="{StaticResource BorderBrush}"/>
                 <MenuItem Header="{lang:Translate UI.Properties}"
                           Command="{Binding ShowSettings}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
@@ -176,7 +176,7 @@
         <StatusBar x:Name="StatusBar" DataContext="{Binding SettingsView, Source={StaticResource Locator}}"
                    DockPanel.Dock="Bottom" Height="25" BorderThickness="0 2 0 0">
             <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}" >
-                <Border Background="{StaticResource InfoColor}" CornerRadius="10">
+                <Border Background="{StaticResource InfoBrush}" CornerRadius="10">
                     <Image Source="{StaticResource UpdateAvailableIcon}"
                            ToolTip="{lang:Translate Update.Available}"
                            Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
@@ -193,7 +193,7 @@
                     <WrapPanel Height="30">
                         <StackPanel Orientation="Horizontal"
                                     d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
-                            <Border BorderBrush="{StaticResource BorderColor}"
+                            <Border BorderBrush="{StaticResource BorderBrush}"
                                     Background="GhostWhite" BorderThickness="1" CornerRadius="1"
                                     ClipToBounds="True" Margin="0 2 4 2">
                                 <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
@@ -221,7 +221,7 @@
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
                 <DataTemplate>
-                    <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundColor}">
+                    <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundBrush}">
                         <controls:CharacterSheetControl/>
                     </ScrollViewer>
                 </DataTemplate>

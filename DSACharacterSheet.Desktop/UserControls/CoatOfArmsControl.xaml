@@ -11,7 +11,7 @@
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}"
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24"/>
         <Button Content="{lang:Translate UI.Edit}" Click="EditButton_Click" Margin="5" DockPanel.Dock="Bottom"/>
-        <Border BorderBrush="{StaticResource BorderColor}" BorderThickness="3" HorizontalAlignment="Center"
+        <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="3" HorizontalAlignment="Center"
                 VerticalAlignment="Center" Margin="5" Background="GhostWhite">
             <InkPresenter Strokes="{Binding Strokes}" ClipToBounds="True"
                           Width="{Binding Width}" Height="{Binding Height}" Margin="2"/>
