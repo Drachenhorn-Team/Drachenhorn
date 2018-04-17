@@ -38,7 +38,8 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0"
-                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                           ToolTip="{lang:Translate UI.TakesTime}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}"
                               SelectedItem="{Binding Settings.CurrentCulture}"
                               SelectionChanged="LanguageComboBox_SelectionChanged"

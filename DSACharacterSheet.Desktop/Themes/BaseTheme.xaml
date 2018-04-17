@@ -10,10 +10,10 @@
 
     <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
     <SolidColorBrush x:Key="BackgroundBrush2" Color="{DynamicResource BackgroundColor2}"/>
-    <SolidColorBrush x:Key="BackgroundHightlightBrush" Color="{DynamicResource BackgroundHightlightColor}"/>
-    <SolidColorBrush x:Key="BackgroundClickBrush" Color="{DynamicResource BackgroundClickColor}"/>
-    <SolidColorBrush x:Key="BackgroundMouseOverBrush" Color="{DynamicResource BackgroundMouseOverColor}"/>
-    <SolidColorBrush x:Key="BackgroundDisabledBrush" Color="{DynamicResource BackgroundDisabledColor}"/>
+    <SolidColorBrush x:Key="BackgroundHightlightBrush" Color="{DynamicResource BackgroundHightlightColor}" Opacity="0.3"/>
+    <SolidColorBrush x:Key="BackgroundClickBrush" Color="{DynamicResource BackgroundClickColor}" Opacity="0.3"/>
+    <SolidColorBrush x:Key="BackgroundMouseOverBrush" Color="{DynamicResource BackgroundMouseOverColor}" Opacity="0.3"/>
+    <SolidColorBrush x:Key="BackgroundDisabledBrush" Color="{DynamicResource BackgroundDisabledColor}" Opacity="0.3"/>
 
     <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}"/>
     <SolidColorBrush x:Key="BorderHightlightBrush" Color="{DynamicResource BorderHightlightColor}"/>

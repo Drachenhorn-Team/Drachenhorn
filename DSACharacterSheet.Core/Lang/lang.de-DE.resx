@@ -531,4 +531,7 @@
   <data name="Notification.Settings.Corrupted" xml:space="preserve">
     <value>Die Einstellungen konnten nicht ausgelesen werden und werden auf den Standard zurückgesetzt.</value>
   </data>
+  <data name="UI.TakesTime" xml:space="preserve">
+    <value>Dies könnte etwas dauern.</value>
+  </data>
 </root>

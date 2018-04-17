@@ -531,4 +531,7 @@
   <data name="Notification.Settings.Corrupted" xml:space="preserve">
     <value>Settings can not be read and will be reset.</value>
   </data>
+  <data name="UI.TakesTime" xml:space="preserve">
+    <value>This coud take some time.</value>
+  </data>
 </root>
