@@ -1,6 +1,5 @@
-﻿using System;
+﻿using DSACharacterSheet.Xml.Objects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DSACharacterSheet.FileReader.Objects;
 
 namespace DSACharacterSheet.UnitTest
 {

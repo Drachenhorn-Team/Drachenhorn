@@ -1,20 +1,15 @@
 ﻿using DSACharacterSheet.Core;
 using DSACharacterSheet.Core.Lang;
-using System;
-using System.Collections.Generic;
-using System.Deployment.Application;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Xml.Serialization;
-using CommonServiceLocator;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
 using GalaSoft.MvvmLight.Views;
+using System;
+using System.Deployment.Application;
+using System.Globalization;
+using System.IO;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.UserSettings
 {
@@ -43,10 +38,10 @@ namespace DSACharacterSheet.Desktop.UserSettings
         [XmlIgnore]
         public CultureInfo CurrentCulture
         {
-            get { return ServiceLocator.Current.GetInstance<LanguageManager>().CurrentCulture; }
+            get { return SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture; }
             set
             {
-                var temp = ServiceLocator.Current.GetInstance<LanguageManager>();
+                var temp = SimpleIoc.Default.GetInstance<LanguageManager>();
                 if (Equals(temp.CurrentCulture, value))
                     return;
                 temp.CurrentCulture = value;
@@ -68,6 +63,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         [XmlIgnore]
         private string _gitCommit;
+
         [XmlIgnore]
         public string GitCommit
         {
@@ -83,6 +79,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         [XmlIgnore]
         private VisualThemeType _visualTheme;
+
         [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme
         {
@@ -95,10 +92,10 @@ namespace DSACharacterSheet.Desktop.UserSettings
                 OnPropertyChanged();
             }
         }
-        
 
         [XmlIgnore]
         private bool _isUpdateAvailable;
+
         [XmlIgnore]
         public bool IsUpdateAvailable
         {
@@ -113,7 +110,6 @@ namespace DSACharacterSheet.Desktop.UserSettings
         }
 
         #endregion Properties
-
 
         #region c'tor
 
@@ -130,12 +126,12 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         #endregion c'tor
 
-
         #region Update
 
         public bool CanCheckUpdate => ApplicationDeployment.IsNetworkDeployed;
 
         public event UpdateCheckedHandler UpdateChecked;
+
         private void OnUpdateChecked(object sender, UpdateCheckedEventArgs args)
         {
             UpdateChecked?.Invoke(sender, args);
@@ -143,7 +139,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         public void CheckUpdateAsync()
         {
-            new Task(() => {
+            new Task(() =>
+            {
                 IsUpdateAvailable = CheckUpdate();
                 OnUpdateChecked(this, new UpdateCheckedEventArgs(IsUpdateAvailable));
             }).Start();
@@ -181,7 +178,6 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         #endregion Update
 
-
         #region Save/Load
 
         private static readonly string PropertiesDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DSACharacterSheet");
@@ -201,7 +197,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
                 using (var stream = new FileStream(PropertiesPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var serializer = new XmlSerializer(typeof(Settings));
-                    var temp = (Settings) serializer.Deserialize(stream);
+                    var temp = (Settings)serializer.Deserialize(stream);
                     return temp;
                 }
             }
@@ -211,7 +207,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
             }
             catch (InvalidOperationException)
             {
-                var service = ServiceLocator.Current.GetInstance<IDialogService>();
+                var service = SimpleIoc.Default.GetInstance<IDialogService>();
 
                 service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
                 return new Settings();

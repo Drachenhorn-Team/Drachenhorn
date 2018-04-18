@@ -1,9 +1,4 @@
 ﻿using DSACharacterSheet.Core.Printing.Exceptions;
-using DSACharacterSheet.FileReader;
-using PdfSharp;
-using PdfSharp.Pdf;
-using RazorEngine;
-using RazorEngine.Templating;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,8 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DSACharacterSheet.FileReader.Sheet;
-using TheArtOfDev.HtmlRenderer.PdfSharp;
+using DSACharacterSheet.Xml.Sheet;
+using RazorLight;
 
 namespace DSACharacterSheet.Core.Printing
 {
@@ -29,10 +24,12 @@ namespace DSACharacterSheet.Core.Printing
                 {
                     template = reader.ReadToEnd();
                 }
+            
+            var engine = new RazorLightEngineBuilder()
+                .UseMemoryCachingProvider()
+                .Build();
 
-            var result = Engine.Razor.RunCompile(template, "templateKey", null, sheet);
-
-            return result;
+            return Task.Run<string>(() => engine.CompileRenderAsync("templateKey", template, sheet)).Result;
         }
 
         public static void GenerateHtml(CharacterSheet sheet, string path)
@@ -57,22 +54,5 @@ namespace DSACharacterSheet.Core.Printing
         }
 
         #endregion Generate HTML
-
-        #region Generate Pdf
-
-        public static void GeneratePdf(CharacterSheet sheet, string path)
-        {
-            try
-            {
-                PdfDocument pdf = PdfGenerator.GeneratePdf(GenerateHtml(sheet), PageSize.A4);
-                pdf.Save(path);
-            }
-            catch (Exception e)
-            {
-                throw new PrintingException(path + " can not be generated.", e);
-            }
-        }
-
-        #endregion Generate Pdf
     }
 }

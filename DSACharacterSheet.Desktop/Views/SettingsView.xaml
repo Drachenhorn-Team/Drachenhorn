@@ -11,54 +11,54 @@
         mc:Ignorable="d"
         Title="{lang:Translate UI.Properties}" Height="500"  Width="700">
     <Window.Resources>
-        <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultures"/>
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-        <converter:EnumListStringConverter x:Key="EnumListStringConverter"/>
-        <converter:EnumToStringConverter x:Key="EnumToStringConverter"/>
+        <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultures" />
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
+        <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="VisualThemeTypes">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enum:VisualThemeType"/>
+                <x:Type TypeName="enum:VisualThemeType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
     <Window.DataContext>
-        <Binding Path="SettingsView" Source="{StaticResource Locator}"/>
+        <Binding Path="SettingsView" Source="{StaticResource Locator}" />
     </Window.DataContext>
     <TabControl>
         <TabItem Header="{lang:Translate UI.Properties.Misc}">
             <Grid DockPanel.Dock="Top" Margin="10" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="{lang:Translate UI.Language}" Grid.Column="0"
                            ToolTip="{lang:Translate UI.TakesTime}"
-                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                           VerticalAlignment="Center" HorizontalAlignment="Center" />
                 <ComboBox ItemsSource="{Binding Source={StaticResource Languages}}"
                               SelectedItem="{Binding Settings.CurrentCulture}"
                               SelectionChanged="LanguageComboBox_SelectionChanged"
                               VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="5">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding NativeName}"/>
+                            <TextBlock Text="{Binding NativeName}" />
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <Image x:Name="FlagImage" Width="20" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Grid.Row="0" Grid.Column="2"/>
+                           Grid.Row="0" Grid.Column="2" />
 
                 <TextBlock Text="{lang:Translate UI.VisualTheme}"
                                Grid.Column="0" Grid.Row="1"
-                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                               VerticalAlignment="Center" HorizontalAlignment="Center" />
                 <ComboBox ItemsSource="{Binding Converter={StaticResource EnumListStringConverter}, Source={StaticResource VisualThemeTypes}}"
                               Text="{Binding Settings.VisualTheme, Converter={StaticResource EnumToStringConverter}}"
-                              Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="5"/>
+                              Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="5" />
             </Grid>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
@@ -68,49 +68,48 @@
                     <Grid>
                         <Grid.Resources>
                             <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}"/>
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}" />
                             </ResourceDictionary>
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <TextBlock Text="{lang:Translate About.Version}"
-                                       Grid.Row="0" Grid.Column="0" Margin="5"/>
+                                       Grid.Row="0" Grid.Column="0" Margin="5" />
                         <TextBlock Text="{Binding Settings.Version}"
-                                       Grid.Row="0" Grid.Column="1" Margin="5"/>
+                                       Grid.Row="0" Grid.Column="1" Margin="5" />
 
                         <TextBlock Text="{lang:Translate Update.Available}"
                                Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
-                               Foreground="{StaticResource InfoBrush}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="5"/>
+                               Foreground="{StaticResource InfoBrush}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="5" />
 
-                        <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                        <Button Content="{Binding Settings.GitCommit, FallbackValue=commit}" Click="GitCommit_Click" Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="2" Grid.Column="0" Margin="5" />
+                        <Button Content="{Binding Settings.GitCommit, FallbackValue=commit}" Click="GitCommit_Click" Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Left" />
 
-                        <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="lightlike (DanielN)"/></Hyperlink></TextBlock>
-
+                        <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="3" Grid.Column="0" Margin="5" />
+                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="lightlike (DanielN)" /></Hyperlink></TextBlock>
 
                         <ProgressBar IsIndeterminate="True" Margin="5"
                                      Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
-                                     Visibility="{Binding IsCheckingUpdate, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                     Visibility="{Binding IsCheckingUpdate, Converter={StaticResource BoolToVisibilityConverter}}" />
 
                         <Button Content="{lang:Translate About.CheckForUpdate}"
                                 Command="{Binding CheckForUpdate}"
-                                Margin="5" Grid.Column="2" Grid.Row="4"/>
+                                Margin="5" Grid.Column="2" Grid.Row="4" />
 
                         <!--<xctk:BusyIndicator x:Name="BusyIndicator" BusyContent="{lang:Translate UpdateSourceTrigger.CheckForUpdate.Text}"
                                                 IsBusy="{Binding IsCheckingUpdate}"
-                                                Grid.Column="2" Grid.Row="0" Grid.RowSpan="4"/>-->
+                                                Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" />-->
                     </Grid>
                 </Border>
 
@@ -119,31 +118,31 @@
                     <Grid>
                         <Grid.Resources>
                             <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}"/>
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}" />
                             </ResourceDictionary>
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="{lang:Translate About.Images}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" FontSize="20"/>
+                        <TextBlock Text="{lang:Translate About.Images}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" FontSize="20" />
 
-                        <TextBlock Text="{lang:Translate About.OfficialImagesBy}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1"><Hyperlink NavigateUri="http://www.ulisses-spiele.de/sortiment/rollenspiele/das-schwarze-auge/informationen-zu-das-schwarze-auge/fan-und-kartenpaket/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Ulisses-Spiele"/></Hyperlink></TextBlock>
+                        <TextBlock Text="{lang:Translate About.OfficialImagesBy}" Grid.Row="1" Grid.Column="0" Margin="5" />
+                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1"><Hyperlink NavigateUri="http://www.ulisses-spiele.de/sortiment/rollenspiele/das-schwarze-auge/informationen-zu-das-schwarze-auge/fan-und-kartenpaket/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Ulisses-Spiele" /></Hyperlink></TextBlock>
 
-                        <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                        <TextBlock Margin="5" Grid.Row="2" Grid.Column="1"><Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="icons8"/></Hyperlink></TextBlock>
+                        <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="2" Grid.Column="0" Margin="5" />
+                        <TextBlock Margin="5" Grid.Row="2" Grid.Column="1"><Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="icons8" /></Hyperlink></TextBlock>
 
-                        <TextBlock Text="{lang:Translate About.FlagsBy}" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="http://www.famfamfam.com" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="famfamfam"/></Hyperlink></TextBlock>
+                        <TextBlock Text="{lang:Translate About.FlagsBy}" Grid.Row="3" Grid.Column="0" Margin="5" />
+                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="http://www.famfamfam.com" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="famfamfam" /></Hyperlink></TextBlock>
                     </Grid>
                 </Border>
             </StackPanel>

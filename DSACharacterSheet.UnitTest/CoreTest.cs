@@ -1,15 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.Core.Printing;
-using System.IO;
-using System.Diagnostics;
-using System.Reflection;
-using CommonServiceLocator;
+﻿using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Core.ViewModels;
-using DSACharacterSheet.FileReader.Sheet;
-using DSACharacterSheet.FileReader.Sheet.Common;
-using GalaSoft.MvvmLight.Ioc;
+using DSACharacterSheet.Xml.Sheet;
+using DSACharacterSheet.Xml.Sheet.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DSACharacterSheet.UnitTest
 {
@@ -29,13 +22,13 @@ namespace DSACharacterSheet.UnitTest
             var sheet = new CharacterSheet()
             {
                 Name = "test",
-                Race = new RaceInformation() { Name = "testRace"},
-                Culture = new CultureInformation() { Name = "testCulture", Specification = "test"},
-                Profession = new ProfessionInformation() { Name = "testProfession"}
+                Race = new RaceInformation() { Name = "testRace" },
+                Culture = new CultureInformation() { Name = "testCulture", Specification = "test" },
+                Profession = new ProfessionInformation() { Name = "testProfession" }
             };
 
             var result = PrintingManager.GenerateHtml(sheet);
-            
+
             //try
             //{
             //    var path = Path.Combine(Directory.GetCurrentDirectory(), "result.html");

@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DSACharacterSheet.Core.Settings;
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CommonServiceLocator;
-using DSACharacterSheet.Core.Settings;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -30,7 +21,6 @@ namespace DSACharacterSheet.Desktop.Views
 
             this.Loaded += (sender, args) => { LanguageComboBox_SelectionChanged(sender, null); };
         }
-
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -55,12 +45,13 @@ namespace DSACharacterSheet.Desktop.Views
             try
             {
                 FlagImage.Source = new BitmapImage(
-                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/" + ServiceLocator.Current.GetInstance<ISettings>().CurrentCulture.Name + ".png"));
+                    new Uri("pack://application:,,,/DSACharacterSheet.Desktop;component/Images/Flags/" +
+                            SimpleIoc.Default.GetInstance<ISettings>().CurrentCulture.Name + ".png"));
             }
             catch (IOException)
             {
                 FlagImage.Source = new BitmapImage(
-                    new Uri("pack://application:,,,/DSACharacterSheet.Core;component/Images/Flags/invariant.png"));
+                    new Uri("pack://application:,,,/DSACharacterSheet.Desktop;component/Images/Flags/invariant.png"));
             }
         }
     }

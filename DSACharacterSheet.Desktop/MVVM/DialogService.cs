@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using CommonServiceLocator;
-using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.Dialogs;
 using GalaSoft.MvvmLight.Views;
+using System;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace DSACharacterSheet.Desktop.MVVM
 {

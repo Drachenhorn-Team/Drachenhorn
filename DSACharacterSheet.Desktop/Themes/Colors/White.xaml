@@ -8,5 +8,4 @@
     <Color x:Key="BaseBorderColor">#16235A</Color>
 
     <Color x:Key="BaseInfoColor">#4070FF</Color>
-    
 </ResourceDictionary>

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DSACharacterSheet.Core.IO;
+using DSACharacterSheet.Core.Lang;
+using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Core.IO;
-using DSACharacterSheet.Core.Lang;
-using DSACharacterSheet.Desktop.Lang;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Sheet;
-using Microsoft.Win32;
+using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Desktop.IO
 {

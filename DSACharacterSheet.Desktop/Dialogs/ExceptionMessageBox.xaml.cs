@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace DSACharacterSheet.Desktop.Dialogs
 {
@@ -22,7 +13,6 @@ namespace DSACharacterSheet.Desktop.Dialogs
     {
         private string userExceptionMessage;
         private List<string> ExceptionInformationList = new List<string>();
-
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage)
         {
@@ -40,7 +30,7 @@ namespace DSACharacterSheet.Desktop.Dialogs
             treeView1.Items.Add(treeViewItem);
         }
 
-        void BuildTreeLayer(Exception e, TreeViewItem parent)
+        private void BuildTreeLayer(Exception e, TreeViewItem parent)
         {
             String exceptionInformation = "\n\r\n\r" + e.GetType().ToString() + "\n\r\n\r";
             parent.DisplayMemberPath = "Header";
@@ -71,7 +61,6 @@ namespace DSACharacterSheet.Desktop.Dialogs
             ExceptionInformationList.Add(exceptionInformation);
         }
 
-
         private void TreeView1_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (e.NewValue.GetType() == typeof(TreeViewItem)) textBox1.Text = "Exception";
@@ -100,7 +89,5 @@ namespace DSACharacterSheet.Desktop.Dialogs
         {
             Application.Current.Shutdown();
         }
-
     }
 }
-

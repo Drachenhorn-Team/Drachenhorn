@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonServiceLocator;
 using DSACharacterSheet.Core.IO;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Exceptions;
-using DSACharacterSheet.FileReader.Sheet;
+using DSACharacterSheet.Xml.Exceptions;
+using DSACharacterSheet.Xml.Sheet;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace DSACharacterSheet.Core.ViewModels
@@ -60,7 +59,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public void SaveAs()
         {
-            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
 
             try
             {
@@ -74,7 +73,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public void Open()
         {
-            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
 
             try
             {

@@ -1,21 +1,12 @@
 ﻿using DSACharacterSheet.Core.Objects;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Ink;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Xceed.Wpf.Toolkit;
 
 namespace DSACharacterSheet.Desktop.Views
@@ -26,6 +17,7 @@ namespace DSACharacterSheet.Desktop.Views
     public partial class CoatOfArmsPainterView : Window
     {
         private StrokeCollection _strokes;
+
         public StrokeCollection Strokes
         {
             get { return _strokes; }
@@ -88,7 +80,6 @@ namespace DSACharacterSheet.Desktop.Views
         }
 
         #endregion BrushType
-
 
         #region BrushStrength
 
@@ -155,12 +146,10 @@ namespace DSACharacterSheet.Desktop.Views
             _undoneStrokes.Remove(_undoneStrokes.Last());
         }
 
-
-
-
         #region OnPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

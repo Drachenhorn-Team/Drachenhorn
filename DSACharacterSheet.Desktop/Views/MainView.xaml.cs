@@ -1,14 +1,10 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using DSACharacterSheet.Core.Printing;
+﻿using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Core.ViewModels;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Sheet;
 using GalaSoft.MvvmLight.Messaging;
+using System;
+using System.Windows;
+using System.Windows.Media;
+using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -24,7 +20,6 @@ namespace DSACharacterSheet.Desktop.Views
 
             //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
 
-
             if (!String.IsNullOrEmpty(path)) OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
@@ -37,7 +32,7 @@ namespace DSACharacterSheet.Desktop.Views
             {
                 if (this.DataContext is MainViewModel)
                 {
-                    var model = (MainViewModel) this.DataContext;
+                    var model = (MainViewModel)this.DataContext;
                     var sheetModel = new CharacterSheetViewModel(CharacterSheet.Load(path));
                     model.CharacterSheetViewModels.Add(sheetModel);
                     model.CurrentSheetViewModel = sheetModel;
@@ -56,7 +51,7 @@ namespace DSACharacterSheet.Desktop.Views
             {
                 if (this.DataContext is MainViewModel)
                 {
-                    var model = (MainViewModel) this.DataContext;
+                    var model = (MainViewModel)this.DataContext;
                     new PrintView(PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet)).ShowDialog();
                 }
             }
