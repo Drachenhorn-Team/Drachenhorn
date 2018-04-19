@@ -7,6 +7,7 @@
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
+             xmlns:images="clr-namespace:DSACharacterSheet.Core.Images;assembly=DSACharacterSheet.Core"
              mc:Ignorable="d"
              d:DesignHeight="5000" d:DesignWidth="900"
              d:DataContext="{d:DesignInstance vm:CharacterSheetViewModel}">
@@ -16,7 +17,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <Image Source="/DSACharacterSheet.Core;component\Images\DSAFanLogo.png" Width="300" />
+        <Image Source="{Binding Source={x:Static images:Common.DSAFanLogo}}" Width="300" />
         <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center" />
 
         <Border Style="{StaticResource FrameBorder}">
@@ -82,7 +83,7 @@
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
                 <controls:CoatOfArmsControl
                     DataContext="{Binding CurrentSheet.CoatOfArms}"
-                    Margin="5" />
+                    Margin="5" Width="400" />
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="2">

@@ -31,7 +31,13 @@ namespace DSACharacterSheet.Desktop.UserControls
             if (!(this.DataContext is CoatOfArms))
                 return;
 
-            var view = new CoatOfArmsPainterView(((CoatOfArms)this.DataContext).Strokes);
+            var view = new CoatOfArmsPainterView(((CoatOfArms)this.DataContext).Base64String);
+
+            view.Closing += (s, args) =>
+            {
+                ((CoatOfArms) this.DataContext).Base64String = view.GetBase64();
+            };
+
             view.Show();
         }
     }

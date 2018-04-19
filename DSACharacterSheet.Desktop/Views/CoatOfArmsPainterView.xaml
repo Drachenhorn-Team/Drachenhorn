@@ -6,8 +6,8 @@
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         mc:Ignorable="d"
-        Background="LightGray"
         ResizeMode="CanMinimize"
         Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
     <DockPanel>
@@ -16,13 +16,19 @@
                 <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
             </WrapPanel.Resources>
 
-            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" IsChecked="True" Checked="BrushType_Checked_1" ToolTip="{lang:Translate Painter.Pencil}">
-                <Image Source="{Binding Source={StaticResource PencilIcon}}" />
+            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
+                         IsChecked="True" Checked="BrushType_Checked_1"
+                         ToolTip="{lang:Translate Painter.Pencil}">
+                <Image Source="{Binding Source={StaticResource PencilIcon}}"/>
             </RadioButton>
-            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_2" ToolTip="{lang:Translate Painter.Eraser}">
+            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
+                         Checked="BrushType_Checked_2"
+                         ToolTip="{lang:Translate Painter.Eraser}">
                 <Image Source="{Binding Source={StaticResource EraserIcon}}" />
             </RadioButton>
-            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_3" ToolTip="{lang:Translate Painter.Select}">
+            <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
+                         Checked="BrushType_Checked_3"
+                         ToolTip="{lang:Translate Painter.Select}">
                 <Image Source="{Binding Source={StaticResource SelectIcon}}" />
             </RadioButton>
 
@@ -67,8 +73,13 @@
                               Width="200" Margin="2" />
         </WrapPanel>
 
-        <Border Background="GhostWhite" BorderBrush="{StaticResource BorderBrush}" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="910" Height="610">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True" Width="{Binding Width}" Height="{Binding Height}" Margin="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Border Name="InkBorder" Background="GhostWhite" BorderBrush="{StaticResource BorderBrush}"
+                BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="910" Height="610">
+            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True"
+                       Height="{Binding ElementName=InkBorder, Path=ActualHeight}"
+                       Width="{Binding ElementName=InkBorder, Path=ActualWidth}"
+                       VerticalAlignment="Top" HorizontalAlignment="Left">
                 <InkCanvas.DefaultDrawingAttributes>
                     <DrawingAttributes Height=".7" Width=".7" />
                 </InkCanvas.DefaultDrawingAttributes>

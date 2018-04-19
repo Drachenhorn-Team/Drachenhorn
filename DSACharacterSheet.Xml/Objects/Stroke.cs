@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Ink;
+using System.Linq;
 
 namespace DSACharacterSheet.Xml.Objects
 {
-    public class CustomStroke : BindableBase, IEnumerable<Point>
+    public class Stroke : BindableBase, IEnumerable<Point>
     {
         private Color _color = Color.Black;
 
@@ -36,9 +36,9 @@ namespace DSACharacterSheet.Xml.Objects
             }
         }
 
-        private List<Point> _points = new List<Point>();
+        private IList<Point> _points = new List<Point>();
 
-        public List<Point> Points
+        public IList<Point> Points
         {
             get { return _points; }
             private set
@@ -52,7 +52,7 @@ namespace DSACharacterSheet.Xml.Objects
 
         public int Count
         {
-            get { return Points.Count; }
+            get { return Points.Count(); }
         }
 
         public Point this[int index]
@@ -62,19 +62,16 @@ namespace DSACharacterSheet.Xml.Objects
 
         #region c'tor
 
-        public CustomStroke(Stroke stroke)
+        public Stroke(IEnumerable<Point> points, Color color, double width)
         {
-            Color = Color.FromArgb(
-                stroke.DrawingAttributes.Color.A,
-                stroke.DrawingAttributes.Color.R,
-                stroke.DrawingAttributes.Color.G,
-                stroke.DrawingAttributes.Color.B
-                );
+            Color = color;
 
-            Width = stroke.DrawingAttributes.Width;
+            Width = width;
+            //Width = stroke.DrawingAttributes.Width;
 
-            foreach (var point in stroke.GetBezierStylusPoints())
-                Points.Add(new Point(Convert.ToInt32(point.X), Convert.ToInt32(point.Y)));
+            foreach (var point in points)
+            //foreach (var point in stroke.GetBezierStylusPoints())
+                    Points.Add(new Point(Convert.ToInt32(point.X), Convert.ToInt32(point.Y)));
         }
 
         #endregion c'tor

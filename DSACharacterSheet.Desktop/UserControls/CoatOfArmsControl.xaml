@@ -5,16 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <converter:Base64ImageConverter x:Key="Base64ImageConverter"/>
+    </UserControl.Resources>
     <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}"
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
-        <Button Content="{lang:Translate UI.Edit}" Click="EditButton_Click" Margin="5" DockPanel.Dock="Bottom" />
-        <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="3" HorizontalAlignment="Center"
-                VerticalAlignment="Center" Margin="5" Background="GhostWhite">
-            <InkPresenter Strokes="{Binding Strokes}" ClipToBounds="True"
-                          Width="{Binding Width}" Height="{Binding Height}" Margin="2" />
+        <Button Content="{lang:Translate UI.New}" Click="EditButton_Click" Margin="5" DockPanel.Dock="Bottom" />
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+            <Image Source="{Binding Base64String, Converter={StaticResource Base64ImageConverter}}"/>
+            <!--<InkPresenter Strokes="{Binding Strokes}" ClipToBounds="True"
+                          Width="{Binding Width}" Height="{Binding Height}" Margin="2" />-->
         </Border>
     </DockPanel>
 </UserControl>
