@@ -1,19 +1,8 @@
 ﻿using DSACharacterSheet.Desktop.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DSACharacterSheet.FileReader.Sheet.Common;
+using DSACharacterSheet.Xml.Sheet.Common;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
@@ -35,7 +24,6 @@ namespace DSACharacterSheet.Desktop.UserControls
                 return parent;
             else
                 return FindParent<T>(parent);
-
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)

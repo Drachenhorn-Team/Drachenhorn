@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Sheet;
+using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Core.IO
 {

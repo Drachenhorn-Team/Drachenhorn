@@ -7,10 +7,12 @@ using DSACharacterSheet.Desktop.IO;
 using DSACharacterSheet.Desktop.MVVM;
 using DSACharacterSheet.Desktop.UserSettings;
 using DSACharacterSheet.Desktop.Views;
-using DSACharacterSheet.FileReader;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
+using Microsoft.Win32;
+using SimpleLogger;
+using SimpleLogger.Logging.Handlers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -19,10 +21,6 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using CommonServiceLocator;
-using Microsoft.Win32;
-using SimpleLogger;
-using SimpleLogger.Logging.Handlers;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
 
 namespace DSACharacterSheet.Desktop
@@ -105,7 +103,6 @@ namespace DSACharacterSheet.Desktop
             settings.CheckUpdateAsync(UpdateCheckFinished);
         }
 
-
         #region Theme
 
         public static void SetTheme(VisualThemeType theme)
@@ -119,7 +116,6 @@ namespace DSACharacterSheet.Desktop
                 theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
             }
 
-
             string uri = "";
 
             switch (theme)
@@ -127,13 +123,11 @@ namespace DSACharacterSheet.Desktop
                 case VisualThemeType.Dark:
                     uri = "Themes/DarkTheme.xaml";
                     break;
+
                 case VisualThemeType.Light:
                     uri = "Themes/LightTheme.xaml";
                     break;
             }
-
-
-
 
             if (string.IsNullOrEmpty(uri)) return;
 
@@ -145,7 +139,6 @@ namespace DSACharacterSheet.Desktop
         }
 
         #endregion Theme
-
 
         private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
         {

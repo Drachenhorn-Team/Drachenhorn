@@ -5,15 +5,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonServiceLocator;
 using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Printing;
-using DSACharacterSheet.FileReader;
-using DSACharacterSheet.FileReader.Exceptions;
-using GalaSoft.MvvmLight.CommandWpf;
+using DSACharacterSheet.Xml.Exceptions;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Core.ViewModels
 {
@@ -120,7 +118,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         private void ExecuteOpen()
         {
-            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
 
             try
             {
@@ -159,7 +157,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         private void ExecuteGenerateHtml()
         {
-            var ioService = ServiceLocator.Current.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
 
             ioService.SaveStringDialog(
                 string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Name) ?

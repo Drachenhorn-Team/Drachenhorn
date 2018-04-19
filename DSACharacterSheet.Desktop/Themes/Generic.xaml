@@ -15,7 +15,8 @@
                             Width="28" Height="28">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"
                                HorizontalAlignment="Center" VerticalAlignment="Center"
-                               Source="{DynamicResource InfoIcon}">
+                               DataContext="{DynamicResource InfoIcon}"
+                               Source="{Binding .}">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Style.Triggers>
@@ -23,7 +24,7 @@
                                             <Setter Property="Opacity" Value="0.5" />
                                         </Trigger>
                                         <Trigger Property="IsEnabled" Value="True">
-                                            <Setter Property="Opacity" Value="1"/>
+                                            <Setter Property="Opacity" Value="1" />
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>

@@ -1,63 +1,62 @@
 ﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.CharacterInformationControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:enum="clr-namespace:DSACharacterSheet.FileReader.Sheet.Enums;assembly=DSACharacterSheet.FileReader"
-             mc:Ignorable="d" 
+             xmlns:enum="clr-namespace:DSACharacterSheet.Xml.Sheet.Enums;assembly=DSACharacterSheet.Xml"
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
-            <converter:EnumToStringConverter x:Key="EnumToStringConverter"/>
-            <converter:EnumListStringConverter x:Key="EnumListStringConverter"/>
+            <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
+            <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
             <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GenderEnum">
                 <ObjectDataProvider.MethodParameters>
-                    <x:Type TypeName="enum:Gender"/>
+                    <x:Type TypeName="enum:Gender" />
                 </ObjectDataProvider.MethodParameters>
             </ObjectDataProvider>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Gender}" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Gender}" Grid.Column="0" Grid.Row="0" />
         <ComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}}"
                   ItemsSource="{Binding Source={StaticResource GenderEnum}, Converter={StaticResource EnumListStringConverter}}"
-                  Grid.Column="1" Grid.Row="0" Margin="5"/>
+                  Grid.Column="1" Grid.Row="0" Margin="5" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Age}" Grid.Column="0" Grid.Row="1"/>
-        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Age}" Grid.Column="0" Grid.Row="1" />
+        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Height}" Grid.Column="0" Grid.Row="2"/>
-        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Height}" Grid.Column="0" Grid.Row="2" />
+        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Weight}" Grid.Column="0" Grid.Row="3"/>
-        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.Weight}" Grid.Column="0" Grid.Row="3" />
+        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.HairColor}" Grid.Column="0" Grid.Row="4"/>
-        <TextBox Text="{Binding HairColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.HairColor}" Grid.Column="0" Grid.Row="4" />
+        <TextBox Text="{Binding HairColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.EyeColor}" Grid.Column="0" Grid.Row="5"/>
-        <TextBox Text="{Binding EyeColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5"/>
+        <TextBlock Text="{lang:Translate CharacterInformation.EyeColor}" Grid.Column="0" Grid.Row="5" />
+        <TextBox Text="{Binding EyeColor, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5" />
 
-        <TextBlock Text="{lang:Translate CharacterInformation.Appearance}" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" VerticalAlignment="Stretch"/>
-
+        <TextBlock Text="{lang:Translate CharacterInformation.Appearance}" Grid.Column="0" Grid.Row="6" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Appearance, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Grid.Column="1" Grid.Row="6" VerticalAlignment="Stretch" />
     </Grid>
 </UserControl>

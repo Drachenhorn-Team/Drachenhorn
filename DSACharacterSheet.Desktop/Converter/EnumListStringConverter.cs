@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace DSACharacterSheet.Desktop.Converter
@@ -21,7 +18,7 @@ namespace DSACharacterSheet.Desktop.Converter
 
             foreach (var val in values)
                 result.Add(LanguageManager.Translate(val.GetType().Name + "." + val.ToString()));
-            
+
             return result;
         }
 

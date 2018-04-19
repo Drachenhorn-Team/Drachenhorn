@@ -1,159 +1,159 @@
 ﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.CharacterSheetControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
              xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="5000" d:DesignWidth="900"
              d:DataContext="{d:DesignInstance vm:CharacterSheetViewModel}">
     <UserControl.Resources>
         <ResourceDictionary>
-            <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}"/>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}" />
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <Image Source="/DSACharacterSheet.Core;component\Images\DSAFanLogo.png" Width="300"/>
-        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center"/>
+        <Image Source="/DSACharacterSheet.Core;component\Images\DSAFanLogo.png" Width="300" />
+        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center" />
 
         <Border Style="{StaticResource FrameBorder}">
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Grid.Row="0"/>
+                <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Grid.Row="0" />
                 <TextBox Text="{Binding CurrentSheet.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
+                         Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" />
 
-                <TextBlock Text="{lang:Translate CharacterSheet.Race}" Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="{lang:Translate CharacterSheet.Race}" Grid.Column="0" Grid.Row="1" />
                 <TextBox Text="{Binding CurrentSheet.Race.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Row="1" Grid.Column="1"/>
+                         Grid.Row="1" Grid.Column="1" />
                 <userElements:InfoButton InfoObject="{Binding CurrentSheet.Race}"
-                                         Grid.Row="1" Grid.Column="2"/>
+                                         Grid.Row="1" Grid.Column="2" />
 
-                <TextBlock Text="{lang:Translate CharacterSheet.Culture}" Grid.Column="0" Grid.Row="2"/>
+                <TextBlock Text="{lang:Translate CharacterSheet.Culture}" Grid.Column="0" Grid.Row="2" />
                 <Grid Grid.Column="1" Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBox Text="{Binding CurrentSheet.Culture.Name, UpdateSourceTrigger=PropertyChanged}"
-                             Grid.Column="0"/>
+                             Grid.Column="0" />
                     <TextBox Text="{Binding CurrentSheet.Culture.Specification, UpdateSourceTrigger=PropertyChanged}"
-                             Grid.Column="1"/>
+                             Grid.Column="1" />
                 </Grid>
                 <userElements:InfoButton InfoObject="{Binding CurrentSheet.Culture}"
-                                         Grid.Column="2" Grid.Row="2"/>
+                                         Grid.Column="2" Grid.Row="2" />
 
-                <TextBlock Text="{lang:Translate CharacterSheet.Profession}" Grid.Column="0" Grid.Row="3"/>
+                <TextBlock Text="{lang:Translate CharacterSheet.Profession}" Grid.Column="0" Grid.Row="3" />
                 <TextBox Text="{Binding CurrentSheet.Profession.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Row="3" Grid.Column="1"/>
+                         Grid.Row="3" Grid.Column="1" />
                 <userElements:InfoButton InfoObject="{Binding CurrentSheet.Profession}"
-                                         Grid.Column="2" Grid.Row="3"/>
+                                         Grid.Column="2" Grid.Row="3" />
             </Grid>
         </Border>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
                 <controls:CharacterInformationControl
                     DataContext="{Binding CurrentSheet.CharacterInformation}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
                 <controls:CoatOfArmsControl
                     DataContext="{Binding CurrentSheet.CoatOfArms}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="2">
                 <controls:SocialInformationControl
                     DataContext="{Binding CurrentSheet.SocialInformation}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
         </Grid>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:AdvantageInformationControl 
+                <controls:AdvantageInformationControl
                     DataContext="{Binding CurrentSheet.Advantages}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
                 <controls:AdvantageInformationControl
                     DataContext="{Binding CurrentSheet.Disadvantages}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
         </Grid>
 
-        <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold" TextAlignment="Center" />
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
                 <controls:AttributesControl
                     DataContext="{Binding CurrentSheet.Attributes}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
                 <controls:BaseValuesControl
                     DataContext="{Binding CurrentSheet.BaseValues}"
-                    Margin="5"/>
+                    Margin="5" />
             </Border>
         </Grid>
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:AdventurePointsControl
                 DataContext="{Binding CurrentSheet.AdventurePoints}"
-                Margin="5"/>
+                Margin="5" />
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
-            <controls:SkillListControl 
+            <controls:SkillListControl
                 DataContext="{Binding CurrentSheet.Skills}"
-                Margin="5"/>
+                Margin="5" />
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:SpecialSkillControl
                 DataContext="{Binding CurrentSheet.SpecialSkills}"
-                Margin="5"/>
+                Margin="5" />
         </Border>
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:CombatControl
                 DataContext="{Binding CurrentSheet.CombatInformation}"
-                Margin="5"/>
+                Margin="5" />
         </Border>
     </StackPanel>
 </UserControl>

@@ -13,8 +13,8 @@
         WindowStartupLocation="CenterOwner"
         Title="{lang:Translate InfoView.Title}">
     <Window.Resources>
-        <converter:ValueTranslationConverter x:Key="ValueTranslationConverter"/>
-        <collections:ArrayList x:Key="Information"/>
+        <converter:ValueTranslationConverter x:Key="ValueTranslationConverter" />
+        <collections:ArrayList x:Key="Information" />
     </Window.Resources>
 
     <Grid>
@@ -28,10 +28,10 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Margin="2 2 5 2" FontWeight="Bold"
                                    Text="{Binding Key, Converter={StaticResource ValueTranslationConverter}}"
-                                   Grid.Column="0"/>
+                                   Grid.Column="0" />
                         <TextBlock Margin="2" TextWrapping="Wrap"
                                    Text="{Binding Value, Converter={StaticResource ValueTranslationConverter}}"
-                                   Grid.Column="1"/>
+                                   Grid.Column="1" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

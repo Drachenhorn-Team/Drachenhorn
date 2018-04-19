@@ -6,11 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
-using CommonServiceLocator;
-using SimpleLogger;
+using Easy.Logger.Interfaces;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Core.Lang
 {
@@ -52,7 +51,8 @@ namespace DSACharacterSheet.Core.Lang
             }
             catch (MissingManifestResourceException)
             {
-                Logger.Debug.Log("Missing Translation: " + identifier);
+                //var logger = SimpleIoc.Default.GetInstance<IEasyLogger>();
+                //logger.Debug("Missing Translation: " + identifier);
                 return identifier;
             }
         }
@@ -129,10 +129,10 @@ namespace DSACharacterSheet.Core.Lang
 
         public static CultureInfo CurrentUICulture
         {
-            get { return ServiceLocator.Current.GetInstance<LanguageManager>().CurrentCulture; }
+            get { return SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture; }
             set
             {
-                var temp = ServiceLocator.Current.GetInstance<LanguageManager>();
+                var temp = SimpleIoc.Default.GetInstance<LanguageManager>();
 
                 if (temp.CurrentCulture == value)
                     return;
@@ -143,14 +143,14 @@ namespace DSACharacterSheet.Core.Lang
 
         public static string Translate(string key)
         {
-            var lang = ServiceLocator.Current.GetInstance<LanguageManager>();
+            var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
 
             return lang.GetLanguageText(key);
         }
 
         public static string TextTranslate(string text)
         {
-            var lang = ServiceLocator.Current.GetInstance<LanguageManager>();
+            var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
 
             return lang.TranslateText(text);
         }

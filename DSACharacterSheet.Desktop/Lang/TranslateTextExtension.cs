@@ -1,11 +1,6 @@
 ﻿using DSACharacterSheet.Core.Lang;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
-using CommonServiceLocator;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Lang
 {
@@ -17,7 +12,7 @@ namespace DSACharacterSheet.Desktop.Lang
         /// <param name="text">TranslationText</param>
         public TranslateTextExtension(string text) : base("[" + text + "]")
         {
-            this.Source = ServiceLocator.Current.GetInstance<LanguageManager>();
+            this.Source = SimpleIoc.Default.GetInstance<LanguageManager>();
         }
     }
 }
