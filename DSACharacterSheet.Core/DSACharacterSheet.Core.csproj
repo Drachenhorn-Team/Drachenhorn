@@ -7,16 +7,11 @@
   <ItemGroup>
     <None Remove="Images\Icon.svg" />
     <None Remove="Images\SaveFileIcon.svg" />
-    <None Remove="Printing\PrintingTemplate.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Images\Common\Icon.svg" />
     <Content Include="Images\Common\SaveFileIcon.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Printing\PrintingTemplate.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
