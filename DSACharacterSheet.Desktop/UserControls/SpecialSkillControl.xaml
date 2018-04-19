@@ -42,10 +42,10 @@
             </ListBox>
             <WrapPanel HorizontalAlignment="Right" Grid.Row="1">
                 <Button Click="AddButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Add}">
-                    <Image Source="{StaticResource AddIcon}" />
+                    <Image Source="{Binding Source={StaticResource AddIcon}}" />
                 </Button>
                 <Button Click="RemoveButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Remove}">
-                    <Image Source="{StaticResource RemoveIcon}" />
+                    <Image Source="{Binding Source={StaticResource RemoveIcon}}" />
                 </Button>
             </WrapPanel>
         </Grid>

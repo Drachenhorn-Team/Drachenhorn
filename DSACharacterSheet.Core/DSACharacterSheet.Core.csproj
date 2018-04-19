@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Icon.svg" />
+    <None Remove="Images\SaveFileIcon.svg" />
     <None Remove="Printing\PrintingTemplate.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Common\Icon.svg" />
+    <Content Include="Images\Common\SaveFileIcon.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +27,48 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DSACharacterSheet.Xml\DSACharacterSheet.Xml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Images\Common.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Images\Dark.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dark.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Images\Flags.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Flags.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Images\Light.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Light.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Images\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Images\Dark.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dark.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Images\Flags.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Flags.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Images\Light.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Light.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

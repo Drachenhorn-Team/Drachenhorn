@@ -79,8 +79,8 @@
 
     <Style TargetType="Button">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="{StaticResource BorderBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush2}" />
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush2}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
 
         <Setter Property="Template">
             <Setter.Value>

@@ -27,7 +27,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{lang:Translate CharacterSheet.Modifyer}" Grid.Column="1" Grid.Row="0" />
+        <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Column="1" Grid.Row="0" />
         <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" Grid.Column="2" Grid.Row="0" />
 
         <TextBlock Text="{lang:Translate BaseValue.HealthPoints}" Grid.Column="0" Grid.Row="1" />

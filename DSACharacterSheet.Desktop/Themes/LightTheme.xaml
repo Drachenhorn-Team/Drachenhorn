@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:images="clr-namespace:DSACharacterSheet.Core.Images;assembly=DSACharacterSheet.Core">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Metro/Metro.MSControls.Core.Implicit.xaml" />
         <ResourceDictionary Source="Metro/Metro.MSControls.Toolkit.Implicit.xaml" />
@@ -10,20 +11,29 @@
 
     <!--Images-->
 
-    <BitmapImage x:Key="AddIcon" UriSource="/Images/Light/Common/Add.png" />
-    <BitmapImage x:Key="RemoveIcon" UriSource="/Images/Light/Common/Remove.png" />
-    <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="/Images/Light/Common/ArrowBlockDown.png" />
+    <ObjectDataProvider x:Key="AddIcon" ObjectType="images:Light" MethodName="get_Add"/>
+    <ObjectDataProvider x:Key="RemoveIcon" ObjectType="images:Light" MethodName="get_Remove"/>
+    <ObjectDataProvider x:Key="ArrowBlockDownIcon" ObjectType="images:Light" MethodName="get_ArrowBlockDown"/>
 
-    <BitmapImage x:Key="EditIcon" UriSource="/Images/Light/EditIcon.png" />
-    <BitmapImage x:Key="HTMLIcon" UriSource="/Images/Light/HTML.png" />
-    <BitmapImage x:Key="InfoIcon" UriSource="/Images/Light/InfoIcon.png" />
-    <BitmapImage x:Key="MenuIcon" UriSource="/Images/Light/MenuIcon.png" />
-    <BitmapImage x:Key="NewIcon" UriSource="/Images/Light/NewIcon.png" />
-    <BitmapImage x:Key="PDFIcon" UriSource="/Images/Light/Pdf.png" />
-    <BitmapImage x:Key="PrintIcon" UriSource="/Images/Light/PrintIcon.png" />
-    <BitmapImage x:Key="PropertiesIcon" UriSource="/Images/Light/PropertiesIcon.png" />
-    <BitmapImage x:Key="SaveAllIcon" UriSource="/Images/Light/SaveAllIcon.png" />
-    <BitmapImage x:Key="SaveIcon" UriSource="/Images/Light/SaveIcon.png" />
-    <BitmapImage x:Key="SaveAsIcon" UriSource="/Images/Light/SaveIcon.png" />
-    <BitmapImage x:Key="UpdateAvailableIcon" UriSource="/Images/Light/UpdateAvailable.png" />
+    <ObjectDataProvider x:Key="EditIcon" ObjectType="images:Light" MethodName="get_EditIcon"/>
+    <ObjectDataProvider x:Key="HtmlIcon" ObjectType="images:Light" MethodName="get_HTML"/>
+    <ObjectDataProvider x:Key="InfoIcon" ObjectType="images:Light" MethodName="get_InfoIcon"/>
+    <ObjectDataProvider x:Key="MenuIcon" ObjectType="images:Light" MethodName="get_MenuIcon"/>
+    <ObjectDataProvider x:Key="NewIcon" ObjectType="images:Light" MethodName="get_NewIcon"/>
+    <ObjectDataProvider x:Key="PdfIcon" ObjectType="images:Light" MethodName="get_Pdf"/>
+    <ObjectDataProvider x:Key="PrintIcon" ObjectType="images:Light" MethodName="get_PrintIcon"/>
+    <ObjectDataProvider x:Key="PropertiesIcon" ObjectType="images:Light" MethodName="get_PropertiesIcon"/>
+    <ObjectDataProvider x:Key="SaveAllIcon" ObjectType="images:Light" MethodName="get_SaveAllIcon"/>
+    <ObjectDataProvider x:Key="SaveIcon" ObjectType="images:Light" MethodName="get_SaveIcon"/>
+    <ObjectDataProvider x:Key="SaveAsIcon" ObjectType="images:Light" MethodName="get_SaveIcon"/>
+    <ObjectDataProvider x:Key="UpdateAvailableIcon" ObjectType="images:Light" MethodName="get_UpdateAvailable"/>
+
+
+    <ObjectDataProvider x:Key="BrushIcon" ObjectType="images:Light" MethodName="get_Brush"/>
+    <ObjectDataProvider x:Key="ClearIcon" ObjectType="images:Light" MethodName="get_Clear"/>
+    <ObjectDataProvider x:Key="EraserIcon" ObjectType="images:Light" MethodName="get_Eraser"/>
+    <ObjectDataProvider x:Key="PencilIcon" ObjectType="images:Light" MethodName="get_Pencil"/>
+    <ObjectDataProvider x:Key="RedoIcon" ObjectType="images:Light" MethodName="get_Redo"/>
+    <ObjectDataProvider x:Key="SelectIcon" ObjectType="images:Light" MethodName="get_Select"/>
+    <ObjectDataProvider x:Key="UndoIcon" ObjectType="images:Light" MethodName="get_Undo"/>
 </ResourceDictionary>

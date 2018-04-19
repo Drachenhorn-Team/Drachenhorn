@@ -1,11 +1,14 @@
 ﻿using DSACharacterSheet.Core.Settings;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using DSACharacterSheet.Core.Images;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Views
@@ -44,15 +47,32 @@ namespace DSACharacterSheet.Desktop.Views
 
             try
             {
-                FlagImage.Source = new BitmapImage(
-                    new Uri("pack://application:,,,/DSACharacterSheet.Desktop;component/Images/Flags/" +
-                            SimpleIoc.Default.GetInstance<ISettings>().CurrentCulture.Name + ".png"));
+                var culture = SimpleIoc.Default.GetInstance<ISettings>().CurrentCulture.Name;
+                var flag = typeof(Flags).GetProperty(culture.Replace('-','_'))?.GetValue(null) as byte[];
+                FlagImage.Source = LoadImage(flag);
             }
             catch (IOException)
             {
-                FlagImage.Source = new BitmapImage(
-                    new Uri("pack://application:,,,/DSACharacterSheet.Desktop;component/Images/Flags/invariant.png"));
+                FlagImage.Source = LoadImage(Flags.invariant);
             }
+        }
+
+        private static BitmapImage LoadImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(imageData))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
         }
     }
 }

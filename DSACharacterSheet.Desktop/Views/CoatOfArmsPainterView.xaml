@@ -17,40 +17,40 @@
             </WrapPanel.Resources>
 
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" IsChecked="True" Checked="BrushType_Checked_1" ToolTip="{lang:Translate Painter.Pencil}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Pencil.png" />
+                <Image Source="{Binding Source={StaticResource PencilIcon}}" />
             </RadioButton>
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_2" ToolTip="{lang:Translate Painter.Eraser}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Eraser.png" />
+                <Image Source="{Binding Source={StaticResource EraserIcon}}" />
             </RadioButton>
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2" Checked="BrushType_Checked_3" ToolTip="{lang:Translate Painter.Select}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Select.png" />
+                <Image Source="{Binding Source={StaticResource SelectIcon}}" />
             </RadioButton>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
 
             <Button Width="20" Height="20" Margin="2" Click="UndoButton_Click" ToolTip="{lang:Translate UI.Undo}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Undo.png" Width="16" />
+                <Image Source="{Binding Source={StaticResource UndoIcon}}" Width="16" />
             </Button>
             <Button Width="20" Height="20" Margin="2" Click="RedoButton_Click" ToolTip="{lang:Translate UI.Redo}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Redo.png" Width="16" />
+                <Image Source="{Binding Source={StaticResource RedoIcon}}" Width="16" />
             </Button>
             <Button Width="20" Height="20" Margin="2" Click="ClearButton_Click" ToolTip="{lang:Translate Painter.Clear}">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Clear.png" Width="16" />
+                <Image Source="{Binding Source={StaticResource ClearIcon}}" Width="16" />
             </Button>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
 
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" IsChecked="True" Checked="BrushStrength_Checked_1">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Brush.png" Width="5" />
+                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="5" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_2">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Brush.png" Width="8" />
+                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="8" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_3">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Brush.png" Width="11" />
+                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="11" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_4">
-                <Image Source="/DSACharacterSheet.Core;component\Images\Painting\Brush.png" Width="16" />
+                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="16" />
             </RadioButton>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
