@@ -71,7 +71,7 @@ namespace DSACharacterSheet.Core.ViewModels
             Open = new RelayCommand(ExecuteOpen);
             New = new RelayCommand(ExecuteNew);
 
-            Print = new RelayCommand(ExecutePrint);
+            Print = new RelayCommand(ExecutePrint, () => false);
 
             GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
 

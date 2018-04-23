@@ -1,13 +1,9 @@
 ﻿using DSACharacterSheet.Core.Printing.Exceptions;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.Xml.Sheet;
-using RazorLight;
+using Encoding = System.Text.Encoding;
 
 namespace DSACharacterSheet.Core.Printing
 {
@@ -17,19 +13,19 @@ namespace DSACharacterSheet.Core.Printing
 
         public static string GenerateHtml(CharacterSheet sheet)
         {
-            string template = "";
+            //string template = "";
 
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("DSACharacterSheet.Core.Printing.PrintingTemplate.cshtml"))
-                using (var reader = new StreamReader(stream))
-                {
-                    template = reader.ReadToEnd();
-                }
-            
-            var engine = new RazorLightEngineBuilder()
-                .UseMemoryCachingProvider()
-                .Build();
+            //template = Encoding.Default.GetString(PrintingTemplates.CharacterSheet);
 
-            return Task.Run<string>(() => engine.CompileRenderAsync("templateKey", template, sheet)).Result;
+            //var engine = new RazorLightEngineBuilder()
+            //    .UseMemoryCachingProvider()
+            //    .Build();
+
+            //string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;
+
+            //return result;
+
+            return "";
         }
 
         public static void GenerateHtml(CharacterSheet sheet, string path)

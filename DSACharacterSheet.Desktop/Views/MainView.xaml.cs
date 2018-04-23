@@ -52,7 +52,8 @@ namespace DSACharacterSheet.Desktop.Views
                 if (this.DataContext is MainViewModel)
                 {
                     var model = (MainViewModel)this.DataContext;
-                    new PrintView(PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet)).ShowDialog();
+                    var print = PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet);
+                    new PrintView(print).ShowDialog();
                 }
             }
         }
