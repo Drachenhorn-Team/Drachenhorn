@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using DSACharacterSheet.Xml;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 

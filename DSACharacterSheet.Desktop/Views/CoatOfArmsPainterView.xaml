@@ -19,44 +19,44 @@
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          IsChecked="True" Checked="BrushType_Checked_1"
                          ToolTip="{lang:Translate Painter.Pencil}">
-                <Image Source="{Binding Source={StaticResource PencilIcon}}"/>
+                <Image Source="{StaticResource PencilIcon}"/>
             </RadioButton>
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          Checked="BrushType_Checked_2"
                          ToolTip="{lang:Translate Painter.Eraser}">
-                <Image Source="{Binding Source={StaticResource EraserIcon}}" />
+                <Image Source="{StaticResource EraserIcon}" />
             </RadioButton>
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          Checked="BrushType_Checked_3"
                          ToolTip="{lang:Translate Painter.Select}">
-                <Image Source="{Binding Source={StaticResource SelectIcon}}" />
+                <Image Source="{StaticResource SelectIcon}" />
             </RadioButton>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
 
             <Button Width="20" Height="20" Margin="2" Click="UndoButton_Click" ToolTip="{lang:Translate UI.Undo}">
-                <Image Source="{Binding Source={StaticResource UndoIcon}}" Width="16" />
+                <Image Source="{StaticResource UndoIcon}" Width="16" />
             </Button>
             <Button Width="20" Height="20" Margin="2" Click="RedoButton_Click" ToolTip="{lang:Translate UI.Redo}">
-                <Image Source="{Binding Source={StaticResource RedoIcon}}" Width="16" />
+                <Image Source="{StaticResource RedoIcon}" Width="16" />
             </Button>
             <Button Width="20" Height="20" Margin="2" Click="ClearButton_Click" ToolTip="{lang:Translate Painter.Clear}">
-                <Image Source="{Binding Source={StaticResource ClearIcon}}" Width="16" />
+                <Image Source="{StaticResource ClearIcon}" Width="16" />
             </Button>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
 
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" IsChecked="True" Checked="BrushStrength_Checked_1">
-                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="5" />
+                <Image Source="{StaticResource BrushIcon}" Width="5" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_2">
-                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="8" />
+                <Image Source="{StaticResource BrushIcon}" Width="8" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_3">
-                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="11" />
+                <Image Source="{StaticResource BrushIcon}" Width="11" />
             </RadioButton>
             <RadioButton GroupName="BrushStrength" Width="20" Height="20" Margin="2" Checked="BrushStrength_Checked_4">
-                <Image Source="{Binding Source={StaticResource BrushIcon}}" Width="16" />
+                <Image Source="{StaticResource BrushIcon}" Width="16" />
             </RadioButton>
 
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />

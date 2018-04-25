@@ -5,13 +5,205 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Icon.svg" />
-    <None Remove="Images\SaveFileIcon.svg" />
+    <None Remove="Images\Common\DSAFanLogo.png" />
+    <None Remove="Images\Common\Icon.ico" />
+    <None Remove="Images\Common\SaveFileIcon.ico" />
+    <None Remove="Images\Dark\Common\Add.png" />
+    <None Remove="Images\Dark\Common\ArrowBlockDown.png" />
+    <None Remove="Images\Dark\Common\Remove.png" />
+    <None Remove="Images\Dark\EditIcon.png" />
+    <None Remove="Images\Dark\HTML.png" />
+    <None Remove="Images\Dark\InfoIcon.png" />
+    <None Remove="Images\Dark\MenuIcon.png" />
+    <None Remove="Images\Dark\NewIcon.png" />
+    <None Remove="Images\Dark\Painting\Brush.png" />
+    <None Remove="Images\Dark\Painting\Clear.png" />
+    <None Remove="Images\Dark\Painting\Eraser.png" />
+    <None Remove="Images\Dark\Painting\Pencil.png" />
+    <None Remove="Images\Dark\Painting\Redo.png" />
+    <None Remove="Images\Dark\Painting\Select.png" />
+    <None Remove="Images\Dark\Painting\Undo.png" />
+    <None Remove="Images\Dark\Pdf.png" />
+    <None Remove="Images\Dark\PrintIcon.png" />
+    <None Remove="Images\Dark\PropertiesIcon.png" />
+    <None Remove="Images\Dark\SaveAllIcon.png" />
+    <None Remove="Images\Dark\SaveIcon.png" />
+    <None Remove="Images\Dark\UpdateAvailable.png" />
+    <None Remove="Images\Flags\de-DE.png" />
+    <None Remove="Images\Flags\en.png" />
+    <None Remove="Images\Flags\invariant.png" />
+    <None Remove="Images\Flags\nds-DE.png" />
+    <None Remove="Images\Light\Common\Add.png" />
+    <None Remove="Images\Light\Common\ArrowBlockDown.png" />
+    <None Remove="Images\Light\Common\Remove.png" />
+    <None Remove="Images\Light\EditIcon.png" />
+    <None Remove="Images\Light\HTML.png" />
+    <None Remove="Images\Light\InfoIcon.png" />
+    <None Remove="Images\Light\MenuIcon.png" />
+    <None Remove="Images\Light\NewIcon.png" />
+    <None Remove="Images\Light\Painting\Brush.png" />
+    <None Remove="Images\Light\Painting\Clear.png" />
+    <None Remove="Images\Light\Painting\Eraser.png" />
+    <None Remove="Images\Light\Painting\Pencil.png" />
+    <None Remove="Images\Light\Painting\Redo.png" />
+    <None Remove="Images\Light\Painting\Select.png" />
+    <None Remove="Images\Light\Painting\Undo.png" />
+    <None Remove="Images\Light\Pdf.png" />
+    <None Remove="Images\Light\PrintIcon.png" />
+    <None Remove="Images\Light\PropertiesIcon.png" />
+    <None Remove="Images\Light\SaveAllIcon.png" />
+    <None Remove="Images\Light\SaveIcon.png" />
+    <None Remove="Images\Light\UpdateAvailable.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\Common\Icon.svg" />
-    <Content Include="Images\Common\SaveFileIcon.svg" />
+    <Content Include="Images\Common\DSAFanLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Common\Icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Common\SaveFileIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Common\Add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Common\ArrowBlockDown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Common\Remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\EditIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\HTML.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\InfoIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\MenuIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\NewIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Brush.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Clear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Eraser.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Pencil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Redo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Select.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Painting\Undo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Pdf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\PrintIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\PropertiesIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\SaveAllIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\SaveIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\UpdateAvailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Flags\de-DE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Flags\en.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Flags\invariant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Flags\nds-DE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Common\Add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Common\ArrowBlockDown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Common\Remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\EditIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\HTML.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\InfoIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\MenuIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\NewIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Brush.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Clear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Eraser.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Pencil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Redo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Select.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Painting\Undo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Pdf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\PrintIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\PropertiesIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\SaveAllIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\SaveIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\UpdateAvailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,26 +216,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Images\Common.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Common.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Images\Dark.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dark.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Images\Flags.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Flags.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Images\Light.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Light.resx</DependentUpon>
-    </Compile>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Printing\PrintingTemplates.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,26 +228,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Images\Common.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Common.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Images\Dark.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Dark.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Images\Flags.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Flags.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Images\Light.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Light.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Printing\PrintingTemplates.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintingTemplates.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Printing\Templates\CharacterSheet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CharacterSheet.html</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

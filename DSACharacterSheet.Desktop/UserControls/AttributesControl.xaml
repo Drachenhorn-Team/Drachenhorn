@@ -10,12 +10,12 @@
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Add}">
-                <Image Source="{Binding Source={StaticResource AddIcon}}"
+                <Image Source="{StaticResource AddIcon}"
                        Margin="2" />
             </Button>
             <Button Click="RemoveButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Remove}">
-                <Image Source="{Binding Source={StaticResource RemoveIcon}}" Margin="2" />
+                <Image Source="{StaticResource RemoveIcon}" Margin="2" />
             </Button>
         </WrapPanel>
 

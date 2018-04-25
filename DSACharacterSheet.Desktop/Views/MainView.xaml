@@ -34,34 +34,34 @@
                           Command="{Binding New}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource NewIcon}}" />
+                        <Image Source="{StaticResource NewIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Open}"
                           Command="{Binding Open}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource EditIcon}}" />
+                        <Image Source="{StaticResource EditIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Save}"
                           Command="{Binding Save}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource SaveIcon}}" />
+                        <Image Source="{StaticResource SaveIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAs}"
                           Command="{Binding SaveAs}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource SaveAsIcon}}" />
+                        <Image Source="{StaticResource SaveAsIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAll}"
                           Command="{Binding SaveAll}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource SaveAllIcon}}" />
+                        <Image Source="{StaticResource SaveAllIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
@@ -69,7 +69,7 @@
                           Command="{Binding Print}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource PrintIcon}}" />
+                        <Image Source="{StaticResource PrintIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
@@ -77,7 +77,7 @@
                           Command="{Binding ShowSettings}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Source={StaticResource PropertiesIcon}}" />
+                        <Image Source="{StaticResource PropertiesIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -95,21 +95,21 @@
             </ToolBarTray.Resources>
             <ToolBar>
                 <Button Command="{Binding New}">
-                    <Image Source="{Binding Source={StaticResource NewIcon}}" />
+                    <Image Source="{StaticResource NewIcon}" />
                 </Button>
                 <Button Command="{Binding Open}">
-                    <Image Source="{Binding Source={StaticResource EditIcon}}" />
+                    <Image Source="{StaticResource EditIcon}" />
                 </Button>
                 <Button Command="{Binding Save}">
-                    <Image Source="{Binding Source={StaticResource SaveIcon}}" />
+                    <Image Source="{StaticResource SaveIcon}" />
                 </Button>
                 <Button Command="{Binding SaveAll}">
-                    <Image Source="{Binding Source={StaticResource SaveAllIcon}}" />
+                    <Image Source="{StaticResource SaveAllIcon}" />
                 </Button>
             </ToolBar>
             <ToolBar>
                 <Button Command="{Binding Print}">
-                    <Image Source="{Binding Source={StaticResource PrintIcon}}" />
+                    <Image Source="{StaticResource PrintIcon}" />
                 </Button>
             </ToolBar>
         </ToolBarTray>
@@ -176,7 +176,7 @@
                    DockPanel.Dock="Bottom" Height="25" BorderThickness="0 2 0 0">
             <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}">
                 <Border Background="{StaticResource InfoBrush}" CornerRadius="10">
-                    <Image Source="{Binding Source={StaticResource UpdateAvailableIcon}}"
+                    <Image Source="{StaticResource UpdateAvailableIcon}"
                            ToolTip="{lang:Translate Update.Available}"
                            Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
                            Margin="1" />

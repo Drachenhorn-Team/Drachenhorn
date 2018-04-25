@@ -9,6 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DSACharacterSheet.Xml;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.UserSettings

@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using DSACharacterSheet.Core.Images;
+using DSACharacterSheet.Desktop.BindingExtension;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Views
@@ -48,12 +49,14 @@ namespace DSACharacterSheet.Desktop.Views
             try
             {
                 var culture = SimpleIoc.Default.GetInstance<ISettings>().CurrentCulture.Name;
-                var flag = typeof(Flags).GetProperty(culture.Replace('-','_'))?.GetValue(null) as byte[];
-                FlagImage.Source = LoadImage(flag);
+
+                var path = new ImageSourceGetter()["Flags/" + culture + ".png"];
+                FlagImage.Source = new BitmapImage(new Uri(path));
             }
             catch (IOException)
             {
-                FlagImage.Source = LoadImage(Flags.invariant);
+                var path = new ImageSourceGetter()["Flags/invariant.png"];
+                FlagImage.Source = new BitmapImage(new Uri(path));
             }
         }
 

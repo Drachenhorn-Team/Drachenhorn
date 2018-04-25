@@ -136,13 +136,19 @@
                         <TextBlock Text="{lang:Translate About.Images}" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" FontSize="20" />
 
                         <TextBlock Text="{lang:Translate About.OfficialImagesBy}" Grid.Row="1" Grid.Column="0" Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1"><Hyperlink NavigateUri="http://www.ulisses-spiele.de/sortiment/rollenspiele/das-schwarze-auge/informationen-zu-das-schwarze-auge/fan-und-kartenpaket/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Ulisses-Spiele" /></Hyperlink></TextBlock>
+                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1">
+                            <Hyperlink NavigateUri="http://www.ulisses-spiele.de/sortiment/rollenspiele/das-schwarze-auge/informationen-zu-das-schwarze-auge/fan-und-kartenpaket/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Ulisses-Spiele" /></Hyperlink>
+                        </TextBlock>
 
                         <TextBlock Text="{lang:Translate About.IconsBy}" Grid.Row="2" Grid.Column="0" Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="2" Grid.Column="1"><Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="icons8" /></Hyperlink></TextBlock>
+                        <TextBlock Margin="5" Grid.Row="2" Grid.Column="1">
+                            <Hyperlink NavigateUri="https://icons8.de/" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="icons8" /></Hyperlink>
+                        </TextBlock>
 
                         <TextBlock Text="{lang:Translate About.FlagsBy}" Grid.Row="3" Grid.Column="0" Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="http://www.famfamfam.com" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="famfamfam" /></Hyperlink></TextBlock>
+                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1">
+                            <Hyperlink NavigateUri="http://www.famfamfam.com" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="famfamfam" /></Hyperlink>
+                        </TextBlock>
                     </Grid>
                 </Border>
             </StackPanel>
