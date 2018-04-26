@@ -120,19 +120,19 @@
   <data name="BaseValue.Endurance" xml:space="preserve">
     <value>Utdüür</value>
   </data>
-  <data name="CharacterInformation.Age" xml:space="preserve">
+  <data name="Characteristics.Age" xml:space="preserve">
     <value>Oller</value>
   </data>
-  <data name="CharacterInformation.Appearance" xml:space="preserve">
+  <data name="Characteristics.Appearance" xml:space="preserve">
     <value>Utsehn</value>
   </data>
-  <data name="CharacterInformation.Gender" xml:space="preserve">
+  <data name="Characteristics.Gender" xml:space="preserve">
     <value>Geschlecht</value>
   </data>
-  <data name="CharacterInformation.Height" xml:space="preserve">
+  <data name="Characteristics.Height" xml:space="preserve">
     <value>Grötte</value>
   </data>
-  <data name="CharacterInformation.Weight" xml:space="preserve">
+  <data name="Characteristics.Weight" xml:space="preserve">
     <value>Gewicht</value>
   </data>
   <data name="About.Publisher" xml:space="preserve">
@@ -144,10 +144,10 @@
   <data name="BaseValue.HealthPoints.Abbr" xml:space="preserve">
     <value>LP</value>
   </data>
-  <data name="CharacterInformation.EyeColor" xml:space="preserve">
+  <data name="Characteristics.EyeColor" xml:space="preserve">
     <value>Oogenfarv</value>
   </data>
-  <data name="CharacterInformation.HairColor" xml:space="preserve">
+  <data name="Characteristics.HairColor" xml:space="preserve">
     <value>Harenfarv</value>
   </data>
   <data name="CharacterSheet.BaseValues" xml:space="preserve">
@@ -156,7 +156,7 @@
   <data name="CharacterSheet.CoatOfArms" xml:space="preserve">
     <value>Wapen/Bild</value>
   </data>
-  <data name="CharacterSheet.Culture" xml:space="preserve">
+  <data name="Characteristics.Culture" xml:space="preserve">
     <value>Kultuur</value>
   </data>
   <data name="CharacterSheet.CurrentValue" xml:space="preserve">
@@ -171,10 +171,10 @@
   <data name="CharacterSheet.Name" xml:space="preserve">
     <value>Naam</value>
   </data>
-  <data name="CharacterSheet.Profession" xml:space="preserve">
+  <data name="Characteristics.Profession" xml:space="preserve">
     <value>Beruf</value>
   </data>
-  <data name="CharacterSheet.Race" xml:space="preserve">
+  <data name="Characteristics.Race" xml:space="preserve">
     <value>Rassen</value>
   </data>
   <data name="CharacterSheet.Skills" xml:space="preserve">
@@ -266,5 +266,8 @@
   </data>
   <data name="About.Images" xml:space="preserve">
     <value>Biller</value>
+  </data>
+  <data name="Characteristics.Name" xml:space="preserve">
+    <value>Naam</value>
   </data>
 </root>

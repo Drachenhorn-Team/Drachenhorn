@@ -12,12 +12,12 @@ namespace DSACharacterSheet.Xml.Objects
     {
         #region Properties
 
-        private int _day = -1;
+        private int _day = 1;
 
         public int Day
         {
             get { return _day; }
-            private set
+            set
             {
                 if (_day == value)
                     return;
@@ -26,12 +26,12 @@ namespace DSACharacterSheet.Xml.Objects
             }
         }
 
-        private DSAMonth _month = DSAMonth.None;
+        private DSAMonth _month = DSAMonth.Praios;
 
         public DSAMonth Month
         {
             get { return _month; }
-            private set
+            set
             {
                 if (_month == value)
                     return;
@@ -40,12 +40,12 @@ namespace DSACharacterSheet.Xml.Objects
             }
         }
 
-        private int _year = 0;
+        private int _year = 1;
 
         public int Year
         {
             get { return _year; }
-            private set
+            set
             {
                 if (_year == value)
                     return;
@@ -113,15 +113,15 @@ namespace DSACharacterSheet.Xml.Objects
             return int.Parse(Year.ToString() + ((int)Month).ToString() + Day.ToString());
         }
 
-        public static bool operator !=(DSADate obj1, DSADate obj2)
-        {
-            return !(obj1 == obj2);
-        }
+        //public static bool operator !=(DSADate obj1, DSADate obj2)
+        //{
+        //    return !(obj1 == obj2);
+        //}
 
-        public static bool operator ==(DSADate obj1, DSADate obj2)
-        {
-            return obj1.Equals(obj2);
-        }
+        //public static bool operator ==(DSADate obj1, DSADate obj2)
+        //{
+        //    return obj1 != null && obj1.Equals(obj2);
+        //}
 
         public static bool operator >(DSADate obj1, DSADate obj2)
         {

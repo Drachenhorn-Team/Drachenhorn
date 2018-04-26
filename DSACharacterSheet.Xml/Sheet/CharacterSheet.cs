@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
 using DSACharacterSheet.Xml.Exceptions;
-using DSACharacterSheet.Xml.Sheet.Advantages;
 using DSACharacterSheet.Xml.Sheet.CombatInfo;
 using DSACharacterSheet.Xml.Sheet.Common;
 using DSACharacterSheet.Xml.Sheet.Skills;
@@ -17,17 +16,17 @@ namespace DSACharacterSheet.Xml.Sheet
         #region Properties
 
         [XmlIgnore]
-        private string _name;
+        private Characteristics _characteristics = new Characteristics();
 
-        [XmlAttribute("Name")]
-        public string Name
+        [XmlElement("Characteristics")]
+        public Characteristics Characteristics
         {
-            get { return _name; }
+            get { return _characteristics; }
             set
             {
-                if (_name == value)
+                if (_characteristics == value)
                     return;
-                _name = value;
+                _characteristics = value;
                 OnPropertyChanged();
             }
         }
@@ -49,70 +48,6 @@ namespace DSACharacterSheet.Xml.Sheet
         }
 
         [XmlIgnore]
-        private RaceInformation _race = new RaceInformation();
-
-        [XmlElement("Race")]
-        public RaceInformation Race
-        {
-            get { return _race; }
-            set
-            {
-                if (_race == value)
-                    return;
-                _race = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private CultureInformation _culture = new CultureInformation();
-
-        [XmlElement("Culture")]
-        public CultureInformation Culture
-        {
-            get { return _culture; }
-            set
-            {
-                if (_culture == value)
-                    return;
-                _culture = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private ProfessionInformation _profession = new ProfessionInformation();
-
-        [XmlElement("Profession")]
-        public ProfessionInformation Profession
-        {
-            get { return _profession; }
-            set
-            {
-                if (_profession == value)
-                    return;
-                _profession = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private CharacterInformation _characterInformation = new CharacterInformation();
-
-        [XmlElement("CharacterInformation")]
-        public CharacterInformation CharacterInformation
-        {
-            get { return _characterInformation; }
-            set
-            {
-                if (_characterInformation == value)
-                    return;
-                _characterInformation = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
         private CoatOfArms _coatOfArms = new CoatOfArms();
 
         [XmlElement("CoatOfArms")]
@@ -129,49 +64,17 @@ namespace DSACharacterSheet.Xml.Sheet
         }
 
         [XmlIgnore]
-        private SocialInformation _socialInformation = new SocialInformation();
+        private ObservableCollection<DisAdvantage> _disAdvantages = new ObservableCollection<DisAdvantage>();
 
-        [XmlElement("SocialInformation")]
-        public SocialInformation SocialInformation
+        [XmlElement("DisAdvantage")]
+        public ObservableCollection<DisAdvantage> DisAdvantages
         {
-            get { return _socialInformation; }
+            get { return _disAdvantages; }
             set
             {
-                if (_socialInformation == value)
+                if (_disAdvantages == value)
                     return;
-                _socialInformation = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private ObservableCollection<Advantage> _advantages = new ObservableCollection<Advantage>();
-
-        [XmlElement("Advantage")]
-        public ObservableCollection<Advantage> Advantages
-        {
-            get { return _advantages; }
-            set
-            {
-                if (_advantages == value)
-                    return;
-                _advantages = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private ObservableCollection<Disadvantage> _disadvantages = new ObservableCollection<Disadvantage>();
-
-        [XmlElement("Disadvantage")]
-        public ObservableCollection<Disadvantage> Disadvantages
-        {
-            get { return _disadvantages; }
-            set
-            {
-                if (_disadvantages == value)
-                    return;
-                _disadvantages = value;
+                _disAdvantages = value;
                 OnPropertyChanged();
             }
         }

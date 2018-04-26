@@ -2,7 +2,6 @@
 using DSACharacterSheet.Core.Objects;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.DrawingCore;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;

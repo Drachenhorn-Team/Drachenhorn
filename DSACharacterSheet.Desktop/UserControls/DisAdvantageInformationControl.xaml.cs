@@ -7,9 +7,9 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für AdvantageInformationControl.xaml
     /// </summary>
-    public partial class AdvantageInformationControl : UserControl
+    public partial class DisAdvantageInformationControl : UserControl
     {
-        public AdvantageInformationControl()
+        public DisAdvantageInformationControl()
         {
             InitializeComponent();
         }

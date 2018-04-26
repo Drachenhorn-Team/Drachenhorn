@@ -216,10 +216,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Printing\PrintingTemplates.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

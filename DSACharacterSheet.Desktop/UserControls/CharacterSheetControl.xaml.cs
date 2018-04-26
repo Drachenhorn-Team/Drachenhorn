@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
+using DSACharacterSheet.Core.ViewModels;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {

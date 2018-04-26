@@ -168,25 +168,25 @@
   <data name="BaseValue.MagicResistance" xml:space="preserve">
     <value>Magieresistenz</value>
   </data>
-  <data name="CharacterInformation.Age" xml:space="preserve">
+  <data name="Characteristics.Age" xml:space="preserve">
     <value>Alter</value>
   </data>
-  <data name="CharacterInformation.Appearance" xml:space="preserve">
+  <data name="Characteristics.Appearance" xml:space="preserve">
     <value>Aussehen</value>
   </data>
-  <data name="CharacterInformation.EyeColor" xml:space="preserve">
+  <data name="Characteristics.EyeColor" xml:space="preserve">
     <value>Augenfarbe</value>
   </data>
-  <data name="CharacterInformation.Gender" xml:space="preserve">
+  <data name="Characteristics.Gender" xml:space="preserve">
     <value>Geschlecht</value>
   </data>
-  <data name="CharacterInformation.HairColor" xml:space="preserve">
+  <data name="Characteristics.HairColor" xml:space="preserve">
     <value>Haarfarbe</value>
   </data>
-  <data name="CharacterInformation.Height" xml:space="preserve">
+  <data name="Characteristics.Height" xml:space="preserve">
     <value>Größe</value>
   </data>
-  <data name="CharacterInformation.Weight" xml:space="preserve">
+  <data name="Characteristics.Weight" xml:space="preserve">
     <value>Gewicht</value>
   </data>
   <data name="CharacterSheet.BaseValues" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="CharacterSheet.CoatOfArms" xml:space="preserve">
     <value>Wappen/Portrait</value>
   </data>
-  <data name="CharacterSheet.Culture" xml:space="preserve">
+  <data name="Characteristics.Culture" xml:space="preserve">
     <value>Kultur</value>
   </data>
   <data name="CharacterSheet.CurrentValue" xml:space="preserve">
@@ -222,10 +222,10 @@
   <data name="CharacterSheet.Name" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="CharacterSheet.Profession" xml:space="preserve">
+  <data name="Characteristics.Profession" xml:space="preserve">
     <value>Profession</value>
   </data>
-  <data name="CharacterSheet.Race" xml:space="preserve">
+  <data name="Characteristics.Race" xml:space="preserve">
     <value>Rasse</value>
   </data>
   <data name="CharacterSheet.Skills" xml:space="preserve">
@@ -533,5 +533,65 @@
   </data>
   <data name="UI.TakesTime" xml:space="preserve">
     <value>Dies könnte etwas dauern.</value>
+  </data>
+  <data name="Characteristics.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Characteristics.SocialStatus" xml:space="preserve">
+    <value>Sozialstatus</value>
+  </data>
+  <data name="Characteristics.PlaceOfBirth" xml:space="preserve">
+    <value>Geburtsort</value>
+  </data>
+  <data name="Characteristics.Family" xml:space="preserve">
+    <value>Familie</value>
+  </data>
+  <data name="Characteristics.BirthDate" xml:space="preserve">
+    <value>Geburtsdatum</value>
+  </data>
+  <data name="DSAMonth.Praios" xml:space="preserve">
+    <value>Praios</value>
+  </data>
+  <data name="DSAMonth.Rondra" xml:space="preserve">
+    <value>Rondra</value>
+  </data>
+  <data name="DSAMonth.Efferd" xml:space="preserve">
+    <value>Efferd</value>
+  </data>
+  <data name="DSAMonth.Travia" xml:space="preserve">
+    <value>Travia</value>
+  </data>
+  <data name="DSAMonth.Boron" xml:space="preserve">
+    <value>Boron</value>
+  </data>
+  <data name="DSAMonth.Hesinde" xml:space="preserve">
+    <value>Hesinde</value>
+  </data>
+  <data name="DSAMonth.Firun" xml:space="preserve">
+    <value>Firun</value>
+  </data>
+  <data name="DSAMonth.Tsa" xml:space="preserve">
+    <value>Tsa</value>
+  </data>
+  <data name="DSAMonth.Phex" xml:space="preserve">
+    <value>Phex</value>
+  </data>
+  <data name="DSAMonth.Peraine" xml:space="preserve">
+    <value>Peraine</value>
+  </data>
+  <data name="DSAMonth.Ingerimm" xml:space="preserve">
+    <value>Ingerimm</value>
+  </data>
+  <data name="DSAMonth.Rahja" xml:space="preserve">
+    <value>Rahja</value>
+  </data>
+  <data name="DSAMonth.Nameless" xml:space="preserve">
+    <value>Namenlosentage</value>
+  </data>
+  <data name="Characteristics.Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Characteristics.Other" xml:space="preserve">
+    <value>Anderes</value>
   </data>
 </root>

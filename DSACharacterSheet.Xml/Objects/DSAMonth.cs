@@ -2,7 +2,6 @@
 {
     public enum DSAMonth
     {
-        None = 0,
         Praios = 1,
         Rondra = 2,
         Efferd = 3,
@@ -15,7 +14,7 @@
         Peraine = 10,
         Ingerimm = 11,
         Rahja = 12,
-        NL = 13
+        Nameless = 13
     }
 
     public static class DSAMonthExtensions
@@ -38,7 +37,7 @@
                 case DSAMonth.Rahja:
                     return 30;
 
-                case DSAMonth.NL:
+                case DSAMonth.Nameless:
                     return 5;
 
                 default:

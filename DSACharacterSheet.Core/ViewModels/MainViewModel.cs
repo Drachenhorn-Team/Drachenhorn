@@ -160,9 +160,9 @@ namespace DSACharacterSheet.Core.ViewModels
             var ioService = SimpleIoc.Default.GetInstance<IIOService>();
 
             ioService.SaveStringDialog(
-                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Name) ?
+                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Characteristics.Name) ?
                     LanguageManager.Translate("HTML.DefaultFileName") :
-                    CurrentSheetViewModel.CurrentSheet.Name,
+                    CurrentSheetViewModel.CurrentSheet.Characteristics.Name,
                 ".html",
                 LanguageManager.Translate("HTML.FileType.Name"),
                 LanguageManager.Translate("HTML.SaveDialog.Title"),

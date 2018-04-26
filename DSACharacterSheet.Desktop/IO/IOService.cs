@@ -60,9 +60,9 @@ namespace DSACharacterSheet.Desktop.IO
         {
             var fileDialog = new SaveFileDialog
             {
-                FileName = string.IsNullOrEmpty(sheet.Name)
+                FileName = string.IsNullOrEmpty(sheet.Characteristics.Name)
                     ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
-                    : sheet.Name,
+                    : sheet.Characteristics.Name,
                 Filter = LanguageManager.Translate("CharacterSheet.FileType.Name") + " (*.dsac)|*.dsac",
                 FilterIndex = 1,
                 AddExtension = true,

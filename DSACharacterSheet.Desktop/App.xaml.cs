@@ -11,8 +11,6 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Win32;
-using SimpleLogger;
-using SimpleLogger.Logging.Handlers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -87,18 +85,18 @@ namespace DSACharacterSheet.Desktop
                     SetTheme(settings.VisualTheme);
             };
 
-            Logger.LoggerHandlerManager.AddHandler(
-                new FileLoggerHandler(
-                    "log.txt",
-                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                        "DSACharacterSheet")));
+//            Logger.LoggerHandlerManager.AddHandler(
+//                new FileLoggerHandler(
+//                    "log.txt",
+//                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+//                        "DSACharacterSheet")));
 
-            Logger.DefaultLevel = Logger.Level.Error;
-            Logger.DebugOff();
+//            Logger.DefaultLevel = Logger.Level.Error;
+//            Logger.DebugOff();
 
-#if DEBUG
-            Logger.DebugOn();
-#endif
+//#if DEBUG
+//            Logger.DebugOn();
+//#endif
 
             settings.CheckUpdateAsync(UpdateCheckFinished);
         }

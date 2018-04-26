@@ -10,10 +10,10 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
-
     <Window.Resources>
         <ResourceDictionary>
             <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converter:Base64ImageConverter x:Key="Base64ImageConverter"/>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -194,10 +194,13 @@
                             <Border BorderBrush="{StaticResource BorderBrush}"
                                     Background="GhostWhite" BorderThickness="1" CornerRadius="1"
                                     ClipToBounds="True" Margin="0 2 4 2">
-                                <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
-                                                  Width="30" Height="20" Loaded="InkPresenter_OnLoaded" />
+                                <Image Source="{Binding CurrentSheet.CoatOfArms.Base64String,
+                                                        Converter={StaticResource Base64ImageConverter}}"
+                                       MaxWidth="30" MaxHeight="20" MinWidth="20"/>
+                                <!--<InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
+                                                  Width="30" Height="20" Loaded="InkPresenter_OnLoaded" />-->
                             </Border>
-                            <TextBlock Text="{Binding CurrentSheet.Name}"
+                            <TextBlock Text="{Binding CurrentSheet.Characteristics.Name}"
                                        FontSize="12"
                                        FontFamily="{StaticResource Morpheus}"
                                        VerticalAlignment="Center" />

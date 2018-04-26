@@ -3,6 +3,10 @@
   <ItemGroup>
     <PublishFile Include="netfx.force.conflicts">
       <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
       <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
@@ -63,10 +67,11 @@
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -93,7 +98,7 @@
     <ApplicationIcon>Icons\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>618DA14C85CBA448A4351B50D7EA158184EB7896</ManifestCertificateThumbprint>
@@ -121,9 +126,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationFramework.Aero2" />
-    <Reference Include="SimpleLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleLogger.1.0.0\lib\net40\SimpleLogger.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -146,10 +148,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -175,9 +173,6 @@
     <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="ZKWeb.System.Drawing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZKWeb.System.Drawing.4.0.1\lib\net45\ZKWeb.System.Drawing.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -185,8 +180,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindingExtension\ImageBinding.cs" />
+    <Compile Include="Converter\AllowedDaysConverter.cs" />
     <Compile Include="Converter\Base64ImageConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\DisAdvantageTypeStringConverter.cs" />
     <Compile Include="Converter\EnumListStringConverter.cs" />
     <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
     <Compile Include="Converter\EnumToStringConverter.cs" />
@@ -198,13 +195,17 @@
     <Compile Include="Lang\TranslateTextExtension.cs" />
     <Compile Include="Lang\TranslateExtension.cs" />
     <Compile Include="MVVM\DialogService.cs" />
+    <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
+      <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
     <Compile Include="Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\AdvantageInformationControl.xaml.cs">
-      <DependentUpon>AdvantageInformationControl.xaml</DependentUpon>
+    <Compile Include="UserControls\DisAdvantageInformationControl.xaml.cs">
+      <DependentUpon>DisAdvantageInformationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AdventurePointsControl.xaml.cs">
       <DependentUpon>AdventurePointsControl.xaml</DependentUpon>
@@ -339,7 +340,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\AdvantageInformationControl.xaml">
+    <Page Include="UserControls\DisAdvantageInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -358,6 +359,10 @@
     <Page Include="UserControls\CharacterInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CharacteristicsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CharacterSheetControl.xaml">
       <Generator>MSBuild:Compile</Generator>

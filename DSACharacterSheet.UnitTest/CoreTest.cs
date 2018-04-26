@@ -21,10 +21,13 @@ namespace DSACharacterSheet.UnitTest
 
             var sheet = new CharacterSheet()
             {
-                Name = "test",
-                Race = new RaceInformation() { Name = "testRace" },
-                Culture = new CultureInformation() { Name = "testCulture", Specification = "test" },
-                Profession = new ProfessionInformation() { Name = "testProfession" }
+                Characteristics = new Characteristics()
+                {
+                    Name = "test",
+                    Race = new RaceInformation() { Name = "testRace" },
+                    Culture = new CultureInformation() { Name = "testCulture", Specification = "test" },
+                    Profession = new ProfessionInformation() { Name = "testProfession" }
+                }
             };
 
             var result = PrintingManager.GenerateHtml(sheet);
