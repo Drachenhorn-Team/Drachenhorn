@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Printing;
+using DSACharacterSheet.Xml.Calculation;
 using DSACharacterSheet.Xml.Exceptions;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
@@ -44,6 +45,7 @@ namespace DSACharacterSheet.Core.ViewModels
                 if (_currentSheetViewModel == value)
                     return;
                 _currentSheetViewModel = value;
+                Formula.CurrentSheet = value.CurrentSheet;
                 RaisePropertyChanged();
             }
         }
@@ -78,6 +80,8 @@ namespace DSACharacterSheet.Core.ViewModels
             ShowSettings = new RelayCommand(ExecuteShowSettings);
 
             CloseSheet = new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
+
+            CalculateAll = new RelayCommand(ExecuteCalculateAll);
         }
 
         public RelayCommand Save { get; private set; }
@@ -183,6 +187,13 @@ namespace DSACharacterSheet.Core.ViewModels
         private void ExecuteCloseSheet(CharacterSheetViewModel model)
         {
             CharacterSheetViewModels.Remove(model);
+        }
+
+        public RelayCommand CalculateAll { get; private set; }
+
+        private void ExecuteCalculateAll()
+        {
+            Formula.RaiseCalculateAll(CurrentSheetViewModel.CurrentSheet);
         }
 
         #endregion Commands

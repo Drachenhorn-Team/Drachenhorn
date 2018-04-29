@@ -216,9 +216,6 @@
     <Compile Include="UserControls\BaseValuesControl.xaml.cs">
       <DependentUpon>BaseValuesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CharacterInformationControl.xaml.cs">
-      <DependentUpon>CharacterInformationControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
       <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
     </Compile>
@@ -231,15 +228,15 @@
     <Compile Include="UserControls\SkillListControl.xaml.cs">
       <DependentUpon>SkillListControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SocialInformationControl.xaml.cs">
-      <DependentUpon>SocialInformationControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="Views\AttributeView.xaml.cs">
       <DependentUpon>AttributeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseValueView.xaml.cs">
+      <DependentUpon>BaseValueView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CoatOfArmsPainterView.xaml.cs">
       <DependentUpon>CoatOfArmsPainterView.xaml</DependentUpon>
@@ -356,10 +353,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\CharacterInformationControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\CharacteristicsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -380,15 +373,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\SocialInformationControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\SpecialSkillControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AttributeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BaseValueView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,16 +2,32 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Serialization;
+using DSACharacterSheet.Xml.Calculation;
 using DSACharacterSheet.Xml.Interfaces;
 
 namespace DSACharacterSheet.Xml.Sheet.Skills
 {
     [Serializable]
-    public class Attribute : BindableBase, IInfoObject
+    public class Attribute : BindableBase, IInfoObject, IFormulaKeyItem
     {
         [XmlIgnore]
-        private string _name;
+        private string _key;
+        [XmlAttribute("Key")]
+        public string Key
+        {
+            get { return _key; }
+            set
+            {
+                if (_key == value)
+                    return;
+                _key = value;
+                OnPropertyChanged();
+            }
+        }
 
+
+        [XmlIgnore]
+        private string _name;
         [XmlAttribute("Name")]
         public string Name
         {
@@ -26,10 +42,10 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
         }
 
         [XmlIgnore]
-        private double _startValue;
+        private int _startValue;
 
         [XmlAttribute("StartValue")]
-        public double StartValue
+        public int StartValue
         {
             get { return _startValue; }
             set
@@ -42,10 +58,10 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
         }
 
         [XmlIgnore]
-        private double _modifier;
+        private int _modifier;
 
         [XmlAttribute("Modifier")]
-        public double Modifier
+        public int Modifier
         {
             get { return _modifier; }
             set
@@ -58,10 +74,9 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
         }
 
         [XmlIgnore]
-        private double _currentValue;
-
+        private int _currentValue;
         [XmlAttribute("CurrentValue")]
-        public double CurrentValue
+        public int CurrentValue
         {
             get { return _currentValue; }
             set
@@ -71,6 +86,12 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
                 _currentValue = value;
                 OnPropertyChanged();
             }
+        }
+
+        [XmlIgnore]
+        public double Value
+        {
+            get { return CurrentValue; }
         }
 
         #region InfoObject

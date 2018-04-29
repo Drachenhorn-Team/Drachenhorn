@@ -8,6 +8,7 @@
     <None Remove="Images\Common\DSAFanLogo.png" />
     <None Remove="Images\Common\Icon.ico" />
     <None Remove="Images\Common\SaveFileIcon.ico" />
+    <None Remove="Images\Dark\Calculate.png" />
     <None Remove="Images\Dark\Common\Add.png" />
     <None Remove="Images\Dark\Common\ArrowBlockDown.png" />
     <None Remove="Images\Dark\Common\Remove.png" />
@@ -33,6 +34,7 @@
     <None Remove="Images\Flags\en.png" />
     <None Remove="Images\Flags\invariant.png" />
     <None Remove="Images\Flags\nds-DE.png" />
+    <None Remove="Images\Light\Calculate.png" />
     <None Remove="Images\Light\Common\Add.png" />
     <None Remove="Images\Light\Common\ArrowBlockDown.png" />
     <None Remove="Images\Light\Common\Remove.png" />
@@ -64,6 +66,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Common\SaveFileIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\Calculate.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Dark\Common\Add.png">
@@ -139,6 +144,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Flags\nds-DE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\Calculate.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Light\Common\Add.png">

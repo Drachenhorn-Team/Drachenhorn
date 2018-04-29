@@ -31,6 +31,8 @@
     <BitmapImage x:Key="SaveAsIcon" UriSource="{ex:ImageBinding Dark/SaveIcon.png}"/>
     <BitmapImage x:Key="UpdateAvailableIcon" UriSource="{ex:ImageBinding Dark/UpdateAvailable.png}"/>
 
+    <BitmapImage x:Key="CalculateIcon" UriSource="{ex:ImageBinding Dark/Calculate.png}"/>
+
     <BitmapImage x:Key="BrushIcon" UriSource="{ex:ImageBinding Dark/Painting/Brush.png}"/>
     <BitmapImage x:Key="ClearIcon" UriSource="{ex:ImageBinding Dark/Painting/Clear.png}"/>
     <BitmapImage x:Key="EraserIcon" UriSource="{ex:ImageBinding Dark/Painting/Eraser.png}"/>

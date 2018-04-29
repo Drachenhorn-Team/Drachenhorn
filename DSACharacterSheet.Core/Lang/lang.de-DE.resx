@@ -594,4 +594,10 @@
   <data name="Characteristics.Other" xml:space="preserve">
     <value>Anderes</value>
   </data>
+  <data name="CharacterSheet.Key" xml:space="preserve">
+    <value>Schlüssel</value>
+  </data>
+  <data name="CharacterSheet.Key.ToolTip" xml:space="preserve">
+    <value>Schlüssel, der für die Berechnung der anderen Werte verwendet wird.</value>
+  </data>
 </root>

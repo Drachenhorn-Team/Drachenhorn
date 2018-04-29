@@ -23,14 +23,23 @@ namespace DSACharacterSheet.Desktop.UserControls
                 return;
 
             var newItem = new Attribute();
+            new AttributeView(newItem).ShowDialog();
 
             ((IList<Attribute>)List.ItemsSource).Add(newItem);
-            List.SelectedItem = newItem;
+            //List.SelectedItem = newItem;
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute)List.SelectedItem);
+            if (!(sender is Button))
+                return;
+
+            var button = (Button) sender;
+
+            if (!(button.DataContext is Attribute))
+                return;
+
+            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute)button.DataContext);
         }
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

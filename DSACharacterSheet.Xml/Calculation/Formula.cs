@@ -1,6 +1,9 @@
-﻿using System.Data;
-using System.Xml.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using DSACharacterSheet.Xml.Sheet;
 using DSACharacterSheet.Xml.Sheet.Skills;
+using NCalc;
 
 namespace DSACharacterSheet.Xml.Calculation
 {
@@ -8,10 +11,21 @@ namespace DSACharacterSheet.Xml.Calculation
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _expression;
+        public static CharacterSheet CurrentSheet { get; set; }
+        
+        private CharacterSheet _parentSheet;
+        public CharacterSheet ParentSheet
+        {
+            get { return _parentSheet; }
+            set
+            {
+                if (_parentSheet == value)
+                    return;
+                _parentSheet = value;
+            }
+        }
 
-        [XmlAttribute("Expression")]
+        private string _expression;
         public string Expression
         {
             get { return _expression; }
@@ -20,30 +34,83 @@ namespace DSACharacterSheet.Xml.Calculation
                 if (_expression == value)
                     return;
                 _expression = value;
-                OnPropertyChanged("Expression");
+                OnPropertyChanged();
             }
         }
 
         #endregion Properties
 
-        #region Static
+        #region c'tor
 
-        public static double Execute(string expression, CharacterAttributes attributes)
+        public Formula()
         {
-            expression = expression.Replace("Courage", attributes.Courage.CurrentValue.ToString());
-            expression = expression.Replace("Wisdom", attributes.Wisdom.CurrentValue.ToString());
-            expression = expression.Replace("Intuition", attributes.Intuition.CurrentValue.ToString());
-            expression = expression.Replace("Charisma", attributes.Charisma.CurrentValue.ToString());
-            expression = expression.Replace("Prestidigitation", attributes.Prestidigitation.CurrentValue.ToString());
-            expression = expression.Replace("Finesse", attributes.Finesse.CurrentValue.ToString());
-            expression = expression.Replace("Constitution", attributes.Constitution.CurrentValue.ToString());
-            expression = expression.Replace("PhysicalStrength", attributes.PhysicalStrength.CurrentValue.ToString());
-            expression = expression.Replace("Speed", attributes.Speed.CurrentValue.ToString());
-
-            DataTable dt = new DataTable();
-            return (int)dt.Compute(expression, "");
+            ParentSheet = CurrentSheet;
+            OnCalculateAll += RecalculateAll;
         }
 
-        #endregion Static
+        ~Formula()
+        {
+            OnCalculateAll -= RecalculateAll;
+        }
+
+        private void RecalculateAll(object sender, CalculateEventArgs e)
+        {
+            if (e.Sheet == ParentSheet)
+                return;
+
+            this.Calculate();
+        }
+
+        #endregion c'tor
+
+        public double Calculate()
+        {
+            if (String.IsNullOrEmpty(_expression))
+                return 0;
+
+            var e = new Expression(Expression);
+
+
+            // Adding All Parameters
+            AddParameterList(ref e, ParentSheet.Attributes);
+
+
+            var result = e.Evaluate();
+
+            if (result != null)
+                return (double)result;
+
+            return 0.0;
+        }
+
+        #region Parameter
+
+        private void AddParameter(ref Expression expression, IFormulaKeyItem item)
+        {
+            expression.Parameters[item.Key] = item.Value;
+        }
+
+        private void AddParameterList(ref Expression expression, IEnumerable<IFormulaKeyItem> list)
+        {
+            foreach (var item in list)
+            {
+                AddParameter(ref expression, item);
+            }
+        }
+
+        #endregion Parameter
+
+        #region CalculateEvent
+
+        public delegate void CalculateAllHandler(object sender, CalculateEventArgs e);
+        public static event CalculateAllHandler OnCalculateAll;
+
+        public static void RaiseCalculateAll(CharacterSheet sheet)
+        {
+            var handler = OnCalculateAll;
+            handler?.Invoke(typeof(Formula), new CalculateEventArgs(sheet));
+        }
+
+        #endregion CalculateEvent
     }
 }
