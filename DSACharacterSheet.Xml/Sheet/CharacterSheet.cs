@@ -226,6 +226,9 @@ namespace DSACharacterSheet.Xml.Sheet
                     var serializer = new XmlSerializer(typeof(CharacterSheet));
                     var temp = (CharacterSheet)serializer.Deserialize(stream);
                     temp.FilePath = path;
+
+                    SetFormulaParent(ref temp);
+
                     return temp;
                 }
             }
@@ -233,6 +236,15 @@ namespace DSACharacterSheet.Xml.Sheet
             {
                 throw new SheetLoadingException(path, e);
             }
+        }
+
+        private static void SetFormulaParent(ref CharacterSheet sheet)
+        {
+            if (sheet == null)
+                return;
+
+            foreach (var baseValue in sheet.BaseValues)
+                baseValue.Formula.ParentSheet = sheet;
         }
 
         public bool Save()
