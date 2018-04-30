@@ -600,4 +600,13 @@
   <data name="CharacterSheet.Key.ToolTip" xml:space="preserve">
     <value>Key used as variable to calculate other values.</value>
   </data>
+  <data name="UI.Calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="UI.CalculateAll" xml:space="preserve">
+    <value>Calculate All</value>
+  </data>
+  <data name="CharacterSheet.Formula" xml:space="preserve">
+    <value>Formula</value>
+  </data>
 </root>

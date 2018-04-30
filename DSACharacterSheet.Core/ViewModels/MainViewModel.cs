@@ -105,7 +105,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         private void ExecuteSaveAs()
         {
-            CurrentSheetViewModel.SaveAs();
+            CurrentSheetViewModel?.SaveAs();
         }
 
         public RelayCommand SaveAll { get; private set; }
