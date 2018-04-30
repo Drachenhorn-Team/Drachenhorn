@@ -1,8 +1,8 @@
-﻿using DSACharacterSheet.Core.Lang;
-using System.Windows.Data;
+﻿using System.Windows.Data;
+using DSACharacterSheet.Core.Lang;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace DSACharacterSheet.Desktop.Lang
+namespace DSACharacterSheet.Desktop.UI.Lang
 {
     public class TranslateTextExtension : Binding
     {

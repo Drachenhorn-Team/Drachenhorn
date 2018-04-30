@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Windows.Data;
+﻿using System.Windows.Data;
 using DSACharacterSheet.Core.Images;
 
-namespace DSACharacterSheet.Desktop.BindingExtension
+namespace DSACharacterSheet.Desktop.UI.BindingExtension
 {
     public class ImageBinding : Binding
     {

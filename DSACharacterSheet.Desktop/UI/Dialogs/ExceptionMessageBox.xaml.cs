@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DSACharacterSheet.Desktop.Dialogs
+namespace DSACharacterSheet.Desktop.UI.Dialogs
 {
     /// <summary>
     /// Interaktionslogik für ExceptionMessageBox.xaml

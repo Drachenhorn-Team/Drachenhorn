@@ -1,12 +1,12 @@
 ﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:glob="clr-namespace:DSACharacterSheet.Core.Lang;assembly=DSACharacterSheet.Core"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:enum="clr-namespace:DSACharacterSheet.Core.Settings;assembly=DSACharacterSheet.Core"
+        xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
         x:Class="DSACharacterSheet.Desktop.Views.SettingsView"
         mc:Ignorable="d"
         Title="{lang:Translate UI.Properties}" Height="500"  Width="700">

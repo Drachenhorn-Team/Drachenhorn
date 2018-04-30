@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DSACharacterSheet.Desktop.Splash
+namespace DSACharacterSheet.Desktop.UI.Splash
 {
     /// <summary>
     /// Interaktionslogik für SplashScreen.xaml

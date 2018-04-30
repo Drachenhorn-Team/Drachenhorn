@@ -1,11 +1,11 @@
-﻿using DSACharacterSheet.Core.Lang;
-using DSACharacterSheet.Desktop.Dialogs;
-using GalaSoft.MvvmLight.Views;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Desktop.UI.Dialogs;
+using GalaSoft.MvvmLight.Views;
 
-namespace DSACharacterSheet.Desktop.MVVM
+namespace DSACharacterSheet.Desktop.UI.MVVM
 {
     public class DialogService : IDialogService
     {

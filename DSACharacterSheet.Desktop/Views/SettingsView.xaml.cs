@@ -9,7 +9,6 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using DSACharacterSheet.Core.Images;
-using DSACharacterSheet.Desktop.BindingExtension;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Views

@@ -2,9 +2,7 @@
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
-using DSACharacterSheet.Desktop.Dialogs;
 using DSACharacterSheet.Desktop.IO;
-using DSACharacterSheet.Desktop.MVVM;
 using DSACharacterSheet.Desktop.UserSettings;
 using DSACharacterSheet.Desktop.Views;
 using GalaSoft.MvvmLight.Ioc;
@@ -19,7 +17,10 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using DSACharacterSheet.Desktop.UI.Dialogs;
+using DSACharacterSheet.Desktop.UI.MVVM;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
+using SplashScreen = DSACharacterSheet.Desktop.UI.Splash.SplashScreen;
 
 namespace DSACharacterSheet.Desktop
 {
@@ -38,7 +39,7 @@ namespace DSACharacterSheet.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var splash = new Splash.SplashScreen();
+            var splash = new SplashScreen();
             splash.Show();
 
             if (!IsSingleInstance())
@@ -119,11 +120,11 @@ namespace DSACharacterSheet.Desktop
             switch (theme)
             {
                 case VisualThemeType.Dark:
-                    uri = "Themes/DarkTheme.xaml";
+                    uri = "UI/Themes/DarkTheme.xaml";
                     break;
 
                 case VisualThemeType.Light:
-                    uri = "Themes/LightTheme.xaml";
+                    uri = "UI/Themes/LightTheme.xaml";
                     break;
             }
 

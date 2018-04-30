@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:images="clr-namespace:DSACharacterSheet.Core.Images;assembly=DSACharacterSheet.Core"
+                    xmlns:bindingExtension="clr-namespace:DSACharacterSheet.Desktop.UI.BindingExtension">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+        <ResourceDictionary Source="MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+
+        <ResourceDictionary Source="Colors/Dark.xaml" />
+        <ResourceDictionary Source="BaseTheme.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--Images-->
+    
+    <BitmapImage x:Key="DsaIcon" UriSource="{bindingExtension:ImageBinding Common/DSAFanLogo.png}"/>
+
+    <BitmapImage x:Key="AddIcon" UriSource="{bindingExtension:ImageBinding Dark/Common/Add.png}"/>
+    <BitmapImage x:Key="RemoveIcon" UriSource="{bindingExtension:ImageBinding Dark/Common/Remove.png}"/>
+    <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="{bindingExtension:ImageBinding Dark/Common/ArrowBlockDown.png}"/>
+
+    <BitmapImage x:Key="EditIcon" UriSource="{bindingExtension:ImageBinding Dark/EditIcon.png}"/>
+    <BitmapImage x:Key="HtmlIcon" UriSource="{bindingExtension:ImageBinding Dark/Html.png}"/>
+    <BitmapImage x:Key="InfoIcon" UriSource="{bindingExtension:ImageBinding Dark/InfoIcon.png}"/>
+    <BitmapImage x:Key="MenuIcon" UriSource="{bindingExtension:ImageBinding Dark/MenuIcon.png}"/>
+    <BitmapImage x:Key="NewIcon" UriSource="{bindingExtension:ImageBinding Dark/NewIcon.png}"/>
+    <BitmapImage x:Key="PdfIcon" UriSource="{bindingExtension:ImageBinding Dark/Pdf.png}"/>
+    <BitmapImage x:Key="PrintIcon" UriSource="{bindingExtension:ImageBinding Dark/PrintIcon.png}"/>
+    <BitmapImage x:Key="PropertiesIcon" UriSource="{bindingExtension:ImageBinding Dark/PropertiesIcon.png}"/>
+    <BitmapImage x:Key="SaveAllIcon" UriSource="{bindingExtension:ImageBinding Dark/SaveAllIcon.png}"/>
+    <BitmapImage x:Key="SaveIcon" UriSource="{bindingExtension:ImageBinding Dark/SaveIcon.png}"/>
+    <BitmapImage x:Key="SaveAsIcon" UriSource="{bindingExtension:ImageBinding Dark/SaveIcon.png}"/>
+    <BitmapImage x:Key="UpdateAvailableIcon" UriSource="{bindingExtension:ImageBinding Dark/UpdateAvailable.png}"/>
+
+    <BitmapImage x:Key="CalculateIcon" UriSource="{bindingExtension:ImageBinding Dark/Calculate.png}"/>
+
+    <BitmapImage x:Key="BrushIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Brush.png}"/>
+    <BitmapImage x:Key="ClearIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Clear.png}"/>
+    <BitmapImage x:Key="EraserIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Eraser.png}"/>
+    <BitmapImage x:Key="PencilIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Pencil.png}"/>
+    <BitmapImage x:Key="RedoIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Redo.png}"/>
+    <BitmapImage x:Key="SelectIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Select.png}"/>
+    <BitmapImage x:Key="UndoIcon" UriSource="{bindingExtension:ImageBinding Dark/Painting/Undo.png}"/>
+</ResourceDictionary>

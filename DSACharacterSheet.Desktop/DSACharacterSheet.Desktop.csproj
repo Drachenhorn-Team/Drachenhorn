@@ -220,7 +220,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BindingExtension\ImageBinding.cs" />
+    <Compile Include="UI\BindingExtension\ImageBinding.cs" />
     <Compile Include="Converter\AllowedDaysConverter.cs" />
     <Compile Include="Converter\Base64ImageConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
@@ -230,20 +230,20 @@
     <Compile Include="Converter\EnumToStringConverter.cs" />
     <Compile Include="Converter\Validation\FormulaValidationRule.cs" />
     <Compile Include="Converter\ValueTranslationConverter.cs" />
-    <Compile Include="Dialogs\ExceptionMessageBox.xaml.cs">
+    <Compile Include="UI\Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="IO\IOService.cs" />
-    <Compile Include="Lang\TranslateTextExtension.cs" />
-    <Compile Include="Lang\TranslateExtension.cs" />
-    <Compile Include="MVVM\DialogService.cs" />
+    <Compile Include="UI\Lang\TranslateTextExtension.cs" />
+    <Compile Include="UI\Lang\TranslateExtension.cs" />
+    <Compile Include="UI\MVVM\DialogService.cs" />
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
-    <Compile Include="Splash\SplashScreen.xaml.cs">
+    <Compile Include="UI\Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DisAdvantageInformationControl.xaml.cs">
@@ -295,7 +295,7 @@
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dialogs\ExceptionMessageBox.xaml">
+    <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -303,79 +303,79 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Splash\SplashScreen.xaml">
+    <Page Include="UI\Splash\SplashScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\BaseTheme.xaml">
+    <Page Include="UI\Themes\BaseTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\Black.xaml">
+    <Page Include="UI\Themes\Colors\Black.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\Dark.xaml">
+    <Page Include="UI\Themes\Colors\Dark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\Light.xaml">
+    <Page Include="UI\Themes\Colors\Light.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\White.xaml">
+    <Page Include="UI\Themes\Colors\White.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\DarkTheme.xaml">
+    <Page Include="UI\Themes\DarkTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Generic.xaml">
+    <Page Include="UI\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\LightTheme.xaml">
+    <Page Include="UI\Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml">
+    <Page Include="UI\Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\MetroDark\MetroDark.MSControls.Toolkit.Implicit.xaml">
+    <Page Include="UI\Themes\MetroDark\MetroDark.MSControls.Toolkit.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\MetroDark\Styles.Shared.xaml">
+    <Page Include="UI\Themes\MetroDark\Styles.Shared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\MetroDark\Styles.WPF.xaml">
+    <Page Include="UI\Themes\MetroDark\Styles.WPF.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\MetroDark\Theme.Colors.xaml">
+    <Page Include="UI\Themes\MetroDark\Theme.Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\Metro.MSControls.Core.Implicit.xaml">
+    <Page Include="UI\Themes\Metro\Metro.MSControls.Core.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\Metro.MSControls.Toolkit.Implicit.xaml">
+    <Page Include="UI\Themes\Metro\Metro.MSControls.Toolkit.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\Styles.Shared.xaml">
+    <Page Include="UI\Themes\Metro\Styles.Shared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\Styles.WPF.xaml">
+    <Page Include="UI\Themes\Metro\Styles.WPF.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\Theme.Colors.xaml">
+    <Page Include="UI\Themes\Metro\Theme.Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
