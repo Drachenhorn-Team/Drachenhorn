@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.Lang"
         xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:validation="clr-namespace:DSACharacterSheet.Desktop.Converter.Validation"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         ResizeMode="CanMinimize"
-        Title="{Binding Name}" MinHeight="200" Width="300" SizeToContent="Height">
+        Title="{Binding Name}" MinHeight="200" Width="500" SizeToContent="Height">
     <Window.Resources>
         <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}">
             <Setter Property="Margin" Value="5" />
@@ -40,16 +42,30 @@
         <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"/>
         <userElements:InfoButton InfoObject="{Binding .}" Grid.Column="2" Grid.Row="1" />
 
-        <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Row="2" Grid.Column="0" />
-        <TextBox Text="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
+        <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" Grid.Row="2" Grid.Column="0" />
+        <TextBlock Text="{Binding StartValue, UpdateSourceTrigger=PropertyChanged}"
+                   HorizontalAlignment="Right" Margin="5"
+                   Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
 
-        <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" Grid.Row="3" Grid.Column="0" />
-        <TextBox Text="{Binding StartValue, UpdateSourceTrigger=PropertyChanged}"
+        <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Row="3" Grid.Column="0" />
+        <TextBox Text="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Right"
                  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" Grid.Row="4" Grid.Column="0" />
         <TextBox Text="{Binding CurrentValue, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Right"
                  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" />
+
+        <TextBlock Text="{lang:Translate CharacterSheet.Formula}" Grid.Row="5" Grid.Column="0" />
+        <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5">
+            <TextBox.Text>
+                <Binding Path="FormulaText" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validation:FormulaValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
     </Grid>
 </Window>

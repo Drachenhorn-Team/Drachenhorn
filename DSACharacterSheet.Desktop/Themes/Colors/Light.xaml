@@ -23,4 +23,5 @@
     <Color x:Key="MenuBorderColor">#585A56</Color>
 
     <Color x:Key="InfoColor">#AD8FFF0A</Color>
+    <Color x:Key="ErrorColor">#BF0000</Color>
 </ResourceDictionary>

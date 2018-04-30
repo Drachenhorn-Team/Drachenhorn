@@ -32,39 +32,63 @@
             <MenuItem Header="{lang:Translate UI.File}">
                 <MenuItem Header="{lang:Translate UI.New}"
                           Command="{Binding New}"
-                          Icon="{StaticResource NewIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource NewIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Open}"
                           Command="{Binding Open}"
-                          Icon="{StaticResource EditIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource EditIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Save}"
                           Command="{Binding Save}"
-                          Icon="{StaticResource SaveIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource SaveIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAs}"
-                          Command="{Binding SaveAs}"
-                          Icon="{StaticResource SaveAsIcon}"/>
+                          Command="{Binding SaveAs}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource SaveAsIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAll}"
                           Command="{Binding SaveAll}"
-                          Icon="{StaticResource SaveAllIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource SaveAllIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
                 <MenuItem Header="{lang:Translate UI.Print}"
                           Command="{Binding Print}"
-                          Icon="{StaticResource PrintIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource PrintIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
                 <MenuItem Header="{lang:Translate UI.Properties}"
                           Command="{Binding ShowSettings}"
-                          Icon="{StaticResource PropertiesIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource PropertiesIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="{lang:Translate UI.Calculate}">
                 <MenuItem Header="{lang:Translate UI.CalculateAll}"
                           Command="{Binding CalculateAll}"
-                          Icon="{StaticResource CalculateIcon}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Ctrl + C}"/>
+                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Ctrl + C}">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource CalculateIcon}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
 

@@ -38,6 +38,41 @@ namespace DSACharacterSheet.Xml.Calculation
             }
         }
 
+
+        #region Validation
+
+        private string _validationMessage;
+        public string ValidationMessage
+        {
+            get { return _validationMessage; }
+            set
+            {
+                if (_validationMessage == value)
+                    return;
+                _validationMessage = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        public bool IsValid
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(Expression))
+                    return true;
+
+                var ex = new Expression(Expression);
+
+                if (!ex.HasErrors())
+                    return true;
+
+                ValidationMessage = ex.Error;
+                return false;
+            }
+        }
+
+        #endregion Validation
+
         #endregion Properties
 
         #region c'tor
@@ -65,7 +100,7 @@ namespace DSACharacterSheet.Xml.Calculation
 
         public double Calculate()
         {
-            if (String.IsNullOrEmpty(_expression))
+            if (String.IsNullOrEmpty(Expression))
                 return 0;
 
             var e = new Expression(Expression);
@@ -84,9 +119,12 @@ namespace DSACharacterSheet.Xml.Calculation
         }
 
         #region Parameter
-
+        
         private void AddParameter(ref Expression expression, IFormulaKeyItem item)
         {
+            if (String.IsNullOrEmpty(item.Key))
+                return;
+
             expression.Parameters[item.Key] = item.Value;
         }
 

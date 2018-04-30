@@ -45,7 +45,7 @@ namespace DSACharacterSheet.Core.ViewModels
                 if (_currentSheetViewModel == value)
                     return;
                 _currentSheetViewModel = value;
-                Formula.CurrentSheet = value.CurrentSheet;
+                Formula.CurrentSheet = value?.CurrentSheet;
                 RaisePropertyChanged();
             }
         }
