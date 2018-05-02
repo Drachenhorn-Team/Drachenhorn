@@ -9,7 +9,7 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für BaseValuesControl.xaml
     /// </summary>
-    public partial class BaseValuesControl : UserControlBase
+    public partial class BaseValuesControl : UserControl
     {
         public BaseValuesControl()
         {

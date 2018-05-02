@@ -1,10 +1,11 @@
 ﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
-namespace DSACharacterSheet.Core.ViewModels
+namespace DSACharacterSheet.Core.ViewModels.Sheet
 {
     public class SettingsViewModel : ViewModelBase
     {

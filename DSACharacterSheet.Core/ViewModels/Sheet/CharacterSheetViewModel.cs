@@ -1,11 +1,12 @@
-﻿using DSACharacterSheet.Core.IO;
+﻿using System;
+using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Xml.Exceptions;
 using DSACharacterSheet.Xml.Sheet;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using System;
 
-namespace DSACharacterSheet.Core.ViewModels
+namespace DSACharacterSheet.Core.ViewModels.Sheet
 {
     public class CharacterSheetViewModel : ViewModelBase
     {

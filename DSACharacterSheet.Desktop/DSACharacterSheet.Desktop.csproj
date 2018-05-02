@@ -234,13 +234,18 @@
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="IO\IOService.cs" />
+    <Compile Include="UI\Dialogs\TemplateSelectorDialog.xaml.cs">
+      <DependentUpon>TemplateSelectorDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Lang\TranslateTextExtension.cs" />
     <Compile Include="UI\Lang\TranslateExtension.cs" />
     <Compile Include="UI\MVVM\DialogService.cs" />
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlBase.cs" />
+    <Compile Include="UserControls\Template\RaceTemplateControl.xaml.cs">
+      <DependentUpon>RaceTemplateControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
@@ -296,6 +301,9 @@
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TemplateMainView.xaml.cs">
+      <DependentUpon>TemplateMainView.xaml</DependentUpon>
+    </Compile>
     <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -304,6 +312,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\Dialogs\TemplateSelectorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Splash\SplashScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -420,6 +432,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Template\RaceTemplateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AttributeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -445,6 +461,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TemplateMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

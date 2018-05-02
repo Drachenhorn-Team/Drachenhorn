@@ -6,6 +6,7 @@
         xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
         xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
+        xmlns:sheet="clr-namespace:DSACharacterSheet.Core.ViewModels.Sheet;assembly=DSACharacterSheet.Core"
         x:Class="DSACharacterSheet.Desktop.Views.MainView"
         mc:Ignorable="d"
         WindowState="Maximized"
@@ -90,6 +91,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="{lang:Translate UI.Template}" Command="{Binding OpenTemplates}"/>
         </Menu>
 
         <Separator DockPanel.Dock="Top" />
@@ -199,7 +201,7 @@
                 <DataTemplate>
                     <WrapPanel Height="30">
                         <StackPanel Orientation="Horizontal"
-                                    d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
+                                    d:DataContext="{d:DesignInstance {x:Type sheet:CharacterSheetViewModel}}">
                             <Border BorderBrush="{StaticResource BorderBrush}"
                                     Background="GhostWhite" BorderThickness="1" CornerRadius="1"
                                     ClipToBounds="True" Margin="0 2 4 2">

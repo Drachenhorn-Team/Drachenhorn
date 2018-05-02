@@ -5,6 +5,9 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Windows;
 using System.Windows.Media;
+using DSACharacterSheet.Core.ViewModels.Common;
+using DSACharacterSheet.Core.ViewModels.Sheet;
+using DSACharacterSheet.Desktop.UI.Dialogs;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -56,6 +59,8 @@ namespace DSACharacterSheet.Desktop.Views
                     new PrintView(print).ShowDialog();
                 }
             }
+            else if (message.Notification == "ShowOpenTemplates")
+                new TemplateSelectorDialog().ShowDialog();
         }
 
         private void InkPresenter_OnLoaded(object sender, RoutedEventArgs e)

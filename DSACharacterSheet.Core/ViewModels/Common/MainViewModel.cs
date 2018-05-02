@@ -1,15 +1,17 @@
-﻿using DSACharacterSheet.Core.IO;
+﻿using System;
+using System.Collections.ObjectModel;
+using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Printing;
+using DSACharacterSheet.Core.ViewModels.Sheet;
 using DSACharacterSheet.Xml.Calculation;
 using DSACharacterSheet.Xml.Exceptions;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using System;
-using System.Collections.ObjectModel;
 
-namespace DSACharacterSheet.Core.ViewModels
+namespace DSACharacterSheet.Core.ViewModels.Common
 {
     public class MainViewModel : ViewModelBase
     {
@@ -75,6 +77,8 @@ namespace DSACharacterSheet.Core.ViewModels
             CloseSheet = new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
 
             CalculateAll = new RelayCommand(ExecuteCalculateAll);
+
+            OpenTemplates = new RelayCommand(ExecuteOpenTemplates);
         }
 
         public RelayCommand Save { get; private set; }
@@ -187,6 +191,14 @@ namespace DSACharacterSheet.Core.ViewModels
         private void ExecuteCalculateAll()
         {
             Formula.RaiseCalculateAll(CurrentSheetViewModel.CurrentSheet);
+        }
+
+
+        public RelayCommand OpenTemplates { get; private set; }
+
+        private void ExecuteOpenTemplates()
+        {
+            Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));
         }
 
         #endregion Commands

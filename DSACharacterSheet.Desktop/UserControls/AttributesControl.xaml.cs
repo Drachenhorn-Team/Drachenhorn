@@ -10,7 +10,7 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für AttributeControl.xaml
     /// </summary>
-    public partial class AttributesControl : UserControlBase
+    public partial class AttributesControl : UserControl
     {
         public AttributesControl()
         {

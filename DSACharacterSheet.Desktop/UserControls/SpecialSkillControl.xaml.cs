@@ -9,7 +9,7 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für SpecialSkillControl.xaml
     /// </summary>
-    public partial class SpecialSkillControl : UserControlBase
+    public partial class SpecialSkillControl : UserControl
     {
         public SpecialSkillControl()
         {

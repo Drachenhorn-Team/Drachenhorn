@@ -12,7 +12,7 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für SkillListControl.xaml
     /// </summary>
-    public partial class SkillListControl : UserControlBase
+    public partial class SkillListControl : UserControl
     {
         public SkillListControl()
         {

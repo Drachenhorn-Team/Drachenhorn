@@ -1,4 +1,4 @@
-﻿<controls:UserControlBase x:Class="DSACharacterSheet.Desktop.UserControls.CharacterSheetControl"
+﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.CharacterSheetControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6,9 +6,10 @@
              xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
              xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
+             xmlns:sheet="clr-namespace:DSACharacterSheet.Core.ViewModels.Sheet;assembly=DSACharacterSheet.Core"
              mc:Ignorable="d"
              d:DesignHeight="5000" d:DesignWidth="900"
-             d:DataContext="{d:DesignInstance vm:CharacterSheetViewModel}">
+             d:DataContext="{d:DesignInstance sheet:CharacterSheetViewModel}">
     <UserControl.Resources>
         <ResourceDictionary>
             <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}" />
@@ -80,7 +81,7 @@
 
             <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
                 <controls:CoatOfArmsControl
-                    Data="{Binding CurrentSheet.CoatOfArms}"
+                    DataContext="{Binding CurrentSheet.CoatOfArms}"
                     Margin="5" Width="400" />
             </Border>
         </Grid>
@@ -130,4 +131,4 @@
                 Margin="5" />
         </Border>
     </StackPanel>
-</controls:UserControlBase>
+</UserControl>

@@ -1,4 +1,8 @@
 using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Core.ViewModels.Common;
+using DSACharacterSheet.Core.ViewModels.Sheet;
+using DSACharacterSheet.Core.ViewModels.Template;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Core.ViewModels
@@ -26,7 +30,7 @@ namespace DSACharacterSheet.Core.ViewModels
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<PrintViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
-            SimpleIoc.Default.Register<CoatOfArmsViewModel>();
+            SimpleIoc.Default.Register<TemplateMainViewModel>();
         }
 
         public MainViewModel MainView => SimpleIoc.Default.GetInstance<MainViewModel>();
@@ -35,7 +39,7 @@ namespace DSACharacterSheet.Core.ViewModels
 
         public SettingsViewModel SettingsView => SimpleIoc.Default.GetInstance<SettingsViewModel>();
 
-        public CoatOfArmsViewModel CoatOfArmsView => SimpleIoc.Default.GetInstance<CoatOfArmsViewModel>();
+        public TemplateMainViewModel TemplateMainView => SimpleIoc.Default.GetInstance<TemplateMainViewModel>();
 
         public static void Cleanup()
         {

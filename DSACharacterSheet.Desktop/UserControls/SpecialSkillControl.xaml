@@ -1,4 +1,4 @@
-﻿<local:UserControlBase x:Class="DSACharacterSheet.Desktop.UserControls.SpecialSkillControl"
+﻿<UserControl x:Class="DSACharacterSheet.Desktop.UserControls.SpecialSkillControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -64,4 +64,4 @@
             <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="0" Grid.Column="1" />
         </Grid>-->
     </DockPanel>
-</local:UserControlBase>
+</UserControl>
