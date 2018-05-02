@@ -1,18 +1,18 @@
-﻿using System;
+﻿using DSACharacterSheet.Xml.Sheet.Skills;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-using DSACharacterSheet.Xml.Sheet.Skills;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
     /// Interaktionslogik für SkillListControl.xaml
     /// </summary>
-    public partial class SkillListControl : UserControl
+    public partial class SkillListControl : UserControlBase
     {
         public SkillListControl()
         {

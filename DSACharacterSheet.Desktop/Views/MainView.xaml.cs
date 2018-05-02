@@ -1,10 +1,10 @@
 ﻿using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Core.ViewModels;
+using DSACharacterSheet.Xml.Sheet;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Windows;
 using System.Windows.Media;
-using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Desktop.Views
 {

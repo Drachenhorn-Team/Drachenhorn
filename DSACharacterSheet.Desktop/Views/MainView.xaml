@@ -13,7 +13,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-            <converter:Base64ImageConverter x:Key="Base64ImageConverter"/>
+            <converter:Base64ImageConverter x:Key="Base64ImageConverter" />
         </ResourceDictionary>
     </Window.Resources>
 
@@ -34,34 +34,34 @@
                           Command="{Binding New}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource NewIcon}"/>
+                        <Image Source="{StaticResource NewIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Open}"
                           Command="{Binding Open}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource EditIcon}"/>
+                        <Image Source="{StaticResource EditIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Save}"
                           Command="{Binding Save}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveIcon}"/>
+                        <Image Source="{StaticResource SaveIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAs}"
                           Command="{Binding SaveAs}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveAsIcon}"/>
+                        <Image Source="{StaticResource SaveAsIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{lang:Translate UI.SaveAll}"
                           Command="{Binding SaveAll}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource SaveAllIcon}"/>
+                        <Image Source="{StaticResource SaveAllIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
@@ -69,7 +69,7 @@
                           Command="{Binding Print}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource PrintIcon}"/>
+                        <Image Source="{StaticResource PrintIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator Background="{StaticResource BorderBrush}" />
@@ -77,7 +77,7 @@
                           Command="{Binding ShowSettings}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource PropertiesIcon}"/>
+                        <Image Source="{StaticResource PropertiesIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -86,7 +86,7 @@
                           Command="{Binding CalculateAll}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Ctrl + C}">
                     <MenuItem.Icon>
-                        <Image Source="{StaticResource CalculateIcon}"/>
+                        <Image Source="{StaticResource CalculateIcon}" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -205,7 +205,7 @@
                                     ClipToBounds="True" Margin="0 2 4 2">
                                 <Image Source="{Binding CurrentSheet.CoatOfArms.Base64String,
                                                         Converter={StaticResource Base64ImageConverter}}"
-                                       MaxWidth="30" MaxHeight="20" MinWidth="20"/>
+                                       MaxWidth="30" MaxHeight="20" MinWidth="20" />
                                 <!--<InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
                                                   Width="30" Height="20" Loaded="InkPresenter_OnLoaded" />-->
                             </Border>

@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using DSACharacterSheet.Xml.Sheet.Skills;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using DSACharacterSheet.Xml.Sheet.Skills;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
     /// Interaktionslogik für SpecialSkillControl.xaml
     /// </summary>
-    public partial class SpecialSkillControl : UserControl
+    public partial class SpecialSkillControl : UserControlBase
     {
         public SpecialSkillControl()
         {

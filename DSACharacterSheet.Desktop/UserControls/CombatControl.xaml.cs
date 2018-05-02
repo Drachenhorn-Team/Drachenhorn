@@ -7,7 +7,7 @@ namespace DSACharacterSheet.Desktop.UserControls
     /// <summary>
     /// Interaktionslogik für CombatView.xaml
     /// </summary>
-    public partial class CombatControl : UserControl
+    public partial class CombatControl : UserControlBase
     {
         public CombatControl()
         {

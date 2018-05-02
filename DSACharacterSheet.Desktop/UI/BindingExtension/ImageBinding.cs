@@ -1,5 +1,5 @@
-﻿using System.Windows.Data;
-using DSACharacterSheet.Core.Images;
+﻿using DSACharacterSheet.Core.Images;
+using System.Windows.Data;
 
 namespace DSACharacterSheet.Desktop.UI.BindingExtension
 {

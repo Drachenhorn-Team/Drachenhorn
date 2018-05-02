@@ -19,7 +19,7 @@
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          IsChecked="True" Checked="BrushType_Checked_1"
                          ToolTip="{lang:Translate Painter.Pencil}">
-                <Image Source="{StaticResource PencilIcon}"/>
+                <Image Source="{StaticResource PencilIcon}" />
             </RadioButton>
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          Checked="BrushType_Checked_2"

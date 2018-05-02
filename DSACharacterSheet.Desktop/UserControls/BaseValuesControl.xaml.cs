@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using DSACharacterSheet.Desktop.Views;
+using DSACharacterSheet.Xml.Sheet.Skills;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using DSACharacterSheet.Desktop.Views;
-using DSACharacterSheet.Xml.Sheet.Skills;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
     /// Interaktionslogik für BaseValuesControl.xaml
     /// </summary>
-    public partial class BaseValuesControl : UserControl
+    public partial class BaseValuesControl : UserControlBase
     {
         public BaseValuesControl()
         {

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
@@ -48,7 +42,6 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #endregion Properties
 
-
         #region c'tor
 
         public SettingsViewModel(ISettings settings, IDialogService dialogService)
@@ -62,7 +55,6 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #endregion c'tor
 
-
         #region Commands
 
         private void InitializeCommands()
@@ -71,7 +63,7 @@ namespace DSACharacterSheet.Core.ViewModels
         }
 
         public RelayCommand CheckForUpdate { get; private set; }
-        
+
         private void ExecuteCheckForUpdate()
         {
             IsCheckingUpdate = true;

@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using DSACharacterSheet.Xml.Sheet.Skills;
+﻿using DSACharacterSheet.Xml.Sheet.Skills;
+using System.Windows;
 
 namespace DSACharacterSheet.Desktop.Views
 {

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows;
-using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Desktop.UI.Dialogs;
 using GalaSoft.MvvmLight.Views;
+using System;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace DSACharacterSheet.Desktop.UI.MVVM
 {

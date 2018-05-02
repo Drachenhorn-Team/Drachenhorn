@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DSACharacterSheet.Xml.Calculation;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
-using DSACharacterSheet.Xml.Calculation;
 
 namespace DSACharacterSheet.Desktop.Converter.Validation
 {
@@ -18,7 +13,7 @@ namespace DSACharacterSheet.Desktop.Converter.Validation
 
             var formula = new Formula();
             formula.Expression = value.ToString();
-            
+
             return new ValidationResult(formula.IsValid, formula.ValidationMessage);
         }
     }

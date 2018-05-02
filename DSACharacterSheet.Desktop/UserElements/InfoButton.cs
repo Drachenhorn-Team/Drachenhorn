@@ -1,8 +1,8 @@
 ﻿using DSACharacterSheet.Desktop.Views;
+using DSACharacterSheet.Xml.Interfaces;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using DSACharacterSheet.Xml.Interfaces;
 
 namespace DSACharacterSheet.Desktop.UserElements
 {

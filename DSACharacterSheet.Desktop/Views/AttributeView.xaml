@@ -33,10 +33,10 @@
                    ToolTip="{lang:Translate CharacterSheet.Key.ToolTip}"
                    Grid.Row="0" Grid.Column="0" />
         <TextBox Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                 Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Row="1" Grid.Column="0" />
-        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" />
         <userElements:InfoButton InfoObject="{Binding .}" Grid.Column="2" Grid.Row="1" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Row="2" Grid.Column="0" />

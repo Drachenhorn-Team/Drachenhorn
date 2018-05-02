@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Xml.Serialization;
 using DSACharacterSheet.Xml.Interfaces;
@@ -21,7 +22,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
                 if (_name == value)
                     return;
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged();
             }
         }
 
@@ -42,27 +43,35 @@ namespace DSACharacterSheet.Xml.Sheet.Common
         }
 
         [XmlIgnore]
-        private double _gpCost;
+        private ObservableCollection<BonusValue> _baseValues;
 
-        [XmlAttribute("GPCost")]
-        public double GPCost
+        [XmlElement("BaseValue")]
+        public ObservableCollection<BonusValue> BaseValues
         {
-            get { return _gpCost; }
+            get { return _baseValues; }
             set
             {
-                if (_gpCost == value)
+                if (_baseValues == value)
                     return;
-                _gpCost = value;
-                OnPropertyChanged("GPCost");
+                _baseValues = value;
+                OnPropertyChanged();
             }
         }
+
+
 
         public Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
+            var baseValues = "";
+            foreach (var baseValue in BaseValues)
+            {
+                baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
+            }
+            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues);
+
 
             return result;
         }

@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
     <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
-    <converter:AllowedDaysConverter x:Key="AllowedDaysConverter"/>
+    <converter:AllowedDaysConverter x:Key="AllowedDaysConverter" />
     <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="DsaMonthEnum">
         <ObjectDataProvider.MethodParameters>
             <x:Type TypeName="objects:DSAMonth" />
@@ -57,9 +57,9 @@
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <ComboBox Name="PART_DayButton"
                                       SelectedItem="{Binding Date.Day,
@@ -67,15 +67,15 @@
                                       ItemsSource="{Binding Date.Month,
                                                 Converter={StaticResource AllowedDaysConverter},
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                      Grid.Column="0" Margin="5"/>
+                                      Grid.Column="0" Margin="5" MinWidth="60"/>
                             <ComboBox Text="{Binding Date.Month,
                                                 Converter={StaticResource EnumToStringConverter},
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                       ItemsSource="{Binding Source={StaticResource DsaMonthEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                      Grid.Column="1" Margin="5"/>
+                                      Grid.Column="1" Margin="5" MinWidth="100"/>
                             <TextBox Text="{Binding Date.Year,
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                     Grid.Column="2"/>
+                                     Grid.Column="2" />
                         </Grid>
                     </Border>
                 </ControlTemplate>

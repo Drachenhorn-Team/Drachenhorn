@@ -1,15 +1,13 @@
-﻿using DSACharacterSheet.Core.Settings;
+﻿using DSACharacterSheet.Core.Images;
+using DSACharacterSheet.Core.Settings;
+using GalaSoft.MvvmLight.Ioc;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using DSACharacterSheet.Core.Images;
-using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.Views
 {

@@ -1,6 +1,6 @@
-﻿using System.Windows.Data;
-using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.Lang;
 using GalaSoft.MvvmLight.Ioc;
+using System.Windows.Data;
 
 namespace DSACharacterSheet.Desktop.UI.Lang
 {

@@ -1,15 +1,14 @@
 ﻿using DSACharacterSheet.Desktop.Views;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 using DSACharacterSheet.Xml.Sheet.Common;
+using System.Windows;
+using System.Windows.Media;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
     /// Interaktionslogik für CoatOfArmsControl.xaml
     /// </summary>
-    public partial class CoatOfArmsControl : UserControl
+    public partial class CoatOfArmsControl : UserControlBase
     {
         public CoatOfArmsControl()
         {
@@ -35,7 +34,7 @@ namespace DSACharacterSheet.Desktop.UserControls
 
             view.Closing += (s, args) =>
             {
-                ((CoatOfArms) this.DataContext).Base64String = view.GetBase64();
+                ((CoatOfArms)this.DataContext).Base64String = view.GetBase64();
             };
 
             view.Show();

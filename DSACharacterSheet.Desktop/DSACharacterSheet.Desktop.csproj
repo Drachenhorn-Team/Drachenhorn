@@ -240,6 +240,7 @@
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlBase.cs" />
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
@@ -331,7 +332,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Themes\Generic.xaml">
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -457,9 +458,7 @@
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
-    <Resource Include="Resources\Morpheus.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resources\Morpheus.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

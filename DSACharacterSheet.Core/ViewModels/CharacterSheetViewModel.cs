@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Core.IO;
+﻿using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Xml.Exceptions;
 using DSACharacterSheet.Xml.Sheet;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using System;
 
 namespace DSACharacterSheet.Core.ViewModels
 {
@@ -32,7 +27,6 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #endregion Properties
 
-
         #region c'tor
 
         public CharacterSheetViewModel()
@@ -45,7 +39,6 @@ namespace DSACharacterSheet.Core.ViewModels
         }
 
         #endregion c'tor
-
 
         #region Actions
 

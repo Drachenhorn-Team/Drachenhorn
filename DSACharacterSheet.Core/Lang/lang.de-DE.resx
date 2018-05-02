@@ -609,4 +609,16 @@
   <data name="CharacterSheet.Formula" xml:space="preserve">
     <value>Formel</value>
   </data>
+  <data name="PNG.FileType.Name" xml:space="preserve">
+    <value>Bilddatei (.png)</value>
+  </data>
+  <data name="PNG.SaveDialog.Title" xml:space="preserve">
+    <value>Bild speichern</value>
+  </data>
+  <data name="CoatOfArms.DefaultFileName" xml:space="preserve">
+    <value>Wappen</value>
+  </data>
+  <data name="PNG.OpenDialog.Title" xml:space="preserve">
+    <value>Bild öffnen</value>
+  </data>
 </root>

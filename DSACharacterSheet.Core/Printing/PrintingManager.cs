@@ -1,9 +1,7 @@
 ﻿using DSACharacterSheet.Core.Printing.Exceptions;
+using DSACharacterSheet.Xml.Sheet;
 using System;
 using System.IO;
-using DSACharacterSheet.Core.ViewModels;
-using DSACharacterSheet.Xml.Sheet;
-using Encoding = System.Text.Encoding;
 
 namespace DSACharacterSheet.Core.Printing
 {

@@ -1,7 +1,4 @@
-using System.Configuration;
 using DSACharacterSheet.Core.Lang;
-using DSACharacterSheet.Core.Settings;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Core.ViewModels
@@ -29,6 +26,7 @@ namespace DSACharacterSheet.Core.ViewModels
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<PrintViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<CoatOfArmsViewModel>();
         }
 
         public MainViewModel MainView => SimpleIoc.Default.GetInstance<MainViewModel>();
@@ -36,6 +34,8 @@ namespace DSACharacterSheet.Core.ViewModels
         public PrintViewModel PrintView => SimpleIoc.Default.GetInstance<PrintViewModel>();
 
         public SettingsViewModel SettingsView => SimpleIoc.Default.GetInstance<SettingsViewModel>();
+
+        public CoatOfArmsViewModel CoatOfArmsView => SimpleIoc.Default.GetInstance<CoatOfArmsViewModel>();
 
         public static void Cleanup()
         {

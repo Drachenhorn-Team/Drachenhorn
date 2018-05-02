@@ -1,11 +1,4 @@
-﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Core.IO;
+﻿using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Xml.Calculation;
@@ -13,6 +6,8 @@ using DSACharacterSheet.Xml.Exceptions;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using System;
+using System.Collections.ObjectModel;
 
 namespace DSACharacterSheet.Core.ViewModels
 {
@@ -52,7 +47,6 @@ namespace DSACharacterSheet.Core.ViewModels
 
         #endregion Properties
 
-
         #region c'tor
 
         public MainViewModel()
@@ -61,7 +55,6 @@ namespace DSACharacterSheet.Core.ViewModels
         }
 
         #endregion c'tor
-
 
         #region Commands
 

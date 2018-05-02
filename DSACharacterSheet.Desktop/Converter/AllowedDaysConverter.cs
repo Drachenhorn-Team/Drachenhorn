@@ -1,11 +1,8 @@
-﻿using System;
+﻿using DSACharacterSheet.Xml.Objects;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
-using DSACharacterSheet.Xml.Objects;
 
 namespace DSACharacterSheet.Desktop.Converter
 {
@@ -16,7 +13,7 @@ namespace DSACharacterSheet.Desktop.Converter
             if (!(value is DSAMonth))
                 return null;
 
-            var allowed = ((DSAMonth) value).AllowedDays();
+            var allowed = ((DSAMonth)value).AllowedDays();
 
             var result = new List<int>();
 

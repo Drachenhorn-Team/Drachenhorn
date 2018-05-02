@@ -1,7 +1,8 @@
-﻿using DSACharacterSheet.Core;
-using DSACharacterSheet.Core.Lang;
+﻿using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.Settings;
 using DSACharacterSheet.Core.Settings.Update;
+using DSACharacterSheet.Xml;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Deployment.Application;
@@ -9,8 +10,6 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using DSACharacterSheet.Xml;
-using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.UserSettings
 {

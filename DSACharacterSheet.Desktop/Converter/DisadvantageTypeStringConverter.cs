@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using DSACharacterSheet.Xml.Sheet.Common;
+﻿using DSACharacterSheet.Xml.Sheet.Common;
 using DSACharacterSheet.Xml.Sheet.Enums;
+using System;
+using System.Globalization;
+using System.Windows.Data;
 
 namespace DSACharacterSheet.Desktop.Converter
 {
@@ -17,7 +13,7 @@ namespace DSACharacterSheet.Desktop.Converter
             if (!(value is DisAdvantage))
                 return null;
 
-            var type = ((DisAdvantage) value).Type;
+            var type = ((DisAdvantage)value).Type;
 
             return type == DisAdvantageType.Advantage ? "+" : "-";
         }

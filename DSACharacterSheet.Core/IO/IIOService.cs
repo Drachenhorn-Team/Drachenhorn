@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Xml.Sheet;
+﻿using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Core.IO
 {
     public interface IIOService
     {
+        void SaveDataDialog(
+            string fileName,
+            string fileExtension,
+            string fileTypeName,
+            string title,
+            byte[] data,
+            bool openAfterFinished = false);
+
+        byte[] OpenDataDialog(
+            string fileExtension,
+            string fileTypeName,
+            string title);
+
         void SaveStringDialog(
             string fileName,
             string fileExtension,
@@ -23,6 +31,7 @@ namespace DSACharacterSheet.Core.IO
             string title);
 
         void SaveAsCharacterSheet(CharacterSheet sheet);
+
         CharacterSheet OpenCharacterSheet();
     }
 }

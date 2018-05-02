@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DSACharacterSheet.Core.Objects
 {
     public class LimitedList<T> : IList<T>
     {
         private uint _limit;
+
         public uint Limit
         {
             get { return _limit; }
@@ -22,6 +19,7 @@ namespace DSACharacterSheet.Core.Objects
         }
 
         private List<T> _list = new List<T>();
+
         public List<T> List
         {
             get { return _list; }
@@ -42,7 +40,6 @@ namespace DSACharacterSheet.Core.Objects
             this.Limit = limit;
         }
 
-
         public void Add(T item)
         {
             if (this.Count >= Limit)
@@ -56,8 +53,6 @@ namespace DSACharacterSheet.Core.Objects
             foreach (var item in list)
                 Add(item);
         }
-
-
 
         public int IndexOf(T item)
         {

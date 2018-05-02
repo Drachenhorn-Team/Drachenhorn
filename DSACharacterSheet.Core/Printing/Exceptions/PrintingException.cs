@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DSACharacterSheet.Core.Printing.Exceptions
 {
@@ -10,7 +6,9 @@ namespace DSACharacterSheet.Core.Printing.Exceptions
     {
         #region c'tor
 
-        public PrintingException(string message, Exception innerException = null) : base(message, innerException) { }
+        public PrintingException(string message, Exception innerException = null) : base(message, innerException)
+        {
+        }
 
         #endregion c'tor
     }

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DSACharacterSheet.Core.Settings.Update
 {
     public class UpdateCheckedEventArgs : EventArgs
     {
         private bool _isUpdateAvailable = false;
+
         public bool IsUpdateAvailable
         {
             get { return _isUpdateAvailable; }

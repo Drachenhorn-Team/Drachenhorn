@@ -8,7 +8,7 @@ using DSACharacterSheet.Xml.Interfaces;
 namespace DSACharacterSheet.Xml.Sheet.Skills
 {
     [Serializable]
-    public class Attribute : BindableBase, IInfoObject, IFormulaKeyItem
+    public class Attribute : CalculationValue, IInfoObject, IFormulaKeyItem
     {
         [XmlIgnore]
         private string _key;
@@ -37,53 +37,6 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
                 if (_name == value)
                     return;
                 _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private int _startValue;
-
-        [XmlAttribute("StartValue")]
-        public int StartValue
-        {
-            get { return _startValue; }
-            set
-            {
-                if (_startValue == value)
-                    return;
-                _startValue = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private int _modifier;
-
-        [XmlAttribute("Modifier")]
-        public int Modifier
-        {
-            get { return _modifier; }
-            set
-            {
-                if (_modifier == value)
-                    return;
-                _modifier = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private int _currentValue;
-        [XmlAttribute("CurrentValue")]
-        public int CurrentValue
-        {
-            get { return _currentValue; }
-            set
-            {
-                if (_currentValue == value)
-                    return;
-                _currentValue = value;
                 OnPropertyChanged();
             }
         }

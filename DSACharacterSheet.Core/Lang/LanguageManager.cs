@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using DSACharacterSheet.Xml;
-using Easy.Logger.Interfaces;
+﻿using DSACharacterSheet.Xml;
 using GalaSoft.MvvmLight.Ioc;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Resources;
 
 namespace DSACharacterSheet.Core.Lang
 {
     public class LanguageManager : BindableBase
     {
         private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
+
         public CultureInfo CurrentCulture
         {
             get { return _currentCulture; }
@@ -124,7 +118,6 @@ namespace DSACharacterSheet.Core.Lang
 
             return result;
         }
-
 
         #region static
 

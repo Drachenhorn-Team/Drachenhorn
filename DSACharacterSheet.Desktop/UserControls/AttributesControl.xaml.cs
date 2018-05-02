@@ -1,16 +1,16 @@
 ﻿using DSACharacterSheet.Desktop.Views;
+using DSACharacterSheet.Xml.Sheet.Skills;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using DSACharacterSheet.Xml.Sheet.Skills;
 
 namespace DSACharacterSheet.Desktop.UserControls
 {
     /// <summary>
     /// Interaktionslogik für AttributeControl.xaml
     /// </summary>
-    public partial class AttributesControl : UserControl
+    public partial class AttributesControl : UserControlBase
     {
         public AttributesControl()
         {
@@ -34,7 +34,7 @@ namespace DSACharacterSheet.Desktop.UserControls
             if (!(sender is Button))
                 return;
 
-            var button = (Button) sender;
+            var button = (Button)sender;
 
             if (!(button.DataContext is Attribute))
                 return;

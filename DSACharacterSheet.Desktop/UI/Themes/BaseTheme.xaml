@@ -29,7 +29,7 @@
     <SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}" />
     <SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}" />
 
-    <FontFamily x:Key="Morpheus">../Resources/#Morpheus</FontFamily>
+    <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>
 
     <Style TargetType="{x:Type Hyperlink}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
