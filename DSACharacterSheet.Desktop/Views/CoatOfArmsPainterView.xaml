@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.Views"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"

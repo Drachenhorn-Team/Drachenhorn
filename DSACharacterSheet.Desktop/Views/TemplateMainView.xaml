@@ -7,6 +7,7 @@
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
         xmlns:template="clr-namespace:DSACharacterSheet.Desktop.UserControls.Template"
         mc:Ignorable="d"
+        Style="{StaticResource {x:Type Window}}"
         DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
         Title="TemplateMainView" Height="450" Width="800">
     <DockPanel>

@@ -34,7 +34,7 @@ namespace DSACharacterSheet.Xml.Template
 
         public DSATemplate()
         {
-
+            _fileName = "New";
         }
 
         #endregion c'tor
@@ -56,7 +56,7 @@ namespace DSACharacterSheet.Xml.Template
         [XmlIgnore]
         public string FilePath
         {
-            get { return Path.Combine(BaseDirectory, _fileName); }
+            get { return Path.Combine(BaseDirectory, _fileName + ".dsat"); }
             private set
             {
                 if (value.StartsWith(BaseDirectory))
@@ -72,7 +72,7 @@ namespace DSACharacterSheet.Xml.Template
         /// <returns>Loaded CharacterSheet</returns>
         public static DSATemplate Load(string fileName)
         {
-            var path = Path.Combine(BaseDirectory, fileName);
+            var path = Path.Combine(BaseDirectory, fileName + ".dsat");
 
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {

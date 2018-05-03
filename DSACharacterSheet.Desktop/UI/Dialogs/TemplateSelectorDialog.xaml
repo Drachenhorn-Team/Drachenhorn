@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
         mc:Ignorable="d"
+        Style="{StaticResource {x:Type Window}}"
         Title="TemplateSelectorDialog" Height="450" Width="800">
     <DockPanel>
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
