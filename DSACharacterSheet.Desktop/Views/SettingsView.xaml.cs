@@ -1,5 +1,4 @@
-﻿using DSACharacterSheet.Core.Images;
-using DSACharacterSheet.Core.Settings;
+﻿using DSACharacterSheet.Core.Settings;
 using GalaSoft.MvvmLight.Ioc;
 using System;
 using System.Diagnostics;
@@ -47,12 +46,12 @@ namespace DSACharacterSheet.Desktop.Views
             {
                 var culture = SimpleIoc.Default.GetInstance<ISettings>().CurrentCulture.Name;
 
-                var path = new ImageSourceGetter()["Flags/" + culture + ".png"];
+                var path = "pack://application:,,,/Images/Flags/" + culture + ".png";
                 FlagImage.Source = new BitmapImage(new Uri(path));
             }
             catch (IOException)
             {
-                var path = new ImageSourceGetter()["Flags/invariant.png"];
+                var path = "pack://application:,,,/Images/Flags/invariant.png";
                 FlagImage.Source = new BitmapImage(new Uri(path));
             }
         }

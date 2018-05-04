@@ -61,7 +61,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icons\Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Images\Common\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -145,7 +145,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UI\BindingExtension\ImageBinding.cs" />
     <Compile Include="Converter\AllowedDaysConverter.cs" />
     <Compile Include="Converter\Base64ImageConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
@@ -401,8 +400,62 @@
     <Content Include="commit">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\Light\Painting\Brush.png" />
+    <Resource Include="Images\Light\Painting\Clear.png" />
+    <Resource Include="Images\Light\Painting\Eraser.png" />
+    <Resource Include="Images\Light\Painting\Pencil.png" />
+    <Resource Include="Images\Light\Painting\Redo.png" />
+    <Resource Include="Images\Light\Painting\Select.png" />
+    <Resource Include="Images\Light\Painting\Undo.png" />
+    <Resource Include="Images\Light\Common\Add.png" />
+    <Resource Include="Images\Light\Common\ArrowBlockDown.png" />
+    <Resource Include="Images\Light\Common\Remove.png" />
+    <Resource Include="Images\Light\Calculate.png" />
+    <Resource Include="Images\Light\EditIcon.png" />
+    <Resource Include="Images\Light\HTML.png" />
+    <Resource Include="Images\Light\InfoIcon.png" />
+    <Resource Include="Images\Light\MenuIcon.png" />
+    <Resource Include="Images\Light\NewIcon.png" />
+    <Resource Include="Images\Light\Pdf.png" />
+    <Resource Include="Images\Light\PrintIcon.png" />
+    <Resource Include="Images\Light\PropertiesIcon.png" />
+    <Resource Include="Images\Light\SaveAllIcon.png" />
+    <Resource Include="Images\Light\SaveIcon.png" />
+    <Resource Include="Images\Light\UpdateAvailable.png" />
+    <Resource Include="Images\Dark\Painting\Brush.png" />
+    <Resource Include="Images\Dark\Painting\Clear.png" />
+    <Resource Include="Images\Dark\Painting\Eraser.png" />
+    <Resource Include="Images\Dark\Painting\Pencil.png" />
+    <Resource Include="Images\Dark\Painting\Redo.png" />
+    <Resource Include="Images\Dark\Painting\Select.png" />
+    <Resource Include="Images\Dark\Painting\Undo.png" />
+    <Resource Include="Images\Dark\Common\Add.png" />
+    <Resource Include="Images\Dark\Common\ArrowBlockDown.png" />
+    <Resource Include="Images\Dark\Common\Remove.png" />
+    <Resource Include="Images\Dark\Calculate.png" />
+    <Resource Include="Images\Dark\EditIcon.png" />
+    <Resource Include="Images\Dark\HTML.png" />
+    <Resource Include="Images\Dark\InfoIcon.png" />
+    <Resource Include="Images\Dark\MenuIcon.png" />
+    <Resource Include="Images\Dark\NewIcon.png" />
+    <Resource Include="Images\Dark\Pdf.png" />
+    <Resource Include="Images\Dark\PrintIcon.png" />
+    <Resource Include="Images\Dark\PropertiesIcon.png" />
+    <Resource Include="Images\Dark\SaveAllIcon.png" />
+    <Resource Include="Images\Dark\SaveIcon.png" />
+    <Resource Include="Images\Dark\UpdateAvailable.png" />
+    <Resource Include="Images\Flags\de-DE.png" />
+    <Resource Include="Images\Flags\en.png" />
+    <Resource Include="Images\Flags\invariant.png" />
+    <Resource Include="Images\Flags\nds-DE.png" />
+    <None Include="Images\Common\SaveFileIcon.svg" />
+    <Content Include="Images\Common\SaveFileIcon.ico" />
+    <None Include="Images\Common\Icon.svg" />
+    <Resource Include="Images\Common\Icon.ico" />
+    <Resource Include="Images\Common\DSAFanLogo.png" />
     <Resource Include="UI\Themes\Metro\HowToApplyTheme.txt" />
     <Resource Include="UI\Themes\MetroDark\HowToApplyTheme.txt" />
+    <None Include="Images\ImageSource.md" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <Resource Include="Resources\Morpheus.ttf" />
@@ -423,23 +476,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icons\SaveFileIcon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <FileAssociation Include=".dsac">
       <Visible>False</Visible>
       <Description>DSA Character Sheet</Description>
       <Progid>DSACharacterSheet</Progid>
-      <DefaultIcon>Icons\SaveFileIcon.ico</DefaultIcon>
+      <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
     <FileAssociation Include=".dsat">
       <Visible>False</Visible>
       <Description>DSA Character Template</Description>
       <Progid>DSACharacterTemplate</Progid>
-      <DefaultIcon>Icons\SaveFileIcon.ico</DefaultIcon>
+      <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
   <ItemGroup>
@@ -1424,5 +1471,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
