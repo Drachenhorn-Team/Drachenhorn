@@ -14,7 +14,7 @@ namespace DSACharacterSheet.Xml.Template
     public class DSATemplate : BindableBase
     {
         [XmlIgnore]
-        private ObservableCollection<RaceInformation> _races;
+        private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
 
         [XmlElement("Race")]
         public ObservableCollection<RaceInformation> Races

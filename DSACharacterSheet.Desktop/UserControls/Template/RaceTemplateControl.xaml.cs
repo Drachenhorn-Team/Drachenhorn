@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DSACharacterSheet.Xml.Sheet.Common;
 
 namespace DSACharacterSheet.Desktop.UserControls.Template
 {
@@ -23,6 +24,27 @@ namespace DSACharacterSheet.Desktop.UserControls.Template
         public RaceTemplateControl()
         {
             InitializeComponent();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(RaceList.ItemsSource is IList<RaceInformation>))
+                return;
+
+            ((IList<RaceInformation>)RaceList.ItemsSource).Add(new RaceInformation());
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Button))
+                return;
+
+            var button = (Button)sender;
+
+            if (!(button.DataContext is RaceInformation))
+                return;
+
+            (RaceList.ItemsSource as IList<RaceInformation>)?.Remove((RaceInformation)button.DataContext);
         }
     }
 }

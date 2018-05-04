@@ -5,22 +5,65 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UserControls.Template"
              xmlns:common="clr-namespace:DSACharacterSheet.Xml.Sheet.Common;assembly=DSACharacterSheet.Xml"
+             xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <ListBox Name="RaceList" ItemsSource="{Binding .}"
-                 DockPanel.Dock="Left">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="common:RaceInformation">
-                    <TextBlock Text="{Binding Name}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ListBox>
+        <DockPanel DockPanel.Dock="Left">
+            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
+                        ToolTip="{lang:Translate UI.Add}">
+                    <Image Source="{StaticResource AddIcon}"
+                           Margin="2" />
+                </Button>
+                <Button Click="RemoveButton_Click" Width="30" Height="30" Margin="5"
+                        ToolTip="{lang:Translate UI.Remove}">
+                    <Image Source="{StaticResource RemoveIcon}"
+                           Margin="2" />
+                </Button>
+            </WrapPanel>
+
+            <ListBox Name="RaceList" ItemsSource="{Binding .}" MinWidth="300">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="common:RaceInformation">
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+        </DockPanel>
 
         <Separator Style="{StaticResource VerticalSeperatorStyle}" DockPanel.Dock="Left"/>
-        
-        <Grid>
 
+        <Grid DataContext="{Binding SelectedItem, ElementName=RaceList}">
+            <Grid.Resources>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}"/>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="0"/>
+
+            <TextBlock Text="{lang:Translate CharacterSheet.Description}" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Text="{Binding Description}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                     Grid.Column="1" Grid.Row="1" Height="200"/>
+            
+            <TextBlock Text="{lang:Translate CharacterSheet.BonusValues}"
+                       Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"/>
+            <DataGrid ItemsSource="{Binding BaseValues}"
+                      AutoGenerateColumns="True"
+                      Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"/>
         </Grid>
     </DockPanel>
 </UserControl>

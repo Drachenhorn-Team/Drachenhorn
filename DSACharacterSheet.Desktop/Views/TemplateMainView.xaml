@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
+        WindowState="Maximized"
         Title="TemplateMainView" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -33,7 +34,7 @@
         
         <TabControl>
             <TabItem Header="{lang:Translate DSATemplate.Race}">
-                <template:RaceTemplateControl DataContext="{Binding }" />
+                <template:RaceTemplateControl DataContext="{Binding Template.Races}" />
             </TabItem>
         </TabControl>
     </DockPanel>

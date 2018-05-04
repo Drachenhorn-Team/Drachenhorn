@@ -19,9 +19,15 @@ namespace DSACharacterSheet.Desktop.UI.MVVM
             await Task.Run(() => { new ExceptionMessageBox(error, title).ShowDialog(); });
         }
 
-        public Task ShowMessage(string message, string title)
+        public async Task ShowMessage(string message, string title)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>
+            {
+                MessageBox.Show(
+                    LanguageManager.TextTranslate(message),
+                    LanguageManager.TextTranslate(title),
+                    MessageBoxButton.OK);
+            });
         }
 
         public Task ShowMessage(string message, string title, string buttonText, Action afterHideCallback)

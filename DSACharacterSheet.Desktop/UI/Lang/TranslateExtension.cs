@@ -1,4 +1,5 @@
-﻿using DSACharacterSheet.Core.Lang;
+﻿using System;
+using DSACharacterSheet.Core.Lang;
 using GalaSoft.MvvmLight.Ioc;
 using System.Windows.Data;
 
@@ -12,7 +13,15 @@ namespace DSACharacterSheet.Desktop.UI.Lang
         /// <param name="name">TranslateID</param>
         public TranslateExtension(string name) : base("[%" + name + "]")
         {
-            this.Source = SimpleIoc.Default.GetInstance<LanguageManager>();
+            try
+            {
+                this.Source = SimpleIoc.Default.GetInstance<LanguageManager>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
