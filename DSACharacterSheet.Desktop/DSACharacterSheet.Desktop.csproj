@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -428,7 +428,20 @@
   <ItemGroup>
     <Content Include="Icons\SaveFileIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <FileAssociation Include=".dsac">
+      <Visible>False</Visible>
+      <Description>DSA Character Sheet</Description>
+      <Progid>DSACharacterSheet</Progid>
+      <DefaultIcon>Icons\SaveFileIcon.ico</DefaultIcon>
+    </FileAssociation>
+    <FileAssociation Include=".dsat">
+      <Visible>False</Visible>
+      <Description>DSA Character Template</Description>
+      <Progid>DSACharacterTemplate</Progid>
+      <DefaultIcon>Icons\SaveFileIcon.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSACharacterSheet.Core\DSACharacterSheet.Core.csproj">
       <Project>{ec066881-e87c-46c3-8dab-04a19696dc99}</Project>
@@ -439,6 +452,17 @@
       <Name>DSACharacterSheet.Xml</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PublishFile Include="System.Xml.XPath.XDocument">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
