@@ -116,7 +116,7 @@
 
         <TextBlock Text="{lang:Translate Characteristics.Title}"
                    Grid.Column="0" Grid.Row="6" />
-        <TextBox Text="{Binding Height}"
+        <TextBox Text="{Binding Title}"
                  Grid.Column="1" Grid.Row="6" />
 
         <TextBlock Text="{lang:Translate Characteristics.SocialStatus}"

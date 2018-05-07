@@ -53,14 +53,17 @@
 
         <TextBlock Text="{lang:Translate CharacterSheet.StartValue}" Grid.Row="3" Grid.Column="0" />
         <TextBlock Text="{Binding StartValue, UpdateSourceTrigger=PropertyChanged}"
+                   HorizontalAlignment="Right" Margin="5"
                    Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.Modifier}" Grid.Row="4" Grid.Column="0" />
         <TextBox Text="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Right"
                  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}" Grid.Row="5" Grid.Column="0" />
         <TextBox Text="{Binding CurrentValue, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Right"
                  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" />
     </Grid>
 </Window>

@@ -6,6 +6,7 @@
              xmlns:skills="clr-namespace:DSACharacterSheet.Xml.Sheet.Skills;assembly=DSACharacterSheet.Xml"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
              xmlns:userControls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
+             xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="600">
     <DockPanel Grid.IsSharedSizeScope="True">
@@ -56,6 +57,7 @@
                             <ColumnDefinition Width="Auto" SharedSizeGroup="StartValue" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="CurrentValue" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="RemoveButton" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="InfoButton" />
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="{Binding Name}"
@@ -74,6 +76,8 @@
                                 ToolTip="{lang:Translate UI.Remove}">
                             <Image Source="{StaticResource RemoveIcon}" Margin="2" />
                         </Button>
+                        
+                        <userElements:InfoButton InfoObject="{Binding .}" Grid.Column="5"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

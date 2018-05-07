@@ -104,17 +104,18 @@ namespace DSACharacterSheet.Xml.Calculation
                 return 0;
 
             var e = new Expression(Expression);
-
-
+            
             // Adding All Parameters
-            AddParameterList(ref e, ParentSheet.Attributes);
+            AddParameterList(ref e, ParentSheet?.Attributes);
 
+            try
+            {
+                var result = e.Evaluate();
 
-            var result = e.Evaluate();
-
-            if (result != null)
-                return (double)result;
-
+                if (result != null)
+                    return (double)result;
+            }
+            catch (ArgumentException) { }
             return 0.0;
         }
 
@@ -122,7 +123,7 @@ namespace DSACharacterSheet.Xml.Calculation
         
         private void AddParameter(ref Expression expression, IFormulaKeyItem item)
         {
-            if (String.IsNullOrEmpty(item.Key))
+            if (expression == null || String.IsNullOrEmpty(item?.Key))
                 return;
 
             expression.Parameters[item.Key] = item.Value;
@@ -130,9 +131,12 @@ namespace DSACharacterSheet.Xml.Calculation
 
         private void AddParameterList(ref Expression expression, IEnumerable<IFormulaKeyItem> list)
         {
+            if (expression == null || list == null) return;
+
             foreach (var item in list)
             {
-                AddParameter(ref expression, item);
+                if (Expression.Contains("[" + item.Key + "]"))
+                    AddParameter(ref expression, item);
             }
         }
 
