@@ -14,7 +14,7 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
         private string userExceptionMessage;
         private List<string> ExceptionInformationList = new List<string>();
 
-        public ExceptionMessageBox(Exception e, string userExceptionMessage)
+        public ExceptionMessageBox(Exception e, string userExceptionMessage, bool closeApp = false)
         {
             InitializeComponent();
 
@@ -28,6 +28,8 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
             treeViewItem.ExpandSubtree();
             BuildTreeLayer(e, treeViewItem);
             treeView1.Items.Add(treeViewItem);
+
+            this.Closed += (sender, args) => { Application.Current.Shutdown(2); };
         }
 
         private void BuildTreeLayer(Exception e, TreeViewItem parent)
