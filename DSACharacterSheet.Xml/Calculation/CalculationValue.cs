@@ -11,11 +11,18 @@ namespace DSACharacterSheet.Xml.Calculation
         #region Properties
 
         [XmlIgnore]
+        private int _startValue;
+        [XmlIgnore]
         public int StartValue
         {
-            get
+            get { return _startValue;}
+            private set
             {
-                return (int)Math.Round(Formula.Calculate());
+                if (_startValue == value)
+                    return;
+                _startValue = value;
+                OnPropertyChanged();
+                OnPropertyChanged("CurrentValue");
             }
         }
 
@@ -31,7 +38,8 @@ namespace DSACharacterSheet.Xml.Calculation
                 if (_modifier == value)
                     return;
                 _modifier = value;
-                OnPropertyChanged(null);
+                OnPropertyChanged();
+                OnPropertyChanged("CurrentValue");
             }
         }
 
@@ -47,7 +55,7 @@ namespace DSACharacterSheet.Xml.Calculation
             set
             {
                 _currentValueDiff = value - StartValue - Modifier;
-                OnPropertyChanged(null);
+                OnPropertyChanged();
             }
         }
 
@@ -62,7 +70,7 @@ namespace DSACharacterSheet.Xml.Calculation
                 if (_formula == value)
                     return;
                 _formula = value;
-                OnPropertyChanged(null);
+                OnPropertyChanged();
             }
         }
 
@@ -83,5 +91,23 @@ namespace DSACharacterSheet.Xml.Calculation
         }
 
         #endregion Properties
+
+        #region c'tor
+
+        public CalculationValue()
+        {
+            Formula.PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == "Expression")
+                    Formula.CalculateAsync(x => StartValue = (int)Math.Round(x));
+            };
+
+            Formula.OnCalculateAll += (sender, args) =>
+            {
+                Formula.CalculateAsync(x => StartValue = (int)Math.Round(x));
+            };
+        }
+
+        #endregion c'tor
     }
 }

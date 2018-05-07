@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using DSACharacterSheet.Xml.Sheet;
 using DSACharacterSheet.Xml.Sheet.Skills;
 using NCalc;
@@ -80,20 +81,6 @@ namespace DSACharacterSheet.Xml.Calculation
         public Formula()
         {
             ParentSheet = CurrentSheet;
-            OnCalculateAll += RecalculateAll;
-        }
-
-        ~Formula()
-        {
-            OnCalculateAll -= RecalculateAll;
-        }
-
-        private void RecalculateAll(object sender, CalculateEventArgs e)
-        {
-            if (e.Sheet == ParentSheet)
-                return;
-
-            this.Calculate();
         }
 
         #endregion c'tor
@@ -117,6 +104,11 @@ namespace DSACharacterSheet.Xml.Calculation
             }
             catch (ArgumentException) { }
             return 0.0;
+        }
+
+        public Task CalculateAsync(Action<double> finished)
+        {
+            return Task.Run(() => { finished(Calculate()); });
         }
 
         #region Parameter

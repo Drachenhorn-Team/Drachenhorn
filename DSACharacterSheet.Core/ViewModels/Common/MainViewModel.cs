@@ -190,6 +190,9 @@ namespace DSACharacterSheet.Core.ViewModels.Common
 
         private void ExecuteCalculateAll()
         {
+            if (CurrentSheetViewModel?.CurrentSheet == null)
+                return;
+
             Formula.RaiseCalculateAll(CurrentSheetViewModel.CurrentSheet);
         }
 
