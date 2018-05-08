@@ -19,6 +19,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using DSACharacterSheet.Xml.Template;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
 using SplashScreen = DSACharacterSheet.Desktop.UI.Splash.SplashScreen;
 
@@ -54,12 +55,18 @@ namespace DSACharacterSheet.Desktop
                 foreach (var item in args)
                 {
                     var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(".dsac"))
+                    if (temp.EndsWith(".dsac") || (temp.EndsWith(".dsat") && temp.StartsWith(DSATemplate.BaseDirectory)))
                     {
                         filePath = temp;
                         break;
                     }
                 }
+            }
+
+            if (filePath.EndsWith(".dsat"))
+            {
+                new TemplateImportDialog(filePath).ShowDialog();
+                filePath = "";
             }
 
             MainWindow = new MainView(filePath);

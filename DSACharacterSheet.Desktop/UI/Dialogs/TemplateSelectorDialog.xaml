@@ -35,7 +35,7 @@
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
-                                <ColumnDefinition Width="200" SharedSizeGroup="ProgressBar"/>
+                                <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar"/>
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"

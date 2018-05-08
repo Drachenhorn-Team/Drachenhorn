@@ -35,6 +35,6 @@ namespace DSACharacterSheet.Core.IO
 
         CharacterSheet OpenCharacterSheet();
 
-        void SaveString(string path, string text);
+        void SaveString(string path, string text, bool writeNew = true);
     }
 }

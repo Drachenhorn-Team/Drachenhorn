@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Xml;
 using DSACharacterSheet.Xml.Template;
@@ -115,13 +116,13 @@ namespace DSACharacterSheet.Core.Downloader
 
         #region Download
 
-        public bool TryDownload()
+        public async Task<bool> TryDownload()
         {
             try
             {
                 var webClient = new WebClient();
                 webClient.DownloadProgressChanged += (sender, args) => { Progress = args.ProgressPercentage; };
-                var result = webClient.DownloadString(new Uri(Link));
+                var result = await webClient.DownloadStringTaskAsync(new Uri(Link));
 
 
                 SimpleIoc.Default.GetInstance<IIOService>()

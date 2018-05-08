@@ -162,6 +162,9 @@
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="IO\IOService.cs" />
+    <Compile Include="UI\Dialogs\TemplateImportDialog.xaml.cs">
+      <DependentUpon>TemplateImportDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\TemplateSelectorDialog.xaml.cs">
       <DependentUpon>TemplateSelectorDialog.xaml</DependentUpon>
     </Compile>
@@ -232,6 +235,10 @@
     <Compile Include="Views\TemplateMainView.xaml.cs">
       <DependentUpon>TemplateMainView.xaml</DependentUpon>
     </Compile>
+    <Page Include="UI\Dialogs\TemplateImportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
