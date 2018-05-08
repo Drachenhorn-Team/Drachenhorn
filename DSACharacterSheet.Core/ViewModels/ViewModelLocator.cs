@@ -1,3 +1,4 @@
+using DSACharacterSheet.Core.Downloader;
 using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.ViewModels.Common;
 using DSACharacterSheet.Core.ViewModels.Sheet;
@@ -21,10 +22,12 @@ namespace DSACharacterSheet.Core.ViewModels
             if (ViewModelBase.IsInDesignModeStatic)
             {
                 SimpleIoc.Default.Register<LanguageManager>();
+                SimpleIoc.Default.Register<TemplateDownloader>();
             }
             else
             {
                 SimpleIoc.Default.Register(() => new LanguageManager());
+                SimpleIoc.Default.Register(() => new TemplateDownloader());
             }
 
             SimpleIoc.Default.Register<MainViewModel>();
@@ -40,6 +43,8 @@ namespace DSACharacterSheet.Core.ViewModels
         public SettingsViewModel SettingsView => SimpleIoc.Default.GetInstance<SettingsViewModel>();
 
         public TemplateMainViewModel TemplateMainView => SimpleIoc.Default.GetInstance<TemplateMainViewModel>();
+
+        public TemplateDownloader TemplateDownloader => SimpleIoc.Default.GetInstance<TemplateDownloader>();
 
         public static void Cleanup()
         {

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DSACharacterSheet.Core.Downloader;
 using DSACharacterSheet.Desktop.Views;
 using DSACharacterSheet.Xml.Template;
 
@@ -24,8 +25,12 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
         public TemplateSelectorDialog()
         {
             InitializeComponent();
-            
-            TemplateList.ItemsSource = DSATemplate.AvailableTemplates;
+        }
+
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LocalTemplates.IsSelected)
+                TemplateList.ItemsSource = DSATemplate.AvailableTemplates;
         }
 
         private void OpenButton_OnClick(object sender, RoutedEventArgs e)
@@ -44,6 +49,19 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
             view.Show();
 
             this.Close();
+        }
+
+        private void DownloadButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Button))
+                return;
+
+            var button = (Button)sender;
+
+            if (!(button.DataContext is OnlineTemplate))
+                return;
+
+            (OnlineList.DataContext as TemplateDownloader)?.Download((OnlineTemplate)button.DataContext);
         }
     }
 }

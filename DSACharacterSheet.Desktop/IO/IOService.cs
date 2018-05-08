@@ -91,6 +91,11 @@ namespace DSACharacterSheet.Desktop.IO
             return fileDialog.ShowDialog() != true ? null : CharacterSheet.Load(fileDialog.FileName);
         }
 
+        public void SaveString(string path, string text)
+        {
+            File.WriteAllText(path, text);
+        }
+
         #region Helper
 
         private SaveFileDialog GetSaveFileDialog(

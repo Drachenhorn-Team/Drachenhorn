@@ -13,6 +13,8 @@ namespace DSACharacterSheet.Xml.Template
     [Serializable]
     public class DSATemplate : BindableBase
     {
+        #region Properties
+
         [XmlIgnore]
         private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
 
@@ -29,6 +31,8 @@ namespace DSACharacterSheet.Xml.Template
             }
         }
 
+        #endregion Properties
+
 
         #region c'tor
 
@@ -41,7 +45,7 @@ namespace DSACharacterSheet.Xml.Template
 
         #region Save/Load
 
-        private static string BaseDirectory
+        public static string BaseDirectory
         {
             get
             {
@@ -50,17 +54,19 @@ namespace DSACharacterSheet.Xml.Template
             }
         }
 
+        public static readonly string Extension = ".dsat";
+
         [XmlIgnore]
         private string _fileName;
 
         [XmlIgnore]
         public string FilePath
         {
-            get { return Path.Combine(BaseDirectory, _fileName + ".dsat"); }
+            get { return Path.Combine(BaseDirectory, _fileName + Extension); }
             private set
             {
                 if (value.StartsWith(BaseDirectory))
-                    _fileName = value.Replace(BaseDirectory, "").Replace(".dsat", "");
+                    _fileName = value.Replace(BaseDirectory, "").Replace(Extension, "");
                 OnPropertyChanged();
             }
         }
@@ -72,7 +78,7 @@ namespace DSACharacterSheet.Xml.Template
         /// <returns>Loaded CharacterSheet</returns>
         public static DSATemplate Load(string fileName)
         {
-            var path = Path.Combine(BaseDirectory, fileName + ".dsat");
+            var path = Path.Combine(BaseDirectory, fileName + Extension);
 
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {

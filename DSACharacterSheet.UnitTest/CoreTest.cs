@@ -1,7 +1,9 @@
-﻿using DSACharacterSheet.Core.Printing;
+﻿using DSACharacterSheet.Core.Downloader;
+using DSACharacterSheet.Core.Printing;
 using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.Xml.Sheet;
 using DSACharacterSheet.Xml.Sheet.Common;
+using GalaSoft.MvvmLight.Ioc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DSACharacterSheet.UnitTest

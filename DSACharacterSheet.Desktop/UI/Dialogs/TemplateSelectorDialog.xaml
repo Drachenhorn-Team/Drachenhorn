@@ -5,17 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
+        xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         Title="TemplateSelectorDialog" Height="450" Width="800">
-    <DockPanel>
-        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button Content="{lang:Translate UI.Open}" Click="OpenButton_OnClick" DockPanel.Dock="Bottom"
-                    Margin="5"/>
-            <Button Content="{lang:Translate UI.New}" Click="NewButton_OnClick" DockPanel.Dock="Bottom"
-                    Margin="5"/>
-        </WrapPanel>
-        
-        <ListBox Name="TemplateList" Margin="5"/>
-    </DockPanel>
+    <Window.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converter:BoolToInVisibilityConverter x:Key="BoolToInVisibilityConverter"/>
+    </Window.Resources>
+    <TabControl SelectionChanged="Selector_OnSelectionChanged">
+        <TabItem Name="LocalTemplates" Header="{lang:Translate UI.Installed}">
+            <DockPanel>
+                <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                    <Button Content="{lang:Translate UI.Open}" Click="OpenButton_OnClick" DockPanel.Dock="Bottom"
+                            Margin="5"/>
+                    <Button Content="{lang:Translate UI.New}" Click="NewButton_OnClick" DockPanel.Dock="Bottom"
+                            Margin="5"/>
+                </WrapPanel>
+
+                <ListBox Name="TemplateList" Margin="5"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="{lang:Translate UI.Online}" DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
+            <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5" Grid.IsSharedSizeScope="True">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
+                                <ColumnDefinition Width="200" SharedSizeGroup="ProgressBar"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Version}" Grid.Column="1" Margin="5"
+                                       VerticalAlignment="Center"/>
+                            <Button Click="DownloadButton_OnClick" Grid.Column="2"
+                                    Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
+                                    Width="20" Height="20" Margin="20 5 5 5">
+                                <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
+                            </Button>
+                            <ProgressBar Value="{Binding Progress, Mode=OneWay}"
+                                         Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
+                                         Grid.Column="3" Margin="5"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </TabItem>
+    </TabControl>
 </Window>

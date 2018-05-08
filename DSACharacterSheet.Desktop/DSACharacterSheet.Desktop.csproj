@@ -150,6 +150,7 @@
     </ApplicationDefinition>
     <Compile Include="Converter\AllowedDaysConverter.cs" />
     <Compile Include="Converter\Base64ImageConverter.cs" />
+    <Compile Include="Converter\BoolToInVisibilityConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\DisAdvantageTypeStringConverter.cs" />
     <Compile Include="Converter\EnumListStringConverter.cs" />
@@ -403,6 +404,9 @@
     <Content Include="commit">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Common\SaveTemplateIcon.ico" />
+    <Resource Include="Images\Dark\Common\Download.png" />
+    <Resource Include="Images\Light\Common\Download.png" />
     <Resource Include="Images\Light\Painting\Brush.png" />
     <Resource Include="Images\Light\Painting\Clear.png" />
     <Resource Include="Images\Light\Painting\Eraser.png" />
@@ -452,6 +456,7 @@
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />
     <None Include="Images\Common\SaveFileIcon.svg" />
+    <None Include="Images\Common\SaveTemplateIcon.svg" />
     <Content Include="Images\Common\SaveFileIcon.ico" />
     <None Include="Images\Common\Icon.svg" />
     <Resource Include="Images\Common\Icon.ico" />
@@ -489,7 +494,7 @@
       <Visible>False</Visible>
       <Description>DSA Character Template</Description>
       <Progid>DSACharacterTemplate</Progid>
-      <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
+      <DefaultIcon>Images\Common\SaveTemplateIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
   <ItemGroup>

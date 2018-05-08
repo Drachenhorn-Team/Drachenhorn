@@ -1,4 +1,5 @@
 ﻿using DSACharacterSheet.Xml.Sheet;
+using DSACharacterSheet.Xml.Template;
 
 namespace DSACharacterSheet.Core.IO
 {
@@ -33,5 +34,7 @@ namespace DSACharacterSheet.Core.IO
         void SaveAsCharacterSheet(CharacterSheet sheet);
 
         CharacterSheet OpenCharacterSheet();
+
+        void SaveString(string path, string text);
     }
 }

@@ -621,4 +621,13 @@
   <data name="PNG.OpenDialog.Title" xml:space="preserve">
     <value>Open image</value>
   </data>
+  <data name="UI.Installed" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="UI.Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="UI.Template" xml:space="preserve">
+    <value>Vorlagen</value>
+  </data>
 </root>

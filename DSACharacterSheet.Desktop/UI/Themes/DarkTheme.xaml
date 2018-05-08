@@ -15,6 +15,8 @@
     <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Dark/Common/Add.png" />
     <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Dark/Common/Remove.png" />
     <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="pack://application:,,,/Images/Dark/Common/ArrowBlockDown.png" />
+    <BitmapImage x:Key="DownloadIcon" UriSource="pack://application:,,,/Images/Dark/Common/Download.png" />
+
 
     <BitmapImage x:Key="EditIcon" UriSource="pack://application:,,,/Images/Dark/EditIcon.png" />
     <BitmapImage x:Key="HtmlIcon" UriSource="pack://application:,,,/Images/Dark/Html.png" />
