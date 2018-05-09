@@ -59,14 +59,12 @@ namespace DSACharacterSheet.Xml.Sheet.Skills
         {
             var result = new Dictionary<string, string>();
 
+            if (!string.IsNullOrEmpty(Key))
+                result.Add("%Info.Key", Key);
             if (!string.IsNullOrEmpty(Name))
                 result.Add("%Info.Name", Name);
-            if (Math.Abs(Modifier) > Double.Epsilon)
-                result.Add("%Info.Modifier", Modifier.ToString(CultureInfo.CurrentCulture));
-            if (Math.Abs(StartValue) > Double.Epsilon)
-                result.Add("%Info.StartValue", StartValue.ToString(CultureInfo.CurrentCulture));
-            if (Math.Abs(CurrentValue) > Double.Epsilon)
-                result.Add("%Info.CurrentValue", CurrentValue.ToString(CultureInfo.CurrentCulture));
+
+            GetInformation(ref result);
 
             return result;
         }

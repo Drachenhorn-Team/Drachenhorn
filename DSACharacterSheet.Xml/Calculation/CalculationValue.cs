@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Xml.Serialization;
+using DSACharacterSheet.Xml.Interfaces;
 using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Xml.Calculation
@@ -109,5 +111,11 @@ namespace DSACharacterSheet.Xml.Calculation
         }
 
         #endregion c'tor
+
+        public void GetInformation(ref Dictionary<string, string> dictionary)
+        {
+            if (!String.IsNullOrEmpty(Formula.Expression))
+                dictionary.Add("%Info.Formula", Formula.Expression);
+        }
     }
 }

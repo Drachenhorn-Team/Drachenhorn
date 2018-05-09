@@ -43,7 +43,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
         }
 
         [XmlIgnore]
-        private ObservableCollection<BonusValue> _baseValues;
+        private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
 
         [XmlElement("BaseValue")]
         public ObservableCollection<BonusValue> BaseValues
@@ -65,7 +65,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
             if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
             //if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
-
+            
             var baseValues = "";
             foreach (var baseValue in BaseValues)
             {

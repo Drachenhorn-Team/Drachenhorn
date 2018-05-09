@@ -43,7 +43,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
         }
 
         [XmlIgnore]
-        private ObservableCollection<BonusValue> _baseValues;
+        private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
 
         [XmlElement("BaseValue")]
         public ObservableCollection<BonusValue> BaseValues
@@ -65,6 +65,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
             var result = new Dictionary<string, string>();
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+
             var baseValues = "";
             foreach (var baseValue in BaseValues)
             {
