@@ -9,7 +9,14 @@ namespace DSACharacterSheet.Desktop.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return LanguageManager.Translate(value?.ToString());
+            if (value == null) return null;
+
+            var val = value.ToString();
+
+            if (val.Contains("%"))
+                return LanguageManager.TextTranslate(val);
+
+            return val;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

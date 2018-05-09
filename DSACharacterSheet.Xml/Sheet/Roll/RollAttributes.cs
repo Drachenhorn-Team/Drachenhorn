@@ -10,49 +10,49 @@ namespace DSACharacterSheet.Xml.Sheet.Roll
         #region Properties
 
         [XmlIgnore]
-        private AttributeType _roll_1;
+        private AttributeType _roll1;
 
         [XmlAttribute("Roll_1")]
-        public AttributeType Roll_1
+        public AttributeType Roll1
         {
-            get { return _roll_1; }
+            get { return _roll1; }
             set
             {
-                if (_roll_1 == value)
+                if (_roll1 == value)
                     return;
-                _roll_1 = value;
+                _roll1 = value;
                 OnPropertyChanged();
             }
         }
 
         [XmlIgnore]
-        private AttributeType _roll_2;
+        private AttributeType _roll2;
 
         [XmlAttribute("Roll_2")]
-        public AttributeType Roll_2
+        public AttributeType Roll2
         {
-            get { return _roll_2; }
+            get { return _roll2; }
             set
             {
-                if (_roll_2 == value)
+                if (_roll2 == value)
                     return;
-                _roll_2 = value;
+                _roll2 = value;
                 OnPropertyChanged();
             }
         }
 
         [XmlIgnore]
-        private AttributeType _roll_3;
+        private AttributeType _roll3;
 
         [XmlAttribute("Roll_3")]
-        public AttributeType Roll_3
+        public AttributeType Roll3
         {
-            get { return _roll_3; }
+            get { return _roll3; }
             set
             {
-                if (_roll_3 == value)
+                if (_roll3 == value)
                     return;
-                _roll_3 = value;
+                _roll3 = value;
                 OnPropertyChanged();
             }
         }
@@ -65,11 +65,11 @@ namespace DSACharacterSheet.Xml.Sheet.Roll
         {
         }
 
-        public RollAttributes(AttributeType roll_1, AttributeType roll_2, AttributeType roll_3)
+        public RollAttributes(AttributeType roll1, AttributeType roll2, AttributeType roll3)
         {
-            Roll_1 = roll_1;
-            Roll_2 = roll_2;
-            Roll_3 = roll_3;
+            Roll1 = roll1;
+            Roll2 = roll2;
+            Roll3 = roll3;
         }
 
         #endregion c'tor
@@ -83,9 +83,9 @@ namespace DSACharacterSheet.Xml.Sheet.Roll
 
         public string ToString(string seperator)
         {
-            return "%AttributeType." + Roll_1 + ".Abbr " + seperator +
-                   " %AttributeType." + Roll_2 + ".Abbr  " + seperator +
-                   " %AttributeType." + Roll_3 + ".Abbr";
+            return "%AttributeType." + Roll1 + ".Abbr " + seperator +
+                   " %AttributeType." + Roll2 + ".Abbr  " + seperator +
+                   " %AttributeType." + Roll3 + ".Abbr";
         }
 
         #endregion ToString

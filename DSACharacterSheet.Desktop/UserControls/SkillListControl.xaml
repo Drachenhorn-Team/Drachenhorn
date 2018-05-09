@@ -70,11 +70,11 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate DataType="skills1:Skill">
                                     <WrapPanel MinWidth="100">
-                                        <TextBlock Text="{Binding RollAttributes.Roll_1, Converter={StaticResource EnumToAbbreviationConverter}}" />
+                                        <TextBlock Text="{Binding RollAttributes.Roll1, Converter={StaticResource EnumToAbbreviationConverter}}" />
                                         <TextBlock Text="|" />
-                                        <TextBlock Text="{Binding RollAttributes.Roll_2, Converter={StaticResource EnumToAbbreviationConverter}}" />
+                                        <TextBlock Text="{Binding RollAttributes.Roll2, Converter={StaticResource EnumToAbbreviationConverter}}" />
                                         <TextBlock Text="|" />
-                                        <TextBlock Text="{Binding RollAttributes.Roll_3, Converter={StaticResource EnumToAbbreviationConverter}}" />
+                                        <TextBlock Text="{Binding RollAttributes.Roll3, Converter={StaticResource EnumToAbbreviationConverter}}" />
                                     </WrapPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

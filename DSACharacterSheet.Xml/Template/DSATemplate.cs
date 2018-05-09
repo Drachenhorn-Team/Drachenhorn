@@ -31,6 +31,22 @@ namespace DSACharacterSheet.Xml.Template
             }
         }
 
+        [XmlIgnore]
+        private ObservableCollection<CultureInformation> _cultures = new ObservableCollection<CultureInformation>();
+
+        [XmlElement("Culture")]
+        public ObservableCollection<CultureInformation> Cultures
+        {
+            get { return _cultures; }
+            set
+            {
+                if (_cultures == value)
+                    return;
+                _cultures = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
 
 
@@ -120,10 +136,10 @@ namespace DSACharacterSheet.Xml.Template
 
                 foreach (var file in files)
                 {
-                    if (!file.EndsWith(".dsat"))
+                    if (!file.EndsWith(Extension))
                         continue;
 
-                    result.Add(new FileInfo(file).Name.Replace(".dsat", ""));
+                    result.Add(new FileInfo(file).Name.Replace(Extension, ""));
                 }
 
                 return result;

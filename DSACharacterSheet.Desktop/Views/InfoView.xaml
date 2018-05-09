@@ -18,23 +18,25 @@
     </Window.Resources>
 
     <Grid>
-        <ListBox ItemsSource="{DynamicResource Information}" Grid.IsSharedSizeScope="True">
-            <ListBox.ItemTemplate>
+        <ItemsControl ItemsSource="{DynamicResource Information}" Grid.IsSharedSizeScope="True" Margin="5">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition SharedSizeGroup="Key" />
                             <ColumnDefinition SharedSizeGroup="Value" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Margin="2 2 5 2" FontWeight="Bold"
+                        <TextBlock Margin="2 2 8 2" FontWeight="Bold"
                                    Text="{Binding Key, Converter={StaticResource ValueTranslationConverter}}"
+                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="0" />
                         <TextBlock Margin="2" TextWrapping="Wrap"
                                    Text="{Binding Value, Converter={StaticResource ValueTranslationConverter}}"
+                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="1" />
                     </Grid>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </Window>

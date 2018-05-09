@@ -8,7 +8,7 @@ using System.IO;
 
 namespace DSACharacterSheet.Desktop.IO
 {
-    public class IOService : IIOService
+    public class IoService : IIoService
     {
         public void SaveDataDialog(
             string fileName,
@@ -74,7 +74,7 @@ namespace DSACharacterSheet.Desktop.IO
                 string.IsNullOrEmpty(sheet.Characteristics.Name)
                     ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
                     : sheet.Characteristics.Name,
-                ".dsac",
+                CharacterSheet.Extension,
                 LanguageManager.Translate("CharacterSheet.FileType.Name"),
                 LanguageManager.Translate("CharacterSheet.SaveDialog.Title"));
 
@@ -85,7 +85,7 @@ namespace DSACharacterSheet.Desktop.IO
 
         public CharacterSheet OpenCharacterSheet()
         {
-            var fileDialog = GetOpenFileDialog(".dsac", LanguageManager.Translate("CharacterSheet.FileType.Name"),
+            var fileDialog = GetOpenFileDialog(CharacterSheet.Extension, LanguageManager.Translate("CharacterSheet.FileType.Name"),
                 LanguageManager.Translate("CharacterSheet.LoadDialog.Title"));
 
             return fileDialog.ShowDialog() != true ? null : CharacterSheet.Load(fileDialog.FileName);

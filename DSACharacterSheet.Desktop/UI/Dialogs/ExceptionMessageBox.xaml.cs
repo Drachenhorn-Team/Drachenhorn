@@ -11,14 +11,14 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
     /// </summary>
     public partial class ExceptionMessageBox : Window
     {
-        private string userExceptionMessage;
-        private List<string> ExceptionInformationList = new List<string>();
+        private string _userExceptionMessage;
+        private List<string> _exceptionInformationList = new List<string>();
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage, bool closeApp = false)
         {
             InitializeComponent();
 
-            this.userExceptionMessage = userExceptionMessage;
+            this._userExceptionMessage = userExceptionMessage;
             textBox1.Text = userExceptionMessage;
 
             var treeViewItem = new TreeViewItem
@@ -60,7 +60,7 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
                     }
                 }
             }
-            ExceptionInformationList.Add(exceptionInformation);
+            _exceptionInformationList.Add(exceptionInformation);
         }
 
         private void TreeView1_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -82,8 +82,8 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
 
         private void ButtonClipboard_Click(object sender, RoutedEventArgs e)
         {
-            string clipboardMessage = userExceptionMessage + "\n\r\n\r";
-            foreach (string info in ExceptionInformationList) clipboardMessage += info;
+            string clipboardMessage = _userExceptionMessage + "\n\r\n\r";
+            foreach (string info in _exceptionInformationList) clipboardMessage += info;
             Clipboard.SetText(clipboardMessage);
         }
 

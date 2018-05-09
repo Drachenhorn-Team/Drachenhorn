@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <TreeView Name="treeView1" Margin="5" SelectedItemChanged="TreeView1_SelectedItemChanged" />
         <GridSplitter Width="2" Grid.RowSpan="1" />
-        <TextBox Grid.Column="1" Name="textBox1" Margin="5" IsReadOnly="True" TextWrapping="Wrap" />
+        <TextBlock Grid.Column="1" Name="textBox1" Margin="5" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
         <Grid Grid.Row ="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />

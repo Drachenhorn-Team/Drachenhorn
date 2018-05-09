@@ -125,7 +125,7 @@ namespace DSACharacterSheet.Core.Downloader
                 var result = await webClient.DownloadStringTaskAsync(new Uri(Link));
 
 
-                SimpleIoc.Default.GetInstance<IIOService>()
+                SimpleIoc.Default.GetInstance<IIoService>()
                     .SaveString(
                         Path.Combine(
                             DSATemplate.BaseDirectory, 

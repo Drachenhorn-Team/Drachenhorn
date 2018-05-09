@@ -630,4 +630,28 @@
   <data name="UI.Template" xml:space="preserve">
     <value>Vorlagen</value>
   </data>
+  <data name="UI.AllFiles" xml:space="preserve">
+    <value>All Files</value>
+  </data>
+  <data name="Info.Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="Info.Formula" xml:space="preserve">
+    <value>Formula</value>
+  </data>
+  <data name="Template.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Template.Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Template.DoYouWantToAdd" xml:space="preserve">
+    <value>Do you want to install this template? (Installed templates might get deleted)</value>
+  </data>
+  <data name="UI.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="UI.No" xml:space="preserve">
+    <value>No</value>
+  </data>
 </root>

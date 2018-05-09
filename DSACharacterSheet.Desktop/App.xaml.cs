@@ -19,7 +19,10 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using DSACharacterSheet.Xml.Sheet;
 using DSACharacterSheet.Xml.Template;
+using Easy.Logger;
+using Easy.Logger.Interfaces;
 using NamedPipeClientStream = System.IO.Pipes.NamedPipeClientStream;
 using SplashScreen = DSACharacterSheet.Desktop.UI.Splash.SplashScreen;
 
@@ -34,6 +37,14 @@ namespace DSACharacterSheet.Desktop
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
+
+            try
+            {
+                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<App>();
+                logger.Fatal("Some crash occurred.", e.Exception);
+            }
+            catch (InvalidOperationException) { }
+
             var window = new ExceptionMessageBox(e.Exception, "Im Programm ist ein Fehler aufgetreten.", true);
             window.ShowDialog();
         }
@@ -55,7 +66,9 @@ namespace DSACharacterSheet.Desktop
                 foreach (var item in args)
                 {
                     var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(".dsac") || (temp.EndsWith(".dsat") && temp.StartsWith(DSATemplate.BaseDirectory)))
+                    if (temp.EndsWith(CharacterSheet.Extension)
+                        || (temp.EndsWith(DSATemplate.Extension)
+                            && temp.StartsWith(DSATemplate.BaseDirectory)))
                     {
                         filePath = temp;
                         break;
@@ -63,7 +76,7 @@ namespace DSACharacterSheet.Desktop
                 }
             }
 
-            if (filePath.EndsWith(".dsat"))
+            if (filePath.EndsWith(DSATemplate.Extension))
             {
                 new TemplateImportDialog(filePath).ShowDialog();
                 filePath = "";
@@ -76,12 +89,15 @@ namespace DSACharacterSheet.Desktop
 
         private void InitializeData()
         {
+            SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
+
+
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             Messenger.Default.Register<Exception>(this,
                 ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });
 
-            SimpleIoc.Default.Register<IIOService>(() => new IOService());
+            SimpleIoc.Default.Register<IIoService>(() => new IoService());
 
             var settings = Settings.Load();
             SimpleIoc.Default.Register<ISettings>(() => settings);
@@ -92,19 +108,6 @@ namespace DSACharacterSheet.Desktop
                 if (args.PropertyName == "VisualTheme")
                     SetTheme(settings.VisualTheme);
             };
-
-            //            Logger.LoggerHandlerManager.AddHandler(
-            //                new FileLoggerHandler(
-            //                    "log.txt",
-            //                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            //                        "DSACharacterSheet")));
-
-            //            Logger.DefaultLevel = Logger.Level.Error;
-            //            Logger.DebugOff();
-
-            //#if DEBUG
-            //            Logger.DebugOn();
-            //#endif
 
             settings.CheckUpdateAsync(UpdateCheckFinished);
         }
@@ -183,7 +186,7 @@ namespace DSACharacterSheet.Desktop
                         foreach (var item in args)
                         {
                             var temp = new Uri(item).LocalPath;
-                            if (temp.EndsWith(".dsac"))
+                            if (temp.EndsWith(CharacterSheet.Extension))
                                 text = item;
                         }
 

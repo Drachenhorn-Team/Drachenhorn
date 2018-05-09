@@ -270,4 +270,7 @@
   <data name="Characteristics.Name" xml:space="preserve">
     <value>Naam</value>
   </data>
+  <data name="UI.No" xml:space="preserve">
+    <value>Nee</value>
+  </data>
 </root>

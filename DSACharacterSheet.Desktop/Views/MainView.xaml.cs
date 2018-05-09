@@ -31,7 +31,7 @@ namespace DSACharacterSheet.Desktop.Views
         public void OpenFile(string path)
         {
             var temp = new Uri(path).LocalPath;
-            if (temp.EndsWith(".dsac"))
+            if (temp.EndsWith(CharacterSheet.Extension))
             {
                 if (this.DataContext is MainViewModel)
                 {

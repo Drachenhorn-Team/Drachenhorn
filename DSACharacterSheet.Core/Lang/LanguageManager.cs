@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
+using Easy.Logger.Interfaces;
 
 namespace DSACharacterSheet.Core.Lang
 {
@@ -30,7 +31,7 @@ namespace DSACharacterSheet.Core.Lang
         /// <returns>Translated Text</returns>
         public string this[string key] => TranslateText(key);
 
-        private readonly ResourceManager ResourceManager =
+        private readonly ResourceManager _resourceManager =
             new ResourceManager("DSACharacterSheet.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
         /// <summary>
@@ -42,12 +43,12 @@ namespace DSACharacterSheet.Core.Lang
         {
             try
             {
-                return ResourceManager.GetString(identifier, CurrentCulture);
+                return _resourceManager.GetString(identifier, CurrentCulture);
             }
             catch (MissingManifestResourceException)
             {
-                //var logger = SimpleIoc.Default.GetInstance<IEasyLogger>();
-                //logger.Debug("Missing Translation: " + identifier);
+                var logger = SimpleIoc.Default.GetInstance<ILogService>();
+                logger.GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
                 return identifier;
             }
         }
@@ -106,7 +107,7 @@ namespace DSACharacterSheet.Core.Lang
             {
                 try
                 {
-                    ResourceSet rs = ResourceManager.GetResourceSet(culture, true, false);
+                    ResourceSet rs = _resourceManager.GetResourceSet(culture, true, false);
 
                     if (rs != null)
                     {
@@ -121,7 +122,7 @@ namespace DSACharacterSheet.Core.Lang
 
         #region static
 
-        public static CultureInfo CurrentUICulture
+        public static CultureInfo CurrentUiCulture
         {
             get { return SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture; }
             set

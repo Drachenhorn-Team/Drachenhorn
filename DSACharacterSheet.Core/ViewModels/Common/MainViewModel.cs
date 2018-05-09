@@ -119,7 +119,7 @@ namespace DSACharacterSheet.Core.ViewModels.Common
 
         private void ExecuteOpen()
         {
-            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIoService>();
 
             try
             {
@@ -158,7 +158,7 @@ namespace DSACharacterSheet.Core.ViewModels.Common
 
         private void ExecuteGenerateHtml()
         {
-            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIoService>();
 
             ioService.SaveStringDialog(
                 string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Characteristics.Name) ?

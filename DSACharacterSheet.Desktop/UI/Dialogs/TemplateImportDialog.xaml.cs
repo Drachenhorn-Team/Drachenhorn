@@ -3,6 +3,8 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using DSACharacterSheet.Xml.Template;
+using Easy.Logger.Interfaces;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Desktop.UI.Dialogs
 {
@@ -19,13 +21,23 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
 
             var fileName = file.Name;
             
-            var version = Regex.Match(fileName, "[v]{1}[0-9]*.[0-9]*").Value;
+            var version = Regex.Match(fileName, "[v]{1}[0-9]*[.]{1}[0-9]*").Value;
 
             VersionBox.Text = version.Replace("v", "");
             NameBox.Text = fileName.Substring(0, fileName.IndexOf(version, StringComparison.Ordinal) - 1);
 
-            NoButton.Click += (sender, args) => { this.Close(); };
-            YesButton.Click += (sender, args) => { file.CopyTo(Path.Combine(DSATemplate.BaseDirectory, fileName)); };
+            NoButton.Click += (sender, args) =>
+            {
+                this.Close();
+            };
+            YesButton.Click += (sender, args) =>
+            {
+                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateImportDialog>();
+                logger.Info("Copying " + file.FullName + " to " + DSATemplate.BaseDirectory);
+
+                file.CopyTo(Path.Combine(DSATemplate.BaseDirectory, fileName), true);
+                this.Close();
+            };
         }
     }
 }

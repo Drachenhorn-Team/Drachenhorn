@@ -73,13 +73,13 @@ namespace DSACharacterSheet.Core.Downloader
 
             _isDownloadInitialized = true;
 
-            Task.Run(() =>
+            Task.Run(async () =>
             {
                 while (Templates.Any(x => x.IsDownloadStarted))
                 {
                     var nextItem = Templates.First(x => x.IsDownloadStarted);
 
-                    nextItem.TryDownload();
+                    await nextItem.TryDownload();
                 }
 
                 _isDownloadInitialized = false;

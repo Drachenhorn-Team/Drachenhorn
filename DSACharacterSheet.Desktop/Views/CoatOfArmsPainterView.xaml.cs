@@ -161,24 +161,24 @@ namespace DSACharacterSheet.Desktop.Views
             Canvas.Strokes.Clear();
         }
 
-        public LimitedList<Stroke> _undoneStrokes = new LimitedList<Stroke>(50);
+        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
 
         private void UndoButton_Click(object sender, RoutedEventArgs e)
         {
             if (Strokes.Count == 0)
                 return;
 
-            _undoneStrokes.Add(Strokes.ElementAt(Strokes.Count - 1));
+            UndoneStrokes.Add(Strokes.ElementAt(Strokes.Count - 1));
             Strokes.RemoveAt(Strokes.Count - 1);
         }
 
         private void RedoButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_undoneStrokes.Count == 0)
+            if (UndoneStrokes.Count == 0)
                 return;
 
-            Strokes.Add(_undoneStrokes.Last());
-            _undoneStrokes.Remove(_undoneStrokes.Last());
+            Strokes.Add(UndoneStrokes.Last());
+            UndoneStrokes.Remove(UndoneStrokes.Last());
         }
 
         #region OnPropertyChanged

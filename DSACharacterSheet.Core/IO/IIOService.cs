@@ -3,7 +3,7 @@ using DSACharacterSheet.Xml.Template;
 
 namespace DSACharacterSheet.Core.IO
 {
-    public interface IIOService
+    public interface IIoService
     {
         void SaveDataDialog(
             string fileName,

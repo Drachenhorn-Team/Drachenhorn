@@ -44,7 +44,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
         private double _gpCost;
 
         [XmlAttribute("GPCost")]
-        public double GPCost
+        public double GpCost
         {
             get { return _gpCost; }
             set
@@ -62,7 +62,7 @@ namespace DSACharacterSheet.Xml.Sheet.Common
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
             if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-            if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
+            if (Math.Abs(GpCost) > Double.Epsilon) result.Add("%Info.GPCost", GpCost.ToString(CultureInfo.CurrentCulture));
 
             return result;
         }

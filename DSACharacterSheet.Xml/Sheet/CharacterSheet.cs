@@ -35,7 +35,7 @@ namespace DSACharacterSheet.Xml.Sheet
         private double _gpBase;
 
         [XmlAttribute("GPBase")]
-        public double GPBase
+        public double GpBase
         {
             get { return _gpBase; }
             set
@@ -178,6 +178,8 @@ namespace DSACharacterSheet.Xml.Sheet
         #endregion Properties
 
         #region Save/Load
+
+        public static readonly string Extension = ".dsac";
 
         [XmlIgnore]
         private bool _isChanged = false;

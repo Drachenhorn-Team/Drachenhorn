@@ -53,7 +53,7 @@ namespace DSACharacterSheet.Core.ViewModels.Sheet
 
         public void SaveAs()
         {
-            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIoService>();
 
             try
             {
@@ -67,7 +67,7 @@ namespace DSACharacterSheet.Core.ViewModels.Sheet
 
         public void Open()
         {
-            var ioService = SimpleIoc.Default.GetInstance<IIOService>();
+            var ioService = SimpleIoc.Default.GetInstance<IIoService>();
 
             try
             {
