@@ -31,7 +31,7 @@
                                    Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="0" />
                         <TextBlock Margin="2" TextWrapping="Wrap"
-                                   Text="{Binding Value, Converter={StaticResource ValueTranslationConverter}}"
+                                   Text="{Binding Value}"
                                    Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="1" />
                     </Grid>

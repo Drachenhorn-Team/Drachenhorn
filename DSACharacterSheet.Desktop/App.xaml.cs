@@ -68,7 +68,7 @@ namespace DSACharacterSheet.Desktop
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(CharacterSheet.Extension)
                         || (temp.EndsWith(DSATemplate.Extension)
-                            && temp.StartsWith(DSATemplate.BaseDirectory)))
+                            && !temp.StartsWith(DSATemplate.BaseDirectory)))
                     {
                         filePath = temp;
                         break;
