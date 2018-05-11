@@ -1,4 +1,5 @@
-﻿using DSACharacterSheet.Xml;
+﻿using System;
+using DSACharacterSheet.Xml;
 using GalaSoft.MvvmLight.Ioc;
 using System.Collections.Generic;
 using System.Globalization;
@@ -47,8 +48,12 @@ namespace DSACharacterSheet.Core.Lang
             }
             catch (MissingManifestResourceException)
             {
-                var logger = SimpleIoc.Default.GetInstance<ILogService>();
-                logger.GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
+                try
+                {
+                    var logger = SimpleIoc.Default.GetInstance<ILogService>();
+                    logger.GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
+                }
+                catch (InvalidOperationException) { }
                 return identifier;
             }
         }

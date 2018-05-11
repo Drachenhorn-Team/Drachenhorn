@@ -11,7 +11,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="UI/Themes/LightTheme.xaml" />
+                <ResourceDictionary Source="UI/Themes/DarkTheme.xaml" />
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
                 </ResourceDictionary>

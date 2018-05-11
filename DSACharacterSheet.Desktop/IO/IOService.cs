@@ -93,7 +93,7 @@ namespace DSACharacterSheet.Desktop.IO
 
         public void SaveString(string path, string text, bool writeNew = true)
         {
-            if (File.Exists(path))
+            if (writeNew && File.Exists(path))
                 File.Delete(path);
 
             File.WriteAllText(path, text);
