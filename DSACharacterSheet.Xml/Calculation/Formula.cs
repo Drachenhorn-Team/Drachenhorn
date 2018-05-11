@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DSACharacterSheet.Xml.Sheet;
 using DSACharacterSheet.Xml.Sheet.Skills;
@@ -100,7 +101,7 @@ namespace DSACharacterSheet.Xml.Calculation
                 var result = e.Evaluate();
 
                 if (result != null)
-                    return (double)result;
+                    return Convert.ToDouble(result);
             }
             catch (ArgumentException) { }
             return 0.0;
@@ -129,6 +130,14 @@ namespace DSACharacterSheet.Xml.Calculation
             {
                 if (Expression.Contains("[" + item.Key + "]"))
                     AddParameter(ref expression, item);
+            }
+
+            foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))
+            {
+                var parameter = match.ToString().Replace("[", "").Replace("]", "");
+
+                if (!expression.Parameters.ContainsKey(parameter))
+                    expression.Parameters[parameter] = 0;
             }
         }
 

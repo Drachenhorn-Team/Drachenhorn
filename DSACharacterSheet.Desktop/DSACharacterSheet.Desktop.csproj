@@ -64,7 +64,7 @@
     <ApplicationIcon>Images\Common\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>3B26DFE71BA7C50CF11C4FD48DAD9FEBA6A6A7CA</ManifestCertificateThumbprint>
@@ -80,6 +80,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Easy.Logger, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -431,7 +434,6 @@
     <Resource Include="Images\Flags\en.png" />
     <Resource Include="Images\Flags\invariant.png" />
     <Resource Include="Images\Flags\nds-DE.png" />
-    <None Include="DSACharacterSheet.Desktop_TemporaryKey.pfx" />
     <None Include="Images\Common\SaveFileIcon.svg" />
     <None Include="Images\Common\SaveTemplateIcon.svg" />
     <Content Include="Images\Common\SaveFileIcon.ico" />
