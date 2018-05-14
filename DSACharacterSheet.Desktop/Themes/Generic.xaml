@@ -67,14 +67,22 @@
                                       ItemsSource="{Binding Date.Month,
                                                 Converter={StaticResource AllowedDaysConverter},
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                      FontFamily="{DynamicResource Morpheus}"
+                                      FontSize="16"
                                       Grid.Column="0" Margin="5" MinWidth="60"/>
                             <ComboBox Text="{Binding Date.Month,
                                                 Converter={StaticResource EnumToStringConverter},
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                       ItemsSource="{Binding Source={StaticResource DsaMonthEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                      Grid.Column="1" Margin="5" MinWidth="100"/>
+                                      FontFamily="{DynamicResource Morpheus}"
+                                      FontSize="16"
+                                      Grid.Column="1" Margin="5" MinWidth="200"/>
                             <TextBox Text="{Binding Date.Year,
                                                 RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                     Height="{Binding ActualHeight, ElementName=PART_DayButton}"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="{DynamicResource Morpheus}"
+                                     FontSize="16"
                                      Grid.Column="2" />
                         </Grid>
                     </Border>
