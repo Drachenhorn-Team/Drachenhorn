@@ -18,6 +18,22 @@ namespace DSACharacterSheet.Desktop.UserSettings
     {
         #region Properties
 
+        [XmlIgnore]
+        private bool _isNew = true;
+        [XmlIgnore]
+        public bool IsNew
+        {
+            get { return _isNew; }
+            private set
+            {
+                if (_isNew == value)
+                    return;
+                _isNew = value;
+                OnPropertyChanged();
+            }
+
+        }
+
         [XmlElement("CurrentCulture")]
         public string CurrentCultureString
         {
@@ -198,6 +214,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
                 {
                     var serializer = new XmlSerializer(typeof(Settings));
                     var temp = (Settings)serializer.Deserialize(stream);
+                    temp.IsNew = false;
                     return temp;
                 }
             }

@@ -82,6 +82,9 @@ namespace DSACharacterSheet.Desktop
                 filePath = "";
             }
 
+            if (SimpleIoc.Default.GetInstance<ISettings>().IsNew)
+                new ThemeChooseDialog().ShowDialog();
+
             MainWindow = new MainView(filePath);
             MainWindow.Show();
             splash.Close();
@@ -122,7 +125,7 @@ namespace DSACharacterSheet.Desktop
                     "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
                     "AppsUseLightTheme", null);
 
-                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+                theme = isDark as int? == 0 ? VisualThemeType.Black : VisualThemeType.Light;
             }
 
             string uri = "UI/Themes/" + theme.ToString() + "Theme.xaml";

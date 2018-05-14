@@ -5,6 +5,8 @@ namespace DSACharacterSheet.Core.Settings
 {
     public interface ISettings
     {
+        bool IsNew { get; }
+
         CultureInfo CurrentCulture { get; set; }
         string Version { get; }
         string GitCommit { get; }

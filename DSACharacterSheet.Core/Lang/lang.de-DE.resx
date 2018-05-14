@@ -663,4 +663,7 @@
   <data name="Templates.ServerNotFound" xml:space="preserve">
     <value>Der Server konnte nicht gefunden werden. Bitte überprüfen sie ihre Internet-Verbindung.</value>
   </data>
+  <data name="UI.Select" xml:space="preserve">
+    <value>Auswählen</value>
+  </data>
 </root>

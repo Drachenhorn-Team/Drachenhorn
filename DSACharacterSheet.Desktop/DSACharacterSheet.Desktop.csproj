@@ -172,6 +172,9 @@
     <Compile Include="UI\Dialogs\TemplateSelectorDialog.xaml.cs">
       <DependentUpon>TemplateSelectorDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\ThemeChooseDialog.xaml.cs">
+      <DependentUpon>ThemeChooseDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Lang\TranslateTextExtension.cs" />
     <Compile Include="UI\Lang\TranslateExtension.cs" />
     <Compile Include="UI\MVVM\DialogService.cs" />
@@ -252,6 +255,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\Dialogs\TemplateSelectorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\ThemeChooseDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
