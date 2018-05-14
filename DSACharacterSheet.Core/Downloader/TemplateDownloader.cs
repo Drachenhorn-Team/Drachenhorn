@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSACharacterSheet.Core.IO;
 using DSACharacterSheet.Xml;
+using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace DSACharacterSheet.Core.Downloader
@@ -18,13 +19,28 @@ namespace DSACharacterSheet.Core.Downloader
 
         #region Properties
 
+        private bool _isConnectionSuccessful = true;
+
+        public bool IsConnectionSuccessful
+        {
+            get { return _isConnectionSuccessful; }
+            private set
+            {
+                if (_isConnectionSuccessful == value)
+                    return;
+                _isConnectionSuccessful = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private ObservableCollection<OnlineTemplate> _templates = new ObservableCollection<OnlineTemplate>();
 
         public ObservableCollection<OnlineTemplate> Templates
         {
             get
             {
-                if (!_templates.Any()) LoadTemplates();
+                if (!_templates.Any()) IsConnectionSuccessful = LoadTemplates();
                 return _templates;
             }
             private set
@@ -40,9 +56,24 @@ namespace DSACharacterSheet.Core.Downloader
 
         #region Loading
 
-        private void LoadTemplates()
+        /// <summary>
+        /// Loads the templates from an online Source
+        /// </summary>
+        /// <returns>true if connection is successful.</returns>
+        private bool LoadTemplates()
         {
-            var textFromFile = (new WebClient()).DownloadString(RawPath);
+            var textFromFile = "";
+
+            try
+            {
+                textFromFile = (new WebClient()).DownloadString(RawPath);
+            }
+            catch (WebException e)
+            {
+                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>();
+                logger.Info("Could not connect to Template-Service", e);
+                return false;
+            }
 
             var lines = textFromFile.Split(new[] { '\r', '\n' });
 
@@ -50,6 +81,8 @@ namespace DSACharacterSheet.Core.Downloader
             {
                 _templates.Add(new OnlineTemplate(line));
             }
+
+            return true;
         }
 
         #endregion Loading

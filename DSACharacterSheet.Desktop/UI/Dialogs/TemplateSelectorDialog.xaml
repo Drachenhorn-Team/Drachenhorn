@@ -27,33 +27,44 @@
             </DockPanel>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Online}" DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
-            <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5" Grid.IsSharedSizeScope="True">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
-                                <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
-                                <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
-                                <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar"/>
-                            </Grid.ColumnDefinitions>
+            <Grid>
+                <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5" Grid.IsSharedSizeScope="True">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
+                                    <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar"/>
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"
-                                       VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Version}" Grid.Column="1" Margin="5"
-                                       VerticalAlignment="Center"/>
-                            <Button Click="DownloadButton_OnClick" Grid.Column="2"
-                                    Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
-                                    Width="20" Height="20" Margin="20 5 5 5">
-                                <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
-                            </Button>
-                            <ProgressBar Value="{Binding Progress, Mode=OneWay}"
-                                         Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
-                                         Grid.Column="3" Margin="5"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                                <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Version}" Grid.Column="1" Margin="5"
+                                           VerticalAlignment="Center"/>
+                                <Button Click="DownloadButton_OnClick" Grid.Column="2"
+                                        Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
+                                        Width="20" Height="20" Margin="20 5 5 5">
+                                    <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
+                                </Button>
+                                <ProgressBar Value="{Binding Progress, Mode=OneWay}"
+                                             Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
+                                             Grid.Column="3" Margin="5"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Border Background="{StaticResource BackgroundBrush}"
+                        Margin="5" BorderBrush="{StaticResource BorderBrush}"
+                        Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
+                    <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
+                               Style="{StaticResource MorpheusTextStyle}"
+                               HorizontalAlignment="Center"/>
+                </Border>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>
+

@@ -3,37 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors/Light.xaml" />
         <ResourceDictionary Source="BaseTheme.xaml" />
+        <ResourceDictionary Source="Images/Black.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
-    <!--Images-->
-
-    <BitmapImage x:Key="DsaIcon" UriSource="pack://application:,,,/Images/Common/DSAFanLogo.png" />
-
-    <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Light/Common/Add.png" />
-    <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Light/Common/Remove.png" />
-    <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="pack://application:,,,/Images/Light/Common/ArrowBlockDown.png" />
-    <BitmapImage x:Key="DownloadIcon" UriSource="pack://application:,,,/Images/Light/Common/Download.png" />
-
-    <BitmapImage x:Key="EditIcon" UriSource="pack://application:,,,/Images/Light/EditIcon.png" />
-    <BitmapImage x:Key="HtmlIcon" UriSource="pack://application:,,,/Images/Light/Html.png" />
-    <BitmapImage x:Key="InfoIcon" UriSource="pack://application:,,,/Images/Light/InfoIcon.png" />
-    <BitmapImage x:Key="MenuIcon" UriSource="pack://application:,,,/Images/Light/MenuIcon.png" />
-    <BitmapImage x:Key="NewIcon" UriSource="pack://application:,,,/Images/Light/NewIcon.png" />
-    <BitmapImage x:Key="PdfIcon" UriSource="pack://application:,,,/Images/Light/Pdf.png" />
-    <BitmapImage x:Key="PrintIcon" UriSource="pack://application:,,,/Images/Light/PrintIcon.png" />
-    <BitmapImage x:Key="PropertiesIcon" UriSource="pack://application:,,,/Images/Light/PropertiesIcon.png" />
-    <BitmapImage x:Key="SaveAllIcon" UriSource="pack://application:,,,/Images/Light/SaveAllIcon.png" />
-    <BitmapImage x:Key="SaveIcon" UriSource="pack://application:,,,/Images/Light/SaveIcon.png" />
-    <BitmapImage x:Key="SaveAsIcon" UriSource="pack://application:,,,/Images/Light/SaveIcon.png" />
-    <BitmapImage x:Key="UpdateAvailableIcon" UriSource="pack://application:,,,/Images/Light/UpdateAvailable.png" />
-
-    <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Light/Calculate.png" />
-
-    <BitmapImage x:Key="BrushIcon" UriSource="pack://application:,,,/Images/Light/Painting/Brush.png" />
-    <BitmapImage x:Key="ClearIcon" UriSource="pack://application:,,,/Images/Light/Painting/Clear.png" />
-    <BitmapImage x:Key="EraserIcon" UriSource="pack://application:,,,/Images/Light/Painting/Eraser.png" />
-    <BitmapImage x:Key="PencilIcon" UriSource="pack://application:,,,/Images/Light/Painting/Pencil.png" />
-    <BitmapImage x:Key="RedoIcon" UriSource="pack://application:,,,/Images/Light/Painting/Redo.png" />
-    <BitmapImage x:Key="SelectIcon" UriSource="pack://application:,,,/Images/Light/Painting/Select.png" />
-    <BitmapImage x:Key="UndoIcon" UriSource="pack://application:,,,/Images/Light/Painting/Undo.png" />
 </ResourceDictionary>

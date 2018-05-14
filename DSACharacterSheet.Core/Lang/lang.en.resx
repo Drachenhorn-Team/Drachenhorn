@@ -654,4 +654,13 @@
   <data name="UI.No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="VisualThemeType.White" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="VisualThemeType.Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Templates.ServerNotFound" xml:space="preserve">
+    <value>The Server could not be found. Please check your internet connection.</value>
+  </data>
 </root>
