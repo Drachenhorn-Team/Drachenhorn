@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Easy.Logger.Interfaces;
 
 namespace DSACharacterSheet.Desktop.UserSettings
 {
@@ -220,13 +221,17 @@ namespace DSACharacterSheet.Desktop.UserSettings
             }
             catch (IOException)
             {
+                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>();
+                logger.Info("Settings not found. Generating new.");
                 return new Settings();
             }
             catch (InvalidOperationException)
             {
                 var service = SimpleIoc.Default.GetInstance<IDialogService>();
-
                 service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
+
+                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>();
+                logger.Info("Settings corrupted. Generating new.");
                 return new Settings();
             }
         }

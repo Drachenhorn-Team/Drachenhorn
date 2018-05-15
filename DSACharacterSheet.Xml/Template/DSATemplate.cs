@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Text;
 using System.Xml.Serialization;
-using DSACharacterSheet.Xml.Exceptions;
-using DSACharacterSheet.Xml.Sheet;
+using DSACharacterSheet.Xml.Data.AP;
 using DSACharacterSheet.Xml.Sheet.Common;
 
 namespace DSACharacterSheet.Xml.Template
@@ -16,8 +14,22 @@ namespace DSACharacterSheet.Xml.Template
         #region Properties
 
         [XmlIgnore]
-        private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
+        private APTable _apTable = new APTable();
+        [XmlElement("APTable")]
+        public APTable APTable
+        {
+            get { return _apTable; }
+            set
+            {
+                if (_apTable == value)
+                    return;
+                _apTable = value;
+                OnPropertyChanged();
+            }
+        }
 
+        [XmlIgnore]
+        private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
         [XmlElement("Race")]
         public ObservableCollection<RaceInformation> Races
         {
@@ -33,7 +45,6 @@ namespace DSACharacterSheet.Xml.Template
 
         [XmlIgnore]
         private ObservableCollection<CultureInformation> _cultures = new ObservableCollection<CultureInformation>();
-
         [XmlElement("Culture")]
         public ObservableCollection<CultureInformation> Cultures
         {

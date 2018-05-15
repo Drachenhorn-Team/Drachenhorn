@@ -9,45 +9,45 @@
         Title="ThemeChooseDialog" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Themes/WhiteTheme.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-
             <DataTemplate x:Key="ShowTheme">
-                <Grid Background="{DynamicResource BackgroundBrush}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+                <Border BorderBrush="{StaticResource BorderBrush}"
+                        Background="{StaticResource BackgroundBrush}"
+                        BorderThickness="2" Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                    <TextBlock Text="{Binding .}" 
-                               Margin="5 5 5 50"
-                               Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0"
-                               HorizontalAlignment="Center"
-                               FontSize="28"
-                               FontFamily="{StaticResource Morpheus}"/>
+                        <TextBlock Text="{Binding .}" 
+                                   Margin="5 5 5 50"
+                                   Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   FontSize="28"
+                                   FontFamily="{StaticResource Morpheus}"/>
 
-                    <Image Source="{DynamicResource SaveIcon}" Grid.Column="0" Grid.Row="1" Margin="5"/>
-                    <Image Source="{DynamicResource AddIcon}" Grid.Column="1" Grid.Row="1" Margin="5"/>
-                    <Image Source="{DynamicResource NewIcon}" Grid.Column="2" Grid.Row="1" Margin="5"/>
+                        <Image Source="{DynamicResource SaveIcon}" Grid.Column="0" Grid.Row="1" Margin="5"/>
+                        <Image Source="{DynamicResource AddIcon}" Grid.Column="1" Grid.Row="1" Margin="5"/>
+                        <Image Source="{DynamicResource NewIcon}" Grid.Column="2" Grid.Row="1" Margin="5"/>
 
-                    <Button Content="Lorem Ipsum" Margin="5"
-                            Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2"
-                            IsHitTestVisible="False"/>
+                        <Button Content="Lorem Ipsum" Margin="5"
+                                Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2"
+                                IsHitTestVisible="False"/>
 
-                    <TextBlock Text="dolor sit amet" Margin="5"
-                               Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="3"
-                               HorizontalAlignment="Center"
-                               FontSize="16"
-                               FontFamily="{StaticResource Morpheus}"/>
-                </Grid>
+                        <TextBlock Text="dolor sit amet" Margin="5"
+                                   Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="3"
+                                   HorizontalAlignment="Center"
+                                   FontSize="16"
+                                   FontFamily="{StaticResource Morpheus}"/>
+                    </Grid>
+                </Border>
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
@@ -61,8 +61,11 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
+
+        <Separator Grid.ColumnSpan="20" Grid.Row="1"></Separator>
 
         <Grid Grid.Column="0">
             <Grid.Resources>
@@ -73,7 +76,7 @@
         </Grid>
         <Button Margin="5" Click="VisualTheme_1_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="0" Grid.Row="1"
+                Grid.Column="0" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.White}"/>
 
         <Grid Grid.Row="0" Grid.Column="1">
@@ -85,7 +88,7 @@
         </Grid>
         <Button Margin="5" Click="VisualTheme_2_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="1" Grid.Row="1"
+                Grid.Column="1" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.Light}"/>
 
         <Grid Grid.Row="0" Grid.Column="2">
@@ -97,7 +100,7 @@
         </Grid>
         <Button Margin="5" Click="VisualTheme_3_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="2" Grid.Row="1"
+                Grid.Column="2" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.Dark}"/>
 
         <Grid Grid.Row="0" Grid.Column="3">
@@ -109,7 +112,7 @@
         </Grid>
         <Button Margin="5" Click="VisualTheme_4_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="3" Grid.Row="1"
+                Grid.Column="3" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.Black}"/>
 
         <TextBlock Text="{lang:Translate VisualThemeType.System}"
@@ -117,9 +120,9 @@
                    HorizontalAlignment="Center"
                    FontSize="28"
                    FontFamily="{StaticResource Morpheus}"/>
-        <Button Margin="5" Click="VisualTheme_4_OnClick"
+        <Button Margin="5" Click="VisualTheme_System_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="4" Grid.Row="1"
+                Grid.Column="4" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.System}"/>
 
     </Grid>

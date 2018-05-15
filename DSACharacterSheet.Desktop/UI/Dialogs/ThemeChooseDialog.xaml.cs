@@ -49,5 +49,11 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
             SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.Black;
             this.Close();
         }
+
+        private void VisualTheme_System_OnClick(object sender, RoutedEventArgs e)
+        {
+            SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.System;
+            this.Close();
+        }
     }
 }

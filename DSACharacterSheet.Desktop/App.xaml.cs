@@ -128,7 +128,7 @@ namespace DSACharacterSheet.Desktop
                 theme = isDark as int? == 0 ? VisualThemeType.Black : VisualThemeType.Light;
             }
 
-            string uri = "UI/Themes/" + theme.ToString() + "Theme.xaml";
+            var uri = "UI/Themes/" + theme + "Theme.xaml";
 
             if (string.IsNullOrEmpty(uri)) return;
 
