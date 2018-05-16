@@ -8,10 +8,11 @@
         MinWidth="300"
         Style="{StaticResource {x:Type Window}}"
         WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
         Title="CommonMessageBox" SizeToContent="WidthAndHeight">
     <StackPanel>
         <TextBlock Name="MessageBlock" Text="text" Margin="5" MaxWidth="350" MinHeight="50"
-                   Style="{StaticResource MorpheusTextStyle}"/>
+                   TextWrapping="WrapWithOverflow"/>
         <WrapPanel HorizontalAlignment="Right">
             <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="50"
                     Click="ConfirmButton_OnClick" Padding="5 2 5 2"/>

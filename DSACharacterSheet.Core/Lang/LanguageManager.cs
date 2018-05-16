@@ -44,7 +44,7 @@ namespace DSACharacterSheet.Core.Lang
         {
             try
             {
-                return _resourceManager.GetString(identifier, CurrentCulture);
+                return _resourceManager.GetString(identifier, CurrentCulture).Replace("\\n", "\n");
             }
             catch (MissingManifestResourceException)
             {

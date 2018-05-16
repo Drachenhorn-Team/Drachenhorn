@@ -95,7 +95,7 @@
             <MenuItem Header="{lang:Translate UI.Template}" Command="{Binding OpenTemplates}"/>
         </Menu>
 
-        <Separator DockPanel.Dock="Top" />
+        <!--<Separator DockPanel.Dock="Top" />-->
 
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBarTray.Resources>

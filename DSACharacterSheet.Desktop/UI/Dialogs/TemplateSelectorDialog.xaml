@@ -18,9 +18,9 @@
             <DockPanel>
                 <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
                     <Button Content="{lang:Translate UI.Open}" Click="OpenButton_OnClick" DockPanel.Dock="Bottom"
-                            Margin="5"/>
+                            Margin="5" Padding="8"/>
                     <Button Content="{lang:Translate UI.New}" Click="NewButton_OnClick" DockPanel.Dock="Bottom"
-                            Margin="5"/>
+                            Margin="5" Padding="8"/>
                 </WrapPanel>
 
                 <ListBox Name="TemplateList" Margin="5"/>
@@ -28,7 +28,8 @@
         </TabItem>
         <TabItem Header="{lang:Translate UI.Online}" DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
             <Grid>
-                <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5" Grid.IsSharedSizeScope="True">
+                <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5"
+                         Grid.IsSharedSizeScope="True">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>

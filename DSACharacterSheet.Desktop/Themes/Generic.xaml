@@ -19,6 +19,7 @@
     </ObjectDataProvider>
 
     <Style TargetType="{x:Type userElements:InfoButton}">
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type userElements:InfoButton}">
