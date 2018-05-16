@@ -3,11 +3,16 @@ using DSACharacterSheet.Core.ViewModels;
 using DSACharacterSheet.Xml.Sheet;
 using GalaSoft.MvvmLight.Messaging;
 using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
+using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.ViewModels.Common;
 using DSACharacterSheet.Core.ViewModels.Sheet;
 using DSACharacterSheet.Desktop.UI.Dialogs;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -63,9 +68,23 @@ namespace DSACharacterSheet.Desktop.Views
                 new TemplateSelectorDialog().ShowDialog();
         }
 
-        private void InkPresenter_OnLoaded(object sender, RoutedEventArgs e)
+        private async void MainView_OnClosing(object sender, CancelEventArgs e)
         {
-            ((FrameworkElement)sender).RenderTransform = new ScaleTransform(0.1, 0.1);
+            if (this.DataContext is MainViewModel)
+            {
+                var model = (MainViewModel) this.DataContext;
+
+                if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
+
+                var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                    LanguageManager.Translate("UI.SouldCloseBunch"),
+                    LanguageManager.Translate("UI.SouldCloseBunch.Caption"),
+                    LanguageManager.Translate("UI.Yes"),
+                    LanguageManager.Translate("UI.No"), null);
+
+                if (!result)
+                    e.Cancel = true;
+            }
         }
     }
 }

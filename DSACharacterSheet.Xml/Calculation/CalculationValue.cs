@@ -8,7 +8,7 @@ using DSACharacterSheet.Xml.Sheet;
 
 namespace DSACharacterSheet.Xml.Calculation
 {
-    public abstract class CalculationValue : BindableBase
+    public abstract class CalculationValue : ChildChangedBase
     {
         #region Properties
 

@@ -6,12 +6,17 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UI.Dialogs"
         mc:Ignorable="d"
         MinWidth="300"
+        Style="{StaticResource {x:Type Window}}"
+        WindowStartupLocation="CenterOwner"
         Title="CommonMessageBox" SizeToContent="WidthAndHeight">
     <StackPanel>
-        <TextBlock Name="MessageBlock" Text="text" Margin="5" MaxWidth="200" MinHeight="50"/>
+        <TextBlock Name="MessageBlock" Text="text" Margin="5" MaxWidth="350" MinHeight="50"
+                   Style="{StaticResource MorpheusTextStyle}"/>
         <WrapPanel HorizontalAlignment="Right">
-            <Button Name="ConfirmButton" Content="confirm" Margin="5" Click="ConfirmButton_OnClick" Padding="2"/>
-            <Button Name="CancelButton" Content="cancel" Margin="5" Click="CancelButton_OnClick" Padding="2"/>
+            <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="50"
+                    Click="ConfirmButton_OnClick" Padding="5 2 5 2"/>
+            <Button Name="CancelButton" Content="cancel" Margin="5" MinWidth="50"
+                    Click="CancelButton_OnClick" Padding="5 2 5 2"/>
         </WrapPanel>
     </StackPanel>
 </Window>

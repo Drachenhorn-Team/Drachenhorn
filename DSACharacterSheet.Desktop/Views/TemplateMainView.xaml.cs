@@ -13,8 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DSACharacterSheet.Core.Lang;
+using DSACharacterSheet.Core.ViewModels.Common;
 using DSACharacterSheet.Core.ViewModels.Template;
 using DSACharacterSheet.Xml.Template;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Desktop.Views
 {
@@ -36,16 +39,21 @@ namespace DSACharacterSheet.Desktop.Views
             };
         }
 
-        private void TemplateMainView_OnClosing(object sender, CancelEventArgs e)
+        private async void TemplateMainView_OnClosing(object sender, CancelEventArgs e)
         {
-            if (((TemplateMainViewModel) this.DataContext).Template.HasChanged)
+            if (this.DataContext is TemplateMainViewModel)
             {
-                if (MessageBox.Show(this,
-                        LanguageManager.Translate("UI.SouldClose"),
-                        LanguageManager.Translate("UI.SouldClose.Caption"),
-                        MessageBoxButton.YesNo,
-                        MessageBoxImage.Warning)
-                    == MessageBoxResult.No)
+                var model = (TemplateMainViewModel) this.DataContext;
+
+                if (!model.Template.HasChanged) return;
+
+                var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                    LanguageManager.Translate("UI.SouldClose"),
+                    LanguageManager.Translate("UI.SouldClose.Caption"),
+                    LanguageManager.Translate("UI.Yes"),
+                    LanguageManager.Translate("UI.No"), null);
+
+                if (!result)
                     e.Cancel = true;
             }
         }

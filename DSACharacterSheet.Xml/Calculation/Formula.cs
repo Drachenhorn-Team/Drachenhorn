@@ -9,7 +9,7 @@ using NCalc;
 
 namespace DSACharacterSheet.Xml.Calculation
 {
-    public class Formula : BindableBase
+    public class Formula : ChildChangedBase
     {
         #region Properties
 

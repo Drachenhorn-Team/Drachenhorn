@@ -143,6 +143,7 @@ namespace DSACharacterSheet.Xml.Template
             {
                 var serializer = new XmlSerializer(typeof(DSATemplate));
                 serializer.Serialize(stream, this);
+                this.HasChanged = false;
             }
 
             return true;

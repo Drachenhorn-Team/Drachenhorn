@@ -184,6 +184,8 @@ namespace DSACharacterSheet.Core.ViewModels.Common
 
         private async void ExecuteCloseSheet(CharacterSheetViewModel model)
         {
+            if (!model.CurrentSheet.HasChanged) return;
+
             var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 LanguageManager.Translate("UI.SouldClose"),
                 LanguageManager.Translate("UI.SouldClose.Caption"),

@@ -245,6 +245,8 @@ namespace DSACharacterSheet.Xml.Sheet
 
                     SetFormulaParent(ref temp);
 
+                    temp.HasChanged = false;
+
                     return temp;
                 }
             }
@@ -281,6 +283,7 @@ namespace DSACharacterSheet.Xml.Sheet
                 {
                     var serializer = new XmlSerializer(typeof(CharacterSheet));
                     serializer.Serialize(stream, this);
+                    this.HasChanged = false;
                 }
 
                 return true;
