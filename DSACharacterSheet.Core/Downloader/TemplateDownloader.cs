@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using DSACharacterSheet.Core.IO;
@@ -40,7 +41,13 @@ namespace DSACharacterSheet.Core.Downloader
         {
             get
             {
-                if (!_templates.Any()) IsConnectionSuccessful = LoadTemplates();
+                if (!_templates.Any())
+                    Task.Run(() =>
+                    {
+                        var templates = LoadTemplatesAsync().Result;
+                        IsConnectionSuccessful = templates != null;
+                        Templates = templates;
+                    });
                 return _templates;
             }
             private set
@@ -60,29 +67,33 @@ namespace DSACharacterSheet.Core.Downloader
         /// Loads the templates from an online Source
         /// </summary>
         /// <returns>true if connection is successful.</returns>
-        private bool LoadTemplates()
+        private async Task<ObservableCollection<OnlineTemplate>> LoadTemplatesAsync()
         {
-            var textFromFile = "";
+            return await Task.Run(() => {
+                var textFromFile = "";
 
-            try
-            {
-                textFromFile = (new WebClient()).DownloadString(RawPath);
-            }
-            catch (WebException e)
-            {
-                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>();
-                logger.Info("Could not connect to Template-Service", e);
-                return false;
-            }
+                var result = new ObservableCollection<OnlineTemplate>();
 
-            var lines = textFromFile.Split(new[] { '\r', '\n' });
+                try
+                {
+                    textFromFile = (new WebClient()).DownloadString(RawPath);
+                }
+                catch (WebException e)
+                {
+                    var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>();
+                    logger.Info("Could not connect to Template-Service", e);
+                    return null;
+                }
 
-            foreach (var line in lines)
-            {
-                _templates.Add(new OnlineTemplate(line));
-            }
+                var lines = textFromFile.Split(new[] { '\r', '\n' });
 
-            return true;
+                foreach (var line in lines)
+                {
+                    result.Add(new OnlineTemplate(line));
+                }
+
+                return result;
+            });
         }
 
         #endregion Loading

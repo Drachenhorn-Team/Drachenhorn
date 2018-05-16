@@ -7,13 +7,19 @@
         mc:Ignorable="d"
         Background="Black"
         ResizeMode="NoResize"
-        Title="Console" Height="200" Width="500">
+        Title="Console" Height="500" Width="800">
     <Grid>
         <ScrollViewer Margin="0">
             <RichTextBox Name="RichTextBox" IsReadOnly="True"
                          Background="Transparent"
                          Foreground="White"
-                         FontFamily="Consolas"/>
+                         IsHitTestVisible="False">
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
         </ScrollViewer>
     </Grid>
 </Window>

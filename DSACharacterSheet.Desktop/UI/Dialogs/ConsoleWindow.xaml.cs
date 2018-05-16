@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using log4net.Appender;
+using log4net.Core;
+using Brushes = System.Windows.Media.Brushes;
 
 namespace DSACharacterSheet.Desktop.UI.Dialogs
 {
@@ -25,27 +28,39 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
         {
             InitializeComponent();
 
-            Console.SetOut(new ConsoleLogger(RichTextBox));
+            RichTextBox.FontFamily = new FontFamily("Consolas");
+            RichTextBox.Document.FontFamily = new FontFamily("Consolas");
+
+            RichTextBoxAppender.rtb = RichTextBox;
         }
     }
 
-    internal class ConsoleLogger : TextWriter
+    public class RichTextBoxAppender : AppenderSkeleton
     {
-        private RichTextBox rtb;
+        internal static RichTextBox rtb;
 
-        public ConsoleLogger(RichTextBox rtb)
+        protected override void Append(LoggingEvent loggingEvent)
         {
-            this.rtb = rtb;
-        }
+            if (rtb == null) return;
+            
+            TextRange tr = new TextRange(rtb.Document.ContentEnd, rtb.Document.ContentEnd);
+            tr.Text = loggingEvent.RenderedMessage + "\n";
 
-        public override Encoding Encoding
-        {
-            get { return null; }
-        }
+            var color = Brushes.White;
 
-        public override void Write(char value)
-        {
-            if (value != '\r') rtb.AppendText(new string(value, 1));
+            if (loggingEvent.Level == Level.Debug)
+                color = Brushes.DodgerBlue;
+            else if (loggingEvent.Level == Level.Info)
+                color = Brushes.Green;
+            else if (loggingEvent.Level == Level.Warn)
+                color = Brushes.Yellow;
+            else if (loggingEvent.Level == Level.Error)
+                color = Brushes.OrangeRed;
+            else if (loggingEvent.Level == Level.Error)
+                color = Brushes.DarkRed;
+
+
+            tr.ApplyPropertyValue(TextElement.ForegroundProperty, color);
         }
     }
 }

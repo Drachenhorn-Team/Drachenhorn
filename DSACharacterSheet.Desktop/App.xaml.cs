@@ -57,8 +57,6 @@ namespace DSACharacterSheet.Desktop
 #if DEBUG
             var console = new ConsoleWindow();
             console.Show();
-
-            this.Exit += (s, a) => { console.Close(); };
 #endif
 
 
@@ -96,6 +94,10 @@ namespace DSACharacterSheet.Desktop
             MainWindow = new MainView(filePath);
             MainWindow.Show();
             splash.Close();
+
+#if DEBUG
+            MainWindow.Closed += (s, a) => { console.Close(); };
+#endif
         }
 
         private void InitializeData()
