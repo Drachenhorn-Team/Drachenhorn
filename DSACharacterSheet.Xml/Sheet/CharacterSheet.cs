@@ -11,7 +11,7 @@ using Attribute = DSACharacterSheet.Xml.Sheet.Skills.Attribute;
 namespace DSACharacterSheet.Xml.Sheet
 {
     [Serializable]
-    public class CharacterSheet : BindableBase
+    public class CharacterSheet : ChildChangedBase
     {
         #region Properties
 
@@ -177,22 +177,36 @@ namespace DSACharacterSheet.Xml.Sheet
 
         #endregion Properties
 
+
+        #region c'tor
+
+        public CharacterSheet()
+        {
+            PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName != "HasChanged") HasChanged = true;
+            };
+            ChildChanged += (sender, args) => { HasChanged = true; };
+        }
+
+        #endregion c'tor
+
         #region Save/Load
 
         public static readonly string Extension = ".dsac";
 
         [XmlIgnore]
-        private bool _isChanged = false;
+        private bool _hasChanged;
 
         [XmlIgnore]
-        public bool IsChanged
+        public bool HasChanged
         {
-            get { return _isChanged; }
+            get { return _hasChanged; }
             private set
             {
-                if (_isChanged == value)
+                if (_hasChanged == value)
                     return;
-                _isChanged = value;
+                _hasChanged = value;
                 OnPropertyChanged();
             }
         }

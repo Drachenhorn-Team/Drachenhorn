@@ -38,7 +38,14 @@ namespace DSACharacterSheet.Desktop.UI.MVVM
         public Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText,
             Action<bool> afterHideCallback)
         {
-            throw new NotImplementedException();
+            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true ? true : false;
+
+            afterHideCallback?.Invoke(result);
+
+            return Task.Run(() =>
+            {
+                return result;
+            });
         }
 
         public async Task ShowMessageBox(string message, string title)

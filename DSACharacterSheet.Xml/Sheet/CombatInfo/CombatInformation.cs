@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.Xml.Sheet.CombatInfo
 {
     [Serializable]
-    public class CombatInformation : BindableBase
+    public class CombatInformation : ChildChangedBase
     {
         #region Properties
 

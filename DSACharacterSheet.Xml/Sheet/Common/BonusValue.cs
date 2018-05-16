@@ -7,7 +7,7 @@ using DSACharacterSheet.Xml.Calculation;
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
     [Serializable]
-    public class BonusValue : BindableBase, IFormulaKeyItem
+    public class BonusValue : ChildChangedBase, IFormulaKeyItem
     {
         [XmlIgnore]
         private string _key;

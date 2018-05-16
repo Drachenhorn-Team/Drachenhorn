@@ -5,7 +5,7 @@ using DSACharacterSheet.Xml.Sheet.Enums;
 namespace DSACharacterSheet.Xml.Sheet.Roll
 {
     [Serializable]
-    public class RollAttributes : BindableBase
+    public class RollAttributes : ChildChangedBase
     {
         #region Properties
 

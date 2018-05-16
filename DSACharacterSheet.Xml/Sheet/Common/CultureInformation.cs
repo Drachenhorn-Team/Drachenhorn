@@ -8,7 +8,7 @@ using DSACharacterSheet.Xml.Interfaces;
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
     [Serializable]
-    public class CultureInformation : BindableBase, IInfoObject
+    public class CultureInformation : ChildChangedBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;

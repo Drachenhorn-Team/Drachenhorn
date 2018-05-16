@@ -10,6 +10,7 @@
         Style="{StaticResource {x:Type Window}}"
         DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
         WindowState="Maximized"
+        Closing="TemplateMainView_OnClosing"
         Title="TemplateMainView" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">

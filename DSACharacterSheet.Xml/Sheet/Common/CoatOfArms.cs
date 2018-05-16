@@ -8,7 +8,7 @@ using DSACharacterSheet.Xml.Objects;
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
     [Serializable]
-    public class CoatOfArms : BindableBase
+    public class CoatOfArms : ChildChangedBase
     {
         [XmlIgnore]
         private string _base64String;

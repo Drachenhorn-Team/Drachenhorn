@@ -7,7 +7,7 @@ using DSACharacterSheet.Xml.Sheet.Enums;
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
     [Serializable]
-    public class DisAdvantage : BindableBase, IInfoObject
+    public class DisAdvantage : ChildChangedBase, IInfoObject
     {
         #region Properties
 

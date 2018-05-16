@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace DSACharacterSheet.Xml.Data.AP
 {
     [Serializable]
-    public class APTable : BindableBase
+    public class APTable : ChildChangedBase
     {
         #region Properties
 

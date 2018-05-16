@@ -10,6 +10,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Views;
 
 namespace DSACharacterSheet.Core.ViewModels.Common
 {
@@ -181,9 +182,16 @@ namespace DSACharacterSheet.Core.ViewModels.Common
 
         public RelayCommand<CharacterSheetViewModel> CloseSheet { get; private set; }
 
-        private void ExecuteCloseSheet(CharacterSheetViewModel model)
+        private async void ExecuteCloseSheet(CharacterSheetViewModel model)
         {
-            CharacterSheetViewModels.Remove(model);
+            var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                LanguageManager.Translate("UI.SouldClose"),
+                LanguageManager.Translate("UI.SouldClose.Caption"),
+                LanguageManager.Translate("UI.Yes"),
+                LanguageManager.Translate("UI.No"), null);
+
+            if (result)
+                CharacterSheetViewModels.Remove(model);
         }
 
         public RelayCommand CalculateAll { get; private set; }

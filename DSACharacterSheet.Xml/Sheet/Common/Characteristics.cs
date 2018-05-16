@@ -6,7 +6,7 @@ using DSACharacterSheet.Xml.Sheet.Enums;
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
     [Serializable]
-    public class Characteristics : BindableBase
+    public class Characteristics : ChildChangedBase
     {
         #region Properties
 

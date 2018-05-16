@@ -6,7 +6,7 @@ using DSACharacterSheet.Xml.Interfaces;
 
 namespace DSACharacterSheet.Xml.Sheet.Common
 {
-    public class ProfessionInformation : BindableBase, IInfoObject
+    public class ProfessionInformation : ChildChangedBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;

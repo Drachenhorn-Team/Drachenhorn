@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.IO;
 using System.Xml.Serialization;
 using DSACharacterSheet.Xml.Data.AP;
+using DSACharacterSheet.Xml.Interfaces;
 using DSACharacterSheet.Xml.Sheet.Common;
 
 namespace DSACharacterSheet.Xml.Template
 {
     [Serializable]
-    public class DSATemplate : BindableBase
+    public class DSATemplate : ChildChangedBase
     {
         #region Properties
 
@@ -66,6 +69,16 @@ namespace DSACharacterSheet.Xml.Template
         public DSATemplate()
         {
             _fileName = "New";
+
+
+            PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName != "HasChanged") HasChanged = true;
+            };
+            ChildChanged += (sender, args) =>
+            {
+                HasChanged = true;
+            };
         }
 
         #endregion c'tor
@@ -89,11 +102,14 @@ namespace DSACharacterSheet.Xml.Template
         [XmlIgnore]
         public string FilePath
         {
-            get { return Path.Combine(BaseDirectory, _fileName + Extension); }
+            get
+            {
+                return Path.Combine(BaseDirectory, _fileName + Extension);
+            }
             private set
             {
                 if (value.StartsWith(BaseDirectory))
-                    _fileName = value.Replace(BaseDirectory, "").Replace(Extension, "");
+                    _fileName = value.Replace(BaseDirectory, "").Replace("\\", "").Replace(Extension, "");
                 OnPropertyChanged();
             }
         }
@@ -112,6 +128,7 @@ namespace DSACharacterSheet.Xml.Template
                 var serializer = new XmlSerializer(typeof(DSATemplate));
                 var temp = (DSATemplate) serializer.Deserialize(stream);
                 temp.FilePath = path;
+                temp.HasChanged = false;
 
                 return temp;
             }
@@ -132,6 +149,25 @@ namespace DSACharacterSheet.Xml.Template
         }
 
         #endregion Save/Load
+
+        #region HasChanged
+
+        [XmlIgnore]
+        private bool _hasChanged;
+        [XmlIgnore]
+        public bool HasChanged
+        {
+            get { return _hasChanged; }
+            set
+            {
+                if (_hasChanged == value)
+                    return;
+                _hasChanged = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion HasChanged
 
         #region Static
 
