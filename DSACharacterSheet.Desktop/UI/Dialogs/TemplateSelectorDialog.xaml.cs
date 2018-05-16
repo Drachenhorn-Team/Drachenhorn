@@ -35,6 +35,8 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
 
         private void OpenButton_OnClick(object sender, RoutedEventArgs e)
         {
+            if (TemplateList.SelectedItem == null) return;
+
             var view = new TemplateMainView(DSATemplate.Load(TemplateList.SelectedItem.ToString()));
 
             view.Show();

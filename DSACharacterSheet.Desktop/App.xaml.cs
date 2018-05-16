@@ -54,6 +54,14 @@ namespace DSACharacterSheet.Desktop
             var splash = new SplashScreen();
             splash.Show();
 
+#if DEBUG
+            var console = new ConsoleWindow();
+            console.Show();
+
+            this.Exit += (s, a) => { console.Close(); };
+#endif
+
+
             if (!IsSingleInstance())
                 Application.Current.Shutdown();
 

@@ -165,6 +165,9 @@
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\ConsoleWindow.xaml.cs">
+      <DependentUpon>ConsoleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
@@ -246,6 +249,10 @@
       <DependentUpon>TemplateMainView.xaml</DependentUpon>
     </Compile>
     <Page Include="UI\Dialogs\CommonMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\ConsoleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
