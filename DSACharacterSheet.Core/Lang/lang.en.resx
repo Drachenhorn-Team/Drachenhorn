@@ -678,4 +678,16 @@
   <data name="UI.SouldClose.Caption" xml:space="preserve">
     <value>Unsaved Changes</value>
   </data>
+  <data name="UI.ShowConsole" xml:space="preserve">
+    <value>Show Console</value>
+  </data>
+  <data name="DSATemplate.Races" xml:space="preserve">
+    <value>Races</value>
+  </data>
+  <data name="CharacterSheet.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CharacterSheet.StartValues" xml:space="preserve">
+    <value>Start-Values</value>
+  </data>
 </root>

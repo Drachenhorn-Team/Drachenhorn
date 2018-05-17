@@ -34,6 +34,8 @@ namespace DSACharacterSheet.Desktop
     /// </summary>
     public partial class App : Application
     {
+        private ConsoleWindow _console = new ConsoleWindow();
+
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
@@ -54,9 +56,10 @@ namespace DSACharacterSheet.Desktop
             var splash = new SplashScreen();
             splash.Show();
 
+            _console.Show();
+
 #if DEBUG
-            var console = new ConsoleWindow();
-            console.Show();
+            _console.Visibility = Visibility.Visible;
 #endif
 
 
@@ -96,7 +99,7 @@ namespace DSACharacterSheet.Desktop
             splash.Close();
 
 #if DEBUG
-            MainWindow.Closed += (s, a) => { console.Close(); };
+            MainWindow.Closed += (s, a) => { _console.Close(); };
 #endif
         }
 
@@ -113,6 +116,17 @@ namespace DSACharacterSheet.Desktop
             SimpleIoc.Default.Register<IIoService>(() => new IoService());
 
             var settings = Settings.Load();
+
+            settings.PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == "ShowConsole")
+                    if (settings.ShowConsole == true)
+                        _console.Visibility = Visibility.Visible;
+                    else
+                        _console.Visibility = Visibility.Collapsed;
+
+            };
+
             SimpleIoc.Default.Register<ISettings>(() => settings);
 
             SetTheme(settings.VisualTheme);

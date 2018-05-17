@@ -34,7 +34,7 @@
         
         
         <TabControl>
-            <TabItem Header="{lang:Translate DSATemplate.Race}">
+            <TabItem Header="{lang:Translate DSATemplate.Races}">
                 <template:RaceTemplateControl DataContext="{Binding Template.Races}" />
             </TabItem>
         </TabControl>

@@ -13,6 +13,8 @@ namespace DSACharacterSheet.Core.Settings
 
         VisualThemeType VisualTheme { get; set; }
 
+        bool? ShowConsole { get; set; }
+
         bool IsUpdateAvailable { get; }
         bool CanCheckUpdate { get; }
 

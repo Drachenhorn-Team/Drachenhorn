@@ -111,6 +111,21 @@ namespace DSACharacterSheet.Desktop.UserSettings
         }
 
         [XmlIgnore]
+        private bool? _showConsole;
+        [XmlElement("ShowConsole")]
+        public bool? ShowConsole
+        {
+            get { return _showConsole;}
+            set
+            {
+                if (_showConsole == value)
+                    return;
+                _showConsole = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private bool _isUpdateAvailable;
 
         [XmlIgnore]

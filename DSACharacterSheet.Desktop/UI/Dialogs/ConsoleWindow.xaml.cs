@@ -26,10 +26,9 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
     {
         public ConsoleWindow()
         {
-            InitializeComponent();
+            this.Visibility = Visibility.Collapsed;
 
-            RichTextBox.FontFamily = new FontFamily("Consolas");
-            RichTextBox.Document.FontFamily = new FontFamily("Consolas");
+            InitializeComponent();
 
             RichTextBoxAppender.rtb = RichTextBox;
         }
@@ -56,11 +55,12 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
                 color = Brushes.Yellow;
             else if (loggingEvent.Level == Level.Error)
                 color = Brushes.OrangeRed;
-            else if (loggingEvent.Level == Level.Error)
+            else if (loggingEvent.Level == Level.Fatal)
                 color = Brushes.DarkRed;
 
 
             tr.ApplyPropertyValue(TextElement.ForegroundProperty, color);
+            tr.ApplyPropertyValue(TextElement.FontFamilyProperty, new FontFamily("Consolas"));
         }
     }
 }
