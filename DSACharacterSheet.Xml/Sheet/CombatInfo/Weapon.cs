@@ -1,28 +1,13 @@
 ﻿using System;
 using System.Xml.Serialization;
+using DSACharacterSheet.Xml.Sheet.InventoryInfo;
 
 namespace DSACharacterSheet.Xml.Sheet.CombatInfo
 {
     [Serializable]
-    public class Weapon : ChildChangedBase
+    public class Weapon : InventoryItem
     {
         #region Properties
-
-        [XmlIgnore]
-        private string _name;
-
-        [XmlAttribute("Name")]
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (_name == value)
-                    return;
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
 
         [XmlIgnore]
         private int _handicap;

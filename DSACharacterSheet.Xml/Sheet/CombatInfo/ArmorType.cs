@@ -1,6 +1,6 @@
 ﻿namespace DSACharacterSheet.Xml.Sheet.CombatInfo
 {
-    public enum ArmorRegion
+    public enum ArmorType
     {
         None,
         Head,

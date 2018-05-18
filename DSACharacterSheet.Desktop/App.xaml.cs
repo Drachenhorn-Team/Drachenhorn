@@ -97,10 +97,8 @@ namespace DSACharacterSheet.Desktop
             MainWindow = new MainView(filePath);
             MainWindow.Show();
             splash.Close();
-
-#if DEBUG
+            
             MainWindow.Closed += (s, a) => { _console.Close(); };
-#endif
         }
 
         private void InitializeData()

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Xml.Serialization;
+using DSACharacterSheet.Xml.Sheet.InventoryInfo;
 
 namespace DSACharacterSheet.Xml.Sheet.CombatInfo
 {
     [Serializable]
-    public class ArmorPart : ChildChangedBase
+    public class ArmorPart : InventoryItem
     {
         #region Properties
 
@@ -25,33 +26,17 @@ namespace DSACharacterSheet.Xml.Sheet.CombatInfo
         }
 
         [XmlIgnore]
-        private string _name;
+        private ArmorType _type = ArmorType.None;
 
-        [XmlAttribute("Name")]
-        public string Name
+        [XmlAttribute("Type")]
+        public ArmorType Type
         {
-            get { return _name; }
+            get { return _type; }
             set
             {
-                if (_name == value)
+                if (_type == value)
                     return;
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private ArmorRegion _region = ArmorRegion.None;
-
-        [XmlAttribute("Region")]
-        public ArmorRegion Region
-        {
-            get { return _region; }
-            set
-            {
-                if (_region == value)
-                    return;
-                _region = value;
+                _type = value;
                 OnPropertyChanged();
             }
         }

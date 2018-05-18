@@ -84,6 +84,9 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Easy.Logger, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Easy.Logger.3.2.0\lib\net40\Easy.Logger.dll</HintPath>
@@ -189,6 +192,9 @@
     <Compile Include="UI\MVVM\DialogService.cs" />
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InventoryControl.xaml.cs">
+      <DependentUpon>InventoryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Template\RaceTemplateControl.xaml.cs">
       <DependentUpon>RaceTemplateControl.xaml</DependentUpon>
@@ -384,6 +390,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CombatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InventoryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -20,7 +20,6 @@ namespace DSACharacterSheet.Desktop.UI.Lang
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
         }
     }

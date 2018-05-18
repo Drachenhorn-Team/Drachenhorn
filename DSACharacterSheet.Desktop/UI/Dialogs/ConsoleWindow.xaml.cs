@@ -60,7 +60,6 @@ namespace DSACharacterSheet.Desktop.UI.Dialogs
 
 
             tr.ApplyPropertyValue(TextElement.ForegroundProperty, color);
-            tr.ApplyPropertyValue(TextElement.FontFamilyProperty, new FontFamily("Consolas"));
         }
     }
 }

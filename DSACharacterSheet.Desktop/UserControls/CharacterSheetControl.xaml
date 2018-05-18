@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:DSACharacterSheet.Desktop.UserControls"
-             xmlns:vm="clr-namespace:DSACharacterSheet.Core.ViewModels;assembly=DSACharacterSheet.Core"
              xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
              xmlns:sheet="clr-namespace:DSACharacterSheet.Core.ViewModels.Sheet;assembly=DSACharacterSheet.Core"
              mc:Ignorable="d"
@@ -127,7 +126,13 @@
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:CombatControl
-                DataContext="{Binding CurrentSheet.CombatInformation}"
+                DataContext="{Binding CurrentSheet}"
+                Margin="5" />
+        </Border>
+
+        <Border Style="{StaticResource FrameBorder}">
+            <controls:InventoryControl
+                DataContext="{Binding CurrentSheet.Inventory}"
                 Margin="5" />
         </Border>
     </StackPanel>

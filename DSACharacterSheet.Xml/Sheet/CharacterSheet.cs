@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using DSACharacterSheet.Xml.Exceptions;
 using DSACharacterSheet.Xml.Sheet.CombatInfo;
 using DSACharacterSheet.Xml.Sheet.Common;
+using DSACharacterSheet.Xml.Sheet.InventoryInfo;
 using DSACharacterSheet.Xml.Sheet.Skills;
 using Attribute = DSACharacterSheet.Xml.Sheet.Skills.Attribute;
 
@@ -160,17 +161,16 @@ namespace DSACharacterSheet.Xml.Sheet
         }
 
         [XmlIgnore]
-        private CombatInformation _combatInformation = new CombatInformation();
-
-        [XmlElement("CombatInformation")]
-        public CombatInformation CombatInformation
+        private Inventory _inventory = new Inventory();
+        [XmlElement("Inventory")]
+        public Inventory Inventory
         {
-            get { return _combatInformation; }
+            get { return _inventory; }
             set
             {
-                if (_combatInformation == value)
+                if (_inventory == value)
                     return;
-                _combatInformation = value;
+                _inventory = value;
                 OnPropertyChanged();
             }
         }
