@@ -27,11 +27,11 @@ Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
 Und so hat das alles angefangen.
 
 
-## Installation
+## Download
 
-[![Download](https://img.shields.io/badge/%20-Download-green.svg?style=flat-square)](https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe)
-
-Einfach das Setup herunterladen und ausführen
+<a href="https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/setup.exe" download="setup.exe">
+  <img src="/DSACharacterSheet.Desktop/Images/Light/Common/Download.png" width="40" title="setup.exe"/>
+</a>
 
 ## Benutzung
 
