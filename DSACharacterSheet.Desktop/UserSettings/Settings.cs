@@ -147,13 +147,13 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         public Settings()
         {
-            this.PropertyChanged += (sender, args) => { this.Save(); };
-
             var path = Path.Combine(Environment.CurrentDirectory, "commit");
             if (File.Exists(path))
                 GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "").Replace("\n", "");
             else
                 GitCommit = "No Commit found";
+
+            this.PropertyChanged += (sender, args) => { this.Save(); };
         }
 
         #endregion c'tor
@@ -197,6 +197,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
         {
             try
             {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Update").Info("Checking for Update");
+
                 if (ApplicationDeployment.IsNetworkDeployed)
                     return ApplicationDeployment.CurrentDeployment.CheckForUpdate();
             }
@@ -223,6 +225,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
         {
             if (!Directory.Exists(PropertiesDirectory))
                 Directory.CreateDirectory(PropertiesDirectory);
+            
+            SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Info("Loading settings.");
 
             try
             {
@@ -231,13 +235,15 @@ namespace DSACharacterSheet.Desktop.UserSettings
                     var serializer = new XmlSerializer(typeof(Settings));
                     var temp = (Settings)serializer.Deserialize(stream);
                     temp.IsNew = false;
+
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Info("Finished loading Settings.");
+
                     return temp;
                 }
             }
             catch (IOException)
             {
-                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>();
-                logger.Info("Settings not found. Generating new.");
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Warn("Settings not found. Generating new.");
                 return new Settings();
             }
             catch (InvalidOperationException)
@@ -245,8 +251,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
                 var service = SimpleIoc.Default.GetInstance<IDialogService>();
                 service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
 
-                var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>();
-                logger.Info("Settings corrupted. Generating new.");
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Warn("Settings corrupted. Generating new.");
                 return new Settings();
             }
         }
@@ -258,6 +263,8 @@ namespace DSACharacterSheet.Desktop.UserSettings
         {
             if (!Directory.Exists(PropertiesDirectory))
                 Directory.CreateDirectory(PropertiesDirectory);
+
+            SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Debug("Saving settings.");
 
             try
             {

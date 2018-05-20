@@ -76,12 +76,13 @@ namespace DSACharacterSheet.Core.Downloader
 
                 try
                 {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>().Info("Downloading online Templates.");
+
                     textFromFile = (new WebClient()).DownloadString(RawPath);
                 }
                 catch (WebException e)
                 {
-                    var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>();
-                    logger.Info("Could not connect to Template-Service", e);
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>().Warn("Could not connect to Template-Service", e);
                     return null;
                 }
 
@@ -122,6 +123,8 @@ namespace DSACharacterSheet.Core.Downloader
                 while (Templates.Any(x => x.IsDownloadStarted))
                 {
                     var nextItem = Templates.First(x => x.IsDownloadStarted);
+
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>().Info("Downloading template: " + nextItem.ToString());
 
                     await nextItem.TryDownload();
                 }

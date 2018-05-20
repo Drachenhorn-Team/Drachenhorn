@@ -3,6 +3,7 @@ using DSACharacterSheet.Core.Lang;
 using DSACharacterSheet.Core.ViewModels.Common;
 using DSACharacterSheet.Core.ViewModels.Sheet;
 using DSACharacterSheet.Core.ViewModels.Template;
+using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 

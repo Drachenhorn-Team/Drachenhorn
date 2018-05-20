@@ -6,18 +6,21 @@
         mc:Ignorable="d"
         Background="Black"
         ResizeMode="NoResize"
+        Loaded="ConsoleWindow_OnLoaded"
         Title="Console" Height="500" Width="800">
     <Grid>
-        <ScrollViewer Margin="0">
+        <ScrollViewer Name="ConsoleScroll" Margin="0">
             <RichTextBox Name="RichTextBox" IsReadOnly="True"
                          Background="Transparent"
                          Foreground="White"
+                         TextChanged="RichTextBox_OnTextChanged"
                          IsHitTestVisible="False">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
                         <Setter Property="Margin" Value="0"/>
                     </Style>
                 </RichTextBox.Resources>
+                <FlowDocument PageWidth="{Binding ElementName=RichTextBox, Path=ActualWidth}"/>
             </RichTextBox>
         </ScrollViewer>
     </Grid>

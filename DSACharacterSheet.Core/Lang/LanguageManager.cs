@@ -50,8 +50,7 @@ namespace DSACharacterSheet.Core.Lang
             {
                 try
                 {
-                    var logger = SimpleIoc.Default.GetInstance<ILogService>();
-                    logger.GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
                 }
                 catch (InvalidOperationException) { }
                 return identifier;
