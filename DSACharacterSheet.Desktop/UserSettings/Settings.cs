@@ -214,7 +214,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
 
         #region Save/Load
 
-        private static readonly string PropertiesDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DSACharacterSheet");
+        private static readonly string PropertiesDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Drachenhorn");
         private static string PropertiesPath => Path.Combine(PropertiesDirectory, "config.xml");
 
         /// <summary>

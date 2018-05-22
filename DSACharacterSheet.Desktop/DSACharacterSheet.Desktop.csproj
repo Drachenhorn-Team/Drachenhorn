@@ -24,17 +24,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/lightlikeD/DSACharacterSheet/publish/</InstallUrl>
-    <SupportUrl>https://github.com/lightlikeD/DSACharacterSheet/wiki</SupportUrl>
-    <ErrorReportUrl>https://github.com/lightlikeD/DSACharacterSheet/issues</ErrorReportUrl>
-    <ProductName>DSA Character Sheet</ProductName>
+    <InstallUrl>https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/</InstallUrl>
+    <SupportUrl>https://github.com/lightlike/Drachenhorn/wiki</SupportUrl>
+    <ErrorReportUrl>https://github.com/lightlike/Drachenhorn/issues</ErrorReportUrl>
+    <ProductName>Drachenhorn</ProductName>
     <PublisherName>lightlike</PublisherName>
     <SuiteName>DSA</SuiteName>
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationVersion>0.0.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -507,9 +507,10 @@
     <Resource Include="Images\Common\Icon.ico" />
     <Resource Include="Images\Common\DSAFanLogo.png" />
     <None Include="Images\ImageSource.md" />
-    <None Include="log4net.config">
+    <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <Resource Include="Resources\Morpheus.ttf" />
@@ -532,14 +533,14 @@
   <ItemGroup>
     <FileAssociation Include=".dsac">
       <Visible>False</Visible>
-      <Description>DSA Character Sheet</Description>
-      <Progid>DSACharacterSheet</Progid>
+      <Description>Drachenhorn File</Description>
+      <Progid>Drachenhorn</Progid>
       <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
     <FileAssociation Include=".dsat">
       <Visible>False</Visible>
-      <Description>DSA Character Template</Description>
-      <Progid>DSACharacterTemplate</Progid>
+      <Description>Drachenhorn Template</Description>
+      <Progid>Drachenhorn</Progid>
       <DefaultIcon>Images\Common\SaveTemplateIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>

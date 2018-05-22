@@ -90,7 +90,7 @@ namespace DSACharacterSheet.Xml.Template
             get
             {
                 return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "DSACharacterSheet", "Templates");
+                    "Drachenhorn", "Templates");
             }
         }
 
