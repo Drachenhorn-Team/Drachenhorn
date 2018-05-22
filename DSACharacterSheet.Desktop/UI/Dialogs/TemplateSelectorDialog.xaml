@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DSACharacterSheet.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:DSACharacterSheet.Desktop.UI.Lang"
         xmlns:converter="clr-namespace:DSACharacterSheet.Desktop.Converter"
+        xmlns:userElements="clr-namespace:DSACharacterSheet.Desktop.UserElements"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         Title="TemplateSelectorDialog" Height="450" Width="800">
@@ -64,6 +65,8 @@
                                Style="{StaticResource MorpheusTextStyle}"
                                HorizontalAlignment="Center"/>
                 </Border>
+                <userElements:LoadingElement Height="50"
+                                             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
             </Grid>
         </TabItem>
     </TabControl>

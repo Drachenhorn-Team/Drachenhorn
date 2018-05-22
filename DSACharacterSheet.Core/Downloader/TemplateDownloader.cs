@@ -34,6 +34,20 @@ namespace DSACharacterSheet.Core.Downloader
             }
         }
 
+        private bool _isLoading = false;
+
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            private set
+            {
+                if (_isLoading == value)
+                    return;
+                _isLoading = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private ObservableCollection<OnlineTemplate> _templates = new ObservableCollection<OnlineTemplate>();
 
@@ -41,7 +55,7 @@ namespace DSACharacterSheet.Core.Downloader
         {
             get
             {
-                if (!_templates.Any())
+                if (_templates == null || !_templates.Any())
                     Task.Run(() =>
                     {
                         var templates = LoadTemplatesAsync().Result;
@@ -72,6 +86,8 @@ namespace DSACharacterSheet.Core.Downloader
             return await Task.Run(() => {
                 var textFromFile = "";
 
+                IsLoading = true;
+
                 var result = new ObservableCollection<OnlineTemplate>();
 
                 try
@@ -83,15 +99,18 @@ namespace DSACharacterSheet.Core.Downloader
                 catch (WebException e)
                 {
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>().Warn("Could not connect to Template-Service", e);
-                    return null;
+                    result = null;
                 }
 
                 var lines = textFromFile.Split(new[] { '\r', '\n' });
 
-                foreach (var line in lines)
-                {
-                    result.Add(new OnlineTemplate(line));
-                }
+                if (result != null)
+                    foreach (var line in lines)
+                    {
+                        result.Add(new OnlineTemplate(line));
+                    }
+
+                IsLoading = false;
 
                 return result;
             });

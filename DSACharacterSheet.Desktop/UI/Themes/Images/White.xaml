@@ -33,5 +33,15 @@
     <BitmapImage x:Key="RedoIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Redo.png" />
     <BitmapImage x:Key="SelectIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Select.png" />
     <BitmapImage x:Key="UndoIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Undo.png" />
+
+
+    <BitmapImage x:Key="Loading1" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_1.png" />
+    <BitmapImage x:Key="Loading2" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_2.png" />
+    <BitmapImage x:Key="Loading3" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_3.png" />
+    <BitmapImage x:Key="Loading4" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_4.png" />
+    <BitmapImage x:Key="Loading5" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_5.png" />
+    <BitmapImage x:Key="Loading6" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_6.png" />
+    <BitmapImage x:Key="Loading7" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_7.png" />
+    <BitmapImage x:Key="Loading8" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_8.png" />
     
 </ResourceDictionary>
