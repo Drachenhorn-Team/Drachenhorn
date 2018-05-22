@@ -1,5 +1,5 @@
 <p align="center"><img src="DSACharacterSheet.Desktop/Images/Common/DSAFanLogo.png" alt="DSACharacterSheet Icon" width="350"></p>
-<h1 align="center">Drachenhorn</h1>
+<h1 align="center">Drachenhorn Charakterbogen</h1>
 
 <p align="center">
   <a href="https://github.com/lightlike/Drachenhorn/blob/master/LICENSE" target="_blank">
