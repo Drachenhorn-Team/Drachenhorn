@@ -22,7 +22,7 @@
                        HorizontalAlignment="Center" Grid.Row="1" FontSize="60"
                        Foreground="#9199BE" Style="{StaticResource MorpheusTextStyle}" />
             <DockPanel Grid.Row="2">
-                <userElements:LoadingElement DockPanel.Dock="Left" Height="20" Width="20"/>
+                <userElements:LoadingElement DockPanel.Dock="Left" Height="20" Width="20" Visibility="Collapsed"/>
                 <TextBlock Text="{lang:Translate Splash.Loading}"
                            HorizontalAlignment="Center" FontSize="20"
                            Foreground="#9199BE" Style="{StaticResource MorpheusTextStyle}" />

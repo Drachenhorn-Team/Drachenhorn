@@ -61,8 +61,7 @@ namespace DSACharacterSheet.Desktop
 #if DEBUG
             _console.Visibility = Visibility.Visible;
 #endif
-
-
+            
             if (!IsSingleInstance())
                 Application.Current.Shutdown();
 

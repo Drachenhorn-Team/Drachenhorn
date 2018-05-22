@@ -111,7 +111,7 @@ namespace DSACharacterSheet.Desktop.UserSettings
         }
 
         [XmlIgnore]
-        private bool? _showConsole;
+        private bool? _showConsole = false;
         [XmlElement("ShowConsole")]
         public bool? ShowConsole
         {
