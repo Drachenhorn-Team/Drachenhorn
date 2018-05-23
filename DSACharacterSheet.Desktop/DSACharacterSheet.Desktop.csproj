@@ -551,13 +551,13 @@
     <FileAssociation Include=".dsac">
       <Visible>False</Visible>
       <Description>Drachenhorn File</Description>
-      <Progid>Drachenhorn Charakterbogen</Progid>
+      <Progid>DSA Sheet</Progid>
       <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
     </FileAssociation>
     <FileAssociation Include=".dsat">
       <Visible>False</Visible>
       <Description>Drachenhorn Template</Description>
-      <Progid>Drachenhorn Vorlage</Progid>
+      <Progid>DSA Template</Progid>
       <DefaultIcon>Images\Common\SaveTemplateIcon.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
