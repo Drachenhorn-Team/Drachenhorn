@@ -1,4 +1,4 @@
-<p align="center"><img src="DSACharacterSheet.Desktop/Images/Common/DSAFanLogo.png" alt="DSACharacterSheet Icon" width="350"></p>
+<p align="center"><img src="Drachenhorn.Desktop/Images/Common/DSAFanLogo.png" alt="Drachenhorn Icon" width="350"></p>
 <h1 align="center">Drachenhorn Charakterbogen</h1>
 
 <p align="center">
@@ -30,7 +30,7 @@ Und so hat das alles angefangen.
 ## Download
 
 <a href="https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/setup.exe" download="setup.exe">
-  <img src="/DSACharacterSheet.Desktop/Images/Light/Common/Download.png" width="40" title="setup.exe"/>
+  <img src="/Drachenhorn.Desktop/Images/Light/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
 ## Benutzung
@@ -43,4 +43,4 @@ Für Unterstützung bitte ein neues [Issue](https://github.com/lightlike/Drachen
 
 ## Entwickeln
 
-Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [0.1.0.0](https://github.com/lightlike/DSACharacterSheet/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.
+Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [0.1.0.0](https://github.com/lightlike/Drachenhorn/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.

@@ -1,0 +1,23 @@
+﻿<Window x:Class="Drachenhorn.Desktop.UI.Dialogs.CommonMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
+        mc:Ignorable="d"
+        MinWidth="300"
+        Style="{StaticResource {x:Type Window}}"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Title="CommonMessageBox" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <TextBlock Name="MessageBlock" Text="text" Margin="5" MaxWidth="350" MinHeight="50"
+                   TextWrapping="WrapWithOverflow"/>
+        <WrapPanel HorizontalAlignment="Right">
+            <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="50"
+                    Click="ConfirmButton_OnClick" Padding="5 2 5 2"/>
+            <Button Name="CancelButton" Content="cancel" Margin="5" MinWidth="50"
+                    Click="CancelButton_OnClick" Padding="5 2 5 2"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>

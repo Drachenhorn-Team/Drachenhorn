@@ -1,0 +1,74 @@
+﻿<Window x:Class="Drachenhorn.Desktop.UI.Dialogs.TemplateSelectorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
+        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
+        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+        mc:Ignorable="d"
+        Style="{StaticResource {x:Type Window}}"
+        Title="TemplateSelectorDialog" Height="450" Width="800">
+    <Window.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converter:BoolToInVisibilityConverter x:Key="BoolToInVisibilityConverter"/>
+    </Window.Resources>
+    <TabControl SelectionChanged="Selector_OnSelectionChanged">
+        <TabItem Name="LocalTemplates" Header="{lang:Translate UI.Installed}">
+            <DockPanel>
+                <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                    <Button Content="{lang:Translate UI.Open}" Click="OpenButton_OnClick" DockPanel.Dock="Bottom"
+                            Margin="5" Padding="8"/>
+                    <Button Content="{lang:Translate UI.New}" Click="NewButton_OnClick" DockPanel.Dock="Bottom"
+                            Margin="5" Padding="8"/>
+                </WrapPanel>
+
+                <ListBox Name="TemplateList" Margin="5"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="{lang:Translate UI.Online}" DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
+            <Grid>
+                <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5"
+                         Grid.IsSharedSizeScope="True">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
+                                    <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Version}" Grid.Column="1" Margin="5"
+                                           VerticalAlignment="Center"/>
+                                <Button Click="DownloadButton_OnClick" Grid.Column="2"
+                                        Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
+                                        Width="20" Height="20" Margin="20 5 5 5">
+                                    <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
+                                </Button>
+                                <ProgressBar Value="{Binding Progress, Mode=OneWay}"
+                                             Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
+                                             Grid.Column="3" Margin="5"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Border Background="{StaticResource BackgroundBrush}"
+                        Margin="5" BorderBrush="{StaticResource BorderBrush}"
+                        Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
+                    <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
+                               Style="{StaticResource MorpheusTextStyle}"
+                               HorizontalAlignment="Center"/>
+                </Border>
+                <userElements:LoadingElement Height="50"
+                                             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
+

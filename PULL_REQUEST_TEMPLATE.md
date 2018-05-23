@@ -1,4 +1,4 @@
-Fixes [#<!-- Issue -->](https://github.com/lightlike/DSACharacterSheet/issues/ <!-- Issue -->)
+Fixes [#<!-- Issue -->](https://github.com/lightlike/Drachenhorn/issues/ <!-- Issue -->)
 
 ## Proposed Changes
 

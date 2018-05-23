@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Drachenhorn.Desktop.UserControls.InventoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel Grid.IsSharedSizeScope="True">
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Weight"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Type"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.StoragePlace}" Grid.Column="1"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Weight}" Grid.Column="2"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Type}" Grid.Column="3"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Handycap}" Grid.Column="4"/>
+        </Grid>
+        <ListBox ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Weight"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Type"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Name}" Grid.Column="0"/>
+                        <TextBlock Text="{Binding StoragePlace}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Weight}" Grid.Column="2"/>
+                        <TextBlock Text="{Binding Type}" Grid.Column="3"/>
+                        <TextBlock Text="{Binding Handycap}" Grid.Column="4"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+    </DockPanel>
+</UserControl>
