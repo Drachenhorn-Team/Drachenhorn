@@ -29,7 +29,7 @@ Und so hat das alles angefangen.
 
 ## Download
 
-<a href="https://raw.githubusercontent.com/lightlikeD/Drachenhorn/publish/setup.exe" download="setup.exe">
+<a href="https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/setup.exe" download="setup.exe">
   <img src="/DSACharacterSheet.Desktop/Images/Light/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
@@ -39,8 +39,8 @@ Grundsätzlich nach dem selben Prinzip, wie den PDF-Bogen.
 
 ## Support/Bugs
 
-Für Unterstützung bitte ein neues [Issue](https://github.com/lightlikeD/Drachenhorn/issues) erzeugen.
+Für Unterstützung bitte ein neues [Issue](https://github.com/lightlike/Drachenhorn/issues) erzeugen.
 
 ## Entwickeln
 
-Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [0.1.0.0](https://github.com/lightlikeD/DSACharacterSheet/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.
+Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [0.1.0.0](https://github.com/lightlike/DSACharacterSheet/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.
