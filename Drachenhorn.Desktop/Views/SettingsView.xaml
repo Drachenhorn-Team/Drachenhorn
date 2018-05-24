@@ -7,6 +7,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:enum="clr-namespace:Drachenhorn.Core.Settings;assembly=Drachenhorn.Core"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
         x:Class="Drachenhorn.Desktop.Views.SettingsView"
         mc:Ignorable="d"
         Title="{lang:Translate UI.Properties}" Height="500"  Width="700">
@@ -57,9 +58,10 @@
                 <TextBlock Text="{lang:Translate UI.VisualTheme}"
                                Grid.Column="0" Grid.Row="1"
                                VerticalAlignment="Center" HorizontalAlignment="Center" />
-                <ComboBox ItemsSource="{Binding Converter={StaticResource EnumListStringConverter}, Source={StaticResource VisualThemeTypes}}"
-                              Text="{Binding Settings.VisualTheme, Converter={StaticResource EnumToStringConverter}}"
-                              Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="5" />
+                <userElements:LocalizedComboBox
+                    ItemsSource="{Binding Converter={StaticResource EnumListStringConverter}, Source={StaticResource VisualThemeTypes}}"
+                    Text="{Binding Settings.VisualTheme, Converter={StaticResource EnumToStringConverter}}"
+                    Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="5" />
 
                 <TextBlock Text="{lang:Translate UI.ShowConsole}"
                            Grid.Column="0" Grid.Row="2"

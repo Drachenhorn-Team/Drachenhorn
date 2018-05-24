@@ -37,6 +37,8 @@ namespace Drachenhorn.Core.ViewModels
             SimpleIoc.Default.Register<TemplateMainViewModel>();
         }
 
+        public LanguageManager LanguageManager => SimpleIoc.Default.GetInstance<LanguageManager>();
+
         public MainViewModel MainView => SimpleIoc.Default.GetInstance<MainViewModel>();
 
         public PrintViewModel PrintView => SimpleIoc.Default.GetInstance<PrintViewModel>();

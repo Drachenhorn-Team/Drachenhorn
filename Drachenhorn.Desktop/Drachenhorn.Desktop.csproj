@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>0.0.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -202,6 +202,7 @@
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserElements\LoadingElement.cs" />
+    <Compile Include="UserElements\LocalizedComboBox.cs" />
     <Compile Include="UserSettings\Settings.cs" />
     <Compile Include="UI\Splash\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>

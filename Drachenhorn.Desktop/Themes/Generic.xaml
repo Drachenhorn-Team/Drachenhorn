@@ -126,4 +126,6 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type userElements:LocalizedComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}"/>
 </ResourceDictionary>

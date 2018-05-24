@@ -73,6 +73,8 @@ namespace Drachenhorn.Desktop
             {
                 foreach (var item in args)
                 {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(item);
+
                     var temp = new Uri(item).LocalPath;
                     if (temp.EndsWith(CharacterSheet.Extension)
                         || (temp.EndsWith(DSATemplate.Extension)

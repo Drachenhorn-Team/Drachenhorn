@@ -69,9 +69,15 @@
 
         <TextBlock Text="{lang:Translate Characteristics.Gender}"
                    Grid.Column="4" Grid.Row="2" />
-        <ComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}}"
-                  ItemsSource="{Binding Source={StaticResource GenderEnum}, Converter={StaticResource EnumListStringConverter}}"
-                  Grid.Column="5" Grid.Row="2" Margin="5" />
+        <userElements:LocalizedComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}}"
+                                        Grid.Column="5" Grid.Row="2" Margin="5"
+                                        ItemsSource="{Binding Source={StaticResource GenderEnum},
+                                                Converter={StaticResource EnumListStringConverter}}" />
+        <!--<ComboBox Text="{Binding Gender, Converter={StaticResource EnumToStringConverter}}"
+                  Grid.Column="5" Grid.Row="2" Margin="5"
+                  ItemsSource="{lang:EnumList {x:Type enum:Gender}}"/>
+                  ItemsSource="{Binding Source={StaticResource GenderEnum},
+                            Converter={StaticResource EnumListStringConverter}}" />-->
 
         <TextBlock Text="{lang:Translate Characteristics.Race}"
                    Grid.Column="0" Grid.Row="3" />

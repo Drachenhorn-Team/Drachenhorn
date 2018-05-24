@@ -3,6 +3,7 @@ using Drachenhorn.Xml;
 using GalaSoft.MvvmLight.Ioc;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using Easy.Logger.Interfaces;
@@ -142,16 +143,30 @@ namespace Drachenhorn.Core.Lang
 
         public static string Translate(string key)
         {
-            var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
+            try
+            {
+                var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
 
-            return lang.GetLanguageText(key);
+                return lang.GetLanguageText(key);
+            }
+            catch (InvalidOperationException)
+            {
+                return key;
+            }
         }
 
         public static string TextTranslate(string text)
         {
-            var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
+            try
+            {
+                var lang = SimpleIoc.Default.GetInstance<LanguageManager>();
 
-            return lang.TranslateText(text);
+                return lang.TranslateText(text);
+            }
+            catch (InvalidOperationException)
+            {
+                return text;
+            }
         }
 
         #endregion static

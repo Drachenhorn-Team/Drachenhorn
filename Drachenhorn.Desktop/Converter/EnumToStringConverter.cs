@@ -25,7 +25,7 @@ namespace Drachenhorn.Desktop.Converter
                 { return enumValue; }
             }
 
-            throw new ArgumentException(null, "value");
+            return null;
         }
     }
 }
