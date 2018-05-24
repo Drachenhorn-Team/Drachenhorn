@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet;
@@ -14,6 +15,12 @@ namespace Drachenhorn.Xml.Calculation
 
         [XmlIgnore]
         private int _startValue;
+        /// <summary>
+        /// Gets the StartValue.
+        /// </summary>
+        /// <value>
+        /// The StartValue.
+        /// </value>
         [XmlIgnore]
         public int StartValue
         {
@@ -30,7 +37,12 @@ namespace Drachenhorn.Xml.Calculation
 
         [XmlIgnore]
         private int _modifier;
-
+        /// <summary>
+        /// Gets or sets the modifier.
+        /// </summary>
+        /// <value>
+        /// The modifier.
+        /// </value>
         [XmlAttribute("Modifier")]
         public int Modifier
         {
@@ -47,6 +59,12 @@ namespace Drachenhorn.Xml.Calculation
 
         [XmlIgnore]
         private int _currentValueDiff;
+        /// <summary>
+        /// Gets or sets the current value.
+        /// </summary>
+        /// <value>
+        /// The current value.
+        /// </value>
         [XmlAttribute("CurrentValue")]
         public int CurrentValue
         {
@@ -63,6 +81,12 @@ namespace Drachenhorn.Xml.Calculation
 
         [XmlIgnore]
         private Formula _formula = new Formula();
+        /// <summary>
+        /// Gets or sets the formula.
+        /// </summary>
+        /// <value>
+        /// The formula.
+        /// </value>
         [XmlIgnore]
         public Formula Formula
         {
@@ -75,7 +99,12 @@ namespace Drachenhorn.Xml.Calculation
                 OnPropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets or sets the formula text.
+        /// </summary>
+        /// <value>
+        /// The formula text.
+        /// </value>
         [XmlAttribute("Formula")]
         public string FormulaText
         {
@@ -94,8 +123,11 @@ namespace Drachenhorn.Xml.Calculation
 
         #endregion Properties
 
-        #region c'tor
-
+        #region c'tor  
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CalculationValue"/> class.
+        /// </summary>
         public CalculationValue()
         {
             Formula.PropertyChanged += (sender, args) =>
@@ -106,12 +138,16 @@ namespace Drachenhorn.Xml.Calculation
 
             Formula.OnCalculateAll += (sender, args) =>
             {
-                Formula.CalculateAsync(x => StartValue = (int)Math.Round(x));
+                Formula.CalculateAsync(x => { StartValue = (int) Math.Round(x); });
             };
         }
 
         #endregion c'tor
 
+        /// <summary>
+        /// Gets the information.
+        /// </summary>
+        /// <param name="dictionary">The dictionary to add the Information to.</param>
         public void GetInformation(ref Dictionary<string, string> dictionary)
         {
             if (!String.IsNullOrEmpty(Formula.Expression))

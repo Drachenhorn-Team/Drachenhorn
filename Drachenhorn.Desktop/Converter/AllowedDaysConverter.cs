@@ -13,7 +13,7 @@ namespace Drachenhorn.Desktop.Converter
             if (!(value is DSAMonth))
                 return null;
 
-            var allowed = ((DSAMonth)value).AllowedDays();
+            var allowed = ((DSAMonth)value).GetAllowedDays();
 
             var result = new List<int>();
 

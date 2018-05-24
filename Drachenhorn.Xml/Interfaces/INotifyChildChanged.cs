@@ -7,6 +7,9 @@ namespace Drachenhorn.Xml.Interfaces
 {
     public interface INotifyChildChanged
     {
+        /// <summary>
+        /// Occurs when [child changed].
+        /// </summary>
         event PropertyChangedEventHandler ChildChanged;
     }
 }

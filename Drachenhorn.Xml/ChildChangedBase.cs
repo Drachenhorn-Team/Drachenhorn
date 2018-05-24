@@ -13,13 +13,25 @@ namespace Drachenhorn.Xml
     {
         #region OnChildChanged
 
+        /// <summary>
+        /// Occurs when [child changed].
+        /// </summary>
         public event PropertyChangedEventHandler ChildChanged;
 
+        /// <summary>
+        /// Called when [child changed].
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnChildChanged([CallerMemberName]string propertyName = null)
         {
             ChildChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Called when [child changed].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="args">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
         protected virtual void OnChildChanged(object sender, PropertyChangedEventArgs args)
         {
             OnChildChanged(args.PropertyName);
@@ -29,6 +41,9 @@ namespace Drachenhorn.Xml
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChildChangedBase"/> class.
+        /// </summary>
         protected ChildChangedBase()
         {
             SetValuesChanged();
@@ -38,6 +53,9 @@ namespace Drachenhorn.Xml
 
         #region Helper
 
+        /// <summary>
+        /// Sets the ValueChanged.
+        /// </summary>
         protected void SetValuesChanged()
         {
             foreach (var property in this.GetType().GetProperties())
@@ -59,6 +77,11 @@ namespace Drachenhorn.Xml
             this.PropertyChanged += SelfPropertyChanged;
         }
 
+        /// <summary>
+        /// Sets the Childs CollectionChanged.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="args">The <see cref="NotifyCollectionChangedEventArgs"/> instance containing the event data.</param>
         private void ChildCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
             if (args.Action == NotifyCollectionChangedAction.Add)
@@ -73,6 +96,11 @@ namespace Drachenhorn.Xml
                 }
         }
 
+        /// <summary>
+        /// Sets Self PropertyChanged.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="args">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
         private void SelfPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             var property = this.GetType().GetProperty(args.PropertyName).GetValue(this);

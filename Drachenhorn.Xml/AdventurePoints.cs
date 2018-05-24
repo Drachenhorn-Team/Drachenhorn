@@ -10,7 +10,12 @@ namespace Drachenhorn.Xml
 
         [XmlIgnore]
         private int _total;
-
+        /// <summary>
+        /// Gets or sets the total points.
+        /// </summary>
+        /// <value>
+        /// The total points.
+        /// </value>
         [XmlAttribute("Total")]
         public int Total
         {
@@ -26,7 +31,12 @@ namespace Drachenhorn.Xml
 
         [XmlIgnore]
         private int _used;
-
+        /// <summary>
+        /// Gets or sets the used points.
+        /// </summary>
+        /// <value>
+        /// The used points.
+        /// </value>
         [XmlAttribute("Used")]
         public int Used
         {
@@ -40,6 +50,12 @@ namespace Drachenhorn.Xml
             }
         }
 
+        /// <summary>
+        /// Gets the current left points.
+        /// </summary>
+        /// <value>
+        /// The current left points.
+        /// </value>
         [XmlIgnore]
         public int CurrentLeft
         {

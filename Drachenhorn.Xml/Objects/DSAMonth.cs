@@ -19,7 +19,12 @@
 
     public static class DSAMonthExtensions
     {
-        public static int AllowedDays(this DSAMonth month)
+        /// <summary>
+        /// Gets the AllowedDays for a Month
+        /// </summary>
+        /// <param name="month">The month.</param>
+        /// <returns></returns>
+        public static int GetAllowedDays(this DSAMonth month)
         {
             switch (month)
             {

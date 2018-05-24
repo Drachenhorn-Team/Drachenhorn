@@ -172,6 +172,12 @@ namespace Drachenhorn.Xml.Template
 
         #region Static
 
+        /// <summary>
+        /// Gets the available templates.
+        /// </summary>
+        /// <value>
+        /// The available templates.
+        /// </value>
         public static IEnumerable<string> AvailableTemplates
         {
             get
