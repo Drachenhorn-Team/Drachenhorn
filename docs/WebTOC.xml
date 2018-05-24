@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="37d3126b-92c6-49d4-b7d2-8459e0bfa010" Title="Drachenhorn" Url="html/R_Project_Documentation.htm">
-    <HelpTOCNode Id="9fb73e32-27f3-4dc7-b459-ea2d0c23f155" Title="Drachenhorn.Xml" Url="html/N_Drachenhorn_Xml.htm">
-      <HelpTOCNode Id="88185ebe-d1b1-421b-9801-78638f7fcd92" Title="AdventurePoints Class" Url="html/T_Drachenhorn_Xml_AdventurePoints.htm">
+  <HelpTOCNode Id="2fd3aa6c-bda9-484d-9d6d-bf6149e56c79" Title="Drachenhorn" Url="html/R_Project_Documentation.htm">
+    <HelpTOCNode Id="7b54bf58-c861-44c0-8486-019ad13a559a" Title="Drachenhorn.Xml" Url="html/N_Drachenhorn_Xml.htm">
+      <HelpTOCNode Id="b61cd010-f711-4b1f-b8f0-e1c50bd7ae70" Title="AdventurePoints Class" Url="html/T_Drachenhorn_Xml_AdventurePoints.htm">
         <HelpTOCNode Title="AdventurePoints Constructor " Url="html/M_Drachenhorn_Xml_AdventurePoints__ctor.htm" />
-        <HelpTOCNode Id="530e8fed-a719-47b9-b74b-dbe47bc29e76" Title="AdventurePoints Properties" Url="html/Properties_T_Drachenhorn_Xml_AdventurePoints.htm">
+        <HelpTOCNode Id="213d14df-5358-44fc-8282-702bd2927dfd" Title="AdventurePoints Properties" Url="html/Properties_T_Drachenhorn_Xml_AdventurePoints.htm">
           <HelpTOCNode Title="CurrentLeft Property " Url="html/P_Drachenhorn_Xml_AdventurePoints_CurrentLeft.htm" />
           <HelpTOCNode Title="Total Property " Url="html/P_Drachenhorn_Xml_AdventurePoints_Total.htm" />
           <HelpTOCNode Title="Used Property " Url="html/P_Drachenhorn_Xml_AdventurePoints_Used.htm" />
@@ -13,156 +13,156 @@
         <HelpTOCNode Title="AdventurePoints Methods" Url="html/Methods_T_Drachenhorn_Xml_AdventurePoints.htm" />
         <HelpTOCNode Title="AdventurePoints Events" Url="html/Events_T_Drachenhorn_Xml_AdventurePoints.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1bb8c5e0-d8fa-4e0b-a861-e703f101406b" Title="BindableBase Class" Url="html/T_Drachenhorn_Xml_BindableBase.htm">
+      <HelpTOCNode Id="798e0864-0f9f-4782-879d-93acafb179ac" Title="BindableBase Class" Url="html/T_Drachenhorn_Xml_BindableBase.htm">
         <HelpTOCNode Title="BindableBase Constructor " Url="html/M_Drachenhorn_Xml_BindableBase__ctor.htm" />
-        <HelpTOCNode Id="a4fc2f2f-2ffc-4bd3-b196-03cc17eeb2f1" Title="BindableBase Methods" Url="html/Methods_T_Drachenhorn_Xml_BindableBase.htm">
+        <HelpTOCNode Id="1cdb5f27-1579-42dc-8c78-5607cf97002a" Title="BindableBase Methods" Url="html/Methods_T_Drachenhorn_Xml_BindableBase.htm">
           <HelpTOCNode Title="OnPropertyChanged Method " Url="html/M_Drachenhorn_Xml_BindableBase_OnPropertyChanged.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="323cd748-27b6-4e0a-ac46-da607b70e40d" Title="BindableBase Events" Url="html/Events_T_Drachenhorn_Xml_BindableBase.htm">
+        <HelpTOCNode Id="c4dcc2bb-4a22-4412-8f55-12dada4ef1a1" Title="BindableBase Events" Url="html/Events_T_Drachenhorn_Xml_BindableBase.htm">
           <HelpTOCNode Title="PropertyChanged Event" Url="html/E_Drachenhorn_Xml_BindableBase_PropertyChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9a7e5c8b-a445-41a2-a6f1-c599b70463b7" Title="ChildChangedBase Class" Url="html/T_Drachenhorn_Xml_ChildChangedBase.htm">
+      <HelpTOCNode Id="3794b70c-0081-4136-a721-f26e6ef47efa" Title="ChildChangedBase Class" Url="html/T_Drachenhorn_Xml_ChildChangedBase.htm">
         <HelpTOCNode Title="ChildChangedBase Constructor " Url="html/M_Drachenhorn_Xml_ChildChangedBase__ctor.htm" />
-        <HelpTOCNode Id="fac4f727-12da-4138-b9fe-0501512ed560" Title="ChildChangedBase Methods" Url="html/Methods_T_Drachenhorn_Xml_ChildChangedBase.htm">
-          <HelpTOCNode Id="d48a5a1f-26e7-4443-912d-cb9f86362ca5" Title="OnChildChanged Method " Url="html/Overload_Drachenhorn_Xml_ChildChangedBase_OnChildChanged.htm">
+        <HelpTOCNode Id="e65e67b4-d828-423d-b68d-956a0115c773" Title="ChildChangedBase Methods" Url="html/Methods_T_Drachenhorn_Xml_ChildChangedBase.htm">
+          <HelpTOCNode Id="a952b9e3-78b0-4b89-81d9-5f54fe763ebe" Title="OnChildChanged Method " Url="html/Overload_Drachenhorn_Xml_ChildChangedBase_OnChildChanged.htm">
             <HelpTOCNode Title="OnChildChanged Method (String)" Url="html/M_Drachenhorn_Xml_ChildChangedBase_OnChildChanged_1.htm" />
             <HelpTOCNode Title="OnChildChanged Method (Object, PropertyChangedEventArgs)" Url="html/M_Drachenhorn_Xml_ChildChangedBase_OnChildChanged.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="SetValuesChanged Method " Url="html/M_Drachenhorn_Xml_ChildChangedBase_SetValuesChanged.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d7c4acb8-6264-48e0-a3d3-fa9e75704004" Title="ChildChangedBase Events" Url="html/Events_T_Drachenhorn_Xml_ChildChangedBase.htm">
+        <HelpTOCNode Id="d70ec2e1-d6dc-4b8b-8073-3ec8b6e1f02e" Title="ChildChangedBase Events" Url="html/Events_T_Drachenhorn_Xml_ChildChangedBase.htm">
           <HelpTOCNode Title="ChildChanged Event" Url="html/E_Drachenhorn_Xml_ChildChangedBase_ChildChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="abf887a4-9ccb-4e83-af7c-5eed021e4ce0" Title="Drachenhorn.Xml.Calculation" Url="html/N_Drachenhorn_Xml_Calculation.htm">
-      <HelpTOCNode Id="b1f34804-e09e-49d5-9bdf-0523c4450338" Title="CalculateEventArgs Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm">
+    <HelpTOCNode Id="c37ac982-da29-47b1-ad24-b3dd9619d864" Title="Drachenhorn.Xml.Calculation" Url="html/N_Drachenhorn_Xml_Calculation.htm">
+      <HelpTOCNode Id="b7100def-5cd4-4a74-ba5f-1e945316f221" Title="CalculateEventArgs Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm">
         <HelpTOCNode Title="CalculateEventArgs Constructor " Url="html/M_Drachenhorn_Xml_Calculation_CalculateEventArgs__ctor.htm" />
-        <HelpTOCNode Id="d1bfa26e-4022-489d-82f6-b8836f715eeb" Title="CalculateEventArgs Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm">
+        <HelpTOCNode Id="61239149-6b74-4e62-8a5b-8f8d1371d077" Title="CalculateEventArgs Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm">
           <HelpTOCNode Title="Sheet Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculateEventArgs_Sheet.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="CalculateEventArgs Methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="69fb43ea-5b95-48ba-88d2-5ec631b9f792" Title="CalculationValue Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
+      <HelpTOCNode Id="e55c53c7-3d56-4f8e-8df3-bf50d5db04ae" Title="CalculationValue Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
         <HelpTOCNode Title="CalculationValue Constructor " Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue__ctor.htm" />
-        <HelpTOCNode Id="36905ed5-c6f6-48ed-88eb-45ce26105163" Title="CalculationValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
+        <HelpTOCNode Id="a726792a-55b8-4fb9-9399-12c087d3ec2b" Title="CalculationValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
           <HelpTOCNode Title="CurrentValue Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_CurrentValue.htm" />
           <HelpTOCNode Title="Formula Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Formula.htm" />
           <HelpTOCNode Title="FormulaText Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_FormulaText.htm" />
           <HelpTOCNode Title="Modifier Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Modifier.htm" />
           <HelpTOCNode Title="StartValue Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_StartValue.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="e42fb456-7bd6-4245-88f1-15a213ebc25d" Title="CalculationValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
+        <HelpTOCNode Id="09775ebf-a5f4-4183-a13a-94aae61144d7" Title="CalculationValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_CalculationValue.htm">
           <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue_GetInformation.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="CalculationValue Events" Url="html/Events_T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5c0f9f58-ce5f-40a1-87cf-4a295e963276" Title="Formula Class" Url="html/T_Drachenhorn_Xml_Calculation_Formula.htm">
+      <HelpTOCNode Id="33928b5d-4ea0-4447-bafd-a08a80f2a16a" Title="Formula Class" Url="html/T_Drachenhorn_Xml_Calculation_Formula.htm">
         <HelpTOCNode Title="Formula Constructor " Url="html/M_Drachenhorn_Xml_Calculation_Formula__ctor.htm" />
-        <HelpTOCNode Id="944da00e-2431-46e9-ad7e-997b47ac4383" Title="Formula Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_Formula.htm">
+        <HelpTOCNode Id="86b7b1d6-b83e-4aa5-a25a-5056e6ade1d4" Title="Formula Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_Formula.htm">
           <HelpTOCNode Title="CurrentSheet Property " Url="html/P_Drachenhorn_Xml_Calculation_Formula_CurrentSheet.htm" />
           <HelpTOCNode Title="Expression Property " Url="html/P_Drachenhorn_Xml_Calculation_Formula_Expression.htm" />
           <HelpTOCNode Title="IsValid Property " Url="html/P_Drachenhorn_Xml_Calculation_Formula_IsValid.htm" />
           <HelpTOCNode Title="ParentSheet Property " Url="html/P_Drachenhorn_Xml_Calculation_Formula_ParentSheet.htm" />
           <HelpTOCNode Title="ValidationMessage Property " Url="html/P_Drachenhorn_Xml_Calculation_Formula_ValidationMessage.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ecc726b2-f9f5-4e39-9cb3-e5af38b0f635" Title="Formula Methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_Formula.htm">
+        <HelpTOCNode Id="b8ba7bcc-4fd5-43b2-bf6d-76ca4c727603" Title="Formula Methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_Formula.htm">
           <HelpTOCNode Title="Calculate Method " Url="html/M_Drachenhorn_Xml_Calculation_Formula_Calculate.htm" />
           <HelpTOCNode Title="CalculateAsync Method " Url="html/M_Drachenhorn_Xml_Calculation_Formula_CalculateAsync.htm" />
           <HelpTOCNode Title="RaiseCalculateAll Method " Url="html/M_Drachenhorn_Xml_Calculation_Formula_RaiseCalculateAll.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c5b0a897-3a2c-472e-bb67-a5393a8f2019" Title="Formula Events" Url="html/Events_T_Drachenhorn_Xml_Calculation_Formula.htm">
+        <HelpTOCNode Id="11069e7f-25e4-4efd-b261-3850b48632e6" Title="Formula Events" Url="html/Events_T_Drachenhorn_Xml_Calculation_Formula.htm">
           <HelpTOCNode Title="OnCalculateAll Event" Url="html/E_Drachenhorn_Xml_Calculation_Formula_OnCalculateAll.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="Formula.CalculateAllHandler Delegate" Url="html/T_Drachenhorn_Xml_Calculation_Formula_CalculateAllHandler.htm" />
-      <HelpTOCNode Id="ec535f3f-a1dc-4c0a-9996-fae2a8338559" Title="IFormulaKeyItem Interface" Url="html/T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm">
-        <HelpTOCNode Id="5c68acef-dffc-420f-9c6b-855476c0acae" Title="IFormulaKeyItem Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm">
+      <HelpTOCNode Id="e4a4026c-67c3-47fe-b6a1-5542cff6d73f" Title="IFormulaKeyItem Interface" Url="html/T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm">
+        <HelpTOCNode Id="b91449bc-3f00-499f-8a2d-6d19921b93a4" Title="IFormulaKeyItem Properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm">
           <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Key.htm" />
           <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Value.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4cc1fc2f-b0a4-4724-a9e7-361b5ebd88ba" Title="Drachenhorn.Xml.Data.AP" Url="html/N_Drachenhorn_Xml_Data_AP.htm">
-      <HelpTOCNode Id="ca13b2cd-947f-4805-8058-16f83179d2eb" Title="APColumn Class" Url="html/T_Drachenhorn_Xml_Data_AP_APColumn.htm">
-        <HelpTOCNode Id="4ac5bc99-a74e-456b-a3bd-88db622c4444" Title="APColumn Constructor " Url="html/Overload_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm">
+    <HelpTOCNode Id="c198938b-a37d-45c8-8803-44e359463bb1" Title="Drachenhorn.Xml.Data.AP" Url="html/N_Drachenhorn_Xml_Data_AP.htm">
+      <HelpTOCNode Id="89f0535f-6496-4dfd-bc63-58416f47462e" Title="APColumn Class" Url="html/T_Drachenhorn_Xml_Data_AP_APColumn.htm">
+        <HelpTOCNode Id="05def02c-3205-4de7-9985-37db8551c7b1" Title="APColumn Constructor " Url="html/Overload_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm">
           <HelpTOCNode Title="APColumn Constructor " Url="html/M_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm" />
           <HelpTOCNode Title="APColumn Constructor (String, UInt16, UInt16)" Url="html/M_Drachenhorn_Xml_Data_AP_APColumn__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="eaed5753-37bc-488f-9795-1adecbed2097" Title="APColumn Properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APColumn.htm">
+        <HelpTOCNode Id="cf12e08a-d319-47f3-9ed3-3ba0d338f42e" Title="APColumn Properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APColumn.htm">
           <HelpTOCNode Title="Costs Property " Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Costs.htm" />
           <HelpTOCNode Title="Factor Property " Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Factor.htm" />
           <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Name.htm" />
           <HelpTOCNode Title="Negative Property " Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Negative.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="80cf7c5d-e2cb-424d-beae-bd2950b02360" Title="APColumn Methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APColumn.htm">
+        <HelpTOCNode Id="ed95f37c-f27d-4238-86f1-b19456384dff" Title="APColumn Methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APColumn.htm">
           <HelpTOCNode Title="CalculateCosts Method " Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_CalculateCosts.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="APColumn Events" Url="html/Events_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="38eb2757-86c5-42ac-9b90-e1e528cc1add" Title="APTable Class" Url="html/T_Drachenhorn_Xml_Data_AP_APTable.htm">
+      <HelpTOCNode Id="70404214-86fe-4f70-a1e6-e0321281f8a7" Title="APTable Class" Url="html/T_Drachenhorn_Xml_Data_AP_APTable.htm">
         <HelpTOCNode Title="APTable Constructor " Url="html/M_Drachenhorn_Xml_Data_AP_APTable__ctor.htm" />
-        <HelpTOCNode Id="f0e67e3d-eab8-42ef-b3de-6eae598a86c9" Title="APTable Properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APTable.htm">
+        <HelpTOCNode Id="eb38d0bf-7392-46b7-a394-7816b1918c05" Title="APTable Properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APTable.htm">
           <HelpTOCNode Title="APColumns Property " Url="html/P_Drachenhorn_Xml_Data_AP_APTable_APColumns.htm" />
           <HelpTOCNode Title="Item Property " Url="html/P_Drachenhorn_Xml_Data_AP_APTable_Item.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5782c279-9831-492c-976e-683370da9beb" Title="APTable Methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APTable.htm">
+        <HelpTOCNode Id="39538913-bfff-4479-91d0-35d640e82384" Title="APTable Methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APTable.htm">
           <HelpTOCNode Title="Calculate Method " Url="html/M_Drachenhorn_Xml_Data_AP_APTable_Calculate.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="APTable Events" Url="html/Events_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="76fdf2fc-0b7a-4f21-8399-a8a005722411" Title="Drachenhorn.Xml.Exceptions" Url="html/N_Drachenhorn_Xml_Exceptions.htm">
-      <HelpTOCNode Id="4c0d163f-4eb4-4729-bac9-0ef9adf3b8b7" Title="SheetLoadingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm">
+    <HelpTOCNode Id="a8043e53-6a10-49dd-9f6b-09542bdf037d" Title="Drachenhorn.Xml.Exceptions" Url="html/N_Drachenhorn_Xml_Exceptions.htm">
+      <HelpTOCNode Id="0d080fd2-68ea-49e8-9bcc-ec0addfbf7c7" Title="SheetLoadingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm">
         <HelpTOCNode Title="SheetLoadingException Constructor " Url="html/M_Drachenhorn_Xml_Exceptions_SheetLoadingException__ctor.htm" />
-        <HelpTOCNode Id="55737778-4e55-4dae-83a8-b96e81d2d106" Title="SheetLoadingException Properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm">
+        <HelpTOCNode Id="03e0e825-3823-410b-b02f-b6d41c68591b" Title="SheetLoadingException Properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm">
           <HelpTOCNode Title="Path Property " Url="html/P_Drachenhorn_Xml_Exceptions_SheetLoadingException_Path.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="SheetLoadingException Methods" Url="html/Methods_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
         <HelpTOCNode Title="SheetLoadingException Events" Url="html/Events_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2589e791-792e-43c8-bc44-388a736b6e3d" Title="SheetSavingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm">
+      <HelpTOCNode Id="a78376a5-4d1c-407a-bb35-a9b276060837" Title="SheetSavingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm">
         <HelpTOCNode Title="SheetSavingException Constructor " Url="html/M_Drachenhorn_Xml_Exceptions_SheetSavingException__ctor.htm" />
-        <HelpTOCNode Id="089fd3dc-4544-481d-b09b-6ae83763cc14" Title="SheetSavingException Properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm">
+        <HelpTOCNode Id="e70c2171-ccc7-4c97-adde-8a158c0837aa" Title="SheetSavingException Properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm">
           <HelpTOCNode Title="Path Property " Url="html/P_Drachenhorn_Xml_Exceptions_SheetSavingException_Path.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="SheetSavingException Methods" Url="html/Methods_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
         <HelpTOCNode Title="SheetSavingException Events" Url="html/Events_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2f5c9fc5-c63c-499b-8a64-f274b333f47c" Title="Drachenhorn.Xml.Interfaces" Url="html/N_Drachenhorn_Xml_Interfaces.htm">
-      <HelpTOCNode Id="8f7d1147-3874-4f4a-b507-c4dbebffdb8c" Title="IInfoObject Interface" Url="html/T_Drachenhorn_Xml_Interfaces_IInfoObject.htm">
-        <HelpTOCNode Id="1d710d05-3062-46d9-938b-4a0eea6bd547" Title="IInfoObject Methods" Url="html/Methods_T_Drachenhorn_Xml_Interfaces_IInfoObject.htm">
+    <HelpTOCNode Id="9631ee98-4d52-4f7e-9e66-a186d9f1a6b4" Title="Drachenhorn.Xml.Interfaces" Url="html/N_Drachenhorn_Xml_Interfaces.htm">
+      <HelpTOCNode Id="47aaa3e7-55fa-4cc1-9abe-151e17315ceb" Title="IInfoObject Interface" Url="html/T_Drachenhorn_Xml_Interfaces_IInfoObject.htm">
+        <HelpTOCNode Id="326f7165-0001-41be-b779-197e76a639ba" Title="IInfoObject Methods" Url="html/Methods_T_Drachenhorn_Xml_Interfaces_IInfoObject.htm">
           <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Interfaces_IInfoObject_GetInformation.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="IInfoObject Events" Url="html/Events_T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e5deb6d7-8d67-47aa-919d-f615ac758abe" Title="INotifyChildChanged Interface" Url="html/T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm">
-        <HelpTOCNode Id="d4786995-fab3-469f-8b8a-4bb78fc19804" Title="INotifyChildChanged Events" Url="html/Events_T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm">
+      <HelpTOCNode Id="6d47ca26-def9-4ab6-9159-21eaf8fc8c36" Title="INotifyChildChanged Interface" Url="html/T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm">
+        <HelpTOCNode Id="04713c50-43ee-4560-a5a4-719956596748" Title="INotifyChildChanged Events" Url="html/Events_T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm">
           <HelpTOCNode Title="ChildChanged Event" Url="html/E_Drachenhorn_Xml_Interfaces_INotifyChildChanged_ChildChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="462dedbd-ebe4-4ec8-b25a-46e3afd6c3c4" Title="Drachenhorn.Xml.Objects" Url="html/N_Drachenhorn_Xml_Objects.htm">
-      <HelpTOCNode Id="923c088a-82f9-4a59-8aca-72d3741fe97f" Title="DSADate Class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm">
-        <HelpTOCNode Id="9f04d510-fd02-4851-8898-9f2be0810ae1" Title="DSADate Constructor " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate__ctor.htm">
+    <HelpTOCNode Id="cf5d6b5e-244d-4d44-970f-509cdaaf34fd" Title="Drachenhorn.Xml.Objects" Url="html/N_Drachenhorn_Xml_Objects.htm">
+      <HelpTOCNode Id="3e21a9ea-4e13-406a-a7d2-d4f6e7f920c7" Title="DSADate Class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm">
+        <HelpTOCNode Id="60717abc-2826-4895-82ca-9f51a7af14c6" Title="DSADate Constructor " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate__ctor.htm">
           <HelpTOCNode Title="DSADate Constructor " Url="html/M_Drachenhorn_Xml_Objects_DSADate__ctor.htm" />
           <HelpTOCNode Title="DSADate Constructor (Int32, DSAMonth, Int32)" Url="html/M_Drachenhorn_Xml_Objects_DSADate__ctor_1.htm" />
           <HelpTOCNode Title="DSADate Constructor (Int32, Int32, Int32)" Url="html/M_Drachenhorn_Xml_Objects_DSADate__ctor_2.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c0a2748a-422c-4544-8542-16ace947ab98" Title="DSADate Properties" Url="html/Properties_T_Drachenhorn_Xml_Objects_DSADate.htm">
+        <HelpTOCNode Id="c1768dec-111b-425c-8333-413afba7915b" Title="DSADate Properties" Url="html/Properties_T_Drachenhorn_Xml_Objects_DSADate.htm">
           <HelpTOCNode Title="Day Property " Url="html/P_Drachenhorn_Xml_Objects_DSADate_Day.htm" />
           <HelpTOCNode Title="Month Property " Url="html/P_Drachenhorn_Xml_Objects_DSADate_Month.htm" />
           <HelpTOCNode Title="Year Property " Url="html/P_Drachenhorn_Xml_Objects_DSADate_Year.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6bee32d3-f549-4526-a0db-eb46f57a83ad" Title="DSADate Methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSADate.htm">
+        <HelpTOCNode Id="42b89bc7-67ca-40dc-afd4-481af1aa9529" Title="DSADate Methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSADate.htm">
           <HelpTOCNode Title="Add Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_Add.htm" />
           <HelpTOCNode Title="AddDays Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddDays.htm" />
           <HelpTOCNode Title="AddMonths Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddMonths.htm" />
           <HelpTOCNode Title="AddYears Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddYears.htm" />
           <HelpTOCNode Title="CompareTo Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_CompareTo.htm" />
-          <HelpTOCNode Id="d98ad5b0-6496-48b5-bf3b-d272b0d59e70" Title="Equals Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_Equals.htm">
+          <HelpTOCNode Id="72e4c567-10a1-4cef-bea0-dc81b8a39acb" Title="Equals Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (DSADate)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Equals.htm" />
           </HelpTOCNode>
@@ -172,302 +172,300 @@
           <HelpTOCNode Title="SubtractDays Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractDays.htm" />
           <HelpTOCNode Title="SubtractMonths Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractMonths.htm" />
           <HelpTOCNode Title="SubtractYears Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractYears.htm" />
-          <HelpTOCNode Id="b7fce3f0-7bef-4ea8-a03a-b59f583c9d99" Title="ToString Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_ToString.htm">
+          <HelpTOCNode Id="c35b037a-57a0-45e6-9225-33d4f456cd50" Title="ToString Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_ToString.htm">
             <HelpTOCNode Title="ToString Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_ToString.htm" />
             <HelpTOCNode Title="ToString Method (String)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_ToString_1.htm" />
             <HelpTOCNode Title="ToString Method (String, IFormatProvider)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_ToString_2.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
         <HelpTOCNode Title="DSADate Events" Url="html/Events_T_Drachenhorn_Xml_Objects_DSADate.htm" />
-        <HelpTOCNode Id="ec2c8918-a5e8-4ab8-a062-4e254e341e1e" Title="DSADate Operators" Url="html/Operators_T_Drachenhorn_Xml_Objects_DSADate.htm">
-          <HelpTOCNode Id="e6dccd30-d923-42a4-bf18-aa8260382797" Title="Addition Operator " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm">
+        <HelpTOCNode Id="bbb5c0b8-654c-4880-9b2d-e41daa0fec34" Title="DSADate Operators" Url="html/Operators_T_Drachenhorn_Xml_Objects_DSADate.htm">
+          <HelpTOCNode Id="84dd7fd7-b1be-46ef-a1b0-dd7d08b8dd89" Title="Addition Operator " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm">
             <HelpTOCNode Title="Addition Operator (DSADate, DSADate)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm" />
             <HelpTOCNode Title="Addition Operator (DSADate, Int32)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_Addition_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="GreaterThan Operator " Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_GreaterThan.htm" />
           <HelpTOCNode Title="LessThan Operator " Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_LessThan.htm" />
-          <HelpTOCNode Id="306d8676-4835-4158-a16d-e6bf7ffcd68c" Title="Subtraction Operator " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm">
+          <HelpTOCNode Id="33c4aa1d-aca3-4821-bd0d-0dcdcc7b17e5" Title="Subtraction Operator " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm">
             <HelpTOCNode Title="Subtraction Operator (DSADate, DSADate)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm" />
             <HelpTOCNode Title="Subtraction Operator (DSADate, Int32)" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_Subtraction_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="DSAMonth Enumeration" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
-      <HelpTOCNode Id="622fe92c-d3a1-42cc-90b0-2bfbe13f183e" Title="DSAMonthExtensions Class" Url="html/T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm">
-        <HelpTOCNode Id="17271a70-fe2c-4b70-80d9-aa1aae8a6b6c" Title="DSAMonthExtensions Methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm">
+      <HelpTOCNode Id="676dd054-b30f-4186-880d-331d5a02887e" Title="DSAMonthExtensions Class" Url="html/T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm">
+        <HelpTOCNode Id="e36a2cf9-871a-4b09-94e1-0bfb62bf49cb" Title="DSAMonthExtensions Methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm">
           <HelpTOCNode Title="GetAllowedDays Method " Url="html/M_Drachenhorn_Xml_Objects_DSAMonthExtensions_GetAllowedDays.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="64b6a40c-29a2-4efe-ba92-0616908e83dd" Title="Drachenhorn.Xml.Sheet Namespaces" Url="html/G_Drachenhorn_Xml_Sheet.htm">
-      <HelpTOCNode Id="b4d77676-464f-49ca-8a8f-9cc85270f870" Title="Drachenhorn.Xml.Sheet" Url="html/N_Drachenhorn_Xml_Sheet.htm">
-        <HelpTOCNode Id="9caf1824-d060-4181-acc0-9be5a5a86367" Title="CharacterSheet Class" Url="html/T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
-          <HelpTOCNode Title="CharacterSheet Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet__ctor.htm" />
-          <HelpTOCNode Id="ba3bf16d-48aa-48ab-bb2f-a11dab05a1de" Title="CharacterSheet Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
-            <HelpTOCNode Title="AdventurePoints Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_AdventurePoints.htm" />
-            <HelpTOCNode Title="Attributes Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Attributes.htm" />
-            <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_BaseValues.htm" />
-            <HelpTOCNode Title="Characteristics Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Characteristics.htm" />
-            <HelpTOCNode Title="CoatOfArms Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_CoatOfArms.htm" />
-            <HelpTOCNode Title="DisAdvantages Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_DisAdvantages.htm" />
-            <HelpTOCNode Title="FilePath Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_FilePath.htm" />
-            <HelpTOCNode Title="GpBase Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_GpBase.htm" />
-            <HelpTOCNode Title="HasChanged Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_HasChanged.htm" />
-            <HelpTOCNode Title="Inventory Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Inventory.htm" />
-            <HelpTOCNode Title="Skills Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Skills.htm" />
-            <HelpTOCNode Title="SpecialSkills Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="a8df42fd-1edc-4d34-a831-cd738a45e8d3" Title="CharacterSheet Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
-            <HelpTOCNode Title="Load Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Load.htm" />
-            <HelpTOCNode Id="557dc8d6-f8cf-492d-8a22-093874694fea" Title="Save Method " Url="html/Overload_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm">
-              <HelpTOCNode Title="Save Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm" />
-              <HelpTOCNode Title="Save Method (String)" Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Save_1.htm" />
-            </HelpTOCNode>
-          </HelpTOCNode>
-          <HelpTOCNode Title="CharacterSheet Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
-          <HelpTOCNode Id="6f3e0699-8c82-40e7-b2f1-71835b10eba3" Title="CharacterSheet Fields" Url="html/Fields_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
-            <HelpTOCNode Title="Extension Field" Url="html/F_Drachenhorn_Xml_Sheet_CharacterSheet_Extension.htm" />
+    <HelpTOCNode Id="ae8b7e33-e847-49bd-9639-924d2eaccec1" Title="Drachenhorn.Xml.Sheet" Url="html/N_Drachenhorn_Xml_Sheet.htm">
+      <HelpTOCNode Id="d9367616-1072-497b-b65a-d52bfb57c915" Title="CharacterSheet Class" Url="html/T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
+        <HelpTOCNode Title="CharacterSheet Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet__ctor.htm" />
+        <HelpTOCNode Id="9d86f51e-0f8b-4f69-8a5c-f0a152cf2c5b" Title="CharacterSheet Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
+          <HelpTOCNode Title="AdventurePoints Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_AdventurePoints.htm" />
+          <HelpTOCNode Title="Attributes Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Attributes.htm" />
+          <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_BaseValues.htm" />
+          <HelpTOCNode Title="Characteristics Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Characteristics.htm" />
+          <HelpTOCNode Title="CoatOfArms Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_CoatOfArms.htm" />
+          <HelpTOCNode Title="DisAdvantages Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_DisAdvantages.htm" />
+          <HelpTOCNode Title="FilePath Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_FilePath.htm" />
+          <HelpTOCNode Title="GpBase Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_GpBase.htm" />
+          <HelpTOCNode Title="HasChanged Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_HasChanged.htm" />
+          <HelpTOCNode Title="Inventory Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Inventory.htm" />
+          <HelpTOCNode Title="Skills Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Skills.htm" />
+          <HelpTOCNode Title="SpecialSkills Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8c216314-4e0b-4150-8b99-eb427b437aea" Title="CharacterSheet Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
+          <HelpTOCNode Title="Load Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Load.htm" />
+          <HelpTOCNode Id="a205be96-2f11-460c-89df-4667f230fa27" Title="Save Method " Url="html/Overload_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm">
+            <HelpTOCNode Title="Save Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm" />
+            <HelpTOCNode Title="Save Method (String)" Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Save_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-      </HelpTOCNode>
-      <HelpTOCNode Id="42ba6235-bdf3-4f5d-b8c0-2cdee5a32c3d" Title="Drachenhorn.Xml.Sheet.CombatInfo" Url="html/N_Drachenhorn_Xml_Sheet_CombatInfo.htm">
-        <HelpTOCNode Id="5e514169-1c32-4c72-aafd-327eb63f4b52" Title="ArmorPart Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm">
-          <HelpTOCNode Title="ArmorPart Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart__ctor.htm" />
-          <HelpTOCNode Id="b37aa053-df80-45a9-9707-678d8fff7fb8" Title="ArmorPart Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm">
-            <HelpTOCNode Title="Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Handicap.htm" />
-            <HelpTOCNode Title="IsActive Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_IsActive.htm" />
-            <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Type.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="ArmorPart Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
-          <HelpTOCNode Title="ArmorPart Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Title="ArmorType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
-        <HelpTOCNode Id="eceead26-f5a4-4fe4-b2b2-6e494ce04c82" Title="Weapon Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm">
-          <HelpTOCNode Title="Weapon Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_Weapon__ctor.htm" />
-          <HelpTOCNode Id="313f6ac9-f235-4683-a506-17cc508f196b" Title="Weapon Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm">
-            <HelpTOCNode Title="Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Handicap.htm" />
-            <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Type.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="Weapon Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
-          <HelpTOCNode Title="Weapon Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Title="WeaponType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="cd01aefe-2c67-4dff-869b-634c45596b54" Title="Drachenhorn.Xml.Sheet.Common" Url="html/N_Drachenhorn_Xml_Sheet_Common.htm">
-        <HelpTOCNode Id="3b38a3eb-7367-4808-a7c7-8ca37663edc8" Title="BonusValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm">
-          <HelpTOCNode Title="BonusValue Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_BonusValue__ctor.htm" />
-          <HelpTOCNode Id="1155acd7-04c2-45d9-b9f3-87fdb4b70f8b" Title="BonusValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm">
-            <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Key.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Name.htm" />
-            <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Value.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="BonusValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
-          <HelpTOCNode Title="BonusValue Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="bb1e55a9-40e0-4c74-9b0e-b6d18b553121" Title="Characteristics Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm">
-          <HelpTOCNode Title="Characteristics Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_Characteristics__ctor.htm" />
-          <HelpTOCNode Id="88122e22-e7ad-4074-8a3c-aee206f06bb6" Title="Characteristics Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm">
-            <HelpTOCNode Title="Age Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Age.htm" />
-            <HelpTOCNode Title="BirthDate Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_BirthDate.htm" />
-            <HelpTOCNode Title="Culture Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Culture.htm" />
-            <HelpTOCNode Title="EyeColor Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_EyeColor.htm" />
-            <HelpTOCNode Title="Family Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Family.htm" />
-            <HelpTOCNode Title="Gender Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Gender.htm" />
-            <HelpTOCNode Title="HairColor Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_HairColor.htm" />
-            <HelpTOCNode Title="Height Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Height.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Name.htm" />
-            <HelpTOCNode Title="Other Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Other.htm" />
-            <HelpTOCNode Title="PlaceOfBirth Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_PlaceOfBirth.htm" />
-            <HelpTOCNode Title="Profession Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Profession.htm" />
-            <HelpTOCNode Title="Race Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Race.htm" />
-            <HelpTOCNode Title="SocialStatus Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_SocialStatus.htm" />
-            <HelpTOCNode Title="Title Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Title.htm" />
-            <HelpTOCNode Title="Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Weight.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="Characteristics Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
-          <HelpTOCNode Title="Characteristics Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="3a7055ae-6d37-424e-a6ed-cf82b35e10b5" Title="CoatOfArms Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm">
-          <HelpTOCNode Title="CoatOfArms Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_CoatOfArms__ctor.htm" />
-          <HelpTOCNode Id="d2c3d7af-177a-4cdd-a317-2e65d5402330" Title="CoatOfArms Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm">
-            <HelpTOCNode Title="Base64String Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="CoatOfArms Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
-          <HelpTOCNode Title="CoatOfArms Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="c47402b2-8bee-4fc0-83b0-e830cb335278" Title="CultureInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
-          <HelpTOCNode Title="CultureInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation__ctor.htm" />
-          <HelpTOCNode Id="c5ea542a-3ac6-49dc-b033-cac60227a859" Title="CultureInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
-            <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_BaseValues.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Name.htm" />
-            <HelpTOCNode Title="Specification Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="825524e5-e982-4df6-b9fd-23cad6c15993" Title="CultureInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="CultureInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="918b5c33-97b1-47b7-b0ba-e574cf33c7a1" Title="DisAdvantage Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
-          <HelpTOCNode Title="DisAdvantage Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage__ctor.htm" />
-          <HelpTOCNode Id="70292534-819a-4a48-84b1-9dde37590831" Title="DisAdvantage Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Name.htm" />
-            <HelpTOCNode Title="Specialization Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Specialization.htm" />
-            <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Type.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="76e22fb7-f101-4a90-9d7e-1b1af6605660" Title="DisAdvantage Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="DisAdvantage Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="17bac93c-8a80-4521-bbf1-ac4eae167f46" Title="ProfessionInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
-          <HelpTOCNode Title="ProfessionInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation__ctor.htm" />
-          <HelpTOCNode Id="4c8084f2-9c52-44f9-b922-8457f7ff4a39" Title="ProfessionInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
-            <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Description.htm" />
-            <HelpTOCNode Title="GpCost Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GpCost.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Name.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="49772e49-cd9a-46d8-a40d-c65829d65248" Title="ProfessionInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="ProfessionInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="48b0696b-91ed-4112-84f9-e5c88a3517d9" Title="RaceInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
-          <HelpTOCNode Title="RaceInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation__ctor.htm" />
-          <HelpTOCNode Id="b02fd5dd-0073-4451-b620-f7b1e862042c" Title="RaceInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
-            <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_BaseValues.htm" />
-            <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Description.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="cf8a292f-fc0d-4743-ac32-cdf0e7984e28" Title="RaceInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="RaceInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
-        </HelpTOCNode>
-      </HelpTOCNode>
-      <HelpTOCNode Id="f3ca0a35-8d67-492a-9241-ba4cf2a52c0c" Title="Drachenhorn.Xml.Sheet.Enums" Url="html/N_Drachenhorn_Xml_Sheet_Enums.htm">
-        <HelpTOCNode Title="AttributeType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
-        <HelpTOCNode Title="DisAdvantageType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
-        <HelpTOCNode Title="Gender Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="10d254eb-8b21-45a9-97cd-bf5be82e1614" Title="Drachenhorn.Xml.Sheet.InventoryInfo" Url="html/N_Drachenhorn_Xml_Sheet_InventoryInfo.htm">
-        <HelpTOCNode Id="8827da78-45a7-4f5a-8384-847a562739b8" Title="Inventory Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
-          <HelpTOCNode Title="Inventory Constructor " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory__ctor.htm" />
-          <HelpTOCNode Id="2d7a0af2-2e7d-4f6d-a848-1ed3f78abc47" Title="Inventory Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
-            <HelpTOCNode Title="Items Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_Items.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="cf08a92e-58c5-4003-9b62-969901b2c089" Title="Inventory Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
-            <HelpTOCNode Title="GetWholeWeight Method " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_GetWholeWeight.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="Inventory Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="969dc0e7-1441-4355-83ce-b609aa8b5737" Title="InventoryItem Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm">
-          <HelpTOCNode Title="InventoryItem Constructor " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem__ctor.htm" />
-          <HelpTOCNode Id="76aa18d4-3113-4bb4-92aa-e694b496679b" Title="InventoryItem Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm">
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Name.htm" />
-            <HelpTOCNode Title="StoragePlace Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
-            <HelpTOCNode Title="Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Weight.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="InventoryItem Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
-          <HelpTOCNode Title="InventoryItem Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
-        </HelpTOCNode>
-      </HelpTOCNode>
-      <HelpTOCNode Id="ade6969f-6810-423d-8699-4cda626d8b39" Title="Drachenhorn.Xml.Sheet.Roll" Url="html/N_Drachenhorn_Xml_Sheet_Roll.htm">
-        <HelpTOCNode Id="e19f742c-05a8-44f9-ba3b-e773a6218ada" Title="RollAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
-          <HelpTOCNode Id="24b9421a-a444-4fae-b205-db5e111f03a0" Title="RollAttributes Constructor " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm">
-            <HelpTOCNode Title="RollAttributes Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm" />
-            <HelpTOCNode Title="RollAttributes Constructor (AttributeType, AttributeType, AttributeType)" Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor_1.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="7cff04ea-3ac5-4098-b63f-186b30f782b8" Title="RollAttributes Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
-            <HelpTOCNode Title="Roll1 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll1.htm" />
-            <HelpTOCNode Title="Roll2 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll2.htm" />
-            <HelpTOCNode Title="Roll3 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll3.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="a88ca846-0859-4f08-95b7-5ee310ab17f2" Title="RollAttributes Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
-            <HelpTOCNode Id="0ad2c05b-e607-4b0e-aeba-3c9bfe0fbad6" Title="ToString Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm">
-              <HelpTOCNode Title="ToString Method " Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm" />
-              <HelpTOCNode Title="ToString Method (String)" Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString_1.htm" />
-            </HelpTOCNode>
-          </HelpTOCNode>
-          <HelpTOCNode Title="RollAttributes Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
-        </HelpTOCNode>
-      </HelpTOCNode>
-      <HelpTOCNode Id="9b8a8182-7f95-4b0c-941e-1eca49f245eb" Title="Drachenhorn.Xml.Sheet.Skills" Url="html/N_Drachenhorn_Xml_Sheet_Skills.htm">
-        <HelpTOCNode Id="c26b0012-7802-4b8d-b911-cbf8d31f2084" Title="Attribute Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
-          <HelpTOCNode Title="Attribute Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute__ctor.htm" />
-          <HelpTOCNode Id="2393cc28-7888-4f5d-84e6-5facbe627d15" Title="Attribute Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
-            <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Key.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Name.htm" />
-            <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="014e0106-7020-481a-af23-42b7fee6e7e2" Title="Attribute Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
-            <HelpTOCNode Id="c780774f-ce2b-4c61-84bc-5490d775ce52" Title="GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm">
-              <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm" />
-            </HelpTOCNode>
-          </HelpTOCNode>
-          <HelpTOCNode Title="Attribute Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="8817124c-bc94-4d9e-bcdd-c13e63edc03a" Title="BaseValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
-          <HelpTOCNode Title="BaseValue Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue__ctor.htm" />
-          <HelpTOCNode Id="f8ff048a-06f7-478e-bcdb-57e8b760ac5b" Title="BaseValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
-            <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Key.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Name.htm" />
-            <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="e51c92ac-daff-4ee0-92a4-486c07dab03b" Title="BaseValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
-            <HelpTOCNode Id="3d389699-c202-4680-ae09-b2bc8858feec" Title="GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm">
-              <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm" />
-            </HelpTOCNode>
-          </HelpTOCNode>
-          <HelpTOCNode Title="BaseValue Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="342513a9-22dc-4c11-b5c1-81bfbc99a823" Title="CharacterAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm">
-          <HelpTOCNode Title="CharacterAttributes Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes__ctor.htm" />
-          <HelpTOCNode Id="4c12f941-7c1d-445a-860d-18e163cf125e" Title="CharacterAttributes Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm">
-            <HelpTOCNode Title="Charisma Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Charisma.htm" />
-            <HelpTOCNode Title="Constitution Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Constitution.htm" />
-            <HelpTOCNode Title="Courage Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Courage.htm" />
-            <HelpTOCNode Title="Finesse Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Finesse.htm" />
-            <HelpTOCNode Title="Intuition Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Intuition.htm" />
-            <HelpTOCNode Title="PhysicalStrength Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_PhysicalStrength.htm" />
-            <HelpTOCNode Title="Prestidigitation Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Prestidigitation.htm" />
-            <HelpTOCNode Title="Speed Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Speed.htm" />
-            <HelpTOCNode Title="Wisdom Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Wisdom.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="CharacterAttributes Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
-          <HelpTOCNode Title="CharacterAttributes Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="6deb91fe-a7bc-426c-a9f5-3cc006ab21e0" Title="Skill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
-          <HelpTOCNode Title="Skill Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
-          <HelpTOCNode Id="da21eb43-2629-4768-a11f-ce92c1c585f3" Title="Skill Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
-            <HelpTOCNode Title="Category Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
-            <HelpTOCNode Title="RollAttributes Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_RollAttributes.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="62605622-0040-4649-b7f3-d24e5c83be57" Title="Skill Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="Skill Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Id="afb1ce5e-d8d2-4833-bdb1-888867edafa9" Title="SpecialSkill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
-          <HelpTOCNode Id="ae22e65d-bd4a-4e86-987f-2a3240968dac" Title="SpecialSkill Constructor " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm">
-            <HelpTOCNode Title="SpecialSkill Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm" />
-            <HelpTOCNode Title="SpecialSkill Constructor (String)" Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor_1.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="2f25ad04-656b-4979-a6ef-5fec1d393285" Title="SpecialSkill Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
-            <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Description.htm" />
-            <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Id="ea3022bb-8433-4f9b-b384-f58031d3b8c0" Title="SpecialSkill Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
-            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
-          </HelpTOCNode>
-          <HelpTOCNode Title="SpecialSkill Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+        <HelpTOCNode Title="CharacterSheet Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+        <HelpTOCNode Id="a45d9ce4-6f56-446a-af97-0df56efd03f4" Title="CharacterSheet Fields" Url="html/Fields_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm">
+          <HelpTOCNode Title="Extension Field" Url="html/F_Drachenhorn_Xml_Sheet_CharacterSheet_Extension.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ec17cdc9-48ec-4d3e-a9a4-731490f98921" Title="Drachenhorn.Xml.Template" Url="html/N_Drachenhorn_Xml_Template.htm">
-      <HelpTOCNode Id="c7e3d72a-f90d-4507-aeb6-88fec6d7b786" Title="DSATemplate Class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm">
+    <HelpTOCNode Id="c92f50c3-69b5-419a-974d-528ece9bf1a8" Title="Drachenhorn.Xml.Sheet.CombatInfo" Url="html/N_Drachenhorn_Xml_Sheet_CombatInfo.htm">
+      <HelpTOCNode Id="6eedb719-5f09-4f89-b2aa-1b5fabf96993" Title="ArmorPart Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm">
+        <HelpTOCNode Title="ArmorPart Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart__ctor.htm" />
+        <HelpTOCNode Id="8550f411-e341-4211-aa08-39cbbb86d1a2" Title="ArmorPart Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm">
+          <HelpTOCNode Title="Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Handicap.htm" />
+          <HelpTOCNode Title="IsActive Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_IsActive.htm" />
+          <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Type.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ArmorPart Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+        <HelpTOCNode Title="ArmorPart Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ArmorType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
+      <HelpTOCNode Id="2b9d369a-1b93-4d75-b48b-686130ea779f" Title="Weapon Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm">
+        <HelpTOCNode Title="Weapon Constructor " Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_Weapon__ctor.htm" />
+        <HelpTOCNode Id="bc3d8c9d-6d70-4aaf-8d20-b596dd63c150" Title="Weapon Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm">
+          <HelpTOCNode Title="Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Handicap.htm" />
+          <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Type.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Weapon Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+        <HelpTOCNode Title="Weapon Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="WeaponType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e72cd50c-8dea-42cb-9101-e7a6e850cc48" Title="Drachenhorn.Xml.Sheet.Common" Url="html/N_Drachenhorn_Xml_Sheet_Common.htm">
+      <HelpTOCNode Id="58ade5e1-5444-4e0e-b6fc-b92a6ec36455" Title="BonusValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm">
+        <HelpTOCNode Title="BonusValue Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_BonusValue__ctor.htm" />
+        <HelpTOCNode Id="d8e048ba-625d-401d-9965-f56eb59401d0" Title="BonusValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm">
+          <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Key.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Name.htm" />
+          <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Value.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BonusValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+        <HelpTOCNode Title="BonusValue Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0e923fe0-5673-4a09-a513-5f4e27a8537b" Title="Characteristics Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm">
+        <HelpTOCNode Title="Characteristics Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_Characteristics__ctor.htm" />
+        <HelpTOCNode Id="5d8afc8e-a65e-4c41-a7b3-e33744d852c8" Title="Characteristics Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm">
+          <HelpTOCNode Title="Age Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Age.htm" />
+          <HelpTOCNode Title="BirthDate Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_BirthDate.htm" />
+          <HelpTOCNode Title="Culture Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Culture.htm" />
+          <HelpTOCNode Title="EyeColor Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_EyeColor.htm" />
+          <HelpTOCNode Title="Family Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Family.htm" />
+          <HelpTOCNode Title="Gender Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Gender.htm" />
+          <HelpTOCNode Title="HairColor Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_HairColor.htm" />
+          <HelpTOCNode Title="Height Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Height.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Name.htm" />
+          <HelpTOCNode Title="Other Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Other.htm" />
+          <HelpTOCNode Title="PlaceOfBirth Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_PlaceOfBirth.htm" />
+          <HelpTOCNode Title="Profession Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Profession.htm" />
+          <HelpTOCNode Title="Race Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Race.htm" />
+          <HelpTOCNode Title="SocialStatus Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_SocialStatus.htm" />
+          <HelpTOCNode Title="Title Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Title.htm" />
+          <HelpTOCNode Title="Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Weight.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Characteristics Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+        <HelpTOCNode Title="Characteristics Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="952923d5-64c3-4ed7-b274-5af049c0571a" Title="CoatOfArms Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm">
+        <HelpTOCNode Title="CoatOfArms Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_CoatOfArms__ctor.htm" />
+        <HelpTOCNode Id="f8dccf07-dffd-4271-8036-77cbd107df84" Title="CoatOfArms Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm">
+          <HelpTOCNode Title="Base64String Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CoatOfArms Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+        <HelpTOCNode Title="CoatOfArms Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4bbd334d-0f47-4c28-af05-a26216591283" Title="CultureInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
+        <HelpTOCNode Title="CultureInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation__ctor.htm" />
+        <HelpTOCNode Id="b4126e3f-1567-4f0b-8bd9-3647303746ec" Title="CultureInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
+          <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_BaseValues.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Name.htm" />
+          <HelpTOCNode Title="Specification Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fbd5c49c-d09f-47f3-9778-bb6f30d536f1" Title="CultureInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CultureInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9ac91c66-e4b1-4a76-9702-ddedc31b2d17" Title="DisAdvantage Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
+        <HelpTOCNode Title="DisAdvantage Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage__ctor.htm" />
+        <HelpTOCNode Id="5d969cd5-784c-4a1c-abb5-0d6c8d10a585" Title="DisAdvantage Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Name.htm" />
+          <HelpTOCNode Title="Specialization Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Specialization.htm" />
+          <HelpTOCNode Title="Type Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Type.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4b2ab917-203a-4148-bd8e-5fc034346cd9" Title="DisAdvantage Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DisAdvantage Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3f249142-ef17-4291-95cf-91370560c762" Title="ProfessionInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
+        <HelpTOCNode Title="ProfessionInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation__ctor.htm" />
+        <HelpTOCNode Id="f409a05a-8a18-45f9-b9cc-cd27793a76fa" Title="ProfessionInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
+          <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Description.htm" />
+          <HelpTOCNode Title="GpCost Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GpCost.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Name.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0c994dd2-1497-4826-a8d8-7e03033ddd3d" Title="ProfessionInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ProfessionInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="52aaf5ba-8e18-431c-9628-ef7ec9d9fc32" Title="RaceInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
+        <HelpTOCNode Title="RaceInformation Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation__ctor.htm" />
+        <HelpTOCNode Id="4f3fafe8-3fdf-4b6c-8f7f-b746979de85a" Title="RaceInformation Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
+          <HelpTOCNode Title="BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_BaseValues.htm" />
+          <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Description.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b373021e-35de-4aac-bf46-35993d5b10b7" Title="RaceInformation Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="RaceInformation Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="91d7afc8-2034-4bf5-bef6-ae2dac792a7c" Title="Drachenhorn.Xml.Sheet.Enums" Url="html/N_Drachenhorn_Xml_Sheet_Enums.htm">
+      <HelpTOCNode Title="AttributeType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+      <HelpTOCNode Title="DisAdvantageType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
+      <HelpTOCNode Title="Gender Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6b428fe2-fab2-4f43-9c6e-271785ba72e6" Title="Drachenhorn.Xml.Sheet.InventoryInfo" Url="html/N_Drachenhorn_Xml_Sheet_InventoryInfo.htm">
+      <HelpTOCNode Id="12844493-d747-477d-9f85-5312e4746b0a" Title="Inventory Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
+        <HelpTOCNode Title="Inventory Constructor " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory__ctor.htm" />
+        <HelpTOCNode Id="f276708a-3d45-4b8e-b1d1-37814fe07803" Title="Inventory Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
+          <HelpTOCNode Title="Items Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_Items.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e6247b47-e2d1-44e3-8f83-5d8c844f9b37" Title="Inventory Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm">
+          <HelpTOCNode Title="GetWholeWeight Method " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_GetWholeWeight.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Inventory Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="16c6f810-405a-4109-bf71-354f786c8300" Title="InventoryItem Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm">
+        <HelpTOCNode Title="InventoryItem Constructor " Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem__ctor.htm" />
+        <HelpTOCNode Id="ea9300a9-193c-4551-84e8-4cfbf9b9cd2a" Title="InventoryItem Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm">
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Name.htm" />
+          <HelpTOCNode Title="StoragePlace Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
+          <HelpTOCNode Title="Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Weight.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="InventoryItem Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+        <HelpTOCNode Title="InventoryItem Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="de130e8a-60f0-4072-b61f-e5f3b52b29fc" Title="Drachenhorn.Xml.Sheet.Roll" Url="html/N_Drachenhorn_Xml_Sheet_Roll.htm">
+      <HelpTOCNode Id="37e7917f-f6a0-4afe-9051-9dfa9b663173" Title="RollAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
+        <HelpTOCNode Id="fa962a08-8104-42c8-aea3-c16553cf145a" Title="RollAttributes Constructor " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm">
+          <HelpTOCNode Title="RollAttributes Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm" />
+          <HelpTOCNode Title="RollAttributes Constructor (AttributeType, AttributeType, AttributeType)" Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3f555c14-c7f8-46f5-9bbe-5bc8a16fc2d8" Title="RollAttributes Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
+          <HelpTOCNode Title="Roll1 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll1.htm" />
+          <HelpTOCNode Title="Roll2 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll2.htm" />
+          <HelpTOCNode Title="Roll3 Property " Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="56e1c2ff-4b69-4355-bbce-c3a241d2fbb8" Title="RollAttributes Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm">
+          <HelpTOCNode Id="e2f4a5dc-2838-41f1-9114-866d27264e07" Title="ToString Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm">
+            <HelpTOCNode Title="ToString Method " Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm" />
+            <HelpTOCNode Title="ToString Method (String)" Url="html/M_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="RollAttributes Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="29337e94-3ae3-437e-8bdc-d8c4bd103f05" Title="Drachenhorn.Xml.Sheet.Skills" Url="html/N_Drachenhorn_Xml_Sheet_Skills.htm">
+      <HelpTOCNode Id="a0794fd6-9932-43ea-b553-852c1f0574af" Title="Attribute Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
+        <HelpTOCNode Title="Attribute Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute__ctor.htm" />
+        <HelpTOCNode Id="e7f702df-8843-4282-94e4-2320ab8ef193" Title="Attribute Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
+          <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Key.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Name.htm" />
+          <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="df417e20-de49-438b-ad35-6d5d4c8cb238" Title="Attribute Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm">
+          <HelpTOCNode Id="51f80455-5292-4b1b-8ab3-04e05ed13964" Title="GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm">
+            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="Attribute Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3496e582-f498-4614-8f6b-83686cc2aec3" Title="BaseValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
+        <HelpTOCNode Title="BaseValue Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue__ctor.htm" />
+        <HelpTOCNode Id="217284c8-2dd9-4953-807d-ee20eb402959" Title="BaseValue Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
+          <HelpTOCNode Title="Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Key.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Name.htm" />
+          <HelpTOCNode Title="Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6a627616-81f2-45dd-9524-59ef46fe9162" Title="BaseValue Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm">
+          <HelpTOCNode Id="ab2be294-901d-4820-ad69-b6251b23a163" Title="GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm">
+            <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="BaseValue Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ad98d1a0-7d57-4882-be87-588c6588f48d" Title="CharacterAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm">
+        <HelpTOCNode Title="CharacterAttributes Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes__ctor.htm" />
+        <HelpTOCNode Id="a25ee4d4-af37-4246-b0ce-8d6e194ef639" Title="CharacterAttributes Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm">
+          <HelpTOCNode Title="Charisma Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Charisma.htm" />
+          <HelpTOCNode Title="Constitution Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Constitution.htm" />
+          <HelpTOCNode Title="Courage Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Courage.htm" />
+          <HelpTOCNode Title="Finesse Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Finesse.htm" />
+          <HelpTOCNode Title="Intuition Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Intuition.htm" />
+          <HelpTOCNode Title="PhysicalStrength Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_PhysicalStrength.htm" />
+          <HelpTOCNode Title="Prestidigitation Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Prestidigitation.htm" />
+          <HelpTOCNode Title="Speed Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Speed.htm" />
+          <HelpTOCNode Title="Wisdom Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Wisdom.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CharacterAttributes Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+        <HelpTOCNode Title="CharacterAttributes Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7e4cc185-1919-4bd8-891a-13f3d6795d77" Title="Skill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
+        <HelpTOCNode Title="Skill Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
+        <HelpTOCNode Id="c5c98219-783b-443b-a624-3e0158372a77" Title="Skill Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
+          <HelpTOCNode Title="Category Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
+          <HelpTOCNode Title="RollAttributes Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_RollAttributes.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8ea327c7-c314-4616-8285-934dee85c719" Title="Skill Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Skill Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="33392905-860d-48a8-a581-bb899e443e89" Title="SpecialSkill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
+        <HelpTOCNode Id="633cd69a-bd40-4690-9555-9a45bfc8cd85" Title="SpecialSkill Constructor " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm">
+          <HelpTOCNode Title="SpecialSkill Constructor " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm" />
+          <HelpTOCNode Title="SpecialSkill Constructor (String)" Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5a7daccf-31ec-4c15-abf6-c7ff93d140d4" Title="SpecialSkill Properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
+          <HelpTOCNode Title="Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Description.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a80305e1-9916-4cfd-917f-db2ca1e2910f" Title="SpecialSkill Methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm">
+          <HelpTOCNode Title="GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SpecialSkill Events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ce2871e2-ba64-4e81-bdc3-bb5a4e141dcc" Title="Drachenhorn.Xml.Template" Url="html/N_Drachenhorn_Xml_Template.htm">
+      <HelpTOCNode Id="273bd28f-a942-4ce7-b749-182844c4b7fe" Title="DSATemplate Class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm">
         <HelpTOCNode Title="DSATemplate Constructor " Url="html/M_Drachenhorn_Xml_Template_DSATemplate__ctor.htm" />
-        <HelpTOCNode Id="6d0a2483-9c61-44c7-8ff6-aa78d0092edb" Title="DSATemplate Properties" Url="html/Properties_T_Drachenhorn_Xml_Template_DSATemplate.htm">
+        <HelpTOCNode Id="4b7732ff-075f-47d6-a6a9-5dde130a60e6" Title="DSATemplate Properties" Url="html/Properties_T_Drachenhorn_Xml_Template_DSATemplate.htm">
           <HelpTOCNode Title="APTable Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_APTable.htm" />
           <HelpTOCNode Title="AvailableTemplates Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_AvailableTemplates.htm" />
           <HelpTOCNode Title="BaseDirectory Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_BaseDirectory.htm" />
@@ -476,12 +474,12 @@
           <HelpTOCNode Title="HasChanged Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_HasChanged.htm" />
           <HelpTOCNode Title="Races Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Races.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="e8b69bc8-6909-4c71-a109-56de5cd2af7e" Title="DSATemplate Methods" Url="html/Methods_T_Drachenhorn_Xml_Template_DSATemplate.htm">
+        <HelpTOCNode Id="e2648b51-3d27-4e1b-9f07-2bb0e5d7d485" Title="DSATemplate Methods" Url="html/Methods_T_Drachenhorn_Xml_Template_DSATemplate.htm">
           <HelpTOCNode Title="Load Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Load.htm" />
           <HelpTOCNode Title="Save Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Save.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="DSATemplate Events" Url="html/Events_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-        <HelpTOCNode Id="6c40cbe8-97c6-45f2-bb59-3880a05d671b" Title="DSATemplate Fields" Url="html/Fields_T_Drachenhorn_Xml_Template_DSATemplate.htm">
+        <HelpTOCNode Id="709a1d6f-ed80-4ce6-a28d-ef41ae14e651" Title="DSATemplate Fields" Url="html/Fields_T_Drachenhorn_Xml_Template_DSATemplate.htm">
           <HelpTOCNode Title="Extension Field" Url="html/F_Drachenhorn_Xml_Template_DSATemplate_Extension.htm" />
         </HelpTOCNode>
       </HelpTOCNode>

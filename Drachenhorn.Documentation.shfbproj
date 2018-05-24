@@ -11,15 +11,16 @@
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
-    <Name>Documentation</Name>
+    <Name>Drachenhorn.Documentation</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.6.2</FrameworkVersion>
     <OutputPath>docs\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
+      <DocumentationSource sourceFile="Drachenhorn.Xml\bin\Debug\netstandard2.0\Drachenhorn.Xml.dll" />
       <DocumentationSource sourceFile="Drachenhorn.Xml\bin\Debug\netstandard2.0\Drachenhorn.Xml.xml" />
-<DocumentationSource sourceFile="Drachenhorn.Xml\bin\Debug\netstandard2.0\Drachenhorn.Xml.dll" /></DocumentationSources>
+    </DocumentationSources>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -33,11 +34,13 @@
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <NamingMethod>MemberName</NamingMethod>
     <RootNamespaceContainer>True</RootNamespaceContainer>
-    <NamespaceGrouping>True</NamespaceGrouping>
+    <NamespaceGrouping>False</NamespaceGrouping>
     <Preliminary>False</Preliminary>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceTitle>Drachenhorn</RootNamespaceTitle>
     <CopyrightHref>Copyright &amp;#169%3b  2017 - 2018</CopyrightHref>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <MaximumGroupParts>2</MaximumGroupParts>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
