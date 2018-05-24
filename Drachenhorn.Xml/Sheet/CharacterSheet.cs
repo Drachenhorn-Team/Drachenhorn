@@ -184,7 +184,9 @@ namespace Drachenhorn.Xml.Sheet
         {
             PropertyChanged += (sender, args) =>
             {
-                if (args.PropertyName != "HasChanged") HasChanged = true;
+                if (args.PropertyName != "HasChanged" &&
+                    args.PropertyName != "FilePath")
+                    HasChanged = true;
             };
             ChildChanged += (sender, args) => { HasChanged = true; };
         }

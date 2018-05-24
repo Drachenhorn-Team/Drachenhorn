@@ -8,7 +8,7 @@ using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Xml.Calculation
 {
-    public abstract class CalculationValue : ChildChangedBase
+    public abstract class CalculationValue : BindableBase
     {
         #region Properties
 
@@ -101,7 +101,7 @@ namespace Drachenhorn.Xml.Calculation
             Formula.PropertyChanged += (sender, args) =>
             {
                 if (args.PropertyName == "Expression")
-                    Formula.CalculateAsync(x => StartValue = (int)Math.Round(x));
+                    StartValue = (int)Math.Round(Formula.Calculate());
             };
 
             Formula.OnCalculateAll += (sender, args) =>

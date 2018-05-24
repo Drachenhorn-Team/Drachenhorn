@@ -20,9 +20,9 @@ namespace Drachenhorn.Xml
             ChildChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected virtual void OnChildChanged(object sender, EventArgs args)
+        protected virtual void OnChildChanged(object sender, PropertyChangedEventArgs args)
         {
-            OnChildChanged(null);
+            OnChildChanged(args.PropertyName);
         }
 
         #endregion OnChildChanged

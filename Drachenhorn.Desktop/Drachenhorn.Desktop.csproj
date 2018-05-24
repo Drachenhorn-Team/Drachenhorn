@@ -67,12 +67,6 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3B26DFE71BA7C50CF11C4FD48DAD9FEBA6A6A7CA</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>Drachenhorn.Desktop_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>

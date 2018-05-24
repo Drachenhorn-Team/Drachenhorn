@@ -184,7 +184,11 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         private async void ExecuteCloseSheet(CharacterSheetViewModel model)
         {
-            if (!model.CurrentSheet.HasChanged) return;
+            if (!model.CurrentSheet.HasChanged)
+            {
+                CharacterSheetViewModels.Remove(model);
+                return;
+            }
 
             var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 LanguageManager.Translate("UI.SouldClose"),
