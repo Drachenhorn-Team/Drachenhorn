@@ -1,711 +1,711 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
-  <HelpKINode Title="Add method" Url="html/59d0e981-5a11-8be8-44d1-8b17cdaeef20.htm" />
-  <HelpKINode Title="AddDays method" Url="html/e918cb6d-7676-6ca3-6f7b-db89335097f3.htm" />
-  <HelpKINode Title="Addition operator" Url="html/75e7f601-1df1-3dab-d7db-32bd9c02bfb3.htm" />
-  <HelpKINode Title="AddMonths method" Url="html/f7529a37-1a9b-81fc-fcdb-6adfba0f5c94.htm" />
-  <HelpKINode Title="AddYears method" Url="html/10bd8a4a-5dc1-57b5-95b7-16dee5b77837.htm" />
-  <HelpKINode Title="Advantage enumeration member" Url="html/474b1947-88b2-493f-51f9-598eb13cf0f5.htm" />
+  <HelpKINode Title="Add method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Add.htm" />
+  <HelpKINode Title="AddDays method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddDays.htm" />
+  <HelpKINode Title="Addition operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm" />
+  <HelpKINode Title="AddMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddMonths.htm" />
+  <HelpKINode Title="AddYears method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddYears.htm" />
+  <HelpKINode Title="Advantage enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
   <HelpKINode Title="AdventurePoints class">
-    <HelpKINode Title="AdventurePoints Class" Url="html/af7a1ca4-12d1-4af1-f94d-608cdfa21c0a.htm" />
-    <HelpKINode Title="constructor" Url="html/3b98ca7c-3d7c-74b3-fe0d-d35d6319fdfe.htm" />
-    <HelpKINode Title="events" Url="html/d4c72069-9cee-1fa9-0d99-33a00893f0ba.htm" />
-    <HelpKINode Title="methods" Url="html/73cfe859-c26e-8dd7-24f0-a3a2d35f859a.htm" />
-    <HelpKINode Title="properties" Url="html/ee83153d-cba7-d0f1-993b-eaeead4be54a.htm" />
+    <HelpKINode Title="AdventurePoints Class" Url="html/T_Drachenhorn_Xml_AdventurePoints.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_AdventurePoints__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_AdventurePoints.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_AdventurePoints.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_AdventurePoints.htm" />
   </HelpKINode>
-  <HelpKINode Title="AdventurePoints property" Url="html/3c166d96-0c4c-0793-0e7d-fb581f42a398.htm" />
-  <HelpKINode Title="AdventurePoints.AdventurePoints constructor" Url="html/3b98ca7c-3d7c-74b3-fe0d-d35d6319fdfe.htm" />
-  <HelpKINode Title="AdventurePoints.CurrentLeft property" Url="html/61ce77a6-e7ce-6686-b00b-9938c4b92422.htm" />
-  <HelpKINode Title="AdventurePoints.Total property" Url="html/efa27662-10d8-5d0d-178f-9ec8fe6860e0.htm" />
-  <HelpKINode Title="AdventurePoints.Used property" Url="html/49280445-d452-60a1-0a59-b58dad670ea3.htm" />
-  <HelpKINode Title="Age property" Url="html/a28369f3-5a12-7061-5ba2-74f62caae3cb.htm" />
+  <HelpKINode Title="AdventurePoints property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_AdventurePoints.htm" />
+  <HelpKINode Title="AdventurePoints.AdventurePoints constructor" Url="html/M_Drachenhorn_Xml_AdventurePoints__ctor.htm" />
+  <HelpKINode Title="AdventurePoints.CurrentLeft property" Url="html/P_Drachenhorn_Xml_AdventurePoints_CurrentLeft.htm" />
+  <HelpKINode Title="AdventurePoints.Total property" Url="html/P_Drachenhorn_Xml_AdventurePoints_Total.htm" />
+  <HelpKINode Title="AdventurePoints.Used property" Url="html/P_Drachenhorn_Xml_AdventurePoints_Used.htm" />
+  <HelpKINode Title="Age property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Age.htm" />
   <HelpKINode Title="APColumn class">
-    <HelpKINode Title="APColumn Class" Url="html/b396ff0e-f65b-96c8-0459-1061cde3e6c7.htm" />
-    <HelpKINode Title="constructor" Url="html/cad83185-a536-0ca9-d68d-7c4285d12691.htm" />
-    <HelpKINode Title="events" Url="html/f5250df5-7479-034f-2e6d-2039a7b7b552.htm" />
-    <HelpKINode Title="methods" Url="html/a2514f50-3b8d-9b7f-e0e8-9ecb687d098b.htm" />
-    <HelpKINode Title="properties" Url="html/41ab0291-f97d-5247-1e58-2d6e7c7904e8.htm" />
+    <HelpKINode Title="APColumn Class" Url="html/T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
   </HelpKINode>
-  <HelpKINode Title="APColumn.APColumn constructor" Url="html/cad83185-a536-0ca9-d68d-7c4285d12691.htm" />
-  <HelpKINode Title="APColumn.CalculateCosts method" Url="html/ec3aa091-b919-1ad0-56ff-e43e8a1441ac.htm" />
-  <HelpKINode Title="APColumn.Costs property" Url="html/e56df56f-a7c3-dbeb-6f85-2e732fc2e5be.htm" />
-  <HelpKINode Title="APColumn.Factor property" Url="html/ef6f34e4-d1ce-4148-515a-51efb829673f.htm" />
-  <HelpKINode Title="APColumn.Name property" Url="html/e27b0783-bb0b-ab39-e526-653ee499774f.htm" />
-  <HelpKINode Title="APColumn.Negative property" Url="html/6d4fc5f3-efd8-cc6e-66d1-da728a2dec19.htm" />
-  <HelpKINode Title="APColumns property" Url="html/13acd4bc-a733-3775-2e60-b86850422dd8.htm" />
+  <HelpKINode Title="APColumn.APColumn constructor" Url="html/Overload_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm" />
+  <HelpKINode Title="APColumn.CalculateCosts method" Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_CalculateCosts.htm" />
+  <HelpKINode Title="APColumn.Costs property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Costs.htm" />
+  <HelpKINode Title="APColumn.Factor property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Factor.htm" />
+  <HelpKINode Title="APColumn.Name property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Name.htm" />
+  <HelpKINode Title="APColumn.Negative property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Negative.htm" />
+  <HelpKINode Title="APColumns property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_APColumns.htm" />
   <HelpKINode Title="APTable class">
-    <HelpKINode Title="APTable Class" Url="html/a2658aff-7329-9d2c-8040-e8e937529aa9.htm" />
-    <HelpKINode Title="constructor" Url="html/5ff93445-b8b0-e80a-3371-ad0fad819647.htm" />
-    <HelpKINode Title="events" Url="html/5d469d8c-3daf-3dcd-9784-06a9fc890fd2.htm" />
-    <HelpKINode Title="methods" Url="html/b7670ec3-956c-6a32-6f49-6c29fe7e44fe.htm" />
-    <HelpKINode Title="properties" Url="html/c3c6132e-e8c8-ece8-c4bb-cdb7369dccfc.htm" />
+    <HelpKINode Title="APTable Class" Url="html/T_Drachenhorn_Xml_Data_AP_APTable.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Data_AP_APTable__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
   </HelpKINode>
-  <HelpKINode Title="APTable property" Url="html/6d51f34c-79b8-a77b-0e22-da98b13f37cf.htm" />
-  <HelpKINode Title="APTable.APColumns property" Url="html/13acd4bc-a733-3775-2e60-b86850422dd8.htm" />
-  <HelpKINode Title="APTable.APTable constructor" Url="html/5ff93445-b8b0-e80a-3371-ad0fad819647.htm" />
-  <HelpKINode Title="APTable.Calculate method" Url="html/0613f500-68a7-fba0-0d72-3f1e1e5db042.htm" />
-  <HelpKINode Title="APTable.Item property" Url="html/d9f89aeb-5cfe-cbca-6672-9b9ab0201daf.htm" />
+  <HelpKINode Title="APTable property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_APTable.htm" />
+  <HelpKINode Title="APTable.APColumns property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_APColumns.htm" />
+  <HelpKINode Title="APTable.APTable constructor" Url="html/M_Drachenhorn_Xml_Data_AP_APTable__ctor.htm" />
+  <HelpKINode Title="APTable.Calculate method" Url="html/M_Drachenhorn_Xml_Data_AP_APTable_Calculate.htm" />
+  <HelpKINode Title="APTable.Item property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_Item.htm" />
   <HelpKINode Title="ArmorPart class">
-    <HelpKINode Title="ArmorPart Class" Url="html/2874f256-0227-33ad-9f40-f97ff7bac449.htm" />
-    <HelpKINode Title="constructor" Url="html/ff57b718-6d46-225f-510a-7441c9c4f63a.htm" />
-    <HelpKINode Title="events" Url="html/4f04f3fb-f037-bf83-1824-1db408a1f5ea.htm" />
-    <HelpKINode Title="methods" Url="html/e1a61a5c-d99b-21a7-68eb-c5adfa77c804.htm" />
-    <HelpKINode Title="properties" Url="html/5ec5ac6d-89f9-7964-2a94-22db38b0d3f8.htm" />
+    <HelpKINode Title="ArmorPart Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
   </HelpKINode>
-  <HelpKINode Title="ArmorPart.ArmorPart constructor" Url="html/ff57b718-6d46-225f-510a-7441c9c4f63a.htm" />
-  <HelpKINode Title="ArmorPart.Handicap property" Url="html/1947824f-0267-8d97-945e-8dd587ab90b2.htm" />
-  <HelpKINode Title="ArmorPart.IsActive property" Url="html/16c7557b-da93-0cb6-a745-9720b28afa0d.htm" />
-  <HelpKINode Title="ArmorPart.Type property" Url="html/41b521e2-ddae-c930-abdf-7a8be467ca86.htm" />
-  <HelpKINode Title="ArmorType enumeration" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
+  <HelpKINode Title="ArmorPart.ArmorPart constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart__ctor.htm" />
+  <HelpKINode Title="ArmorPart.Handicap property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Handicap.htm" />
+  <HelpKINode Title="ArmorPart.IsActive property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_IsActive.htm" />
+  <HelpKINode Title="ArmorPart.Type property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Type.htm" />
+  <HelpKINode Title="ArmorType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
   <HelpKINode Title="Attribute class">
-    <HelpKINode Title="Attribute Class" Url="html/52ea0f70-f213-2d3b-ed84-83aa3773f030.htm" />
-    <HelpKINode Title="constructor" Url="html/ce41e0fb-34a1-8de9-17a3-8a98536fb9f8.htm" />
-    <HelpKINode Title="events" Url="html/9605cc31-1405-203e-d040-9282eecffac1.htm" />
-    <HelpKINode Title="methods" Url="html/2a21604b-b3ed-582e-0a90-f1fdf2ab18a5.htm" />
-    <HelpKINode Title="properties" Url="html/e21570af-f7c7-07be-27c8-8a803b92c4bd.htm" />
+    <HelpKINode Title="Attribute Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
   </HelpKINode>
-  <HelpKINode Title="Attribute.Attribute constructor" Url="html/ce41e0fb-34a1-8de9-17a3-8a98536fb9f8.htm" />
-  <HelpKINode Title="Attribute.GetInformation method" Url="html/78926070-7a70-1146-17ec-157750fdeb60.htm" />
-  <HelpKINode Title="Attribute.Key property" Url="html/8e3f3dc5-a321-fe7e-2c9a-7cc2ba6b6d62.htm" />
-  <HelpKINode Title="Attribute.Name property" Url="html/1b33bd2c-37ff-849b-55c3-45589d3f15e1.htm" />
-  <HelpKINode Title="Attribute.Value property" Url="html/cd10fdb7-402b-01da-80fc-7e8cef48c63c.htm" />
-  <HelpKINode Title="Attributes property" Url="html/3bf794b4-0c9c-13ce-a77e-b4bad4f63051.htm" />
-  <HelpKINode Title="AttributeType enumeration" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="AvailableTemplates property" Url="html/02be5fdf-b25b-2706-b41d-3f27ebccd224.htm" />
-  <HelpKINode Title="Base64String property" Url="html/548c30b9-67a7-481e-69c1-c95e486492bb.htm" />
-  <HelpKINode Title="BaseDirectory property" Url="html/d7848464-3a80-6c6d-e91d-54cbf2b803a5.htm" />
+  <HelpKINode Title="Attribute.Attribute constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Attribute__ctor.htm" />
+  <HelpKINode Title="Attribute.GetInformation method" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm" />
+  <HelpKINode Title="Attribute.Key property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Key.htm" />
+  <HelpKINode Title="Attribute.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Name.htm" />
+  <HelpKINode Title="Attribute.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
+  <HelpKINode Title="Attributes property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Attributes.htm" />
+  <HelpKINode Title="AttributeType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_AvailableTemplates.htm" />
+  <HelpKINode Title="Base64String property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
+  <HelpKINode Title="BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_BaseDirectory.htm" />
   <HelpKINode Title="BaseValue class">
-    <HelpKINode Title="BaseValue Class" Url="html/e75e4d58-00a6-6f47-8f65-7f851b8b456e.htm" />
-    <HelpKINode Title="constructor" Url="html/f874cf92-b067-486c-026f-99f0673a5dbb.htm" />
-    <HelpKINode Title="events" Url="html/eb6d0b6a-be20-a9a1-caf0-289718e22f3b.htm" />
-    <HelpKINode Title="methods" Url="html/3276a93e-3da0-86c4-3e4f-b4ffdbd5cde9.htm" />
-    <HelpKINode Title="properties" Url="html/d008d40d-4c85-9caf-9d5f-29260ff14461.htm" />
+    <HelpKINode Title="BaseValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
   </HelpKINode>
-  <HelpKINode Title="BaseValue.BaseValue constructor" Url="html/f874cf92-b067-486c-026f-99f0673a5dbb.htm" />
-  <HelpKINode Title="BaseValue.GetInformation method" Url="html/f3299c84-a2dc-101e-0461-847cfed174e6.htm" />
-  <HelpKINode Title="BaseValue.Key property" Url="html/aab0ce2c-34b8-6624-b36a-63220b436f70.htm" />
-  <HelpKINode Title="BaseValue.Name property" Url="html/a4382753-6ff8-bef0-2079-47c2966aba2c.htm" />
-  <HelpKINode Title="BaseValue.Value property" Url="html/26c523b3-cff0-a963-121c-835eaa371e3b.htm" />
+  <HelpKINode Title="BaseValue.BaseValue constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue__ctor.htm" />
+  <HelpKINode Title="BaseValue.GetInformation method" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm" />
+  <HelpKINode Title="BaseValue.Key property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Key.htm" />
+  <HelpKINode Title="BaseValue.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Name.htm" />
+  <HelpKINode Title="BaseValue.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
   <HelpKINode Title="BaseValues property">
-    <HelpKINode Title="CharacterSheet.BaseValues Property " Url="html/31792bbb-5acb-32a3-4fb3-fe9f8d5a20f7.htm" />
-    <HelpKINode Title="CultureInformation.BaseValues Property " Url="html/319633e5-a564-37e6-61ad-07697362fa19.htm" />
-    <HelpKINode Title="RaceInformation.BaseValues Property " Url="html/9d439485-19cf-ee3b-0dcd-232d8cd43433.htm" />
+    <HelpKINode Title="CharacterSheet.BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_BaseValues.htm" />
+    <HelpKINode Title="CultureInformation.BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_BaseValues.htm" />
+    <HelpKINode Title="RaceInformation.BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_BaseValues.htm" />
   </HelpKINode>
   <HelpKINode Title="BindableBase class">
-    <HelpKINode Title="BindableBase Class" Url="html/74c1c8d3-2a85-50c8-5b99-32468a9478dd.htm" />
-    <HelpKINode Title="constructor" Url="html/b39a7b59-bbf3-eebd-501b-7c7394f27cf7.htm" />
-    <HelpKINode Title="events" Url="html/56e4c1c2-73fd-2f59-211f-3b66d927d22e.htm" />
-    <HelpKINode Title="methods" Url="html/3532a0f9-299e-66aa-e875-6ac5b95112a7.htm" />
+    <HelpKINode Title="BindableBase Class" Url="html/T_Drachenhorn_Xml_BindableBase.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_BindableBase__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_BindableBase.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_BindableBase.htm" />
   </HelpKINode>
-  <HelpKINode Title="BindableBase.BindableBase constructor" Url="html/b39a7b59-bbf3-eebd-501b-7c7394f27cf7.htm" />
-  <HelpKINode Title="BindableBase.OnPropertyChanged method" Url="html/bcb7093d-2b5b-1ef0-8885-a4570b1b0f4e.htm" />
-  <HelpKINode Title="BindableBase.PropertyChanged event" Url="html/633028ad-bb3f-9045-5c50-313e6c2be9d8.htm" />
-  <HelpKINode Title="BirthDate property" Url="html/02f05c7b-0052-795d-290f-8471dac638ef.htm" />
-  <HelpKINode Title="Body enumeration member" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
+  <HelpKINode Title="BindableBase.BindableBase constructor" Url="html/M_Drachenhorn_Xml_BindableBase__ctor.htm" />
+  <HelpKINode Title="BindableBase.OnPropertyChanged method" Url="html/M_Drachenhorn_Xml_BindableBase_OnPropertyChanged.htm" />
+  <HelpKINode Title="BindableBase.PropertyChanged event" Url="html/E_Drachenhorn_Xml_BindableBase_PropertyChanged.htm" />
+  <HelpKINode Title="BirthDate property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_BirthDate.htm" />
+  <HelpKINode Title="Body enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
   <HelpKINode Title="BonusValue class">
-    <HelpKINode Title="BonusValue Class" Url="html/6e8d3a05-e83e-7b4a-0adc-568d78c9f8f2.htm" />
-    <HelpKINode Title="constructor" Url="html/25219dec-0274-bbd3-0717-f75dc0b68957.htm" />
-    <HelpKINode Title="events" Url="html/a971445a-adb1-b944-a5ba-cc67f08aca39.htm" />
-    <HelpKINode Title="methods" Url="html/2445ec32-48ab-80a2-ad6e-b27b660b1eeb.htm" />
-    <HelpKINode Title="properties" Url="html/47c1c3ca-1b18-ec18-d7a1-75133453dfb2.htm" />
+    <HelpKINode Title="BonusValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_BonusValue__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
   </HelpKINode>
-  <HelpKINode Title="BonusValue.BonusValue constructor" Url="html/25219dec-0274-bbd3-0717-f75dc0b68957.htm" />
-  <HelpKINode Title="BonusValue.Key property" Url="html/d67a5a6b-bc8d-9384-e69f-d27ab06f48e8.htm" />
-  <HelpKINode Title="BonusValue.Name property" Url="html/91bf7fa5-7341-d299-7a86-70dc3d83283f.htm" />
-  <HelpKINode Title="BonusValue.Value property" Url="html/8b5c2c6d-3fd4-8efa-877b-39480a50f974.htm" />
-  <HelpKINode Title="Boron enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="BonusValue.BonusValue constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_BonusValue__ctor.htm" />
+  <HelpKINode Title="BonusValue.Key property" Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Key.htm" />
+  <HelpKINode Title="BonusValue.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Name.htm" />
+  <HelpKINode Title="BonusValue.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Value.htm" />
+  <HelpKINode Title="Boron enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Calculate method">
-    <HelpKINode Title="APTable.Calculate Method " Url="html/0613f500-68a7-fba0-0d72-3f1e1e5db042.htm" />
-    <HelpKINode Title="Formula.Calculate Method " Url="html/4953f5f6-9c7f-3a44-781f-7cca4bb8bb32.htm" />
+    <HelpKINode Title="APTable.Calculate Method " Url="html/M_Drachenhorn_Xml_Data_AP_APTable_Calculate.htm" />
+    <HelpKINode Title="Formula.Calculate Method " Url="html/M_Drachenhorn_Xml_Calculation_Formula_Calculate.htm" />
   </HelpKINode>
-  <HelpKINode Title="CalculateAsync method" Url="html/983f961d-7c8c-1266-030d-a95141553bf9.htm" />
-  <HelpKINode Title="CalculateCosts method" Url="html/ec3aa091-b919-1ad0-56ff-e43e8a1441ac.htm" />
+  <HelpKINode Title="CalculateAsync method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_CalculateAsync.htm" />
+  <HelpKINode Title="CalculateCosts method" Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_CalculateCosts.htm" />
   <HelpKINode Title="CalculateEventArgs class">
-    <HelpKINode Title="CalculateEventArgs Class" Url="html/1efc6cb5-ff0f-0cae-a925-e05748e2884b.htm" />
-    <HelpKINode Title="constructor" Url="html/007f1e1b-eb59-0b3f-30e4-e4ecc2a5aa74.htm" />
-    <HelpKINode Title="methods" Url="html/62279d1c-f4dc-9218-2183-3ea7a0cb6624.htm" />
-    <HelpKINode Title="properties" Url="html/50b0e731-6e14-9c72-2771-a4aaee764e29.htm" />
+    <HelpKINode Title="CalculateEventArgs Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Calculation_CalculateEventArgs__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm" />
   </HelpKINode>
-  <HelpKINode Title="CalculateEventArgs.CalculateEventArgs constructor" Url="html/007f1e1b-eb59-0b3f-30e4-e4ecc2a5aa74.htm" />
-  <HelpKINode Title="CalculateEventArgs.Sheet property" Url="html/448e985f-9d76-4543-e9e6-bd5f432a03c3.htm" />
+  <HelpKINode Title="CalculateEventArgs.CalculateEventArgs constructor" Url="html/M_Drachenhorn_Xml_Calculation_CalculateEventArgs__ctor.htm" />
+  <HelpKINode Title="CalculateEventArgs.Sheet property" Url="html/P_Drachenhorn_Xml_Calculation_CalculateEventArgs_Sheet.htm" />
   <HelpKINode Title="CalculationValue class">
-    <HelpKINode Title="CalculationValue Class" Url="html/1021ea2a-f1c1-7014-80a8-420949571acd.htm" />
-    <HelpKINode Title="constructor" Url="html/2f54cee8-9a53-de39-4f29-a6ee66659fba.htm" />
-    <HelpKINode Title="events" Url="html/d8904862-9481-f8b8-76d4-3dc648870db4.htm" />
-    <HelpKINode Title="methods" Url="html/19bf6ea5-fc23-a852-0876-dc8bc377b5cc.htm" />
-    <HelpKINode Title="properties" Url="html/c56f0ef1-bd34-3db8-7c78-272d83ec0aac.htm" />
+    <HelpKINode Title="CalculationValue Class" Url="html/T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
   </HelpKINode>
-  <HelpKINode Title="CalculationValue.CalculationValue constructor" Url="html/2f54cee8-9a53-de39-4f29-a6ee66659fba.htm" />
-  <HelpKINode Title="CalculationValue.CurrentValue property" Url="html/88eef35b-9353-b63a-60bf-4ad42773ea54.htm" />
-  <HelpKINode Title="CalculationValue.Formula property" Url="html/b208f732-dc66-8b26-5bf2-89d790d0c20f.htm" />
-  <HelpKINode Title="CalculationValue.FormulaText property" Url="html/dd125286-5be8-d9a4-a290-0a2fdf79dece.htm" />
-  <HelpKINode Title="CalculationValue.GetInformation method" Url="html/1eb855c4-6c28-f7f2-4501-0c8d6d85608b.htm" />
-  <HelpKINode Title="CalculationValue.Modifier property" Url="html/ca15bad0-ae05-1d48-aea3-b34d09ac1b5f.htm" />
-  <HelpKINode Title="CalculationValue.StartValue property" Url="html/b0c12e5d-3114-b859-d71c-74185f17b13d.htm" />
-  <HelpKINode Title="Category property" Url="html/c118812d-cf42-8b10-5d7b-de408792b1a5.htm" />
+  <HelpKINode Title="CalculationValue.CalculationValue constructor" Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue__ctor.htm" />
+  <HelpKINode Title="CalculationValue.CurrentValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_CurrentValue.htm" />
+  <HelpKINode Title="CalculationValue.Formula property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Formula.htm" />
+  <HelpKINode Title="CalculationValue.FormulaText property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_FormulaText.htm" />
+  <HelpKINode Title="CalculationValue.GetInformation method" Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue_GetInformation.htm" />
+  <HelpKINode Title="CalculationValue.Modifier property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Modifier.htm" />
+  <HelpKINode Title="CalculationValue.StartValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_StartValue.htm" />
+  <HelpKINode Title="Category property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
   <HelpKINode Title="CharacterAttributes class">
-    <HelpKINode Title="CharacterAttributes Class" Url="html/280d8841-5e75-cd5b-4ae1-a4a944c8ab13.htm" />
-    <HelpKINode Title="constructor" Url="html/f84376ec-66cd-300d-b674-0fe447a38971.htm" />
-    <HelpKINode Title="events" Url="html/911a558f-d4c6-7d67-2946-17326d0d674f.htm" />
-    <HelpKINode Title="methods" Url="html/1ec66c33-fed7-285f-8293-d953a2729b8f.htm" />
-    <HelpKINode Title="properties" Url="html/7c7e4821-ac8e-51e7-9f38-30acbcde15b1.htm" />
+    <HelpKINode Title="CharacterAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
   </HelpKINode>
-  <HelpKINode Title="CharacterAttributes.CharacterAttributes constructor" Url="html/f84376ec-66cd-300d-b674-0fe447a38971.htm" />
-  <HelpKINode Title="CharacterAttributes.Charisma property" Url="html/a866f023-c6dd-ef90-4159-cb6f023a1ba3.htm" />
-  <HelpKINode Title="CharacterAttributes.Constitution property" Url="html/37aff012-9982-a6bb-b764-578da20b523f.htm" />
-  <HelpKINode Title="CharacterAttributes.Courage property" Url="html/09f24205-9758-bdfe-b9c2-563cda6029cf.htm" />
-  <HelpKINode Title="CharacterAttributes.Finesse property" Url="html/0bf25950-fa0e-1297-ec87-634866159dec.htm" />
-  <HelpKINode Title="CharacterAttributes.Intuition property" Url="html/6e948346-934a-9c4b-e145-150a930ffeef.htm" />
-  <HelpKINode Title="CharacterAttributes.PhysicalStrength property" Url="html/ca973fda-f568-3f1d-f147-71718a32e01b.htm" />
-  <HelpKINode Title="CharacterAttributes.Prestidigitation property" Url="html/e0501773-cde1-c023-0351-83c719d7a7af.htm" />
-  <HelpKINode Title="CharacterAttributes.Speed property" Url="html/80cdba9d-e24b-593b-aa98-d65c2467b7f1.htm" />
-  <HelpKINode Title="CharacterAttributes.Wisdom property" Url="html/35036cc6-aaf2-8449-7487-d7a3546c0260.htm" />
+  <HelpKINode Title="CharacterAttributes.CharacterAttributes constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes__ctor.htm" />
+  <HelpKINode Title="CharacterAttributes.Charisma property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Charisma.htm" />
+  <HelpKINode Title="CharacterAttributes.Constitution property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Constitution.htm" />
+  <HelpKINode Title="CharacterAttributes.Courage property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Courage.htm" />
+  <HelpKINode Title="CharacterAttributes.Finesse property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Finesse.htm" />
+  <HelpKINode Title="CharacterAttributes.Intuition property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Intuition.htm" />
+  <HelpKINode Title="CharacterAttributes.PhysicalStrength property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_PhysicalStrength.htm" />
+  <HelpKINode Title="CharacterAttributes.Prestidigitation property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Prestidigitation.htm" />
+  <HelpKINode Title="CharacterAttributes.Speed property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Speed.htm" />
+  <HelpKINode Title="CharacterAttributes.Wisdom property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Wisdom.htm" />
   <HelpKINode Title="Characteristics class">
-    <HelpKINode Title="Characteristics Class" Url="html/9a82b618-fc41-0a04-a66c-7ac7c61d4e20.htm" />
-    <HelpKINode Title="constructor" Url="html/d111e5eb-6de7-8590-1ec9-786ca35470f7.htm" />
-    <HelpKINode Title="events" Url="html/c2179c77-869c-8396-e779-e07e8d59938e.htm" />
-    <HelpKINode Title="methods" Url="html/1b4fe0c2-074e-5968-460c-12f061faf03b.htm" />
-    <HelpKINode Title="properties" Url="html/c295045c-e18c-75a0-7c5f-07b54a236b32.htm" />
+    <HelpKINode Title="Characteristics Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_Characteristics__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
   </HelpKINode>
-  <HelpKINode Title="Characteristics property" Url="html/d57fe824-9b7f-3c83-7973-16b125af6978.htm" />
-  <HelpKINode Title="Characteristics.Age property" Url="html/a28369f3-5a12-7061-5ba2-74f62caae3cb.htm" />
-  <HelpKINode Title="Characteristics.BirthDate property" Url="html/02f05c7b-0052-795d-290f-8471dac638ef.htm" />
-  <HelpKINode Title="Characteristics.Characteristics constructor" Url="html/d111e5eb-6de7-8590-1ec9-786ca35470f7.htm" />
-  <HelpKINode Title="Characteristics.Culture property" Url="html/b084232c-37d6-87e7-d0ae-8ac1ef1fc0b1.htm" />
-  <HelpKINode Title="Characteristics.EyeColor property" Url="html/b3c26bee-260a-3669-d724-93e7e847f9d9.htm" />
-  <HelpKINode Title="Characteristics.Family property" Url="html/24a380bd-dce6-9654-a342-8c08ab9e0e1d.htm" />
-  <HelpKINode Title="Characteristics.Gender property" Url="html/b69543b1-19a7-6e42-0aca-e5034e50b8cf.htm" />
-  <HelpKINode Title="Characteristics.HairColor property" Url="html/100280de-f55b-a29a-2ed4-00967b14a5c4.htm" />
-  <HelpKINode Title="Characteristics.Height property" Url="html/c1330a89-3e1a-3dd2-e071-925870670b7f.htm" />
-  <HelpKINode Title="Characteristics.Name property" Url="html/09c9851e-c94c-bf8d-4f33-5c35b0984c8d.htm" />
-  <HelpKINode Title="Characteristics.Other property" Url="html/fac099d5-0049-9e8e-a52d-e4535aa17d5d.htm" />
-  <HelpKINode Title="Characteristics.PlaceOfBirth property" Url="html/7e6454b4-a24f-490e-c7a1-ca84e480eafd.htm" />
-  <HelpKINode Title="Characteristics.Profession property" Url="html/f067776b-6703-2b6c-9144-4dfc4abf06ae.htm" />
-  <HelpKINode Title="Characteristics.Race property" Url="html/7ef35623-1db0-7f44-4b5c-45e9e81ea3db.htm" />
-  <HelpKINode Title="Characteristics.SocialStatus property" Url="html/dcf1a20d-8b81-46f6-68b7-410dbb3484de.htm" />
-  <HelpKINode Title="Characteristics.Title property" Url="html/d76ccb26-5462-b262-8e5c-82c41eff8d89.htm" />
-  <HelpKINode Title="Characteristics.Weight property" Url="html/a09117b1-b61d-b37a-fa51-215037612a1f.htm" />
+  <HelpKINode Title="Characteristics property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Characteristics.htm" />
+  <HelpKINode Title="Characteristics.Age property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Age.htm" />
+  <HelpKINode Title="Characteristics.BirthDate property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_BirthDate.htm" />
+  <HelpKINode Title="Characteristics.Characteristics constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_Characteristics__ctor.htm" />
+  <HelpKINode Title="Characteristics.Culture property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Culture.htm" />
+  <HelpKINode Title="Characteristics.EyeColor property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_EyeColor.htm" />
+  <HelpKINode Title="Characteristics.Family property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Family.htm" />
+  <HelpKINode Title="Characteristics.Gender property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Gender.htm" />
+  <HelpKINode Title="Characteristics.HairColor property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_HairColor.htm" />
+  <HelpKINode Title="Characteristics.Height property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Height.htm" />
+  <HelpKINode Title="Characteristics.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Name.htm" />
+  <HelpKINode Title="Characteristics.Other property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Other.htm" />
+  <HelpKINode Title="Characteristics.PlaceOfBirth property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_PlaceOfBirth.htm" />
+  <HelpKINode Title="Characteristics.Profession property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Profession.htm" />
+  <HelpKINode Title="Characteristics.Race property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Race.htm" />
+  <HelpKINode Title="Characteristics.SocialStatus property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_SocialStatus.htm" />
+  <HelpKINode Title="Characteristics.Title property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Title.htm" />
+  <HelpKINode Title="Characteristics.Weight property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Weight.htm" />
   <HelpKINode Title="CharacterSheet class">
-    <HelpKINode Title="CharacterSheet Class" Url="html/2001f9ad-3f8c-19a9-601d-821b872758ae.htm" />
-    <HelpKINode Title="constructor" Url="html/d56ce322-798e-cc90-6c7e-58c1f778852e.htm" />
-    <HelpKINode Title="events" Url="html/0b6f6229-74a5-d8f0-a4fb-775ed43a9622.htm" />
-    <HelpKINode Title="fields" Url="html/341e1298-9efc-09d0-d2ad-c505e2c9b7c6.htm" />
-    <HelpKINode Title="methods" Url="html/0ee39421-ec68-dba3-bcd5-501633fef14a.htm" />
-    <HelpKINode Title="properties" Url="html/56ce358f-db15-041f-42ee-353933909fd6.htm" />
+    <HelpKINode Title="CharacterSheet Class" Url="html/T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
   </HelpKINode>
-  <HelpKINode Title="CharacterSheet.AdventurePoints property" Url="html/3c166d96-0c4c-0793-0e7d-fb581f42a398.htm" />
-  <HelpKINode Title="CharacterSheet.Attributes property" Url="html/3bf794b4-0c9c-13ce-a77e-b4bad4f63051.htm" />
-  <HelpKINode Title="CharacterSheet.BaseValues property" Url="html/31792bbb-5acb-32a3-4fb3-fe9f8d5a20f7.htm" />
-  <HelpKINode Title="CharacterSheet.Characteristics property" Url="html/d57fe824-9b7f-3c83-7973-16b125af6978.htm" />
-  <HelpKINode Title="CharacterSheet.CharacterSheet constructor" Url="html/d56ce322-798e-cc90-6c7e-58c1f778852e.htm" />
-  <HelpKINode Title="CharacterSheet.CoatOfArms property" Url="html/65eb3dac-e0fb-623a-87b0-8b80b577a36c.htm" />
-  <HelpKINode Title="CharacterSheet.DisAdvantages property" Url="html/a5cbcfff-8a26-9607-2e27-0e2fd0d1b155.htm" />
-  <HelpKINode Title="CharacterSheet.Extension field" Url="html/0338eda9-95ab-9e13-c653-50b747aecd74.htm" />
-  <HelpKINode Title="CharacterSheet.FilePath property" Url="html/211800e5-ce56-afe9-4755-a450b55c7cf0.htm" />
-  <HelpKINode Title="CharacterSheet.GpBase property" Url="html/f5d14c71-2f83-798d-0749-e3c44c2383d4.htm" />
-  <HelpKINode Title="CharacterSheet.HasChanged property" Url="html/75f59c2e-5091-79ee-75ff-f25c76bd0936.htm" />
-  <HelpKINode Title="CharacterSheet.Inventory property" Url="html/d53d3613-8723-b1f7-3579-8d351846b720.htm" />
-  <HelpKINode Title="CharacterSheet.Load method" Url="html/f685a2bd-b36d-f519-4c08-f52d2977c736.htm" />
-  <HelpKINode Title="CharacterSheet.Save method" Url="html/ff124f79-32ec-636c-edb6-53c981a1e155.htm" />
-  <HelpKINode Title="CharacterSheet.Skills property" Url="html/dfb98318-40d9-20d7-8163-8bd46eefc777.htm" />
-  <HelpKINode Title="CharacterSheet.SpecialSkills property" Url="html/da57c2c2-253c-4bab-73a4-597f54154e0b.htm" />
-  <HelpKINode Title="Charisma enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Charisma property" Url="html/a866f023-c6dd-ef90-4159-cb6f023a1ba3.htm" />
+  <HelpKINode Title="CharacterSheet.AdventurePoints property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_AdventurePoints.htm" />
+  <HelpKINode Title="CharacterSheet.Attributes property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Attributes.htm" />
+  <HelpKINode Title="CharacterSheet.BaseValues property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_BaseValues.htm" />
+  <HelpKINode Title="CharacterSheet.Characteristics property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Characteristics.htm" />
+  <HelpKINode Title="CharacterSheet.CharacterSheet constructor" Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet__ctor.htm" />
+  <HelpKINode Title="CharacterSheet.CoatOfArms property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_CoatOfArms.htm" />
+  <HelpKINode Title="CharacterSheet.DisAdvantages property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_DisAdvantages.htm" />
+  <HelpKINode Title="CharacterSheet.Extension field" Url="html/F_Drachenhorn_Xml_Sheet_CharacterSheet_Extension.htm" />
+  <HelpKINode Title="CharacterSheet.FilePath property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_FilePath.htm" />
+  <HelpKINode Title="CharacterSheet.GpBase property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_GpBase.htm" />
+  <HelpKINode Title="CharacterSheet.HasChanged property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_HasChanged.htm" />
+  <HelpKINode Title="CharacterSheet.Inventory property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Inventory.htm" />
+  <HelpKINode Title="CharacterSheet.Load method" Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Load.htm" />
+  <HelpKINode Title="CharacterSheet.Save method" Url="html/Overload_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm" />
+  <HelpKINode Title="CharacterSheet.Skills property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Skills.htm" />
+  <HelpKINode Title="CharacterSheet.SpecialSkills property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
+  <HelpKINode Title="Charisma enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Charisma property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Charisma.htm" />
   <HelpKINode Title="ChildChanged event">
-    <HelpKINode Title="ChildChangedBase.ChildChanged Event" Url="html/224de2a9-4a03-545d-bc3b-2e8481c09a33.htm" />
-    <HelpKINode Title="INotifyChildChanged.ChildChanged Event" Url="html/a102dd98-b9dd-4036-eb9f-2d69367a1d5b.htm" />
+    <HelpKINode Title="ChildChangedBase.ChildChanged Event" Url="html/E_Drachenhorn_Xml_ChildChangedBase_ChildChanged.htm" />
+    <HelpKINode Title="INotifyChildChanged.ChildChanged Event" Url="html/E_Drachenhorn_Xml_Interfaces_INotifyChildChanged_ChildChanged.htm" />
   </HelpKINode>
   <HelpKINode Title="ChildChangedBase class">
-    <HelpKINode Title="ChildChangedBase Class" Url="html/b6db3528-d879-2c0f-5905-3a3da8c28c4f.htm" />
-    <HelpKINode Title="constructor" Url="html/ec1729e0-7f3e-55ba-2c10-d83b05f4077b.htm" />
-    <HelpKINode Title="events" Url="html/c0fc153b-b53c-b128-44f8-814e9e117b61.htm" />
-    <HelpKINode Title="methods" Url="html/2b6cd106-1c6b-0ada-7c80-ee4def96c4b9.htm" />
+    <HelpKINode Title="ChildChangedBase Class" Url="html/T_Drachenhorn_Xml_ChildChangedBase.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_ChildChangedBase__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_ChildChangedBase.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_ChildChangedBase.htm" />
   </HelpKINode>
-  <HelpKINode Title="ChildChangedBase.ChildChanged event" Url="html/224de2a9-4a03-545d-bc3b-2e8481c09a33.htm" />
-  <HelpKINode Title="ChildChangedBase.ChildChangedBase constructor" Url="html/ec1729e0-7f3e-55ba-2c10-d83b05f4077b.htm" />
-  <HelpKINode Title="ChildChangedBase.OnChildChanged method" Url="html/9ce46c4d-7824-ff65-5648-21c8b382d224.htm" />
-  <HelpKINode Title="ChildChangedBase.SetValuesChanged method" Url="html/5e1d0eeb-3a67-ab5c-8b35-0637c10ad633.htm" />
+  <HelpKINode Title="ChildChangedBase.ChildChanged event" Url="html/E_Drachenhorn_Xml_ChildChangedBase_ChildChanged.htm" />
+  <HelpKINode Title="ChildChangedBase.ChildChangedBase constructor" Url="html/M_Drachenhorn_Xml_ChildChangedBase__ctor.htm" />
+  <HelpKINode Title="ChildChangedBase.OnChildChanged method" Url="html/Overload_Drachenhorn_Xml_ChildChangedBase_OnChildChanged.htm" />
+  <HelpKINode Title="ChildChangedBase.SetValuesChanged method" Url="html/M_Drachenhorn_Xml_ChildChangedBase_SetValuesChanged.htm" />
   <HelpKINode Title="CoatOfArms class">
-    <HelpKINode Title="CoatOfArms Class" Url="html/1f4f61a6-8ef3-85b8-bbe5-10a418f2baa9.htm" />
-    <HelpKINode Title="constructor" Url="html/35a4e382-65d1-3cb9-08bb-7520655be58f.htm" />
-    <HelpKINode Title="events" Url="html/e3d23eed-354d-c9d2-8d9e-1dd6c4cee0ad.htm" />
-    <HelpKINode Title="methods" Url="html/b987bf44-ca17-76a0-a0b3-2c248883464f.htm" />
-    <HelpKINode Title="properties" Url="html/6fe4930b-0e81-2a40-b762-020643b4b371.htm" />
+    <HelpKINode Title="CoatOfArms Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_CoatOfArms__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
   </HelpKINode>
-  <HelpKINode Title="CoatOfArms property" Url="html/65eb3dac-e0fb-623a-87b0-8b80b577a36c.htm" />
-  <HelpKINode Title="CoatOfArms.Base64String property" Url="html/548c30b9-67a7-481e-69c1-c95e486492bb.htm" />
-  <HelpKINode Title="CoatOfArms.CoatOfArms constructor" Url="html/35a4e382-65d1-3cb9-08bb-7520655be58f.htm" />
-  <HelpKINode Title="CompareTo method" Url="html/52a35463-5b60-eb95-bcdb-30ba22c8abca.htm" />
-  <HelpKINode Title="Constitution enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Constitution property" Url="html/37aff012-9982-a6bb-b764-578da20b523f.htm" />
-  <HelpKINode Title="Costs property" Url="html/e56df56f-a7c3-dbeb-6f85-2e732fc2e5be.htm" />
-  <HelpKINode Title="Courage enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Courage property" Url="html/09f24205-9758-bdfe-b9c2-563cda6029cf.htm" />
-  <HelpKINode Title="Culture property" Url="html/b084232c-37d6-87e7-d0ae-8ac1ef1fc0b1.htm" />
+  <HelpKINode Title="CoatOfArms property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_CoatOfArms.htm" />
+  <HelpKINode Title="CoatOfArms.Base64String property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
+  <HelpKINode Title="CoatOfArms.CoatOfArms constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_CoatOfArms__ctor.htm" />
+  <HelpKINode Title="CompareTo method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_CompareTo.htm" />
+  <HelpKINode Title="Constitution enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Constitution property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Constitution.htm" />
+  <HelpKINode Title="Costs property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Costs.htm" />
+  <HelpKINode Title="Courage enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Courage property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Courage.htm" />
+  <HelpKINode Title="Culture property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Culture.htm" />
   <HelpKINode Title="CultureInformation class">
-    <HelpKINode Title="CultureInformation Class" Url="html/11c41104-3d10-e941-43dd-887afa0ef21f.htm" />
-    <HelpKINode Title="constructor" Url="html/eed3c357-e04d-4a4e-92cb-fdb3973fec37.htm" />
-    <HelpKINode Title="events" Url="html/39d648c2-b57e-db9e-5003-539cc04e61fc.htm" />
-    <HelpKINode Title="methods" Url="html/81ff19cd-210e-ced1-6e3a-a7b7101b0280.htm" />
-    <HelpKINode Title="properties" Url="html/e1260102-dedc-8997-7434-d48fa331a89d.htm" />
+    <HelpKINode Title="CultureInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
   </HelpKINode>
-  <HelpKINode Title="CultureInformation.BaseValues property" Url="html/319633e5-a564-37e6-61ad-07697362fa19.htm" />
-  <HelpKINode Title="CultureInformation.CultureInformation constructor" Url="html/eed3c357-e04d-4a4e-92cb-fdb3973fec37.htm" />
-  <HelpKINode Title="CultureInformation.GetInformation method" Url="html/ab770f6f-3d40-cae0-dbd2-a7cfcd474d4c.htm" />
-  <HelpKINode Title="CultureInformation.Name property" Url="html/678b1a75-d1d0-89a4-ed80-298f60ae1c7c.htm" />
-  <HelpKINode Title="CultureInformation.Specification property" Url="html/09510807-abe9-398c-65f0-6d70cb80ba1c.htm" />
-  <HelpKINode Title="Cultures property" Url="html/bce438e1-8575-bf87-f7bb-e183013cbb61.htm" />
-  <HelpKINode Title="CurrentLeft property" Url="html/61ce77a6-e7ce-6686-b00b-9938c4b92422.htm" />
-  <HelpKINode Title="CurrentSheet property" Url="html/e5e18741-066a-e029-9713-430152686008.htm" />
-  <HelpKINode Title="CurrentValue property" Url="html/88eef35b-9353-b63a-60bf-4ad42773ea54.htm" />
-  <HelpKINode Title="Day property" Url="html/aba39ad3-f508-f28a-56de-191c2cc8946b.htm" />
+  <HelpKINode Title="CultureInformation.BaseValues property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_BaseValues.htm" />
+  <HelpKINode Title="CultureInformation.CultureInformation constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation__ctor.htm" />
+  <HelpKINode Title="CultureInformation.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation_GetInformation.htm" />
+  <HelpKINode Title="CultureInformation.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Name.htm" />
+  <HelpKINode Title="CultureInformation.Specification property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
+  <HelpKINode Title="Cultures property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Cultures.htm" />
+  <HelpKINode Title="CurrentLeft property" Url="html/P_Drachenhorn_Xml_AdventurePoints_CurrentLeft.htm" />
+  <HelpKINode Title="CurrentSheet property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_CurrentSheet.htm" />
+  <HelpKINode Title="CurrentValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_CurrentValue.htm" />
+  <HelpKINode Title="Day property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Day.htm" />
   <HelpKINode Title="Description property">
-    <HelpKINode Title="ProfessionInformation.Description Property " Url="html/02266fe9-c23b-0001-97a8-1212d684eb9e.htm" />
-    <HelpKINode Title="RaceInformation.Description Property " Url="html/c5c61236-12af-fdd9-fa78-fa2275a4bd4c.htm" />
-    <HelpKINode Title="SpecialSkill.Description Property " Url="html/797d1f50-e562-f0bc-0f35-a2b425655de8.htm" />
+    <HelpKINode Title="ProfessionInformation.Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Description.htm" />
+    <HelpKINode Title="RaceInformation.Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Description.htm" />
+    <HelpKINode Title="SpecialSkill.Description Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Description.htm" />
   </HelpKINode>
   <HelpKINode Title="DisAdvantage class">
-    <HelpKINode Title="DisAdvantage Class" Url="html/7fb4ed6b-87a1-e189-7560-f67464433afb.htm" />
-    <HelpKINode Title="constructor" Url="html/f4107729-a5ee-cfcf-bdec-fc10c13c00da.htm" />
-    <HelpKINode Title="events" Url="html/b333616a-40c1-20d0-87a3-96be2fd74034.htm" />
-    <HelpKINode Title="methods" Url="html/28b80953-6a5d-6ac4-f706-b1b98ab58186.htm" />
-    <HelpKINode Title="properties" Url="html/31e8bc6d-c65e-9e3f-6120-a1fced2aed65.htm" />
+    <HelpKINode Title="DisAdvantage Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
   </HelpKINode>
-  <HelpKINode Title="Disadvantage enumeration member" Url="html/474b1947-88b2-493f-51f9-598eb13cf0f5.htm" />
-  <HelpKINode Title="DisAdvantage.DisAdvantage constructor" Url="html/f4107729-a5ee-cfcf-bdec-fc10c13c00da.htm" />
-  <HelpKINode Title="DisAdvantage.GetInformation method" Url="html/476978fb-e159-afb9-1175-7bfc409a34c8.htm" />
-  <HelpKINode Title="DisAdvantage.Name property" Url="html/e322e770-df2c-8efe-4491-36c603571f56.htm" />
-  <HelpKINode Title="DisAdvantage.Specialization property" Url="html/b481dd7d-2429-36cd-0673-573e4e22b144.htm" />
-  <HelpKINode Title="DisAdvantage.Type property" Url="html/bf356593-241e-9af8-ca07-8899c911734c.htm" />
-  <HelpKINode Title="DisAdvantages property" Url="html/a5cbcfff-8a26-9607-2e27-0e2fd0d1b155.htm" />
-  <HelpKINode Title="DisAdvantageType enumeration" Url="html/474b1947-88b2-493f-51f9-598eb13cf0f5.htm" />
-  <HelpKINode Title="Drachenhorn.Xml namespace" Url="html/f9311c9a-7092-09ca-4be2-64b1b6ecf203.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.AdventurePoints class" Url="html/af7a1ca4-12d1-4af1-f94d-608cdfa21c0a.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.BindableBase class" Url="html/74c1c8d3-2a85-50c8-5b99-32468a9478dd.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation namespace" Url="html/601f23c5-1f40-df61-dff4-92674b110747.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation.CalculateEventArgs class" Url="html/1efc6cb5-ff0f-0cae-a925-e05748e2884b.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation.CalculationValue class" Url="html/1021ea2a-f1c1-7014-80a8-420949571acd.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation.Formula class" Url="html/201aa6a6-544b-e8b2-69cb-7951c23aa7b1.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation.Formula.CalculateAllHandler delegate" Url="html/ce77c5b9-36fe-b662-b194-63cdeb0827f0.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Calculation.IFormulaKeyItem interface" Url="html/ac4b5389-5b78-ad2f-7ffb-25eac63a1dfd.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.ChildChangedBase class" Url="html/b6db3528-d879-2c0f-5905-3a3da8c28c4f.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Data.AP namespace" Url="html/38485622-f3f4-ce05-74fa-7554a0b0103f.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Data.AP.APColumn class" Url="html/b396ff0e-f65b-96c8-0459-1061cde3e6c7.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Data.AP.APTable class" Url="html/a2658aff-7329-9d2c-8040-e8e937529aa9.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Exceptions namespace" Url="html/8f406deb-de34-89f6-a9d0-096e22ae07a3.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetLoadingException class" Url="html/821c6fd5-67d2-d9b9-abe4-b0f84f51fb56.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetSavingException class" Url="html/3f7bca84-9cb0-23f6-14e8-66e2f24cd440.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Interfaces namespace" Url="html/cec22aa1-5207-fa6a-b087-a39b58a734f9.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Interfaces.IInfoObject interface" Url="html/f4ccb296-3b37-0ae5-357f-62c6b6f2deb7.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Interfaces.INotifyChildChanged interface" Url="html/c358f118-5e15-2b5b-460d-f319b4f4da39.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Objects namespace" Url="html/999f7810-4467-ba29-cd35-f97b8d3e70ff.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Objects.DSADate class" Url="html/c1c18283-74b5-39d1-2d4a-0562a026f10f.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Objects.DSAMonth enumeration" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Objects.DSAMonthExtensions class" Url="html/6f3f9f66-760e-b25d-6c76-c0d91d8f7961.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet namespace" Url="html/ebadfa4e-c268-f1ab-a361-4a19d4a602d1.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CharacterSheet class" Url="html/2001f9ad-3f8c-19a9-601d-821b872758ae.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo namespace" Url="html/937f5d19-f47b-9a17-df9d-1c5a25923430.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart class" Url="html/2874f256-0227-33ad-9f40-f97ff7bac449.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.ArmorType enumeration" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.Weapon class" Url="html/caa10852-2bad-e988-95c5-d06796c382a2.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.WeaponType enumeration" Url="html/cda3cfac-6b6c-9325-cc81-be685bebe3a1.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common namespace" Url="html/e3a813c3-dfe5-39dc-9202-0682f8e7ced1.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.BonusValue class" Url="html/6e8d3a05-e83e-7b4a-0adc-568d78c9f8f2.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.Characteristics class" Url="html/9a82b618-fc41-0a04-a66c-7ac7c61d4e20.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.CoatOfArms class" Url="html/1f4f61a6-8ef3-85b8-bbe5-10a418f2baa9.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.CultureInformation class" Url="html/11c41104-3d10-e941-43dd-887afa0ef21f.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.DisAdvantage class" Url="html/7fb4ed6b-87a1-e189-7560-f67464433afb.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.ProfessionInformation class" Url="html/b6690848-2b26-77b2-c7a6-6fac95176b0a.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.RaceInformation class" Url="html/0a9c6221-eb78-98be-efe3-ae4badd701be.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums namespace" Url="html/083e6811-ada6-6214-e5e1-62ce79b7889a.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.AttributeType enumeration" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.DisAdvantageType enumeration" Url="html/474b1947-88b2-493f-51f9-598eb13cf0f5.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.Gender enumeration" Url="html/e567176f-42f8-8f8f-c801-ecb74f46740f.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo namespace" Url="html/17bee5ed-d0d0-e2e8-642b-1093cd20a93a.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo.Inventory class" Url="html/1aa3bff4-d34e-ab99-b1d7-8e33200f2015.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem class" Url="html/b51a945e-e7fa-a7a2-6fa7-f108707c03f5.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Roll namespace" Url="html/8789461b-0fc6-c061-d4d5-745f3b78ed5d.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Roll.RollAttributes class" Url="html/d644f938-69c0-367f-5288-17c6074a4685.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills namespace" Url="html/4addac04-b1ae-1816-d704-654c784dd046.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.Attribute class" Url="html/52ea0f70-f213-2d3b-ed84-83aa3773f030.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.BaseValue class" Url="html/e75e4d58-00a6-6f47-8f65-7f851b8b456e.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.CharacterAttributes class" Url="html/280d8841-5e75-cd5b-4ae1-a4a944c8ab13.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.Skill class" Url="html/53906d9c-65b4-1a4e-367f-610c6ac5771a.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.SpecialSkill class" Url="html/68b089a4-f311-4e4e-bd39-f0d5d6384ae0.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Template namespace" Url="html/4fe3f496-0df1-8e49-4e79-a660f04195df.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Template.DSATemplate class" Url="html/aaa24d1b-3437-4bb9-f211-6ff527c69454.htm" />
+  <HelpKINode Title="Disadvantage enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
+  <HelpKINode Title="DisAdvantage.DisAdvantage constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage__ctor.htm" />
+  <HelpKINode Title="DisAdvantage.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage_GetInformation.htm" />
+  <HelpKINode Title="DisAdvantage.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Name.htm" />
+  <HelpKINode Title="DisAdvantage.Specialization property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Specialization.htm" />
+  <HelpKINode Title="DisAdvantage.Type property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Type.htm" />
+  <HelpKINode Title="DisAdvantages property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_DisAdvantages.htm" />
+  <HelpKINode Title="DisAdvantageType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml namespace" Url="html/N_Drachenhorn_Xml.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.AdventurePoints class" Url="html/T_Drachenhorn_Xml_AdventurePoints.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.BindableBase class" Url="html/T_Drachenhorn_Xml_BindableBase.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation namespace" Url="html/N_Drachenhorn_Xml_Calculation.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation.CalculateEventArgs class" Url="html/T_Drachenhorn_Xml_Calculation_CalculateEventArgs.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation.CalculationValue class" Url="html/T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation.Formula class" Url="html/T_Drachenhorn_Xml_Calculation_Formula.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation.Formula.CalculateAllHandler delegate" Url="html/T_Drachenhorn_Xml_Calculation_Formula_CalculateAllHandler.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Calculation.IFormulaKeyItem interface" Url="html/T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.ChildChangedBase class" Url="html/T_Drachenhorn_Xml_ChildChangedBase.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Data.AP namespace" Url="html/N_Drachenhorn_Xml_Data_AP.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Data.AP.APColumn class" Url="html/T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Data.AP.APTable class" Url="html/T_Drachenhorn_Xml_Data_AP_APTable.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Exceptions namespace" Url="html/N_Drachenhorn_Xml_Exceptions.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetLoadingException class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetSavingException class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Interfaces namespace" Url="html/N_Drachenhorn_Xml_Interfaces.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Interfaces.IInfoObject interface" Url="html/T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Interfaces.INotifyChildChanged interface" Url="html/T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Objects namespace" Url="html/N_Drachenhorn_Xml_Objects.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Objects.DSADate class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Objects.DSAMonth enumeration" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Objects.DSAMonthExtensions class" Url="html/T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet namespace" Url="html/N_Drachenhorn_Xml_Sheet.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CharacterSheet class" Url="html/T_Drachenhorn_Xml_Sheet_CharacterSheet.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo namespace" Url="html/N_Drachenhorn_Xml_Sheet_CombatInfo.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.ArmorType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.Weapon class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.CombatInfo.WeaponType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common namespace" Url="html/N_Drachenhorn_Xml_Sheet_Common.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.BonusValue class" Url="html/T_Drachenhorn_Xml_Sheet_Common_BonusValue.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.Characteristics class" Url="html/T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.CoatOfArms class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CoatOfArms.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.CultureInformation class" Url="html/T_Drachenhorn_Xml_Sheet_Common_CultureInformation.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.DisAdvantage class" Url="html/T_Drachenhorn_Xml_Sheet_Common_DisAdvantage.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.ProfessionInformation class" Url="html/T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Common.RaceInformation class" Url="html/T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums namespace" Url="html/N_Drachenhorn_Xml_Sheet_Enums.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.AttributeType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.DisAdvantageType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Enums.Gender enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo namespace" Url="html/N_Drachenhorn_Xml_Sheet_InventoryInfo.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo.Inventory class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Roll namespace" Url="html/N_Drachenhorn_Xml_Sheet_Roll.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Roll.RollAttributes class" Url="html/T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills namespace" Url="html/N_Drachenhorn_Xml_Sheet_Skills.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.Attribute class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Attribute.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.BaseValue class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.CharacterAttributes class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.Skill class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.SpecialSkill class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template namespace" Url="html/N_Drachenhorn_Xml_Template.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template.DSATemplate class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm" />
   <HelpKINode Title="DSADate class">
-    <HelpKINode Title="DSADate Class" Url="html/c1c18283-74b5-39d1-2d4a-0562a026f10f.htm" />
-    <HelpKINode Title="constructor" Url="html/55236c85-4d80-22c0-e867-6cd99dfa9a91.htm" />
-    <HelpKINode Title="events" Url="html/3b67bfd8-446f-c2b3-0106-99b5402fc4ec.htm" />
-    <HelpKINode Title="methods" Url="html/8b735c2f-01d0-eda7-5821-cff5ce6f959b.htm" />
-    <HelpKINode Title="operators" Url="html/da45da78-bea8-cf1c-f33e-d77eb5b7d546.htm" />
-    <HelpKINode Title="properties" Url="html/f70588be-ca60-e30d-bba1-8be5eafe9b1f.htm" />
+    <HelpKINode Title="DSADate Class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Objects_DSADate.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSADate.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_Drachenhorn_Xml_Objects_DSADate.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Objects_DSADate.htm" />
   </HelpKINode>
-  <HelpKINode Title="DSADate.Add method" Url="html/59d0e981-5a11-8be8-44d1-8b17cdaeef20.htm" />
-  <HelpKINode Title="DSADate.AddDays method" Url="html/e918cb6d-7676-6ca3-6f7b-db89335097f3.htm" />
-  <HelpKINode Title="DSADate.Addition operator" Url="html/75e7f601-1df1-3dab-d7db-32bd9c02bfb3.htm" />
-  <HelpKINode Title="DSADate.AddMonths method" Url="html/f7529a37-1a9b-81fc-fcdb-6adfba0f5c94.htm" />
-  <HelpKINode Title="DSADate.AddYears method" Url="html/10bd8a4a-5dc1-57b5-95b7-16dee5b77837.htm" />
-  <HelpKINode Title="DSADate.CompareTo method" Url="html/52a35463-5b60-eb95-bcdb-30ba22c8abca.htm" />
-  <HelpKINode Title="DSADate.Day property" Url="html/aba39ad3-f508-f28a-56de-191c2cc8946b.htm" />
-  <HelpKINode Title="DSADate.DSADate constructor" Url="html/55236c85-4d80-22c0-e867-6cd99dfa9a91.htm" />
-  <HelpKINode Title="DSADate.Equals method" Url="html/0cd3ae3c-ad7b-a819-77df-4b3c3801d2be.htm" />
-  <HelpKINode Title="DSADate.GetHashCode method" Url="html/c1e4b6ba-cf95-b0d2-a9ea-d32d221dbd9e.htm" />
-  <HelpKINode Title="DSADate.GetObjectData method" Url="html/06162e51-0478-81c3-eceb-558bed1a1e8e.htm" />
-  <HelpKINode Title="DSADate.GreaterThan operator" Url="html/98741270-e873-c267-b820-6831cdec8cf0.htm" />
-  <HelpKINode Title="DSADate.LessThan operator" Url="html/2b8cac51-8155-b87b-4a7b-7523ad33a202.htm" />
-  <HelpKINode Title="DSADate.Month property" Url="html/2a9b728b-cbc5-b2a9-c78a-e1ffad53e5b5.htm" />
-  <HelpKINode Title="DSADate.Subtract method" Url="html/bd8e0778-3ec9-cbf0-7e18-0c9c00406941.htm" />
-  <HelpKINode Title="DSADate.SubtractDays method" Url="html/9f097ba2-739f-20cb-ce3d-56cf2478f584.htm" />
-  <HelpKINode Title="DSADate.Subtraction operator" Url="html/421206c9-201d-536c-1706-9e7dee4342e0.htm" />
-  <HelpKINode Title="DSADate.SubtractMonths method" Url="html/d7c1a641-0d9e-b6cd-0a0d-78408a0e1c9c.htm" />
-  <HelpKINode Title="DSADate.SubtractYears method" Url="html/c589419a-207a-ea94-6a2d-73b80ade87da.htm" />
-  <HelpKINode Title="DSADate.ToString method" Url="html/536de6d2-0d1a-e363-dcc8-5bd1bffdcaa9.htm" />
-  <HelpKINode Title="DSADate.Year property" Url="html/7bcfedce-a2c2-0490-f0be-8376a0826b6a.htm" />
-  <HelpKINode Title="DSAMonth enumeration" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="DSADate.Add method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Add.htm" />
+  <HelpKINode Title="DSADate.AddDays method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddDays.htm" />
+  <HelpKINode Title="DSADate.Addition operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm" />
+  <HelpKINode Title="DSADate.AddMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddMonths.htm" />
+  <HelpKINode Title="DSADate.AddYears method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddYears.htm" />
+  <HelpKINode Title="DSADate.CompareTo method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_CompareTo.htm" />
+  <HelpKINode Title="DSADate.Day property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Day.htm" />
+  <HelpKINode Title="DSADate.DSADate constructor" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate__ctor.htm" />
+  <HelpKINode Title="DSADate.Equals method" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_Equals.htm" />
+  <HelpKINode Title="DSADate.GetHashCode method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetHashCode.htm" />
+  <HelpKINode Title="DSADate.GetObjectData method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetObjectData.htm" />
+  <HelpKINode Title="DSADate.GreaterThan operator" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_GreaterThan.htm" />
+  <HelpKINode Title="DSADate.LessThan operator" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_LessThan.htm" />
+  <HelpKINode Title="DSADate.Month property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Month.htm" />
+  <HelpKINode Title="DSADate.Subtract method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Subtract.htm" />
+  <HelpKINode Title="DSADate.SubtractDays method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractDays.htm" />
+  <HelpKINode Title="DSADate.Subtraction operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm" />
+  <HelpKINode Title="DSADate.SubtractMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractMonths.htm" />
+  <HelpKINode Title="DSADate.SubtractYears method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractYears.htm" />
+  <HelpKINode Title="DSADate.ToString method" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_ToString.htm" />
+  <HelpKINode Title="DSADate.Year property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Year.htm" />
+  <HelpKINode Title="DSAMonth enumeration" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="DSAMonthExtensions class">
-    <HelpKINode Title="DSAMonthExtensions Class" Url="html/6f3f9f66-760e-b25d-6c76-c0d91d8f7961.htm" />
-    <HelpKINode Title="methods" Url="html/1dc1ac8c-15c6-b429-f174-968eedfb26c1.htm" />
+    <HelpKINode Title="DSAMonthExtensions Class" Url="html/T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="DSAMonthExtensions.GetAllowedDays method" Url="html/7ec8bd02-1ceb-6fdf-ae74-940d5175be33.htm" />
+  <HelpKINode Title="DSAMonthExtensions.GetAllowedDays method" Url="html/M_Drachenhorn_Xml_Objects_DSAMonthExtensions_GetAllowedDays.htm" />
   <HelpKINode Title="DSATemplate class">
-    <HelpKINode Title="DSATemplate Class" Url="html/aaa24d1b-3437-4bb9-f211-6ff527c69454.htm" />
-    <HelpKINode Title="constructor" Url="html/39eacd8b-fcdb-b154-2111-c80fce8db387.htm" />
-    <HelpKINode Title="events" Url="html/2bf48c12-99f4-96c4-cc0c-3ebeeebfe247.htm" />
-    <HelpKINode Title="fields" Url="html/d2217bde-627f-c957-3ad9-fece2d512817.htm" />
-    <HelpKINode Title="methods" Url="html/d2adac0a-e8d3-c34c-9479-af4b942743a1.htm" />
-    <HelpKINode Title="properties" Url="html/a1a2f62b-0e6d-03b0-8082-5174173ba5f2.htm" />
+    <HelpKINode Title="DSATemplate Class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Template_DSATemplate__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
   </HelpKINode>
-  <HelpKINode Title="DSATemplate.APTable property" Url="html/6d51f34c-79b8-a77b-0e22-da98b13f37cf.htm" />
-  <HelpKINode Title="DSATemplate.AvailableTemplates property" Url="html/02be5fdf-b25b-2706-b41d-3f27ebccd224.htm" />
-  <HelpKINode Title="DSATemplate.BaseDirectory property" Url="html/d7848464-3a80-6c6d-e91d-54cbf2b803a5.htm" />
-  <HelpKINode Title="DSATemplate.Cultures property" Url="html/bce438e1-8575-bf87-f7bb-e183013cbb61.htm" />
-  <HelpKINode Title="DSATemplate.DSATemplate constructor" Url="html/39eacd8b-fcdb-b154-2111-c80fce8db387.htm" />
-  <HelpKINode Title="DSATemplate.Extension field" Url="html/f482a549-36bc-6fc8-a7a2-796fd228ace1.htm" />
-  <HelpKINode Title="DSATemplate.FilePath property" Url="html/c91486f6-983e-233f-f606-ec57f46adcb4.htm" />
-  <HelpKINode Title="DSATemplate.HasChanged property" Url="html/381b4f68-b0dd-a388-bb09-da3d545e3807.htm" />
-  <HelpKINode Title="DSATemplate.Load method" Url="html/a9a3383c-f866-3d93-032e-8daebfaa03b6.htm" />
-  <HelpKINode Title="DSATemplate.Races property" Url="html/51fe9491-fd07-6023-43f7-60f2e53e9d34.htm" />
-  <HelpKINode Title="DSATemplate.Save method" Url="html/cb2d792f-5fb6-a3ae-f036-fba179a0f5fc.htm" />
-  <HelpKINode Title="Efferd enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Equals method" Url="html/0cd3ae3c-ad7b-a819-77df-4b3c3801d2be.htm" />
-  <HelpKINode Title="Expression property" Url="html/2864342d-8a60-5300-1b71-10f25b4f9719.htm" />
+  <HelpKINode Title="DSATemplate.APTable property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_APTable.htm" />
+  <HelpKINode Title="DSATemplate.AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_AvailableTemplates.htm" />
+  <HelpKINode Title="DSATemplate.BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_BaseDirectory.htm" />
+  <HelpKINode Title="DSATemplate.Cultures property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Cultures.htm" />
+  <HelpKINode Title="DSATemplate.DSATemplate constructor" Url="html/M_Drachenhorn_Xml_Template_DSATemplate__ctor.htm" />
+  <HelpKINode Title="DSATemplate.Extension field" Url="html/F_Drachenhorn_Xml_Template_DSATemplate_Extension.htm" />
+  <HelpKINode Title="DSATemplate.FilePath property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_FilePath.htm" />
+  <HelpKINode Title="DSATemplate.HasChanged property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_HasChanged.htm" />
+  <HelpKINode Title="DSATemplate.Load method" Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Load.htm" />
+  <HelpKINode Title="DSATemplate.Races property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Races.htm" />
+  <HelpKINode Title="DSATemplate.Save method" Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Save.htm" />
+  <HelpKINode Title="Efferd enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Equals method" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_Equals.htm" />
+  <HelpKINode Title="Expression property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_Expression.htm" />
   <HelpKINode Title="Extension field">
-    <HelpKINode Title="CharacterSheet.Extension Field" Url="html/0338eda9-95ab-9e13-c653-50b747aecd74.htm" />
-    <HelpKINode Title="DSATemplate.Extension Field" Url="html/f482a549-36bc-6fc8-a7a2-796fd228ace1.htm" />
+    <HelpKINode Title="CharacterSheet.Extension Field" Url="html/F_Drachenhorn_Xml_Sheet_CharacterSheet_Extension.htm" />
+    <HelpKINode Title="DSATemplate.Extension Field" Url="html/F_Drachenhorn_Xml_Template_DSATemplate_Extension.htm" />
   </HelpKINode>
-  <HelpKINode Title="EyeColor property" Url="html/b3c26bee-260a-3669-d724-93e7e847f9d9.htm" />
-  <HelpKINode Title="Factor property" Url="html/ef6f34e4-d1ce-4148-515a-51efb829673f.htm" />
-  <HelpKINode Title="Family property" Url="html/24a380bd-dce6-9654-a342-8c08ab9e0e1d.htm" />
-  <HelpKINode Title="Female enumeration member" Url="html/e567176f-42f8-8f8f-c801-ecb74f46740f.htm" />
+  <HelpKINode Title="EyeColor property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_EyeColor.htm" />
+  <HelpKINode Title="Factor property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Factor.htm" />
+  <HelpKINode Title="Family property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Family.htm" />
+  <HelpKINode Title="Female enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
   <HelpKINode Title="FilePath property">
-    <HelpKINode Title="CharacterSheet.FilePath Property " Url="html/211800e5-ce56-afe9-4755-a450b55c7cf0.htm" />
-    <HelpKINode Title="DSATemplate.FilePath Property " Url="html/c91486f6-983e-233f-f606-ec57f46adcb4.htm" />
+    <HelpKINode Title="CharacterSheet.FilePath Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_FilePath.htm" />
+    <HelpKINode Title="DSATemplate.FilePath Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_FilePath.htm" />
   </HelpKINode>
-  <HelpKINode Title="Finesse enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Finesse property" Url="html/0bf25950-fa0e-1297-ec87-634866159dec.htm" />
-  <HelpKINode Title="Firun enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="Finesse enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Finesse property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Finesse.htm" />
+  <HelpKINode Title="Firun enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Formula class">
-    <HelpKINode Title="Formula Class" Url="html/201aa6a6-544b-e8b2-69cb-7951c23aa7b1.htm" />
-    <HelpKINode Title="constructor" Url="html/63751d72-58f3-d0e3-d28c-3c47f9dbfaac.htm" />
-    <HelpKINode Title="events" Url="html/a86c4c3e-06e7-ba3a-1b31-b325cc62ab49.htm" />
-    <HelpKINode Title="methods" Url="html/2ac4ed38-f014-2629-2293-ca056cf28922.htm" />
-    <HelpKINode Title="properties" Url="html/435e34aa-5458-462e-b04c-d76aa0424267.htm" />
+    <HelpKINode Title="Formula Class" Url="html/T_Drachenhorn_Xml_Calculation_Formula.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Calculation_Formula__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Calculation_Formula.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Calculation_Formula.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_Formula.htm" />
   </HelpKINode>
-  <HelpKINode Title="Formula property" Url="html/b208f732-dc66-8b26-5bf2-89d790d0c20f.htm" />
-  <HelpKINode Title="Formula.Calculate method" Url="html/4953f5f6-9c7f-3a44-781f-7cca4bb8bb32.htm" />
-  <HelpKINode Title="Formula.CalculateAllHandler delegate" Url="html/ce77c5b9-36fe-b662-b194-63cdeb0827f0.htm" />
-  <HelpKINode Title="Formula.CalculateAsync method" Url="html/983f961d-7c8c-1266-030d-a95141553bf9.htm" />
-  <HelpKINode Title="Formula.CurrentSheet property" Url="html/e5e18741-066a-e029-9713-430152686008.htm" />
-  <HelpKINode Title="Formula.Expression property" Url="html/2864342d-8a60-5300-1b71-10f25b4f9719.htm" />
-  <HelpKINode Title="Formula.Formula constructor" Url="html/63751d72-58f3-d0e3-d28c-3c47f9dbfaac.htm" />
-  <HelpKINode Title="Formula.IsValid property" Url="html/8290e660-b3b4-a376-78c4-46c7844189dd.htm" />
-  <HelpKINode Title="Formula.OnCalculateAll event" Url="html/edfc1835-5ec3-24a5-1a7d-a120fc928125.htm" />
-  <HelpKINode Title="Formula.ParentSheet property" Url="html/5ecbb13c-708f-5b0a-cf40-09dcab2697c0.htm" />
-  <HelpKINode Title="Formula.RaiseCalculateAll method" Url="html/a1a548cd-2b56-828a-fe9c-fb5c8724794a.htm" />
-  <HelpKINode Title="Formula.ValidationMessage property" Url="html/e702dd5f-ed12-dbee-d3d7-01905fc52faa.htm" />
-  <HelpKINode Title="FormulaText property" Url="html/dd125286-5be8-d9a4-a290-0a2fdf79dece.htm" />
-  <HelpKINode Title="Gender enumeration" Url="html/e567176f-42f8-8f8f-c801-ecb74f46740f.htm" />
-  <HelpKINode Title="Gender property" Url="html/b69543b1-19a7-6e42-0aca-e5034e50b8cf.htm" />
-  <HelpKINode Title="GetAllowedDays method" Url="html/7ec8bd02-1ceb-6fdf-ae74-940d5175be33.htm" />
-  <HelpKINode Title="GetHashCode method" Url="html/c1e4b6ba-cf95-b0d2-a9ea-d32d221dbd9e.htm" />
+  <HelpKINode Title="Formula property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Formula.htm" />
+  <HelpKINode Title="Formula.Calculate method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_Calculate.htm" />
+  <HelpKINode Title="Formula.CalculateAllHandler delegate" Url="html/T_Drachenhorn_Xml_Calculation_Formula_CalculateAllHandler.htm" />
+  <HelpKINode Title="Formula.CalculateAsync method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_CalculateAsync.htm" />
+  <HelpKINode Title="Formula.CurrentSheet property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_CurrentSheet.htm" />
+  <HelpKINode Title="Formula.Expression property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_Expression.htm" />
+  <HelpKINode Title="Formula.Formula constructor" Url="html/M_Drachenhorn_Xml_Calculation_Formula__ctor.htm" />
+  <HelpKINode Title="Formula.IsValid property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_IsValid.htm" />
+  <HelpKINode Title="Formula.OnCalculateAll event" Url="html/E_Drachenhorn_Xml_Calculation_Formula_OnCalculateAll.htm" />
+  <HelpKINode Title="Formula.ParentSheet property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_ParentSheet.htm" />
+  <HelpKINode Title="Formula.RaiseCalculateAll method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_RaiseCalculateAll.htm" />
+  <HelpKINode Title="Formula.ValidationMessage property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_ValidationMessage.htm" />
+  <HelpKINode Title="FormulaText property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_FormulaText.htm" />
+  <HelpKINode Title="Gender enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
+  <HelpKINode Title="Gender property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Gender.htm" />
+  <HelpKINode Title="GetAllowedDays method" Url="html/M_Drachenhorn_Xml_Objects_DSAMonthExtensions_GetAllowedDays.htm" />
+  <HelpKINode Title="GetHashCode method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetHashCode.htm" />
   <HelpKINode Title="GetInformation method">
-    <HelpKINode Title="Attribute.GetInformation Method " Url="html/78926070-7a70-1146-17ec-157750fdeb60.htm" />
-    <HelpKINode Title="BaseValue.GetInformation Method " Url="html/f3299c84-a2dc-101e-0461-847cfed174e6.htm" />
-    <HelpKINode Title="CalculationValue.GetInformation Method " Url="html/1eb855c4-6c28-f7f2-4501-0c8d6d85608b.htm" />
-    <HelpKINode Title="CultureInformation.GetInformation Method " Url="html/ab770f6f-3d40-cae0-dbd2-a7cfcd474d4c.htm" />
-    <HelpKINode Title="DisAdvantage.GetInformation Method " Url="html/476978fb-e159-afb9-1175-7bfc409a34c8.htm" />
-    <HelpKINode Title="IInfoObject.GetInformation Method " Url="html/922913fc-153a-286c-e1f0-dc032a480ee7.htm" />
-    <HelpKINode Title="ProfessionInformation.GetInformation Method " Url="html/fb3bf6c4-3657-a208-f3ff-ed3e816becbd.htm" />
-    <HelpKINode Title="RaceInformation.GetInformation Method " Url="html/d05f0187-495c-6958-1bb1-8648deef122e.htm" />
-    <HelpKINode Title="Skill.GetInformation Method " Url="html/d811a186-73e6-909d-709a-e13c5dacacea.htm" />
-    <HelpKINode Title="SpecialSkill.GetInformation Method " Url="html/a1ec36d7-6d65-da97-f8c0-fa8f95095887.htm" />
+    <HelpKINode Title="Attribute.GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm" />
+    <HelpKINode Title="BaseValue.GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm" />
+    <HelpKINode Title="CalculationValue.GetInformation Method " Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue_GetInformation.htm" />
+    <HelpKINode Title="CultureInformation.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation_GetInformation.htm" />
+    <HelpKINode Title="DisAdvantage.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_DisAdvantage_GetInformation.htm" />
+    <HelpKINode Title="IInfoObject.GetInformation Method " Url="html/M_Drachenhorn_Xml_Interfaces_IInfoObject_GetInformation.htm" />
+    <HelpKINode Title="ProfessionInformation.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GetInformation.htm" />
+    <HelpKINode Title="RaceInformation.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
+    <HelpKINode Title="Skill.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
+    <HelpKINode Title="SpecialSkill.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
   </HelpKINode>
-  <HelpKINode Title="GetObjectData method" Url="html/06162e51-0478-81c3-eceb-558bed1a1e8e.htm" />
-  <HelpKINode Title="GetWholeWeight method" Url="html/f2ccca46-013d-4004-649a-2b7bd2945ed3.htm" />
-  <HelpKINode Title="GpBase property" Url="html/f5d14c71-2f83-798d-0749-e3c44c2383d4.htm" />
-  <HelpKINode Title="GpCost property" Url="html/758e85f9-e596-e2ec-1281-3b7115c4ede5.htm" />
-  <HelpKINode Title="GreaterThan operator" Url="html/98741270-e873-c267-b820-6831cdec8cf0.htm" />
-  <HelpKINode Title="HairColor property" Url="html/100280de-f55b-a29a-2ed4-00967b14a5c4.htm" />
+  <HelpKINode Title="GetObjectData method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetObjectData.htm" />
+  <HelpKINode Title="GetWholeWeight method" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_GetWholeWeight.htm" />
+  <HelpKINode Title="GpBase property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_GpBase.htm" />
+  <HelpKINode Title="GpCost property" Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GpCost.htm" />
+  <HelpKINode Title="GreaterThan operator" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_GreaterThan.htm" />
+  <HelpKINode Title="HairColor property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_HairColor.htm" />
   <HelpKINode Title="Handicap property">
-    <HelpKINode Title="ArmorPart.Handicap Property " Url="html/1947824f-0267-8d97-945e-8dd587ab90b2.htm" />
-    <HelpKINode Title="Weapon.Handicap Property " Url="html/3f51584c-c8bc-ad7c-7104-704c957e2362.htm" />
+    <HelpKINode Title="ArmorPart.Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Handicap.htm" />
+    <HelpKINode Title="Weapon.Handicap Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Handicap.htm" />
   </HelpKINode>
-  <HelpKINode Title="Hands enumeration member" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
+  <HelpKINode Title="Hands enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
   <HelpKINode Title="HasChanged property">
-    <HelpKINode Title="CharacterSheet.HasChanged Property " Url="html/75f59c2e-5091-79ee-75ff-f25c76bd0936.htm" />
-    <HelpKINode Title="DSATemplate.HasChanged Property " Url="html/381b4f68-b0dd-a388-bb09-da3d545e3807.htm" />
+    <HelpKINode Title="CharacterSheet.HasChanged Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_HasChanged.htm" />
+    <HelpKINode Title="DSATemplate.HasChanged Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_HasChanged.htm" />
   </HelpKINode>
-  <HelpKINode Title="Head enumeration member" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
-  <HelpKINode Title="Height property" Url="html/c1330a89-3e1a-3dd2-e071-925870670b7f.htm" />
-  <HelpKINode Title="Hesinde enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="Head enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
+  <HelpKINode Title="Height property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Height.htm" />
+  <HelpKINode Title="Hesinde enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="IFormulaKeyItem interface">
-    <HelpKINode Title="IFormulaKeyItem Interface" Url="html/ac4b5389-5b78-ad2f-7ffb-25eac63a1dfd.htm" />
-    <HelpKINode Title="properties" Url="html/44919e58-a07f-8b97-bbec-7fb4c9482ea8.htm" />
+    <HelpKINode Title="IFormulaKeyItem Interface" Url="html/T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_IFormulaKeyItem.htm" />
   </HelpKINode>
-  <HelpKINode Title="IFormulaKeyItem.Key property" Url="html/c478cb42-7a27-b591-deb8-a9eda685dd6b.htm" />
-  <HelpKINode Title="IFormulaKeyItem.Value property" Url="html/5b39c14b-4ae8-bdb7-590d-4c199a11ea46.htm" />
+  <HelpKINode Title="IFormulaKeyItem.Key property" Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Key.htm" />
+  <HelpKINode Title="IFormulaKeyItem.Value property" Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Value.htm" />
   <HelpKINode Title="IInfoObject interface">
-    <HelpKINode Title="IInfoObject Interface" Url="html/f4ccb296-3b37-0ae5-357f-62c6b6f2deb7.htm" />
-    <HelpKINode Title="events" Url="html/d94222c9-7730-fcf2-3473-429ba001540f.htm" />
-    <HelpKINode Title="methods" Url="html/3e3934c6-514c-a6d5-ced0-0c84aa6645d9.htm" />
+    <HelpKINode Title="IInfoObject Interface" Url="html/T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
   </HelpKINode>
-  <HelpKINode Title="IInfoObject.GetInformation method" Url="html/922913fc-153a-286c-e1f0-dc032a480ee7.htm" />
-  <HelpKINode Title="Ingerimm enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="IInfoObject.GetInformation method" Url="html/M_Drachenhorn_Xml_Interfaces_IInfoObject_GetInformation.htm" />
+  <HelpKINode Title="Ingerimm enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="INotifyChildChanged interface">
-    <HelpKINode Title="INotifyChildChanged Interface" Url="html/c358f118-5e15-2b5b-460d-f319b4f4da39.htm" />
-    <HelpKINode Title="events" Url="html/29ede472-6530-855b-232d-1dc844fde126.htm" />
+    <HelpKINode Title="INotifyChildChanged Interface" Url="html/T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm" />
   </HelpKINode>
-  <HelpKINode Title="INotifyChildChanged.ChildChanged event" Url="html/a102dd98-b9dd-4036-eb9f-2d69367a1d5b.htm" />
-  <HelpKINode Title="Intuition enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Intuition property" Url="html/6e948346-934a-9c4b-e145-150a930ffeef.htm" />
+  <HelpKINode Title="INotifyChildChanged.ChildChanged event" Url="html/E_Drachenhorn_Xml_Interfaces_INotifyChildChanged_ChildChanged.htm" />
+  <HelpKINode Title="Intuition enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Intuition property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Intuition.htm" />
   <HelpKINode Title="Inventory class">
-    <HelpKINode Title="Inventory Class" Url="html/1aa3bff4-d34e-ab99-b1d7-8e33200f2015.htm" />
-    <HelpKINode Title="constructor" Url="html/f54f48ae-fc39-25fa-e2f2-b8d188a8ecc5.htm" />
-    <HelpKINode Title="events" Url="html/6db27027-3981-0234-aeed-91937c1d40ab.htm" />
-    <HelpKINode Title="methods" Url="html/284a09a8-054f-dc8f-5443-68d7331457d9.htm" />
-    <HelpKINode Title="properties" Url="html/26751e03-be9a-3caf-e3bf-b02b424ef581.htm" />
+    <HelpKINode Title="Inventory Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory.htm" />
   </HelpKINode>
-  <HelpKINode Title="Inventory property" Url="html/d53d3613-8723-b1f7-3579-8d351846b720.htm" />
-  <HelpKINode Title="Inventory.GetWholeWeight method" Url="html/f2ccca46-013d-4004-649a-2b7bd2945ed3.htm" />
-  <HelpKINode Title="Inventory.Inventory constructor" Url="html/f54f48ae-fc39-25fa-e2f2-b8d188a8ecc5.htm" />
-  <HelpKINode Title="Inventory.Items property" Url="html/6dfa81af-b09b-a87f-4182-6597b3fecd86.htm" />
+  <HelpKINode Title="Inventory property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Inventory.htm" />
+  <HelpKINode Title="Inventory.GetWholeWeight method" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_GetWholeWeight.htm" />
+  <HelpKINode Title="Inventory.Inventory constructor" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory__ctor.htm" />
+  <HelpKINode Title="Inventory.Items property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_Items.htm" />
   <HelpKINode Title="InventoryItem class">
-    <HelpKINode Title="InventoryItem Class" Url="html/b51a945e-e7fa-a7a2-6fa7-f108707c03f5.htm" />
-    <HelpKINode Title="constructor" Url="html/a08328b5-a68d-6ad0-d846-0716f714c9f8.htm" />
-    <HelpKINode Title="events" Url="html/bf36fe5b-877b-5b1a-47c3-9aee8b34504b.htm" />
-    <HelpKINode Title="methods" Url="html/44cd9ad8-1ce4-3597-0e4c-164ba3d91eb4.htm" />
-    <HelpKINode Title="properties" Url="html/3fa046f5-8148-e3e7-9575-5dd50c42364e.htm" />
+    <HelpKINode Title="InventoryItem Class" Url="html/T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem.htm" />
   </HelpKINode>
-  <HelpKINode Title="InventoryItem.InventoryItem constructor" Url="html/a08328b5-a68d-6ad0-d846-0716f714c9f8.htm" />
-  <HelpKINode Title="InventoryItem.Name property" Url="html/46e81bf5-c5bf-e3fd-5911-45359a81f56a.htm" />
-  <HelpKINode Title="InventoryItem.StoragePlace property" Url="html/3fefb9bb-e148-068c-17bb-ed6817100bf6.htm" />
-  <HelpKINode Title="InventoryItem.Weight property" Url="html/7c3aacfd-03d2-b3ba-a54e-b373960d1e15.htm" />
-  <HelpKINode Title="IsActive property" Url="html/16c7557b-da93-0cb6-a745-9720b28afa0d.htm" />
-  <HelpKINode Title="IsValid property" Url="html/8290e660-b3b4-a376-78c4-46c7844189dd.htm" />
-  <HelpKINode Title="Item property" Url="html/d9f89aeb-5cfe-cbca-6672-9b9ab0201daf.htm" />
-  <HelpKINode Title="Items property" Url="html/6dfa81af-b09b-a87f-4182-6597b3fecd86.htm" />
+  <HelpKINode Title="InventoryItem.InventoryItem constructor" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem__ctor.htm" />
+  <HelpKINode Title="InventoryItem.Name property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Name.htm" />
+  <HelpKINode Title="InventoryItem.StoragePlace property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
+  <HelpKINode Title="InventoryItem.Weight property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Weight.htm" />
+  <HelpKINode Title="IsActive property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_IsActive.htm" />
+  <HelpKINode Title="IsValid property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_IsValid.htm" />
+  <HelpKINode Title="Item property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_Item.htm" />
+  <HelpKINode Title="Items property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_Items.htm" />
   <HelpKINode Title="Key property">
-    <HelpKINode Title="Attribute.Key Property " Url="html/8e3f3dc5-a321-fe7e-2c9a-7cc2ba6b6d62.htm" />
-    <HelpKINode Title="BaseValue.Key Property " Url="html/aab0ce2c-34b8-6624-b36a-63220b436f70.htm" />
-    <HelpKINode Title="BonusValue.Key Property " Url="html/d67a5a6b-bc8d-9384-e69f-d27ab06f48e8.htm" />
-    <HelpKINode Title="IFormulaKeyItem.Key Property " Url="html/c478cb42-7a27-b591-deb8-a9eda685dd6b.htm" />
+    <HelpKINode Title="Attribute.Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Key.htm" />
+    <HelpKINode Title="BaseValue.Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Key.htm" />
+    <HelpKINode Title="BonusValue.Key Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Key.htm" />
+    <HelpKINode Title="IFormulaKeyItem.Key Property " Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Key.htm" />
   </HelpKINode>
-  <HelpKINode Title="Legs enumeration member" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
-  <HelpKINode Title="LessThan operator" Url="html/2b8cac51-8155-b87b-4a7b-7523ad33a202.htm" />
+  <HelpKINode Title="Legs enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
+  <HelpKINode Title="LessThan operator" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_LessThan.htm" />
   <HelpKINode Title="Load method">
-    <HelpKINode Title="CharacterSheet.Load Method " Url="html/f685a2bd-b36d-f519-4c08-f52d2977c736.htm" />
-    <HelpKINode Title="DSATemplate.Load Method " Url="html/a9a3383c-f866-3d93-032e-8daebfaa03b6.htm" />
+    <HelpKINode Title="CharacterSheet.Load Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Load.htm" />
+    <HelpKINode Title="DSATemplate.Load Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Load.htm" />
   </HelpKINode>
-  <HelpKINode Title="Male enumeration member" Url="html/e567176f-42f8-8f8f-c801-ecb74f46740f.htm" />
-  <HelpKINode Title="Melee enumeration member" Url="html/cda3cfac-6b6c-9325-cc81-be685bebe3a1.htm" />
-  <HelpKINode Title="Modifier property" Url="html/ca15bad0-ae05-1d48-aea3-b34d09ac1b5f.htm" />
-  <HelpKINode Title="Month property" Url="html/2a9b728b-cbc5-b2a9-c78a-e1ffad53e5b5.htm" />
+  <HelpKINode Title="Male enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
+  <HelpKINode Title="Melee enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
+  <HelpKINode Title="Modifier property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Modifier.htm" />
+  <HelpKINode Title="Month property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Month.htm" />
   <HelpKINode Title="Name property">
-    <HelpKINode Title="APColumn.Name Property " Url="html/e27b0783-bb0b-ab39-e526-653ee499774f.htm" />
-    <HelpKINode Title="Attribute.Name Property " Url="html/1b33bd2c-37ff-849b-55c3-45589d3f15e1.htm" />
-    <HelpKINode Title="BaseValue.Name Property " Url="html/a4382753-6ff8-bef0-2079-47c2966aba2c.htm" />
-    <HelpKINode Title="BonusValue.Name Property " Url="html/91bf7fa5-7341-d299-7a86-70dc3d83283f.htm" />
-    <HelpKINode Title="Characteristics.Name Property " Url="html/09c9851e-c94c-bf8d-4f33-5c35b0984c8d.htm" />
-    <HelpKINode Title="CultureInformation.Name Property " Url="html/678b1a75-d1d0-89a4-ed80-298f60ae1c7c.htm" />
-    <HelpKINode Title="DisAdvantage.Name Property " Url="html/e322e770-df2c-8efe-4491-36c603571f56.htm" />
-    <HelpKINode Title="InventoryItem.Name Property " Url="html/46e81bf5-c5bf-e3fd-5911-45359a81f56a.htm" />
-    <HelpKINode Title="ProfessionInformation.Name Property " Url="html/8fa09d45-71fd-1586-1f5c-54ad1fc3d8da.htm" />
-    <HelpKINode Title="RaceInformation.Name Property " Url="html/dc3a5908-4c9d-aee2-7237-c082404aaa75.htm" />
-    <HelpKINode Title="Skill.Name Property " Url="html/3c3781db-991f-d6bb-7096-3768e45e84c8.htm" />
-    <HelpKINode Title="SpecialSkill.Name Property " Url="html/3c6ab16b-d48a-dcd7-cfd2-32554964229b.htm" />
+    <HelpKINode Title="APColumn.Name Property " Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Name.htm" />
+    <HelpKINode Title="Attribute.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Name.htm" />
+    <HelpKINode Title="BaseValue.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Name.htm" />
+    <HelpKINode Title="BonusValue.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Name.htm" />
+    <HelpKINode Title="Characteristics.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Name.htm" />
+    <HelpKINode Title="CultureInformation.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Name.htm" />
+    <HelpKINode Title="DisAdvantage.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Name.htm" />
+    <HelpKINode Title="InventoryItem.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Name.htm" />
+    <HelpKINode Title="ProfessionInformation.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Name.htm" />
+    <HelpKINode Title="RaceInformation.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
+    <HelpKINode Title="Skill.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
+    <HelpKINode Title="SpecialSkill.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
   </HelpKINode>
-  <HelpKINode Title="Nameless enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Negative property" Url="html/6d4fc5f3-efd8-cc6e-66d1-da728a2dec19.htm" />
+  <HelpKINode Title="Nameless enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Negative property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Negative.htm" />
   <HelpKINode Title="None enumeration member">
-    <HelpKINode Title="ArmorType Enumeration" Url="html/c2553782-3f8a-2a48-ffa4-80b755abec66.htm" />
-    <HelpKINode Title="AttributeType Enumeration" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-    <HelpKINode Title="Gender Enumeration" Url="html/e567176f-42f8-8f8f-c801-ecb74f46740f.htm" />
-    <HelpKINode Title="WeaponType Enumeration" Url="html/cda3cfac-6b6c-9325-cc81-be685bebe3a1.htm" />
+    <HelpKINode Title="ArmorType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
+    <HelpKINode Title="AttributeType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+    <HelpKINode Title="Gender Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
+    <HelpKINode Title="WeaponType Enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
   </HelpKINode>
-  <HelpKINode Title="OnCalculateAll event" Url="html/edfc1835-5ec3-24a5-1a7d-a120fc928125.htm" />
-  <HelpKINode Title="OnChildChanged method" Url="html/9ce46c4d-7824-ff65-5648-21c8b382d224.htm" />
-  <HelpKINode Title="OnPropertyChanged method" Url="html/bcb7093d-2b5b-1ef0-8885-a4570b1b0f4e.htm" />
-  <HelpKINode Title="Other property" Url="html/fac099d5-0049-9e8e-a52d-e4535aa17d5d.htm" />
-  <HelpKINode Title="ParentSheet property" Url="html/5ecbb13c-708f-5b0a-cf40-09dcab2697c0.htm" />
+  <HelpKINode Title="OnCalculateAll event" Url="html/E_Drachenhorn_Xml_Calculation_Formula_OnCalculateAll.htm" />
+  <HelpKINode Title="OnChildChanged method" Url="html/Overload_Drachenhorn_Xml_ChildChangedBase_OnChildChanged.htm" />
+  <HelpKINode Title="OnPropertyChanged method" Url="html/M_Drachenhorn_Xml_BindableBase_OnPropertyChanged.htm" />
+  <HelpKINode Title="Other property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Other.htm" />
+  <HelpKINode Title="ParentSheet property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_ParentSheet.htm" />
   <HelpKINode Title="Path property">
-    <HelpKINode Title="SheetLoadingException.Path Property " Url="html/b3b3e2b9-45de-bbcc-9b5f-3ffce469372f.htm" />
-    <HelpKINode Title="SheetSavingException.Path Property " Url="html/86be6eae-add9-f94d-5bac-37fa7db3492a.htm" />
+    <HelpKINode Title="SheetLoadingException.Path Property " Url="html/P_Drachenhorn_Xml_Exceptions_SheetLoadingException_Path.htm" />
+    <HelpKINode Title="SheetSavingException.Path Property " Url="html/P_Drachenhorn_Xml_Exceptions_SheetSavingException_Path.htm" />
   </HelpKINode>
-  <HelpKINode Title="Peraine enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Phex enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="PhysicalStrength enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="PhysicalStrength property" Url="html/ca973fda-f568-3f1d-f147-71718a32e01b.htm" />
-  <HelpKINode Title="PlaceOfBirth property" Url="html/7e6454b4-a24f-490e-c7a1-ca84e480eafd.htm" />
-  <HelpKINode Title="Praios enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Prestidigitation enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Prestidigitation property" Url="html/e0501773-cde1-c023-0351-83c719d7a7af.htm" />
-  <HelpKINode Title="Profession property" Url="html/f067776b-6703-2b6c-9144-4dfc4abf06ae.htm" />
+  <HelpKINode Title="Peraine enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Phex enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="PhysicalStrength enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="PhysicalStrength property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_PhysicalStrength.htm" />
+  <HelpKINode Title="PlaceOfBirth property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_PlaceOfBirth.htm" />
+  <HelpKINode Title="Praios enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Prestidigitation enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Prestidigitation property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Prestidigitation.htm" />
+  <HelpKINode Title="Profession property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Profession.htm" />
   <HelpKINode Title="ProfessionInformation class">
-    <HelpKINode Title="ProfessionInformation Class" Url="html/b6690848-2b26-77b2-c7a6-6fac95176b0a.htm" />
-    <HelpKINode Title="constructor" Url="html/8c88080c-ceea-ae15-9060-9114a8408a07.htm" />
-    <HelpKINode Title="events" Url="html/0bb27235-6b0b-d55c-f8f8-da8769bb53c0.htm" />
-    <HelpKINode Title="methods" Url="html/297a7a1f-efa0-eb70-b9b1-ef463dac3249.htm" />
-    <HelpKINode Title="properties" Url="html/3ad8a563-f34a-1886-d377-4e3f8ba2a1c6.htm" />
+    <HelpKINode Title="ProfessionInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_ProfessionInformation.htm" />
   </HelpKINode>
-  <HelpKINode Title="ProfessionInformation.Description property" Url="html/02266fe9-c23b-0001-97a8-1212d684eb9e.htm" />
-  <HelpKINode Title="ProfessionInformation.GetInformation method" Url="html/fb3bf6c4-3657-a208-f3ff-ed3e816becbd.htm" />
-  <HelpKINode Title="ProfessionInformation.GpCost property" Url="html/758e85f9-e596-e2ec-1281-3b7115c4ede5.htm" />
-  <HelpKINode Title="ProfessionInformation.Name property" Url="html/8fa09d45-71fd-1586-1f5c-54ad1fc3d8da.htm" />
-  <HelpKINode Title="ProfessionInformation.ProfessionInformation constructor" Url="html/8c88080c-ceea-ae15-9060-9114a8408a07.htm" />
-  <HelpKINode Title="PropertyChanged event" Url="html/633028ad-bb3f-9045-5c50-313e6c2be9d8.htm" />
-  <HelpKINode Title="Race property" Url="html/7ef35623-1db0-7f44-4b5c-45e9e81ea3db.htm" />
+  <HelpKINode Title="ProfessionInformation.Description property" Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Description.htm" />
+  <HelpKINode Title="ProfessionInformation.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GetInformation.htm" />
+  <HelpKINode Title="ProfessionInformation.GpCost property" Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GpCost.htm" />
+  <HelpKINode Title="ProfessionInformation.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_Name.htm" />
+  <HelpKINode Title="ProfessionInformation.ProfessionInformation constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation__ctor.htm" />
+  <HelpKINode Title="PropertyChanged event" Url="html/E_Drachenhorn_Xml_BindableBase_PropertyChanged.htm" />
+  <HelpKINode Title="Race property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Race.htm" />
   <HelpKINode Title="RaceInformation class">
-    <HelpKINode Title="RaceInformation Class" Url="html/0a9c6221-eb78-98be-efe3-ae4badd701be.htm" />
-    <HelpKINode Title="constructor" Url="html/55fe98e3-6177-19a2-c67d-b3f6c9b4f04f.htm" />
-    <HelpKINode Title="events" Url="html/b0756def-c3c1-6ea5-6939-35ec4cefd543.htm" />
-    <HelpKINode Title="methods" Url="html/3acd7abc-4968-d6fc-6bf4-21ced006e312.htm" />
-    <HelpKINode Title="properties" Url="html/907f8982-8f07-6685-65fa-97c06e3f3b47.htm" />
+    <HelpKINode Title="RaceInformation Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Common_RaceInformation.htm" />
   </HelpKINode>
-  <HelpKINode Title="RaceInformation.BaseValues property" Url="html/9d439485-19cf-ee3b-0dcd-232d8cd43433.htm" />
-  <HelpKINode Title="RaceInformation.Description property" Url="html/c5c61236-12af-fdd9-fa78-fa2275a4bd4c.htm" />
-  <HelpKINode Title="RaceInformation.GetInformation method" Url="html/d05f0187-495c-6958-1bb1-8648deef122e.htm" />
-  <HelpKINode Title="RaceInformation.Name property" Url="html/dc3a5908-4c9d-aee2-7237-c082404aaa75.htm" />
-  <HelpKINode Title="RaceInformation.RaceInformation constructor" Url="html/55fe98e3-6177-19a2-c67d-b3f6c9b4f04f.htm" />
-  <HelpKINode Title="Races property" Url="html/51fe9491-fd07-6023-43f7-60f2e53e9d34.htm" />
-  <HelpKINode Title="Rahja enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="RaiseCalculateAll method" Url="html/a1a548cd-2b56-828a-fe9c-fb5c8724794a.htm" />
-  <HelpKINode Title="Ranged enumeration member" Url="html/cda3cfac-6b6c-9325-cc81-be685bebe3a1.htm" />
-  <HelpKINode Title="Roll1 property" Url="html/c8e970f4-139f-9f73-17e0-866c92f64f0d.htm" />
-  <HelpKINode Title="Roll2 property" Url="html/7fd02fe4-ebd9-76ef-fe65-9b9797cd47dc.htm" />
-  <HelpKINode Title="Roll3 property" Url="html/1ac02ddc-9086-01c5-e6ce-5a94fa28ecfe.htm" />
+  <HelpKINode Title="RaceInformation.BaseValues property" Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_BaseValues.htm" />
+  <HelpKINode Title="RaceInformation.Description property" Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Description.htm" />
+  <HelpKINode Title="RaceInformation.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
+  <HelpKINode Title="RaceInformation.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
+  <HelpKINode Title="RaceInformation.RaceInformation constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation__ctor.htm" />
+  <HelpKINode Title="Races property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Races.htm" />
+  <HelpKINode Title="Rahja enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="RaiseCalculateAll method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_RaiseCalculateAll.htm" />
+  <HelpKINode Title="Ranged enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
+  <HelpKINode Title="Roll1 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll1.htm" />
+  <HelpKINode Title="Roll2 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll2.htm" />
+  <HelpKINode Title="Roll3 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll3.htm" />
   <HelpKINode Title="RollAttributes class">
-    <HelpKINode Title="RollAttributes Class" Url="html/d644f938-69c0-367f-5288-17c6074a4685.htm" />
-    <HelpKINode Title="constructor" Url="html/69c67ddd-128a-a676-d0be-81c37833d1bb.htm" />
-    <HelpKINode Title="events" Url="html/6f8e5b2d-0f17-48f9-467f-e712113d9773.htm" />
-    <HelpKINode Title="methods" Url="html/3666c59f-d686-3d71-6c2f-956df8f005b9.htm" />
-    <HelpKINode Title="properties" Url="html/742dc85a-e271-eec9-6825-217994f23fda.htm" />
+    <HelpKINode Title="RollAttributes Class" Url="html/T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Roll_RollAttributes.htm" />
   </HelpKINode>
-  <HelpKINode Title="RollAttributes property" Url="html/ca9df0f3-0735-78be-f8e3-6768c9dff3f0.htm" />
-  <HelpKINode Title="RollAttributes.Roll1 property" Url="html/c8e970f4-139f-9f73-17e0-866c92f64f0d.htm" />
-  <HelpKINode Title="RollAttributes.Roll2 property" Url="html/7fd02fe4-ebd9-76ef-fe65-9b9797cd47dc.htm" />
-  <HelpKINode Title="RollAttributes.Roll3 property" Url="html/1ac02ddc-9086-01c5-e6ce-5a94fa28ecfe.htm" />
-  <HelpKINode Title="RollAttributes.RollAttributes constructor" Url="html/69c67ddd-128a-a676-d0be-81c37833d1bb.htm" />
-  <HelpKINode Title="RollAttributes.ToString method" Url="html/f10fe008-2903-acbb-1a30-45422663c7e6.htm" />
-  <HelpKINode Title="Rondra enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="RollAttributes property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_RollAttributes.htm" />
+  <HelpKINode Title="RollAttributes.Roll1 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll1.htm" />
+  <HelpKINode Title="RollAttributes.Roll2 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll2.htm" />
+  <HelpKINode Title="RollAttributes.Roll3 property" Url="html/P_Drachenhorn_Xml_Sheet_Roll_RollAttributes_Roll3.htm" />
+  <HelpKINode Title="RollAttributes.RollAttributes constructor" Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes__ctor.htm" />
+  <HelpKINode Title="RollAttributes.ToString method" Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm" />
+  <HelpKINode Title="Rondra enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Save method">
-    <HelpKINode Title="CharacterSheet.Save Method " Url="html/ff124f79-32ec-636c-edb6-53c981a1e155.htm" />
-    <HelpKINode Title="DSATemplate.Save Method " Url="html/cb2d792f-5fb6-a3ae-f036-fba179a0f5fc.htm" />
+    <HelpKINode Title="CharacterSheet.Save Method " Url="html/Overload_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm" />
+    <HelpKINode Title="DSATemplate.Save Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Save.htm" />
   </HelpKINode>
-  <HelpKINode Title="SetValuesChanged method" Url="html/5e1d0eeb-3a67-ab5c-8b35-0637c10ad633.htm" />
-  <HelpKINode Title="Sheet property" Url="html/448e985f-9d76-4543-e9e6-bd5f432a03c3.htm" />
+  <HelpKINode Title="SetValuesChanged method" Url="html/M_Drachenhorn_Xml_ChildChangedBase_SetValuesChanged.htm" />
+  <HelpKINode Title="Sheet property" Url="html/P_Drachenhorn_Xml_Calculation_CalculateEventArgs_Sheet.htm" />
   <HelpKINode Title="SheetLoadingException class">
-    <HelpKINode Title="SheetLoadingException Class" Url="html/821c6fd5-67d2-d9b9-abe4-b0f84f51fb56.htm" />
-    <HelpKINode Title="constructor" Url="html/92132e85-09fb-58df-01b5-9614d6b6d075.htm" />
-    <HelpKINode Title="events" Url="html/4d0df809-26c8-de18-0dd3-ce3b5bfb7877.htm" />
-    <HelpKINode Title="methods" Url="html/3ad42a3c-7ed5-8c0b-2b72-5204af021c7c.htm" />
-    <HelpKINode Title="properties" Url="html/0bf40ca6-0012-3165-70a2-0c18db34b5f1.htm" />
+    <HelpKINode Title="SheetLoadingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Exceptions_SheetLoadingException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
   </HelpKINode>
-  <HelpKINode Title="SheetLoadingException.Path property" Url="html/b3b3e2b9-45de-bbcc-9b5f-3ffce469372f.htm" />
-  <HelpKINode Title="SheetLoadingException.SheetLoadingException constructor" Url="html/92132e85-09fb-58df-01b5-9614d6b6d075.htm" />
+  <HelpKINode Title="SheetLoadingException.Path property" Url="html/P_Drachenhorn_Xml_Exceptions_SheetLoadingException_Path.htm" />
+  <HelpKINode Title="SheetLoadingException.SheetLoadingException constructor" Url="html/M_Drachenhorn_Xml_Exceptions_SheetLoadingException__ctor.htm" />
   <HelpKINode Title="SheetSavingException class">
-    <HelpKINode Title="SheetSavingException Class" Url="html/3f7bca84-9cb0-23f6-14e8-66e2f24cd440.htm" />
-    <HelpKINode Title="constructor" Url="html/d4d23244-ecad-1cab-3e5c-95b26a10ce0d.htm" />
-    <HelpKINode Title="events" Url="html/d5468f32-f264-0462-7731-f7f391a86c3d.htm" />
-    <HelpKINode Title="methods" Url="html/50568f42-b31f-0a84-129c-ea82bff1fbf3.htm" />
-    <HelpKINode Title="properties" Url="html/c292fbd1-9cd4-a481-c552-c12e8b9a1bac.htm" />
+    <HelpKINode Title="SheetSavingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Exceptions_SheetSavingException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
   </HelpKINode>
-  <HelpKINode Title="SheetSavingException.Path property" Url="html/86be6eae-add9-f94d-5bac-37fa7db3492a.htm" />
-  <HelpKINode Title="SheetSavingException.SheetSavingException constructor" Url="html/d4d23244-ecad-1cab-3e5c-95b26a10ce0d.htm" />
+  <HelpKINode Title="SheetSavingException.Path property" Url="html/P_Drachenhorn_Xml_Exceptions_SheetSavingException_Path.htm" />
+  <HelpKINode Title="SheetSavingException.SheetSavingException constructor" Url="html/M_Drachenhorn_Xml_Exceptions_SheetSavingException__ctor.htm" />
   <HelpKINode Title="Skill class">
-    <HelpKINode Title="Skill Class" Url="html/53906d9c-65b4-1a4e-367f-610c6ac5771a.htm" />
-    <HelpKINode Title="constructor" Url="html/d254ef37-70a6-0aa6-fda3-dad6d9734d92.htm" />
-    <HelpKINode Title="events" Url="html/22eb5036-4e05-0b3e-4254-e15ef20dda8f.htm" />
-    <HelpKINode Title="methods" Url="html/8c0e5ed2-f385-4142-3ce2-88ff64af0631.htm" />
-    <HelpKINode Title="properties" Url="html/2f70d7c5-a937-c40e-67aa-acff127eb682.htm" />
+    <HelpKINode Title="Skill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
   </HelpKINode>
-  <HelpKINode Title="Skill.Category property" Url="html/c118812d-cf42-8b10-5d7b-de408792b1a5.htm" />
-  <HelpKINode Title="Skill.GetInformation method" Url="html/d811a186-73e6-909d-709a-e13c5dacacea.htm" />
-  <HelpKINode Title="Skill.Name property" Url="html/3c3781db-991f-d6bb-7096-3768e45e84c8.htm" />
-  <HelpKINode Title="Skill.RollAttributes property" Url="html/ca9df0f3-0735-78be-f8e3-6768c9dff3f0.htm" />
-  <HelpKINode Title="Skill.Skill constructor" Url="html/d254ef37-70a6-0aa6-fda3-dad6d9734d92.htm" />
-  <HelpKINode Title="Skills property" Url="html/dfb98318-40d9-20d7-8163-8bd46eefc777.htm" />
-  <HelpKINode Title="SocialStatus property" Url="html/dcf1a20d-8b81-46f6-68b7-410dbb3484de.htm" />
-  <HelpKINode Title="Specialization property" Url="html/b481dd7d-2429-36cd-0673-573e4e22b144.htm" />
+  <HelpKINode Title="Skill.Category property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
+  <HelpKINode Title="Skill.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
+  <HelpKINode Title="Skill.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
+  <HelpKINode Title="Skill.RollAttributes property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_RollAttributes.htm" />
+  <HelpKINode Title="Skill.Skill constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
+  <HelpKINode Title="Skills property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Skills.htm" />
+  <HelpKINode Title="SocialStatus property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_SocialStatus.htm" />
+  <HelpKINode Title="Specialization property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Specialization.htm" />
   <HelpKINode Title="SpecialSkill class">
-    <HelpKINode Title="SpecialSkill Class" Url="html/68b089a4-f311-4e4e-bd39-f0d5d6384ae0.htm" />
-    <HelpKINode Title="constructor" Url="html/e88ffa87-183d-6b8c-3f7f-80ac4ec0a737.htm" />
-    <HelpKINode Title="events" Url="html/ba3ea3e6-1884-cb94-3510-ce95f224ca13.htm" />
-    <HelpKINode Title="methods" Url="html/b3768b51-6cee-eb7c-5da7-9b55d5d1aaa1.htm" />
-    <HelpKINode Title="properties" Url="html/6425b82c-3fd4-2c7b-706f-0262e67cd894.htm" />
+    <HelpKINode Title="SpecialSkill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
   </HelpKINode>
-  <HelpKINode Title="SpecialSkill.Description property" Url="html/797d1f50-e562-f0bc-0f35-a2b425655de8.htm" />
-  <HelpKINode Title="SpecialSkill.GetInformation method" Url="html/a1ec36d7-6d65-da97-f8c0-fa8f95095887.htm" />
-  <HelpKINode Title="SpecialSkill.Name property" Url="html/3c6ab16b-d48a-dcd7-cfd2-32554964229b.htm" />
-  <HelpKINode Title="SpecialSkill.SpecialSkill constructor" Url="html/e88ffa87-183d-6b8c-3f7f-80ac4ec0a737.htm" />
-  <HelpKINode Title="SpecialSkills property" Url="html/da57c2c2-253c-4bab-73a4-597f54154e0b.htm" />
-  <HelpKINode Title="Specification property" Url="html/09510807-abe9-398c-65f0-6d70cb80ba1c.htm" />
-  <HelpKINode Title="Speed property" Url="html/80cdba9d-e24b-593b-aa98-d65c2467b7f1.htm" />
-  <HelpKINode Title="StartValue property" Url="html/b0c12e5d-3114-b859-d71c-74185f17b13d.htm" />
-  <HelpKINode Title="StoragePlace property" Url="html/3fefb9bb-e148-068c-17bb-ed6817100bf6.htm" />
-  <HelpKINode Title="Subtract method" Url="html/bd8e0778-3ec9-cbf0-7e18-0c9c00406941.htm" />
-  <HelpKINode Title="SubtractDays method" Url="html/9f097ba2-739f-20cb-ce3d-56cf2478f584.htm" />
-  <HelpKINode Title="Subtraction operator" Url="html/421206c9-201d-536c-1706-9e7dee4342e0.htm" />
-  <HelpKINode Title="SubtractMonths method" Url="html/d7c1a641-0d9e-b6cd-0a0d-78408a0e1c9c.htm" />
-  <HelpKINode Title="SubtractYears method" Url="html/c589419a-207a-ea94-6a2d-73b80ade87da.htm" />
-  <HelpKINode Title="Title property" Url="html/d76ccb26-5462-b262-8e5c-82c41eff8d89.htm" />
+  <HelpKINode Title="SpecialSkill.Description property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Description.htm" />
+  <HelpKINode Title="SpecialSkill.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
+  <HelpKINode Title="SpecialSkill.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
+  <HelpKINode Title="SpecialSkill.SpecialSkill constructor" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm" />
+  <HelpKINode Title="SpecialSkills property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
+  <HelpKINode Title="Specification property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
+  <HelpKINode Title="Speed property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Speed.htm" />
+  <HelpKINode Title="StartValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_StartValue.htm" />
+  <HelpKINode Title="StoragePlace property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
+  <HelpKINode Title="Subtract method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Subtract.htm" />
+  <HelpKINode Title="SubtractDays method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractDays.htm" />
+  <HelpKINode Title="Subtraction operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm" />
+  <HelpKINode Title="SubtractMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractMonths.htm" />
+  <HelpKINode Title="SubtractYears method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractYears.htm" />
+  <HelpKINode Title="Title property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Title.htm" />
   <HelpKINode Title="ToString method">
-    <HelpKINode Title="DSADate.ToString Method " Url="html/536de6d2-0d1a-e363-dcc8-5bd1bffdcaa9.htm" />
-    <HelpKINode Title="RollAttributes.ToString Method " Url="html/f10fe008-2903-acbb-1a30-45422663c7e6.htm" />
+    <HelpKINode Title="DSADate.ToString Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_ToString.htm" />
+    <HelpKINode Title="RollAttributes.ToString Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm" />
   </HelpKINode>
-  <HelpKINode Title="Total property" Url="html/efa27662-10d8-5d0d-178f-9ec8fe6860e0.htm" />
-  <HelpKINode Title="Travia enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
-  <HelpKINode Title="Tsa enumeration member" Url="html/67917a01-16a1-2302-f34f-39e062b3def4.htm" />
+  <HelpKINode Title="Total property" Url="html/P_Drachenhorn_Xml_AdventurePoints_Total.htm" />
+  <HelpKINode Title="Travia enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
+  <HelpKINode Title="Tsa enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Type property">
-    <HelpKINode Title="ArmorPart.Type Property " Url="html/41b521e2-ddae-c930-abdf-7a8be467ca86.htm" />
-    <HelpKINode Title="DisAdvantage.Type Property " Url="html/bf356593-241e-9af8-ca07-8899c911734c.htm" />
-    <HelpKINode Title="Weapon.Type Property " Url="html/7d0ef3d3-1a77-f36e-7102-4fae60990bbe.htm" />
+    <HelpKINode Title="ArmorPart.Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_Type.htm" />
+    <HelpKINode Title="DisAdvantage.Type Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Type.htm" />
+    <HelpKINode Title="Weapon.Type Property " Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Type.htm" />
   </HelpKINode>
-  <HelpKINode Title="Used property" Url="html/49280445-d452-60a1-0a59-b58dad670ea3.htm" />
-  <HelpKINode Title="ValidationMessage property" Url="html/e702dd5f-ed12-dbee-d3d7-01905fc52faa.htm" />
+  <HelpKINode Title="Used property" Url="html/P_Drachenhorn_Xml_AdventurePoints_Used.htm" />
+  <HelpKINode Title="ValidationMessage property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_ValidationMessage.htm" />
   <HelpKINode Title="Value property">
-    <HelpKINode Title="Attribute.Value Property " Url="html/cd10fdb7-402b-01da-80fc-7e8cef48c63c.htm" />
-    <HelpKINode Title="BaseValue.Value Property " Url="html/26c523b3-cff0-a963-121c-835eaa371e3b.htm" />
-    <HelpKINode Title="BonusValue.Value Property " Url="html/8b5c2c6d-3fd4-8efa-877b-39480a50f974.htm" />
-    <HelpKINode Title="IFormulaKeyItem.Value Property " Url="html/5b39c14b-4ae8-bdb7-590d-4c199a11ea46.htm" />
+    <HelpKINode Title="Attribute.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
+    <HelpKINode Title="BaseValue.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
+    <HelpKINode Title="BonusValue.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Value.htm" />
+    <HelpKINode Title="IFormulaKeyItem.Value Property " Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Value.htm" />
   </HelpKINode>
   <HelpKINode Title="Weapon class">
-    <HelpKINode Title="Weapon Class" Url="html/caa10852-2bad-e988-95c5-d06796c382a2.htm" />
-    <HelpKINode Title="constructor" Url="html/599a3955-7e59-5234-4af6-a46db3299e9b.htm" />
-    <HelpKINode Title="events" Url="html/2a1c5124-a1b3-1e65-a807-8e60c2dca8e9.htm" />
-    <HelpKINode Title="methods" Url="html/41e4143e-2e67-7ca3-500d-7ab059608139.htm" />
-    <HelpKINode Title="properties" Url="html/c56184f2-df6f-5efb-1d3b-5c29110ae262.htm" />
+    <HelpKINode Title="Weapon Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_Weapon__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
   </HelpKINode>
-  <HelpKINode Title="Weapon.Handicap property" Url="html/3f51584c-c8bc-ad7c-7104-704c957e2362.htm" />
-  <HelpKINode Title="Weapon.Type property" Url="html/7d0ef3d3-1a77-f36e-7102-4fae60990bbe.htm" />
-  <HelpKINode Title="Weapon.Weapon constructor" Url="html/599a3955-7e59-5234-4af6-a46db3299e9b.htm" />
-  <HelpKINode Title="WeaponType enumeration" Url="html/cda3cfac-6b6c-9325-cc81-be685bebe3a1.htm" />
+  <HelpKINode Title="Weapon.Handicap property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Handicap.htm" />
+  <HelpKINode Title="Weapon.Type property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_Weapon_Type.htm" />
+  <HelpKINode Title="Weapon.Weapon constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_Weapon__ctor.htm" />
+  <HelpKINode Title="WeaponType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_WeaponType.htm" />
   <HelpKINode Title="Weight property">
-    <HelpKINode Title="Characteristics.Weight Property " Url="html/a09117b1-b61d-b37a-fa51-215037612a1f.htm" />
-    <HelpKINode Title="InventoryItem.Weight Property " Url="html/7c3aacfd-03d2-b3ba-a54e-b373960d1e15.htm" />
+    <HelpKINode Title="Characteristics.Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Weight.htm" />
+    <HelpKINode Title="InventoryItem.Weight Property " Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Weight.htm" />
   </HelpKINode>
-  <HelpKINode Title="Wisdom enumeration member" Url="html/2927342e-773c-ebe7-f5ab-d44e4f1c6929.htm" />
-  <HelpKINode Title="Wisdom property" Url="html/35036cc6-aaf2-8449-7487-d7a3546c0260.htm" />
-  <HelpKINode Title="Year property" Url="html/7bcfedce-a2c2-0490-f0be-8376a0826b6a.htm" />
+  <HelpKINode Title="Wisdom enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_AttributeType.htm" />
+  <HelpKINode Title="Wisdom property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_CharacterAttributes_Wisdom.htm" />
+  <HelpKINode Title="Year property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Year.htm" />
 </HelpKI>
