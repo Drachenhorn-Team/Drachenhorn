@@ -11,6 +11,10 @@ using Drachenhorn.Xml.Sheet.Common;
 
 namespace Drachenhorn.Xml.Template
 {
+    /// <summary>
+    /// DSA Templating Class
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class DSATemplate : ChildChangedBase
     {
@@ -18,6 +22,12 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore]
         private APTable _apTable = new APTable();
+        /// <summary>
+        /// Gets or sets the AP-Table.
+        /// </summary>
+        /// <value>
+        /// The AP-Table.
+        /// </value>
         [XmlElement("APTable")]
         public APTable APTable
         {
@@ -33,6 +43,12 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore]
         private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
+        /// <summary>
+        /// Gets or sets the Races.
+        /// </summary>
+        /// <value>
+        /// The Races.
+        /// </value>
         [XmlElement("Race")]
         public ObservableCollection<RaceInformation> Races
         {
@@ -48,6 +64,12 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore]
         private ObservableCollection<CultureInformation> _cultures = new ObservableCollection<CultureInformation>();
+        /// <summary>
+        /// Gets or sets the Cultures.
+        /// </summary>
+        /// <value>
+        /// The Cultures.
+        /// </value>
         [XmlElement("Culture")]
         public ObservableCollection<CultureInformation> Cultures
         {
@@ -66,6 +88,9 @@ namespace Drachenhorn.Xml.Template
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DSATemplate"/> class.
+        /// </summary>
         public DSATemplate()
         {
             _fileName = "New";
@@ -85,6 +110,12 @@ namespace Drachenhorn.Xml.Template
 
         #region Save/Load
 
+        /// <summary>
+        /// Gets the Template BaseDirectory.
+        /// </summary>
+        /// <value>
+        /// The Template BaseDirectory.
+        /// </value>
         public static string BaseDirectory
         {
             get
@@ -94,11 +125,20 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        /// <summary>
+        /// The Template Extension
+        /// </summary>
         public static readonly string Extension = ".dsat";
 
         [XmlIgnore]
         private string _fileName;
 
+        /// <summary>
+        /// Gets the Current Template FilePath.
+        /// </summary>
+        /// <value>
+        /// The Current Template FilePath.
+        /// </value>
         [XmlIgnore]
         public string FilePath
         {

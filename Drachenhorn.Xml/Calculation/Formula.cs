@@ -9,6 +9,10 @@ using NCalc;
 
 namespace Drachenhorn.Xml.Calculation
 {
+    /// <summary>
+    /// Formula for Calculation.
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     public class Formula : ChildChangedBase
     {
         #region Properties

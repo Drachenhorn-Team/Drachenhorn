@@ -3,6 +3,10 @@ using System.Runtime.CompilerServices;
 
 namespace Drachenhorn.Xml
 {
+    /// <summary>
+    /// Bindable Base Class
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     public abstract class BindableBase : INotifyPropertyChanged
     {
         #region OnPropertyChanged

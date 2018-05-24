@@ -2,6 +2,10 @@
 
 namespace Drachenhorn.Xml.Exceptions
 {
+    /// <summary>
+    /// Exception thrown when a CharacterSheet could not be loaded.
+    /// </summary>
+    /// <seealso cref="System.Exception" />
     public class SheetLoadingException : Exception
     {
         private string _path;

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Drachenhorn.Xml.Calculation
 {
+    /// <summary>
+    /// Interface to use as Parameter in Calculation.
+    /// </summary>
     public interface IFormulaKeyItem
     {
         /// <summary>

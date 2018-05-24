@@ -9,6 +9,11 @@ using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Xml
 {
+    /// <summary>
+    /// Base class notifying ChildChanged
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.BindableBase" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.INotifyChildChanged" />
     public abstract class ChildChangedBase : BindableBase, INotifyChildChanged
     {
         #region OnChildChanged

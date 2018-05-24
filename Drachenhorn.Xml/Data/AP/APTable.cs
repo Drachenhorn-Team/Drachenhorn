@@ -7,6 +7,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Data.AP
 {
+    /// <summary>
+    /// AP-Cost-Table for leveling a Character
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class APTable : ChildChangedBase
     {
@@ -14,7 +18,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         [XmlIgnore]
         private ObservableCollection<APColumn> _apColumns = new ObservableCollection<APColumn>();
-
+        /// <summary>
+        /// Gets or sets the AP-Columns.
+        /// </summary>
+        /// <value>
+        /// The AP-Columns.
+        /// </value>
         [XmlElement("APColumn")]
         public ObservableCollection<APColumn> APColumns
         {
@@ -32,6 +41,16 @@ namespace Drachenhorn.Xml.Data.AP
 
         #region operators
 
+        /// <summary>
+        /// Gets or sets the <see cref="APColumn"/> with the specified key.
+        /// </summary>
+        /// <value>
+        /// The <see cref="APColumn"/>.
+        /// </value>
+        /// <param name="key">The Name of the Column.</param>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException">
+        /// </exception>
         public APColumn this[string key]
         {
             get
@@ -56,6 +75,13 @@ namespace Drachenhorn.Xml.Data.AP
 
         #region Calculation
 
+        /// <summary>
+        /// Calculates the leveling cost for the specified key.
+        /// </summary>
+        /// <param name="key">The Column-Key.</param>
+        /// <param name="from">Current Skill value.</param>
+        /// <param name="to">Target Skill value.</param>
+        /// <returns></returns>
         public uint Calculate(string key, int from, int to)
         {
             return this[key].CalculateCosts(from, to);

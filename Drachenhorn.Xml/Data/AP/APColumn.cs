@@ -6,6 +6,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Data.AP
 {
+    /// <summary>
+    /// The Column of an AP-Table
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class APColumn : ChildChangedBase
     {
@@ -13,6 +17,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         [XmlIgnore]
         private string _name;
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -28,6 +38,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         [XmlIgnore]
         private ushort _factor;
+        /// <summary>
+        /// Gets or sets the factor.
+        /// </summary>
+        /// <value>
+        /// The factor.
+        /// </value>
         [XmlAttribute("Factor")]
         public ushort Factor
         {
@@ -43,6 +59,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         [XmlIgnore]
         private ushort _negative;
+        /// <summary>
+        /// Gets or sets the negative.
+        /// </summary>
+        /// <value>
+        /// The negative.
+        /// </value>
         [XmlAttribute("Negative")]
         public ushort Negative
         {
@@ -58,7 +80,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         [XmlIgnore]
         private ObservableCollection<ushort> _costs = new ObservableCollection<ushort>();
-
+        /// <summary>
+        /// Gets or sets the costs.
+        /// </summary>
+        /// <value>
+        /// The costs.
+        /// </value>
         [XmlElement("Cost")]
         public ObservableCollection<ushort> Costs
         {
@@ -76,8 +103,17 @@ namespace Drachenhorn.Xml.Data.AP
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APColumn"/> class.
+        /// </summary>
         public APColumn() { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APColumn"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="factor">The factor.</param>
+        /// <param name="negative">The negative.</param>
         public APColumn(string name, ushort factor, ushort negative)
         {
             Name = name;
@@ -89,6 +125,12 @@ namespace Drachenhorn.Xml.Data.AP
 
         #region Calculation
 
+        /// <summary>
+        /// Calculates the costs.
+        /// </summary>
+        /// <param name="from">From.</param>
+        /// <param name="to">To.</param>
+        /// <returns></returns>
         public uint CalculateCosts(int from, int to)
         {
             uint result = 0;

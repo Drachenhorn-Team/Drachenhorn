@@ -3,6 +3,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml
 {
+    /// <summary>
+    /// Character Adventure Points
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     [Serializable]
     public class AdventurePoints : BindableBase
     {

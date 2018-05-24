@@ -9,6 +9,10 @@ using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Xml.Calculation
 {
+    /// <summary>
+    /// Base-Class for calculated values.
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     public abstract class CalculationValue : BindableBase
     {
         #region Properties

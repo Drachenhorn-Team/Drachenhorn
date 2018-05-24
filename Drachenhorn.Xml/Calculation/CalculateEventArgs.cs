@@ -5,6 +5,10 @@ using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Xml.Calculation
 {
+    /// <summary>
+    /// CalculationEventArgs
+    /// </summary>
+    /// <seealso cref="System.EventArgs" />
     public class CalculateEventArgs : EventArgs
     {
         /// <summary>
