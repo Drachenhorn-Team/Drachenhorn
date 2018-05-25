@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Lang\lang.nds-DE.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Lang\lang.nds-DE.resx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Easy.Logger.Interfaces" Version="1.1.0" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1" />
   </ItemGroup>
@@ -26,6 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Lang\lang.de-DE.resx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lang\lang.en.resx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Update="Printing\PrintingTemplates.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintingTemplates.Designer.cs</LastGenOutput>

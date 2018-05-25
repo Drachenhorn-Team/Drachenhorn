@@ -32,7 +32,7 @@ namespace Drachenhorn.Desktop.UserElements
             {
                 try
                 {
-                    SimpleIoc.Default.GetInstance<LanguageManager>().PropertyChanged += (s, a) =>
+                    SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (s, a) =>
                     {
                         this.GetBindingExpression(ComboBox.ItemsSourceProperty)?.UpdateTarget();
                         this.GetBindingExpression(ComboBox.TextProperty)?.UpdateTarget();

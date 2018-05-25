@@ -28,7 +28,7 @@ namespace Drachenhorn.Desktop.Views
 
             //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
 
-            if (!String.IsNullOrEmpty(path)) OpenFile(path);
+            if (!String.IsNullOrEmpty(path)) this.Loaded += (sender, args) => OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
         }

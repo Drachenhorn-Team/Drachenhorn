@@ -10,7 +10,7 @@ using Easy.Logger.Interfaces;
 
 namespace Drachenhorn.Core.Lang
 {
-    public class LanguageManager : BindableBase
+    public class LanguageManager : BindableBase, INotifyLanguageChanged
     {
         private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
 
@@ -23,6 +23,7 @@ namespace Drachenhorn.Core.Lang
                     return;
                 _currentCulture = value;
                 OnPropertyChanged(null);
+                OnLanguageChanged(value);
             }
         }
 
@@ -170,5 +171,16 @@ namespace Drachenhorn.Core.Lang
         }
 
         #endregion static
+
+        #region LanguageChanged
+
+        public event LanguageChangedEventHandler LanguageChanged;
+
+        protected virtual void OnLanguageChanged(CultureInfo newCulture)
+        {
+            LanguageChanged?.Invoke(this, new LanguageChangedEventArgs(newCulture));
+        }
+
+        #endregion LanguageChanged
     }
 }
