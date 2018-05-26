@@ -15,7 +15,7 @@
         <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="combatInfo1:WeaponType" />
+                <x:Type TypeName="combatInfo1:DamageType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ArmorRegionEnum">

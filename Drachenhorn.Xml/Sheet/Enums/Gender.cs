@@ -1,9 +1,21 @@
 ﻿namespace Drachenhorn.Xml.Sheet.Enums
 {
+    /// <summary>
+    /// Gender of a Character
+    /// </summary>
     public enum Gender
     {
-        None,
+        /// <summary>
+        /// The male gender.
+        /// </summary>
         Male,
-        Female
+        /// <summary>
+        /// The female gender
+        /// </summary>
+        Female,
+        /// <summary>
+        /// The unspecified gender
+        /// </summary>
+        Unspecified
     }
 }

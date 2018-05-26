@@ -5,6 +5,10 @@ using Drachenhorn.Xml.Sheet.Enums;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// The Characteristics of a Character
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class Characteristics : ChildChangedBase
     {
@@ -12,7 +16,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -28,6 +37,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _family;
+        /// <summary>
+        /// Gets or sets the family.
+        /// </summary>
+        /// <value>
+        /// The family.
+        /// </value>
         [XmlAttribute("Family")]
         public string Family
         {
@@ -43,6 +58,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _placeOfBirth;
+        /// <summary>
+        /// Gets or sets the place of birth.
+        /// </summary>
+        /// <value>
+        /// The place of birth.
+        /// </value>
         [XmlAttribute("PlaceOfBirth")]
         public string PlaceOfBirth
         {
@@ -58,7 +79,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private DSADate _birthDate = new DSADate();
-
+        /// <summary>
+        /// Gets or sets the birth date.
+        /// </summary>
+        /// <value>
+        /// The birth date.
+        /// </value>
         [XmlElement("BirthDate")]
         public DSADate BirthDate
         {
@@ -74,7 +100,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private Gender _gender;
-
+        /// <summary>
+        /// Gets or sets the gender.
+        /// </summary>
+        /// <value>
+        /// The gender.
+        /// </value>
         [XmlAttribute("Gender")]
         public Gender Gender
         {
@@ -90,7 +121,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private uint _age;
-
+        /// <summary>
+        /// Gets or sets the age.
+        /// </summary>
+        /// <value>
+        /// The age.
+        /// </value>
         [XmlAttribute("Age")]
         public uint Age
         {
@@ -106,7 +142,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private double _height;
-
+        /// <summary>
+        /// Gets or sets the height.
+        /// </summary>
+        /// <value>
+        /// The height.
+        /// </value>
         [XmlAttribute("Height")]
         public double Height
         {
@@ -122,7 +163,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private double _weight;
-
+        /// <summary>
+        /// Gets or sets the weight.
+        /// </summary>
+        /// <value>
+        /// The weight.
+        /// </value>
         [XmlAttribute("Weight")]
         public double Weight
         {
@@ -138,7 +184,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _hairColor;
-
+        /// <summary>
+        /// Gets or sets the color of the hair.
+        /// </summary>
+        /// <value>
+        /// The color of the hair.
+        /// </value>
         [XmlAttribute("HairColor")]
         public string HairColor
         {
@@ -154,7 +205,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _eyeColor;
-
+        /// <summary>
+        /// Gets or sets the color of the eye.
+        /// </summary>
+        /// <value>
+        /// The color of the eye.
+        /// </value>
         [XmlAttribute("EyeColor")]
         public string EyeColor
         {
@@ -170,7 +226,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private uint _socialStatus;
-
+        /// <summary>
+        /// Gets or sets the social status.
+        /// </summary>
+        /// <value>
+        /// The social status.
+        /// </value>
         [XmlAttribute("SocialStatus")]
         public uint SocialStatus
         {
@@ -186,7 +247,12 @@ namespace Drachenhorn.Xml.Sheet.Common
         
         [XmlIgnore]
         private string _other;
-
+        /// <summary>
+        /// Gets or sets the other information.
+        /// </summary>
+        /// <value>
+        /// The other information.
+        /// </value>
         [XmlAttribute("Other")]
         public string Other
         {
@@ -202,7 +268,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _title;
-
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
         [XmlAttribute("Title")]
         public string Title
         {
@@ -218,7 +289,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private RaceInformation _race = new RaceInformation();
-
+        /// <summary>
+        /// Gets or sets the race.
+        /// </summary>
+        /// <value>
+        /// The race.
+        /// </value>
         [XmlElement("Race")]
         public RaceInformation Race
         {
@@ -234,7 +310,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private CultureInformation _culture = new CultureInformation();
-
+        /// <summary>
+        /// Gets or sets the culture.
+        /// </summary>
+        /// <value>
+        /// The culture.
+        /// </value>
         [XmlElement("Culture")]
         public CultureInformation Culture
         {
@@ -250,7 +331,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private ProfessionInformation _profession = new ProfessionInformation();
-
+        /// <summary>
+        /// Gets or sets the profession.
+        /// </summary>
+        /// <value>
+        /// The profession.
+        /// </value>
         [XmlElement("Profession")]
         public ProfessionInformation Profession
         {

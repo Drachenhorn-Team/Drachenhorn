@@ -6,11 +6,17 @@ using Drachenhorn.Xml.Calculation;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// Bonus Values for Character Generation
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
+    /// <seealso cref="Drachenhorn.Xml.Calculation.IFormulaKeyItem" />
     [Serializable]
     public class BonusValue : ChildChangedBase, IFormulaKeyItem
     {
         [XmlIgnore]
         private string _key;
+        /// <inheritdoc />
         [XmlAttribute("Key")]
         public string Key
         {
@@ -26,6 +32,12 @@ namespace Drachenhorn.Xml.Sheet.Common
         
         [XmlIgnore]
         private string _name;
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -41,6 +53,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private double _value;
+        /// <inheritdoc />
         [XmlAttribute("Value")]
         public double Value
         {

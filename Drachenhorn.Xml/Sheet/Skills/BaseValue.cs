@@ -7,6 +7,12 @@ using Drachenhorn.Xml.Interfaces;
 
 namespace Drachenhorn.Xml.Sheet.Skills
 {
+    /// <summary>
+    /// Base Value of a Character.
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.Calculation.CalculationValue" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
+    /// <seealso cref="Drachenhorn.Xml.Calculation.IFormulaKeyItem" />
     [Serializable]
     public class BaseValue : CalculationValue, IInfoObject, IFormulaKeyItem
     {
@@ -14,7 +20,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         [XmlIgnore]
         private string _key;
-
+        /// <inheritdoc />
         [XmlAttribute("Key")]
         public string Key
         {
@@ -30,7 +36,12 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -44,6 +55,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
+        /// <inheritdoc />
         [XmlIgnore]
         public double Value
         {
@@ -55,6 +67,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         #region InfoObject
 
+        /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();

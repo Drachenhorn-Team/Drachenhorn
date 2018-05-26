@@ -39,7 +39,7 @@ namespace Drachenhorn.Desktop.Views
             };
         }
 
-        private async void TemplateMainView_OnClosing(object sender, CancelEventArgs e)
+        private void TemplateMainView_OnClosing(object sender, CancelEventArgs e)
         {
             if (this.DataContext is TemplateMainViewModel)
             {
@@ -47,13 +47,13 @@ namespace Drachenhorn.Desktop.Views
 
                 if (!model.Template.HasChanged) return;
 
-                var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                     LanguageManager.Translate("UI.SouldClose"),
                     LanguageManager.Translate("UI.SouldClose.Caption"),
                     LanguageManager.Translate("UI.Yes"),
                     LanguageManager.Translate("UI.No"), null);
 
-                if (!result)
+                if (!task.Result)
                     e.Cancel = true;
             }
         }

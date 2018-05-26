@@ -7,12 +7,22 @@ using Drachenhorn.Xml.Interfaces;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// Race-Information
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class RaceInformation : ChildChangedBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -28,7 +38,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _description;
-
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
         [XmlAttribute("Description")]
         public string Description
         {
@@ -44,7 +59,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
-
+        /// <summary>
+        /// Gets or sets the base values.
+        /// </summary>
+        /// <value>
+        /// The base values.
+        /// </value>
         [XmlElement("BaseValue")]
         public ObservableCollection<BonusValue> BaseValues
         {
@@ -58,6 +78,7 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
+        /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();

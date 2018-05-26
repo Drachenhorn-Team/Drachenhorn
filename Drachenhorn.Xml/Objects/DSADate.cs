@@ -11,10 +11,14 @@ namespace Drachenhorn.Xml.Objects
     /// Represents a Date in the world of DSA
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
-    /// <seealso cref="System.IComparable{Drachenhorn.Xml.Objects.DSADate}" />
+    /// <seealso>
+    ///     <cref>System.IComparable{Drachenhorn.Xml.Objects.DSADate}</cref>
+    /// </seealso>
     /// <seealso cref="System.IFormattable" />
     /// <seealso cref="System.Runtime.Serialization.ISerializable" />
-    /// <seealso cref="System.IEquatable{Drachenhorn.Xml.Objects.DSADate}" />
+    /// <seealso>
+    ///     <cref>System.IEquatable{Drachenhorn.Xml.Objects.DSADate}</cref>
+    /// </seealso>
     [Serializable]
     public class DSADate : BindableBase, IComparable<DSADate>, IFormattable, ISerializable, IEquatable<DSADate>
     {

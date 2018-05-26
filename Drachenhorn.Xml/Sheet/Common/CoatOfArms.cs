@@ -7,12 +7,21 @@ using Drachenhorn.Xml.Objects;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// The CoatOfArms of a Character
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class CoatOfArms : ChildChangedBase
     {
         [XmlIgnore]
         private string _base64String;
-
+        /// <summary>
+        /// Gets or sets the base64 string.
+        /// </summary>
+        /// <value>
+        /// The base64 string.
+        /// </value>
         [XmlAttribute("Image")]
         public string Base64String
         {

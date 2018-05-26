@@ -11,6 +11,10 @@ using Attribute = Drachenhorn.Xml.Sheet.Skills.Attribute;
 
 namespace Drachenhorn.Xml.Sheet
 {
+    /// <summary>
+    /// Object containing all data for a Character
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class CharacterSheet : ChildChangedBase
     {
@@ -18,7 +22,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private Characteristics _characteristics = new Characteristics();
-
+        /// <summary>
+        /// Gets or sets the Characteristics.
+        /// </summary>
+        /// <value>
+        /// The Characteristics.
+        /// </value>
         [XmlElement("Characteristics")]
         public Characteristics Characteristics
         {
@@ -34,7 +43,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private double _gpBase;
-
+        /// <summary>
+        /// Gets or sets the GPBase.
+        /// </summary>
+        /// <value>
+        /// The GPBase.
+        /// </value>
         [XmlAttribute("GPBase")]
         public double GpBase
         {
@@ -50,7 +64,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private CoatOfArms _coatOfArms = new CoatOfArms();
-
+        /// <summary>
+        /// Gets or sets the CoatOfArms.
+        /// </summary>
+        /// <value>
+        /// The CoatOfArms.
+        /// </value>
         [XmlElement("CoatOfArms")]
         public CoatOfArms CoatOfArms
         {
@@ -66,7 +85,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private ObservableCollection<DisAdvantage> _disAdvantages = new ObservableCollection<DisAdvantage>();
-
+        /// <summary>
+        /// Gets or sets the (Dis-)Advantages.
+        /// </summary>
+        /// <value>
+        /// The (Dis-)Advantages.
+        /// </value>
         [XmlElement("DisAdvantage")]
         public ObservableCollection<DisAdvantage> DisAdvantages
         {
@@ -82,7 +106,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private ObservableCollection<Attribute> _attributes = new ObservableCollection<Attribute>();
-
+        /// <summary>
+        /// Gets or sets the Attributes.
+        /// </summary>
+        /// <value>
+        /// The Attributes.
+        /// </value>
         [XmlElement("Attribute")]
         public ObservableCollection<Attribute> Attributes
         {
@@ -98,7 +127,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private ObservableCollection<BaseValue> _baseValues = new ObservableCollection<BaseValue>();
-
+        /// <summary>
+        /// Gets or sets the BaseValues.
+        /// </summary>
+        /// <value>
+        /// The BaseValues.
+        /// </value>
         [XmlElement("BaseValue")]
         public ObservableCollection<BaseValue> BaseValues
         {
@@ -114,7 +148,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private AdventurePoints _adventurePoints = new AdventurePoints();
-
+        /// <summary>
+        /// Gets or sets the Adventure Points.
+        /// </summary>
+        /// <value>
+        /// The Adventure Points.
+        /// </value>
         [XmlElement("AdventurePoints")]
         public AdventurePoints AdventurePoints
         {
@@ -130,7 +169,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
-
+        /// <summary>
+        /// Gets or sets the Skills.
+        /// </summary>
+        /// <value>
+        /// The Skills.
+        /// </value>
         [XmlElement("Skill")]
         public ObservableCollection<Skill> Skills
         {
@@ -146,7 +190,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
-
+        /// <summary>
+        /// Gets or sets the Special Skills.
+        /// </summary>
+        /// <value>
+        /// The Special Skills.
+        /// </value>
         [XmlElement("SpecialSkill")]
         public ObservableCollection<SpecialSkill> SpecialSkills
         {
@@ -162,6 +211,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private Inventory _inventory = new Inventory();
+        /// <summary>
+        /// Gets or sets the Inventory.
+        /// </summary>
+        /// <value>
+        /// The Inventory.
+        /// </value>
         [XmlElement("Inventory")]
         public Inventory Inventory
         {
@@ -180,6 +235,9 @@ namespace Drachenhorn.Xml.Sheet
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CharacterSheet"/> class.
+        /// </summary>
         public CharacterSheet()
         {
             PropertyChanged += (sender, args) =>
@@ -195,11 +253,19 @@ namespace Drachenhorn.Xml.Sheet
 
         #region Save/Load
 
+        /// <summary>
+        /// The extension of a CharacterSheet File
+        /// </summary>
         public static readonly string Extension = ".dsac";
 
         [XmlIgnore]
         private bool _hasChanged;
-
+        /// <summary>
+        /// Gets a value indicating whether this instance has changed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance has changed; otherwise, <c>false</c>.
+        /// </value>
         [XmlIgnore]
         public bool HasChanged
         {
@@ -215,7 +281,12 @@ namespace Drachenhorn.Xml.Sheet
 
         [XmlIgnore]
         private string _filePath;
-
+        /// <summary>
+        /// Gets the Current File Path.
+        /// </summary>
+        /// <value>
+        /// The Current File Path.
+        /// </value>
         [XmlIgnore]
         public string FilePath
         {
@@ -267,6 +338,12 @@ namespace Drachenhorn.Xml.Sheet
                 baseValue.Formula.ParentSheet = sheet;
         }
 
+        /// <summary>
+        /// Saves this Sheet.
+        /// </summary>
+        /// <returns>
+        ///     <c>true</c> if successful; otherwise, <c>false</c>
+        /// </returns>
         public bool Save()
         {
             return !string.IsNullOrEmpty(FilePath) && Save(FilePath);

@@ -165,7 +165,7 @@ namespace Drachenhorn.Desktop.Views
 
         private void UndoButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Strokes.Count == 0)
+            if (Strokes == null || Strokes.Count == 0)
                 return;
 
             UndoneStrokes.Add(Strokes.ElementAt(Strokes.Count - 1));

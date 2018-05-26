@@ -195,6 +195,12 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore]
         private bool _hasChanged;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance has changed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance has changed; otherwise, <c>false</c>.
+        /// </value>
         [XmlIgnore]
         public bool HasChanged
         {

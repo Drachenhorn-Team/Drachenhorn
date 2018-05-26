@@ -11,6 +11,7 @@
         <ResourceDictionary Source="Controls/Menu.xaml"/>
         <ResourceDictionary Source="Controls/ToolBar.xaml"/>
         <ResourceDictionary Source="Controls/ListBox.xaml"/>
+        <ResourceDictionary Source="Controls/RadioButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource ForegroundColor}" />
@@ -128,45 +129,6 @@
                             <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}"
                                               HorizontalAlignment="Center" VerticalAlignment="Center"
                                               Margin="{TemplateBinding Padding}" />
-                        </Grid>
-                    </Border>
-
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource BackgroundHightlightBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource BorderHightlightBrush}" />
-                        </Trigger>
-
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{StaticResource BackgroundClickBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource BorderClickBrush}" />
-                        </Trigger>
-
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource BackgroundDisabledBrush}" />
-                            <Setter Property="Foreground" Value="{StaticResource ForegroundDisabledBrush}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="{x:Type RadioButton}">
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="{StaticResource BackgroundBrush2}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RadioButton}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="1">
-                        <Grid>
-                            <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}"
-                                              HorizontalAlignment="Center" VerticalAlignment="Center"
-                                              Margin="0" />
                         </Grid>
                     </Border>
 

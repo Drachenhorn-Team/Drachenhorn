@@ -68,7 +68,7 @@ namespace Drachenhorn.Desktop.Views
                 new TemplateSelectorDialog().ShowDialog();
         }
 
-        private async void MainView_OnClosing(object sender, CancelEventArgs e)
+        private void MainView_OnClosing(object sender, CancelEventArgs e)
         {
             if (this.DataContext is MainViewModel)
             {
@@ -76,13 +76,13 @@ namespace Drachenhorn.Desktop.Views
 
                 if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
-                var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                     LanguageManager.Translate("UI.SouldCloseBunch"),
                     LanguageManager.Translate("UI.SouldCloseBunch.Caption"),
                     LanguageManager.Translate("UI.Yes"),
                     LanguageManager.Translate("UI.No"), null);
 
-                if (!result)
+                if (!task.Result)
                     e.Cancel = true;
             }
         }

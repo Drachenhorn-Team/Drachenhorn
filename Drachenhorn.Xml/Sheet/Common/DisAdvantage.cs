@@ -6,6 +6,11 @@ using Drachenhorn.Xml.Sheet.Enums;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// (Dis-)Advantages
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class DisAdvantage : ChildChangedBase, IInfoObject
     {
@@ -13,7 +18,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -29,7 +39,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _specialization;
-
+        /// <summary>
+        /// Gets or sets the specialization.
+        /// </summary>
+        /// <value>
+        /// The specialization.
+        /// </value>
         [XmlAttribute("Specialization")]
         public string Specialization
         {
@@ -45,6 +60,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private DisAdvantageType _type;
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
         [XmlAttribute("Type")]
         public DisAdvantageType Type
         {
@@ -60,6 +81,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         #endregion Properties
 
+        /// <inheritdoc />
         public virtual Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();

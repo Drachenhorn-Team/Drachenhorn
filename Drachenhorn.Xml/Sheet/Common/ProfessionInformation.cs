@@ -6,11 +6,21 @@ using Drachenhorn.Xml.Interfaces;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
+    /// <summary>
+    /// Profession-Information
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     public class ProfessionInformation : ChildChangedBase, IInfoObject
     {
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -26,7 +36,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private string _description;
-
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
         [XmlAttribute("Description")]
         public string Description
         {
@@ -42,7 +57,12 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore]
         private double _gpCost;
-
+        /// <summary>
+        /// Gets or sets the gp cost.
+        /// </summary>
+        /// <value>
+        /// The gp cost.
+        /// </value>
         [XmlAttribute("GPCost")]
         public double GpCost
         {
@@ -56,6 +76,7 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
+        /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();

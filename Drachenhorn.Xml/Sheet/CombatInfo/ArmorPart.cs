@@ -4,6 +4,10 @@ using Drachenhorn.Xml.Sheet.InventoryInfo;
 
 namespace Drachenhorn.Xml.Sheet.CombatInfo
 {
+    /// <summary>
+    /// Part of an Armor.
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem" />
     [Serializable]
     public class ArmorPart : InventoryItem
     {
@@ -11,7 +15,12 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
 
         [XmlIgnore]
         private bool _isActive;
-
+        /// <summary>
+        /// Gets or sets a value indicating whether this ArmorPart is active.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this ArmorPart is active; otherwise, <c>false</c>.
+        /// </value>
         [XmlAttribute("IsActive")]
         public bool IsActive
         {
@@ -27,7 +36,12 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
 
         [XmlIgnore]
         private ArmorType _type = ArmorType.None;
-
+        /// <summary>
+        /// Gets or sets the ArmorType.
+        /// </summary>
+        /// <value>
+        /// The ArmorType.
+        /// </value>
         [XmlAttribute("Type")]
         public ArmorType Type
         {
@@ -43,7 +57,12 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
 
         [XmlIgnore]
         private int _handicap;
-
+        /// <summary>
+        /// Gets or sets the Handicap.
+        /// </summary>
+        /// <value>
+        /// The Handicap.
+        /// </value>
         [XmlAttribute("Handicap")]
         public int Handicap
         {

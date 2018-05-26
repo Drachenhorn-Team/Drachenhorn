@@ -6,6 +6,11 @@ using Drachenhorn.Xml.Sheet.Roll;
 
 namespace Drachenhorn.Xml.Sheet.Skills
 {
+    /// <summary>
+    /// Character-Skill
+    /// </summary>
+    /// <seealso cref="Drachenhorn.Xml.BindableBase" />
+    /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class Skill : BindableBase, IInfoObject
     {
@@ -13,7 +18,12 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         [XmlIgnore]
         private string _name;
-
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -29,7 +39,12 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         [XmlIgnore]
         private string _category;
-
+        /// <summary>
+        /// Gets or sets the category.
+        /// </summary>
+        /// <value>
+        /// The category.
+        /// </value>
         [XmlAttribute("Category")]
         public string Category
         {
@@ -45,7 +60,12 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         [XmlIgnore]
         private RollAttributes _rollAttributes = new RollAttributes();
-
+        /// <summary>
+        /// Gets or sets the roll attributes.
+        /// </summary>
+        /// <value>
+        /// The roll attributes.
+        /// </value>
         [XmlElement("RolleAttributes")]
         public RollAttributes RollAttributes
         {
@@ -61,6 +81,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
 
         #endregion Properties
 
+        /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
             var result = new Dictionary<string, string>();
