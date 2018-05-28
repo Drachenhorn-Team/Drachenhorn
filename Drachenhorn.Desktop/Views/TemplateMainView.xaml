@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         xmlns:template="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
+        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+        xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
+        xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
@@ -36,6 +39,17 @@
         <TabControl>
             <TabItem Header="{lang:Translate DSATemplate.Races}">
                 <template:RaceTemplateControl DataContext="{Binding Template.Races}" />
+            </TabItem>
+            <TabItem Header="{lang:Translate DSATemplate.Cultures}">
+                <userElements:ListEditor DataContext="{Binding Template.Cultures}"
+                                         DisplayMemberPath="Name"
+                                         ContentType="{x:Type xmlCommon:CultureInformation}">
+                    <userElements:ListEditor.ContentTemplate>
+                        <DataTemplate>
+                            <common:CultureDisplayControl/>
+                        </DataTemplate>
+                    </userElements:ListEditor.ContentTemplate>
+                </userElements:ListEditor>
             </TabItem>
         </TabControl>
     </DockPanel>

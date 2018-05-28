@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet.Common;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Xml.Template
 {
@@ -79,6 +80,27 @@ namespace Drachenhorn.Xml.Template
                 if (_cultures == value)
                     return;
                 _cultures = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
+        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
+        /// <summary>
+        /// Gets or sets the special skills.
+        /// </summary>
+        /// <value>
+        /// The special skills.
+        /// </value>
+        [XmlElement("SpecialSkill")]
+        public ObservableCollection<SpecialSkill> SpecialSkills
+        {
+            get { return _specialSkills; }
+            set
+            {
+                if (_specialSkills == value)
+                    return;
+                _specialSkills = value;
                 OnPropertyChanged();
             }
         }
