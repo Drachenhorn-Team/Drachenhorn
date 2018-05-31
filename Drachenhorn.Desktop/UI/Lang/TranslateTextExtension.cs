@@ -20,7 +20,6 @@ namespace Drachenhorn.Desktop.UI.Lang
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
         }
     }

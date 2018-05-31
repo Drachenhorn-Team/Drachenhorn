@@ -37,6 +37,18 @@ namespace Drachenhorn.Xml.Data.AP
             }
         }
 
+        /// <summary>
+        /// Gets the column names.
+        /// </summary>
+        /// <value>
+        /// The column names.
+        /// </value>
+        [XmlIgnore]
+        public IEnumerable<string> ColumnNames
+        {
+            get { return from x in APColumns select x.Name; }
+        }
+
         #endregion Properties
 
         #region operators

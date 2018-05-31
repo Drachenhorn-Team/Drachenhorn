@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:template="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
         xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
         xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
         xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
@@ -37,8 +36,19 @@
         
         
         <TabControl>
+            <TabItem Header="{lang:Translate DSATemplate.APTable}">
+                <common:APTableControl DataContext="{Binding Template.APTable}"/>
+            </TabItem>
             <TabItem Header="{lang:Translate DSATemplate.Races}">
-                <template:RaceTemplateControl DataContext="{Binding Template.Races}" />
+                <userElements:ListEditor DataContext="{Binding Template.Races}"
+                                         DisplayMemberPath="Name"
+                                         ContentType="{x:Type xmlCommon:RaceInformation}">
+                    <userElements:ListEditor.ContentTemplate>
+                        <DataTemplate>
+                            <common:CultureDisplayControl/>
+                        </DataTemplate>
+                    </userElements:ListEditor.ContentTemplate>
+                </userElements:ListEditor>
             </TabItem>
             <TabItem Header="{lang:Translate DSATemplate.Cultures}">
                 <userElements:ListEditor DataContext="{Binding Template.Cultures}"

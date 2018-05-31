@@ -175,14 +175,17 @@
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\APTableControl.xaml.cs">
+      <DependentUpon>APTableControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Common\CultureDisplayControl.xaml.cs">
       <DependentUpon>CultureDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
+      <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\InventoryControl.xaml.cs">
       <DependentUpon>InventoryControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Template\RaceTemplateControl.xaml.cs">
-      <DependentUpon>RaceTemplateControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
@@ -353,7 +356,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Common\APTableControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Common\CultureDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\RaceDisplayControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -398,10 +409,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\SpecialSkillControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Template\RaceTemplateControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

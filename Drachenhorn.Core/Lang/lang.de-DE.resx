@@ -690,4 +690,7 @@
   <data name="CharacterSheet.StartValues" xml:space="preserve">
     <value>Startwerte</value>
   </data>
+  <data name="DSATemplate.Cultures" xml:space="preserve">
+    <value>Kulturen</value>
+  </data>
 </root>
