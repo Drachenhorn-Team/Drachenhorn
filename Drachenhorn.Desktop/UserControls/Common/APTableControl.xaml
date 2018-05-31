@@ -9,49 +9,63 @@
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance ap:APTable}">
-    <DockPanel Grid.IsSharedSizeScope="True">
-        <Grid DockPanel.Dock="Left">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" SharedSizeGroup="Name"/>
-                <RowDefinition Height="Auto" SharedSizeGroup="Negative"/>
-                <RowDefinition Height="Auto" SharedSizeGroup="Factor"/>
-                <RowDefinition Height="*" SharedSizeGroup="Values"/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="{lang:Translate APColumn.Name}" Grid.Row="0"/>
-            <TextBlock Text="{lang:Translate APColumn.Negative}" Grid.Row="1"/>
-            <TextBlock Text="{lang:Translate APColumn.Factor}" Grid.Row="2"/>
-            <TextBlock Text="{lang:Translate APColumn.Values}" Grid.Row="3" VerticalAlignment="Top"/>
-        </Grid>
-        <ItemsControl ItemsSource="{Binding APColumns}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" SharedSizeGroup="Name"/>
-                            <RowDefinition Height="Auto" SharedSizeGroup="Negative"/>
-                            <RowDefinition Height="Auto" SharedSizeGroup="Factor"/>
-                            <RowDefinition Height="*" SharedSizeGroup="Values"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Name}" Margin="5" Grid.Row="0"/>
-                        <TextBlock Text="{Binding Negative}" HorizontalAlignment="Center" Grid.Row="1"/>
-                        <TextBlock Text="{Binding Factor}" HorizontalAlignment="Center" Grid.Row="2"/>
-                        <Grid Grid.Row="3">
-                            <ItemsControl ItemsSource="{Binding Costs}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding .}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+    <ScrollViewer>
+        <DockPanel Grid.IsSharedSizeScope="True">
+            <Grid DockPanel.Dock="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" SharedSizeGroup="Name"/>
+                    <RowDefinition Height="Auto" SharedSizeGroup="Negative"/>
+                    <RowDefinition Height="Auto" SharedSizeGroup="Factor"/>
+                    <RowDefinition Height="*" SharedSizeGroup="Values"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{lang:Translate APColumn.Name}" Grid.Row="0" Margin="5"/>
+                <TextBlock Text="{lang:Translate APColumn.Negative}" Grid.Row="1" Margin="5"/>
+                <TextBlock Text="{lang:Translate APColumn.Factor}" Grid.Row="2" Margin="5"/>
+                <TextBlock Text="{lang:Translate APColumn.Values}" Grid.Row="3" VerticalAlignment="Top" Margin="5"/>
+            </Grid>
+            <Button Click="AddColumnButton_OnClick" VerticalAlignment="Top"
+                    Margin="5" Width="28" Height="28">
+                <Image Source="{StaticResource AddIcon}"/>
+            </Button>
+            <ItemsControl ItemsSource="{Binding APColumns}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" SharedSizeGroup="Name"/>
+                                <RowDefinition Height="Auto" SharedSizeGroup="Negative"/>
+                                <RowDefinition Height="Auto" SharedSizeGroup="Factor"/>
+                                <RowDefinition Height="*" SharedSizeGroup="Values"/>
+                            </Grid.RowDefinitions>
+                            <TextBox Text="{Binding Name}" Margin="5" Grid.Row="0"/>
+                            <TextBox Text="{Binding Negative}" HorizontalContentAlignment="Center" Grid.Row="1"/>
+                            <TextBox Text="{Binding Factor}" HorizontalContentAlignment="Center" Grid.Row="2"/>
+                            <Grid Grid.Row="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ItemsControl ItemsSource="{Binding Costs}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding .}" HorizontalContentAlignment="Center"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Button Click="AddValueButton_OnClick" Grid.Row="1" Height="28" Width="28"
+                                    Padding="2" Tag="{Binding .}">
+                                    <Image Source="{StaticResource AddIcon}"/>
+                                </Button>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </DockPanel>
+    </ScrollViewer>
 </UserControl>

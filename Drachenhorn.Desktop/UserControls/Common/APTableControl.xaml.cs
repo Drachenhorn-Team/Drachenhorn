@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Drachenhorn.Xml.Data.AP;
 
 namespace Drachenhorn.Desktop.UserControls.Common
 {
@@ -23,6 +24,23 @@ namespace Drachenhorn.Desktop.UserControls.Common
         public APTableControl()
         {
             InitializeComponent();
+        }
+
+        private void AddValueButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = (Button) sender;
+
+            (button.Tag as APColumn)?.Costs.Add(0);
+        }
+
+        private void AddColumnButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (!(this.DataContext is APTable))
+                return;
+
+            var table = (APTable) this.DataContext;
+
+            table.APColumns.Add(new APColumn());
         }
     }
 }
