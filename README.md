@@ -37,6 +37,14 @@ Und so hat das alles angefangen.
 
 Grundsätzlich nach dem selben Prinzip, wie den PDF-Bogen.
 
+## Erstelle dein eigenes Programm
+
+Der Code für die Verwendung der Charakterbogen-Dateien befindet sich auf NuGet und kann von jedem verwendet werden, der selber auch Programme für dieses Dateiformat schreiben möchte.
+
+<a href="https://www.nuget.org/packages/Drachenhorn.Xml/" style="padding: 5">
+	<img src="https://www.nuget.org/Content/gallery/img/default-package-icon.svg" width="30" title="nuget"/>
+</a>
+
 ## Support/Bugs
 
 Für Unterstützung bitte ein neues [Issue](https://github.com/lightlike/Drachenhorn/issues) erzeugen.
