@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Drachenhorn.Xml</PackageId>
+    <Authors>lightlike</Authors>
+    <Company />
+    <Product>Drachenhorn</Product>
+    <Copyright>lightlike (2017-2018)</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/lightlike/Drachenhorn/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/lightlike/Drachenhorn</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lightlike/Drachenhorn</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
