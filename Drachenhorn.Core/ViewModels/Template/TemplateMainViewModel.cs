@@ -41,7 +41,6 @@ namespace Drachenhorn.Core.ViewModels.Template
         private void InitializeCommands()
         {
             Save = new RelayCommand(ExecuteSave);
-            Open = new RelayCommand<string>(ExecuteOpen);
         }
 
         public RelayCommand Save { get; private set; }
@@ -51,13 +50,6 @@ namespace Drachenhorn.Core.ViewModels.Template
             Template.Save();
         }
 
-        public RelayCommand<string> Open { get; private set; }
-
-        private void ExecuteOpen(string fileName)
-        {
-            Template = DSATemplate.Load(fileName);
-        }
-        
         #endregion Commands
     }
 }

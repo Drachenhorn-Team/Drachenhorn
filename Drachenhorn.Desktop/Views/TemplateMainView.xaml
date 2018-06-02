@@ -17,13 +17,6 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{lang:Translate UI.File}">
-                <MenuItem Header="{lang:Translate UI.Open}"
-                          Command="{Binding Open}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource EditIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
                 <MenuItem Header="{lang:Translate UI.Save}"
                           Command="{Binding Save}"
                           InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">

@@ -92,11 +92,17 @@ namespace Drachenhorn.Xml
             if (args.Action == NotifyCollectionChangedAction.Add)
                 foreach (var item in args.NewItems)
                 {
+                    if (!(item is INotifyPropertyChanged))
+                        continue;
+
                     ((INotifyPropertyChanged)item).PropertyChanged += OnChildChanged;
                 }
             else if (args.Action == NotifyCollectionChangedAction.Remove)
                 foreach (var item in args.OldItems)
                 {
+                    if (!(item is INotifyPropertyChanged))
+                        continue;
+
                     ((INotifyPropertyChanged)item).PropertyChanged -= OnChildChanged;
                 }
         }

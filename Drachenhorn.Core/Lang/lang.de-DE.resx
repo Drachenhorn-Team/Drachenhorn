@@ -372,7 +372,7 @@
   <data name="Painter.Select" xml:space="preserve">
     <value>Auswählen</value>
   </data>
-  <data name="Gender.None" xml:space="preserve">
+  <data name="Gender.Unspecified" xml:space="preserve">
     <value>N/A</value>
   </data>
   <data name="Gender.Male" xml:space="preserve">
@@ -384,31 +384,22 @@
   <data name="ArmorInformation.Region" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="WeaponType.None" xml:space="preserve">
-    <value>N/A</value>
-  </data>
-  <data name="WeaponType.Melee" xml:space="preserve">
-    <value>Nahkampf</value>
-  </data>
-  <data name="WeaponType.Ranged" xml:space="preserve">
-    <value>Fernkampf</value>
-  </data>
   <data name="CharacterSheet.ArmorInformation" xml:space="preserve">
     <value>Rüstungen</value>
   </data>
-  <data name="ArmorRegion.None" xml:space="preserve">
+  <data name="ArmorType.None" xml:space="preserve">
     <value>N/A</value>
   </data>
-  <data name="ArmorRegion.Head" xml:space="preserve">
+  <data name="ArmorType.Head" xml:space="preserve">
     <value>Kopf</value>
   </data>
-  <data name="ArmorRegion.Body" xml:space="preserve">
+  <data name="ArmorType.Body" xml:space="preserve">
     <value>Oberkörper</value>
   </data>
-  <data name="ArmorRegion.Hands" xml:space="preserve">
+  <data name="ArmorType.Hands" xml:space="preserve">
     <value>Hände</value>
   </data>
-  <data name="ArmorRegion.Legs" xml:space="preserve">
+  <data name="ArmorType.Legs" xml:space="preserve">
     <value>Beine</value>
   </data>
   <data name="UI.Undo" xml:space="preserve">
@@ -692,5 +683,41 @@
   </data>
   <data name="DSATemplate.Cultures" xml:space="preserve">
     <value>Kulturen</value>
+  </data>
+  <data name="DamageType.None" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="DamageType.Melee" xml:space="preserve">
+    <value>Nahkampf</value>
+  </data>
+  <data name="DamageType.Ranged" xml:space="preserve">
+    <value>Fernkampf</value>
+  </data>
+  <data name="DamageType.Magic" xml:space="preserve">
+    <value>Magie</value>
+  </data>
+  <data name="ArmorType.Other" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="CharacterSheet.StoragePlace" xml:space="preserve">
+    <value>Wo getragen?</value>
+  </data>
+  <data name="CharacterSheet.Weight" xml:space="preserve">
+    <value>Gewicht</value>
+  </data>
+  <data name="DSATemplate.APTable" xml:space="preserve">
+    <value>AP-Tabelle</value>
+  </data>
+  <data name="APColumn.Name" xml:space="preserve">
+    <value>Spaltenname</value>
+  </data>
+  <data name="APColumn.Negative" xml:space="preserve">
+    <value>Negativ</value>
+  </data>
+  <data name="APColumn.Factor" xml:space="preserve">
+    <value>Faktor</value>
+  </data>
+  <data name="APColumn.Values" xml:space="preserve">
+    <value>Werte</value>
   </data>
 </root>
