@@ -30,7 +30,7 @@ namespace Drachenhorn.Desktop.UserControls.Common
         {
             var button = (Button) sender;
 
-            (button.Tag as APColumn)?.Costs.Add(0);
+            (button.DataContext as APColumn)?.Add(0);
         }
 
         private void AddColumnButton_OnClick(object sender, RoutedEventArgs e)
@@ -41,6 +41,77 @@ namespace Drachenhorn.Desktop.UserControls.Common
             var table = (APTable) this.DataContext;
 
             table.APColumns.Add(new APColumn());
+        }
+
+        private void RemoveColumnButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+
+            var table = (APTable)this.DataContext;
+
+            table.APColumns.Remove(button.DataContext as APColumn);
+        }
+
+        private void TextBox_OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (!(sender is TextBox))
+                return;
+
+            (sender as TextBox)?.SelectAll();
+        }
+    }
+
+    public class EnterKeyTraversal
+    {
+        public static bool GetIsEnabled(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(IsEnabledProperty);
+        }
+
+        public static void SetIsEnabled(DependencyObject obj, bool value)
+        {
+            obj.SetValue(IsEnabledProperty, value);
+        }
+
+        static void ue_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            var ue = e.OriginalSource as FrameworkElement;
+
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+        private static void ue_Unloaded(object sender, RoutedEventArgs e)
+        {
+            var ue = sender as FrameworkElement;
+            if (ue == null) return;
+
+            ue.Unloaded -= ue_Unloaded;
+            ue.PreviewKeyDown -= ue_PreviewKeyDown;
+        }
+
+        public static readonly DependencyProperty IsEnabledProperty =
+            DependencyProperty.RegisterAttached("IsEnabled", typeof(bool),
+
+                typeof(EnterKeyTraversal), new UIPropertyMetadata(false, IsEnabledChanged));
+
+        static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var ue = d as FrameworkElement;
+            if (ue == null) return;
+
+            if ((bool)e.NewValue)
+            {
+                ue.Unloaded += ue_Unloaded;
+                ue.PreviewKeyDown += ue_PreviewKeyDown;
+            }
+            else
+            {
+                ue.PreviewKeyDown -= ue_PreviewKeyDown;
+            }
         }
     }
 }

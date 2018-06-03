@@ -79,7 +79,7 @@ namespace Drachenhorn.Xml.Data.AP
         }
 
         [XmlIgnore]
-        private ObservableCollection<ushort> _costs = new ObservableCollection<ushort>();
+        private ObservableCollection<APValue> _costs = new ObservableCollection<APValue>();
         /// <summary>
         /// Gets or sets the costs.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Drachenhorn.Xml.Data.AP
         /// The costs.
         /// </value>
         [XmlElement("Cost")]
-        public ObservableCollection<ushort> Costs
+        public ObservableCollection<APValue> Costs
         {
             get { return _costs; }
             set
@@ -146,14 +146,28 @@ namespace Drachenhorn.Xml.Data.AP
             for (int i = start; i <= to; ++i)
             {
                 if (i < Costs.Count)
-                    result += Costs[i];
+                    result += Costs[i].Value;
                 else
-                    result += Costs[Costs.Count - 1];
+                    result += Costs[Costs.Count - 1].Value;
             }
 
             return result;
         }
 
         #endregion Calculation
+
+
+        #region Misc
+
+        /// <summary>
+        /// Add new Value to the Column
+        /// </summary>
+        /// <param name="value">Value to be added.</param>
+        public void Add(ushort value)
+        {
+            this.Costs.Add(new APValue(value));
+        }
+
+        #endregion Misc
     }
 }

@@ -31,7 +31,15 @@ namespace Drachenhorn.UnitTest
 
             table.APColumns.Add(new APColumn("A", 1, 5));
 
-            table["A"].Costs = new ObservableCollection<ushort>() {1, 2, 3, 4, 5, 6, 7, 8, 10};
+            table["A"].Add(1);
+            table["A"].Add(2);
+            table["A"].Add(3);
+            table["A"].Add(4);
+            table["A"].Add(5);
+            table["A"].Add(6);
+            table["A"].Add(7);
+            table["A"].Add(8);
+            table["A"].Add(10);
 
             Assert.AreEqual(table.Calculate("A", -2, 9), (uint)66);
         }

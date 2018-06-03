@@ -401,26 +401,18 @@ namespace Drachenhorn.Xml.Objects
 
             if (this.Year > other.Year)
                 return 1;
-            else if (this.Year < other.Year)
-                return -1;
 
             if (this.Month > other.Month)
                 return 1;
-            else if (this.Month < other.Month)
-                return -1;
 
             if (this.Day > other.Day)
                 return 1;
-            else
-                return -1;
+
+            return -1;
         }
 
-        /// <summary>
-        /// Populates a <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> with the data needed to serialize the target object.
-        /// </summary>
-        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> to populate with data.</param>
-        /// <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext"></see>) for this serialization.</param>
-        /// <exception cref="System.ArgumentNullException">SerializationInfo can not be null.</exception>
+
+        /// <inheritdoc />
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
