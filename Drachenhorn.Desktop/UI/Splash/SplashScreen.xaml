@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent"
-        Title="{lang:Translate Splash.Title}" Height="300" Width="500">
+        Title="{lang:Translate Splash.Title}" Height="200" Width="500">
     <Border Background="#212624" CornerRadius="0" BorderThickness="2" BorderBrush="#111111">
         <Grid Margin="20">
             <Grid.RowDefinitions>
@@ -17,10 +17,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Image Source="{StaticResource DsaIcon}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" />
-            <TextBlock Text="Drachenhorn"
+            <Image Source="{StaticResource DrachenhornBanner}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" />
+            <!--<TextBlock Text="Drachenhorn"
                        HorizontalAlignment="Center" Grid.Row="1" FontSize="60"
-                       Foreground="#9199BE" Style="{StaticResource MorpheusTextStyle}" />
+                       Foreground="#9199BE" Style="{StaticResource MorpheusTextStyle}" />-->
             <DockPanel Grid.Row="2">
                 <userElements:LoadingElement DockPanel.Dock="Left" Height="20" Width="20"/>
                 <TextBlock Text="{lang:Translate Splash.Loading}"

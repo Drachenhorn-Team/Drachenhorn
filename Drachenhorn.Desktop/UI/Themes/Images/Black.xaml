@@ -3,7 +3,7 @@
 
     <!--Images-->
 
-    <BitmapImage x:Key="DsaIcon" UriSource="pack://application:,,,/Images/Common/DSAFanLogo.png" />
+    <BitmapImage x:Key="DrachenhornBanner" UriSource="pack://application:,,,/Images/Common/Banner.png" />
 
     <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Light/Common/Add.png" />
     <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Light/Common/Remove.png" />

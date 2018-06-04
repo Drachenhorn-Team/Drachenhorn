@@ -461,6 +461,7 @@
     <Content Include="commit">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\Common\Banner.png" />
     <Content Include="Images\Common\SaveTemplateIcon.ico" />
     <Resource Include="Images\Dark\Common\Download.png" />
     <Resource Include="Images\Light\Common\Download.png" />

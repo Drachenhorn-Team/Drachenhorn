@@ -30,100 +30,6 @@
     </Window.InputBindings>
 
     <DockPanel>
-        <!--<Menu DockPanel.Dock="Top">
-            <MenuItem Header="{lang:Translate UI.File}">
-                <MenuItem Header="{lang:Translate UI.New}"
-                          Command="{Binding New}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource NewIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{lang:Translate UI.Open}"
-                          Command="{Binding Open}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource EditIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{lang:Translate UI.Save}"
-                          Command="{Binding Save}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource SaveIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{lang:Translate UI.SaveAs}"
-                          Command="{Binding SaveAs}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource SaveAsIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{lang:Translate UI.SaveAll}"
-                          Command="{Binding SaveAll}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource SaveAllIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator Background="{StaticResource BorderBrush}" />
-                <MenuItem Header="{lang:Translate UI.Print}"
-                          Command="{Binding Print}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource PrintIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator Background="{StaticResource BorderBrush}" />
-                <MenuItem Header="{lang:Translate UI.Properties}"
-                          Command="{Binding ShowSettings}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource PropertiesIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header="{lang:Translate UI.Calculate}">
-                <MenuItem Header="{lang:Translate UI.CalculateAll}"
-                          Command="{Binding CalculateAll}"
-                          InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Ctrl + C}">
-                    <MenuItem.Icon>
-                        <Image Source="{DynamicResource CalculateIcon}" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header="{lang:Translate UI.Template}" Command="{Binding OpenTemplates}"/>
-        </Menu>
-
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBarTray.Resources>
-                <ResourceDictionary>
-                    <Style TargetType="{x:Type Image}">
-                        <Setter Property="Width" Value="16" />
-                    </Style>
-                </ResourceDictionary>
-            </ToolBarTray.Resources>
-            <ToolBar>
-                <Button Command="{Binding New}">
-                    <Image Source="{DynamicResource NewIcon}" />
-                </Button>
-                <Button Command="{Binding Open}">
-                    <Image Source="{DynamicResource EditIcon}" />
-                </Button>
-                <Button Command="{Binding Save}">
-                    <Image Source="{DynamicResource SaveIcon}" />
-                </Button>
-                <Button Command="{Binding SaveAll}">
-                    <Image Source="{DynamicResource SaveAllIcon}" />
-                </Button>
-            </ToolBar>
-            <ToolBar>
-                <Button Command="{Binding Print}">
-                    <Image Source="{DynamicResource PrintIcon}" />
-                </Button>
-            </ToolBar>
-        </ToolBarTray>-->
-
         <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False">
 
             <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
@@ -158,7 +64,7 @@
                                    Command="{Binding ShowSettings}"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
-            
+
 
             <fluent:RibbonTabItem Header="{lang:Translate UI.Template}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.ShowTemplateGroup}">
@@ -167,78 +73,21 @@
                                    Command="{Binding OpenTemplates}"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
-
         </fluent:Ribbon>
 
-        <!--<Ribbon DockPanel.Dock="Top" IsMinimized="True">
-            <Ribbon.QuickAccessToolBar>
-                <RibbonQuickAccessToolBar>
-                    <RibbonButton SmallImageSource="{DynamicResource EditIcon}"
-                                  Command="{Binding Open}" />
-                    <RibbonButton SmallImageSource="{DynamicResource SaveIcon}"
-                                  Command="{Binding Save}" />
-                    <RibbonButton SmallImageSource="{DynamicResource SaveAllIcon}"
-                                  Command="{Binding SaveAll}" />
-                    <RibbonSeparator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-                    <RibbonButton SmallImageSource="{DynamicResource PrintIcon}"
-                                  Command="{Binding Print}" />
-                </RibbonQuickAccessToolBar>
-            </Ribbon.QuickAccessToolBar>
-            <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu
-                    Name="Menu" Background="Green"
-                    KeyTip="D" SmallImageSource="{DynamicResource MenuIcon}">
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.New}" Command="{Binding New}"
-                        ImageSource="{DynamicResource NewIcon}"
-                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}" />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Open}" Command="{Binding Open}"
-                        ImageSource="{DynamicResource EditIcon}"
-                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}" />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Save}" Command="{Binding Save}"
-                        ImageSource="{DynamicResource SaveIcon}"
-                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}" />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.SaveAll}" Command="{Binding Save}"
-                        ImageSource="{DynamicResource SaveAllIcon}"
-                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}" />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.SaveAs}" Command="{Binding SaveAs}"
-                        ImageSource="{DynamicResource SaveIcon}" />
-                    <RibbonSeparator />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Print}" Command="{Binding Print}"
-                        ImageSource="{DynamicResource PrintIcon}"
-                        InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}" />
-                    <RibbonSeparator />
-                    <RibbonApplicationMenuItem
-                        Header="{lang:Translate UI.Properties}" Command="{Binding ShowSettings}"
-                        ImageSource="{DynamicResource PropertiesIcon}" />
-                </RibbonApplicationMenu>
-            </Ribbon.ApplicationMenu>
-
-            <RibbonTab Header="{lang:Translate UI.File}">
-                <RibbonGroup Header="{lang:Translate UI.Export}">
-                    <RibbonButton Label="{lang:Translate UI.GenerateHtml}"
-                                  LargeImageSource="{DynamicResource HtmlIcon}"
-                                  Command="{Binding GenerateHtml}" />
-                </RibbonGroup>
-            </RibbonTab>
-        </Ribbon>-->
-
-        <StatusBar x:Name="StatusBar" DataContext="{Binding SettingsView, Source={StaticResource Locator}}"
-                   DockPanel.Dock="Bottom" Height="25" BorderThickness="0 2 0 0">
-            <StatusBarItem HorizontalAlignment="Right" ToolTip="{lang:Translate Update.Available.ToolTip}">
+        <fluent:StatusBar DockPanel.Dock="Bottom" Background="{StaticResource BackgroundBrush2}"
+                          BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 1 0 0">
+            <fluent:StatusBarItem HorizontalAlignment="Right"
+                                  ToolTip="{lang:Translate Update.Available.ToolTip}"
+                                  DataContext="{Binding SettingsView, Source={StaticResource Locator}}">
                 <Border Background="{StaticResource InfoBrush}" CornerRadius="10">
                     <Image Source="{DynamicResource UpdateAvailableIcon}"
                            ToolTip="{lang:Translate Update.Available}"
                            Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
-                           Margin="1" />
+                           Margin="1" Height="16"/>
                 </Border>
-            </StatusBarItem>
-        </StatusBar>
+            </fluent:StatusBarItem>
+        </fluent:StatusBar>
 
         <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
                     SelectedItem="{Binding CurrentSheetViewModel}">
