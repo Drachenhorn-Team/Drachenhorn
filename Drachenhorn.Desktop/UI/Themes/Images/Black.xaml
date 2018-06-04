@@ -23,6 +23,8 @@
     <BitmapImage x:Key="SaveAsIcon" UriSource="pack://application:,,,/Images/Light/SaveIcon.png" />
     <BitmapImage x:Key="UpdateAvailableIcon" UriSource="pack://application:,,,/Images/Light/UpdateAvailable.png" />
 
+    <BitmapImage x:Key="TemplateIcon" UriSource="pack://application:,,,/Images/Light/Templates.png" />
+
     <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Light/Calculate.png" />
 
     <BitmapImage x:Key="BrushIcon" UriSource="pack://application:,,,/Images/Light/Painting/Brush.png" />

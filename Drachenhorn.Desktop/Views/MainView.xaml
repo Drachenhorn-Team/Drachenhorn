@@ -1,12 +1,12 @@
-﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<fluent:RibbonWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
         xmlns:controls="clr-namespace:Drachenhorn.Desktop.UserControls"
-        xmlns:vm="clr-namespace:Drachenhorn.Core.ViewModels;assembly=Drachenhorn.Core"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         xmlns:sheet="clr-namespace:Drachenhorn.Core.ViewModels.Sheet;assembly=Drachenhorn.Core"
+        xmlns:fluent="urn:fluent-ribbon"
         x:Class="Drachenhorn.Desktop.Views.MainView"
         mc:Ignorable="d"
         WindowState="Maximized"
@@ -30,7 +30,7 @@
     </Window.InputBindings>
 
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
+        <!--<Menu DockPanel.Dock="Top">
             <MenuItem Header="{lang:Translate UI.File}">
                 <MenuItem Header="{lang:Translate UI.New}"
                           Command="{Binding New}"
@@ -95,8 +95,6 @@
             <MenuItem Header="{lang:Translate UI.Template}" Command="{Binding OpenTemplates}"/>
         </Menu>
 
-        <!--<Separator DockPanel.Dock="Top" />-->
-
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBarTray.Resources>
                 <ResourceDictionary>
@@ -124,61 +122,107 @@
                     <Image Source="{DynamicResource PrintIcon}" />
                 </Button>
             </ToolBar>
-        </ToolBarTray>
+        </ToolBarTray>-->
+
+        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False">
+
+            <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.SaveLoad}">
+                    <fluent:Button Header="{lang:Translate UI.New}"
+                                   LargeIcon="{DynamicResource NewIcon}"
+                                   Command="{Binding New}"/>
+                    <fluent:Button Header="{lang:Translate UI.Edit}"
+                                   LargeIcon="{DynamicResource EditIcon}"
+                                   Command="{Binding Open}"/>
+                    <fluent:Button Header="{lang:Translate UI.Save}"
+                                   Icon="{DynamicResource SaveIcon}"
+                                   Size="Middle"
+                                   Command="{Binding Save}"/>
+                    <fluent:Button Header="{lang:Translate UI.SaveAll}"
+                                   Icon="{DynamicResource SaveAllIcon}"
+                                   Size="Middle"
+                                   Command="{Binding SaveAll}"/>
+                    <fluent:Button Header="{lang:Translate UI.SaveAs}"
+                                   Icon="{DynamicResource SaveAsIcon}"
+                                   Size="Middle"
+                                   Command="{Binding SaveAs}"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
+                    <fluent:Button Header="{lang:Translate UI.Print}"
+                                   LargeIcon="{DynamicResource PrintIcon}"
+                                   Command="{Binding Print}"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Properties}">
+                    <fluent:Button Header="{lang:Translate UI.Properties}"
+                                   LargeIcon="{DynamicResource PropertiesIcon}"
+                                   Command="{Binding ShowSettings}"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+            
+
+            <fluent:RibbonTabItem Header="{lang:Translate UI.Template}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.ShowTemplateGroup}">
+                    <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
+                                   LargeIcon="{DynamicResource TemplateIcon}"
+                                   Command="{Binding OpenTemplates}"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+
+        </fluent:Ribbon>
 
         <!--<Ribbon DockPanel.Dock="Top" IsMinimized="True">
             <Ribbon.QuickAccessToolBar>
                 <RibbonQuickAccessToolBar>
-                    <RibbonButton SmallImageSource="{StaticResource EditIcon}"
+                    <RibbonButton SmallImageSource="{DynamicResource EditIcon}"
                                   Command="{Binding Open}" />
-                    <RibbonButton SmallImageSource="{StaticResource SaveIcon}"
+                    <RibbonButton SmallImageSource="{DynamicResource SaveIcon}"
                                   Command="{Binding Save}" />
-                    <RibbonButton SmallImageSource="{StaticResource SaveAllIcon}"
+                    <RibbonButton SmallImageSource="{DynamicResource SaveAllIcon}"
                                   Command="{Binding SaveAll}" />
                     <RibbonSeparator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-                    <RibbonButton SmallImageSource="{StaticResource PrintIcon}"
+                    <RibbonButton SmallImageSource="{DynamicResource PrintIcon}"
                                   Command="{Binding Print}" />
                 </RibbonQuickAccessToolBar>
             </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu
                     Name="Menu" Background="Green"
-                    KeyTip="D" SmallImageSource="{StaticResource MenuIcon}">
+                    KeyTip="D" SmallImageSource="{DynamicResource MenuIcon}">
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.New}" Command="{Binding New}"
-                        ImageSource="{StaticResource NewIcon}"
+                        ImageSource="{DynamicResource NewIcon}"
                         InputGestureText="{lang:TranslateText %Keyboard.Ctrl + N}" />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Open}" Command="{Binding Open}"
-                        ImageSource="{StaticResource EditIcon}"
+                        ImageSource="{DynamicResource EditIcon}"
                         InputGestureText="{lang:TranslateText %Keyboard.Ctrl + O}" />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Save}" Command="{Binding Save}"
-                        ImageSource="{StaticResource SaveIcon}"
+                        ImageSource="{DynamicResource SaveIcon}"
                         InputGestureText="{lang:TranslateText %Keyboard.Ctrl + S}" />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAll}" Command="{Binding Save}"
-                        ImageSource="{StaticResource SaveAllIcon}"
+                        ImageSource="{DynamicResource SaveAllIcon}"
                         InputGestureText="{lang:TranslateText %Keyboard.Ctrl + %Keyboard.Shift + S}" />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.SaveAs}" Command="{Binding SaveAs}"
-                        ImageSource="{StaticResource SaveIcon}" />
+                        ImageSource="{DynamicResource SaveIcon}" />
                     <RibbonSeparator />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Print}" Command="{Binding Print}"
-                        ImageSource="{StaticResource PrintIcon}"
+                        ImageSource="{DynamicResource PrintIcon}"
                         InputGestureText="{lang:TranslateText %Keyboard.Ctrl + P}" />
                     <RibbonSeparator />
                     <RibbonApplicationMenuItem
                         Header="{lang:Translate UI.Properties}" Command="{Binding ShowSettings}"
-                        ImageSource="{StaticResource PropertiesIcon}" />
+                        ImageSource="{DynamicResource PropertiesIcon}" />
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
 
             <RibbonTab Header="{lang:Translate UI.File}">
                 <RibbonGroup Header="{lang:Translate UI.Export}">
                     <RibbonButton Label="{lang:Translate UI.GenerateHtml}"
-                                  LargeImageSource="{StaticResource HTMLIcon}"
+                                  LargeImageSource="{DynamicResource HtmlIcon}"
                                   Command="{Binding GenerateHtml}" />
                 </RibbonGroup>
             </RibbonTab>
@@ -238,38 +282,5 @@
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>
-
-        <!--<xcad:DockingManager x:Name="DockingManager"
-                             AllowMixedOrientation="True"
-                             DocumentsSource="{Binding CharacterSheetViewModels}"
-                             ActiveContent="{Binding CurrentSheetViewModel, Mode=TwoWay}">
-            <xcad:DockingManager.DocumentHeaderTemplate>
-                <DataTemplate DataType="ContentPresenter">
-                    <StackPanel Orientation="Horizontal" DataContext="{Binding Content}"
-                                d:DataContext="{d:DesignInstance {x:Type vm:CharacterSheetViewModel}}">
-                        <Border BorderBrush="{StaticResource BorderColor}"
-                                Background="White" BorderThickness="1" CornerRadius="1"
-                                ClipToBounds="True" Margin="0 2 4 2">
-                            <InkPresenter Strokes="{Binding CurrentSheet.CoatOfArms.Strokes}"
-                                          Width="30" Height="20" Loaded="InkPresenter_OnLoaded" />
-                        </Border>
-                        <TextBlock Text="{Binding CurrentSheet.Name}"
-                                   FontSize="12"
-                                   FontFamily="{StaticResource Morpheus}"
-                                   VerticalAlignment="Center" />
-                        <TextBlock Text="*" FontSize="12"
-                                   Visibility="{Binding CurrentSheet.IsChanged, Converter={StaticResource BoolToVisibilityConverter}}"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </DataTemplate>
-            </xcad:DockingManager.DocumentHeaderTemplate>
-            <xcad:DockingManager.LayoutItemTemplate>
-                <DataTemplate DataType="ContentPresenter">
-                    <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundColor}">
-                        <controls:CharacterSheetControl DataContext="{Binding Content}" />
-                    </ScrollViewer>
-                </DataTemplate>
-            </xcad:DockingManager.LayoutItemTemplate>
-        </xcad:DockingManager>-->
     </DockPanel>
-</Window>
+</fluent:RibbonWindow>

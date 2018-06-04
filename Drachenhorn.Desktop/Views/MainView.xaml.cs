@@ -11,6 +11,7 @@ using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI.Dialogs;
+using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 
@@ -20,7 +21,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     /// Interaktionslogik für MainView.xaml
     /// </summary>
-    public partial class MainView : Window
+    public partial class MainView : RibbonWindow
     {
         public MainView(string path)
         {
@@ -31,6 +32,12 @@ namespace Drachenhorn.Desktop.Views
             if (!String.IsNullOrEmpty(path)) this.Loaded += (sender, args) => OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
+
+
+            SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (sender, args) =>
+            {
+                RibbonLocalization.Current.Culture = args.NewCulture;
+            };
         }
 
         public void OpenFile(string path)
