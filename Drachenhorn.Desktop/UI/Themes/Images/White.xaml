@@ -3,7 +3,7 @@
 
     <!--Images-->
 
-    <BitmapImage x:Key="DsaIcon" UriSource="pack://application:,,,/Images/Common/DSAFanLogo.png" />
+    <BitmapImage x:Key="DrachenhornBanner" UriSource="pack://application:,,,/Images/Common/Banner.png" />
 
     <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Dark/Common/Add.png" />
     <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Dark/Common/Remove.png" />
@@ -23,6 +23,8 @@
     <BitmapImage x:Key="SaveIcon" UriSource="pack://application:,,,/Images/Dark/SaveIcon.png" />
     <BitmapImage x:Key="SaveAsIcon" UriSource="pack://application:,,,/Images/Dark/SaveIcon.png" />
     <BitmapImage x:Key="UpdateAvailableIcon" UriSource="pack://application:,,,/Images/Dark/UpdateAvailable.png" />
+
+    <BitmapImage x:Key="TemplateIcon" UriSource="pack://application:,,,/Images/Dark/Templates.png" />
 
     <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Dark/Calculate.png" />
 

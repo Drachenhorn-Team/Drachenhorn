@@ -26,6 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A30811E5-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Core", "Drachenhorn.Core\Drachenhorn.Core.csproj", "{EC066881-E87C-46C3-8DAB-04A19696DC99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A9-4E93-A370-A38F54B29CB5}"
+	ProjectSection(SolutionItems) = preProject
+		img\Cover.jpg = img\Cover.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +115,7 @@ Global
 		{9DB9E8D5-882A-4F62-A133-A6E191E01EF4} = {A30811E5-D212-4297-9D49-3554FF805BE7}
 		{0B148A79-13FE-45C1-9A50-73FCC0C03613} = {9781D075-7CB1-4A03-8669-55612191A73C}
 		{EC066881-E87C-46C3-8DAB-04A19696DC99} = {9781D075-7CB1-4A03-8669-55612191A73C}
+		{71A056D4-84A9-4E93-A370-A38F54B29CB5} = {97542ADA-C7BB-46E2-842E-B3035577629B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6587F46C-F568-4DC3-A758-EC4033606B82}

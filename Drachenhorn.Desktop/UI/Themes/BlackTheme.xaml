@@ -4,5 +4,9 @@
         <ResourceDictionary Source="Colors/Dark.xaml" />
         <ResourceDictionary Source="BaseTheme.xaml" />
         <ResourceDictionary Source="Images/White.xaml"/>
+
+
+        <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Colors/BaseDark.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
