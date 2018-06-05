@@ -33,6 +33,21 @@ namespace Drachenhorn.Desktop.UserControls.Common
             (button.DataContext as APColumn)?.Add(0);
         }
 
+        private void RemoveValueButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var element = (FrameworkElement)sender;
+
+            if (!(element.DataContext is APValue))
+                return;
+
+            if (!(element.Tag is IList<APValue>))
+                return;
+
+            var tag = (IList<APValue>)element.Tag;
+
+            tag.Remove((APValue)element.DataContext);
+        }
+
         private void AddColumnButton_OnClick(object sender, RoutedEventArgs e)
         {
             if (!(this.DataContext is APTable))
