@@ -27,6 +27,8 @@
         <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}" />
         <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding Save}" />
         <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="{Binding SaveAll}" />
+        <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding Print}" />
+        <KeyBinding Key="F9" Command="{Binding ShowSettings}" />
     </Window.InputBindings>
 
     <DockPanel>
@@ -36,16 +38,20 @@
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.SaveLoad}">
                     <fluent:Button Header="{lang:Translate UI.New}"
                                    LargeIcon="{DynamicResource NewIcon}"
+                                   ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
                                    Command="{Binding New}"/>
                     <fluent:Button Header="{lang:Translate UI.Edit}"
                                    LargeIcon="{DynamicResource EditIcon}"
+                                   ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
                                    Command="{Binding Open}"/>
                     <fluent:Button Header="{lang:Translate UI.Save}"
                                    Icon="{DynamicResource SaveIcon}"
+                                   ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
                                    Size="Middle"
                                    Command="{Binding Save}"/>
                     <fluent:Button Header="{lang:Translate UI.SaveAll}"
                                    Icon="{DynamicResource SaveAllIcon}"
+                                   ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
                                    Size="Middle"
                                    Command="{Binding SaveAll}"/>
                     <fluent:Button Header="{lang:Translate UI.SaveAs}"
@@ -56,11 +62,13 @@
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
                     <fluent:Button Header="{lang:Translate UI.Print}"
                                    LargeIcon="{DynamicResource PrintIcon}"
+                                   ToolTip="{lang:TranslateText %UI.Print (%Keyboard.Ctrl + P)}"
                                    Command="{Binding Print}"/>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Properties}">
                     <fluent:Button Header="{lang:Translate UI.Properties}"
                                    LargeIcon="{DynamicResource PropertiesIcon}"
+                                   ToolTip="{lang:TranslateText %UI.Properties (F9)}"
                                    Command="{Binding ShowSettings}"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>

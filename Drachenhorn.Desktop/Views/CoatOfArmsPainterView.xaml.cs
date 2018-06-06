@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Ink;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Fluent;
 using Xceed.Wpf.Toolkit;
 using Color = System.Windows.Media.Color;
 
@@ -18,7 +19,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     /// Interaktionslogik für CoatOfArmsPainterView.xaml
     /// </summary>
-    public partial class CoatOfArmsPainterView : Window
+    public partial class CoatOfArmsPainterView : RibbonWindow
     {
         private ObservableCollection<Stroke> _strokes;
 

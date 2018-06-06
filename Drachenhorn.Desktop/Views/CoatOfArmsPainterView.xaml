@@ -1,16 +1,67 @@
-﻿<Window x:Class="Drachenhorn.Desktop.Views.CoatOfArmsPainterView"
+﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.Views.CoatOfArmsPainterView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        xmlns:fluent="urn:fluent-ribbon"
         mc:Ignorable="d"
-        Style="{StaticResource {x:Type Window}}"
         ResizeMode="CanMinimize"
         Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <ResourceDictionary Source="../UI/Themes/WhiteTheme.xaml"/>
+    </Window.Resources>
+
     <DockPanel>
-        <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+        <fluent:Ribbon DockPanel.Dock="Top">
+            <fluent:RibbonTabItem Header="{lang:Translate UI.Paint}">
+                <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushType}">
+                    <fluent:ToggleButton LargeIcon="{StaticResource PencilIcon}"
+                                         KeyTip="P"
+                                         Content="{lang:Translate Painter.Pencil}"
+                                         GroupName="BrushType"
+                                         IsChecked="True" Checked="BrushType_Checked_1"/>
+                    <fluent:ToggleButton LargeIcon="{StaticResource EraserIcon}"
+                                         KeyTip="E"
+                                         Content="{lang:Translate Painter.Eraser}"
+                                         GroupName="BrushType"
+                                         Checked="BrushType_Checked_2"/>
+                    <fluent:ToggleButton LargeIcon="{StaticResource SelectIcon}"
+                                         KeyTip="S"
+                                         Content="{lang:Translate Painter.Select}"
+                                         GroupName="BrushType"
+                                         Checked="BrushType_Checked_3"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Action}">
+                    <fluent:Button LargeIcon="{StaticResource UndoIcon}"
+                                   KeyTip="Z"
+                                   Content="{lang:Translate UI.Undo}"
+                                   Click="UndoButton_Click"/>
+                    <fluent:Button LargeIcon="{StaticResource RedoIcon}"
+                                   KeyTip="Y"
+                                   Content="{lang:Translate UI.Redo}"
+                                   Click="RedoButton_Click"/>
+                    <fluent:Button LargeIcon="{StaticResource ClearIcon}"
+                                   KeyTip="C"
+                                   Content="{lang:Translate UI.Clear}"
+                                   Click="ClearButton_Click"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate Painter.Color}">
+                    <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
+                                      DisplayColorAndName="True"
+                                      AdvancedButtonHeader="{lang:Translate Colors.Advanced.Header}"
+                                      StandardButtonHeader="{lang:Translate Colors.Standard.Header}"
+                                      StandardColorsHeader="{lang:Translate Colors.Standard}"
+                                      RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
+                                      ShowRecentColors="True"
+                                      UsingAlphaChannel="True"
+                                      SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged"
+                                      Width="200" Margin="2" />
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+        </fluent:Ribbon>
+        <!--<WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
 
             <RadioButton GroupName="BrushType" Width="20" Height="20" Margin="2"
                          IsChecked="True" Checked="BrushType_Checked_1"
@@ -78,10 +129,10 @@
                               UsingAlphaChannel="True"
                               SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged"
                               Width="200" Margin="2" />
-        </WrapPanel>
+        </WrapPanel>-->
 
         <Border Name="InkBorder" Background="GhostWhite" BorderBrush="{StaticResource BorderBrush}"
-                BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                 Width="910" Height="610">
             <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True"
                        Height="{Binding ElementName=InkBorder, Path=ActualHeight}"
@@ -96,4 +147,4 @@
             </InkCanvas>
         </Border>
     </DockPanel>
-</Window>
+</fluent:RibbonWindow>

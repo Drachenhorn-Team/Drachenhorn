@@ -16,6 +16,7 @@ using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Template;
 using Drachenhorn.Xml.Template;
+using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 
@@ -24,7 +25,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     /// Interaktionslogik für TemplateMainView.xaml
     /// </summary>
-    public partial class TemplateMainView : Window
+    public partial class TemplateMainView : RibbonWindow
     {
         public TemplateMainView(DSATemplate template)
         {
