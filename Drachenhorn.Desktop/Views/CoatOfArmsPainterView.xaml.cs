@@ -19,7 +19,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     /// Interaktionslogik für CoatOfArmsPainterView.xaml
     /// </summary>
-    public partial class CoatOfArmsPainterView : RibbonWindow
+    public partial class CoatOfArmsPainterView : RibbonWindow, INotifyPropertyChanged
     {
         private ObservableCollection<Stroke> _strokes;
 
@@ -119,39 +119,18 @@ namespace Drachenhorn.Desktop.Views
 
         #region BrushStrength
 
-        private void BrushStrength_Checked_1(object sender, RoutedEventArgs e)
+        public double BrushStrength
         {
-            if (Canvas != null)
+            get { return Canvas.DefaultDrawingAttributes.Height; }
+            set
             {
-                Canvas.DefaultDrawingAttributes.Height = .7;
-                Canvas.DefaultDrawingAttributes.Width = .7;
-            }
-        }
+                if (Math.Abs(Canvas.DefaultDrawingAttributes.Height - value) > Double.Epsilon)
+                    Canvas.DefaultDrawingAttributes.Height = value;
 
-        private void BrushStrength_Checked_2(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-            {
-                Canvas.DefaultDrawingAttributes.Height = 1.5;
-                Canvas.DefaultDrawingAttributes.Width = 1.5;
-            }
-        }
+                if (Math.Abs(Canvas.DefaultDrawingAttributes.Width - value) > Double.Epsilon)
+                    Canvas.DefaultDrawingAttributes.Width = value;
 
-        private void BrushStrength_Checked_3(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-            {
-                Canvas.DefaultDrawingAttributes.Height = 3;
-                Canvas.DefaultDrawingAttributes.Width = 3;
-            }
-        }
-
-        private void BrushStrength_Checked_4(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-            {
-                Canvas.DefaultDrawingAttributes.Height = 5.5;
-                Canvas.DefaultDrawingAttributes.Width = 5.5;
+                OnPropertyChanged();
             }
         }
 
