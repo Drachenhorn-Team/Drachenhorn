@@ -196,9 +196,9 @@
                             <RowDefinition x:Name="RowDefinition0" Height="Auto" />
                             <RowDefinition x:Name="RowDefinition1" Height="*" />
                         </Grid.RowDefinitions>
-                        <TabPanel x:Name="HeaderPanel" Background="{TemplateBinding Background}"
+                        <TabPanel x:Name="HeaderPanel" Background="{StaticResource BackgroundBrush2}"
                                   Grid.Column="0" IsItemsHost="True" Margin="2,2,2,0" Grid.Row="0"
-                                  KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" />
+                                  KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
                         <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="0 1 0 0"
                                 Background="{TemplateBinding Background}" Grid.Column="0"

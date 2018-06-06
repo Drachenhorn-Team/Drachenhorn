@@ -50,11 +50,11 @@ namespace Drachenhorn.Core.Lang
             }
             catch (MissingManifestResourceException)
             {
-                //try
-                //{
-                //    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
-                //}
-                //catch (InvalidOperationException) { }
+                try
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
+                }
+                catch (InvalidOperationException) { }
                 return identifier;
             }
         }

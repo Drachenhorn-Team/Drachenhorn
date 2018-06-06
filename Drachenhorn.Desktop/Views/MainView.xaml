@@ -44,20 +44,25 @@
                                    LargeIcon="{DynamicResource EditIcon}"
                                    ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
                                    Command="{Binding Open}"/>
-                    <fluent:Button Header="{lang:Translate UI.Save}"
-                                   Icon="{DynamicResource SaveIcon}"
-                                   ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
-                                   Size="Middle"
-                                   Command="{Binding Save}"/>
-                    <fluent:Button Header="{lang:Translate UI.SaveAll}"
-                                   Icon="{DynamicResource SaveAllIcon}"
-                                   ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
-                                   Size="Middle"
-                                   Command="{Binding SaveAll}"/>
-                    <fluent:Button Header="{lang:Translate UI.SaveAs}"
-                                   Icon="{DynamicResource SaveAsIcon}"
-                                   Size="Middle"
-                                   Command="{Binding SaveAs}"/>
+
+                    <fluent:DropDownButton Header="{lang:Translate UI.Save}"
+                                   LargeIcon="{DynamicResource SaveIcon}"
+                                   ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}">
+                        <fluent:Button Header="{lang:Translate UI.Save}"
+                                       Icon="{DynamicResource SaveIcon}"
+                                       ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
+                                       Size="Middle"
+                                       Command="{Binding Save}"/>
+                        <fluent:Button Header="{lang:Translate UI.SaveAll}"
+                                       Icon="{DynamicResource SaveAllIcon}"
+                                       ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
+                                       Size="Middle"
+                                       Command="{Binding SaveAll}"/>
+                        <fluent:Button Header="{lang:Translate UI.SaveAs}"
+                                       Icon="{DynamicResource SaveAsIcon}"
+                                       Size="Middle"
+                                       Command="{Binding SaveAs}"/>
+                    </fluent:DropDownButton>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
                     <fluent:Button Header="{lang:Translate UI.Print}"
@@ -74,8 +79,8 @@
             </fluent:RibbonTabItem>
 
 
-            <fluent:RibbonTabItem Header="{lang:Translate UI.Template}">
-                <fluent:RibbonGroupBox Header="{lang:Translate UI.ShowTemplateGroup}">
+            <fluent:RibbonTabItem Header="{lang:Translate UI.Templates}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Templates}">
                     <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
                                    LargeIcon="{DynamicResource TemplateIcon}"
                                    Command="{Binding OpenTemplates}"/>

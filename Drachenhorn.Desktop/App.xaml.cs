@@ -53,14 +53,14 @@ namespace Drachenhorn.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var splash = new SplashScreen();
-            splash.Show();
-
             _console.Show();
 
 #if DEBUG
             _console.Visibility = Visibility.Visible;
 #endif
+
+            var splash = new SplashScreen();
+            splash.Show();
             
             if (!IsSingleInstance())
                 Application.Current.Shutdown();

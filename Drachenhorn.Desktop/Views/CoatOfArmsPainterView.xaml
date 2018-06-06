@@ -19,32 +19,32 @@
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushType}">
                     <fluent:ToggleButton LargeIcon="{StaticResource PencilIcon}"
                                          KeyTip="P"
-                                         Content="{lang:Translate Painter.Pencil}"
+                                         Header="{lang:Translate Painter.Pencil}"
                                          GroupName="BrushType"
                                          IsChecked="True" Checked="BrushType_Checked_1"/>
                     <fluent:ToggleButton LargeIcon="{StaticResource EraserIcon}"
                                          KeyTip="E"
-                                         Content="{lang:Translate Painter.Eraser}"
+                                         Header="{lang:Translate Painter.Eraser}"
                                          GroupName="BrushType"
                                          Checked="BrushType_Checked_2"/>
                     <fluent:ToggleButton LargeIcon="{StaticResource SelectIcon}"
                                          KeyTip="S"
-                                         Content="{lang:Translate Painter.Select}"
+                                         Header="{lang:Translate Painter.Select}"
                                          GroupName="BrushType"
                                          Checked="BrushType_Checked_3"/>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{lang:Translate UI.Action}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
                     <fluent:Button LargeIcon="{StaticResource UndoIcon}"
                                    KeyTip="Z"
-                                   Content="{lang:Translate UI.Undo}"
+                                   Header="{lang:Translate UI.Undo}"
                                    Click="UndoButton_Click"/>
                     <fluent:Button LargeIcon="{StaticResource RedoIcon}"
                                    KeyTip="Y"
-                                   Content="{lang:Translate UI.Redo}"
+                                   Header="{lang:Translate UI.Redo}"
                                    Click="RedoButton_Click"/>
                     <fluent:Button LargeIcon="{StaticResource ClearIcon}"
                                    KeyTip="C"
-                                   Content="{lang:Translate UI.Clear}"
+                                   Header="{lang:Translate Painter.Clear}"
                                    Click="ClearButton_Click"/>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.Color}">

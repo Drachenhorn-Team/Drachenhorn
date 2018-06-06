@@ -15,6 +15,7 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using log4net.Appender;
 using log4net.Core;
 using Brushes = System.Windows.Media.Brushes;
@@ -62,27 +63,25 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         {
             if (rtb == null) return;
 
-            rtb.Dispatcher.Invoke(() =>
-            {
-                Paragraph p = new Paragraph();
+            Paragraph p = new Paragraph();
 
-                var color = Brushes.White;
+            var color = Brushes.White;
 
-                if (loggingEvent.Level == Level.Debug)
-                    color = Brushes.DodgerBlue;
-                else if (loggingEvent.Level == Level.Info)
-                    color = Brushes.Green;
-                else if (loggingEvent.Level == Level.Warn)
-                    color = Brushes.Yellow;
-                else if (loggingEvent.Level == Level.Error)
-                    color = Brushes.OrangeRed;
-                else if (loggingEvent.Level == Level.Fatal)
-                    color = Brushes.DarkRed;
+            if (loggingEvent.Level == Level.Debug)
+                color = Brushes.DodgerBlue;
+            else if (loggingEvent.Level == Level.Info)
+                color = Brushes.Green;
+            else if (loggingEvent.Level == Level.Warn)
+                color = Brushes.Yellow;
+            else if (loggingEvent.Level == Level.Error)
+                color = Brushes.OrangeRed;
+            else if (loggingEvent.Level == Level.Fatal)
+                color = Brushes.DarkRed;
 
-                p.Inlines.Add(new Run(RenderLoggingEvent(loggingEvent).TrimEnd('\r', '\n')) {Foreground = color});
-                
+            p.Inlines.Add(new Run(RenderLoggingEvent(loggingEvent).TrimEnd('\r', '\n')) {Foreground = color});
+
+            if (rtb.Dispatcher.CheckAccess())
                 rtb.Document.Blocks.Add(p);
-            });
         }
     }
 }

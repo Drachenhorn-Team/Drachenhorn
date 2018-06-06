@@ -612,7 +612,7 @@
   <data name="UI.Online" xml:space="preserve">
     <value>Online</value>
   </data>
-  <data name="UI.Template" xml:space="preserve">
+  <data name="UI.Templates" xml:space="preserve">
     <value>Vorlagen</value>
   </data>
   <data name="UI.AllFiles" xml:space="preserve">
@@ -716,5 +716,23 @@
   </data>
   <data name="UI.Import" xml:space="preserve">
     <value>Importieren</value>
+  </data>
+  <data name="UI.SaveLoad" xml:space="preserve">
+    <value>Speichern/Laden</value>
+  </data>
+  <data name="UI.ShowTemplates" xml:space="preserve">
+    <value>Vorlagen anzeigen</value>
+  </data>
+  <data name="UI.Paint" xml:space="preserve">
+    <value>Zeichnen</value>
+  </data>
+  <data name="Painter.BrushType" xml:space="preserve">
+    <value>Pinselart</value>
+  </data>
+  <data name="UI.Actions" xml:space="preserve">
+    <value>Aktionen</value>
+  </data>
+  <data name="Painter.Color" xml:space="preserve">
+    <value>Farbe</value>
   </data>
 </root>

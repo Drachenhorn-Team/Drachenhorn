@@ -6,7 +6,7 @@
     <Color x:Key="ForegroundDisabledColor">#212624</Color>
 
     <Color x:Key="BackgroundColor">#212624</Color>
-    <Color x:Key="BackgroundColor2">#14272F</Color>
+    <Color x:Key="BackgroundColor2">#313634</Color>
     <Color x:Key="BackgroundHightlightColor">#6C6B74</Color>
     <Color x:Key="BackgroundClickColor">#ACABB4</Color>
     <Color x:Key="BackgroundMouseOverColor">#6C6B74</Color>

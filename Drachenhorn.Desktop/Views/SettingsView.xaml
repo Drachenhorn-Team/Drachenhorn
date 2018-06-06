@@ -25,7 +25,7 @@
     <Window.DataContext>
         <Binding Path="SettingsView" Source="{StaticResource Locator}" />
     </Window.DataContext>
-    <TabControl>
+    <TabControl TabStripPlacement="Left">
         <TabItem Header="{lang:Translate UI.Properties.Misc}">
             <Grid DockPanel.Dock="Top" Margin="10" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
