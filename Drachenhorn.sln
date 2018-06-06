@@ -8,9 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{97542ADA-C7B
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
-		ISSUE_TEMPLATE.md = ISSUE_TEMPLATE.md
 		LICENSE = LICENSE
-		PULL_REQUEST_TEMPLATE.md = PULL_REQUEST_TEMPLATE.md
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -33,6 +31,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A
 		img\Cover_tr.png = img\Cover_tr.png
 		img\Drachenhorn.ico = img\Drachenhorn.ico
 		img\Logo.png = img\Logo.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{9FAE5CD2-7EEF-4510-AED4-05AB5FBDBE8B}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
 	EndProjectSection
 EndProject
 Global
@@ -120,6 +124,7 @@ Global
 		{0B148A79-13FE-45C1-9A50-73FCC0C03613} = {9781D075-7CB1-4A03-8669-55612191A73C}
 		{EC066881-E87C-46C3-8DAB-04A19696DC99} = {9781D075-7CB1-4A03-8669-55612191A73C}
 		{71A056D4-84A9-4E93-A370-A38F54B29CB5} = {97542ADA-C7BB-46E2-842E-B3035577629B}
+		{9FAE5CD2-7EEF-4510-AED4-05AB5FBDBE8B} = {97542ADA-C7BB-46E2-842E-B3035577629B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6587F46C-F568-4DC3-A758-EC4033606B82}
