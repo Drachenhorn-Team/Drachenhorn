@@ -542,6 +542,10 @@
     <Resource Include="Images\Dark\Loading\Loading_1.png" />
     <Resource Include="Images\Light\Templates.png" />
     <Resource Include="Images\Dark\Templates.png" />
+    <Resource Include="Images\Light\Export.png" />
+    <Resource Include="Images\Light\Import.png" />
+    <Resource Include="Images\Dark\Export.png" />
+    <Resource Include="Images\Dark\Import.png" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

@@ -10,6 +10,9 @@
     <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="pack://application:,,,/Images/Light/Common/ArrowBlockDown.png" />
     <BitmapImage x:Key="DownloadIcon" UriSource="pack://application:,,,/Images/Light/Common/Download.png" />
 
+    <BitmapImage x:Key="ImportIcon" UriSource="pack://application:,,,/Images/Light/Import.png" />
+    <BitmapImage x:Key="ExportIcon" UriSource="pack://application:,,,/Images/Light/Export.png" />
+
     <BitmapImage x:Key="EditIcon" UriSource="pack://application:,,,/Images/Light/EditIcon.png" />
     <BitmapImage x:Key="HtmlIcon" UriSource="pack://application:,,,/Images/Light/Html.png" />
     <BitmapImage x:Key="InfoIcon" UriSource="pack://application:,,,/Images/Light/InfoIcon.png" />

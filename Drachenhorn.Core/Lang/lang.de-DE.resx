@@ -601,16 +601,10 @@
     <value>Formel</value>
   </data>
   <data name="PNG.FileType.Name" xml:space="preserve">
-    <value>Bilddatei (.png)</value>
-  </data>
-  <data name="PNG.SaveDialog.Title" xml:space="preserve">
-    <value>Bild speichern</value>
+    <value>Bilddatei</value>
   </data>
   <data name="CoatOfArms.DefaultFileName" xml:space="preserve">
     <value>Wappen</value>
-  </data>
-  <data name="PNG.OpenDialog.Title" xml:space="preserve">
-    <value>Bild öffnen</value>
   </data>
   <data name="UI.Installed" xml:space="preserve">
     <value>Installiert</value>
@@ -719,5 +713,8 @@
   </data>
   <data name="APColumn.Values" xml:space="preserve">
     <value>Werte</value>
+  </data>
+  <data name="UI.Import" xml:space="preserve">
+    <value>Importieren</value>
   </data>
 </root>

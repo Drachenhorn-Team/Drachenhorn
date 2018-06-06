@@ -14,11 +14,22 @@
     <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}"
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
-        <Button Content="{lang:Translate UI.New}" Click="EditButton_Click" Margin="5" DockPanel.Dock="Bottom" />
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+            <Button Click="EditButton_Click" Margin="5" Width="20">
+                <Image Source="{DynamicResource NewIcon}"/>
+            </Button>
+            <Button Click="ClearButton_OnClick" Margin="5" Width="20">
+                <Image Source="{DynamicResource ClearIcon}"/>
+            </Button>
+            <Button Click="ImportButton_OnClick" Margin="5" Width="20">
+                <Image Source="{DynamicResource ImportIcon}"/>
+            </Button>
+            <Button Click="ExportButton_OnClick" Margin="5" Width="20">
+                <Image Source="{DynamicResource ExportIcon}"/>
+            </Button>
+        </WrapPanel>
         <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
-            <Image Source="{Binding Base64String, Converter={StaticResource Base64ImageConverter}}" />
-            <!--<InkPresenter Strokes="{Binding Strokes}" ClipToBounds="True"
-                          Width="{Binding Width}" Height="{Binding Height}" Margin="2" />-->
+            <Image Source="{Binding Base64String, Converter={StaticResource Base64ImageConverter}}"/>
         </Border>
     </DockPanel>
 </UserControl>
