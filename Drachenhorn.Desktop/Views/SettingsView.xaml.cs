@@ -7,13 +7,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Button = System.Windows.Controls.Button;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
     /// Interaktionslogik für SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class SettingsView
     {
         public SettingsView()
         {

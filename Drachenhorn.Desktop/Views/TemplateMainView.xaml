@@ -9,7 +9,7 @@
         xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
         xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
         xmlns:fluent="urn:fluent-ribbon"
-        mc:Ignorable="d"
+        mc:Ignorable="d" IsIconVisible="False"
         Style="{StaticResource {x:Type Window}}"
         DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
         WindowState="Maximized"
@@ -36,7 +36,7 @@
         </fluent:Ribbon>
         
         
-        <TabControl>
+        <TabControl TabStripPlacement="Left">
             <TabItem Header="{lang:Translate DSATemplate.APTable}">
                 <common:APTableControl DataContext="{Binding Template.APTable}"/>
             </TabItem>

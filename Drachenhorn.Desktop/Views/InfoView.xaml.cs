@@ -6,7 +6,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     /// Interaktionslogik für InfoView.xaml
     /// </summary>
-    public partial class InfoView : Window
+    public partial class InfoView
     {
         public InfoView(IInfoObject infoObject)
         {

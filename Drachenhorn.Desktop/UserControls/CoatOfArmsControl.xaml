@@ -15,16 +15,16 @@
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}"
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <Button Click="EditButton_Click" Margin="5" Width="20">
+            <Button Click="EditButton_Click" Margin="5" Width="20" ToolTip="{lang:Translate UI.New}">
                 <Image Source="{DynamicResource NewIcon}"/>
             </Button>
-            <Button Click="ClearButton_OnClick" Margin="5" Width="20">
-                <Image Source="{DynamicResource ClearIcon}"/>
+            <Button Click="ClearButton_OnClick" Margin="5" Width="20" ToolTip="{lang:Translate UI.Remove}">
+                <Image Source="{DynamicResource RemoveIcon}"/>
             </Button>
-            <Button Click="ImportButton_OnClick" Margin="5" Width="20">
+            <Button Click="ImportButton_OnClick" Margin="5" Width="20" ToolTip="{lang:Translate UI.Import}">
                 <Image Source="{DynamicResource ImportIcon}"/>
             </Button>
-            <Button Click="ExportButton_OnClick" Margin="5" Width="20">
+            <Button Click="ExportButton_OnClick" Margin="5" Width="20"  ToolTip="{lang:Translate UI.Export}">
                 <Image Source="{DynamicResource ExportIcon}"/>
             </Button>
         </WrapPanel>
