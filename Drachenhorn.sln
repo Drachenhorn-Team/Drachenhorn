@@ -131,6 +131,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Painting", "Painting", "{AF
 		img\Black\Painting\Width.png = img\Black\Painting\Width.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{8D668A0E-9DCF-41CD-A9FC-1DC1FF4C4A5A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\Readme\Readme.de-DE.md = .github\Readme\Readme.de-DE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +229,7 @@ Global
 		{6E219776-0027-41FE-968F-E6A0B77C9EF1} = {F5FD20BD-575B-4E7B-B87B-A851A8A588A2}
 		{B16AA29F-2058-416C-BD85-AE34519CD128} = {F5FD20BD-575B-4E7B-B87B-A851A8A588A2}
 		{AF14F5BB-51BE-44CA-B6AE-81A4D4EE2498} = {F5FD20BD-575B-4E7B-B87B-A851A8A588A2}
+		{8D668A0E-9DCF-41CD-A9FC-1DC1FF4C4A5A} = {97542ADA-C7BB-46E2-842E-B3035577629B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6587F46C-F568-4DC3-A758-EC4033606B82}

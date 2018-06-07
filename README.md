@@ -20,6 +20,14 @@
 </p>
 
 
+
+### Languages
+
+<p>
+	<a href="/.github/Readme/Readme.de-DE.md"><img src="/img/Flags/de-DE.png"></a>
+</p>
+
+
 Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
 
 >"Das PDF ist echt nervig und langwierig auszufüllen, kannst du da nicht mal was schreiben Daniel?" - Unser Spielleiter
