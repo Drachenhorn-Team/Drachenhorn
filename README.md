@@ -38,7 +38,7 @@ Und so hat das alles angefangen.
 ## Download
 
 <a href="https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/setup.exe" download="setup.exe">
-  <img src="/Drachenhorn.Desktop/Images/Light/Common/Download.png" width="40" title="setup.exe"/>
+  <img src="/img/Black/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
 ## Benutzung
