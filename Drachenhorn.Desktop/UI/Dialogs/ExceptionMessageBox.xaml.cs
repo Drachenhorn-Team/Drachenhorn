@@ -9,10 +9,10 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// <summary>
     /// Interaktionslogik für ExceptionMessageBox.xaml
     /// </summary>
-    public partial class ExceptionMessageBox : Window
+    public partial class ExceptionMessageBox
     {
-        private string _userExceptionMessage;
-        private List<string> _exceptionInformationList = new List<string>();
+        private readonly string _userExceptionMessage;
+        private readonly List<string> _exceptionInformationList = new List<string>();
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage, bool closeApp = false)
         {

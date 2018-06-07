@@ -1,12 +1,12 @@
-﻿<Window x:Class="Drachenhorn.Desktop.UI.Dialogs.ExceptionMessageBox"
+﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.UI.Dialogs.ExceptionMessageBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        mc:Ignorable="d"
+        xmlns:fluent="urn:fluent-ribbon"
+        mc:Ignorable="d" IsIconVisible="False"
         Style="{StaticResource {x:Type Window}}"
-        Title="{lang:Translate UI.Error}"
+        Title="Error"
         Height="600" Width="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -29,4 +29,4 @@
             <Button Content="Close Application" Name="buttonExit" Grid.Column="1" Margin="3" Click="ButtonExit_Click" />
         </Grid>
     </Grid>
-</Window>
+</fluent:RibbonWindow>
