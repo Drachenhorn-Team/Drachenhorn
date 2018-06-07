@@ -61,7 +61,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Drachenhorn.ico</ApplicationIcon>
+    <ApplicationIcon>Images\Common\Drachenhorn.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -465,89 +465,206 @@
     <Resource Include="..\img\Logo.png">
       <Link>Images\Common\Logo.png</Link>
     </Resource>
-    <Resource Include="..\img\Drachenhorn.ico">
-      <Link>Images\Common\Drachenhorn.ico</Link>
-    </Resource>
     <Resource Include="..\img\Banner.jpg">
       <Link>Images\Common\Banner.jpg</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\de-DE.png">
+      <Link>Images\Flags\de-DE.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\en.png">
+      <Link>Images\Flags\en.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\invariant.png">
+      <Link>Images\Flags\invariant.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\nds-DE.png">
+      <Link>Images\Flags\nds-DE.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Calculate.png">
+      <Link>Images\Black\Calculate.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\EditIcon.png">
+      <Link>Images\Black\EditIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Export.png">
+      <Link>Images\Black\Export.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\HTML.png">
+      <Link>Images\Black\HTML.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Import.png">
+      <Link>Images\Black\Import.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\InfoIcon.png">
+      <Link>Images\Black\InfoIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\MenuIcon.png">
+      <Link>Images\Black\MenuIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\NewIcon.png">
+      <Link>Images\Black\NewIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Pdf.png">
+      <Link>Images\Black\Pdf.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\PrintIcon.png">
+      <Link>Images\Black\PrintIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\PropertiesIcon.png">
+      <Link>Images\Black\PropertiesIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\SaveAllIcon.png">
+      <Link>Images\Black\SaveAllIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\SaveIcon.png">
+      <Link>Images\Black\SaveIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Templates.png">
+      <Link>Images\Black\Templates.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\UpdateAvailable.png">
+      <Link>Images\Black\UpdateAvailable.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Common\Add.png">
+      <Link>Images\Black\Common\Add.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Common\ArrowBlockDown.png">
+      <Link>Images\Black\Common\ArrowBlockDown.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Common\Download.png">
+      <Link>Images\Black\Common\Download.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Common\Remove.png">
+      <Link>Images\Black\Common\Remove.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_1.png">
+      <Link>Images\Black\Loading\Loading_1.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_2.png">
+      <Link>Images\Black\Loading\Loading_2.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_3.png">
+      <Link>Images\Black\Loading\Loading_3.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_4.png">
+      <Link>Images\Black\Loading\Loading_4.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_5.png">
+      <Link>Images\Black\Loading\Loading_5.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_6.png">
+      <Link>Images\Black\Loading\Loading_6.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_7.png">
+      <Link>Images\Black\Loading\Loading_7.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Loading\Loading_8.png">
+      <Link>Images\Black\Loading\Loading_8.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Calculate.png">
+      <Link>Images\White\Calculate.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\EditIcon.png">
+      <Link>Images\White\EditIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Export.png">
+      <Link>Images\White\Export.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\HTML.png">
+      <Link>Images\White\HTML.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Import.png">
+      <Link>Images\White\Import.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\InfoIcon.png">
+      <Link>Images\White\InfoIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\MenuIcon.png">
+      <Link>Images\White\MenuIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\NewIcon.png">
+      <Link>Images\White\NewIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Pdf.png">
+      <Link>Images\White\Pdf.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\PrintIcon.png">
+      <Link>Images\White\PrintIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\PropertiesIcon.png">
+      <Link>Images\White\PropertiesIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\SaveAllIcon.png">
+      <Link>Images\White\SaveAllIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\SaveIcon.png">
+      <Link>Images\White\SaveIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Templates.png">
+      <Link>Images\White\Templates.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\UpdateAvailable.png">
+      <Link>Images\White\UpdateAvailable.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\Add.png">
+      <Link>Images\White\Common\Add.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\ArrowBlockDown.png">
+      <Link>Images\White\Common\ArrowBlockDown.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\Download.png">
+      <Link>Images\White\Common\Download.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\Remove.png">
+      <Link>Images\White\Common\Remove.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Brush.png">
+      <Link>Images\Black\Painting\Brush.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Clear.png">
+      <Link>Images\Black\Painting\Clear.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Eraser.png">
+      <Link>Images\Black\Painting\Eraser.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Height.png">
+      <Link>Images\Black\Painting\Height.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Link.png">
+      <Link>Images\Black\Painting\Link.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Pencil.png">
+      <Link>Images\Black\Painting\Pencil.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Redo.png">
+      <Link>Images\Black\Painting\Redo.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Select.png">
+      <Link>Images\Black\Painting\Select.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Undo.png">
+      <Link>Images\Black\Painting\Undo.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Painting\Width.png">
+      <Link>Images\Black\Painting\Width.png</Link>
     </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Drachenhorn.ico" />
+    <Resource Include="Images\Common\Drachenhorn.ico" />
     <Content Include="Images\Common\SaveTemplateIcon.ico" />
-    <Resource Include="Images\Dark\Common\Download.png" />
-    <Resource Include="Images\Light\Common\Download.png" />
-    <Resource Include="Images\Painting\Brush.png" />
-    <Resource Include="Images\Painting\Clear.png" />
-    <Resource Include="Images\Painting\Eraser.png" />
-    <Resource Include="Images\Painting\Pencil.png" />
-    <Resource Include="Images\Painting\Redo.png" />
-    <Resource Include="Images\Painting\Select.png" />
-    <Resource Include="Images\Painting\Undo.png" />
-    <Resource Include="Images\Light\Common\Add.png" />
-    <Resource Include="Images\Light\Common\ArrowBlockDown.png" />
-    <Resource Include="Images\Light\Common\Remove.png" />
-    <Resource Include="Images\Light\Calculate.png" />
-    <Resource Include="Images\Light\EditIcon.png" />
-    <Resource Include="Images\Light\HTML.png" />
-    <Resource Include="Images\Light\InfoIcon.png" />
-    <Resource Include="Images\Light\MenuIcon.png" />
-    <Resource Include="Images\Light\NewIcon.png" />
-    <Resource Include="Images\Light\Pdf.png" />
-    <Resource Include="Images\Light\PrintIcon.png" />
-    <Resource Include="Images\Light\PropertiesIcon.png" />
-    <Resource Include="Images\Light\SaveAllIcon.png" />
-    <Resource Include="Images\Light\SaveIcon.png" />
-    <Resource Include="Images\Light\UpdateAvailable.png" />
-    <Resource Include="Images\Dark\Common\Add.png" />
-    <Resource Include="Images\Dark\Common\ArrowBlockDown.png" />
-    <Resource Include="Images\Dark\Common\Remove.png" />
-    <Resource Include="Images\Dark\Calculate.png" />
-    <Resource Include="Images\Dark\EditIcon.png" />
-    <Resource Include="Images\Dark\HTML.png" />
-    <Resource Include="Images\Dark\InfoIcon.png" />
-    <Resource Include="Images\Dark\MenuIcon.png" />
-    <Resource Include="Images\Dark\NewIcon.png" />
-    <Resource Include="Images\Dark\Pdf.png" />
-    <Resource Include="Images\Dark\PrintIcon.png" />
-    <Resource Include="Images\Dark\PropertiesIcon.png" />
-    <Resource Include="Images\Dark\SaveAllIcon.png" />
-    <Resource Include="Images\Dark\SaveIcon.png" />
-    <Resource Include="Images\Dark\UpdateAvailable.png" />
-    <Resource Include="Images\Flags\de-DE.png" />
-    <Resource Include="Images\Flags\en.png" />
-    <Resource Include="Images\Flags\invariant.png" />
-    <Resource Include="Images\Flags\nds-DE.png" />
     <None Include="Images\Common\SaveFileIcon.svg" />
     <None Include="Images\Common\SaveTemplateIcon.svg" />
     <Content Include="Images\Common\SaveFileIcon.ico" />
     <None Include="Images\ImageSource.md" />
-    <Resource Include="Images\Light\Loading\Loading_2.png" />
-    <Resource Include="Images\Light\Loading\Loading_3.png" />
-    <Resource Include="Images\Light\Loading\Loading_4.png" />
-    <Resource Include="Images\Light\Loading\Loading_5.png" />
-    <Resource Include="Images\Light\Loading\Loading_6.png" />
-    <Resource Include="Images\Light\Loading\Loading_7.png" />
-    <Resource Include="Images\Light\Loading\Loading_8.png" />
-    <Resource Include="Images\Dark\Loading\Loading_2.png" />
-    <Resource Include="Images\Dark\Loading\Loading_3.png" />
-    <Resource Include="Images\Dark\Loading\Loading_4.png" />
-    <Resource Include="Images\Dark\Loading\Loading_5.png" />
-    <Resource Include="Images\Dark\Loading\Loading_6.png" />
-    <Resource Include="Images\Dark\Loading\Loading_7.png" />
-    <Resource Include="Images\Dark\Loading\Loading_8.png" />
-    <Resource Include="Images\Light\Loading\Loading_1.png" />
-    <Resource Include="Images\Dark\Loading\Loading_1.png" />
-    <Resource Include="Images\Light\Templates.png" />
-    <Resource Include="Images\Dark\Templates.png" />
-    <Resource Include="Images\Light\Export.png" />
-    <Resource Include="Images\Light\Import.png" />
-    <Resource Include="Images\Dark\Export.png" />
-    <Resource Include="Images\Dark\Import.png" />
-    <Resource Include="Images\Painting\Width.png" />
-    <Resource Include="Images\Painting\Height.png" />
-    <Resource Include="Images\Painting\Link.png" />
+    <Resource Include="Images\White\Loading\Loading_1.png" />
+    <Resource Include="Images\White\Loading\Loading_2.png" />
+    <Resource Include="Images\White\Loading\Loading_3.png" />
+    <Resource Include="Images\White\Loading\Loading_4.png" />
+    <Resource Include="Images\White\Loading\Loading_5.png" />
+    <Resource Include="Images\White\Loading\Loading_6.png" />
+    <Resource Include="Images\White\Loading\Loading_7.png" />
+    <Resource Include="Images\White\Loading\Loading_8.png" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
