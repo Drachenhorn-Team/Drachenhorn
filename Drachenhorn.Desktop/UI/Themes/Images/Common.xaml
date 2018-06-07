@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="BrushIcon" UriSource="pack://application:,,,/Images/Painting/Brush.png" />
+    <BitmapImage x:Key="ClearIcon" UriSource="pack://application:,,,/Images/Painting/Clear.png" />
+    <BitmapImage x:Key="EraserIcon" UriSource="pack://application:,,,/Images/Painting/Eraser.png" />
+    <BitmapImage x:Key="PencilIcon" UriSource="pack://application:,,,/Images/Painting/Pencil.png" />
+    <BitmapImage x:Key="RedoIcon" UriSource="pack://application:,,,/Images/Painting/Redo.png" />
+    <BitmapImage x:Key="SelectIcon" UriSource="pack://application:,,,/Images/Painting/Select.png" />
+    <BitmapImage x:Key="UndoIcon" UriSource="pack://application:,,,/Images/Painting/Undo.png" />
+    <BitmapImage x:Key="WidthIcon" UriSource="pack://application:,,,/Images/Painting/Width.png"/>
+    <BitmapImage x:Key="HeightIcon" UriSource="pack://application:,,,/Images/Painting/Height.png"/>
+    <BitmapImage x:Key="LinkIcon" UriSource="pack://application:,,,/Images/Painting/Link.png"/>
+    
+</ResourceDictionary>

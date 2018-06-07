@@ -154,6 +154,25 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore]
         private string _fileName;
+        /// <summary>
+        /// Gets or sets the name of the file.
+        /// </summary>
+        /// <value>
+        /// The name of the file.
+        /// </value>
+        [XmlIgnore]
+        public string FileName
+        {
+            get { return _fileName; }
+            set
+            {
+                if (_fileName == value)
+                    return;
+                _fileName = value;
+                OnPropertyChanged();
+                OnPropertyChanged("FilePath");
+            }
+        }
 
         /// <summary>
         /// Gets the Current Template FilePath.
@@ -166,13 +185,12 @@ namespace Drachenhorn.Xml.Template
         {
             get
             {
-                return Path.Combine(BaseDirectory, _fileName + Extension);
+                return Path.Combine(BaseDirectory, FileName + Extension);
             }
             private set
             {
                 if (value.StartsWith(BaseDirectory))
-                    _fileName = value.Replace(BaseDirectory, "").Replace("\\", "").Replace(Extension, "");
-                OnPropertyChanged();
+                    FileName = value.Replace(BaseDirectory, "").Replace("\\", "").Replace(Extension, "");
             }
         }
 

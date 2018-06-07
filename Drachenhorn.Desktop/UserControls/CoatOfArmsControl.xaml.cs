@@ -25,7 +25,7 @@ namespace Drachenhorn.Desktop.UserControls
             if (!(this.DataContext is CoatOfArms))
                 return;
 
-            var view = new CoatOfArmsPainterView(((CoatOfArms)this.DataContext).Base64String);
+            var view = new CoatOfArmsPainterView();
 
             view.Closing += (s, args) =>
             {

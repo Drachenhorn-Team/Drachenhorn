@@ -5,6 +5,8 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                     mc:Ignorable="d">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Images/Common.xaml"/>
+
         <ResourceDictionary Source="Controls/ComboBox.xaml"/>
         <ResourceDictionary Source="Controls/ScrollViewer.xaml"/>
         <ResourceDictionary Source="Controls/DataGrid.xaml"/>

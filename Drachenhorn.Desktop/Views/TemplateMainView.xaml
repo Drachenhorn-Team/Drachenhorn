@@ -23,7 +23,8 @@
         <fluent:Ribbon DockPanel.Dock="Top">
             <fluent:RibbonTabItem Header="{lang:Translate UI.File}" KeyTip="F">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Save}">
-                    <fluent:TextBox Header="{lang:Translate CharacterSheet.Name}" MinWidth="150"/>
+                    <fluent:TextBox Header="{lang:Translate CharacterSheet.Name}"
+                                    Text="{Binding Template.FileName}" MinWidth="150"/>
                     <fluent:Button Header="{lang:Translate UI.Save}"
                                    Icon="{DynamicResource SaveIcon}"
                                    ToolTip="{lang:TranslateText %Keyboard.Ctrl + S}"

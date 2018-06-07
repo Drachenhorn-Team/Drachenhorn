@@ -30,14 +30,6 @@
 
     <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Dark/Calculate.png" />
 
-    <BitmapImage x:Key="BrushIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Brush.png" />
-    <BitmapImage x:Key="ClearIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Clear.png" />
-    <BitmapImage x:Key="EraserIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Eraser.png" />
-    <BitmapImage x:Key="PencilIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Pencil.png" />
-    <BitmapImage x:Key="RedoIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Redo.png" />
-    <BitmapImage x:Key="SelectIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Select.png" />
-    <BitmapImage x:Key="UndoIcon" UriSource="pack://application:,,,/Images/Dark/Painting/Undo.png" />
-
 
     <BitmapImage x:Key="Loading1" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_1.png" />
     <BitmapImage x:Key="Loading2" UriSource="pack://application:,,,/Images/Dark/Loading/Loading_2.png" />

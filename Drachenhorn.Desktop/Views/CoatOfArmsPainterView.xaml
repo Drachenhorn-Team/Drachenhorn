@@ -1,14 +1,13 @@
 ﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.Views.CoatOfArmsPainterView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:fluent="urn:fluent-ribbon"
-        mc:Ignorable="d"
-        ResizeMode="CanMinimize"
-        Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                     xmlns:fluent="urn:fluent-ribbon"
+                     mc:Ignorable="d" ResizeMode="CanMinimize" IsIconVisible="False"
+                     Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
     <Window.Resources>
         <ResourceDictionary Source="../UI/Themes/WhiteTheme.xaml"/>
     </Window.Resources>
@@ -16,6 +15,20 @@
     <DockPanel>
         <fluent:Ribbon DockPanel.Dock="Top">
             <fluent:RibbonTabItem Header="{lang:Translate UI.Paint}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
+                    <fluent:Button LargeIcon="{StaticResource UndoIcon}"
+                                   KeyTip="Z"
+                                   Header="{lang:Translate UI.Undo}"
+                                   Click="UndoButton_Click"/>
+                    <fluent:Button LargeIcon="{StaticResource RedoIcon}"
+                                   KeyTip="Y"
+                                   Header="{lang:Translate UI.Redo}"
+                                   Click="RedoButton_Click"/>
+                    <fluent:Button LargeIcon="{StaticResource ClearIcon}"
+                                   KeyTip="C"
+                                   Header="{lang:Translate Painter.Clear}"
+                                   Click="ClearButton_Click"/>
+                </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushType}">
                     <fluent:ToggleButton LargeIcon="{StaticResource PencilIcon}"
                                          KeyTip="P"
@@ -33,20 +46,6 @@
                                          GroupName="BrushType"
                                          Checked="BrushType_Checked_3"/>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
-                    <fluent:Button LargeIcon="{StaticResource UndoIcon}"
-                                   KeyTip="Z"
-                                   Header="{lang:Translate UI.Undo}"
-                                   Click="UndoButton_Click"/>
-                    <fluent:Button LargeIcon="{StaticResource RedoIcon}"
-                                   KeyTip="Y"
-                                   Header="{lang:Translate UI.Redo}"
-                                   Click="RedoButton_Click"/>
-                    <fluent:Button LargeIcon="{StaticResource ClearIcon}"
-                                   KeyTip="C"
-                                   Header="{lang:Translate Painter.Clear}"
-                                   Click="ClearButton_Click"/>
-                </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.Color}">
                     <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
                                       DisplayColorAndName="True"
@@ -58,6 +57,8 @@
                                       UsingAlphaChannel="True"
                                       SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged"
                                       Width="200" Margin="2" />
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushTip}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -65,14 +66,46 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{StaticResource BrushIcon}" Width="20"/>
+                        <Image Source="{StaticResource WidthIcon}" Width="20"/>
 
-                        <Slider Value="{Binding BrushStrength}" Minimum="0.1" Maximum="20"
-                                Grid.Column="1" VerticalAlignment="Center"
+                        <Slider Value="{Binding DefaultDrawingAttributes.Width, ElementName=Canvas}" Minimum="0.1" Maximum="20"
+                                Thumb.DragCompleted="WidthSlider_OnDragCompleted"
+                                Grid.Column="1" VerticalAlignment="Center" Width="150"
                                 TickFrequency="0.1" IsSnapToTickEnabled="True"/>
 
-                        <TextBox Text="{Binding BrushStrength}" Grid.Column="2" Width="50"/>
+                        <Border Grid.Column="2" Width="30" Margin="0 0 5 0">
+                            <TextBlock Text="{Binding DefaultDrawingAttributes.Width, ElementName=Canvas, StringFormat={}0.0}"
+                                       HorizontalAlignment="Right"/>
+                        </Border>
                     </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{StaticResource HeightIcon}" Width="20"/>
+
+                        <Slider Value="{Binding DefaultDrawingAttributes.Height, ElementName=Canvas}" Minimum="0.1" Maximum="20"
+                                Thumb.DragCompleted="HeightSlider_OnDragCompleted"
+                                Grid.Column="1" VerticalAlignment="Center" Width="150"
+                                TickFrequency="0.1" IsSnapToTickEnabled="True"/>
+
+                        <Border Grid.Column="2" Width="30" Margin="0 0 5 0">
+                            <TextBlock Text="{Binding DefaultDrawingAttributes.Height, ElementName=Canvas, StringFormat={}0.0}"
+                                       HorizontalAlignment="Right"/>
+                        </Border>
+                    </Grid>
+                    
+                    <fluent:ToggleButton Name="LinkSizeToggleButton"
+                                         Size="Small" Icon="{StaticResource LinkIcon}"
+                                         IsChecked="True" Checked="LinkSizeToggleButton_OnChecked" Margin="5"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Misc}">
+                    <fluent:CheckBox Header="{lang:Translate Painter.SmoothCurve}"
+                                     IsChecked="{Binding DefaultDrawingAttributes.FitToCurve, ElementName=Canvas}"
+                                     Margin="5"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
@@ -85,7 +118,7 @@
                        Width="{Binding ElementName=InkBorder, Path=ActualWidth}"
                        VerticalAlignment="Top" HorizontalAlignment="Left">
                 <InkCanvas.DefaultDrawingAttributes>
-                    <DrawingAttributes Height=".7" Width=".7" />
+                    <DrawingAttributes Height="5" Width="5" />
                 </InkCanvas.DefaultDrawingAttributes>
                 <InkCanvas.RenderTransform>
                     <ScaleTransform x:Name="InkCanvasScaleTransform" />

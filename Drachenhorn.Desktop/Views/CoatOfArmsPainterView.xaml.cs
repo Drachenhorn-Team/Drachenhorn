@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Ink;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -35,26 +36,11 @@ namespace Drachenhorn.Desktop.Views
             }
         }
 
-        public CoatOfArmsPainterView(string base64String)
+        public CoatOfArmsPainterView()
         {
             this.DataContext = this;
 
             InitializeComponent();
-
-            //if (!String.IsNullOrEmpty(base64String))
-            //{
-            //    byte[] binaryData = Convert.FromBase64String(base64String);
-
-            //    BitmapImage bi = new BitmapImage();
-            //    bi.BeginInit();
-            //    bi.StreamSource = new MemoryStream(binaryData);
-            //    bi.EndInit();
-
-            //    Canvas.Background = new ImageBrush(bi);
-            //}
-
-            //InkCanvasScaleTransform.ScaleX = 3;
-            //InkCanvasScaleTransform.ScaleY = 3;
 
             ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
             ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>()
@@ -117,9 +103,9 @@ namespace Drachenhorn.Desktop.Views
 
         #endregion BrushType
 
-        #region BrushStrength
+        #region CanvasProperties
 
-        public double BrushStrength
+        private double BrushStrength
         {
             get { return Canvas.DefaultDrawingAttributes.Height; }
             set
@@ -134,7 +120,7 @@ namespace Drachenhorn.Desktop.Views
             }
         }
 
-        #endregion BrushStrength
+        #endregion CanvasProperties
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
@@ -159,6 +145,24 @@ namespace Drachenhorn.Desktop.Views
 
             Strokes.Add(UndoneStrokes.Last());
             UndoneStrokes.Remove(UndoneStrokes.Last());
+        }
+
+        private void LinkSizeToggleButton_OnChecked(object sender, RoutedEventArgs e)
+        {
+            if (Canvas?.DefaultDrawingAttributes != null && Canvas?.DefaultDrawingAttributes != null)
+                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
+        }
+
+        private void WidthSlider_OnDragCompleted(object sender, DragCompletedEventArgs e)
+        {
+            if (LinkSizeToggleButton.IsChecked == true)
+                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
+        }
+
+        private void HeightSlider_OnDragCompleted(object sender, DragCompletedEventArgs e)
+        {
+            if (LinkSizeToggleButton.IsChecked == true)
+                Canvas.DefaultDrawingAttributes.Width = Canvas.DefaultDrawingAttributes.Height;
         }
 
         #region OnPropertyChanged

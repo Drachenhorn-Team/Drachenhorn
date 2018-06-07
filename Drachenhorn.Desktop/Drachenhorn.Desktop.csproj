@@ -353,6 +353,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Themes\Images\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Themes\Images\White.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -471,13 +475,13 @@
     <Content Include="Images\Common\SaveTemplateIcon.ico" />
     <Resource Include="Images\Dark\Common\Download.png" />
     <Resource Include="Images\Light\Common\Download.png" />
-    <Resource Include="Images\Light\Painting\Brush.png" />
-    <Resource Include="Images\Light\Painting\Clear.png" />
-    <Resource Include="Images\Light\Painting\Eraser.png" />
-    <Resource Include="Images\Light\Painting\Pencil.png" />
-    <Resource Include="Images\Light\Painting\Redo.png" />
-    <Resource Include="Images\Light\Painting\Select.png" />
-    <Resource Include="Images\Light\Painting\Undo.png" />
+    <Resource Include="Images\Painting\Brush.png" />
+    <Resource Include="Images\Painting\Clear.png" />
+    <Resource Include="Images\Painting\Eraser.png" />
+    <Resource Include="Images\Painting\Pencil.png" />
+    <Resource Include="Images\Painting\Redo.png" />
+    <Resource Include="Images\Painting\Select.png" />
+    <Resource Include="Images\Painting\Undo.png" />
     <Resource Include="Images\Light\Common\Add.png" />
     <Resource Include="Images\Light\Common\ArrowBlockDown.png" />
     <Resource Include="Images\Light\Common\Remove.png" />
@@ -493,13 +497,6 @@
     <Resource Include="Images\Light\SaveAllIcon.png" />
     <Resource Include="Images\Light\SaveIcon.png" />
     <Resource Include="Images\Light\UpdateAvailable.png" />
-    <Resource Include="Images\Dark\Painting\Brush.png" />
-    <Resource Include="Images\Dark\Painting\Clear.png" />
-    <Resource Include="Images\Dark\Painting\Eraser.png" />
-    <Resource Include="Images\Dark\Painting\Pencil.png" />
-    <Resource Include="Images\Dark\Painting\Redo.png" />
-    <Resource Include="Images\Dark\Painting\Select.png" />
-    <Resource Include="Images\Dark\Painting\Undo.png" />
     <Resource Include="Images\Dark\Common\Add.png" />
     <Resource Include="Images\Dark\Common\ArrowBlockDown.png" />
     <Resource Include="Images\Dark\Common\Remove.png" />
@@ -546,6 +543,9 @@
     <Resource Include="Images\Light\Import.png" />
     <Resource Include="Images\Dark\Export.png" />
     <Resource Include="Images\Dark\Import.png" />
+    <Resource Include="Images\Painting\Width.png" />
+    <Resource Include="Images\Painting\Height.png" />
+    <Resource Include="Images\Painting\Link.png" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
