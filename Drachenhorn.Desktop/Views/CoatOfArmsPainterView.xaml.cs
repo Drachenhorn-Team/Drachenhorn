@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Ink;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Fluent;
@@ -41,8 +42,7 @@ namespace Drachenhorn.Desktop.Views
             this.DataContext = this;
 
             InitializeComponent();
-
-            ClrPcker_Brush.SelectedColor = Canvas.DefaultDrawingAttributes.Color;
+            
             ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>()
             {
                 new ColorItem(Colors.Transparent, "Transparent"),
@@ -54,11 +54,6 @@ namespace Drachenhorn.Desktop.Views
                 new ColorItem(Color.FromRgb(139, 69,  19), "Brown"),
                 new ColorItem(Color.FromRgb(41,  36,  33), "Ivory Black"),
             };
-        }
-
-        private void ClrPcker_Brush_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            Canvas.DefaultDrawingAttributes.Color = (Color)ClrPcker_Brush.SelectedColor;
         }
 
         public string GetBase64()
@@ -103,25 +98,6 @@ namespace Drachenhorn.Desktop.Views
 
         #endregion BrushType
 
-        #region CanvasProperties
-
-        private double BrushStrength
-        {
-            get { return Canvas.DefaultDrawingAttributes.Height; }
-            set
-            {
-                if (Math.Abs(Canvas.DefaultDrawingAttributes.Height - value) > Double.Epsilon)
-                    Canvas.DefaultDrawingAttributes.Height = value;
-
-                if (Math.Abs(Canvas.DefaultDrawingAttributes.Width - value) > Double.Epsilon)
-                    Canvas.DefaultDrawingAttributes.Width = value;
-
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion CanvasProperties
-
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             Canvas.Strokes.Clear();
@@ -153,16 +129,16 @@ namespace Drachenhorn.Desktop.Views
                 Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
         }
 
-        private void WidthSlider_OnDragCompleted(object sender, DragCompletedEventArgs e)
-        {
-            if (LinkSizeToggleButton.IsChecked == true)
-                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
-        }
-
-        private void HeightSlider_OnDragCompleted(object sender, DragCompletedEventArgs e)
+        private void HeightSlider_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (LinkSizeToggleButton.IsChecked == true)
                 Canvas.DefaultDrawingAttributes.Width = Canvas.DefaultDrawingAttributes.Height;
+        }
+
+        private void WidthSlider_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (LinkSizeToggleButton.IsChecked == true)
+                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
         }
 
         #region OnPropertyChanged

@@ -735,4 +735,19 @@
   <data name="Painter.Color" xml:space="preserve">
     <value>Farbe</value>
   </data>
+  <data name="Painter.BrushTip" xml:space="preserve">
+    <value>Stiftspitze</value>
+  </data>
+  <data name="UI.Misc" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="Painter.FitToCurve" xml:space="preserve">
+    <value>Ungenauigkeiten ausgleichen</value>
+  </data>
+  <data name="Painter.IgnorePressure" xml:space="preserve">
+    <value>Druck ignorieren</value>
+  </data>
+  <data name="CoatOfArms.New.AreYouSure" xml:space="preserve">
+    <value>Wollen sie ein neues Wappen erstellen?\n Das alte wird dabei entfernt.</value>
+  </data>
 </root>

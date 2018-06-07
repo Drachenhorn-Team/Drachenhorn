@@ -522,7 +522,6 @@
     <None Include="Images\Common\SaveFileIcon.svg" />
     <None Include="Images\Common\SaveTemplateIcon.svg" />
     <Content Include="Images\Common\SaveFileIcon.ico" />
-    <Resource Include="Images\Common\DSAFanLogo.png" />
     <None Include="Images\ImageSource.md" />
     <Resource Include="Images\Light\Loading\Loading_2.png" />
     <Resource Include="Images\Light\Loading\Loading_3.png" />

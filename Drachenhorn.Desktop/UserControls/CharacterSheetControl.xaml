@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <Image Source="{StaticResource DrachenhornBanner}" Width="300" />
+        <Image Source="{StaticResource DrachenhornLogo}" Width="300" />
         <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center" />
 
         <Border Style="{StaticResource FrameBorder}">

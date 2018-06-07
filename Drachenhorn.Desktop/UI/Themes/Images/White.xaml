@@ -3,8 +3,6 @@
 
     <!--Images-->
 
-    <BitmapImage x:Key="DrachenhornBanner" UriSource="pack://application:,,,/Images/Common/Logo.png" />
-
     <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Dark/Common/Add.png" />
     <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Dark/Common/Remove.png" />
     <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="pack://application:,,,/Images/Dark/Common/ArrowBlockDown.png" />

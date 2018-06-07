@@ -55,8 +55,8 @@
                                       RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
                                       ShowRecentColors="True"
                                       UsingAlphaChannel="True"
-                                      SelectedColorChanged="ClrPcker_Brush_SelectedColorChanged"
-                                      Width="200" Margin="2" />
+                                      Width="200" Margin="2"
+                                      SelectedColor="{Binding DefaultDrawingAttributes.Color, ElementName=Canvas}"/>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushTip}">
                     <Grid>
@@ -69,7 +69,7 @@
                         <Image Source="{StaticResource WidthIcon}" Width="20"/>
 
                         <Slider Value="{Binding DefaultDrawingAttributes.Width, ElementName=Canvas}" Minimum="0.1" Maximum="20"
-                                Thumb.DragCompleted="WidthSlider_OnDragCompleted"
+                                PreviewMouseUp="WidthSlider_OnPreviewMouseUp"
                                 Grid.Column="1" VerticalAlignment="Center" Width="150"
                                 TickFrequency="0.1" IsSnapToTickEnabled="True"/>
 
@@ -88,7 +88,7 @@
                         <Image Source="{StaticResource HeightIcon}" Width="20"/>
 
                         <Slider Value="{Binding DefaultDrawingAttributes.Height, ElementName=Canvas}" Minimum="0.1" Maximum="20"
-                                Thumb.DragCompleted="HeightSlider_OnDragCompleted"
+                                PreviewMouseUp="HeightSlider_OnPreviewMouseUp"
                                 Grid.Column="1" VerticalAlignment="Center" Width="150"
                                 TickFrequency="0.1" IsSnapToTickEnabled="True"/>
 
@@ -103,8 +103,11 @@
                                          IsChecked="True" Checked="LinkSizeToggleButton_OnChecked" Margin="5"/>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Misc}">
-                    <fluent:CheckBox Header="{lang:Translate Painter.SmoothCurve}"
+                    <fluent:CheckBox Header="{lang:Translate Painter.FitToCurve}"
                                      IsChecked="{Binding DefaultDrawingAttributes.FitToCurve, ElementName=Canvas}"
+                                     Margin="5"/>
+                    <fluent:CheckBox Header="{lang:Translate Painter.IgnorePressure}"
+                                     IsChecked="{Binding DefaultDrawingAttributes.IgnorePressure, ElementName=Canvas}"
                                      Margin="5"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
@@ -118,7 +121,7 @@
                        Width="{Binding ElementName=InkBorder, Path=ActualWidth}"
                        VerticalAlignment="Top" HorizontalAlignment="Left">
                 <InkCanvas.DefaultDrawingAttributes>
-                    <DrawingAttributes Height="5" Width="5" />
+                    <DrawingAttributes IgnorePressure="True" FitToCurve="True" Height="5" Width="5" />
                 </InkCanvas.DefaultDrawingAttributes>
                 <InkCanvas.RenderTransform>
                     <ScaleTransform x:Name="InkCanvasScaleTransform" />

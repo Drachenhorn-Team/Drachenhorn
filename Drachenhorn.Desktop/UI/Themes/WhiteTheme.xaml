@@ -2,9 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors/White.xaml" />
-        <ResourceDictionary Source="BaseTheme.xaml" />
+        <ResourceDictionary Source="BaseTheme.xaml"/>
         <ResourceDictionary Source="Images/Black.xaml"/>
-
 
         <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Colors/BaseLight.xaml" />
