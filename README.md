@@ -27,13 +27,11 @@
 	<a href="/.github/Readme/Readme.de-DE.md"><img src="/img/Flags/de-DE.png"></a>
 </p>
 
+Drachenhorn is a Programm to create "Pen & Paper"-Characters on any Rule-System based on the "Das Schwarze Auge" (German, The black Eye)
 
-Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
+>"The PDF is really annoying and takes some time to fill completely. Daniel couldn't you create something to help with that?" - Our Gamemaster
 
->"Das PDF ist echt nervig und langwierig auszufüllen, kannst du da nicht mal was schreiben Daniel?" - Unser Spielleiter
-
-Und so hat das alles angefangen.
-
+And that is how this all started.
 
 ## Download
 
@@ -41,13 +39,13 @@ Und so hat das alles angefangen.
   <img src="/img/Black/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
-## Benutzung
+## Usage
 
-Grundsätzlich nach dem selben Prinzip, wie den PDF-Bogen.
+Select a Rule-System and create the Character using the helper like a simple Installer. (*Not finished yet*)
 
-## Erstelle dein eigenes Programm
+## Create your own application
 
-Der Code für die Verwendung der Charakterbogen-Dateien befindet sich auf NuGet und kann von jedem verwendet werden, der selber auch Programme für dieses Dateiformat schreiben möchte.
+The code to read the Character-Sheets (".dsac") and Rule-Templates (".dsat") can be found on NuGet for anybody to use.
 
 <a href="https://www.nuget.org/packages/Drachenhorn.Xml/" style="padding: 5">
 	<img src="https://www.nuget.org/Content/gallery/img/default-package-icon.svg" width="30" title="nuget"/>
@@ -55,8 +53,10 @@ Der Code für die Verwendung der Charakterbogen-Dateien befindet sich auf NuGet 
 
 ## Support/Bugs
 
-Für Unterstützung bitte ein neues [Issue](https://github.com/lightlike/Drachenhorn/issues) erzeugen.
+For any Bug-Reports or Feature-Request please open an [Issue](https://github.com/lightlike/Drachenhorn/issues) containing all needed information.
 
-## Entwickeln
+## Development
 
-Grundsätzlich kann jeder mit normal Github-Abläufen zu diesem Programm beitragen, allerdings wäre es schön, wenn ihr damit wartet, bis die Version [0.1.0.0](https://github.com/lightlike/Drachenhorn/milestone/1) Fertig ist, damit ich die Grundstruktur erstellen kann.
+Anyone can held if he/she wants to. I really appreciate any help. Just fork it and create Pull-Request when finished.
+
+*But please wait for Version 0.1.0.0 for me to establish basic behaviour.*
