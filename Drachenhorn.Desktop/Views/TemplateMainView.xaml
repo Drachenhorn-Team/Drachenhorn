@@ -20,7 +20,7 @@
     </Window.InputBindings>
 
     <DockPanel>
-        <fluent:Ribbon DockPanel.Dock="Top">
+        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarVisible="False">
             <fluent:RibbonTabItem Header="{lang:Translate UI.File}" KeyTip="F">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Save}">
                     <fluent:TextBox Header="{lang:Translate CharacterSheet.Name}"

@@ -1,7 +1,6 @@
 ﻿using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
-using Drachenhorn.Core.Settings.Update;
 using Drachenhorn.Desktop.IO;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UI.MVVM;
@@ -134,8 +133,6 @@ namespace Drachenhorn.Desktop
                 if (args.PropertyName == "VisualTheme")
                     SetTheme(settings.VisualTheme);
             };
-
-            settings.CheckUpdateAsync(UpdateCheckFinished);
         }
 
         #region Theme
@@ -163,21 +160,6 @@ namespace Drachenhorn.Desktop
         }
 
         #endregion Theme
-
-        private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
-        {
-            if (args.IsUpdateAvailable)
-                Application.Current.Dispatcher.Invoke(
-                    new Action(() =>
-                    {
-                        MessageBox.Show(
-                            LanguageManager.Translate("Update.CheckForUpdate.Finished.Successful"),
-                            LanguageManager.Translate("Update.CheckForUpdate.Finished.Caption"),
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information,
-                            MessageBoxResult.OK);
-                    }));
-        }
 
         #region SingleInstance
 

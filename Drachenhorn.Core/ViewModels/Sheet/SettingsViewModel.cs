@@ -1,6 +1,5 @@
 ﻿using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
-using Drachenhorn.Core.Settings.Update;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -50,36 +49,8 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             Settings = settings;
 
             DialogService = dialogService;
-
-            InitializeCommands();
         }
 
         #endregion c'tor
-
-        #region Commands
-
-        private void InitializeCommands()
-        {
-            CheckForUpdate = new RelayCommand(ExecuteCheckForUpdate);
-        }
-
-        public RelayCommand CheckForUpdate { get; private set; }
-
-        private void ExecuteCheckForUpdate()
-        {
-            IsCheckingUpdate = true;
-            Settings.CheckUpdateAsync(UpdateCheckFinished);
-        }
-
-        private void UpdateCheckFinished(object sender, UpdateCheckedEventArgs args)
-        {
-            IsCheckingUpdate = false;
-
-            var text = LanguageManager.Translate(args.IsUpdateAvailable ? "Update.CheckForUpdate.Finished.Successful" : "Update.CheckForUpdate.Finished.Failed");
-
-            DialogService.ShowMessageBox(text, LanguageManager.Translate("Update.CheckForUpdate.Finished.Caption"));
-        }
-
-        #endregion Commands
     }
 }

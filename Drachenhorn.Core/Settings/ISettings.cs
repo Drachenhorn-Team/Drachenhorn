@@ -1,5 +1,4 @@
-﻿using Drachenhorn.Core.Settings.Update;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Drachenhorn.Core.Settings
 {
@@ -14,18 +13,5 @@ namespace Drachenhorn.Core.Settings
         VisualThemeType VisualTheme { get; set; }
 
         bool? ShowConsole { get; set; }
-
-        bool IsUpdateAvailable { get; }
-        bool CanCheckUpdate { get; }
-
-        #region Methods
-
-        bool CheckUpdate();
-
-        void CheckUpdateAsync();
-
-        void CheckUpdateAsync(UpdateCheckedHandler checkFinished);
-
-        #endregion Methods
     }
 }

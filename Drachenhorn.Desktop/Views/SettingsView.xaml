@@ -84,11 +84,8 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -99,27 +96,15 @@
                         <TextBlock Text="{Binding Settings.Version}"
                                        Grid.Row="0" Grid.Column="1" Margin="5" />
 
-                        <TextBlock Text="{lang:Translate Update.Available}"
-                               Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
-                               Foreground="{StaticResource InfoBrush}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="5" />
+                        <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="1" Grid.Column="0"
+                                   Margin="5" />
+                        <Button Content="{Binding Settings.GitCommit, FallbackValue=commit}"
+                                Click="GitCommit_Click" Grid.Row="1" Grid.Column="1" Margin="5"
+                                HorizontalAlignment="Left" />
 
-                        <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="2" Grid.Column="0" Margin="5" />
-                        <Button Content="{Binding Settings.GitCommit, FallbackValue=commit}" Click="GitCommit_Click" Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Left" />
-
-                        <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="3" Grid.Column="0" Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1"><Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="lightlike (DanielN)" /></Hyperlink></TextBlock>
-
-                        <ProgressBar IsIndeterminate="True" Margin="5"
-                                     Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
-                                     Visibility="{Binding IsCheckingUpdate, Converter={StaticResource BoolToVisibilityConverter}}" />
-
-                        <Button Content="{lang:Translate About.CheckForUpdate}"
-                                Command="{Binding CheckForUpdate}"
-                                Margin="5" Grid.Column="2" Grid.Row="4" />
-
-                        <!--<xctk:BusyIndicator x:Name="BusyIndicator" BusyContent="{lang:Translate UpdateSourceTrigger.CheckForUpdate.Text}"
-                                                IsBusy="{Binding IsCheckingUpdate}"
-                                                Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" />-->
+                        <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="2" Grid.Column="0"
+                                   Margin="5" />
+                        <TextBlock Margin="5" Grid.Row="2" Grid.Column="1"><Hyperlink NavigateUri="https://github.com/lightlike" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="lightlike (DanielN)" /></Hyperlink></TextBlock>
                     </Grid>
                 </Border>
 

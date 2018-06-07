@@ -32,7 +32,8 @@
     </Window.InputBindings>
 
     <DockPanel>
-        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False">
+        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False"
+                       IsQuickAccessToolBarVisible="False">
 
             <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.SaveLoad}">
@@ -90,16 +91,6 @@
 
         <fluent:StatusBar DockPanel.Dock="Bottom" Background="{StaticResource BackgroundBrush2}"
                           BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 1 0 0">
-            <fluent:StatusBarItem HorizontalAlignment="Right"
-                                  ToolTip="{lang:Translate Update.Available.ToolTip}"
-                                  DataContext="{Binding SettingsView, Source={StaticResource Locator}}">
-                <Border Background="{StaticResource InfoBrush}" CornerRadius="10">
-                    <Image Source="{DynamicResource UpdateAvailableIcon}"
-                           ToolTip="{lang:Translate Update.Available}"
-                           Visibility="{Binding Settings.IsUpdateAvailable, Converter={StaticResource BoolToVisibilityConverter}}"
-                           Margin="1" Height="16"/>
-                </Border>
-            </fluent:StatusBarItem>
         </fluent:StatusBar>
 
         <TabControl ItemsSource="{Binding CharacterSheetViewModels}"

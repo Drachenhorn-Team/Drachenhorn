@@ -1,6 +1,5 @@
 ﻿using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
-using Drachenhorn.Core.Settings.Update;
 using Drachenhorn.Xml;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
@@ -157,60 +156,6 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         #endregion c'tor
-
-        #region Update
-
-        public bool CanCheckUpdate => ApplicationDeployment.IsNetworkDeployed;
-
-        public event UpdateCheckedHandler UpdateChecked;
-
-        private void OnUpdateChecked(object sender, UpdateCheckedEventArgs args)
-        {
-            UpdateChecked?.Invoke(sender, args);
-        }
-
-        public void CheckUpdateAsync()
-        {
-            new Task(() =>
-            {
-                IsUpdateAvailable = CheckUpdate();
-                OnUpdateChecked(this, new UpdateCheckedEventArgs(IsUpdateAvailable));
-            }).Start();
-        }
-
-        public void CheckUpdateAsync(UpdateCheckedHandler checkFinished)
-        {
-            UpdateCheckedHandler handler = null;
-            UpdateChecked += handler = (sender, args) =>
-            {
-                checkFinished(sender, args);
-                UpdateChecked -= handler;
-            };
-            CheckUpdateAsync();
-        }
-
-        /// <summary>
-        /// Checks for a ClickOnce-Update
-        /// </summary>
-        /// <returns>True if update is available.</returns>
-        public bool CheckUpdate()
-        {
-            try
-            {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Update").Info("Checking for Update");
-
-                if (ApplicationDeployment.IsNetworkDeployed)
-                    return ApplicationDeployment.CurrentDeployment.CheckForUpdate();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return false;
-        }
-
-        #endregion Update
 
         #region Save/Load
 
