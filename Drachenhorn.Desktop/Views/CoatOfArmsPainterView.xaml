@@ -13,7 +13,7 @@
     </Window.Resources>
 
     <DockPanel>
-        <fluent:Ribbon DockPanel.Dock="Top">
+        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarVisible="False">
             <fluent:RibbonTabItem Header="{lang:Translate UI.Paint}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
                     <fluent:Button LargeIcon="{StaticResource UndoIcon}"
@@ -114,12 +114,8 @@
         </fluent:Ribbon>
 
         <Border Name="InkBorder" Background="GhostWhite" BorderBrush="{StaticResource BorderBrush}"
-                BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                Width="900" Height="600">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True"
-                       Height="{Binding ElementName=InkBorder, Path=ActualHeight}"
-                       Width="{Binding ElementName=InkBorder, Path=ActualWidth}"
-                       VerticalAlignment="Top" HorizontalAlignment="Left">
+                BorderThickness="1" MinHeight="600">
+            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True">
                 <InkCanvas.DefaultDrawingAttributes>
                     <DrawingAttributes IgnorePressure="True" FitToCurve="True" Height="5" Width="5" />
                 </InkCanvas.DefaultDrawingAttributes>

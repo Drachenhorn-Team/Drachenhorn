@@ -14,6 +14,7 @@
         <ResourceDictionary Source="Controls/ToolBar.xaml"/>
         <ResourceDictionary Source="Controls/ListBox.xaml"/>
         <ResourceDictionary Source="Controls/RadioButton.xaml"/>
+        <ResourceDictionary Source="Controls/Slider.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource ForegroundColor}" />
