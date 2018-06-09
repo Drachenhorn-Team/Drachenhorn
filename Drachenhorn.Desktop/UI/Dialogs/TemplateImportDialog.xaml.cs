@@ -21,10 +21,19 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             var fileName = file.Name;
             
-            var version = Regex.Match(fileName, "[v]{1}[0-9]*[.]{1}[0-9]*").Value;
+            NameBox.Text = fileName;
 
-            VersionBox.Text = version.Replace("v", "");
-            NameBox.Text = fileName.Substring(0, fileName.IndexOf(version, StringComparison.Ordinal) - 1);
+            using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+            {
+                sr.ReadLine();
+                var secondLine = sr.ReadLine();
+
+                if (!string.IsNullOrEmpty(secondLine))
+                {
+                    var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(secondLine).Value;
+                    VersionBox.Text = match.Substring(9, match.Length - 10);
+                }
+            }
 
             NoButton.Click += (sender, args) =>
             {

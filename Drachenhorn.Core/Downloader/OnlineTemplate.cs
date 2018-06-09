@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Xml;
@@ -99,13 +100,26 @@ namespace Drachenhorn.Core.Downloader
         {
             var split = line.Split(' ');
 
-            if (split.Length < 3)
+            if (split.Length < 2)
                 return;
 
             Link = split[0];
-            Version = Double.Parse(split[1].Replace("v", ""), CultureInfo.InvariantCulture);
 
-            for (int i = 2; i < split.Length; ++i)
+            using (var sr = new StreamReader(new WebClient().OpenRead(Link)))
+            {
+                sr.ReadLine();
+                var secondLine = sr.ReadLine();
+
+                if (!string.IsNullOrEmpty(secondLine))
+                {
+                    var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(secondLine).Value;
+                    Version = Double.Parse(match.Substring(9, match.Length - 10), CultureInfo.InvariantCulture);
+                }
+            }
+
+            //Version = Double.Parse(split[1].Replace("v", ""), CultureInfo.InvariantCulture);
+
+            for (int i = 1; i < split.Length; ++i)
                 Name += split[i] + " ";
 
             Name = Name.Remove(Name.Length - 1);
@@ -129,7 +143,7 @@ namespace Drachenhorn.Core.Downloader
                     .SaveString(
                         Path.Combine(
                             DSATemplate.BaseDirectory, 
-                            Name + " v" + Version.ToString(CultureInfo.InvariantCulture) + DSATemplate.Extension),
+                            Name + DSATemplate.Extension),
                         result);
 
                 IsDownloadStarted = false;

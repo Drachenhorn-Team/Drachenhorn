@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Drachenhorn.Core.IO;
+using Drachenhorn.Core.Lang;
 using Drachenhorn.Xml.Exceptions;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
@@ -41,6 +42,7 @@ namespace Drachenhorn.Core.ViewModels.Template
         private void InitializeCommands()
         {
             Save = new RelayCommand(ExecuteSave);
+            Export = new RelayCommand(ExecuteExport);
         }
 
         public RelayCommand Save { get; private set; }
@@ -48,6 +50,13 @@ namespace Drachenhorn.Core.ViewModels.Template
         private void ExecuteSave()
         {
             Template.Save();
+        }
+
+        public RelayCommand Export { get; private set; }
+
+        private void ExecuteExport()
+        {
+            SimpleIoc.Default.GetInstance<IIoService>().SaveAs(Template, Template.FileName, DSATemplate.Extension, "Drachenhorn Template", LanguageManager.Translate("UI.Export"));
         }
 
         #endregion Commands

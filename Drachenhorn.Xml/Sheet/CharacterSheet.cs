@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Exceptions;
+using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet.CombatInfo;
 using Drachenhorn.Xml.Sheet.Common;
 using Drachenhorn.Xml.Sheet.InventoryInfo;
@@ -16,7 +17,7 @@ namespace Drachenhorn.Xml.Sheet
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
-    public class CharacterSheet : ChildChangedBase
+    public class CharacterSheet : ChildChangedBase, ISavable
     {
         #region Properties
 
@@ -371,6 +372,12 @@ namespace Drachenhorn.Xml.Sheet
             {
                 throw new SheetSavingException(path, e);
             }
+        }
+
+        /// <inheritdoc />
+        void ISavable.Save(string path)
+        {
+            Save(path);
         }
 
         #endregion Save/Load
