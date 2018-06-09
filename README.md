@@ -1,4 +1,4 @@
-<p align="center"><img src="img/Banner.jpg" alt="Drachenhorn Icon" width="350"></p>
+<p align="center"><img src="img/Banner_large.png" alt="Drachenhorn Icon"></p>
 <!--<h1 align="center">Drachenhorn Charakterbogen</h1>-->
 
 <p align="center">
