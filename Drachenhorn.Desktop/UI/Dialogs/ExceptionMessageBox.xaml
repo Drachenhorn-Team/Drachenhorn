@@ -11,16 +11,23 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="557*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="435*" />
+            <ColumnDefinition Width="Auto" MinWidth="200"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <TreeView Name="treeView1" Margin="5" SelectedItemChanged="TreeView1_SelectedItemChanged" />
-        <GridSplitter Width="2" Grid.RowSpan="2" />
-        <TextBlock Grid.Column="1" Name="textBox1" Margin="5" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
-        <Grid Grid.Row ="1" Grid.ColumnSpan="2">
+        <TreeView Name="treeView1" SelectedItemChanged="TreeView1_SelectedItemChanged" />
+
+        <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="1" HorizontalAlignment="Stretch"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="0" Name="textBox1" Margin="5" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+
+        <Separator Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"/>
+
+        <Grid Grid.Row ="2" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1*" />
