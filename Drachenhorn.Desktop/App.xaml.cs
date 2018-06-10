@@ -98,7 +98,12 @@ namespace Drachenhorn.Desktop
             MainWindow.Show();
             splash.Close();
             
-            MainWindow.Closed += (s, a) => { _console.Close(); };
+            MainWindow.Closed += (s, a) =>
+            {
+                _console.ShouldClose = true;
+                _console.Close();
+
+            };
         }
 
         private void InitializeData()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class ConsoleWindow : Window
     {
+        public bool ShouldClose = false;
+
+
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
         [DllImport("user32.dll", SetLastError = true)]
@@ -52,6 +56,12 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         {
             var hwnd = new WindowInteropHelper(this).Handle;
             SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SYSMENU);
+        }
+
+        private void ConsoleWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            if (!ShouldClose)
+                e.Cancel = true;
         }
     }
 

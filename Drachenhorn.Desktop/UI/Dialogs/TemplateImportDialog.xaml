@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Style="{StaticResource {x:Type Window}}"
         Title="TemplateImportDialog" SizeToContent="Height" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
