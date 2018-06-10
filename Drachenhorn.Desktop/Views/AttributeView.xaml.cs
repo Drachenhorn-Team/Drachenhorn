@@ -1,25 +1,14 @@
-﻿using Drachenhorn.Xml.Sheet.Skills;
-using System.Windows;
+﻿using System.Windows;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für AttributeView.xaml
+    ///     Interaktionslogik für AttributeView.xaml
     /// </summary>
     public partial class AttributeView : Window
     {
         private Attribute _attribute;
-
-        public Attribute Attribute
-        {
-            get { return _attribute; }
-            private set
-            {
-                if (_attribute == value)
-                    return;
-                _attribute = value;
-            }
-        }
 
         public AttributeView(Attribute attribute)
         {
@@ -28,6 +17,17 @@ namespace Drachenhorn.Desktop.Views
             DataContext = Attribute;
 
             InitializeComponent();
+        }
+
+        public Attribute Attribute
+        {
+            get => _attribute;
+            private set
+            {
+                if (_attribute == value)
+                    return;
+                _attribute = value;
+            }
         }
     }
 }

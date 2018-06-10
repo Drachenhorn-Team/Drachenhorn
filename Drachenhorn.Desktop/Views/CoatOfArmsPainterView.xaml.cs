@@ -1,5 +1,4 @@
-﻿using Drachenhorn.Core.Objects;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
@@ -7,27 +6,47 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Drachenhorn.Core.Objects;
 using Fluent;
 using Xceed.Wpf.Toolkit;
-using Color = System.Windows.Media.Color;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für CoatOfArmsPainterView.xaml
+    ///     Interaktionslogik für CoatOfArmsPainterView.xaml
     /// </summary>
     public partial class CoatOfArmsPainterView : RibbonWindow, INotifyPropertyChanged
     {
         private ObservableCollection<Stroke> _strokes;
 
+        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
+
+        public CoatOfArmsPainterView()
+        {
+            DataContext = this;
+
+            InitializeComponent();
+
+            ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>
+            {
+                new ColorItem(Colors.Transparent, "Transparent"),
+                new ColorItem(Color.FromRgb(220, 20, 60), "Crimson"),
+                new ColorItem(Color.FromRgb(67, 110, 238), "Royal Blue"),
+                new ColorItem(Color.FromRgb(0, 201, 87), "Emerald Green"),
+                new ColorItem(Color.FromRgb(255, 215, 0), "Gold"),
+                new ColorItem(Color.FromRgb(192, 192, 192), "Silver"),
+                new ColorItem(Color.FromRgb(139, 69, 19), "Brown"),
+                new ColorItem(Color.FromRgb(41, 36, 33), "Ivory Black")
+            };
+        }
+
         public ObservableCollection<Stroke> Strokes
         {
-            get { return _strokes; }
+            get => _strokes;
             private set
             {
                 if (_strokes == value)
@@ -37,31 +56,12 @@ namespace Drachenhorn.Desktop.Views
             }
         }
 
-        public CoatOfArmsPainterView()
-        {
-            this.DataContext = this;
-
-            InitializeComponent();
-            
-            ClrPcker_Brush.StandardColors = new ObservableCollection<ColorItem>()
-            {
-                new ColorItem(Colors.Transparent, "Transparent"),
-                new ColorItem(Color.FromRgb(220, 20,  60), "Crimson"),
-                new ColorItem(Color.FromRgb(67,  110, 238), "Royal Blue"),
-                new ColorItem(Color.FromRgb(0,   201, 87), "Emerald Green"),
-                new ColorItem(Color.FromRgb(255, 215, 0), "Gold"),
-                new ColorItem(Color.FromRgb(192, 192, 192), "Silver"),
-                new ColorItem(Color.FromRgb(139, 69,  19), "Brown"),
-                new ColorItem(Color.FromRgb(41,  36,  33), "Ivory Black"),
-            };
-        }
-
         public string GetBase64()
         {
-            int margin = (int)Canvas.Margin.Left;
-            int width = (int)Canvas.ActualWidth - margin;
-            int height = (int)Canvas.ActualHeight - margin;
-            RenderTargetBitmap renderBitmap =
+            var margin = (int) Canvas.Margin.Left;
+            var width = (int) Canvas.ActualWidth - margin;
+            var height = (int) Canvas.ActualHeight - margin;
+            var renderBitmap =
                 new RenderTargetBitmap(width, height, 96d, 96d, PixelFormats.Default);
             renderBitmap.Render(Canvas);
             //save the ink to a memory stream
@@ -76,34 +76,10 @@ namespace Drachenhorn.Desktop.Views
             }
         }
 
-        #region BrushType
-
-        private void BrushType_Checked_1(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.InkAndGesture;
-        }
-
-        private void BrushType_Checked_2(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
-        }
-
-        private void BrushType_Checked_3(object sender, RoutedEventArgs e)
-        {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.Select;
-        }
-
-        #endregion BrushType
-
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             Canvas.Strokes.Clear();
         }
-
-        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
 
         private void UndoButton_Click(object sender, RoutedEventArgs e)
         {
@@ -141,11 +117,33 @@ namespace Drachenhorn.Desktop.Views
                 Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
         }
 
+        #region BrushType
+
+        private void BrushType_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (Canvas != null)
+                Canvas.EditingMode = InkCanvasEditingMode.InkAndGesture;
+        }
+
+        private void BrushType_Checked_2(object sender, RoutedEventArgs e)
+        {
+            if (Canvas != null)
+                Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
+        }
+
+        private void BrushType_Checked_3(object sender, RoutedEventArgs e)
+        {
+            if (Canvas != null)
+                Canvas.EditingMode = InkCanvasEditingMode.Select;
+        }
+
+        #endregion BrushType
+
         #region OnPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

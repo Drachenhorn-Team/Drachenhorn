@@ -1,29 +1,44 @@
-﻿using Drachenhorn.Core.Lang;
-using Drachenhorn.Core.Settings;
-using Drachenhorn.Xml;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
-using System;
+﻿using System;
 using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.Settings;
+using Drachenhorn.Xml;
 using Easy.Logger.Interfaces;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
     [Serializable]
     public class Settings : BindableBase, ISettings
     {
+        #region c'tor
+
+        public Settings()
+        {
+            var path = Path.Combine(Environment.CurrentDirectory, "commit");
+            if (File.Exists(path))
+                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "")
+                    .Replace("\n", "");
+            else
+                GitCommit = "No Commit found";
+
+            PropertyChanged += (sender, args) => { Save(); };
+        }
+
+        #endregion c'tor
+
         #region Properties
 
-        [XmlIgnore]
-        private bool _isNew = true;
+        [XmlIgnore] private bool _isNew = true;
+
         [XmlIgnore]
         public bool IsNew
         {
-            get { return _isNew; }
+            get => _isNew;
             private set
             {
                 if (_isNew == value)
@@ -31,13 +46,12 @@ namespace Drachenhorn.Desktop.UserSettings
                 _isNew = value;
                 OnPropertyChanged();
             }
-
         }
 
         [XmlElement("CurrentCulture")]
         public string CurrentCultureString
         {
-            get { return CurrentCulture.Name; }
+            get => CurrentCulture.Name;
             set
             {
                 try
@@ -54,7 +68,7 @@ namespace Drachenhorn.Desktop.UserSettings
         [XmlIgnore]
         public CultureInfo CurrentCulture
         {
-            get { return SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture; }
+            get => SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture;
             set
             {
                 var temp = SimpleIoc.Default.GetInstance<LanguageManager>();
@@ -72,18 +86,16 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 if (ApplicationDeployment.IsNetworkDeployed)
                     return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-                else
-                    return "Application not installed.";
+                return "Application not installed.";
             }
         }
 
-        [XmlIgnore]
-        private string _gitCommit;
+        [XmlIgnore] private string _gitCommit;
 
         [XmlIgnore]
         public string GitCommit
         {
-            get { return _gitCommit; }
+            get => _gitCommit;
             private set
             {
                 if (_gitCommit == value)
@@ -93,13 +105,12 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore]
-        private VisualThemeType _visualTheme;
+        [XmlIgnore] private VisualThemeType _visualTheme;
 
         [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme
         {
-            get { return _visualTheme; }
+            get => _visualTheme;
             set
             {
                 if (_visualTheme == value)
@@ -109,12 +120,12 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore]
-        private bool? _showConsole = false;
+        [XmlIgnore] private bool? _showConsole = false;
+
         [XmlElement("ShowConsole")]
         public bool? ShowConsole
         {
-            get { return _showConsole;}
+            get => _showConsole;
             set
             {
                 if (_showConsole == value)
@@ -124,13 +135,12 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore]
-        private bool _isUpdateAvailable;
+        [XmlIgnore] private bool _isUpdateAvailable;
 
         [XmlIgnore]
         public bool IsUpdateAvailable
         {
-            get { return _isUpdateAvailable; }
+            get => _isUpdateAvailable;
             private set
             {
                 if (_isUpdateAvailable == value)
@@ -142,35 +152,22 @@ namespace Drachenhorn.Desktop.UserSettings
 
         #endregion Properties
 
-        #region c'tor
-
-        public Settings()
-        {
-            var path = Path.Combine(Environment.CurrentDirectory, "commit");
-            if (File.Exists(path))
-                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "").Replace("\n", "");
-            else
-                GitCommit = "No Commit found";
-
-            this.PropertyChanged += (sender, args) => { this.Save(); };
-        }
-
-        #endregion c'tor
-
         #region Save/Load
 
-        private static readonly string PropertiesDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Drachenhorn");
+        private static readonly string PropertiesDirectory =
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Drachenhorn");
+
         private static string PropertiesPath => Path.Combine(PropertiesDirectory, "config.xml");
 
         /// <summary>
-        /// Loads the Properties from the "PROPERTIESDIRECTORY".
+        ///     Loads the Properties from the "PROPERTIESDIRECTORY".
         /// </summary>
         /// <returns>The Loaded Properties.</returns>
         public static Settings Load()
         {
             if (!Directory.Exists(PropertiesDirectory))
                 Directory.CreateDirectory(PropertiesDirectory);
-            
+
             SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Info("Loading settings.");
 
             try
@@ -178,17 +175,19 @@ namespace Drachenhorn.Desktop.UserSettings
                 using (var stream = new FileStream(PropertiesPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var serializer = new XmlSerializer(typeof(Settings));
-                    var temp = (Settings)serializer.Deserialize(stream);
+                    var temp = (Settings) serializer.Deserialize(stream);
                     temp.IsNew = false;
 
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Info("Finished loading Settings.");
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
+                        .Info("Finished loading Settings.");
 
                     return temp;
                 }
             }
             catch (IOException)
             {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Warn("Settings not found. Generating new.");
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
+                    .Warn("Settings not found. Generating new.");
                 return new Settings();
             }
             catch (InvalidOperationException)
@@ -196,13 +195,14 @@ namespace Drachenhorn.Desktop.UserSettings
                 var service = SimpleIoc.Default.GetInstance<IDialogService>();
                 service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
 
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Warn("Settings corrupted. Generating new.");
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
+                    .Warn("Settings corrupted. Generating new.");
                 return new Settings();
             }
         }
 
         /// <summary>
-        /// Saves the Properties to the "PROPERTIESDIRECTORY"
+        ///     Saves the Properties to the "PROPERTIESDIRECTORY"
         /// </summary>
         public void Save()
         {
@@ -219,7 +219,9 @@ namespace Drachenhorn.Desktop.UserSettings
                     serializer.Serialize(stream, this);
                 }
             }
-            catch (IOException) { }
+            catch (IOException)
+            {
+            }
         }
 
         #endregion Save/Load

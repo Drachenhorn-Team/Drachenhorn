@@ -1,17 +1,17 @@
 ﻿using System;
-using Drachenhorn.Desktop.Views;
-using Drachenhorn.Xml.Sheet.Common;
 using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Sheet.Common;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für CoatOfArmsControl.xaml
+    ///     Interaktionslogik für CoatOfArmsControl.xaml
     /// </summary>
     public partial class CoatOfArmsControl : UserControl
     {
@@ -22,33 +22,28 @@ namespace Drachenhorn.Desktop.UserControls
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(this.DataContext is CoatOfArms))
+            if (!(DataContext is CoatOfArms))
                 return;
 
-            if (!String.IsNullOrEmpty(((CoatOfArms) this.DataContext).Base64String))
-            {
+            if (!string.IsNullOrEmpty(((CoatOfArms) DataContext).Base64String))
                 if (!SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                            LanguageManager.Translate("CoatOfArms.New.AreYouSure"),
-                            LanguageManager.Translate("UI.New"),
-                            LanguageManager.Translate("UI.Yes"),
-                            LanguageManager.Translate("UI.No"),
-                            null).Result)
+                    LanguageManager.Translate("CoatOfArms.New.AreYouSure"),
+                    LanguageManager.Translate("UI.New"),
+                    LanguageManager.Translate("UI.Yes"),
+                    LanguageManager.Translate("UI.No"),
+                    null).Result)
                     return;
-            }
 
             var view = new CoatOfArmsPainterView();
 
-            view.Closing += (s, args) =>
-            {
-                ((CoatOfArms)this.DataContext).Base64String = view.GetBase64();
-            };
+            view.Closing += (s, args) => { ((CoatOfArms) DataContext).Base64String = view.GetBase64(); };
 
             view.Show();
         }
 
         private void ClearButton_OnClick(object sender, RoutedEventArgs e)
         {
-            ((CoatOfArms)this.DataContext).Base64String = null;
+            ((CoatOfArms) DataContext).Base64String = null;
         }
 
         private void ImportButton_OnClick(object sender, RoutedEventArgs e)
@@ -59,12 +54,12 @@ namespace Drachenhorn.Desktop.UserControls
                 LanguageManager.Translate("UI.Import"));
 
             if (data != null)
-                ((CoatOfArms)this.DataContext).Base64String = Convert.ToBase64String(data);
+                ((CoatOfArms) DataContext).Base64String = Convert.ToBase64String(data);
         }
 
         private void ExportButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var image = ((CoatOfArms)this.DataContext).Base64String;
+            var image = ((CoatOfArms) DataContext).Base64String;
 
             if (image == null) return;
 

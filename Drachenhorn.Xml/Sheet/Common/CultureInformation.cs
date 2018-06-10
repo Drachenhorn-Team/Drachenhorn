@@ -1,32 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
     /// <summary>
-    /// Cultural Information
+    ///     Cultural Information
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class CultureInformation : ChildChangedBase, IInfoObject
     {
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
+
+        [XmlIgnore] private string _name;
+
+        [XmlIgnore] private string _specification;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -36,18 +39,16 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _specification;
         /// <summary>
-        /// Gets or sets the specification.
+        ///     Gets or sets the specification.
         /// </summary>
         /// <value>
-        /// The specification.
+        ///     The specification.
         /// </value>
         [XmlAttribute("Specification")]
         public string Specification
         {
-            get { return _specification; }
+            get => _specification;
             set
             {
                 if (_specification == value)
@@ -57,18 +58,16 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
         /// <summary>
-        /// Gets or sets the base values.
+        ///     Gets or sets the base values.
         /// </summary>
         /// <value>
-        /// The base values.
+        ///     The base values.
         /// </value>
         [XmlElement("BaseValue")]
         public ObservableCollection<BonusValue> BaseValues
         {
-            get { return _baseValues; }
+            get => _baseValues;
             set
             {
                 if (_baseValues == value)
@@ -77,7 +76,7 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-        
+
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
@@ -86,10 +85,7 @@ namespace Drachenhorn.Xml.Sheet.Common
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
 
             var baseValues = "";
-            foreach (var baseValue in BaseValues)
-            {
-                baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
-            }
+            foreach (var baseValue in BaseValues) baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
             if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues);
 
 

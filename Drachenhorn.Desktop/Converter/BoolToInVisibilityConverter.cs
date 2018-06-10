@@ -12,10 +12,9 @@ namespace Drachenhorn.Desktop.Converter
             if (!(value is bool))
                 return Visibility.Collapsed;
 
-            if ((bool)value == false)
+            if ((bool) value == false)
                 return Visibility.Visible;
-            else
-                return Visibility.Collapsed;
+            return Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

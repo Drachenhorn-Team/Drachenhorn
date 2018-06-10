@@ -3,20 +3,19 @@ using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Core.ViewModels.Template;
-using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Core.ViewModels
 {
     /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
+    ///     This class contains static references to all the view models in the
+    ///     application and provides an entry point for the bindings.
     /// </summary>
     public class ViewModelLocator
     {
         /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
+        ///     Initializes a new instance of the ViewModelLocator class.
         /// </summary>
         public ViewModelLocator()
         {

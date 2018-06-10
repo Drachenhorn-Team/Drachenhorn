@@ -1,18 +1,11 @@
 ﻿@using Drachenhorn.Core.Lang
-@using Drachenhorn.Core.ViewModels
-
 @using Drachenhorn.Xml.Sheet
 @using Drachenhorn.Xml.Sheet.Skills
-@using Attribute = Drachenhorn.Xml.Sheet.Skills.Attribute
-
-
 @*Model will always show an error but this line helps with IntelliSense in the rest of the document*@
-@{ CharacterSheet Sheet = (CharacterSheet)Model; }
+@{ var Sheet = (CharacterSheet) Model; }
 
 @helper Translate(string text)
-{
-    @LanguageManager.Translate(text)
-}
+{ @LanguageManager.Translate(text) }
 
 @helper RenderAdvantages(IEnumerable<AdvantageBase> advantages)
 {
@@ -52,7 +45,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>@Translate("CharacterSheet.Title")</title>
     <!--<style>
         body {
@@ -65,166 +58,161 @@
     </style>-->
 </head>
 <body>
-    <h1 style="text-align: center">@Translate("CharacterSheet.Title")</h1>
+<h1 style="text-align: center">@Translate("CharacterSheet.Title")</h1>
+
+<div>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 2px
+        }
+    </style>
+    <p align="right">@Translate("CharacterSheet.GPBase"): @Model.CurrentSheet.GPBase</p>
 
     <div>
         <style>
-            table{
-                width: 100%;
-                border-collapse: collapse
-            }
-            table, th, td{
-                border: 1px solid black;
-                padding: 2px
-            }
+            table td:first-child { white-space: nowrap }
         </style>
-        <p align="right">@Translate("CharacterSheet.GPBase"): @Model.CurrentSheet.GPBase</p>
+        <table>
+            <tr>
+                <td>@Translate("CharacterSheet.Name"):</td>
+                <td colspan="2">@Model.CurrentSheet.Name</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Race"):</td>
+                <td colspan="2">@Model.CurrentSheet.Race.Name</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Culture"):</td>
+                <td>@Model.CurrentSheet.Culture.Name</td>
+                <td>@Model.CurrentSheet.Culture.Specification</td>
+            </tr>
+            <tr>
+                <td>@Translate("CharacterSheet.Profession"):</td>
+                <td colspan="2">@Model.CurrentSheet.Profession.Name</td>
+            </tr>
+        </table>
+    </div>
 
-        <div>
-            <style>
-                table td:first-child{
-                    white-space: nowrap
-                }
-            </style>
-            <table>
-                <tr>
-                    <td>@Translate("CharacterSheet.Name"):</td>
-                    <td colspan="2">@Model.CurrentSheet.Name</td>
-                </tr>
-                <tr>
-                    <td>@Translate("CharacterSheet.Race"):</td>
-                    <td colspan="2">@Model.CurrentSheet.Race.Name</td>
-                </tr>
-                <tr>
-                    <td>@Translate("CharacterSheet.Culture"):</td>
-                    <td>@Model.CurrentSheet.Culture.Name</td>
-                    <td>@Model.CurrentSheet.Culture.Specification</td>
-                </tr>
-                <tr>
-                    <td>@Translate("CharacterSheet.Profession"):</td>
-                    <td colspan="2">@Model.CurrentSheet.Profession.Name</td>
-                </tr>
-            </table>
-        </div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr 2fr">
+        <div style="border: 0.5px solid black; display: grid; grid-auto-rows: min-content; grid-template-columns: 1fr 1fr; padding: 5px;">
+            <div>@Translate("CharacterInformation.Gender")</div>
+            <div>@Translate("Gender." + Sheet.CharacterInformation.Gender)</div>
 
-        <div style="display: grid; grid-template-columns: 2fr 1fr 2fr">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; padding: 5px; border: 0.5px solid black">
-                <div>@Translate("CharacterInformation.Gender")</div>
-                <div>@Translate("Gender." + Sheet.CharacterInformation.Gender)</div>
+            <div>@Translate("CharacterInformation.Age")</div>
+            <div>@Model.CurrentSheet.CharacterInformation.Age</div>
 
-                <div>@Translate("CharacterInformation.Age")</div>
-                <div>@Model.CurrentSheet.CharacterInformation.Age</div>
+            <div>@Translate("CharacterInformation.Height")</div>
+            <div>@Model.CurrentSheet.CharacterInformation.Height</div>
 
-                <div>@Translate("CharacterInformation.Height")</div>
-                <div>@Model.CurrentSheet.CharacterInformation.Height</div>
+            <div>@Translate("CharacterInformation.Weight")</div>
+            <div>@Model.CurrentSheet.CharacterInformation.Weight</div>
 
-                <div>@Translate("CharacterInformation.Weight")</div>
-                <div>@Model.CurrentSheet.CharacterInformation.Weight</div>
+            <div>@Translate("CharacterInformation.HairColor")</div>
+            <div>@Model.CurrentSheet.CharacterInformation.HairColor</div>
 
-                <div>@Translate("CharacterInformation.HairColor")</div>
-                <div>@Model.CurrentSheet.CharacterInformation.HairColor</div>
+            <div>@Translate("CharacterInformation.EyeColor")</div>
+            <div>@Model.CurrentSheet.CharacterInformation.EyeColor</div>
 
-                <div>@Translate("CharacterInformation.EyeColor")</div>
-                <div>@Model.CurrentSheet.CharacterInformation.EyeColor</div>
-
-                <div style="grid-column: auto / span 2">@Translate("CharacterInformation.Appearance")</div>
-                <div style="grid-column: auto / span 2; height: 100%">
-                    <p>@Model.CurrentSheet.CharacterInformation.Appearance</p>
-                </div>
-            </div>
-
-            <div style="border: 0.5px solid black; padding: 5px">
-                <h4 style="width:100%; text-align:center">@Translate("CharacterSheet.CoatOfArms")</h4>
-                <img src="data:image/png;base64,@Model.CurrentSheet.CoatOfArms.Base64String"
-                     alt='@Translate("CharacterSheet.CoatOfArms")' style="max-width: 100%" />
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; padding: 5px; border: 0.5px solid black">
-                <div>@Translate("SocialInformation.Class")</div>
-                <div>@Model.CurrentSheet.SocialInformation.Class</div>
-
-                <div>@Translate("SocialInformation.Title")</div>
-                <div>@Model.CurrentSheet.SocialInformation.Title</div>
-
-                <div>@Translate("SocialInformation.SocialClass")</div>
-                <div>@Model.CurrentSheet.SocialInformation.SocialClass</div>
-
-                <div style="grid-column: auto / span 2">@Translate("SocialInformation.Background")</div>
-                <div style="grid-column: auto / span 2">
-                    <p style="word-break: break-all">@Model.CurrentSheet.SocialInformation.Background</p>
-                </div>
+            <div style="grid-column: auto/span 2">@Translate("CharacterInformation.Appearance")</div>
+            <div style="grid-column: auto/span 2; height: 100%">
+                <p>@Model.CurrentSheet.CharacterInformation.Appearance</p>
             </div>
         </div>
 
+        <div style="border: 0.5px solid black; padding: 5px">
+            <h4 style="text-align: center; width: 100%;">@Translate("CharacterSheet.CoatOfArms")</h4>
+            <img src="data:image/png;base64,@Model.CurrentSheet.CoatOfArms.Base64String"
+                 alt='@Translate("CharacterSheet.CoatOfArms")' style="max-width: 100%"/>
+        </div>
+
+        <div style="border: 0.5px solid black; display: grid; grid-auto-rows: min-content; grid-template-columns: 1fr 1fr; padding: 5px;">
+            <div>@Translate("SocialInformation.Class")</div>
+            <div>@Model.CurrentSheet.SocialInformation.Class</div>
+
+            <div>@Translate("SocialInformation.Title")</div>
+            <div>@Model.CurrentSheet.SocialInformation.Title</div>
+
+            <div>@Translate("SocialInformation.SocialClass")</div>
+            <div>@Model.CurrentSheet.SocialInformation.SocialClass</div>
+
+            <div style="grid-column: auto/span 2">@Translate("SocialInformation.Background")</div>
+            <div style="grid-column: auto/span 2">
+                <p style="word-break: break-all">@Model.CurrentSheet.SocialInformation.Background</p>
+            </div>
+        </div>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>@Translate("CharacterSheet.Name")</th>
+            <th>@Translate("CharacterSheet.Specialization")</th>
+            <th>@Translate("CharacterSheet.GPCost")</th>
+        </tr>
+        @RenderAdvantages(Model.CurrentSheet.Advantages)
+        @RenderAdvantages(Model.CurrentSheet.Disadvantages)
+    </table>
+
+    <h2 style="text-align: center; width: 100%;">@Translate("CharacterSheet.BaseValues")</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 10px 1fr">
+        <style type="text/css">
+            table.lastDouble td { text-align: center }
+
+            table.lastDouble tr:last-child { border-top: double }
+        </style>
+
+        <table class="lastDouble">
+            <tr>
+                <th/>
+                <th>@Translate("CharacterSheet.Modifyer")</th>
+                <th>@Translate("CharacterSheet.StartValue")</th>
+                <th>@Translate("CharacterSheet.CurrentValue")</th>
+            </tr>
+
+            @RenderAttributes(Model.CurrentSheet.Attributes)
+        </table>
+
+        <div> </div>
 
         <table>
             <tr>
-                <th>@Translate("CharacterSheet.Name")</th>
-                <th>@Translate("CharacterSheet.Specialization")</th>
-                <th>@Translate("CharacterSheet.GPCost")</th>
+                <th/>
+                <th>@Translate("CharacterSheet.Modifyer")</th>
+                <th>@Translate("CharacterSheet.CurrentValue")</th>
             </tr>
-            @RenderAdvantages(Model.CurrentSheet.Advantages)
-            @RenderAdvantages(Model.CurrentSheet.Disadvantages)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.HealthPoints"), Model.CurrentSheet.BaseValues.HealthPoints)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.Endurance"), Model.CurrentSheet.BaseValues.Endurance)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.AstralEnergy"), Model.CurrentSheet.BaseValues.AstralEnergy)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.KarmaEnergy"), Model.CurrentSheet.BaseValues.KarmaEnergy)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.MagicResistance"), Model.CurrentSheet.BaseValues.MagicResistance)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseInitiative"), Model.CurrentSheet.BaseValues.BaseInitiative)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseAttack"), Model.CurrentSheet.BaseValues.BaseAttack)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseParry"), Model.CurrentSheet.BaseValues.BaseParry)
+            @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseLongRangeAttack"), Model.CurrentSheet.BaseValues.BaseLongRangeAttack)
+
         </table>
 
-        <h2 style="width: 100%; text-align: center">@Translate("CharacterSheet.BaseValues")</h2>
-
-        <div style="display: grid; grid-template-columns: 1fr 10px 1fr">
-            <style type="text/css">
-                table.lastDouble td {
-                    text-align: center
-                }
-                table.lastDouble tr:last-child {
-                    border-top: double
-                }
-            </style>
-
-            <table class="lastDouble">
-                <tr>
-                    <th/>
-                    <th>@Translate("CharacterSheet.Modifyer")</th>
-                    <th>@Translate("CharacterSheet.StartValue")</th>
-                    <th>@Translate("CharacterSheet.CurrentValue")</th>
-                </tr>
-                
-                @RenderAttributes(Model.CurrentSheet.Attributes)
-            </table>
-
-            <div>   </div>
-
-            <table>
-                <tr>
-                    <th/>
-                    <th>@Translate("CharacterSheet.Modifyer")</th>
-                    <th>@Translate("CharacterSheet.CurrentValue")</th>
-                </tr>
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.HealthPoints"), Model.CurrentSheet.BaseValues.HealthPoints)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.Endurance"), Model.CurrentSheet.BaseValues.Endurance)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.AstralEnergy"), Model.CurrentSheet.BaseValues.AstralEnergy)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.KarmaEnergy"), Model.CurrentSheet.BaseValues.KarmaEnergy)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.MagicResistance"), Model.CurrentSheet.BaseValues.MagicResistance)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseInitiative"), Model.CurrentSheet.BaseValues.BaseInitiative)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseAttack"), Model.CurrentSheet.BaseValues.BaseAttack)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseParry"), Model.CurrentSheet.BaseValues.BaseParry)
-                @RenderBaseValue(LanguageManager.Translate("BaseValue.BaseLongRangeAttack"), Model.CurrentSheet.BaseValues.BaseLongRangeAttack)
-
-            </table>
-
-        </div>
-
-        <div style="border: 0.5px solid black; padding: 5px; margin-top: 5px">
-            <div style="width: 100%; display: grid; grid-template-columns: min-content 1fr min-content 1fr min-content 1fr">
-                <div style="white-space: nowrap">@Translate("CharacterSheet.TotalAP"): </div>
-                <div style="white-space: nowrap; text-align: center">@Model.CurrentSheet.AdventurePoints.Total</div>
-                <div style="white-space: nowrap">@Translate("CharacterSheet.UsedAP"): </div>
-                <div style="white-space: nowrap; text-align: center">@Model.CurrentSheet.AdventurePoints.Used</div>
-                <div style="white-space: nowrap">@Translate("CharacterSheet.LeftoverAP"): </div>
-                <div style="white-space: nowrap; text-align: center">@Model.CurrentSheet.AdventurePoints.CurrentLeft</div>
-           </div>
-        </div>
-
-
-
     </div>
+
+    <div style="border: 0.5px solid black; margin-top: 5px; padding: 5px;">
+        <div style="display: grid; grid-template-columns: min-content 1fr min-content 1fr min-content 1fr; width: 100%;">
+            <div style="white-space: nowrap">@Translate("CharacterSheet.TotalAP"): </div>
+            <div style="text-align: center; white-space: nowrap;">@Model.CurrentSheet.AdventurePoints.Total</div>
+            <div style="white-space: nowrap">@Translate("CharacterSheet.UsedAP"): </div>
+            <div style="text-align: center; white-space: nowrap;">@Model.CurrentSheet.AdventurePoints.Used</div>
+            <div style="white-space: nowrap">@Translate("CharacterSheet.LeftoverAP"): </div>
+            <div style="text-align: center; white-space: nowrap;">@Model.CurrentSheet.AdventurePoints.CurrentLeft</div>
+        </div>
+    </div>
+
+
+</div>
 </body>
 </html>

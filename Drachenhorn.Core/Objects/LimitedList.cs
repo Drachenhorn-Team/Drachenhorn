@@ -7,9 +7,14 @@ namespace Drachenhorn.Core.Objects
     {
         private uint _limit;
 
+        public LimitedList(uint limit)
+        {
+            Limit = limit;
+        }
+
         public uint Limit
         {
-            get { return _limit; }
+            get => _limit;
             private set
             {
                 if (_limit == value)
@@ -18,40 +23,24 @@ namespace Drachenhorn.Core.Objects
             }
         }
 
-        private List<T> _list = new List<T>();
+        public List<T> List { get; } = new List<T>();
 
-        public List<T> List
-        {
-            get { return _list; }
-        }
+        public int Count => List.Count;
 
-        public int Count { get { return List.Count; } }
-
-        public bool IsReadOnly { get { return false; } }
+        public bool IsReadOnly => false;
 
         public T this[int index]
         {
-            get { return List[index]; }
-            set { List[index] = value; }
-        }
-
-        public LimitedList(uint limit) : base()
-        {
-            this.Limit = limit;
+            get => List[index];
+            set => List[index] = value;
         }
 
         public void Add(T item)
         {
-            if (this.Count >= Limit)
-                this.RemoveAt(0);
+            if (Count >= Limit)
+                RemoveAt(0);
 
             List.Add(item);
-        }
-
-        public void AddRange(IEnumerable<T> list)
-        {
-            foreach (var item in list)
-                Add(item);
         }
 
         public int IndexOf(T item)
@@ -97,6 +86,12 @@ namespace Drachenhorn.Core.Objects
         IEnumerator IEnumerable.GetEnumerator()
         {
             return List.GetEnumerator();
+        }
+
+        public void AddRange(IEnumerable<T> list)
+        {
+            foreach (var item in list)
+                Add(item);
         }
     }
 }

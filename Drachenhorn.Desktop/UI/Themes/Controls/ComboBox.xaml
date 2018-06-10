@@ -9,18 +9,18 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             <Border x:Name="Border" Grid.ColumnSpan="2" BorderThickness="1"
-                    Background="{DynamicResource BackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}"/>
+                    Background="{DynamicResource BackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}" />
             <Border Grid.Column="0" Margin="1" />
             <Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                  Data="M 0 0 L 4 4 L 8 0 Z" Fill="{DynamicResource BorderHightlightBrush}"/>
+                  Data="M 0 0 L 4 4 L 8 0 Z" Fill="{DynamicResource BorderHightlightBrush}" />
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" TargetName="Border"
-                        Value="{DynamicResource BackgroundHightlightBrush}"/>
+                        Value="{DynamicResource BackgroundHightlightBrush}" />
                 <Setter Property="BorderBrush" TargetName="Border"
-                        Value="{DynamicResource BorderHightlightBrush}"/>
-                <Setter Property="Fill" TargetName="Arrow" Value="{DynamicResource BorderBrush}"/>
+                        Value="{DynamicResource BorderHightlightBrush}" />
+                <Setter Property="Fill" TargetName="Arrow" Value="{DynamicResource BorderBrush}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -45,11 +45,12 @@
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" />
-                                    <VisualState x:Name="Disabled">
+                                <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="PART_EditableTextBox"
-                                                Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ForegroundDisabledColor}" />
+                                                                      Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{DynamicResource ForegroundDisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -57,15 +58,17 @@
                             <VisualStateGroup x:Name="EditStates">
                                 <VisualState x:Name="Editable">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                 Storyboard.TargetName="PART_EditableTextBox">
+                                        <ObjectAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.Visibility)"
+                                            Storyboard.TargetName="PART_EditableTextBox">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                            Value="{x:Static Visibility.Visible}" />
+                                                                    Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                 Storyboard.TargetName="ContentSite">
+                                        <ObjectAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.Visibility)"
+                                            Storyboard.TargetName="ContentSite">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                            Value="{x:Static Visibility.Hidden}" />
+                                                                    Value="{x:Static Visibility.Hidden}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -73,41 +76,42 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <ToggleButton x:Name="ToggleButton"
-                                        Template="{StaticResource ComboBoxToggleButton}"
-                                        Grid.Column="2"
-                                        Focusable="false"
-                                        ClickMode="Press"
-                                        IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                      Template="{StaticResource ComboBoxToggleButton}"
+                                      Grid.Column="2"
+                                      Focusable="false"
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         <ContentPresenter x:Name="ContentSite"
-                                            IsHitTestVisible="False"
-                                            Content="{TemplateBinding SelectionBoxItem}"
-                                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                            Margin="3,3,23,3"
-                                            VerticalAlignment="Stretch"
-                                            HorizontalAlignment="Left">
-                        </ContentPresenter>
+                                          IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          Margin="3,3,23,3"
+                                          VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left" />
                         <TextBox x:Name="PART_EditableTextBox"
-                                   Style="{x:Null}"
-                                   Template="{StaticResource ComboBoxTextBox}"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Bottom"
-                                   Margin="3,3,23,3"
-                                   Focusable="True"
-                                   Background="Transparent"
-                                   Visibility="Hidden"
-                                   IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                 Style="{x:Null}"
+                                 Template="{StaticResource ComboBoxTextBox}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Bottom"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
                         <Popup x:Name="Popup"
-                                 Placement="Bottom"
-                                 IsOpen="{TemplateBinding IsDropDownOpen}"
-                                 AllowsTransparency="True"
-                                 Focusable="False"
-                                 PopupAnimation="Slide">
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
                             <Grid x:Name="DropDown"
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                <Border x:Name="DropDownBorder" BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}" Background="{DynamicResource BackgroundBrush}"/>
+                                <Border x:Name="DropDownBorder" BorderThickness="1"
+                                        BorderBrush="{DynamicResource BorderBrush}"
+                                        Background="{DynamicResource BackgroundBrush}" />
                                 <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                     <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                 </ScrollViewer>
@@ -144,15 +148,15 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BackgroundHightlightBrush}"
-                                    TargetName="Border"/>
+                                    TargetName="Border" />
                             <Setter Property="BorderBrush" Value="{DynamicResource BorderHightlightBrush}"
-                                    TargetName="Border"/>
+                                    TargetName="Border" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BackgroundHightlightBrush}"
-                                    TargetName="Border"/>
+                                    TargetName="Border" />
                             <Setter Property="BorderBrush" Value="{DynamicResource BorderHightlightBrush}"
-                                    TargetName="Border"/>
+                                    TargetName="Border" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

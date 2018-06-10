@@ -7,27 +7,56 @@
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
         xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+        xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         Title="TemplateSelectorDialog" Height="450" Width="800">
     <Window.Resources>
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-        <converter:BoolToInVisibilityConverter x:Key="BoolToInVisibilityConverter"/>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converter:BoolToInVisibilityConverter x:Key="BoolToInVisibilityConverter" />
     </Window.Resources>
     <TabControl SelectionChanged="Selector_OnSelectionChanged">
         <TabItem Name="LocalTemplates" Header="{lang:Translate UI.Installed}">
             <DockPanel>
                 <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-                    <Button Content="{lang:Translate UI.Open}" Click="OpenButton_OnClick" DockPanel.Dock="Bottom"
-                            Margin="5" Padding="8"/>
                     <Button Content="{lang:Translate UI.New}" Click="NewButton_OnClick" DockPanel.Dock="Bottom"
-                            Margin="5" Padding="8"/>
+                            Margin="5" Padding="8" />
                 </WrapPanel>
 
-                <ListBox Name="TemplateList" Margin="5"/>
+                <ItemsControl Name="TemplateList" Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="template:TemplateMetadata">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" Margin="5" Grid.Column="0" />
+
+                                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1"
+                                           Margin="5">
+                                    <TextBlock Text="v" />
+                                    <TextBlock Text="{Binding Version}" />
+                                </WrapPanel>
+
+                                <WrapPanel Grid.Column="2">
+                                    <Button Click="OpenButton_OnClick" Margin="5" Width="20">
+                                        <Image Source="{DynamicResource EditIcon}" />
+                                    </Button>
+                                    <Button Click="RemoveButton_OnClick" Margin="5" Width="20">
+                                        <Image Source="{DynamicResource RemoveIcon}" />
+                                    </Button>
+                                </WrapPanel>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </DockPanel>
         </TabItem>
-        <TabItem Header="{lang:Translate UI.Online}" DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
+        <TabItem Header="{lang:Translate UI.Online}"
+                 DataContext="{Binding TemplateDownloader, Source={StaticResource Locator}}">
             <Grid>
                 <ListBox Name="OnlineList" ItemsSource="{Binding Templates}" Margin="5"
                          Grid.IsSharedSizeScope="True">
@@ -35,24 +64,24 @@
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
-                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Version"/>
-                                    <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton"/>
-                                    <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Name" />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Version" />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="DownloadButton" />
+                                    <ColumnDefinition Width="400" SharedSizeGroup="ProgressBar" />
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"
-                                           VerticalAlignment="Center"/>
+                                           VerticalAlignment="Center" />
                                 <TextBlock Text="{Binding Version}" Grid.Column="1" Margin="5"
-                                           VerticalAlignment="Center"/>
+                                           VerticalAlignment="Center" />
                                 <Button Click="DownloadButton_OnClick" Grid.Column="2"
                                         Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
                                         Width="20" Height="20" Margin="20 5 5 5">
-                                    <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
+                                    <Image Source="{StaticResource DownloadIcon}" Margin="2" />
                                 </Button>
                                 <ProgressBar Value="{Binding Progress, Mode=OneWay}"
                                              Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
-                                             Grid.Column="3" Margin="5"/>
+                                             Grid.Column="3" Margin="5" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -63,12 +92,11 @@
                         Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
                     <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
                                Style="{StaticResource MorpheusTextStyle}"
-                               HorizontalAlignment="Center"/>
+                               HorizontalAlignment="Center" />
                 </Border>
                 <userElements:LoadingElement Height="50"
-                                             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" />
             </Grid>
         </TabItem>
     </TabControl>
 </Window>
-

@@ -1,51 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using log4net.Appender;
 using log4net.Core;
-using Brushes = System.Windows.Media.Brushes;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
     /// <summary>
-    /// Interaktionslogik für ConsoleWindow.xaml
+    ///     Interaktionslogik für ConsoleWindow.xaml
     /// </summary>
     public partial class ConsoleWindow : Window
     {
-        public bool ShouldClose = false;
-
-
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-        [DllImport("user32.dll")]
-        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        public bool ShouldClose = false;
 
         public ConsoleWindow()
         {
-            this.Visibility = Visibility.Collapsed;
+            Visibility = Visibility.Collapsed;
 
             InitializeComponent();
 
             RichTextBoxAppender.rtb = RichTextBox;
         }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32.dll")]
+        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
         private void RichTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -73,7 +61,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         {
             if (rtb == null) return;
 
-            Paragraph p = new Paragraph();
+            var p = new Paragraph();
 
             var color = Brushes.White;
 

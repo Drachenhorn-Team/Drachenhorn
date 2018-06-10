@@ -11,30 +11,30 @@
         Title="TemplateImportDialog" SizeToContent="Height" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
+
         <TextBlock Text="{lang:Translate Template.Name}" Margin="5"
-                   Grid.Column="0" Grid.Row="0"/>
-        <TextBlock Name="NameBox" Margin="5" Grid.Column="1" Grid.Row="0"/>
+                   Grid.Column="0" Grid.Row="0" />
+        <TextBlock Name="NameBox" Margin="5" Grid.Column="1" Grid.Row="0" />
 
         <TextBlock Text="{lang:Translate Template.Version}" Margin="5"
-                   Grid.Column="0" Grid.Row="1"/>
-        <TextBlock Name="VersionBox" Margin="5" Grid.Column="1" Grid.Row="1"/>
-        
+                   Grid.Column="0" Grid.Row="1" />
+        <TextBlock Name="VersionBox" Margin="5" Grid.Column="1" Grid.Row="1" />
+
         <TextBlock Text="{lang:Translate Template.DoYouWantToAdd}" Margin="5"
-                   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="WrapWithOverflow"/>
+                   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="WrapWithOverflow" />
 
         <WrapPanel HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
-            <Button Name="YesButton" Content="{lang:Translate UI.Yes}" Margin="5" Width="100"/>
-            <Button Name="NoButton" Content="{lang:Translate UI.No}" Margin="5" Width="100"/>
+            <Button Name="YesButton" Content="{lang:Translate UI.Yes}" Margin="5" Width="100" />
+            <Button Name="NoButton" Content="{lang:Translate UI.No}" Margin="5" Width="100" />
         </WrapPanel>
     </Grid>
 </Window>

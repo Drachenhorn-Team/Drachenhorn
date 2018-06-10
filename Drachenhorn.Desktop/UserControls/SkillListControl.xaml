@@ -12,7 +12,8 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <DockPanel>
-        <TextBlock Text="{lang:Translate CharacterSheet.Skills}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Center" />
+        <TextBlock Text="{lang:Translate CharacterSheet.Skills}" DockPanel.Dock="Top" Margin="5"
+                   HorizontalAlignment="Center" />
 
         <DockPanel DockPanel.Dock="Left">
             <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
@@ -48,7 +49,8 @@
                 <ListView.View>
                     <GridView>
                         <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
+                            <Style TargetType="{x:Type GridViewColumnHeader}"
+                                   BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
                                 <Setter Property="IsEnabled" Value="False" />
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
@@ -100,7 +102,8 @@
             <TextBox Text="{Binding RollAttributes.Roll_3}" Margin="5" Grid.Row="1" Grid.Column="3" />
 
             <TextBlock Text="{lang:Translate CharacterSheet.Skill.Category}" Margin="5" Grid.Row="2" Grid.Column="0" />
-            <TextBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}" TextChanged="CategoryBox_TextChanged" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
+            <TextBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="CategoryBox_TextChanged" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
         </Grid>
     </DockPanel>
 </UserControl>

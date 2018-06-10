@@ -1,8 +1,8 @@
-﻿using Drachenhorn.Xml.Sheet.Common;
-using Drachenhorn.Xml.Sheet.Enums;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using Drachenhorn.Xml.Sheet.Common;
+using Drachenhorn.Xml.Sheet.Enums;
 
 namespace Drachenhorn.Desktop.Converter
 {
@@ -13,7 +13,7 @@ namespace Drachenhorn.Desktop.Converter
             if (!(value is DisAdvantage))
                 return null;
 
-            var type = ((DisAdvantage)value).Type;
+            var type = ((DisAdvantage) value).Type;
 
             return type == DisAdvantageType.Advantage ? "+" : "-";
         }

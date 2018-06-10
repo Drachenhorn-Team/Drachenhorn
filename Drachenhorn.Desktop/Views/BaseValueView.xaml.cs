@@ -1,33 +1,33 @@
-﻿using Drachenhorn.Xml.Sheet.Skills;
-using System.Windows;
+﻿using System.Windows;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für BaseValueView.xaml
+    ///     Interaktionslogik für BaseValueView.xaml
     /// </summary>
     public partial class BaseValueView : Window
     {
         private BaseValue _baseValue;
 
+        public BaseValueView(BaseValue baseValue)
+        {
+            BaseValue = baseValue;
+
+            DataContext = baseValue;
+
+            InitializeComponent();
+        }
+
         public BaseValue BaseValue
         {
-            get { return _baseValue; }
+            get => _baseValue;
             private set
             {
                 if (_baseValue == value)
                     return;
                 _baseValue = value;
             }
-        }
-
-        public BaseValueView(BaseValue baseValue)
-        {
-            BaseValue = baseValue;
-
-            this.DataContext = baseValue;
-
-            InitializeComponent();
         }
     }
 }

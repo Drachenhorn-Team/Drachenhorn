@@ -1,32 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Drachenhorn.Core.IO;
+﻿using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
-using Drachenhorn.Xml.Exceptions;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace Drachenhorn.Core.ViewModels.Template
 {
     public class TemplateMainViewModel : ViewModelBase
     {
-        private DSATemplate _template;
-
-        public DSATemplate Template
-        {
-            get { return _template; }
-            set
-            {
-                if (_template == value)
-                    return;
-                _template = value;
-                RaisePropertyChanged();
-            }
-        }
+        private SheetTemplate _template;
 
         #region c'tor
 
@@ -36,6 +19,18 @@ namespace Drachenhorn.Core.ViewModels.Template
         }
 
         #endregion c'tor
+
+        public SheetTemplate Template
+        {
+            get => _template;
+            set
+            {
+                if (_template == value)
+                    return;
+                _template = value;
+                RaisePropertyChanged();
+            }
+        }
 
         #region Commands
 
@@ -56,7 +51,8 @@ namespace Drachenhorn.Core.ViewModels.Template
 
         private void ExecuteExport()
         {
-            SimpleIoc.Default.GetInstance<IIoService>().SaveAs(Template, Template.FileName, DSATemplate.Extension, "Drachenhorn Template", LanguageManager.Translate("UI.Export"));
+            SimpleIoc.Default.GetInstance<IIoService>().SaveAs(Template, Template.Name, SheetTemplate.Extension,
+                "Drachenhorn Template", LanguageManager.Translate("UI.Export"));
         }
 
         #endregion Commands

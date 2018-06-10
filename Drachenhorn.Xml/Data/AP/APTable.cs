@@ -2,62 +2,24 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Data.AP
 {
     /// <summary>
-    /// AP-Cost-Table for leveling a Character
+    ///     AP-Cost-Table for leveling a Character
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class APTable : ChildChangedBase
     {
-        #region Properties
-
-        [XmlIgnore]
-        private ObservableCollection<APColumn> _apColumns = new ObservableCollection<APColumn>();
-        /// <summary>
-        /// Gets or sets the AP-Columns.
-        /// </summary>
-        /// <value>
-        /// The AP-Columns.
-        /// </value>
-        [XmlElement("APColumn")]
-        public ObservableCollection<APColumn> APColumns
-        {
-            get { return _apColumns; }
-            set
-            {
-                if (_apColumns == value)
-                    return;
-                _apColumns = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets the column names.
-        /// </summary>
-        /// <value>
-        /// The column names.
-        /// </value>
-        [XmlIgnore]
-        public IEnumerable<string> ColumnNames
-        {
-            get { return from x in APColumns select x.Name; }
-        }
-
-        #endregion Properties
-
         #region operators
 
         /// <summary>
-        /// Gets or sets the <see cref="APColumn"/> with the specified key.
+        ///     Gets or sets the <see cref="APColumn" /> with the specified key.
         /// </summary>
         /// <value>
-        /// The <see cref="APColumn"/>.
+        ///     The <see cref="APColumn" />.
         /// </value>
         /// <param name="key">The Name of the Column.</param>
         /// <returns></returns>
@@ -88,7 +50,7 @@ namespace Drachenhorn.Xml.Data.AP
         #region Calculation
 
         /// <summary>
-        /// Calculates the leveling cost for the specified key.
+        ///     Calculates the leveling cost for the specified key.
         /// </summary>
         /// <param name="key">The Column-Key.</param>
         /// <param name="from">Current Skill value.</param>
@@ -100,5 +62,39 @@ namespace Drachenhorn.Xml.Data.AP
         }
 
         #endregion Calculation
+
+        #region Properties
+
+        [XmlIgnore] private ObservableCollection<APColumn> _apColumns = new ObservableCollection<APColumn>();
+
+        /// <summary>
+        ///     Gets or sets the AP-Columns.
+        /// </summary>
+        /// <value>
+        ///     The AP-Columns.
+        /// </value>
+        [XmlElement("APColumn")]
+        public ObservableCollection<APColumn> APColumns
+        {
+            get => _apColumns;
+            set
+            {
+                if (_apColumns == value)
+                    return;
+                _apColumns = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets the column names.
+        /// </summary>
+        /// <value>
+        ///     The column names.
+        /// </value>
+        [XmlIgnore]
+        public IEnumerable<string> ColumnNames => from x in APColumns select x.Name;
+
+        #endregion Properties
     }
 }

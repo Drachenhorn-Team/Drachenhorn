@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using Drachenhorn.Xml.Data.AP;
+﻿using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Objects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -41,7 +40,7 @@ namespace Drachenhorn.UnitTest
             table["A"].Add(8);
             table["A"].Add(10);
 
-            Assert.AreEqual(table.Calculate("A", -2, 9), (uint)66);
+            Assert.AreEqual(table.Calculate("A", -2, 9), (uint) 66);
         }
     }
 }

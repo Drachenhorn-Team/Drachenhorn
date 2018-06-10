@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace Drachenhorn.Core.Lang
 {
@@ -14,11 +12,11 @@ namespace Drachenhorn.Core.Lang
 
     public class LanguageChangedEventArgs : EventArgs
     {
-        public CultureInfo NewCulture { get; }
-
         public LanguageChangedEventArgs(CultureInfo newCulture)
         {
             NewCulture = newCulture;
         }
+
+        public CultureInfo NewCulture { get; }
     }
 }

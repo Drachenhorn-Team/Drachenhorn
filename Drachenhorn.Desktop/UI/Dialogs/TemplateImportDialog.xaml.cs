@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using Drachenhorn.Xml.Template;
@@ -9,7 +8,7 @@ using GalaSoft.MvvmLight.Ioc;
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
     /// <summary>
-    /// Interaktionslogik für TemplateImportDialog.xaml
+    ///     Interaktionslogik für TemplateImportDialog.xaml
     /// </summary>
     public partial class TemplateImportDialog : Window
     {
@@ -20,7 +19,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             var file = new FileInfo(filePath);
 
             var fileName = file.Name;
-            
+
             NameBox.Text = fileName;
 
             using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
@@ -35,17 +34,14 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 }
             }
 
-            NoButton.Click += (sender, args) =>
-            {
-                this.Close();
-            };
+            NoButton.Click += (sender, args) => { Close(); };
             YesButton.Click += (sender, args) =>
             {
                 var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateImportDialog>();
-                logger.Info("Copying " + file.FullName + " to " + DSATemplate.BaseDirectory);
+                logger.Info("Copying " + file.FullName + " to " + SheetTemplate.BaseDirectory);
 
-                file.CopyTo(Path.Combine(DSATemplate.BaseDirectory, fileName), true);
-                this.Close();
+                file.CopyTo(Path.Combine(SheetTemplate.BaseDirectory, fileName), true);
+                Close();
             };
         }
     }

@@ -3,7 +3,7 @@
 namespace Drachenhorn.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für CharacteristicsControl.xaml
+    ///     Interaktionslogik für CharacteristicsControl.xaml
     /// </summary>
     public partial class CharacteristicsControl : UserControl
     {

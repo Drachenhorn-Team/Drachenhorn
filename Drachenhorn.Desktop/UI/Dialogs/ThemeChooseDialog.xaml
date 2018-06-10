@@ -15,37 +15,37 @@
                         BorderThickness="2" Margin="5">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="{Binding .}" 
+                        <TextBlock Text="{Binding .}"
                                    Margin="5 5 5 50"
                                    Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0"
                                    HorizontalAlignment="Center"
                                    FontSize="28"
-                                   FontFamily="{StaticResource Morpheus}"/>
+                                   FontFamily="{StaticResource Morpheus}" />
 
-                        <Image Source="{DynamicResource SaveIcon}" Grid.Column="0" Grid.Row="1" Margin="5"/>
-                        <Image Source="{DynamicResource AddIcon}" Grid.Column="1" Grid.Row="1" Margin="5"/>
-                        <Image Source="{DynamicResource NewIcon}" Grid.Column="2" Grid.Row="1" Margin="5"/>
+                        <Image Source="{DynamicResource SaveIcon}" Grid.Column="0" Grid.Row="1" Margin="5" />
+                        <Image Source="{DynamicResource AddIcon}" Grid.Column="1" Grid.Row="1" Margin="5" />
+                        <Image Source="{DynamicResource NewIcon}" Grid.Column="2" Grid.Row="1" Margin="5" />
 
                         <Button Content="Lorem Ipsum" Margin="5"
                                 Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2"
-                                IsHitTestVisible="False"/>
+                                IsHitTestVisible="False" />
 
                         <TextBlock Text="dolor sit amet" Margin="5"
                                    Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="3"
                                    HorizontalAlignment="Center"
                                    FontSize="16"
-                                   FontFamily="{StaticResource Morpheus}"/>
+                                   FontFamily="{StaticResource Morpheus}" />
                     </Grid>
                 </Border>
             </DataTemplate>
@@ -53,77 +53,77 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <Separator Grid.ColumnSpan="20" Grid.Row="1"></Separator>
+        <Separator Grid.ColumnSpan="20" Grid.Row="1" />
 
         <Grid Grid.Column="0">
             <Grid.Resources>
-                <ResourceDictionary Source="../Themes/WhiteTheme.xaml"/>
+                <ResourceDictionary Source="../Themes/WhiteTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.White}"/>
+                              Content="{lang:Translate VisualThemeType.White}" />
         </Grid>
         <Button Margin="5" Click="VisualTheme_1_OnClick"
                 Content="{lang:Translate UI.Select}"
                 Grid.Column="0" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.White}"/>
+                ToolTip="{lang:Translate VisualThemeType.White}" />
 
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.Resources>
-                <ResourceDictionary Source="../Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="../Themes/LightTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Light}"/>
+                              Content="{lang:Translate VisualThemeType.Light}" />
         </Grid>
         <Button Margin="5" Click="VisualTheme_2_OnClick"
                 Content="{lang:Translate UI.Select}"
                 Grid.Column="1" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.Light}"/>
+                ToolTip="{lang:Translate VisualThemeType.Light}" />
 
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.Resources>
-                <ResourceDictionary Source="../Themes/DarkTheme.xaml"/>
+                <ResourceDictionary Source="../Themes/DarkTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Dark}"/>
+                              Content="{lang:Translate VisualThemeType.Dark}" />
         </Grid>
         <Button Margin="5" Click="VisualTheme_3_OnClick"
                 Content="{lang:Translate UI.Select}"
                 Grid.Column="2" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.Dark}"/>
+                ToolTip="{lang:Translate VisualThemeType.Dark}" />
 
         <Grid Grid.Row="0" Grid.Column="3">
             <Grid.Resources>
-                <ResourceDictionary Source="../Themes/BlackTheme.xaml"/>
+                <ResourceDictionary Source="../Themes/BlackTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Black}"/>
+                              Content="{lang:Translate VisualThemeType.Black}" />
         </Grid>
         <Button Margin="5" Click="VisualTheme_4_OnClick"
                 Content="{lang:Translate UI.Select}"
                 Grid.Column="3" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.Black}"/>
+                ToolTip="{lang:Translate VisualThemeType.Black}" />
 
         <TextBlock Text="{lang:Translate VisualThemeType.System}"
                    Grid.Column="4" Grid.Row="0"
                    HorizontalAlignment="Center"
                    FontSize="28"
-                   FontFamily="{StaticResource Morpheus}"/>
+                   FontFamily="{StaticResource Morpheus}" />
         <Button Margin="5" Click="VisualTheme_System_OnClick"
                 Content="{lang:Translate UI.Select}"
                 Grid.Column="4" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.System}"/>
+                ToolTip="{lang:Translate VisualThemeType.System}" />
 
     </Grid>
 </Window>

@@ -10,7 +10,8 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <DockPanel>
-        <TextBlock Text="{lang:Translate CharacterSheet.SpecialSkills}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Center" />
+        <TextBlock Text="{lang:Translate CharacterSheet.SpecialSkills}" DockPanel.Dock="Top" Margin="5"
+                   HorizontalAlignment="Center" />
         <Grid DockPanel.Dock="Left">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -44,7 +45,8 @@
                 <Button Click="AddButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Add}">
                     <Image Source="{StaticResource AddIcon}" />
                 </Button>
-                <Button Click="RemoveButton_Click" Width="20" Height="20" Margin="5" ToolTip="{lang:Translate UI.Remove}">
+                <Button Click="RemoveButton_Click" Width="20" Height="20" Margin="5"
+                        ToolTip="{lang:Translate UI.Remove}">
                     <Image Source="{StaticResource RemoveIcon}" />
                 </Button>
             </WrapPanel>

@@ -6,27 +6,38 @@ using Drachenhorn.Xml.Interfaces;
 namespace Drachenhorn.Xml.Sheet.Skills
 {
     /// <summary>
-    /// Specialskill of a Character.
+    ///     Specialskill of a Character.
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class SpecialSkill : BindableBase, IInfoObject
     {
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
+
+            return result;
+        }
+
         #region Properties
 
-        [XmlIgnore]
-        private string _name = "";
+        [XmlIgnore] private string _name = "";
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -36,18 +47,18 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        [XmlIgnore]
-        private string _description;
+        [XmlIgnore] private string _description;
+
         /// <summary>
-        /// Gets or sets the description.
+        ///     Gets or sets the description.
         /// </summary>
         /// <value>
-        /// The description.
+        ///     The description.
         /// </value>
         [XmlAttribute("Description")]
         public string Description
         {
-            get { return _description; }
+            get => _description;
             set
             {
                 if (_description == value)
@@ -62,14 +73,14 @@ namespace Drachenhorn.Xml.Sheet.Skills
         #region c'tor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpecialSkill"/> class.
+        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
         /// </summary>
         public SpecialSkill()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpecialSkill"/> class.
+        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
         public SpecialSkill(string name)
@@ -78,16 +89,5 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion c'tor
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-
-            return result;
-        }
     }
 }

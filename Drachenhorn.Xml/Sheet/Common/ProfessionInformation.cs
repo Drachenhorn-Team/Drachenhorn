@@ -7,24 +7,28 @@ using Drachenhorn.Xml.Interfaces;
 namespace Drachenhorn.Xml.Sheet.Common
 {
     /// <summary>
-    /// Profession-Information
+    ///     Profession-Information
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     public class ProfessionInformation : ChildChangedBase, IInfoObject
     {
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _description;
+
+        [XmlIgnore] private double _gpCost;
+
+        [XmlIgnore] private string _name;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -34,18 +38,16 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _description;
         /// <summary>
-        /// Gets or sets the description.
+        ///     Gets or sets the description.
         /// </summary>
         /// <value>
-        /// The description.
+        ///     The description.
         /// </value>
         [XmlAttribute("Description")]
         public string Description
         {
-            get { return _description; }
+            get => _description;
             set
             {
                 if (_description == value)
@@ -55,18 +57,16 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private double _gpCost;
         /// <summary>
-        /// Gets or sets the gp cost.
+        ///     Gets or sets the gp cost.
         /// </summary>
         /// <value>
-        /// The gp cost.
+        ///     The gp cost.
         /// </value>
         [XmlAttribute("GPCost")]
         public double GpCost
         {
-            get { return _gpCost; }
+            get => _gpCost;
             set
             {
                 if (_gpCost == value)
@@ -83,7 +83,8 @@ namespace Drachenhorn.Xml.Sheet.Common
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
             if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-            if (Math.Abs(GpCost) > Double.Epsilon) result.Add("%Info.GPCost", GpCost.ToString(CultureInfo.CurrentCulture));
+            if (Math.Abs(GpCost) > double.Epsilon)
+                result.Add("%Info.GPCost", GpCost.ToString(CultureInfo.CurrentCulture));
 
             return result;
         }

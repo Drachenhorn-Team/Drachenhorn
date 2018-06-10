@@ -1,25 +1,23 @@
-﻿using Drachenhorn.Core.Printing;
-using Drachenhorn.Core.ViewModels;
-using Drachenhorn.Xml.Sheet;
-using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI.Dialogs;
+using Drachenhorn.Xml.Sheet;
 using Fluent;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <inheritdoc cref="Window" />
     /// <summary>
-    /// Interaktionslogik für MainView.xaml
+    ///     Interaktionslogik für MainView.xaml
     /// </summary>
     public partial class MainView : RibbonWindow
     {
@@ -29,7 +27,7 @@ namespace Drachenhorn.Desktop.Views
 
             //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
 
-            if (!String.IsNullOrEmpty(path)) this.Loaded += (sender, args) => OpenFile(path);
+            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) => OpenFile(path);
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
 
@@ -44,42 +42,44 @@ namespace Drachenhorn.Desktop.Views
         {
             var temp = new Uri(path).LocalPath;
             if (temp.EndsWith(CharacterSheet.Extension))
-            {
-                if (this.DataContext is MainViewModel)
+                if (DataContext is MainViewModel)
                 {
-                    var model = (MainViewModel)this.DataContext;
+                    var model = (MainViewModel) DataContext;
                     var sheetModel = new CharacterSheetViewModel(CharacterSheet.Load(path));
                     model.CharacterSheetViewModels.Add(sheetModel);
                     model.CurrentSheetViewModel = sheetModel;
                 }
-            }
 
-            this.WindowState = WindowState.Maximized;
-            this.Activate();
+            WindowState = WindowState.Maximized;
+            Activate();
         }
 
         private void RecieveMessage(NotificationMessage message)
         {
             if (message.Notification == "ShowSettingsView")
+            {
                 new SettingsView().ShowDialog();
+            }
             else if (message.Notification == "ShowPrintView")
             {
-                if (this.DataContext is MainViewModel)
+                if (DataContext is MainViewModel)
                 {
-                    var model = (MainViewModel)this.DataContext;
+                    var model = (MainViewModel) DataContext;
                     var print = PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet);
                     new PrintView(print).ShowDialog();
                 }
             }
             else if (message.Notification == "ShowOpenTemplates")
+            {
                 new TemplateSelectorDialog().ShowDialog();
+            }
         }
 
         private void MainView_OnClosing(object sender, CancelEventArgs e)
         {
-            if (this.DataContext is MainViewModel)
+            if (DataContext is MainViewModel)
             {
-                var model = (MainViewModel) this.DataContext;
+                var model = (MainViewModel) DataContext;
 
                 if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 

@@ -1,22 +1,22 @@
 ﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.Views.TemplateMainView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
-        xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
-        xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
-        xmlns:fluent="urn:fluent-ribbon"
-        mc:Ignorable="d" IsIconVisible="False"
-        Style="{StaticResource {x:Type Window}}"
-        DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
-        WindowState="Maximized"
-        Closing="TemplateMainView_OnClosing"
-        Title="TemplateMainView" Height="450" Width="800">
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
+                     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                     xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+                     xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
+                     xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
+                     xmlns:fluent="urn:fluent-ribbon"
+                     mc:Ignorable="d" IsIconVisible="False"
+                     Style="{StaticResource {x:Type Window}}"
+                     DataContext="{Binding TemplateMainView, Source={StaticResource Locator}}"
+                     WindowState="Maximized"
+                     Closing="TemplateMainView_OnClosing"
+                     Title="TemplateMainView" Height="450" Width="800">
     <Window.InputBindings>
-        <KeyBinding Key="S" Modifiers="Control" Command="{Binding Save}"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding Save}" />
     </Window.InputBindings>
 
     <DockPanel>
@@ -24,49 +24,50 @@
             <fluent:RibbonTabItem Header="{lang:Translate UI.File}" KeyTip="F">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Save}">
                     <fluent:TextBox Header="{lang:Translate Template.Name}"
-                                    Text="{Binding Template.FileName}" MinWidth="150"/>
+                                    Text="{Binding Template.Name}" MinWidth="150" />
                     <fluent:TextBox Header="{lang:Translate Template.Version}"
-                                    Text="{Binding Template.Version}" MinWidth="150"/>
+                                    Text="{Binding Template.Version}" MinWidth="150" />
                     <fluent:Button Header="{lang:Translate UI.Save}"
                                    Icon="{DynamicResource SaveIcon}"
                                    ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
                                    Size="Middle"
                                    KeyTip="S"
-                                   Command="{Binding Save}"/>
+                                   Command="{Binding Save}" />
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Export}">
                     <fluent:Button Header="{lang:Translate UI.Export}"
                                    LargeIcon="{DynamicResource ExportIcon}"
                                    ToolTip="{lang:TranslateText %UI.Export (%Keyboard.Ctrl + E)}"
                                    KeyTip="E"
-                                   Command="{Binding Export}"/>
+                                   Command="{Binding Export}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
-        
-        
+
+
         <TabControl>
-            <TabItem Header="{lang:Translate DSATemplate.APTable}">
-                <common:APTableControl DataContext="{Binding Template.APTable}"/>
+            <TabItem Header="{lang:Translate Template.Common}" />
+            <TabItem Header="{lang:Translate Template.APTable}">
+                <common:APTableControl DataContext="{Binding Template.APTable}" />
             </TabItem>
-            <TabItem Header="{lang:Translate DSATemplate.Races}">
+            <TabItem Header="{lang:Translate Template.Races}">
                 <userElements:ListEditor DataContext="{Binding Template.Races}"
                                          DisplayMemberPath="Name"
                                          ContentType="{x:Type xmlCommon:RaceInformation}">
                     <userElements:ListEditor.ContentTemplate>
                         <DataTemplate>
-                            <common:CultureDisplayControl/>
+                            <common:CultureDisplayControl />
                         </DataTemplate>
                     </userElements:ListEditor.ContentTemplate>
                 </userElements:ListEditor>
             </TabItem>
-            <TabItem Header="{lang:Translate DSATemplate.Cultures}">
+            <TabItem Header="{lang:Translate Template.Cultures}">
                 <userElements:ListEditor DataContext="{Binding Template.Cultures}"
                                          DisplayMemberPath="Name"
                                          ContentType="{x:Type xmlCommon:CultureInformation}">
                     <userElements:ListEditor.ContentTemplate>
                         <DataTemplate>
-                            <common:CultureDisplayControl/>
+                            <common:CultureDisplayControl />
                         </DataTemplate>
                     </userElements:ListEditor.ContentTemplate>
                 </userElements:ListEditor>

@@ -17,7 +17,7 @@ namespace Drachenhorn.Core.ViewModels.Sheet
 
         public CharacterSheet CurrentSheet
         {
-            get { return _currentSheet; }
+            get => _currentSheet;
             set
             {
                 if (_currentSheet == value)
@@ -59,12 +59,12 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             try
             {
                 ioService.SaveAs(CurrentSheet,
-                string.IsNullOrEmpty(CurrentSheet.Characteristics.Name)
-                    ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
-                    : CurrentSheet.Characteristics.Name,
-                CharacterSheet.Extension,
-                LanguageManager.Translate("CharacterSheet.FileType.Name"),
-                LanguageManager.Translate("CharacterSheet.SaveDialog.Title"));
+                    string.IsNullOrEmpty(CurrentSheet.Characteristics.Name)
+                        ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
+                        : CurrentSheet.Characteristics.Name,
+                    CharacterSheet.Extension,
+                    LanguageManager.Translate("CharacterSheet.FileType.Name"),
+                    LanguageManager.Translate("CharacterSheet.SaveDialog.Title"));
             }
             catch (SheetSavingException ex)
             {

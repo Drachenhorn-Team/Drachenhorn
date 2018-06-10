@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Drachenhorn.Xml.Sheet.Enums
+﻿namespace Drachenhorn.Xml.Sheet.Enums
 {
     /// <summary>
-    /// Sets if the DisAdvantage is an Advantage or a Disadvantage
+    ///     Sets if the DisAdvantage is an Advantage or a Disadvantage
     /// </summary>
     public enum DisAdvantageType
     {
         /// <summary>
-        /// The advantage
+        ///     The advantage
         /// </summary>
         Advantage,
+
         /// <summary>
-        /// The disadvantage
+        ///     The disadvantage
         /// </summary>
         Disadvantage
     }

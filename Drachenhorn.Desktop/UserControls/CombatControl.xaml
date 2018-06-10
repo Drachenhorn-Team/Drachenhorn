@@ -27,8 +27,10 @@
 
     <UniformGrid Columns="2">
         <StackPanel>
-            <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center" />
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}" CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+            <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
+                       HorizontalAlignment="Center" />
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}"
+                      CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
@@ -45,8 +47,10 @@
         </StackPanel>
 
         <StackPanel>
-            <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30" HorizontalAlignment="Center" />
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}" CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+            <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30"
+                       HorizontalAlignment="Center" />
+            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}"
+                      CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="*" Binding="{Binding IsActive}" />
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"

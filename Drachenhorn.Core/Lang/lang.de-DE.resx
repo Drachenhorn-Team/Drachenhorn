@@ -666,7 +666,7 @@
   <data name="UI.ShowConsole" xml:space="preserve">
     <value>Konsole anzeigen</value>
   </data>
-  <data name="DSATemplate.Races" xml:space="preserve">
+  <data name="Template.Races" xml:space="preserve">
     <value>Rassen</value>
   </data>
   <data name="CharacterSheet.Description" xml:space="preserve">
@@ -675,7 +675,7 @@
   <data name="CharacterSheet.StartValues" xml:space="preserve">
     <value>Startwerte</value>
   </data>
-  <data name="DSATemplate.Cultures" xml:space="preserve">
+  <data name="Template.Cultures" xml:space="preserve">
     <value>Kulturen</value>
   </data>
   <data name="DamageType.None" xml:space="preserve">
@@ -699,7 +699,7 @@
   <data name="CharacterSheet.Weight" xml:space="preserve">
     <value>Gewicht</value>
   </data>
-  <data name="DSATemplate.APTable" xml:space="preserve">
+  <data name="Template.APTable" xml:space="preserve">
     <value>AP-Tabelle</value>
   </data>
   <data name="APColumn.Name" xml:space="preserve">

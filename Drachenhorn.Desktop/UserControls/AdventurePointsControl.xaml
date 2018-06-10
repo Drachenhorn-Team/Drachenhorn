@@ -21,6 +21,7 @@
         <TextBlock Text="{lang:Translate CharacterSheet.UsedAP}" Grid.Column="2" />
         <TextBox Text="{Binding Used, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Margin="5" />
         <TextBlock Text="{lang:Translate CharacterSheet.LeftoverAP}" Grid.Column="4" />
-        <TextBox Text="{Binding CurrentLeft, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" IsReadOnly="True" Grid.Column="5" Margin="5" />
+        <TextBox Text="{Binding CurrentLeft, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" IsReadOnly="True"
+                 Grid.Column="5" Margin="5" />
     </Grid>
 </UserControl>

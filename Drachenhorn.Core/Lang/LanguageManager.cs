@@ -1,22 +1,24 @@
 ﻿using System;
-using Drachenhorn.Xml;
-using GalaSoft.MvvmLight.Ioc;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Resources;
+using Drachenhorn.Xml;
 using Easy.Logger.Interfaces;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Core.Lang
 {
     public class LanguageManager : BindableBase, INotifyLanguageChanged
     {
+        private readonly ResourceManager _resourceManager =
+            new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
+
         private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
 
         public CultureInfo CurrentCulture
         {
-            get { return _currentCulture; }
+            get => _currentCulture;
             set
             {
                 if (Equals(_currentCulture, value))
@@ -28,17 +30,14 @@ namespace Drachenhorn.Core.Lang
         }
 
         /// <summary>
-        /// Returns the translated Text for the TranslateID.
+        ///     Returns the translated Text for the TranslateID.
         /// </summary>
         /// <param name="key">TranslateID</param>
         /// <returns>Translated Text</returns>
         public string this[string key] => TranslateText(key);
 
-        private readonly ResourceManager _resourceManager =
-            new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
-
         /// <summary>
-        /// Returns the translated Text for the TranslateID.
+        ///     Returns the translated Text for the TranslateID.
         /// </summary>
         /// <param name="identifier">TranslateID</param>
         /// <returns>Translated Text.</returns>
@@ -52,22 +51,26 @@ namespace Drachenhorn.Core.Lang
             {
                 try
                 {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<LanguageManager>().Debug("Missing Translation: " + identifier);
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<LanguageManager>()
+                        .Debug("Missing Translation: " + identifier);
                 }
-                catch (InvalidOperationException) { }
+                catch (InvalidOperationException)
+                {
+                }
+
                 return identifier;
             }
         }
 
         /// <summary>
-        /// Translates the text with the parameters
+        ///     Translates the text with the parameters
         /// </summary>
         /// <param name="text">The Text to translate. (% for the beginning of the parameters to translate)</param>
         /// <returns>Translated Text</returns>
         public string TranslateText(string text)
         {
-            List<int> indexes = new List<int>();
-            for (int index = 0; ; ++index)
+            var indexes = new List<int>();
+            for (var index = 0;; ++index)
             {
                 index = text.IndexOf('%', index);
                 if (index == -1)
@@ -92,7 +95,7 @@ namespace Drachenhorn.Core.Lang
         }
 
         /// <summary>
-        /// Returns the Native Names of all supported cultures.
+        ///     Returns the Native Names of all supported cultures.
         /// </summary>
         /// <returns>List of native culture names</returns>
         public IEnumerable<string> GetAllCultureStrings()
@@ -101,7 +104,7 @@ namespace Drachenhorn.Core.Lang
         }
 
         /// <summary>
-        /// Returns all supported cultures.
+        ///     Returns all supported cultures.
         /// </summary>
         /// <returns>List of supported cultures.</returns>
         public IEnumerable<CultureInfo> GetAllCultures()
@@ -110,18 +113,15 @@ namespace Drachenhorn.Core.Lang
 
             var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (var culture in cultures)
-            {
                 try
                 {
-                    ResourceSet rs = _resourceManager.GetResourceSet(culture, true, false);
+                    var rs = _resourceManager.GetResourceSet(culture, true, false);
 
-                    if (rs != null)
-                    {
-                        result.Add(culture);
-                    }
+                    if (rs != null) result.Add(culture);
                 }
-                catch (CultureNotFoundException) { }
-            }
+                catch (CultureNotFoundException)
+                {
+                }
 
             return result;
         }
@@ -130,7 +130,7 @@ namespace Drachenhorn.Core.Lang
 
         public static CultureInfo CurrentUiCulture
         {
-            get { return SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture; }
+            get => SimpleIoc.Default.GetInstance<LanguageManager>().CurrentCulture;
             set
             {
                 var temp = SimpleIoc.Default.GetInstance<LanguageManager>();

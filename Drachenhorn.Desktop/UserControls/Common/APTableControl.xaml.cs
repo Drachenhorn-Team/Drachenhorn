@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Drachenhorn.Xml.Data.AP;
 
 namespace Drachenhorn.Desktop.UserControls.Common
 {
     /// <summary>
-    /// Interaktionslogik für APTableControl.xaml
+    ///     Interaktionslogik für APTableControl.xaml
     /// </summary>
     public partial class APTableControl : UserControl
     {
@@ -35,7 +25,7 @@ namespace Drachenhorn.Desktop.UserControls.Common
 
         private void RemoveValueButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var element = (FrameworkElement)sender;
+            var element = (FrameworkElement) sender;
 
             if (!(element.DataContext is APValue))
                 return;
@@ -43,26 +33,26 @@ namespace Drachenhorn.Desktop.UserControls.Common
             if (!(element.Tag is IList<APValue>))
                 return;
 
-            var tag = (IList<APValue>)element.Tag;
+            var tag = (IList<APValue>) element.Tag;
 
-            tag.Remove((APValue)element.DataContext);
+            tag.Remove((APValue) element.DataContext);
         }
 
         private void AddColumnButton_OnClick(object sender, RoutedEventArgs e)
         {
-            if (!(this.DataContext is APTable))
+            if (!(DataContext is APTable))
                 return;
 
-            var table = (APTable) this.DataContext;
+            var table = (APTable) DataContext;
 
             table.APColumns.Add(new APColumn());
         }
 
         private void RemoveColumnButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
+            var button = (Button) sender;
 
-            var table = (APTable)this.DataContext;
+            var table = (APTable) DataContext;
 
             table.APColumns.Remove(button.DataContext as APColumn);
         }
@@ -78,9 +68,13 @@ namespace Drachenhorn.Desktop.UserControls.Common
 
     public class EnterKeyTraversal
     {
+        public static readonly DependencyProperty IsEnabledProperty =
+            DependencyProperty.RegisterAttached("IsEnabled", typeof(bool),
+                typeof(EnterKeyTraversal), new UIPropertyMetadata(false, IsEnabledChanged));
+
         public static bool GetIsEnabled(DependencyObject obj)
         {
-            return (bool)obj.GetValue(IsEnabledProperty);
+            return (bool) obj.GetValue(IsEnabledProperty);
         }
 
         public static void SetIsEnabled(DependencyObject obj, bool value)
@@ -88,7 +82,7 @@ namespace Drachenhorn.Desktop.UserControls.Common
             obj.SetValue(IsEnabledProperty, value);
         }
 
-        static void ue_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private static void ue_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             var ue = e.OriginalSource as FrameworkElement;
 
@@ -108,17 +102,12 @@ namespace Drachenhorn.Desktop.UserControls.Common
             ue.PreviewKeyDown -= ue_PreviewKeyDown;
         }
 
-        public static readonly DependencyProperty IsEnabledProperty =
-            DependencyProperty.RegisterAttached("IsEnabled", typeof(bool),
-
-                typeof(EnterKeyTraversal), new UIPropertyMetadata(false, IsEnabledChanged));
-
-        static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var ue = d as FrameworkElement;
             if (ue == null) return;
 
-            if ((bool)e.NewValue)
+            if ((bool) e.NewValue)
             {
                 ue.Unloaded += ue_Unloaded;
                 ue.PreviewKeyDown += ue_PreviewKeyDown;

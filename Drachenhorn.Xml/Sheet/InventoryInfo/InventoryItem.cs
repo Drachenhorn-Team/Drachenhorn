@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Sheet.InventoryInfo
 {
     /// <summary>
-    /// Basic inventory item.
+    ///     Basic inventory item.
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
@@ -14,18 +12,18 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _name;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -35,18 +33,18 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
-        [XmlIgnore]
-        private string _storagePlace;
+        [XmlIgnore] private string _storagePlace;
+
         /// <summary>
-        /// Gets or sets the storage place.
+        ///     Gets or sets the storage place.
         /// </summary>
         /// <value>
-        /// The storage place.
+        ///     The storage place.
         /// </value>
         [XmlAttribute("StoragePlace")]
         public string StoragePlace
         {
-            get { return _storagePlace; }
+            get => _storagePlace;
             set
             {
                 if (_storagePlace == value)
@@ -56,21 +54,21 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
-        [XmlIgnore]
-        private double _weight;
+        [XmlIgnore] private double _weight;
+
         /// <summary>
-        /// Gets or sets the weight.
+        ///     Gets or sets the weight.
         /// </summary>
         /// <value>
-        /// The weight.
+        ///     The weight.
         /// </value>
         [XmlAttribute("Weight")]
         public double Weight
         {
-            get { return _weight; }
+            get => _weight;
             set
             {
-                if (Math.Abs(_weight - value) < Double.Epsilon)
+                if (Math.Abs(_weight - value) < double.Epsilon)
                     return;
                 _weight = value;
                 OnPropertyChanged();

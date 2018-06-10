@@ -7,80 +7,13 @@ using Drachenhorn.Xml.Sheet.Enums;
 namespace Drachenhorn.Xml.Sheet.Common
 {
     /// <summary>
-    /// (Dis-)Advantages
+    ///     (Dis-)Advantages
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class DisAdvantage : ChildChangedBase, IInfoObject
     {
-        #region Properties
-
-        [XmlIgnore]
-        private string _name;
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        [XmlAttribute("Name")]
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (_name == value)
-                    return;
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private string _specialization;
-        /// <summary>
-        /// Gets or sets the specialization.
-        /// </summary>
-        /// <value>
-        /// The specialization.
-        /// </value>
-        [XmlAttribute("Specialization")]
-        public string Specialization
-        {
-            get { return _specialization; }
-            set
-            {
-                if (_specialization == value)
-                    return;
-                _specialization = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private DisAdvantageType _type;
-        /// <summary>
-        /// Gets or sets the type.
-        /// </summary>
-        /// <value>
-        /// The type.
-        /// </value>
-        [XmlAttribute("Type")]
-        public DisAdvantageType Type
-        {
-            get { return _type; }
-            set
-            {
-                if (_type == value)
-                    return;
-                _type = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion Properties
-
         /// <inheritdoc />
         public virtual Dictionary<string, string> GetInformation()
         {
@@ -91,5 +24,72 @@ namespace Drachenhorn.Xml.Sheet.Common
 
             return result;
         }
+
+        #region Properties
+
+        [XmlIgnore] private string _name;
+
+        /// <summary>
+        ///     Gets or sets the name.
+        /// </summary>
+        /// <value>
+        ///     The name.
+        /// </value>
+        [XmlAttribute("Name")]
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name == value)
+                    return;
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private string _specialization;
+
+        /// <summary>
+        ///     Gets or sets the specialization.
+        /// </summary>
+        /// <value>
+        ///     The specialization.
+        /// </value>
+        [XmlAttribute("Specialization")]
+        public string Specialization
+        {
+            get => _specialization;
+            set
+            {
+                if (_specialization == value)
+                    return;
+                _specialization = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private DisAdvantageType _type;
+
+        /// <summary>
+        ///     Gets or sets the type.
+        /// </summary>
+        /// <value>
+        ///     The type.
+        /// </value>
+        [XmlAttribute("Type")]
+        public DisAdvantageType Type
+        {
+            get => _type;
+            set
+            {
+                if (_type == value)
+                    return;
+                _type = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion Properties
     }
 }

@@ -12,7 +12,7 @@
     <DockPanel Grid.IsSharedSizeScope="True">
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
-                        ToolTip="{lang:Translate UI.Add}">
+                    ToolTip="{lang:Translate UI.Add}">
                 <Image Source="{StaticResource AddIcon}"
                        Margin="2" />
             </Button>
@@ -77,7 +77,7 @@
                             <Image Source="{StaticResource RemoveIcon}" Margin="2" />
                         </Button>
 
-                        <userElements:InfoButton InfoObject="{Binding .}" Grid.Column="5"/>
+                        <userElements:InfoButton InfoObject="{Binding .}" Grid.Column="5" />
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
