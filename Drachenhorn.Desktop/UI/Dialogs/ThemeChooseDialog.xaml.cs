@@ -14,27 +14,15 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             InitializeComponent();
         }
 
-        private void VisualTheme_1_OnClick(object sender, RoutedEventArgs e)
-        {
-            SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.White;
-            Close();
-        }
-
-        private void VisualTheme_2_OnClick(object sender, RoutedEventArgs e)
+        private void VisualTheme_Light_OnClick(object sender, RoutedEventArgs e)
         {
             SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.Light;
             Close();
         }
 
-        private void VisualTheme_3_OnClick(object sender, RoutedEventArgs e)
+        private void VisualTheme_Dark_OnClick(object sender, RoutedEventArgs e)
         {
             SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.Dark;
-            Close();
-        }
-
-        private void VisualTheme_4_OnClick(object sender, RoutedEventArgs e)
-        {
-            SimpleIoc.Default.GetInstance<ISettings>().VisualTheme = VisualThemeType.Black;
             Close();
         }
 

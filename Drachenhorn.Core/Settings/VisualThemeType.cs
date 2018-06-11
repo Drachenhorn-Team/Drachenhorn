@@ -3,9 +3,7 @@
     public enum VisualThemeType
     {
         System,
-        White,
         Light,
-        Dark,
-        Black
+        Dark
     }
 }

@@ -1,27 +1,27 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="ForegroundColor">#272424</Color>
-    <Color x:Key="ForegroundColor2">#373434</Color>
-    <Color x:Key="ForegroundDisabledColor">#113337</Color>
+    <Color x:Key="ForegroundColor">#2A3457</Color>
+    <Color x:Key="ForegroundColor2">#888C46</Color>
+    <Color x:Key="ForegroundDisabledColor">#4A6477</Color>
 
-    <Color x:Key="BackgroundColor">#C2D3DA</Color>
-    <Color x:Key="BackgroundColor2">#81A3A7</Color>
+    <Color x:Key="BackgroundColor">#F2EAED</Color>
+    <Color x:Key="BackgroundColor2">#A4A4BF</Color>
     <Color x:Key="BackgroundHightlightColor">#81A3A7</Color>
     <Color x:Key="BackgroundClickColor">#A1C3C7</Color>
     <Color x:Key="BackgroundMouseOverColor">#81A3A7</Color>
     <Color x:Key="BackgroundDisabledColor">#C2D3DA</Color>
 
-    <Color x:Key="BorderColor">#585A56</Color>
-    <Color x:Key="BorderHightlightColor">#81A3A7</Color>
-    <Color x:Key="BorderClickColor">#113337</Color>
-    <Color x:Key="BorderMouseOverColor">#81A3A7</Color>
+    <Color x:Key="BorderColor">#16235A</Color>
+    <Color x:Key="BorderHightlightColor">#585A56</Color>
+    <Color x:Key="BorderClickColor">#585A56</Color>
+    <Color x:Key="BorderMouseOverColor">#585A56</Color>
 
     <Color x:Key="SeperatorColor">#585A56</Color>
 
     <Color x:Key="MenuBackgroundColor">#C2D3DA</Color>
     <Color x:Key="MenuBorderColor">#585A56</Color>
 
-    <Color x:Key="InfoColor">#C55A00</Color>
+    <Color x:Key="InfoColor">#4070FF</Color>
     <Color x:Key="ErrorColor">#BF0000</Color>
 </ResourceDictionary>
