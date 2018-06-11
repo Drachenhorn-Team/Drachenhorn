@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A
 		img\Cover.jpg = img\Cover.jpg
 		img\Cover_tr.png = img\Cover_tr.png
 		img\Drachenhorn.ico = img\Drachenhorn.ico
+		img\ImageSource.md = img\ImageSource.md
 		img\Logo.png = img\Logo.png
 	EndProjectSection
 EndProject
