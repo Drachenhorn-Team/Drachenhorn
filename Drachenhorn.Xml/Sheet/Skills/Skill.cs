@@ -7,27 +7,40 @@ using Drachenhorn.Xml.Sheet.Roll;
 namespace Drachenhorn.Xml.Sheet.Skills
 {
     /// <summary>
-    /// Character-Skill
+    ///     Character-Skill
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
     public class Skill : BindableBase, IInfoObject
     {
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Category)) result.Add("%Info.Description", Category);
+            if (!string.IsNullOrEmpty(RollAttributes.ToString(",")))
+                result.Add("%Info.RollAttributes", RollAttributes.ToString(", "));
+
+            return result;
+        }
+
         #region Properties
 
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _name;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -37,18 +50,18 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        [XmlIgnore]
-        private string _category;
+        [XmlIgnore] private string _category;
+
         /// <summary>
-        /// Gets or sets the category.
+        ///     Gets or sets the category.
         /// </summary>
         /// <value>
-        /// The category.
+        ///     The category.
         /// </value>
         [XmlAttribute("Category")]
         public string Category
         {
-            get { return _category; }
+            get => _category;
             set
             {
                 if (_category == value)
@@ -58,18 +71,18 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        [XmlIgnore]
-        private RollAttributes _rollAttributes = new RollAttributes();
+        [XmlIgnore] private RollAttributes _rollAttributes = new RollAttributes();
+
         /// <summary>
-        /// Gets or sets the roll attributes.
+        ///     Gets or sets the roll attributes.
         /// </summary>
         /// <value>
-        /// The roll attributes.
+        ///     The roll attributes.
         /// </value>
         [XmlElement("RolleAttributes")]
         public RollAttributes RollAttributes
         {
-            get { return _rollAttributes; }
+            get => _rollAttributes;
             set
             {
                 if (_rollAttributes == value)
@@ -80,17 +93,5 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion Properties
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Category)) result.Add("%Info.Description", Category);
-            if (!string.IsNullOrEmpty(RollAttributes.ToString(","))) result.Add("%Info.RollAttributes", RollAttributes.ToString(", "));
-
-            return result;
-        }
     }
 }

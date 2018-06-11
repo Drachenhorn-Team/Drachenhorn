@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Drachenhorn.Xml.Calculation
+﻿namespace Drachenhorn.Xml.Calculation
 {
     /// <summary>
-    /// Interface to use as Parameter in Calculation.
+    ///     Interface to use as Parameter in Calculation.
     /// </summary>
     public interface IFormulaKeyItem
     {
         /// <summary>
-        /// Gets the key.
+        ///     Gets the key.
         /// </summary>
         /// <value>
-        /// The key.
+        ///     The key.
         /// </value>
         string Key { get; }
 
         /// <summary>
-        /// Gets the value.
+        ///     Gets the value.
         /// </summary>
         /// <value>
-        /// The value.
+        ///     The value.
         /// </value>
         double Value { get; }
     }

@@ -1,7 +1,7 @@
-﻿using Drachenhorn.Core.Lang;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using Drachenhorn.Core.Lang;
 
 namespace Drachenhorn.Desktop.Converter
 {
@@ -12,18 +12,16 @@ namespace Drachenhorn.Desktop.Converter
             if (value == null)
                 return null;
 
-            return LanguageManager.Translate(value.GetType().Name + "." + value.ToString() + ".Abbr");
+            return LanguageManager.Translate(value.GetType().Name + "." + value + ".Abbr");
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string str = (string)value;
+            var str = (string) value;
 
-            foreach (object enumValue in Enum.GetValues(targetType))
-            {
-                if (str == LanguageManager.Translate(enumValue.GetType().Name + "." + enumValue.ToString() + ".Abbr"))
-                { return enumValue; }
-            }
+            foreach (var enumValue in Enum.GetValues(targetType))
+                if (str == LanguageManager.Translate(enumValue.GetType().Name + "." + enumValue + ".Abbr"))
+                    return enumValue;
 
             throw new ArgumentException(null, "value");
         }

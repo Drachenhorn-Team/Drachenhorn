@@ -6,26 +6,35 @@ using System.Xml.Serialization;
 namespace Drachenhorn.Xml.Sheet.InventoryInfo
 {
     /// <summary>
-    /// Data about the Inventory of a Character
+    ///     Data about the Inventory of a Character
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
     public class Inventory : ChildChangedBase
     {
+        /// <summary>
+        ///     Gets the whole weight in the Inventory.
+        /// </summary>
+        /// <returns></returns>
+        public double GetWholeWeight()
+        {
+            return Items.Sum(item => { return item.Weight; });
+        }
+
         #region Properties
 
-        [XmlIgnore]
-        private ObservableCollection<InventoryItem> _items = new ObservableCollection<InventoryItem>();
+        [XmlIgnore] private ObservableCollection<InventoryItem> _items = new ObservableCollection<InventoryItem>();
+
         /// <summary>
-        /// Gets or sets the items.
+        ///     Gets or sets the items.
         /// </summary>
         /// <value>
-        /// The items.
+        ///     The items.
         /// </value>
         [XmlElement("Item")]
         public ObservableCollection<InventoryItem> Items
         {
-            get { return _items; }
+            get => _items;
             set
             {
                 if (_items == value)
@@ -36,14 +45,5 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
         }
 
         #endregion Properties
-
-        /// <summary>
-        /// Gets the whole weight in the Inventory.
-        /// </summary>
-        /// <returns></returns>
-        public double GetWholeWeight()
-        {
-            return Items.Sum(item => { return item.Weight; });
-        }
     }
 }

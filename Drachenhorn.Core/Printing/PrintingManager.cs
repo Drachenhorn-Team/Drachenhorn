@@ -1,7 +1,7 @@
-﻿using Drachenhorn.Core.Printing.Exceptions;
-using Drachenhorn.Xml.Sheet;
-using System;
+﻿using System;
 using System.IO;
+using Drachenhorn.Core.Printing.Exceptions;
+using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Core.Printing
 {
@@ -39,7 +39,9 @@ namespace Drachenhorn.Core.Printing
                     file.Delete();
 
                 using (var stream = file.CreateText())
+                {
                     stream.Write(GenerateHtml(sheet));
+                }
             }
             catch (Exception e)
             {

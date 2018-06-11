@@ -8,7 +8,7 @@ using System.Security.Permissions;
 namespace Drachenhorn.Xml.Objects
 {
     /// <summary>
-    /// Represents a Date in the world of DSA
+    ///     Represents a Date in the world of DSA
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     /// <seealso>
@@ -25,15 +25,16 @@ namespace Drachenhorn.Xml.Objects
         #region Properties
 
         private int _day = 1;
+
         /// <summary>
-        /// Gets or sets the day.
+        ///     Gets or sets the day.
         /// </summary>
         /// <value>
-        /// The day.
+        ///     The day.
         /// </value>
         public int Day
         {
-            get { return _day; }
+            get => _day;
             set
             {
                 if (_day == value)
@@ -44,15 +45,16 @@ namespace Drachenhorn.Xml.Objects
         }
 
         private DSAMonth _month = DSAMonth.Praios;
+
         /// <summary>
-        /// Gets or sets the month.
+        ///     Gets or sets the month.
         /// </summary>
         /// <value>
-        /// The month.
+        ///     The month.
         /// </value>
         public DSAMonth Month
         {
-            get { return _month; }
+            get => _month;
             set
             {
                 if (_month == value)
@@ -63,15 +65,16 @@ namespace Drachenhorn.Xml.Objects
         }
 
         private int _year = 1;
+
         /// <summary>
-        /// Gets or sets the year.
+        ///     Gets or sets the year.
         /// </summary>
         /// <value>
-        /// The year.
+        ///     The year.
         /// </value>
         public int Year
         {
-            get { return _year; }
+            get => _year;
             set
             {
                 if (_year == value)
@@ -86,24 +89,24 @@ namespace Drachenhorn.Xml.Objects
         #region c'tor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DSADate"/> class.
+        ///     Initializes a new instance of the <see cref="DSADate" /> class.
         /// </summary>
         public DSADate()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DSADate"/> class.
+        ///     Initializes a new instance of the <see cref="DSADate" /> class.
         /// </summary>
         /// <param name="day">The day.</param>
         /// <param name="month">The month.</param>
         /// <param name="year">The year.</param>
-        public DSADate(int day, int month, int year) : this(day, (DSAMonth)month, year)
+        public DSADate(int day, int month, int year) : this(day, (DSAMonth) month, year)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DSADate"/> class.
+        ///     Initializes a new instance of the <see cref="DSADate" /> class.
         /// </summary>
         /// <param name="day">The day.</param>
         /// <param name="month">The month.</param>
@@ -122,62 +125,56 @@ namespace Drachenhorn.Xml.Objects
         #region Equals
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        ///     Determines whether the specified <see cref="System.Object" />, is equal to this instance.
         /// </summary>
         /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
         /// <returns>
-        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        ///     <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals(object obj)
         {
             if (!(obj is DSADate))
                 return false;
 
-            return this.Equals((DSADate)obj);
+            return Equals((DSADate) obj);
         }
 
         /// <summary>
-        /// Indicates whether the current object is equal to another object of the same type.
+        ///     Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>
-        /// true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.
+        ///     true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.
         /// </returns>
         public bool Equals(DSADate other)
         {
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-            
-            if (other is null)
-            {
-                return false;
-            }
+            if (ReferenceEquals(this, other)) return true;
 
-            return (this.Day == other.Day
-                    && this.Month == other.Month
-                    && this.Year == other.Year);
+            if (other is null) return false;
+
+            return Day == other.Day
+                   && Month == other.Month
+                   && Year == other.Year;
         }
 
         /// <summary>
-        /// Returns a hash code for this instance.
+        ///     Returns a hash code for this instance.
         /// </summary>
         /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///     A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode()
         {
-            return int.Parse(Year.ToString() + ((int)Month).ToString() + Day.ToString());
+            return int.Parse(Year + ((int) Month).ToString() + Day);
         }
 
         /// <summary>
-        /// Implements the operator &gt;.
+        ///     Implements the operator &gt;.
         /// </summary>
         /// <param name="obj1">The obj1.</param>
         /// <param name="obj2">The obj2.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator >(DSADate obj1, DSADate obj2)
         {
@@ -185,12 +182,12 @@ namespace Drachenhorn.Xml.Objects
         }
 
         /// <summary>
-        /// Implements the operator &lt;.
+        ///     Implements the operator &lt;.
         /// </summary>
         /// <param name="obj1">The obj1.</param>
         /// <param name="obj2">The obj2.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator <(DSADate obj1, DSADate obj2)
         {
@@ -202,29 +199,29 @@ namespace Drachenhorn.Xml.Objects
         #region Add
 
         /// <summary>
-        /// Implements the operator +.
+        ///     Implements the operator +.
         /// </summary>
         /// <param name="date">The date.</param>
         /// <param name="value">The value.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static DSADate operator +(DSADate date, int value)
         {
             if (value < 0)
-                date.SubtractDays((uint)value);
+                date.SubtractDays((uint) value);
             else if (value > 0)
-                date.AddDays((uint)value);
+                date.AddDays((uint) value);
             return date;
         }
 
         /// <summary>
-        /// Implements the operator +.
+        ///     Implements the operator +.
         /// </summary>
         /// <param name="date">The date.</param>
         /// <param name="date2">The date2.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static DSADate operator +(DSADate date, DSADate date2)
         {
@@ -233,18 +230,18 @@ namespace Drachenhorn.Xml.Objects
         }
 
         /// <summary>
-        /// Adds the specified date.
+        ///     Adds the specified date.
         /// </summary>
         /// <param name="date">The date.</param>
         public void Add(DSADate date)
         {
-            this.AddDays((uint)date.Day);
-            this.AddMonths((uint)date.Month);
-            this.AddYears((uint)date.Year);
+            AddDays((uint) date.Day);
+            AddMonths((uint) date.Month);
+            AddYears((uint) date.Year);
         }
 
         /// <summary>
-        /// Adds the days.
+        ///     Adds the days.
         /// </summary>
         /// <param name="days">The days.</param>
         /// <exception cref="System.ArgumentException">Days can not be smaller than or equal to 0</exception>
@@ -253,43 +250,43 @@ namespace Drachenhorn.Xml.Objects
             if (days <= 0)
                 throw new ArgumentException("Days can not be smaller than or equal to 0");
 
-            long newDay = Day + days;
+            var newDay = Day + days;
 
             while (newDay > Month.GetAllowedDays())
             {
                 newDay -= Month.GetAllowedDays();
-                this.AddMonths(1);
+                AddMonths(1);
             }
 
-            this.Day = (int)newDay;
+            Day = (int) newDay;
         }
 
         /// <summary>
-        /// Adds the months.
+        ///     Adds the months.
         /// </summary>
         /// <param name="months">The months.</param>
         public void AddMonths(uint months)
         {
-            int newMonth = (int)Month + (int)months;
+            var newMonth = (int) Month + (int) months;
 
-            var maxMonths = (int)Enum.GetValues(typeof(DSAMonth)).Cast<DSAMonth>().Max();
+            var maxMonths = (int) Enum.GetValues(typeof(DSAMonth)).Cast<DSAMonth>().Max();
 
             while (newMonth > maxMonths)
             {
                 newMonth -= maxMonths;
-                this.AddYears(1);
+                AddYears(1);
             }
 
-            this.Month = (DSAMonth)newMonth;
+            Month = (DSAMonth) newMonth;
         }
 
         /// <summary>
-        /// Adds the years.
+        ///     Adds the years.
         /// </summary>
         /// <param name="years">The years.</param>
         public void AddYears(uint years)
         {
-            this.Year += (int)years;
+            Year += (int) years;
         }
 
         #endregion Add
@@ -297,29 +294,29 @@ namespace Drachenhorn.Xml.Objects
         #region Subtract
 
         /// <summary>
-        /// Implements the operator -.
+        ///     Implements the operator -.
         /// </summary>
         /// <param name="date">The date.</param>
         /// <param name="value">The value.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static DSADate operator -(DSADate date, int value)
         {
             if (value < 0)
-                date.AddDays((uint)value);
+                date.AddDays((uint) value);
             else if (value > 0)
-                date.SubtractDays((uint)value);
+                date.SubtractDays((uint) value);
             return date;
         }
 
         /// <summary>
-        /// Implements the operator -.
+        ///     Implements the operator -.
         /// </summary>
         /// <param name="date">The date.</param>
         /// <param name="date2">The date2.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static DSADate operator -(DSADate date, DSADate date2)
         {
@@ -328,59 +325,59 @@ namespace Drachenhorn.Xml.Objects
         }
 
         /// <summary>
-        /// Subtracts the specified date.
+        ///     Subtracts the specified date.
         /// </summary>
         /// <param name="date">The date.</param>
         public void Subtract(DSADate date)
         {
-            this.SubtractDays((uint)date.Day);
-            this.SubtractMonths((uint)date.Month);
-            this.SubtractYears((uint)date.Year);
+            SubtractDays((uint) date.Day);
+            SubtractMonths((uint) date.Month);
+            SubtractYears((uint) date.Year);
         }
 
         /// <summary>
-        /// Subtracts the days.
+        ///     Subtracts the days.
         /// </summary>
         /// <param name="days">The days.</param>
         public void SubtractDays(uint days)
         {
-            long newDay = Day - days;
+            var newDay = Day - days;
 
             while (newDay <= 0)
             {
                 newDay += Month.GetAllowedDays();
-                this.SubtractMonths(1);
+                SubtractMonths(1);
             }
 
-            this.Day = (int)newDay;
+            Day = (int) newDay;
         }
 
         /// <summary>
-        /// Subtracts the months.
+        ///     Subtracts the months.
         /// </summary>
         /// <param name="months">The months.</param>
         public void SubtractMonths(uint months)
         {
-            int newMonth = (int)Month - (int)months;
+            var newMonth = (int) Month - (int) months;
 
-            var maxMonths = (int)Enum.GetValues(typeof(DSAMonth)).Cast<DSAMonth>().Max();
+            var maxMonths = (int) Enum.GetValues(typeof(DSAMonth)).Cast<DSAMonth>().Max();
 
             while (newMonth <= 0)
             {
                 newMonth += maxMonths;
-                this.SubtractYears(1);
+                SubtractYears(1);
             }
 
-            this.Month = (DSAMonth)newMonth;
+            Month = (DSAMonth) newMonth;
         }
 
         /// <summary>
-        /// Subtracts the years.
+        ///     Subtracts the years.
         /// </summary>
         /// <param name="years">The years.</param>
         public void SubtractYears(uint years)
         {
-            this.Year -= (int)years;
+            Year -= (int) years;
         }
 
         #endregion Subtract
@@ -390,7 +387,7 @@ namespace Drachenhorn.Xml.Objects
         #region Interfaces
 
         /// <summary>
-        /// Compares to other Date.
+        ///     Compares to other Date.
         /// </summary>
         /// <param name="other">The other Date.</param>
         /// <returns>1 if later. 0 if Equal. -1 if earlyer.</returns>
@@ -399,13 +396,13 @@ namespace Drachenhorn.Xml.Objects
             if (Equals(this, other))
                 return 0;
 
-            if (this.Year > other.Year)
+            if (Year > other.Year)
                 return 1;
 
-            if (this.Month > other.Month)
+            if (Month > other.Month)
                 return 1;
 
-            if (this.Day > other.Day)
+            if (Day > other.Day)
                 return 1;
 
             return -1;
@@ -419,16 +416,16 @@ namespace Drachenhorn.Xml.Objects
             if (info == null)
                 throw new ArgumentNullException("SerializationInfo can not be null.");
 
-            info.AddValue("Value", this.ToString(), typeof(string));
+            info.AddValue("Value", ToString(), typeof(string));
         }
 
         #region ToString
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        ///     Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        ///     A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {
@@ -436,11 +433,11 @@ namespace Drachenhorn.Xml.Objects
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        ///     Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <param name="format">The format.</param>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        ///     A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public string ToString(string format)
         {
@@ -448,29 +445,26 @@ namespace Drachenhorn.Xml.Objects
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        ///     Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="formatProvider">The format provider.</param>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        ///     A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var parameterList = new List<string>();
 
             foreach (var c in format)
-            {
                 if (parameterList.Count > 0 && parameterList.Last().First() == c)
                     parameterList[parameterList.Count - 1] += c;
                 else
                     parameterList.Add("" + c);
-            }
 
             var result = "";
 
             foreach (var param in parameterList)
-            {
                 switch (param)
                 {
                     case "d":
@@ -487,11 +481,11 @@ namespace Drachenhorn.Xml.Objects
                         break;
 
                     case "M":
-                        result += (int)Month;
+                        result += (int) Month;
                         break;
 
                     case "MM":
-                        result += ((int)Month).ToString("D2");
+                        result += ((int) Month).ToString("D2");
                         break;
 
                     case "MMMM":
@@ -518,7 +512,6 @@ namespace Drachenhorn.Xml.Objects
                         result += param;
                         break;
                 }
-            }
 
             return result;
         }

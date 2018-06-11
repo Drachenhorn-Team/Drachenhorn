@@ -1,10 +1,11 @@
-﻿using Drachenhorn.Core.IO;
-using Drachenhorn.Core.Lang;
-using Drachenhorn.Xml.Sheet;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
+using Drachenhorn.Core.IO;
+using Drachenhorn.Core.Lang;
+using Drachenhorn.Xml.Interfaces;
+using Drachenhorn.Xml.Sheet;
+using Microsoft.Win32;
 
 namespace Drachenhorn.Desktop.IO
 {
@@ -68,24 +69,19 @@ namespace Drachenhorn.Desktop.IO
             return File.ReadAllText(fileDialog.FileName);
         }
 
-        public void SaveAsCharacterSheet(CharacterSheet sheet)
+        public void SaveAs(ISavable savable, string fileName, string extension, string fileTypeName, string title)
         {
-            var fileDialog = GetSaveFileDialog(
-                string.IsNullOrEmpty(sheet.Characteristics.Name)
-                    ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
-                    : sheet.Characteristics.Name,
-                CharacterSheet.Extension,
-                LanguageManager.Translate("CharacterSheet.FileType.Name"),
-                LanguageManager.Translate("CharacterSheet.SaveDialog.Title"));
+            var fileDialog = GetSaveFileDialog(fileName, extension, fileTypeName, title);
 
             if (fileDialog.ShowDialog() != true) return;
 
-            sheet.Save(fileDialog.FileName);
+            savable.Save(fileDialog.FileName);
         }
 
         public CharacterSheet OpenCharacterSheet()
         {
-            var fileDialog = GetOpenFileDialog(CharacterSheet.Extension, LanguageManager.Translate("CharacterSheet.FileType.Name"),
+            var fileDialog = GetOpenFileDialog(CharacterSheet.Extension,
+                LanguageManager.Translate("CharacterSheet.FileType.Name"),
                 LanguageManager.Translate("CharacterSheet.LoadDialog.Title"));
 
             return fileDialog.ShowDialog() != true ? null : CharacterSheet.Load(fileDialog.FileName);
@@ -107,7 +103,7 @@ namespace Drachenhorn.Desktop.IO
             string fileTypeName,
             string title)
         {
-            return new SaveFileDialog()
+            return new SaveFileDialog
             {
                 FileName = fileName,
                 Filter = fileTypeName + " (*" + fileExtension + ")|*" + fileExtension,

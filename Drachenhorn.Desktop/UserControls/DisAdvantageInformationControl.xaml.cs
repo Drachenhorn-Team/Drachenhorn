@@ -5,7 +5,7 @@ using System.Windows.Input;
 namespace Drachenhorn.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für AdvantageInformationControl.xaml
+    ///     Interaktionslogik für AdvantageInformationControl.xaml
     /// </summary>
     public partial class DisAdvantageInformationControl : UserControl
     {
@@ -21,9 +21,9 @@ namespace Drachenhorn.Desktop.UserControls
 
             e.Handled = true;
             var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.RoutedEvent = MouseWheelEvent;
             eventArg.Source = sender;
-            var parent = ((Control)sender).Parent as UIElement;
+            var parent = ((Control) sender).Parent as UIElement;
             parent.RaiseEvent(eventArg);
         }
     }

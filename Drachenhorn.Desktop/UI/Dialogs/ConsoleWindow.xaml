@@ -7,6 +7,7 @@
         Background="Black"
         ResizeMode="NoResize"
         Loaded="ConsoleWindow_OnLoaded"
+        Closing="ConsoleWindow_OnClosing"
         Title="Console" Height="500" Width="800">
     <Grid>
         <ScrollViewer Name="ConsoleScroll" Margin="0">
@@ -17,10 +18,10 @@
                          IsHitTestVisible="False">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
-                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Margin" Value="0" />
                     </Style>
                 </RichTextBox.Resources>
-                <FlowDocument PageWidth="{Binding ElementName=RichTextBox, Path=ActualWidth}"/>
+                <FlowDocument PageWidth="{Binding ElementName=RichTextBox, Path=ActualWidth}" />
             </RichTextBox>
         </ScrollViewer>
     </Grid>

@@ -1,9 +1,9 @@
-﻿using Drachenhorn.Core.Lang;
-using Drachenhorn.Desktop.UI.Dialogs;
-using GalaSoft.MvvmLight.Views;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+using Drachenhorn.Core.Lang;
+using Drachenhorn.Desktop.UI.Dialogs;
+using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UI.MVVM
 {
@@ -38,14 +38,13 @@ namespace Drachenhorn.Desktop.UI.MVVM
         public Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText,
             Action<bool> afterHideCallback)
         {
-            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true ? true : false;
+            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true
+                ? true
+                : false;
 
             afterHideCallback?.Invoke(result);
 
-            return Task.Run(() =>
-            {
-                return result;
-            });
+            return Task.Run(() => { return result; });
         }
 
         public async Task ShowMessageBox(string message, string title)

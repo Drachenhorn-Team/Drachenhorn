@@ -1,7 +1,7 @@
-﻿using Drachenhorn.Core.Lang;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using Drachenhorn.Core.Lang;
 
 namespace Drachenhorn.Desktop.Converter
 {

@@ -1,27 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using System.Text;
-using System.Xml.Serialization;
-using Antlr.Runtime;
 
 namespace Drachenhorn.Xml.Data.AP
 {
     /// <summary>
-    /// Value for AP-Columns
+    ///     Value for AP-Columns
     /// </summary>
     public class APValue : ChildChangedBase, ISerializable
     {
         #region Properties
-        
+
         private ushort _value;
+
         /// <summary>
-        /// AP-Value
+        ///     AP-Value
         /// </summary>
         public ushort Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 if (_value == value)
@@ -37,7 +34,9 @@ namespace Drachenhorn.Xml.Data.AP
         #region c'tor
 
         /// <inheritdoc />
-        public APValue() { }
+        public APValue()
+        {
+        }
 
         /// <inheritdoc />
         public APValue(ushort value)
@@ -57,7 +56,7 @@ namespace Drachenhorn.Xml.Data.AP
             if (info == null)
                 throw new ArgumentNullException("SerializationInfo can not be null.");
 
-            info.AddValue("Value", this.ToString(), typeof(string));
+            info.AddValue("Value", ToString(), typeof(string));
         }
 
         /// <inheritdoc />

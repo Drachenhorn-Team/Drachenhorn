@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace Drachenhorn.Xml
 {
     /// <summary>
-    /// Character Adventure Points
+    ///     Character Adventure Points
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     [Serializable]
@@ -12,18 +12,18 @@ namespace Drachenhorn.Xml
     {
         #region Properties
 
-        [XmlIgnore]
-        private int _total;
+        [XmlIgnore] private int _total;
+
         /// <summary>
-        /// Gets or sets the total points.
+        ///     Gets or sets the total points.
         /// </summary>
         /// <value>
-        /// The total points.
+        ///     The total points.
         /// </value>
         [XmlAttribute("Total")]
         public int Total
         {
-            get { return _total; }
+            get => _total;
             set
             {
                 if (_total == value)
@@ -33,18 +33,18 @@ namespace Drachenhorn.Xml
             }
         }
 
-        [XmlIgnore]
-        private int _used;
+        [XmlIgnore] private int _used;
+
         /// <summary>
-        /// Gets or sets the used points.
+        ///     Gets or sets the used points.
         /// </summary>
         /// <value>
-        /// The used points.
+        ///     The used points.
         /// </value>
         [XmlAttribute("Used")]
         public int Used
         {
-            get { return _used; }
+            get => _used;
             set
             {
                 if (_used == value)
@@ -55,16 +55,13 @@ namespace Drachenhorn.Xml
         }
 
         /// <summary>
-        /// Gets the current left points.
+        ///     Gets the current left points.
         /// </summary>
         /// <value>
-        /// The current left points.
+        ///     The current left points.
         /// </value>
         [XmlIgnore]
-        public int CurrentLeft
-        {
-            get { return Total - Used; }
-        }
+        public int CurrentLeft => Total - Used;
 
         #endregion Properties
     }

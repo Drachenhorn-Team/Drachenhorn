@@ -1,13 +1,26 @@
-﻿using Drachenhorn.Desktop.Views;
-using Drachenhorn.Xml.Interfaces;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Interfaces;
 
 namespace Drachenhorn.Desktop.UserElements
 {
     public class InfoButton : Control
     {
+        static InfoButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(InfoButton),
+                new FrameworkPropertyMetadata(typeof(InfoButton)));
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var button = Template.FindName("PART_InfoButton", this) as Button;
+            if (button != null) button.Click += (s, a) => { new InfoView(InfoObject).Show(); };
+        }
+
         #region Properties
 
         public static DependencyProperty InfoObjectProperty =
@@ -19,13 +32,13 @@ namespace Drachenhorn.Desktop.UserElements
 
         public IInfoObject InfoObject
         {
-            get { return (IInfoObject)GetValue(InfoObjectProperty); }
-            set { SetValue(InfoObjectProperty, value); }
+            get => (IInfoObject) GetValue(InfoObjectProperty);
+            set => SetValue(InfoObjectProperty, value);
         }
 
         public static void BindingChanged(DependencyObject d, DependencyPropertyChangedEventArgs args)
         {
-            ((InfoButton)d).BindingChanged(args);
+            ((InfoButton) d).BindingChanged(args);
         }
 
         private void BindingChanged(DependencyPropertyChangedEventArgs args)
@@ -41,25 +54,10 @@ namespace Drachenhorn.Desktop.UserElements
 
         public bool CanShowInfo
         {
-            get { return (bool)GetValue(CanShowInfoProperty); }
-            set { SetValue(CanShowInfoProperty, value); }
+            get => (bool) GetValue(CanShowInfoProperty);
+            set => SetValue(CanShowInfoProperty, value);
         }
 
         #endregion Properties
-
-        static InfoButton()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(InfoButton), new FrameworkPropertyMetadata(typeof(InfoButton)));
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            var button = Template.FindName("PART_InfoButton", this) as Button;
-            if (button != null)
-            {
-                button.Click += (s, a) => { new InfoView(InfoObject).Show(); };
-            }
-        }
     }
 }

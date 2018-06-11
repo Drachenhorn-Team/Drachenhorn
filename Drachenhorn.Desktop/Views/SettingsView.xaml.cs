@@ -1,18 +1,17 @@
-﻿using Drachenhorn.Core.Settings;
-using GalaSoft.MvvmLight.Ioc;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using Button = System.Windows.Controls.Button;
+using Drachenhorn.Core.Settings;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für SettingsView.xaml
+    ///     Interaktionslogik für SettingsView.xaml
     /// </summary>
     public partial class SettingsView
     {
@@ -20,7 +19,7 @@ namespace Drachenhorn.Desktop.Views
         {
             InitializeComponent();
 
-            this.Loaded += (sender, args) => { LanguageComboBox_SelectionChanged(sender, null); };
+            Loaded += (sender, args) => { LanguageComboBox_SelectionChanged(sender, null); };
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -34,9 +33,10 @@ namespace Drachenhorn.Desktop.Views
             if (!(sender is Button))
                 return;
 
-            var button = (Button)sender;
+            var button = (Button) sender;
             if (button.Content.ToString() != "Application not published")
-                Process.Start(new ProcessStartInfo(@"https://github.com/lightlike/Drachenhorn/commit/" + button.Content));
+                Process.Start(
+                    new ProcessStartInfo(@"https://github.com/lightlike/Drachenhorn/commit/" + button.Content));
         }
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -71,6 +71,7 @@ namespace Drachenhorn.Desktop.Views
                 image.StreamSource = mem;
                 image.EndInit();
             }
+
             image.Freeze();
             return image;
         }

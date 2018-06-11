@@ -1,10 +1,9 @@
 ﻿using Drachenhorn.Xml.Interfaces;
-using System.Windows;
 
 namespace Drachenhorn.Desktop.Views
 {
     /// <summary>
-    /// Interaktionslogik für InfoView.xaml
+    ///     Interaktionslogik für InfoView.xaml
     /// </summary>
     public partial class InfoView
     {

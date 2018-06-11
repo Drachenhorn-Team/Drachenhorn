@@ -11,13 +11,15 @@
         ResizeMode="NoResize"
         Title="CommonMessageBox" SizeToContent="WidthAndHeight">
     <StackPanel>
-        <TextBlock Name="MessageBlock" Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." Margin="5" MaxWidth="350" MinHeight="50"
-                   TextWrapping="WrapWithOverflow"/>
+        <TextBlock Name="MessageBlock"
+                   Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                   Margin="5" MaxWidth="350" MinHeight="50"
+                   TextWrapping="WrapWithOverflow" />
         <WrapPanel HorizontalAlignment="Right">
             <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="80"
-                    Click="ConfirmButton_OnClick" Padding="5 2 5 2"/>
+                    Click="ConfirmButton_OnClick" Padding="5 2 5 2" />
             <Button Name="CancelButton" Content="cancel" Margin="5" MinWidth="80"
-                    Click="CancelButton_OnClick" Padding="5 2 5 2"/>
+                    Click="CancelButton_OnClick" Padding="5 2 5 2" />
         </WrapPanel>
     </StackPanel>
 </Window>

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Xml.Serialization;
-using Drachenhorn.Xml.Sheet.Enums;
 
 namespace Drachenhorn.Xml.Sheet.Roll
 {
     /// <summary>
-    /// Roll Attributes.
+    ///     Roll Attributes.
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
@@ -13,18 +12,18 @@ namespace Drachenhorn.Xml.Sheet.Roll
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _roll1;
+        [XmlIgnore] private string _roll1;
+
         /// <summary>
-        /// Gets or sets the roll1.
+        ///     Gets or sets the roll1.
         /// </summary>
         /// <value>
-        /// The roll1.
+        ///     The roll1.
         /// </value>
         [XmlAttribute("Roll_1")]
         public string Roll1
         {
-            get { return _roll1; }
+            get => _roll1;
             set
             {
                 if (_roll1 == value)
@@ -34,18 +33,18 @@ namespace Drachenhorn.Xml.Sheet.Roll
             }
         }
 
-        [XmlIgnore]
-        private string _roll2;
+        [XmlIgnore] private string _roll2;
+
         /// <summary>
-        /// Gets or sets the roll2.
+        ///     Gets or sets the roll2.
         /// </summary>
         /// <value>
-        /// The roll2.
+        ///     The roll2.
         /// </value>
         [XmlAttribute("Roll_2")]
         public string Roll2
         {
-            get { return _roll2; }
+            get => _roll2;
             set
             {
                 if (_roll2 == value)
@@ -55,18 +54,18 @@ namespace Drachenhorn.Xml.Sheet.Roll
             }
         }
 
-        [XmlIgnore]
-        private string _roll3;
+        [XmlIgnore] private string _roll3;
+
         /// <summary>
-        /// Gets or sets the roll3.
+        ///     Gets or sets the roll3.
         /// </summary>
         /// <value>
-        /// The roll3.
+        ///     The roll3.
         /// </value>
         [XmlAttribute("Roll_3")]
         public string Roll3
         {
-            get { return _roll3; }
+            get => _roll3;
             set
             {
                 if (_roll3 == value)
@@ -81,14 +80,14 @@ namespace Drachenhorn.Xml.Sheet.Roll
         #region c'tor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RollAttributes"/> class.
+        ///     Initializes a new instance of the <see cref="RollAttributes" /> class.
         /// </summary>
         public RollAttributes()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RollAttributes"/> class.
+        ///     Initializes a new instance of the <see cref="RollAttributes" /> class.
         /// </summary>
         /// <param name="roll1">The roll1.</param>
         /// <param name="roll2">The roll2.</param>
@@ -105,10 +104,10 @@ namespace Drachenhorn.Xml.Sheet.Roll
         #region ToString
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        ///     Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        ///     A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {
@@ -116,11 +115,11 @@ namespace Drachenhorn.Xml.Sheet.Roll
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        ///     Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <param name="seperator">The seperator.</param>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        ///     A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public string ToString(string seperator)
         {

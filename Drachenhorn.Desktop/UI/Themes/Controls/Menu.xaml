@@ -36,7 +36,8 @@
                                               Content="{TemplateBinding Header}" Grid.Column="1"
                                               ContentStringFormat="{TemplateBinding HeaderStringFormat}"
                                               ContentSource="Header" Margin="{TemplateBinding Padding}"
-                                              RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"
                                    IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
                                    PopupAnimation="{StaticResource {x:Static SystemParameters.MenuPopupAnimationKey}}"
@@ -47,7 +48,8 @@
                                     <ScrollViewer x:Name="SubMenuScrollViewer"
                                                   Style="{StaticResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
                                         <Grid RenderOptions.ClearTypeHint="Enabled">
-                                            <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                            <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top"
+                                                    Width="0">
                                                 <Rectangle x:Name="OpaqueRect"
                                                            Fill="{Binding Background, ElementName=SubMenuBorder}"
                                                            Height="{Binding ActualHeight, ElementName=SubMenuBorder}"
@@ -57,7 +59,8 @@
                                                        HorizontalAlignment="Left" Margin="29,2,0,2" Width="1" />
                                             <ItemsPresenter x:Name="ItemsPresenter"
                                                             KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                            Grid.IsSharedSizeScope="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                            Grid.IsSharedSizeScope="True"
+                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                             KeyboardNavigation.TabNavigation="Cycle" />
                                         </Grid>
                                     </ScrollViewer>
@@ -77,21 +80,27 @@
                             <Setter Property="Visibility" TargetName="Icon" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource BackgroundHightlightBrush}" />
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource BorderHightlightBrush}" />
+                            <Setter Property="Background" TargetName="templateRoot"
+                                    Value="{StaticResource BackgroundHightlightBrush}" />
+                            <Setter Property="BorderBrush" TargetName="templateRoot"
+                                    Value="{StaticResource BorderHightlightBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{StaticResource ForegroundDisabledBrush}" />
-                            <Setter Property="Fill" TargetName="GlyphPanel" Value="{StaticResource BackgroundDisabledBrush}" />
+                            <Setter Property="TextElement.Foreground" TargetName="templateRoot"
+                                    Value="{StaticResource ForegroundDisabledBrush}" />
+                            <Setter Property="Fill" TargetName="GlyphPanel"
+                                    Value="{StaticResource BackgroundDisabledBrush}" />
                         </Trigger>
                         <Trigger Property="CanContentScroll" SourceName="SubMenuScrollViewer" Value="False">
-                            <Setter Property="Canvas.Top" TargetName="OpaqueRect" Value="{Binding VerticalOffset, ElementName=SubMenuScrollViewer}" />
-                            <Setter Property="Canvas.Left" TargetName="OpaqueRect" Value="{Binding HorizontalOffset, ElementName=SubMenuScrollViewer}" />
+                            <Setter Property="Canvas.Top" TargetName="OpaqueRect"
+                                    Value="{Binding VerticalOffset, ElementName=SubMenuScrollViewer}" />
+                            <Setter Property="Canvas.Left" TargetName="OpaqueRect"
+                                    Value="{Binding HorizontalOffset, ElementName=SubMenuScrollViewer}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
 </ResourceDictionary>

@@ -1,13 +1,13 @@
-﻿using Drachenhorn.Desktop.Views;
-using Drachenhorn.Xml.Sheet.Skills;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für BaseValuesControl.xaml
+    ///     Interaktionslogik für BaseValuesControl.xaml
     /// </summary>
     public partial class BaseValuesControl : UserControl
     {
@@ -24,7 +24,7 @@ namespace Drachenhorn.Desktop.UserControls
             var newItem = new BaseValue();
             new BaseValueView(newItem).ShowDialog();
 
-            ((IList<BaseValue>)List.ItemsSource).Add(newItem);
+            ((IList<BaseValue>) List.ItemsSource).Add(newItem);
             //List.SelectedItem = newItem;
         }
 
@@ -33,12 +33,12 @@ namespace Drachenhorn.Desktop.UserControls
             if (!(sender is Button))
                 return;
 
-            var button = (Button)sender;
+            var button = (Button) sender;
 
             if (!(button.DataContext is BaseValue))
                 return;
 
-            (List.ItemsSource as IList<BaseValue>)?.Remove((BaseValue)button.DataContext);
+            (List.ItemsSource as IList<BaseValue>)?.Remove((BaseValue) button.DataContext);
         }
     }
 }

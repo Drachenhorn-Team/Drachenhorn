@@ -1,5 +1,5 @@
-﻿using Drachenhorn.Xml.Sheet;
-using Drachenhorn.Xml.Template;
+﻿using Drachenhorn.Xml.Interfaces;
+using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Core.IO
 {
@@ -31,7 +31,7 @@ namespace Drachenhorn.Core.IO
             string fileTypeName,
             string title);
 
-        void SaveAsCharacterSheet(CharacterSheet sheet);
+        void SaveAs(ISavable savable, string fileName, string extension, string fileTypeName, string title);
 
         CharacterSheet OpenCharacterSheet();
 

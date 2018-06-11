@@ -3,7 +3,7 @@
 namespace Drachenhorn.Desktop.UI.Splash
 {
     /// <summary>
-    /// Interaktionslogik für SplashScreen.xaml
+    ///     Interaktionslogik für SplashScreen.xaml
     /// </summary>
     public partial class SplashScreen : Window
     {

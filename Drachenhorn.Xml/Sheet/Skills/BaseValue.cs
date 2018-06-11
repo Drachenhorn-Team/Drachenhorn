@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Interfaces;
@@ -8,7 +7,7 @@ using Drachenhorn.Xml.Interfaces;
 namespace Drachenhorn.Xml.Sheet.Skills
 {
     /// <summary>
-    /// Base Value of a Character.
+    ///     Base Value of a Character.
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.Calculation.CalculationValue" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
@@ -16,55 +15,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class BaseValue : CalculationValue, IInfoObject, IFormulaKeyItem
     {
-        #region Properties
-
-        [XmlIgnore]
-        private string _key;
-        /// <inheritdoc />
-        [XmlAttribute("Key")]
-        public string Key
-        {
-            get { return _key; }
-            set
-            {
-                if (_key == value)
-                    return;
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        private string _name;
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        [XmlAttribute("Name")]
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (_name == value)
-                    return;
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <inheritdoc />
-        [XmlIgnore]
-        public double Value
-        {
-            get { return CurrentValue; }
-        }
-
-        #endregion Properties
-
-
         #region InfoObject
 
         /// <inheritdoc />
@@ -83,5 +33,50 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion InfoObject
+
+        #region Properties
+
+        [XmlIgnore] private string _key;
+
+        /// <inheritdoc />
+        [XmlAttribute("Key")]
+        public string Key
+        {
+            get => _key;
+            set
+            {
+                if (_key == value)
+                    return;
+                _key = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private string _name;
+
+        /// <summary>
+        ///     Gets or sets the name.
+        /// </summary>
+        /// <value>
+        ///     The name.
+        /// </value>
+        [XmlAttribute("Name")]
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name == value)
+                    return;
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <inheritdoc />
+        [XmlIgnore]
+        public double Value => CurrentValue;
+
+        #endregion Properties
     }
 }

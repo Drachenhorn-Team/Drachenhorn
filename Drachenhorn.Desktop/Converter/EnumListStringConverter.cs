@@ -1,8 +1,8 @@
-﻿using Drachenhorn.Core.Lang;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
+using Drachenhorn.Core.Lang;
 
 namespace Drachenhorn.Desktop.Converter
 {
@@ -13,11 +13,11 @@ namespace Drachenhorn.Desktop.Converter
             if (value == null)
                 return null;
 
-            Array values = (Array)value;
+            var values = (Array) value;
             var result = new List<string>();
 
             foreach (var val in values)
-                result.Add(LanguageManager.Translate(val.GetType().Name + "." + val.ToString()));
+                result.Add(LanguageManager.Translate(val.GetType().Name + "." + val));
 
             return result;
         }

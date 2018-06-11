@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Interfaces;
@@ -8,7 +7,7 @@ using Drachenhorn.Xml.Interfaces;
 namespace Drachenhorn.Xml.Sheet.Skills
 {
     /// <summary>
-    /// Attribute of a Character
+    ///     Attribute of a Character
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.Calculation.CalculationValue" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
@@ -16,36 +15,21 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class Attribute : CalculationValue, IInfoObject, IFormulaKeyItem
     {
-        [XmlIgnore]
-        private string _key;
-
-        /// <inheritdoc />
-        [XmlAttribute("Key")]
-        public string Key
-        {
-            get { return _key; }
-            set
-            {
-                if (_key == value)
-                    return;
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
+        [XmlIgnore] private string _key;
 
 
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _name;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -56,11 +40,22 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         /// <inheritdoc />
-        [XmlIgnore]
-        public double Value
+        [XmlAttribute("Key")]
+        public string Key
         {
-            get { return CurrentValue; }
+            get => _key;
+            set
+            {
+                if (_key == value)
+                    return;
+                _key = value;
+                OnPropertyChanged();
+            }
         }
+
+        /// <inheritdoc />
+        [XmlIgnore]
+        public double Value => CurrentValue;
 
         #region InfoObject
 

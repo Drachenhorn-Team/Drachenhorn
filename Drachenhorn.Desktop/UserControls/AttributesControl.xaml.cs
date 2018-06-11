@@ -1,14 +1,14 @@
-﻿using Drachenhorn.Desktop.Views;
-using Drachenhorn.Xml.Sheet.Skills;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für AttributeControl.xaml
+    ///     Interaktionslogik für AttributeControl.xaml
     /// </summary>
     public partial class AttributesControl : UserControl
     {
@@ -25,7 +25,7 @@ namespace Drachenhorn.Desktop.UserControls
             var newItem = new Attribute();
             new AttributeView(newItem).ShowDialog();
 
-            ((IList<Attribute>)List.ItemsSource).Add(newItem);
+            ((IList<Attribute>) List.ItemsSource).Add(newItem);
             //List.SelectedItem = newItem;
         }
 
@@ -34,12 +34,12 @@ namespace Drachenhorn.Desktop.UserControls
             if (!(sender is Button))
                 return;
 
-            var button = (Button)sender;
+            var button = (Button) sender;
 
             if (!(button.DataContext is Attribute))
                 return;
 
-            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute)button.DataContext);
+            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute) button.DataContext);
         }
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
@@ -49,9 +49,9 @@ namespace Drachenhorn.Desktop.UserControls
 
             e.Handled = true;
             var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.RoutedEvent = MouseWheelEvent;
             eventArg.Source = sender;
-            var parent = ((Control)sender).Parent as UIElement;
+            var parent = ((Control) sender).Parent as UIElement;
             parent.RaiseEvent(eventArg);
         }
 

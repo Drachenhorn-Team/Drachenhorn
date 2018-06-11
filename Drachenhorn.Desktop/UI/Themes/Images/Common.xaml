@@ -8,11 +8,11 @@
     <BitmapImage x:Key="RedoIcon" UriSource="pack://application:,,,/Images/Black/Painting/Redo.png" />
     <BitmapImage x:Key="SelectIcon" UriSource="pack://application:,,,/Images/Black/Painting/Select.png" />
     <BitmapImage x:Key="UndoIcon" UriSource="pack://application:,,,/Images/Black/Painting/Undo.png" />
-    <BitmapImage x:Key="WidthIcon" UriSource="pack://application:,,,/Images/Black/Painting/Width.png"/>
-    <BitmapImage x:Key="HeightIcon" UriSource="pack://application:,,,/Images/Black/Painting/Height.png"/>
-    <BitmapImage x:Key="LinkIcon" UriSource="pack://application:,,,/Images/Black/Painting/Link.png"/>
+    <BitmapImage x:Key="WidthIcon" UriSource="pack://application:,,,/Images/Black/Painting/Width.png" />
+    <BitmapImage x:Key="HeightIcon" UriSource="pack://application:,,,/Images/Black/Painting/Height.png" />
+    <BitmapImage x:Key="LinkIcon" UriSource="pack://application:,,,/Images/Black/Painting/Link.png" />
 
-    <BitmapImage x:Key="BannerIcon" UriSource="pack://application:,,,/Images/Common/Banner.jpg"/>
-    <BitmapImage x:Key="DrachenhornLogo" UriSource="pack://application:,,,/Images/Common/Logo.png"/>
-    
+    <BitmapImage x:Key="BannerIcon" UriSource="pack://application:,,,/Images/Common/Banner.jpg" />
+    <BitmapImage x:Key="DrachenhornLogo" UriSource="pack://application:,,,/Images/Common/Logo.png" />
+
 </ResourceDictionary>

@@ -6,7 +6,7 @@ using Drachenhorn.Xml.Sheet.Enums;
 namespace Drachenhorn.Xml.Sheet.Common
 {
     /// <summary>
-    /// The Characteristics of a Character
+    ///     The Characteristics of a Character
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     [Serializable]
@@ -14,18 +14,18 @@ namespace Drachenhorn.Xml.Sheet.Common
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _name;
+
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         [XmlAttribute("Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value)
@@ -35,18 +35,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _family;
+        [XmlIgnore] private string _family;
+
         /// <summary>
-        /// Gets or sets the family.
+        ///     Gets or sets the family.
         /// </summary>
         /// <value>
-        /// The family.
+        ///     The family.
         /// </value>
         [XmlAttribute("Family")]
         public string Family
         {
-            get { return _family; }
+            get => _family;
             set
             {
                 if (_family == value)
@@ -56,18 +56,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _placeOfBirth;
+        [XmlIgnore] private string _placeOfBirth;
+
         /// <summary>
-        /// Gets or sets the place of birth.
+        ///     Gets or sets the place of birth.
         /// </summary>
         /// <value>
-        /// The place of birth.
+        ///     The place of birth.
         /// </value>
         [XmlAttribute("PlaceOfBirth")]
         public string PlaceOfBirth
         {
-            get { return _placeOfBirth; }
+            get => _placeOfBirth;
             set
             {
                 if (_placeOfBirth == value)
@@ -77,18 +77,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private DSADate _birthDate = new DSADate();
+        [XmlIgnore] private DSADate _birthDate = new DSADate();
+
         /// <summary>
-        /// Gets or sets the birth date.
+        ///     Gets or sets the birth date.
         /// </summary>
         /// <value>
-        /// The birth date.
+        ///     The birth date.
         /// </value>
         [XmlElement("BirthDate")]
         public DSADate BirthDate
         {
-            get { return _birthDate; }
+            get => _birthDate;
             set
             {
                 if (_birthDate == value)
@@ -98,18 +98,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private Gender _gender;
+        [XmlIgnore] private Gender _gender;
+
         /// <summary>
-        /// Gets or sets the gender.
+        ///     Gets or sets the gender.
         /// </summary>
         /// <value>
-        /// The gender.
+        ///     The gender.
         /// </value>
         [XmlAttribute("Gender")]
         public Gender Gender
         {
-            get { return _gender; }
+            get => _gender;
             set
             {
                 if (_gender == value)
@@ -119,18 +119,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private uint _age;
+        [XmlIgnore] private uint _age;
+
         /// <summary>
-        /// Gets or sets the age.
+        ///     Gets or sets the age.
         /// </summary>
         /// <value>
-        /// The age.
+        ///     The age.
         /// </value>
         [XmlAttribute("Age")]
         public uint Age
         {
-            get { return _age; }
+            get => _age;
             set
             {
                 if (_age == value)
@@ -140,60 +140,60 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private double _height;
+        [XmlIgnore] private double _height;
+
         /// <summary>
-        /// Gets or sets the height.
+        ///     Gets or sets the height.
         /// </summary>
         /// <value>
-        /// The height.
+        ///     The height.
         /// </value>
         [XmlAttribute("Height")]
         public double Height
         {
-            get { return _height; }
+            get => _height;
             set
             {
-                if (Math.Abs(_height - value) < Double.Epsilon)
+                if (Math.Abs(_height - value) < double.Epsilon)
                     return;
                 _height = value;
                 OnPropertyChanged();
             }
         }
 
-        [XmlIgnore]
-        private double _weight;
+        [XmlIgnore] private double _weight;
+
         /// <summary>
-        /// Gets or sets the weight.
+        ///     Gets or sets the weight.
         /// </summary>
         /// <value>
-        /// The weight.
+        ///     The weight.
         /// </value>
         [XmlAttribute("Weight")]
         public double Weight
         {
-            get { return _weight; }
+            get => _weight;
             set
             {
-                if (Math.Abs(_weight - value) < Double.Epsilon)
+                if (Math.Abs(_weight - value) < double.Epsilon)
                     return;
                 _weight = value;
                 OnPropertyChanged();
             }
         }
 
-        [XmlIgnore]
-        private string _hairColor;
+        [XmlIgnore] private string _hairColor;
+
         /// <summary>
-        /// Gets or sets the color of the hair.
+        ///     Gets or sets the color of the hair.
         /// </summary>
         /// <value>
-        /// The color of the hair.
+        ///     The color of the hair.
         /// </value>
         [XmlAttribute("HairColor")]
         public string HairColor
         {
-            get { return _hairColor; }
+            get => _hairColor;
             set
             {
                 if (_hairColor == value)
@@ -203,18 +203,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _eyeColor;
+        [XmlIgnore] private string _eyeColor;
+
         /// <summary>
-        /// Gets or sets the color of the eye.
+        ///     Gets or sets the color of the eye.
         /// </summary>
         /// <value>
-        /// The color of the eye.
+        ///     The color of the eye.
         /// </value>
         [XmlAttribute("EyeColor")]
         public string EyeColor
         {
-            get { return _eyeColor; }
+            get => _eyeColor;
             set
             {
                 if (_eyeColor == value)
@@ -224,18 +224,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private uint _socialStatus;
+        [XmlIgnore] private uint _socialStatus;
+
         /// <summary>
-        /// Gets or sets the social status.
+        ///     Gets or sets the social status.
         /// </summary>
         /// <value>
-        /// The social status.
+        ///     The social status.
         /// </value>
         [XmlAttribute("SocialStatus")]
         public uint SocialStatus
         {
-            get { return _socialStatus; }
+            get => _socialStatus;
             set
             {
                 if (_socialStatus == value)
@@ -244,19 +244,19 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-        
-        [XmlIgnore]
-        private string _other;
+
+        [XmlIgnore] private string _other;
+
         /// <summary>
-        /// Gets or sets the other information.
+        ///     Gets or sets the other information.
         /// </summary>
         /// <value>
-        /// The other information.
+        ///     The other information.
         /// </value>
         [XmlAttribute("Other")]
         public string Other
         {
-            get { return _other; }
+            get => _other;
             set
             {
                 if (_other == value)
@@ -266,18 +266,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private string _title;
+        [XmlIgnore] private string _title;
+
         /// <summary>
-        /// Gets or sets the title.
+        ///     Gets or sets the title.
         /// </summary>
         /// <value>
-        /// The title.
+        ///     The title.
         /// </value>
         [XmlAttribute("Title")]
         public string Title
         {
-            get { return _title; }
+            get => _title;
             set
             {
                 if (_title == value)
@@ -287,18 +287,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private RaceInformation _race = new RaceInformation();
+        [XmlIgnore] private RaceInformation _race = new RaceInformation();
+
         /// <summary>
-        /// Gets or sets the race.
+        ///     Gets or sets the race.
         /// </summary>
         /// <value>
-        /// The race.
+        ///     The race.
         /// </value>
         [XmlElement("Race")]
         public RaceInformation Race
         {
-            get { return _race; }
+            get => _race;
             set
             {
                 if (_race == value)
@@ -308,18 +308,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private CultureInformation _culture = new CultureInformation();
+        [XmlIgnore] private CultureInformation _culture = new CultureInformation();
+
         /// <summary>
-        /// Gets or sets the culture.
+        ///     Gets or sets the culture.
         /// </summary>
         /// <value>
-        /// The culture.
+        ///     The culture.
         /// </value>
         [XmlElement("Culture")]
         public CultureInformation Culture
         {
-            get { return _culture; }
+            get => _culture;
             set
             {
                 if (_culture == value)
@@ -329,18 +329,18 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore]
-        private ProfessionInformation _profession = new ProfessionInformation();
+        [XmlIgnore] private ProfessionInformation _profession = new ProfessionInformation();
+
         /// <summary>
-        /// Gets or sets the profession.
+        ///     Gets or sets the profession.
         /// </summary>
         /// <value>
-        /// The profession.
+        ///     The profession.
         /// </value>
         [XmlElement("Profession")]
         public ProfessionInformation Profession
         {
-            get { return _profession; }
+            get => _profession;
             set
             {
                 if (_profession == value)

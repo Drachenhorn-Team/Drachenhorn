@@ -85,7 +85,8 @@
             </Border>
         </Grid>
 
-        <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold" TextAlignment="Center" />
+        <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold"
+                   TextAlignment="Center" />
 
         <Grid>
             <Grid.ColumnDefinitions>

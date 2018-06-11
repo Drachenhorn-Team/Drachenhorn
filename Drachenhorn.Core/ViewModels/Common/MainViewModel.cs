@@ -16,6 +16,15 @@ namespace Drachenhorn.Core.ViewModels.Common
 {
     public class MainViewModel : ViewModelBase
     {
+        #region c'tor
+
+        public MainViewModel()
+        {
+            InitializeCommands();
+        }
+
+        #endregion c'tor
+
         #region Properties
 
         private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels =
@@ -23,7 +32,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         public ObservableCollection<CharacterSheetViewModel> CharacterSheetViewModels
         {
-            get { return _characterSheetViewModels; }
+            get => _characterSheetViewModels;
             set
             {
                 if (_characterSheetViewModels == value)
@@ -37,7 +46,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         public CharacterSheetViewModel CurrentSheetViewModel
         {
-            get { return _currentSheetViewModel; }
+            get => _currentSheetViewModel;
             set
             {
                 if (_currentSheetViewModel == value)
@@ -49,15 +58,6 @@ namespace Drachenhorn.Core.ViewModels.Common
         }
 
         #endregion Properties
-
-        #region c'tor
-
-        public MainViewModel()
-        {
-            InitializeCommands();
-        }
-
-        #endregion c'tor
 
         #region Commands
 
@@ -110,10 +110,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         private void ExecuteSaveAll()
         {
-            foreach (var model in CharacterSheetViewModels)
-            {
-                model.Save();
-            }
+            foreach (var model in CharacterSheetViewModels) model.Save();
         }
 
         public RelayCommand Open { get; private set; }
@@ -162,15 +159,15 @@ namespace Drachenhorn.Core.ViewModels.Common
             var ioService = SimpleIoc.Default.GetInstance<IIoService>();
 
             ioService.SaveStringDialog(
-                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Characteristics.Name) ?
-                    LanguageManager.Translate("HTML.DefaultFileName") :
-                    CurrentSheetViewModel.CurrentSheet.Characteristics.Name,
+                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Characteristics.Name)
+                    ? LanguageManager.Translate("HTML.DefaultFileName")
+                    : CurrentSheetViewModel.CurrentSheet.Characteristics.Name,
                 ".html",
                 LanguageManager.Translate("HTML.FileType.Name"),
                 LanguageManager.Translate("HTML.SaveDialog.Title"),
                 PrintingManager.GenerateHtml(CurrentSheetViewModel.CurrentSheet),
                 true
-                );
+            );
         }
 
         public RelayCommand Print { get; private set; }

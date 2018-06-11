@@ -16,21 +16,21 @@
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Button Click="EditButton_Click" Margin="5" Width="20" ToolTip="{lang:Translate UI.New}">
-                <Image Source="{DynamicResource NewIcon}"/>
+                <Image Source="{DynamicResource NewIcon}" />
             </Button>
             <Button Click="ClearButton_OnClick" Margin="5" Width="20" ToolTip="{lang:Translate UI.Remove}">
-                <Image Source="{DynamicResource RemoveIcon}"/>
+                <Image Source="{DynamicResource RemoveIcon}" />
             </Button>
             <Button Click="ImportButton_OnClick" Margin="5" Width="20" ToolTip="{lang:Translate UI.Import}">
-                <Image Source="{DynamicResource ImportIcon}"/>
+                <Image Source="{DynamicResource ImportIcon}" />
             </Button>
-            <Button Click="ExportButton_OnClick" Margin="5" Width="20"  ToolTip="{lang:Translate UI.Export}">
-                <Image Source="{DynamicResource ExportIcon}"/>
+            <Button Click="ExportButton_OnClick" Margin="5" Width="20" ToolTip="{lang:Translate UI.Export}">
+                <Image Source="{DynamicResource ExportIcon}" />
             </Button>
         </WrapPanel>
         <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"
                 MaxWidth="500" MaxHeight="300">
-            <Image Source="{Binding Base64String, Converter={StaticResource Base64ImageConverter}}"/>
+            <Image Source="{Binding Base64String, Converter={StaticResource Base64ImageConverter}}" />
         </Border>
     </DockPanel>
 </UserControl>

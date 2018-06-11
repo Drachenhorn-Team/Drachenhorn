@@ -2,32 +2,46 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
-        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource BackgroundMouseOverBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource BorderMouseOverBrush}"/>
+                            <Setter Property="Background" TargetName="border"
+                                    Value="{DynamicResource BackgroundMouseOverBrush}" />
+                            <Setter Property="BorderBrush" TargetName="border"
+                                    Value="{DynamicResource BorderMouseOverBrush}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource BackgroundClickBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource BorderClickBrush}"/>
+                            <Setter Property="Background" TargetName="border"
+                                    Value="{DynamicResource BackgroundClickBrush}" />
+                            <Setter Property="BorderBrush" TargetName="border"
+                                    Value="{DynamicResource BorderClickBrush}" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource BackgroundClickBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource BorderClickBrush}"/>
+                            <Setter Property="Background" TargetName="border"
+                                    Value="{DynamicResource BackgroundClickBrush}" />
+                            <Setter Property="BorderBrush" TargetName="border"
+                                    Value="{DynamicResource BorderClickBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource BackgroundDisabledBrush}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource ForegroundDisabledBrush}"/>
+                            <Setter Property="Background" TargetName="border"
+                                    Value="{DynamicResource BackgroundDisabledBrush}" />
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
+                                    Value="{DynamicResource ForegroundDisabledBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -15,9 +15,9 @@ namespace Drachenhorn.Desktop.Converter
 
             try
             {
-                byte[] binaryData = System.Convert.FromBase64String(value.ToString());
+                var binaryData = System.Convert.FromBase64String(value.ToString());
 
-                BitmapImage bi = new BitmapImage();
+                var bi = new BitmapImage();
                 bi.BeginInit();
                 bi.StreamSource = new MemoryStream(binaryData);
                 bi.EndInit();

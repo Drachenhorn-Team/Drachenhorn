@@ -1,17 +1,17 @@
 ﻿<fluent:RibbonWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
-        xmlns:controls="clr-namespace:Drachenhorn.Desktop.UserControls"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:sheet="clr-namespace:Drachenhorn.Core.ViewModels.Sheet;assembly=Drachenhorn.Core"
-        xmlns:fluent="urn:fluent-ribbon"
-        x:Class="Drachenhorn.Desktop.Views.MainView"
-        mc:Ignorable="d"
-        WindowState="Maximized"
-        Closing="MainView_OnClosing"
-        Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
+                     xmlns:controls="clr-namespace:Drachenhorn.Desktop.UserControls"
+                     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                     xmlns:sheet="clr-namespace:Drachenhorn.Core.ViewModels.Sheet;assembly=Drachenhorn.Core"
+                     xmlns:fluent="urn:fluent-ribbon"
+                     x:Class="Drachenhorn.Desktop.Views.MainView"
+                     mc:Ignorable="d"
+                     WindowState="Maximized"
+                     Closing="MainView_OnClosing"
+                     Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
     <Window.Resources>
         <ResourceDictionary>
             <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
@@ -40,42 +40,42 @@
                     <fluent:Button Header="{lang:Translate UI.New}"
                                    LargeIcon="{DynamicResource NewIcon}"
                                    ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
-                                   Command="{Binding New}"/>
+                                   Command="{Binding New}" />
                     <fluent:Button Header="{lang:Translate UI.Edit}"
                                    LargeIcon="{DynamicResource EditIcon}"
                                    ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
-                                   Command="{Binding Open}"/>
+                                   Command="{Binding Open}" />
 
                     <fluent:DropDownButton Header="{lang:Translate UI.Save}"
-                                   LargeIcon="{DynamicResource SaveIcon}"
-                                   ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}">
+                                           LargeIcon="{DynamicResource SaveIcon}"
+                                           ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}">
                         <fluent:Button Header="{lang:Translate UI.Save}"
                                        Icon="{DynamicResource SaveIcon}"
                                        ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
                                        Size="Middle"
-                                       Command="{Binding Save}"/>
+                                       Command="{Binding Save}" />
                         <fluent:Button Header="{lang:Translate UI.SaveAll}"
                                        Icon="{DynamicResource SaveAllIcon}"
                                        ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
                                        Size="Middle"
-                                       Command="{Binding SaveAll}"/>
+                                       Command="{Binding SaveAll}" />
                         <fluent:Button Header="{lang:Translate UI.SaveAs}"
                                        Icon="{DynamicResource SaveAsIcon}"
                                        Size="Middle"
-                                       Command="{Binding SaveAs}"/>
+                                       Command="{Binding SaveAs}" />
                     </fluent:DropDownButton>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
                     <fluent:Button Header="{lang:Translate UI.Print}"
                                    LargeIcon="{DynamicResource PrintIcon}"
                                    ToolTip="{lang:TranslateText %UI.Print (%Keyboard.Ctrl + P)}"
-                                   Command="{Binding Print}"/>
+                                   Command="{Binding Print}" />
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Properties}">
                     <fluent:Button Header="{lang:Translate UI.Properties}"
                                    LargeIcon="{DynamicResource PropertiesIcon}"
                                    ToolTip="{lang:TranslateText %UI.Properties (F9)}"
-                                   Command="{Binding ShowSettings}"/>
+                                   Command="{Binding ShowSettings}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
 
@@ -84,14 +84,13 @@
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Templates}">
                     <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
                                    LargeIcon="{DynamicResource TemplateIcon}"
-                                   Command="{Binding OpenTemplates}"/>
+                                   Command="{Binding OpenTemplates}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
 
         <fluent:StatusBar DockPanel.Dock="Bottom" Background="{StaticResource BackgroundBrush2}"
-                          BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 1 0 0">
-        </fluent:StatusBar>
+                          BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 1 0 0" />
 
         <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
                     SelectedItem="{Binding CurrentSheetViewModel}">
@@ -103,9 +102,10 @@
                             <Border BorderBrush="{StaticResource BorderBrush}"
                                     Background="GhostWhite" BorderThickness="1" CornerRadius="1"
                                     ClipToBounds="True" Margin="0 2 4 2">
-                                <Image Source="{Binding CurrentSheet.CoatOfArms.Base64String,
+                                <Image
+                                    Source="{Binding CurrentSheet.CoatOfArms.Base64String,
                                                         Converter={StaticResource Base64ImageConverter}}"
-                                       MaxWidth="30" MaxHeight="20" MinWidth="20" />
+                                    MaxWidth="30" MaxHeight="20" MinWidth="20" />
                             </Border>
                             <TextBlock Text="{Binding CurrentSheet.Characteristics.Name}"
                                        FontSize="12"
@@ -115,12 +115,13 @@
                                        Visibility="{Binding CurrentSheet.HasChanged, Converter={StaticResource BoolToVisibilityConverter}}"
                                        VerticalAlignment="Center" />
                         </StackPanel>
-                        <Button Command="{Binding RelativeSource= {RelativeSource FindAncestor,
+                        <Button
+                            Command="{Binding RelativeSource= {RelativeSource FindAncestor,
                                             AncestorType={x:Type TabControl}},
                                             Path= DataContext.CloseSheet}"
-                                CommandParameter="{Binding}"
-                                MinHeight="0" Height="20" MinWidth="0" Width="20"
-                                Margin="5 5 -3 5">
+                            CommandParameter="{Binding}"
+                            MinHeight="0" Height="20" MinWidth="0" Width="20"
+                            Margin="5 5 -3 5">
                             <Image Source="{Binding Source={StaticResource RemoveIcon}}"
                                    Margin="-10 2 -10 0" Width="16" Height="16" />
                         </Button>

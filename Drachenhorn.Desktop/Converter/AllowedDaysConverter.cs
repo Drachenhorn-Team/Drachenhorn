@@ -1,8 +1,8 @@
-﻿using Drachenhorn.Xml.Objects;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
+using Drachenhorn.Xml.Objects;
 
 namespace Drachenhorn.Desktop.Converter
 {
@@ -13,11 +13,11 @@ namespace Drachenhorn.Desktop.Converter
             if (!(value is DSAMonth))
                 return null;
 
-            var allowed = ((DSAMonth)value).GetAllowedDays();
+            var allowed = ((DSAMonth) value).GetAllowedDays();
 
             var result = new List<int>();
 
-            for (int i = 1; i <= allowed; ++i)
+            for (var i = 1; i <= allowed; ++i)
                 result.Add(i);
 
             return result;

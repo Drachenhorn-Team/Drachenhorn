@@ -1,6 +1,6 @@
-﻿using Drachenhorn.Xml.Calculation;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Controls;
+using Drachenhorn.Xml.Calculation;
 
 namespace Drachenhorn.Desktop.Converter.Validation
 {

@@ -1,9 +1,7 @@
-﻿using Drachenhorn.Core.Downloader;
-using Drachenhorn.Core.Printing;
+﻿using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Common;
-using GalaSoft.MvvmLight.Ioc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Drachenhorn.UnitTest
@@ -21,14 +19,14 @@ namespace Drachenhorn.UnitTest
         {
             InitializeData();
 
-            var sheet = new CharacterSheet()
+            var sheet = new CharacterSheet
             {
-                Characteristics = new Characteristics()
+                Characteristics = new Characteristics
                 {
                     Name = "test",
-                    Race = new RaceInformation() { Name = "testRace" },
-                    Culture = new CultureInformation() { Name = "testCulture", Specification = "test" },
-                    Profession = new ProfessionInformation() { Name = "testProfession" }
+                    Race = new RaceInformation {Name = "testRace"},
+                    Culture = new CultureInformation {Name = "testCulture", Specification = "test"},
+                    Profession = new ProfessionInformation {Name = "testProfession"}
                 }
             };
 

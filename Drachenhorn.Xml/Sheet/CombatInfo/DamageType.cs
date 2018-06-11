@@ -1,24 +1,27 @@
 ﻿namespace Drachenhorn.Xml.Sheet.CombatInfo
 {
     /// <summary>
-    /// Defines the Type of a Damage for a Weapon or a Attack
+    ///     Defines the Type of a Damage for a Weapon or a Attack
     /// </summary>
     public enum DamageType
     {
         /// <summary>
-        /// Unspecified WeaponType
+        ///     Unspecified WeaponType
         /// </summary>
         None,
+
         /// <summary>
-        /// Melee Damage.
+        ///     Melee Damage.
         /// </summary>
         Melee,
+
         /// <summary>
-        /// Ranged Damage.
+        ///     Ranged Damage.
         /// </summary>
         Ranged,
+
         /// <summary>
-        /// Magic Damage.
+        ///     Magic Damage.
         /// </summary>
         Magic
     }
