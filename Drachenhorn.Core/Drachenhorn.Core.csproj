@@ -13,6 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Printing\Templates\CharacterSheet.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Printing\Templates\CharacterSheet.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Lang\lang.nds-DE.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
@@ -21,18 +29,11 @@
   <ItemGroup>
     <PackageReference Include="Easy.Logger.Interfaces" Version="1.1.0" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1" />
+    <PackageReference Include="RazorLight.Unofficial" Version="2.0.0-beta1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Printing\PrintingTemplates.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PrintingTemplates.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -41,10 +42,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Lang\lang.en.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Printing\PrintingTemplates.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PrintingTemplates.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

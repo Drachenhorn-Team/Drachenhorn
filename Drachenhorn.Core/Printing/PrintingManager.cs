@@ -1,7 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
+using System.Text;
 using Drachenhorn.Core.Printing.Exceptions;
+using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
+using RazorLight;
 
 namespace Drachenhorn.Core.Printing
 {
@@ -11,19 +15,23 @@ namespace Drachenhorn.Core.Printing
 
         public static string GenerateHtml(CharacterSheet sheet)
         {
-            //string template = "";
+            string template = "";
 
-            //template = Encoding.Default.GetString(PrintingTemplates.CharacterSheet);
+            var assembly = Assembly.GetExecutingAssembly();
 
-            //var engine = new RazorLightEngineBuilder()
-            //    .UseMemoryCachingProvider()
-            //    .Build();
+            using (Stream stream = assembly.GetManifestResourceStream("Drachenhorn.Core.Printing.Templates.CharacterSheet.cshtml"))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                template = reader.ReadToEnd();
+            }
+            
+            var engine = new RazorLightEngineBuilder()
+                .UseMemoryCachingProvider()
+                .Build();
 
-            //string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;
+            string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;
 
-            //return result;
-
-            return "";
+            return result;
         }
 
         public static void GenerateHtml(CharacterSheet sheet, string path)

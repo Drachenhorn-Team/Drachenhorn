@@ -69,7 +69,7 @@ namespace Drachenhorn.Core.ViewModels.Common
             Open = new RelayCommand(ExecuteOpen);
             New = new RelayCommand(ExecuteNew);
 
-            Print = new RelayCommand(ExecutePrint, () => false);
+            Print = new RelayCommand(ExecutePrint);
 
             GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
 
