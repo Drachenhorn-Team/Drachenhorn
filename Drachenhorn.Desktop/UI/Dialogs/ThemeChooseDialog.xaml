@@ -56,8 +56,6 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -67,62 +65,38 @@
 
         <Separator Grid.ColumnSpan="20" Grid.Row="1" />
 
-        <Grid Grid.Column="0">
-            <Grid.Resources>
-                <ResourceDictionary Source="../Themes/WhiteTheme.xaml" />
-            </Grid.Resources>
-            <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.White}" />
-        </Grid>
-        <Button Margin="5" Click="VisualTheme_1_OnClick"
-                Content="{lang:Translate UI.Select}"
-                Grid.Column="0" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.White}" />
-
-        <Grid Grid.Row="0" Grid.Column="1">
+        <Grid Grid.Row="0" Grid.Column="0">
             <Grid.Resources>
                 <ResourceDictionary Source="../Themes/LightTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
                               Content="{lang:Translate VisualThemeType.Light}" />
         </Grid>
-        <Button Margin="5" Click="VisualTheme_2_OnClick"
+        <Button Margin="5" Click="VisualTheme_Light_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="1" Grid.Row="2"
+                Grid.Column="0" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.Light}" />
 
-        <Grid Grid.Row="0" Grid.Column="2">
+        <Grid Grid.Row="0" Grid.Column="1">
             <Grid.Resources>
                 <ResourceDictionary Source="../Themes/DarkTheme.xaml" />
             </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
                               Content="{lang:Translate VisualThemeType.Dark}" />
         </Grid>
-        <Button Margin="5" Click="VisualTheme_3_OnClick"
+        <Button Margin="5" Click="VisualTheme_Dark_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="2" Grid.Row="2"
+                Grid.Column="1" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.Dark}" />
 
-        <Grid Grid.Row="0" Grid.Column="3">
-            <Grid.Resources>
-                <ResourceDictionary Source="../Themes/BlackTheme.xaml" />
-            </Grid.Resources>
-            <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Black}" />
-        </Grid>
-        <Button Margin="5" Click="VisualTheme_4_OnClick"
-                Content="{lang:Translate UI.Select}"
-                Grid.Column="3" Grid.Row="2"
-                ToolTip="{lang:Translate VisualThemeType.Black}" />
-
         <TextBlock Text="{lang:Translate VisualThemeType.System}"
-                   Grid.Column="4" Grid.Row="0"
+                   Grid.Column="2" Grid.Row="0"
                    HorizontalAlignment="Center"
                    FontSize="28"
                    FontFamily="{StaticResource Morpheus}" />
         <Button Margin="5" Click="VisualTheme_System_OnClick"
                 Content="{lang:Translate UI.Select}"
-                Grid.Column="4" Grid.Row="2"
+                Grid.Column="2" Grid.Row="2"
                 ToolTip="{lang:Translate VisualThemeType.System}" />
 
     </Grid>

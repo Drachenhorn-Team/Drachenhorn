@@ -146,7 +146,7 @@ namespace Drachenhorn.Desktop
                     "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
                     "AppsUseLightTheme", null);
 
-                theme = isDark as int? == 0 ? VisualThemeType.Black : VisualThemeType.Light;
+                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
             }
 
             var uri = "UI/Themes/" + theme + "Theme.xaml";

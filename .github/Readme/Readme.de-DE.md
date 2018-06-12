@@ -1,4 +1,4 @@
-<p align="center"><img src="../../img/Banner.jpg" alt="Drachenhorn Icon" width="350"></p>
+<p align="center"><img src="../../img/Banner_large.png" alt="Drachenhorn Icon"></p>
 
 Dies ist ein Programm zu Erstellung von Charakterbögen in DSA.
 
