@@ -7,6 +7,8 @@
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         xmlns:fluent="urn:fluent-ribbon"
         xmlns:printing="clr-namespace:Drachenhorn.Core.Printing;assembly=Drachenhorn.Core"
+        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+        xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
         mc:Ignorable="d"
         IsIconVisible="False"
         Style="{StaticResource {x:Type Window}}"
@@ -15,6 +17,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ObjectDataProvider x:Key="PrintTemplatesProvider" ObjectType="printing:PrintingManager" MethodName="GetPrintTemplates"/>
+            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Window.CommandBindings>
@@ -24,11 +27,15 @@
         <fluent:Ribbon DockPanel.Dock="Top">
             <fluent:RibbonTabItem Header="{lang:Translate UI.Print}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Tempalte}">
-                    <fluent:CheckBox Name="UseIntegrated" Header="{lang:Translate Print.UseIntegrated}"/>
+                    <fluent:CheckBox Name="UseOwn" Header="{lang:Translate Print.UseOwn}"/>
                     <fluent:ComboBox Icon="{StaticResource EditIcon}" Padding="0"
                                      SelectedItem="{Binding CurrentSheet}"
-                                     ItemsSource="{Binding Source={StaticResource PrintTemplatesProvider}}"/>
+                                     ItemsSource="{Binding Source={StaticResource PrintTemplatesProvider}}"
+                                     IsEnabled="{Binding IsChecked, ElementName=UseOwn}"/>
                     <fluent:Button LargeIcon="{StaticResource PrintIcon}" Header="{lang:Translate UI.Print}" Command="Print"/>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox>
+                    <userElements:LoadingElement Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" Height="50"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>

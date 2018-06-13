@@ -321,6 +321,7 @@
     </ApplicationDefinition>
     <Compile Include="Converter\AllowedDaysConverter.cs" />
     <Compile Include="Converter\Base64ImageConverter.cs" />
+    <Compile Include="Converter\BoolInverterConverter.cs" />
     <Compile Include="Converter\BoolToInVisibilityConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\DisAdvantageTypeStringConverter.cs" />

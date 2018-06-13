@@ -47,6 +47,20 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set
+            {
+                if (_isLoading == value)
+                    return;
+                _isLoading = value;
+                RaisePropertyChanged();
+            }
+        }
+
         #endregion Properties
     }
 }

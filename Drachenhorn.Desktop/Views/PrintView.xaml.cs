@@ -35,7 +35,10 @@ namespace Drachenhorn.Desktop.Views
                 CommandManager.InvalidateRequerySuggested();
             };
 
-            UseIntegrated.Checked += (s, a) => TemplateSelectionChanged(s, new PropertyChangedEventArgs("SelectedTemplate"));
+            UseOwn.Checked += (s, a) => TemplateSelectionChanged(s, new PropertyChangedEventArgs("SelectedTemplate"));
+            UseOwn.Unchecked += (s, a) => TemplateSelectionChanged(s, new PropertyChangedEventArgs("SelectedTemplate"));
+
+            TemplateSelectionChanged(this, new PropertyChangedEventArgs("SelectedTemplate"));
         }
 
         private void TemplateSelectionChanged(object sender, PropertyChangedEventArgs args)
@@ -45,20 +48,35 @@ namespace Drachenhorn.Desktop.Views
 
             var model = (PrintViewModel) this.DataContext;
 
-            if (UseIntegrated.IsChecked == true)
-            {
-                Task.Run(() => PrintingManager.GenerateHtml(model.CurrentSheet))
-                    .ContinueWith(x =>
-                        Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result)));
-            }
-            else
+            if (UseOwn.IsChecked == true && model.SelectedTemplate == null)
             {
                 if (model.SelectedTemplate == null) return;
 
-                Task.Run(() => PrintingManager.GenerateHtml(model.CurrentSheet, model.SelectedTemplate))
-                    .ContinueWith(x =>
-                        Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result)));
+                PrintToBrowser(() => PrintingManager.GenerateHtml(model.CurrentSheet, model.SelectedTemplate));
             }
+            else
+            {
+                PrintToBrowser(() => PrintingManager.GenerateHtml(model.CurrentSheet));
+            }
+        }
+
+        private void PrintToBrowser(Func<string> generateFunc)
+        {
+            if (!(this.DataContext is PrintViewModel))
+                return;
+
+            var model = (PrintViewModel)this.DataContext;
+
+
+            Task.Run(() =>
+            {
+                model.IsLoading = true;
+                return generateFunc();
+            }).ContinueWith(x =>
+            {
+                Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result));
+                model.IsLoading = false;
+            });
         }
 
 

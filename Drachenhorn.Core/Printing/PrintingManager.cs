@@ -49,9 +49,10 @@ namespace Drachenhorn.Core.Printing
             return GenerateHtml(sheet, file.OpenText().ReadToEnd());
         }
 
-        private static string GenerateHtml(CharacterSheet sheet, string template)
+        private static string GenerateHtml(CharacterSheet sheet, string template, Assembly operatingAssembly = null)
         {
             var engine = new RazorLightEngineBuilder()
+                .SetOperatingAssembly(Assembly.GetExecutingAssembly())
                 .UseCachingProvider(new MemoryCachingProvider())
                 .Build();
 

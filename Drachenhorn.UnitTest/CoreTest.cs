@@ -1,4 +1,5 @@
-﻿using Drachenhorn.Core.Printing;
+﻿using System.Reflection;
+using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Common;
@@ -12,6 +13,25 @@ namespace Drachenhorn.UnitTest
         private void InitializeData()
         {
             var temp = new ViewModelLocator();
+        }
+
+        [TestMethod]
+        public void TestPrinting()
+        {
+            InitializeData();
+            
+            var sheet = new CharacterSheet
+            {
+                Characteristics = new Characteristics
+                {
+                    Name = "test",
+                    Race = new RaceInformation {Name = "testRace"},
+                    Culture = new CultureInformation {Name = "testCulture", Specification = "test"},
+                    Profession = new ProfessionInformation {Name = "testProfession"}
+                }
+            };
+
+            var temp = PrintingManager.GenerateHtml(sheet);
         }
     }
 }
