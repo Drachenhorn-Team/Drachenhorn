@@ -6,23 +6,78 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="@LanguageManager.CurrentUiCulture.TwoLetterISOLanguageName" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <title>@LanguageManager.Translate("CharacterSheet.Title")</title>
 </head>
-<body>
+<body style="margin: 0px; padding: 0px; width: 100%; ">
 
-<table>
+<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
     <tr>
         <td>@LanguageManager.Translate("Characteristics.Name")</td>
-        <td colspan="3">@sheet.Characteristics.Name</td>
+        <td colspan="5">@sheet.Characteristics.Name</td>
     </tr>
     <tr>
         <td>@LanguageManager.Translate("Characteristics.Family")</td>
         <td>@sheet.Characteristics.Family</td>
         <td>@LanguageManager.Translate("Characteristics.PlaceOfBirth")</td>
-        <td>@sheet.Characteristics.PlaceOfBirth</td>
+        <td colspan="3">@sheet.Characteristics.PlaceOfBirth</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.BirthDate")</td>
+        <td>@sheet.Characteristics.BirthDate</td>
+        <td>@LanguageManager.Translate("Characteristics.Age")</td>
+        <td>@sheet.Characteristics.Age</td>
+        <td>@LanguageManager.Translate("Characteristics.Gender")</td>
+        <td>@LanguageManager.Translate("Gender." + sheet.Characteristics.Gender)</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.Race")</td>
+        <td>@sheet.Characteristics.Race.Name</td>
+        <td>@LanguageManager.Translate("Characteristics.Height")</td>
+        <td>@sheet.Characteristics.Height</td>
+        <td>@LanguageManager.Translate("Characteristics.Weight")</td>
+        <td>@sheet.Characteristics.Weight</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.HairColor")</td>
+        <td>@sheet.Characteristics.HairColor</td>
+        <td>@LanguageManager.Translate("Characteristics.EyeColor")</td>
+        <td colspan="3">@sheet.Characteristics.EyeColor</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.Culture")</td>
+        <td>@sheet.Characteristics.Culture.Name</td>
+        <td>@LanguageManager.Translate("Characteristics.Profession")</td>
+        <td colspan="3">@sheet.Characteristics.Profession.Name</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.Title")</td>
+        <td>@sheet.Characteristics.Title</td>
+        <td>@LanguageManager.Translate("Characteristics.SocialStatus")</td>
+        <td colspan="3">@sheet.Characteristics.SocialStatus</td>
+    </tr>
+    <tr>
+        <td>@LanguageManager.Translate("Characteristics.Other")</td>
+        <td colspan="5">@sheet.Characteristics.Other</td>
+    </tr>
+</table>
+
+<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+    <tr>
+        <td>
+            <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
+                @foreach (var disAdvantage in sheet.DisAdvantages)
+                {
+                    <tr>
+                        <td>@disAdvantage.Name</td>
+                        <td>@disAdvantage.Specialization</td>
+                    </tr>
+                }
+            </table>
+        </td>
+        <td><img src="data:image/png;base64,@sheet.CoatOfArms.Base64String"/></td>
     </tr>
 </table>
 

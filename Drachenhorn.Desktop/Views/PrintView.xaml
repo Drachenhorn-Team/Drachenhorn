@@ -5,16 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         Title="{lang:Translate PrintView.Title}" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../UI/Themes/LightTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Window.CommandBindings>
-        <CommandBinding Command="Print" Executed="ExecutePrint" />
+        <CommandBinding Command="Print" Executed="ExecutePrint" CanExecute="PrintCommand_OnCanExecute"/>
     </Window.CommandBindings>
     <DockPanel>
         <Grid DockPanel.Dock="Bottom">
-            <Button Content="{lang:Translate UI.Print}" Command="{Binding Print}" Margin="5" />
+            <Button Content="{lang:Translate UI.Print}" Command="Print" Margin="5" />
         </Grid>
-        <WebBrowser x:Name="Browser" />
+        <WebBrowser x:Name="Browser"/>
     </DockPanel>
 </Window>

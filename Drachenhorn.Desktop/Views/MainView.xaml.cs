@@ -65,8 +65,12 @@ namespace Drachenhorn.Desktop.Views
                 if (DataContext is MainViewModel)
                 {
                     var model = (MainViewModel) DataContext;
-                    var print = PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet);
-                    new PrintView(print).ShowDialog();
+
+                    if (model.CurrentSheetViewModel == null) return;
+
+                    new PrintView(
+                        () => { return PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet); })
+                        .ShowDialog();
                 }
             }
             else if (message.Notification == "ShowOpenTemplates")
