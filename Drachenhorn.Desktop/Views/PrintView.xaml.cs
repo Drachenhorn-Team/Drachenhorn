@@ -1,9 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Drachenhorn.Core.Printing;
+using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
 using GalaSoft.MvvmLight.Command;
 using mshtml;
@@ -13,36 +16,51 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für PrintView.xaml
     /// </summary>
-    public partial class PrintView : Window, INotifyPropertyChanged
+    public partial class PrintView
     {
-
-        public PrintView(Func<string> func)
+        public PrintView(CharacterSheet sheet)
         {
             InitializeComponent();
 
-            this.PropertyChanged += (s, a) =>
+            if (!(this.DataContext is PrintViewModel)) return;
+
+            var model = (PrintViewModel) this.DataContext;
+
+            model.CurrentSheet = sheet;
+            model.PropertyChanged += TemplateSelectionChanged;
+
+            Browser.Navigated += (sender, args) =>
             {
-                if (a.PropertyName == "CanPrint")
-                    CommandManager.InvalidateRequerySuggested();
+                model.CanPrint = true;
+                CommandManager.InvalidateRequerySuggested();
             };
 
-            Browser.Navigated += (sender, args) => { CanPrint = true; };
-            Task.Run(func).ContinueWith(x => 
-                Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result)));
+            UseIntegrated.Checked += (s, a) => TemplateSelectionChanged(s, new PropertyChangedEventArgs("SelectedTemplate"));
         }
 
-        private bool _canPrint;
-        private bool CanPrint
+        private void TemplateSelectionChanged(object sender, PropertyChangedEventArgs args)
         {
-            get => _canPrint;
-            set
+            if (args.PropertyName != "SelectedTemplate" || !(this.DataContext is PrintViewModel))
+                return;
+
+            var model = (PrintViewModel) this.DataContext;
+
+            if (UseIntegrated.IsChecked == true)
             {
-                if (_canPrint == value)
-                    return;
-                _canPrint = value;
-                OnPropertyChanged();
+                Task.Run(() => PrintingManager.GenerateHtml(model.CurrentSheet))
+                    .ContinueWith(x =>
+                        Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result)));
+            }
+            else
+            {
+                if (model.SelectedTemplate == null) return;
+
+                Task.Run(() => PrintingManager.GenerateHtml(model.CurrentSheet, model.SelectedTemplate))
+                    .ContinueWith(x =>
+                        Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result)));
             }
         }
+
 
         private void ExecutePrint(object sender, ExecutedRoutedEventArgs e)
         {
@@ -52,7 +70,9 @@ namespace Drachenhorn.Desktop.Views
 
         private void PrintCommand_OnCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = CanPrint;
+            if (!(this.DataContext is PrintViewModel)) return;
+
+            e.CanExecute = ((PrintViewModel)this.DataContext).CanPrint;
         }
 
         #region OnPropertyChanged
