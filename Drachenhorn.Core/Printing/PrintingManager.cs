@@ -6,6 +6,7 @@ using Drachenhorn.Core.Printing.Exceptions;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
 using RazorLight;
+using RazorLight.Caching;
 
 namespace Drachenhorn.Core.Printing
 {
@@ -26,7 +27,7 @@ namespace Drachenhorn.Core.Printing
             }
             
             var engine = new RazorLightEngineBuilder()
-                .UseMemoryCachingProvider()
+                .UseCachingProvider(new MemoryCachingProvider())
                 .Build();
 
             string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;

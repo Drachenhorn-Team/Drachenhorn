@@ -13,32 +13,5 @@ namespace Drachenhorn.UnitTest
         {
             var temp = new ViewModelLocator();
         }
-
-        [TestMethod]
-        public void PrintingTest()
-        {
-            InitializeData();
-
-            var sheet = new CharacterSheet
-            {
-                Characteristics = new Characteristics
-                {
-                    Name = "test",
-                    Race = new RaceInformation {Name = "testRace"},
-                    Culture = new CultureInformation {Name = "testCulture", Specification = "test"},
-                    Profession = new ProfessionInformation {Name = "testProfession"}
-                }
-            };
-
-            var result = PrintingManager.GenerateHtml(sheet);
-
-            //try
-            //{
-            //    var path = Path.Combine(Directory.GetCurrentDirectory(), "result.html");
-            //    File.WriteAllText(path, result);
-            //    Process.Start(path);
-            //}
-            //catch (Exception) { }
-        }
     }
 }
