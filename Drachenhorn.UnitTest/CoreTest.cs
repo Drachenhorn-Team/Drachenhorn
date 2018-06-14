@@ -1,4 +1,5 @@
-﻿using Drachenhorn.Core.Printing;
+﻿using System.Reflection;
+using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Common;
@@ -15,10 +16,10 @@ namespace Drachenhorn.UnitTest
         }
 
         [TestMethod]
-        public void PrintingTest()
+        public void TestPrinting()
         {
             InitializeData();
-
+            
             var sheet = new CharacterSheet
             {
                 Characteristics = new Characteristics
@@ -30,15 +31,7 @@ namespace Drachenhorn.UnitTest
                 }
             };
 
-            var result = PrintingManager.GenerateHtml(sheet);
-
-            //try
-            //{
-            //    var path = Path.Combine(Directory.GetCurrentDirectory(), "result.html");
-            //    File.WriteAllText(path, result);
-            //    Process.Start(path);
-            //}
-            //catch (Exception) { }
+            var temp = PrintingManager.GenerateHtml(sheet);
         }
     }
 }

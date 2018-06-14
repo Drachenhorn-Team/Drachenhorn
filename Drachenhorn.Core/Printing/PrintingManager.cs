@@ -1,22 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using Drachenhorn.Core.Printing.Exceptions;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
 using RazorLight;
+using RazorLight.Caching;
 
 namespace Drachenhorn.Core.Printing
 {
     public static class PrintingManager
     {
+        private static readonly string TemplatesDirectory =
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Drachenhorn",
+                "PrintTemplates");
+
+        public static IEnumerable<FileInfo> GetPrintTemplates()
+        {
+            if (!Directory.Exists(TemplatesDirectory)) Directory.CreateDirectory(TemplatesDirectory);
+
+            return Directory.GetFiles(TemplatesDirectory).Where(x => x.EndsWith(".cshtml")).Select(x => new FileInfo(x));
+        }
+
+
         #region Generate HTML
 
         public static string GenerateHtml(CharacterSheet sheet)
         {
-            string template = "";
+            string template;
 
             var assembly = Assembly.GetExecutingAssembly();
 
@@ -25,37 +40,25 @@ namespace Drachenhorn.Core.Printing
             {
                 template = reader.ReadToEnd();
             }
-            
+
+            return GenerateHtml(sheet, template);
+        }
+
+        public static string GenerateHtml(CharacterSheet sheet, FileInfo file)
+        {
+            return GenerateHtml(sheet, file.OpenText().ReadToEnd());
+        }
+
+        private static string GenerateHtml(CharacterSheet sheet, string template, Assembly operatingAssembly = null)
+        {
             var engine = new RazorLightEngineBuilder()
-                .UseMemoryCachingProvider()
+                .SetOperatingAssembly(Assembly.GetExecutingAssembly())
+                .UseCachingProvider(new MemoryCachingProvider())
                 .Build();
 
             string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;
 
             return result;
-        }
-
-        public static void GenerateHtml(CharacterSheet sheet, string path)
-        {
-            var file = new FileInfo(path);
-
-            if (!file.Directory.Exists)
-                throw new DirectoryNotFoundException("Directory " + file.Directory.FullName + " does not exist.");
-
-            try
-            {
-                if (file.Exists)
-                    file.Delete();
-
-                using (var stream = file.CreateText())
-                {
-                    stream.Write(GenerateHtml(sheet));
-                }
-            }
-            catch (Exception e)
-            {
-                throw new PrintingException(path + "Can not be created.", e);
-            }
         }
 
         #endregion Generate HTML

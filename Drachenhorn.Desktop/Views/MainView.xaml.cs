@@ -68,9 +68,7 @@ namespace Drachenhorn.Desktop.Views
 
                     if (model.CurrentSheetViewModel == null) return;
 
-                    new PrintView(
-                        () => { return PrintingManager.GenerateHtml(model.CurrentSheetViewModel.CurrentSheet); })
-                        .ShowDialog();
+                    new PrintView(model.CurrentSheetViewModel.CurrentSheet).ShowDialog();
                 }
             }
             else if (message.Notification == "ShowOpenTemplates")
