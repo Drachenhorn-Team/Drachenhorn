@@ -81,5 +81,82 @@
     </tr>
 </table>
 
+<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+    <tr>
+        <td>
+            <table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+                @foreach (var attribute in sheet.Attributes)
+                {
+                    <tr>
+                        <td>@attribute.Name</td>
+                        <td>@attribute.Modifier</td>
+                        <td>@attribute.StartValue</td>
+                        <td>@attribute.Value</td>
+                    </tr>
+                }
+            </table>
+        </td>
+        <td>
+            <table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+                @foreach (var baseValue in sheet.BaseValues)
+                {
+                    <tr>
+                        <td>@baseValue.Name</td>
+                        <td>@baseValue.Modifier</td>
+                        <td>@baseValue.StartValue</td>
+                        <td>@baseValue.Value</td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+
+<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+    <tr>
+        <td>@LanguageManager.Translate("CharacterSheet.TotalAP")</td>
+        <td>@sheet.AdventurePoints.Total</td>
+        <td>@LanguageManager.Translate("CharacterSheet.UsedAP")</td>
+        <td>@sheet.AdventurePoints.Used</td>
+        <td>@LanguageManager.Translate("CharacterSheet.LeftoverAP")</td>
+        <td>@sheet.AdventurePoints.CurrentLeft</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+        <th colspan="3">@LanguageManager.Translate("CharacterSheet.Attributes")</th>
+        <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
+    </tr>
+    @{ string currentGroup = null;}
+    @foreach (var skill in sheet.Skills)
+    {
+        if (currentGroup != skill.Category)
+        {
+            currentGroup = skill.Category;
+            <tr>
+                <th colspan="5">@skill.Category</th>
+            </tr>
+        }
+
+        <tr>
+            <td>@skill.Name</td>
+            <td>@skill.RollAttributes.Roll1</td>
+            <td>@skill.RollAttributes.Roll2</td>
+            <td>@skill.RollAttributes.Roll3</td>
+        </tr>
+    }
+</table>
+
+<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+    @foreach (var specialSkill in sheet.SpecialSkills)
+    {
+        <tr>
+            <td>@specialSkill.Name</td>
+        </tr>
+    }
+</table>
+
 </body>
 </html>
