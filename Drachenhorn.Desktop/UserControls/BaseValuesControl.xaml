@@ -38,7 +38,7 @@
             <TextBlock Text="{lang:Translate CharacterSheet.Modifier}"
                        HorizontalAlignment="Center"
                        Margin="5" Grid.Column="2" />
-            <TextBlock Text="{lang:Translate CharacterSheet.CurrentValue}"
+            <TextBlock Text="{lang:Translate CharacterSheet.Value}"
                        HorizontalAlignment="Center"
                        Margin="5" Grid.Column="3" />
         </Grid>
@@ -68,7 +68,7 @@
                         <TextBlock Text="{Binding StartValue}"
                                    HorizontalAlignment="Center"
                                    Margin="5" Grid.Column="2" />
-                        <TextBlock Text="{Binding CurrentValue}"
+                        <TextBlock Text="{Binding Value}"
                                    HorizontalAlignment="Center"
                                    Margin="5" Grid.Column="3" />
                         <Button Click="RemoveButton_Click" Width="20" Height="20" Margin="20 5 5 5"

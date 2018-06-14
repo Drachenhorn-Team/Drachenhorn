@@ -73,10 +73,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        /// <inheritdoc />
-        [XmlIgnore]
-        public double Value => CurrentValue;
-
         #endregion Properties
     }
 }

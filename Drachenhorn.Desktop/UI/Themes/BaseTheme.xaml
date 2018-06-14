@@ -69,7 +69,7 @@
     </Style>
 
     <Style TargetType="{x:Type TextBox}">
-        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Margin" Value="5" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />

@@ -83,7 +83,7 @@ namespace Drachenhorn.Xml.Calculation
                     return;
                 _modifier = value;
                 OnPropertyChanged();
-                OnPropertyChanged("CurrentValue");
+                OnPropertyChanged("Value");
             }
         }
 
@@ -95,8 +95,8 @@ namespace Drachenhorn.Xml.Calculation
         /// <value>
         ///     The current value.
         /// </value>
-        [XmlAttribute("CurrentValue")]
-        public int CurrentValue
+        [XmlAttribute("Value")]
+        public int Value
         {
             get => StartValue + Modifier + _currentValueDiff;
             set

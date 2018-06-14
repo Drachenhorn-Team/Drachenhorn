@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
-  <HelpKINode Title="Add method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_Add.htm" />
+  <HelpKINode Title="Add method">
+    <HelpKINode Title="APColumn.Add Method " Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_Add.htm" />
+    <HelpKINode Title="DSADate.Add Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_Add.htm" />
+  </HelpKINode>
   <HelpKINode Title="AddDays method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddDays.htm" />
   <HelpKINode Title="Addition operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Addition.htm" />
   <HelpKINode Title="AddMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_AddMonths.htm" />
@@ -13,6 +16,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_AdventurePoints.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_AdventurePoints.htm" />
   </HelpKINode>
+  <HelpKINode Title="AdventurePoints enumeration member" Url="html/T_Drachenhorn_Xml_Template_TemplateGenerationType.htm" />
   <HelpKINode Title="AdventurePoints property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_AdventurePoints.htm" />
   <HelpKINode Title="AdventurePoints.AdventurePoints constructor" Url="html/M_Drachenhorn_Xml_AdventurePoints__ctor.htm" />
   <HelpKINode Title="AdventurePoints.CurrentLeft property" Url="html/P_Drachenhorn_Xml_AdventurePoints_CurrentLeft.htm" />
@@ -26,6 +30,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
   </HelpKINode>
+  <HelpKINode Title="APColumn.Add method" Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_Add.htm" />
   <HelpKINode Title="APColumn.APColumn constructor" Url="html/Overload_Drachenhorn_Xml_Data_AP_APColumn__ctor.htm" />
   <HelpKINode Title="APColumn.CalculateCosts method" Url="html/M_Drachenhorn_Xml_Data_AP_APColumn_CalculateCosts.htm" />
   <HelpKINode Title="APColumn.Costs property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Costs.htm" />
@@ -40,11 +45,23 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APTable.htm" />
   </HelpKINode>
-  <HelpKINode Title="APTable property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_APTable.htm" />
+  <HelpKINode Title="APTable property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_APTable.htm" />
   <HelpKINode Title="APTable.APColumns property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_APColumns.htm" />
   <HelpKINode Title="APTable.APTable constructor" Url="html/M_Drachenhorn_Xml_Data_AP_APTable__ctor.htm" />
   <HelpKINode Title="APTable.Calculate method" Url="html/M_Drachenhorn_Xml_Data_AP_APTable_Calculate.htm" />
+  <HelpKINode Title="APTable.ColumnNames property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_ColumnNames.htm" />
   <HelpKINode Title="APTable.Item property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_Item.htm" />
+  <HelpKINode Title="APValue class">
+    <HelpKINode Title="APValue Class" Url="html/T_Drachenhorn_Xml_Data_AP_APValue.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Data_AP_APValue__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Data_AP_APValue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Data_AP_APValue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Data_AP_APValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="APValue.APValue constructor" Url="html/Overload_Drachenhorn_Xml_Data_AP_APValue__ctor.htm" />
+  <HelpKINode Title="APValue.GetObjectData method" Url="html/M_Drachenhorn_Xml_Data_AP_APValue_GetObjectData.htm" />
+  <HelpKINode Title="APValue.ToString method" Url="html/M_Drachenhorn_Xml_Data_AP_APValue_ToString.htm" />
+  <HelpKINode Title="APValue.Value property" Url="html/P_Drachenhorn_Xml_Data_AP_APValue_Value.htm" />
   <HelpKINode Title="ArmorPart class">
     <HelpKINode Title="ArmorPart Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart.htm" />
     <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart__ctor.htm" />
@@ -68,11 +85,10 @@
   <HelpKINode Title="Attribute.GetInformation method" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Attribute_GetInformation.htm" />
   <HelpKINode Title="Attribute.Key property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Key.htm" />
   <HelpKINode Title="Attribute.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Name.htm" />
-  <HelpKINode Title="Attribute.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
   <HelpKINode Title="Attributes property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_Attributes.htm" />
-  <HelpKINode Title="AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_AvailableTemplates.htm" />
+  <HelpKINode Title="AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_AvailableTemplates.htm" />
   <HelpKINode Title="Base64String property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
-  <HelpKINode Title="BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_BaseDirectory.htm" />
+  <HelpKINode Title="BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_BaseDirectory.htm" />
   <HelpKINode Title="BaseValue class">
     <HelpKINode Title="BaseValue Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_BaseValue.htm" />
     <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_BaseValue__ctor.htm" />
@@ -84,7 +100,6 @@
   <HelpKINode Title="BaseValue.GetInformation method" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_BaseValue_GetInformation.htm" />
   <HelpKINode Title="BaseValue.Key property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Key.htm" />
   <HelpKINode Title="BaseValue.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Name.htm" />
-  <HelpKINode Title="BaseValue.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
   <HelpKINode Title="BaseValues property">
     <HelpKINode Title="CharacterSheet.BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_BaseValues.htm" />
     <HelpKINode Title="CultureInformation.BaseValues Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_BaseValues.htm" />
@@ -135,12 +150,12 @@
     <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Calculation_CalculationValue.htm" />
   </HelpKINode>
   <HelpKINode Title="CalculationValue.CalculationValue constructor" Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue__ctor.htm" />
-  <HelpKINode Title="CalculationValue.CurrentValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_CurrentValue.htm" />
   <HelpKINode Title="CalculationValue.Formula property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Formula.htm" />
   <HelpKINode Title="CalculationValue.FormulaText property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_FormulaText.htm" />
   <HelpKINode Title="CalculationValue.GetInformation method" Url="html/M_Drachenhorn_Xml_Calculation_CalculationValue_GetInformation.htm" />
   <HelpKINode Title="CalculationValue.Modifier property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Modifier.htm" />
   <HelpKINode Title="CalculationValue.StartValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_StartValue.htm" />
+  <HelpKINode Title="CalculationValue.Value property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Value.htm" />
   <HelpKINode Title="Category property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
   <HelpKINode Title="Characteristics class">
     <HelpKINode Title="Characteristics Class" Url="html/T_Drachenhorn_Xml_Sheet_Common_Characteristics.htm" />
@@ -215,6 +230,7 @@
   <HelpKINode Title="CoatOfArms property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_CoatOfArms.htm" />
   <HelpKINode Title="CoatOfArms.Base64String property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CoatOfArms_Base64String.htm" />
   <HelpKINode Title="CoatOfArms.CoatOfArms constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_CoatOfArms__ctor.htm" />
+  <HelpKINode Title="ColumnNames property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_ColumnNames.htm" />
   <HelpKINode Title="CompareTo method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_CompareTo.htm" />
   <HelpKINode Title="Costs property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Costs.htm" />
   <HelpKINode Title="Culture property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Culture.htm" />
@@ -230,10 +246,9 @@
   <HelpKINode Title="CultureInformation.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_CultureInformation_GetInformation.htm" />
   <HelpKINode Title="CultureInformation.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Name.htm" />
   <HelpKINode Title="CultureInformation.Specification property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
-  <HelpKINode Title="Cultures property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Cultures.htm" />
+  <HelpKINode Title="Cultures property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_Cultures.htm" />
   <HelpKINode Title="CurrentLeft property" Url="html/P_Drachenhorn_Xml_AdventurePoints_CurrentLeft.htm" />
   <HelpKINode Title="CurrentSheet property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_CurrentSheet.htm" />
-  <HelpKINode Title="CurrentValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_CurrentValue.htm" />
   <HelpKINode Title="DamageType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_DamageType.htm" />
   <HelpKINode Title="Day property" Url="html/P_Drachenhorn_Xml_Objects_DSADate_Day.htm" />
   <HelpKINode Title="Description property">
@@ -254,6 +269,7 @@
   <HelpKINode Title="DisAdvantage.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Name.htm" />
   <HelpKINode Title="DisAdvantage.Specialization property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Specialization.htm" />
   <HelpKINode Title="DisAdvantage.Type property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Type.htm" />
+  <HelpKINode Title="DisAdvantage.Value property" Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Value.htm" />
   <HelpKINode Title="DisAdvantages property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_DisAdvantages.htm" />
   <HelpKINode Title="DisAdvantageType enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_DisAdvantageType.htm" />
   <HelpKINode Title="Drachenhorn.Xml namespace" Url="html/N_Drachenhorn_Xml.htm" />
@@ -269,12 +285,14 @@
   <HelpKINode Title="Drachenhorn.Xml.Data.AP namespace" Url="html/N_Drachenhorn_Xml_Data_AP.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Data.AP.APColumn class" Url="html/T_Drachenhorn_Xml_Data_AP_APColumn.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Data.AP.APTable class" Url="html/T_Drachenhorn_Xml_Data_AP_APTable.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Data.AP.APValue class" Url="html/T_Drachenhorn_Xml_Data_AP_APValue.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Exceptions namespace" Url="html/N_Drachenhorn_Xml_Exceptions.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetLoadingException class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Exceptions.SheetSavingException class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetSavingException.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Interfaces namespace" Url="html/N_Drachenhorn_Xml_Interfaces.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Interfaces.IInfoObject interface" Url="html/T_Drachenhorn_Xml_Interfaces_IInfoObject.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Interfaces.INotifyChildChanged interface" Url="html/T_Drachenhorn_Xml_Interfaces_INotifyChildChanged.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Interfaces.ISavable interface" Url="html/T_Drachenhorn_Xml_Interfaces_ISavable.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Objects namespace" Url="html/N_Drachenhorn_Xml_Objects.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Objects.DSADate class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Objects.DSAMonth enumeration" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
@@ -308,7 +326,10 @@
   <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.Skill class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Sheet.Skills.SpecialSkill class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_SpecialSkill.htm" />
   <HelpKINode Title="Drachenhorn.Xml.Template namespace" Url="html/N_Drachenhorn_Xml_Template.htm" />
-  <HelpKINode Title="Drachenhorn.Xml.Template.DSATemplate class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template.SheetTemplate class" Url="html/T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template.TemplateGenerationType enumeration" Url="html/T_Drachenhorn_Xml_Template_TemplateGenerationType.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template.TemplateInformation class" Url="html/T_Drachenhorn_Xml_Template_TemplateInformation.htm" />
+  <HelpKINode Title="Drachenhorn.Xml.Template.TemplateMetadata class" Url="html/T_Drachenhorn_Xml_Template_TemplateMetadata.htm" />
   <HelpKINode Title="DSADate class">
     <HelpKINode Title="DSADate Class" Url="html/T_Drachenhorn_Xml_Objects_DSADate.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate__ctor.htm" />
@@ -344,31 +365,12 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Objects_DSAMonthExtensions.htm" />
   </HelpKINode>
   <HelpKINode Title="DSAMonthExtensions.GetAllowedDays method" Url="html/M_Drachenhorn_Xml_Objects_DSAMonthExtensions_GetAllowedDays.htm" />
-  <HelpKINode Title="DSATemplate class">
-    <HelpKINode Title="DSATemplate Class" Url="html/T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Template_DSATemplate__ctor.htm" />
-    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Template_DSATemplate.htm" />
-  </HelpKINode>
-  <HelpKINode Title="DSATemplate.APTable property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_APTable.htm" />
-  <HelpKINode Title="DSATemplate.AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_AvailableTemplates.htm" />
-  <HelpKINode Title="DSATemplate.BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_BaseDirectory.htm" />
-  <HelpKINode Title="DSATemplate.Cultures property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Cultures.htm" />
-  <HelpKINode Title="DSATemplate.DSATemplate constructor" Url="html/M_Drachenhorn_Xml_Template_DSATemplate__ctor.htm" />
-  <HelpKINode Title="DSATemplate.Extension field" Url="html/F_Drachenhorn_Xml_Template_DSATemplate_Extension.htm" />
-  <HelpKINode Title="DSATemplate.FilePath property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_FilePath.htm" />
-  <HelpKINode Title="DSATemplate.HasChanged property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_HasChanged.htm" />
-  <HelpKINode Title="DSATemplate.Load method" Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Load.htm" />
-  <HelpKINode Title="DSATemplate.Races property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Races.htm" />
-  <HelpKINode Title="DSATemplate.Save method" Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Save.htm" />
   <HelpKINode Title="Efferd enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Equals method" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_Equals.htm" />
   <HelpKINode Title="Expression property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_Expression.htm" />
   <HelpKINode Title="Extension field">
     <HelpKINode Title="CharacterSheet.Extension Field" Url="html/F_Drachenhorn_Xml_Sheet_CharacterSheet_Extension.htm" />
-    <HelpKINode Title="DSATemplate.Extension Field" Url="html/F_Drachenhorn_Xml_Template_DSATemplate_Extension.htm" />
+    <HelpKINode Title="SheetTemplate.Extension Field" Url="html/F_Drachenhorn_Xml_Template_SheetTemplate_Extension.htm" />
   </HelpKINode>
   <HelpKINode Title="EyeColor property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_EyeColor.htm" />
   <HelpKINode Title="Factor property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Factor.htm" />
@@ -376,7 +378,7 @@
   <HelpKINode Title="Female enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
   <HelpKINode Title="FilePath property">
     <HelpKINode Title="CharacterSheet.FilePath Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_FilePath.htm" />
-    <HelpKINode Title="DSATemplate.FilePath Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_FilePath.htm" />
+    <HelpKINode Title="SheetTemplate.FilePath Property " Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_FilePath.htm" />
   </HelpKINode>
   <HelpKINode Title="Firun enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Formula class">
@@ -401,6 +403,8 @@
   <HelpKINode Title="FormulaText property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_FormulaText.htm" />
   <HelpKINode Title="Gender enumeration" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
   <HelpKINode Title="Gender property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Gender.htm" />
+  <HelpKINode Title="GenerationPoints enumeration member" Url="html/T_Drachenhorn_Xml_Template_TemplateGenerationType.htm" />
+  <HelpKINode Title="GenerationType property" Url="html/P_Drachenhorn_Xml_Template_TemplateInformation_GenerationType.htm" />
   <HelpKINode Title="GetAllowedDays method" Url="html/M_Drachenhorn_Xml_Objects_DSAMonthExtensions_GetAllowedDays.htm" />
   <HelpKINode Title="GetHashCode method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetHashCode.htm" />
   <HelpKINode Title="GetInformation method">
@@ -412,10 +416,13 @@
     <HelpKINode Title="IInfoObject.GetInformation Method " Url="html/M_Drachenhorn_Xml_Interfaces_IInfoObject_GetInformation.htm" />
     <HelpKINode Title="ProfessionInformation.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GetInformation.htm" />
     <HelpKINode Title="RaceInformation.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
-    <HelpKINode Title="Skill.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
+    <HelpKINode Title="Skill.GetInformation Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
     <HelpKINode Title="SpecialSkill.GetInformation Method " Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
   </HelpKINode>
-  <HelpKINode Title="GetObjectData method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetObjectData.htm" />
+  <HelpKINode Title="GetObjectData method">
+    <HelpKINode Title="APValue.GetObjectData Method " Url="html/M_Drachenhorn_Xml_Data_AP_APValue_GetObjectData.htm" />
+    <HelpKINode Title="DSADate.GetObjectData Method " Url="html/M_Drachenhorn_Xml_Objects_DSADate_GetObjectData.htm" />
+  </HelpKINode>
   <HelpKINode Title="GetWholeWeight method" Url="html/M_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_GetWholeWeight.htm" />
   <HelpKINode Title="GpBase property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_GpBase.htm" />
   <HelpKINode Title="GpCost property" Url="html/P_Drachenhorn_Xml_Sheet_Common_ProfessionInformation_GpCost.htm" />
@@ -428,7 +435,7 @@
   <HelpKINode Title="Hands enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
   <HelpKINode Title="HasChanged property">
     <HelpKINode Title="CharacterSheet.HasChanged Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_HasChanged.htm" />
-    <HelpKINode Title="DSATemplate.HasChanged Property " Url="html/P_Drachenhorn_Xml_Template_DSATemplate_HasChanged.htm" />
+    <HelpKINode Title="SheetTemplate.HasChanged Property " Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_HasChanged.htm" />
   </HelpKINode>
   <HelpKINode Title="Head enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_ArmorType.htm" />
   <HelpKINode Title="Height property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Height.htm" />
@@ -474,6 +481,11 @@
   <HelpKINode Title="InventoryItem.StoragePlace property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
   <HelpKINode Title="InventoryItem.Weight property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_Weight.htm" />
   <HelpKINode Title="IsActive property" Url="html/P_Drachenhorn_Xml_Sheet_CombatInfo_ArmorPart_IsActive.htm" />
+  <HelpKINode Title="ISavable interface">
+    <HelpKINode Title="ISavable Interface" Url="html/T_Drachenhorn_Xml_Interfaces_ISavable.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Interfaces_ISavable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISavable.Save method" Url="html/M_Drachenhorn_Xml_Interfaces_ISavable_Save.htm" />
   <HelpKINode Title="IsValid property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_IsValid.htm" />
   <HelpKINode Title="Item property" Url="html/P_Drachenhorn_Xml_Data_AP_APTable_Item.htm" />
   <HelpKINode Title="Items property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_Inventory_Items.htm" />
@@ -487,7 +499,7 @@
   <HelpKINode Title="LessThan operator" Url="html/M_Drachenhorn_Xml_Objects_DSADate_op_LessThan.htm" />
   <HelpKINode Title="Load method">
     <HelpKINode Title="CharacterSheet.Load Method " Url="html/M_Drachenhorn_Xml_Sheet_CharacterSheet_Load.htm" />
-    <HelpKINode Title="DSATemplate.Load Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Load.htm" />
+    <HelpKINode Title="SheetTemplate.Load Method " Url="html/M_Drachenhorn_Xml_Template_SheetTemplate_Load.htm" />
   </HelpKINode>
   <HelpKINode Title="Magic enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_DamageType.htm" />
   <HelpKINode Title="Male enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_Enums_Gender.htm" />
@@ -507,6 +519,7 @@
     <HelpKINode Title="RaceInformation.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
     <HelpKINode Title="Skill.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
     <HelpKINode Title="SpecialSkill.Name Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
+    <HelpKINode Title="TemplateMetadata.Name Property " Url="html/P_Drachenhorn_Xml_Template_TemplateMetadata_Name.htm" />
   </HelpKINode>
   <HelpKINode Title="Nameless enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Negative property" Url="html/P_Drachenhorn_Xml_Data_AP_APColumn_Negative.htm" />
@@ -555,7 +568,7 @@
   <HelpKINode Title="RaceInformation.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation_GetInformation.htm" />
   <HelpKINode Title="RaceInformation.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Common_RaceInformation_Name.htm" />
   <HelpKINode Title="RaceInformation.RaceInformation constructor" Url="html/M_Drachenhorn_Xml_Sheet_Common_RaceInformation__ctor.htm" />
-  <HelpKINode Title="Races property" Url="html/P_Drachenhorn_Xml_Template_DSATemplate_Races.htm" />
+  <HelpKINode Title="Races property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_Races.htm" />
   <HelpKINode Title="Rahja enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="RaiseCalculateAll method" Url="html/M_Drachenhorn_Xml_Calculation_Formula_RaiseCalculateAll.htm" />
   <HelpKINode Title="Ranged enumeration member" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_DamageType.htm" />
@@ -578,9 +591,11 @@
   <HelpKINode Title="Rondra enumeration member" Url="html/T_Drachenhorn_Xml_Objects_DSAMonth.htm" />
   <HelpKINode Title="Save method">
     <HelpKINode Title="CharacterSheet.Save Method " Url="html/Overload_Drachenhorn_Xml_Sheet_CharacterSheet_Save.htm" />
-    <HelpKINode Title="DSATemplate.Save Method " Url="html/M_Drachenhorn_Xml_Template_DSATemplate_Save.htm" />
+    <HelpKINode Title="ISavable.Save Method " Url="html/M_Drachenhorn_Xml_Interfaces_ISavable_Save.htm" />
+    <HelpKINode Title="SheetTemplate.Save Method " Url="html/Overload_Drachenhorn_Xml_Template_SheetTemplate_Save.htm" />
   </HelpKINode>
   <HelpKINode Title="SetValuesChanged method" Url="html/M_Drachenhorn_Xml_ChildChangedBase_SetValuesChanged.htm" />
+  <HelpKINode Title="SetVersionFromXMLLine method" Url="html/M_Drachenhorn_Xml_Template_TemplateMetadata_SetVersionFromXMLLine.htm" />
   <HelpKINode Title="Sheet property" Url="html/P_Drachenhorn_Xml_Calculation_CalculateEventArgs_Sheet.htm" />
   <HelpKINode Title="SheetLoadingException class">
     <HelpKINode Title="SheetLoadingException Class" Url="html/T_Drachenhorn_Xml_Exceptions_SheetLoadingException.htm" />
@@ -600,6 +615,26 @@
   </HelpKINode>
   <HelpKINode Title="SheetSavingException.Path property" Url="html/P_Drachenhorn_Xml_Exceptions_SheetSavingException_Path.htm" />
   <HelpKINode Title="SheetSavingException.SheetSavingException constructor" Url="html/M_Drachenhorn_Xml_Exceptions_SheetSavingException__ctor.htm" />
+  <HelpKINode Title="SheetTemplate class">
+    <HelpKINode Title="SheetTemplate Class" Url="html/T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Template_SheetTemplate__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Template_SheetTemplate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SheetTemplate.APTable property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_APTable.htm" />
+  <HelpKINode Title="SheetTemplate.AvailableTemplates property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_AvailableTemplates.htm" />
+  <HelpKINode Title="SheetTemplate.BaseDirectory property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_BaseDirectory.htm" />
+  <HelpKINode Title="SheetTemplate.Cultures property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_Cultures.htm" />
+  <HelpKINode Title="SheetTemplate.Extension field" Url="html/F_Drachenhorn_Xml_Template_SheetTemplate_Extension.htm" />
+  <HelpKINode Title="SheetTemplate.FilePath property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_FilePath.htm" />
+  <HelpKINode Title="SheetTemplate.HasChanged property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_HasChanged.htm" />
+  <HelpKINode Title="SheetTemplate.Load method" Url="html/M_Drachenhorn_Xml_Template_SheetTemplate_Load.htm" />
+  <HelpKINode Title="SheetTemplate.Races property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_Races.htm" />
+  <HelpKINode Title="SheetTemplate.Save method" Url="html/Overload_Drachenhorn_Xml_Template_SheetTemplate_Save.htm" />
+  <HelpKINode Title="SheetTemplate.SheetTemplate constructor" Url="html/M_Drachenhorn_Xml_Template_SheetTemplate__ctor.htm" />
+  <HelpKINode Title="SheetTemplate.SpecialSkills property" Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_SpecialSkills.htm" />
   <HelpKINode Title="Skill class">
     <HelpKINode Title="Skill Class" Url="html/T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
     <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
@@ -608,7 +643,7 @@
     <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Sheet_Skills_Skill.htm" />
   </HelpKINode>
   <HelpKINode Title="Skill.Category property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Category.htm" />
-  <HelpKINode Title="Skill.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
+  <HelpKINode Title="Skill.GetInformation method" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_Skill_GetInformation.htm" />
   <HelpKINode Title="Skill.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_Name.htm" />
   <HelpKINode Title="Skill.RollAttributes property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_Skill_RollAttributes.htm" />
   <HelpKINode Title="Skill.Skill constructor" Url="html/M_Drachenhorn_Xml_Sheet_Skills_Skill__ctor.htm" />
@@ -626,7 +661,10 @@
   <HelpKINode Title="SpecialSkill.GetInformation method" Url="html/M_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_GetInformation.htm" />
   <HelpKINode Title="SpecialSkill.Name property" Url="html/P_Drachenhorn_Xml_Sheet_Skills_SpecialSkill_Name.htm" />
   <HelpKINode Title="SpecialSkill.SpecialSkill constructor" Url="html/Overload_Drachenhorn_Xml_Sheet_Skills_SpecialSkill__ctor.htm" />
-  <HelpKINode Title="SpecialSkills property" Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
+  <HelpKINode Title="SpecialSkills property">
+    <HelpKINode Title="CharacterSheet.SpecialSkills Property " Url="html/P_Drachenhorn_Xml_Sheet_CharacterSheet_SpecialSkills.htm" />
+    <HelpKINode Title="SheetTemplate.SpecialSkills Property " Url="html/P_Drachenhorn_Xml_Template_SheetTemplate_SpecialSkills.htm" />
+  </HelpKINode>
   <HelpKINode Title="Specification property" Url="html/P_Drachenhorn_Xml_Sheet_Common_CultureInformation_Specification.htm" />
   <HelpKINode Title="StartValue property" Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_StartValue.htm" />
   <HelpKINode Title="StoragePlace property" Url="html/P_Drachenhorn_Xml_Sheet_InventoryInfo_InventoryItem_StoragePlace.htm" />
@@ -635,8 +673,30 @@
   <HelpKINode Title="Subtraction operator" Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_op_Subtraction.htm" />
   <HelpKINode Title="SubtractMonths method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractMonths.htm" />
   <HelpKINode Title="SubtractYears method" Url="html/M_Drachenhorn_Xml_Objects_DSADate_SubtractYears.htm" />
+  <HelpKINode Title="TemplateGenerationType enumeration" Url="html/T_Drachenhorn_Xml_Template_TemplateGenerationType.htm" />
+  <HelpKINode Title="TemplateInformation class">
+    <HelpKINode Title="TemplateInformation Class" Url="html/T_Drachenhorn_Xml_Template_TemplateInformation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Template_TemplateInformation__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Template_TemplateInformation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Template_TemplateInformation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Template_TemplateInformation.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TemplateInformation.GenerationType property" Url="html/P_Drachenhorn_Xml_Template_TemplateInformation_GenerationType.htm" />
+  <HelpKINode Title="TemplateInformation.TemplateInformation constructor" Url="html/M_Drachenhorn_Xml_Template_TemplateInformation__ctor.htm" />
+  <HelpKINode Title="TemplateMetadata class">
+    <HelpKINode Title="TemplateMetadata Class" Url="html/T_Drachenhorn_Xml_Template_TemplateMetadata.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Drachenhorn_Xml_Template_TemplateMetadata__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Drachenhorn_Xml_Template_TemplateMetadata.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Drachenhorn_Xml_Template_TemplateMetadata.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Drachenhorn_Xml_Template_TemplateMetadata.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TemplateMetadata.Name property" Url="html/P_Drachenhorn_Xml_Template_TemplateMetadata_Name.htm" />
+  <HelpKINode Title="TemplateMetadata.SetVersionFromXMLLine method" Url="html/M_Drachenhorn_Xml_Template_TemplateMetadata_SetVersionFromXMLLine.htm" />
+  <HelpKINode Title="TemplateMetadata.TemplateMetadata constructor" Url="html/Overload_Drachenhorn_Xml_Template_TemplateMetadata__ctor.htm" />
+  <HelpKINode Title="TemplateMetadata.Version property" Url="html/P_Drachenhorn_Xml_Template_TemplateMetadata_Version.htm" />
   <HelpKINode Title="Title property" Url="html/P_Drachenhorn_Xml_Sheet_Common_Characteristics_Title.htm" />
   <HelpKINode Title="ToString method">
+    <HelpKINode Title="APValue.ToString Method " Url="html/M_Drachenhorn_Xml_Data_AP_APValue_ToString.htm" />
     <HelpKINode Title="DSADate.ToString Method " Url="html/Overload_Drachenhorn_Xml_Objects_DSADate_ToString.htm" />
     <HelpKINode Title="RollAttributes.ToString Method " Url="html/Overload_Drachenhorn_Xml_Sheet_Roll_RollAttributes_ToString.htm" />
   </HelpKINode>
@@ -652,11 +712,13 @@
   <HelpKINode Title="Used property" Url="html/P_Drachenhorn_Xml_AdventurePoints_Used.htm" />
   <HelpKINode Title="ValidationMessage property" Url="html/P_Drachenhorn_Xml_Calculation_Formula_ValidationMessage.htm" />
   <HelpKINode Title="Value property">
-    <HelpKINode Title="Attribute.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_Attribute_Value.htm" />
-    <HelpKINode Title="BaseValue.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Skills_BaseValue_Value.htm" />
+    <HelpKINode Title="APValue.Value Property " Url="html/P_Drachenhorn_Xml_Data_AP_APValue_Value.htm" />
     <HelpKINode Title="BonusValue.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_BonusValue_Value.htm" />
+    <HelpKINode Title="CalculationValue.Value Property " Url="html/P_Drachenhorn_Xml_Calculation_CalculationValue_Value.htm" />
+    <HelpKINode Title="DisAdvantage.Value Property " Url="html/P_Drachenhorn_Xml_Sheet_Common_DisAdvantage_Value.htm" />
     <HelpKINode Title="IFormulaKeyItem.Value Property " Url="html/P_Drachenhorn_Xml_Calculation_IFormulaKeyItem_Value.htm" />
   </HelpKINode>
+  <HelpKINode Title="Version property" Url="html/P_Drachenhorn_Xml_Template_TemplateMetadata_Version.htm" />
   <HelpKINode Title="Weapon class">
     <HelpKINode Title="Weapon Class" Url="html/T_Drachenhorn_Xml_Sheet_CombatInfo_Weapon.htm" />
     <HelpKINode Title="constructor" Url="html/M_Drachenhorn_Xml_Sheet_CombatInfo_Weapon__ctor.htm" />

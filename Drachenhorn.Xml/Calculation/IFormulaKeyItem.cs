@@ -19,6 +19,6 @@
         /// <value>
         ///     The value.
         /// </value>
-        double Value { get; }
+        int Value { get; }
     }
 }

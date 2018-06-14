@@ -88,6 +88,7 @@
                 <tr>
                     <th/>
                     <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+                    <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
                     <th>@LanguageManager.Translate("CharacterSheet.Specialization")</th>
                 </tr>
                 @foreach (var disAdvantage in sheet.DisAdvantages)
@@ -102,6 +103,7 @@
                             <td>"-"</td>
                         } 
                         <td>@disAdvantage.Name</td>
+                        <td>@disAdvantage.Value</td>
                         <td>@disAdvantage.Specialization</td>
                     </tr>
                 }
@@ -164,7 +166,7 @@
 <table>
     <tr>
         <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
-        <th colspan="3">@LanguageManager.Translate("CharacterSheet.Attributes")</th>
+        <th>@LanguageManager.Translate("CharacterSheet.Attributes")</th>
         <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
     </tr>
     @{ string currentGroup = null;}
@@ -180,9 +182,7 @@
 
         <tr>
             <td>@skill.Name</td>
-            <td>@skill.RollAttributes.Roll1</td>
-            <td>@skill.RollAttributes.Roll2</td>
-            <td>@skill.RollAttributes.Roll3</td>
+            <td>@skill.RollAttributes</td>
         </tr>
     }
 </table>

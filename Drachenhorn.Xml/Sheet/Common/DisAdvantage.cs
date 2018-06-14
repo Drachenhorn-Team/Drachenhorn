@@ -48,6 +48,26 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
+        [XmlIgnore] private uint _value;
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        [XmlAttribute("Value")]
+        public uint Value
+        {
+            get { return _value; }
+            set
+            {
+                if (_value == value)
+                    return;
+                _value = value;
+                OnPropertyChanged();
+            }
+        }
+
         [XmlIgnore] private string _specialization;
 
         /// <summary>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet.Roll;
 
@@ -12,7 +13,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
-    public class Skill : BindableBase, IInfoObject
+    public class Skill : CalculationValue, IInfoObject
     {
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()

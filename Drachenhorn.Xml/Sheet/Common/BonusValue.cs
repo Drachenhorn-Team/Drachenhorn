@@ -16,7 +16,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore] private string _name;
 
-        [XmlIgnore] private double _value;
+        [XmlIgnore] private int _value;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -53,7 +53,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         /// <inheritdoc />
         [XmlAttribute("Value")]
-        public double Value
+        public int Value
         {
             get => _value;
             set
