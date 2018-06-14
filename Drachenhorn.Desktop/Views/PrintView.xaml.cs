@@ -70,8 +70,25 @@ namespace Drachenhorn.Desktop.Views
 
             Task.Run(() =>
             {
-                model.IsLoading = true;
-                return generateFunc();
+                try
+                {
+                    model.IsLoading = true;
+                    return generateFunc();
+                }
+                catch (InvalidOperationException e)
+                {
+                    var errorHtml =
+                        "<!DOCTYPE html><html xmlns =\"http://www.w3.org/1999/xhtml \"><body><h1>Error in PrintTemplate! " +
+                        e.Message + "</h1>";
+
+                    if (e.InnerException is AggregateException)
+                        foreach (var exception in (e.InnerException as AggregateException)?.InnerExceptions)
+                        {
+                            errorHtml += "<p>" + exception.Message + "</p>";
+                        }
+
+                    return errorHtml + "</body></html>";
+                }
             }).ContinueWith(x =>
             {
                 Browser.Dispatcher.Invoke(() => Browser.NavigateToString(x.Result));

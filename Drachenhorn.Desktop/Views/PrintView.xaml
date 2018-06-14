@@ -28,7 +28,7 @@
             <fluent:RibbonTabItem Header="{lang:Translate UI.Print}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Tempalte}">
                     <fluent:CheckBox Name="UseOwn" Header="{lang:Translate Print.UseOwn}"/>
-                    <fluent:ComboBox Icon="{StaticResource EditIcon}" Padding="0"
+                    <fluent:ComboBox Icon="{StaticResource EditIcon}" Padding="0" IsEditable="False"
                                      SelectedItem="{Binding CurrentSheet}"
                                      ItemsSource="{Binding Source={StaticResource PrintTemplatesProvider}}"
                                      IsEnabled="{Binding IsChecked, ElementName=UseOwn}"/>

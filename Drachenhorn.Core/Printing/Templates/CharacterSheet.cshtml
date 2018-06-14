@@ -1,6 +1,7 @@
 ﻿@using System
 @using Drachenhorn.Core.Lang
 @using Drachenhorn.Xml.Sheet
+@using Drachenhorn.Xml.Sheet.Enums
 @inherits RazorLight.TemplatePage<Drachenhorn.Core.ViewModels.Sheet.CharacterSheetViewModel>
 
 @{ CharacterSheet sheet = Model.CurrentSheet; }
@@ -12,9 +13,23 @@
     <meta charset="utf-8"/>
     <title>@LanguageManager.Translate("CharacterSheet.Title")</title>
 </head>
-<body style="margin: 0px; padding: 0px; width: 100%; ">
+<body style="margin: 0px; padding: 0px; width: 100%;">
+<style>
+    table {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
 
-<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+<h1 style="text-align: center">@LanguageManager.Translate("CharacterSheet.Title")</h1>
+
+<table>
     <tr>
         <td>@LanguageManager.Translate("Characteristics.Name")</td>
         <td colspan="5">@sheet.Characteristics.Name</td>
@@ -65,13 +80,27 @@
     </tr>
 </table>
 
-<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+<table>
     <tr>
         <td>
-            <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
+            <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.DisAdvantages")</h4>
+            <table>
+                <tr>
+                    <th/>
+                    <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+                    <th>@LanguageManager.Translate("CharacterSheet.Specialization")</th>
+                </tr>
                 @foreach (var disAdvantage in sheet.DisAdvantages)
                 {
                     <tr>
+                        @if (disAdvantage.Type == DisAdvantageType.Advantage)
+                        {
+                            <td>"+"</td> 
+                        }
+                        else
+                        {
+                            <td>"-"</td>
+                        } 
                         <td>@disAdvantage.Name</td>
                         <td>@disAdvantage.Specialization</td>
                     </tr>
@@ -80,15 +109,20 @@
         </td>
         @if (!string.IsNullOrEmpty(sheet.CoatOfArms.Base64String))
         {
-            <td><img src="data:image/png;base64,@sheet.CoatOfArms.Base64String"/></td>
+            <td>
+                <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.CoatOfArms")</h4>
+                <img src="data:image/png;base64,@sheet.CoatOfArms.Base64String"/>
+            </td>
         }
     </tr>
 </table>
 
-<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+<h3 style="text-align: center">@LanguageManager.Translate("CharacterSheet.BaseValues")</h3>
+
+<table>
     <tr>
         <td>
-            <table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+            <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
                 @foreach (var attribute in sheet.Attributes)
                 {
                     <tr>
@@ -101,7 +135,7 @@
             </table>
         </td>
         <td>
-            <table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+            <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
                 @foreach (var baseValue in sheet.BaseValues)
                 {
                     <tr>
@@ -116,7 +150,7 @@
     </tr>
 </table>
 
-<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+<table>
     <tr>
         <td>@LanguageManager.Translate("CharacterSheet.TotalAP")</td>
         <td>@sheet.AdventurePoints.Total</td>
@@ -140,7 +174,7 @@
         {
             currentGroup = skill.Category;
             <tr>
-                <th colspan="5">@skill.Category</th>
+                <th colspan="5" style="text-align: left; background: lightgray">@skill.Category</th>
             </tr>
         }
 
@@ -153,7 +187,7 @@
     }
 </table>
 
-<table border="1" style="margin: 0px; padding: 0px; width: 100%; ">
+<table>
     @foreach (var specialSkill in sheet.SpecialSkills)
     {
         <tr>

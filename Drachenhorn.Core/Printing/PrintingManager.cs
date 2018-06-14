@@ -51,14 +51,22 @@ namespace Drachenhorn.Core.Printing
 
         private static string GenerateHtml(CharacterSheet sheet, string template, Assembly operatingAssembly = null)
         {
-            var engine = new RazorLightEngineBuilder()
-                .SetOperatingAssembly(Assembly.GetExecutingAssembly())
-                .UseCachingProvider(new MemoryCachingProvider())
-                .Build();
+            try
+            {
+                var engine = new RazorLightEngineBuilder()
+                    .SetOperatingAssembly(Assembly.GetExecutingAssembly())
+                    .UseCachingProvider(new MemoryCachingProvider())
+                    .Build();
 
-            string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet)).Result;
+                string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet))
+                    .Result;
 
-            return result;
+                return result;
+            }
+            catch (AggregateException e)
+            {
+                throw new InvalidOperationException("Unable to create PrintView.", e);
+            }
         }
 
         #endregion Generate HTML

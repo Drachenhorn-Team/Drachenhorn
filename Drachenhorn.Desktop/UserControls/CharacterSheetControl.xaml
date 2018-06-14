@@ -20,50 +20,6 @@
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:CharacteristicsControl DataContext="{Binding CurrentSheet.Characteristics}" />
-            <!--<Grid Margin="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Grid.Row="0" />
-                <TextBox Text="{Binding CurrentSheet.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" />
-
-                <TextBlock Text="{lang:Translate CharacterSheet.Race}" Grid.Column="0" Grid.Row="1" />
-                <TextBox Text="{Binding CurrentSheet.Race.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Row="1" Grid.Column="1" />
-                <userElements:InfoButton InfoObject="{Binding CurrentSheet.Race}"
-                                         Grid.Row="1" Grid.Column="2" />
-
-                <TextBlock Text="{lang:Translate CharacterSheet.Culture}" Grid.Column="0" Grid.Row="2" />
-                <Grid Grid.Column="1" Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="{Binding CurrentSheet.Culture.Name, UpdateSourceTrigger=PropertyChanged}"
-                             Grid.Column="0" />
-                    <TextBox Text="{Binding CurrentSheet.Culture.Specification, UpdateSourceTrigger=PropertyChanged}"
-                             Grid.Column="1" />
-                </Grid>
-                <userElements:InfoButton InfoObject="{Binding CurrentSheet.Culture}"
-                                         Grid.Column="2" Grid.Row="2" />
-
-                <TextBlock Text="{lang:Translate CharacterSheet.Profession}" Grid.Column="0" Grid.Row="3" />
-                <TextBox Text="{Binding CurrentSheet.Profession.Name, UpdateSourceTrigger=PropertyChanged}"
-                         Grid.Row="3" Grid.Column="1" />
-                <userElements:InfoButton InfoObject="{Binding CurrentSheet.Profession}"
-                                         Grid.Column="2" Grid.Row="3" />
-            </Grid>-->
         </Border>
 
         <Grid>
