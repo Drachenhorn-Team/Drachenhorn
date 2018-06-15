@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Sheet.CombatInfo;
 
 namespace Drachenhorn.Xml.Sheet.InventoryInfo
 {
@@ -31,7 +32,9 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
         /// <value>
         ///     The items.
         /// </value>
-        [XmlElement("Item")]
+        [XmlElement("Item", typeof(InventoryItem))]
+        [XmlElement("Weapon", typeof(Weapon))]
+        [XmlElement("ArmorPart", typeof(ArmorPart))]
         public ObservableCollection<InventoryItem> Items
         {
             get => _items;

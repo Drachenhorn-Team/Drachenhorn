@@ -83,7 +83,7 @@
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:CombatControl
-                DataContext="{Binding CurrentSheet}"
+                DataContext="{Binding CurrentSheet.Inventory}"
                 Margin="5" />
         </Border>
 

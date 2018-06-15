@@ -13,6 +13,7 @@
     <UserControl.Resources>
         <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
         <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
+        <converter:ListTypeFilterConverter x:Key="ListTypeFilterConverter"/>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="combatInfo1:DamageType" />
@@ -29,7 +30,8 @@
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding Weapons}"
+            <DataGrid AutoGenerateColumns="False" Margin="5"
+                      ItemsSource="{Binding Items, Converter={StaticResource ListTypeFilterConverter}, ConverterParameter={x:Type combatInfo1:Weapon}}"
                       CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
