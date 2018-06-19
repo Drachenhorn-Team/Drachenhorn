@@ -106,8 +106,7 @@ namespace Drachenhorn.Desktop
         private void InitializeData()
         {
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
-
-
+            
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             Messenger.Default.Register<Exception>(this,
@@ -116,6 +115,8 @@ namespace Drachenhorn.Desktop
             SimpleIoc.Default.Register<IIoService>(() => new IoService());
 
             var settings = Settings.Load();
+
+            _console.Visibility = settings.ShowConsole == true ? Visibility.Visible : Visibility.Hidden;
 
             settings.PropertyChanged += (sender, args) =>
             {

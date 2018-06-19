@@ -328,7 +328,6 @@
     <Compile Include="Converter\EnumListStringConverter.cs" />
     <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
     <Compile Include="Converter\EnumToStringConverter.cs" />
-    <Compile Include="Converter\ListTypeFilterConverter.cs" />
     <Compile Include="Converter\Validation\FormulaValidationRule.cs" />
     <Compile Include="Converter\ValueTranslationConverter.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">

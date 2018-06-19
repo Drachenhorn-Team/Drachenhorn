@@ -13,8 +13,26 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
     {
         #region Properties
 
-        [XmlIgnore] private int _handicap;
+        [XmlIgnore]
+        private string _skill;
+        /// <summary>
+        /// Gets or sets the Skill needed to use the weapon.
+        /// </summary>
+        [XmlAttribute("Skill")]
+        public string Skill
+        {
+            get { return _skill; }
+            set
+            {
+                if (_skill == value)
+                    return;
+                _skill = value;
+                OnPropertyChanged();
+            }
+        }
 
+
+        [XmlIgnore] private int _handicap;
         /// <summary>
         ///     Gets or sets the Handicap.
         /// </summary>

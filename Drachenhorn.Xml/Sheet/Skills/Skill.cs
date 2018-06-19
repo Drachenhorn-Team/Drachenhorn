@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet.Roll;
 
@@ -10,10 +9,10 @@ namespace Drachenhorn.Xml.Sheet.Skills
     /// <summary>
     ///     Character-Skill
     /// </summary>
-    /// <seealso cref="Drachenhorn.Xml.BindableBase" />
+    /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     [Serializable]
-    public class Skill : CalculationValue, IInfoObject
+    public class Skill : ChildChangedBase, IInfoObject
     {
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
@@ -52,7 +51,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         [XmlIgnore] private string _category;
-
         /// <summary>
         ///     Gets or sets the category.
         /// </summary>
@@ -80,7 +78,7 @@ namespace Drachenhorn.Xml.Sheet.Skills
         /// <value>
         ///     The roll attributes.
         /// </value>
-        [XmlElement("RolleAttributes")]
+        [XmlElement("RollAttributes")]
         public RollAttributes RollAttributes
         {
             get => _rollAttributes;

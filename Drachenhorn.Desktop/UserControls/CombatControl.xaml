@@ -8,18 +8,19 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:combatInfo1="clr-namespace:Drachenhorn.Xml.Sheet.CombatInfo;assembly=Drachenhorn.Xml"
+             xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              mc:Ignorable="d"
+             Loaded="CombatControl_OnLoaded"
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
         <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
-        <converter:ListTypeFilterConverter x:Key="ListTypeFilterConverter"/>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="combatInfo1:DamageType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ArmorRegionEnum">
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ArmorTypeEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="combatInfo1:ArmorType" />
             </ObjectDataProvider.MethodParameters>
@@ -30,43 +31,56 @@
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
-            <DataGrid AutoGenerateColumns="False" Margin="5"
-                      ItemsSource="{Binding Items, Converter={StaticResource ListTypeFilterConverter}, ConverterParameter={x:Type combatInfo1:Weapon}}"
+            <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="True"
                       CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                         Width="*" />
-                    <DataGridComboBoxColumn Header="{lang:Translate WeaponInformation.Type}"
-                                            ItemsSource="{Binding Source={StaticResource ResourceKey=WeaponTypeEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                            SelectedItemBinding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"
-                                            Width="Auto" MinWidth="100" />
+                    <DataGridTemplateColumn Header="{lang:Translate WeaponInformation.Type}" Width="Auto" MinWidth="100" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <userElements:LocalizedComboBox Text="{Binding Type, Converter={StaticResource EnumToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                ItemsSource="{Binding Source={StaticResource WeaponTypeEnum}, Converter={StaticResource EnumListStringConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
                                         Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
                                         Width="Auto" MinWidth="40" />
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Margin="5 0 5 5" Height="20" Click="AddWeaponButton_OnClick">
+                <Image Source="{DynamicResource AddIcon}"/>
+            </Button>
         </StackPanel>
 
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
-            <DataGrid AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ArmorParts}"
+            <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="*" Binding="{Binding IsActive}" />
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                         Width="*" />
-                    <DataGridComboBoxColumn Header="{lang:Translate ArmorInformation.Region}"
-                                            ItemsSource="{Binding Source={StaticResource ResourceKey=ArmorRegionEnum}, Converter={StaticResource EnumListStringConverter}}"
-                                            SelectedItemBinding="{Binding Region, Converter={StaticResource EnumToStringConverter}}"
-                                            Width="Auto" MinWidth="100" />
+                    <DataGridTemplateColumn Header="{lang:Translate ArmorInformation.Region}" Width="Auto" MinWidth="100" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <userElements:LocalizedComboBox Text="{Binding Type, Converter={StaticResource EnumToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                ItemsSource="{Binding Source={StaticResource ArmorTypeEnum}, Converter={StaticResource EnumListStringConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
                                         Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
                                         Width="Auto" MinWidth="40" />
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Margin="5 0 5 5" Height="20" Click="AddArmorButton_OnClick">
+                <Image Source="{DynamicResource AddIcon}"/>
+            </Button>
         </StackPanel>
     </UniformGrid>
 </UserControl>
