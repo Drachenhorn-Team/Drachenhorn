@@ -328,6 +328,7 @@
     <Compile Include="Converter\EnumListStringConverter.cs" />
     <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
     <Compile Include="Converter\EnumToStringConverter.cs" />
+    <Compile Include="Converter\MapTileColorConverter.cs" />
     <Compile Include="Converter\Validation\FormulaValidationRule.cs" />
     <Compile Include="Converter\ValueTranslationConverter.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
@@ -418,6 +419,9 @@
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrintView.xaml.cs">
       <DependentUpon>PrintView.xaml</DependentUpon>
@@ -601,6 +605,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -864,6 +872,10 @@
     <ProjectReference Include="..\Drachenhorn.Core\Drachenhorn.Core.csproj">
       <Project>{ec066881-e87c-46c3-8dab-04a19696dc99}</Project>
       <Name>Drachenhorn.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj">
+      <Project>{f24ccf9b-685a-453c-be26-885b8a7c4357}</Project>
+      <Name>Drachenhorn.Map</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj">
       <Project>{0B148A79-13FE-45C1-9A50-73FCC0C03613}</Project>

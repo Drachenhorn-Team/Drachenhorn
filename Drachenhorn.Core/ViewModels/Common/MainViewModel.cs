@@ -80,6 +80,8 @@ namespace Drachenhorn.Core.ViewModels.Common
             CalculateAll = new RelayCommand(ExecuteCalculateAll);
 
             OpenTemplates = new RelayCommand(ExecuteOpenTemplates);
+
+            ShowMap = new RelayCommand(ExecuteShowMap);
         }
 
         public RelayCommand Save { get; private set; }
@@ -213,6 +215,14 @@ namespace Drachenhorn.Core.ViewModels.Common
         private void ExecuteOpenTemplates()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));
+        }
+
+
+        public RelayCommand ShowMap { get; private set; }
+
+        private void ExecuteShowMap()
+        {
+            Messenger.Default.Send(new NotificationMessage(this, "ShowMap"));
         }
 
         #endregion Commands

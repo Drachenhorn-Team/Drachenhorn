@@ -257,6 +257,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FileReaderTest.cs" />
     <Compile Include="CoreTest.cs" />
+    <Compile Include="TestMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -270,6 +271,10 @@
     <ProjectReference Include="..\Drachenhorn.Desktop\Drachenhorn.Desktop.csproj">
       <Project>{0a0d0cba-8a83-435c-8d44-fb890a70ee2f}</Project>
       <Name>Drachenhorn.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj">
+      <Project>{f24ccf9b-685a-453c-be26-885b8a7c4357}</Project>
+      <Name>Drachenhorn.Map</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj">
       <Project>{0b148a79-13fe-45c1-9a50-73fcc0c03613}</Project>

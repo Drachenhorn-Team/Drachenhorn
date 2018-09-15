@@ -75,6 +75,10 @@ namespace Drachenhorn.Desktop.Views
             {
                 new TemplateSelectorDialog().ShowDialog();
             }
+            else if (message.Notification == "ShowMap")
+            {
+                new MapView().ShowDialog();
+            }
         }
 
         private void MainView_OnClosing(object sender, CancelEventArgs e)

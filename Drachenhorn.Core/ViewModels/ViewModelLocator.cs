@@ -34,6 +34,7 @@ namespace Drachenhorn.Core.ViewModels
             SimpleIoc.Default.Register<PrintViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<TemplateMainViewModel>();
+            SimpleIoc.Default.Register<MapViewModel>();
         }
 
         public LanguageManager LanguageManager => SimpleIoc.Default.GetInstance<LanguageManager>();
@@ -47,6 +48,8 @@ namespace Drachenhorn.Core.ViewModels
         public TemplateMainViewModel TemplateMainView => SimpleIoc.Default.GetInstance<TemplateMainViewModel>();
 
         public TemplateDownloader TemplateDownloader => SimpleIoc.Default.GetInstance<TemplateDownloader>();
+
+        public MapViewModel MapView => SimpleIoc.Default.GetInstance<MapViewModel>();
 
         public static void Cleanup()
         {

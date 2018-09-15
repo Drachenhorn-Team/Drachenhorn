@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj" />
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj" />
   </ItemGroup>
 

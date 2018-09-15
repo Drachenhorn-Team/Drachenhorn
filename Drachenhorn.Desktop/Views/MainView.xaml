@@ -87,6 +87,13 @@
                                    Command="{Binding OpenTemplates}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
+            
+            <fluent:RibbonTabItem Header="{lang:Translate UI.Other}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.Map}">
+                    <fluent:Button Header="{lang:Translate UI.ShowMap}"
+                                   Command="{Binding ShowMap}"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
         </fluent:Ribbon>
 
         <fluent:StatusBar DockPanel.Dock="Bottom" Background="{StaticResource BackgroundBrush2}"
