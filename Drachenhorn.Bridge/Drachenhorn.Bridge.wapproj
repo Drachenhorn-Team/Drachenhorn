@@ -4,6 +4,18 @@
     <VisualStudioVersion>15.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Beta|AnyCPU">
+      <Configuration>Beta</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta|x64">
+      <Configuration>Beta</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta|x86">
+      <Configuration>Beta</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x86">
       <Configuration>Debug</Configuration>
       <Platform>x86</Platform>
@@ -38,16 +50,17 @@
     <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <DefaultLanguage>de-DE</DefaultLanguage>
-    <PackageCertificateKeyFile>Drachenhorn.Bridge_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Drachenhorn.pfx</PackageCertificateKeyFile>
     <EntryPointProjectUniqueName>..\Drachenhorn.Desktop\Drachenhorn.Desktop.csproj</EntryPointProjectUniqueName>
+    <PackageCertificateThumbprint>30ECEBBB9AD1E86385D2CBB0E4928163FA80A291</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Drachenhorn.Bridge_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Drachenhorn.pfx" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
