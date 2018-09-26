@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A
 		img\Drachenhorn.ico = img\Drachenhorn.ico
 		img\ImageSource.md = img\ImageSource.md
 		img\Logo.png = img\Logo.png
+		img\SaveFileIcon.ico = img\SaveFileIcon.ico
+		img\SaveTemplateIcon.ico = img\SaveTemplateIcon.ico
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{9FAE5CD2-7EEF-4510-AED4-05AB5FBDBE8B}"
@@ -142,6 +144,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{8D668A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Map", "Drachenhorn.Map\Drachenhorn.Map.csproj", "{F24CCF9B-685A-453C-BE26-885B8A7C4357}"
 EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Drachenhorn.Bridge", "Drachenhorn.Bridge\Drachenhorn.Bridge.wapproj", "{1845DF07-9FF6-4B2A-B661-704E5CABCD68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{C33A6F64-25C3-436D-A81D-26F751955FDA}"
+	ProjectSection(SolutionItems) = preProject
+		img\Icons\Drachenhorn.png = img\Icons\Drachenhorn.png
+		img\Icons\Sheet.png = img\Icons\Sheet.png
+		img\Icons\Template.png = img\Icons\Template.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -234,6 +245,30 @@ Global
 		{F24CCF9B-685A-453C-BE26-885B8A7C4357}.Release|x64.Build.0 = Release|Any CPU
 		{F24CCF9B-685A-453C-BE26-885B8A7C4357}.Release|x86.ActiveCfg = Release|Any CPU
 		{F24CCF9B-685A-453C-BE26-885B8A7C4357}.Release|x86.Build.0 = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|ARM.Build.0 = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x64.ActiveCfg = Debug|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x64.Build.0 = Debug|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x64.Deploy.0 = Debug|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x86.ActiveCfg = Debug|x86
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x86.Build.0 = Debug|x86
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Debug|x86.Deploy.0 = Debug|x86
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|ARM.ActiveCfg = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|ARM.Build.0 = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|ARM.Deploy.0 = Release|Any CPU
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x64.ActiveCfg = Release|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x64.Build.0 = Release|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x64.Deploy.0 = Release|x64
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x86.ActiveCfg = Release|x86
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x86.Build.0 = Release|x86
+		{1845DF07-9FF6-4B2A-B661-704E5CABCD68}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -252,6 +287,7 @@ Global
 		{AF14F5BB-51BE-44CA-B6AE-81A4D4EE2498} = {F5FD20BD-575B-4E7B-B87B-A851A8A588A2}
 		{8D668A0E-9DCF-41CD-A9FC-1DC1FF4C4A5A} = {97542ADA-C7BB-46E2-842E-B3035577629B}
 		{F24CCF9B-685A-453C-BE26-885B8A7C4357} = {9781D075-7CB1-4A03-8669-55612191A73C}
+		{C33A6F64-25C3-436D-A81D-26F751955FDA} = {71A056D4-84A9-4E93-A370-A38F54B29CB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6587F46C-F568-4DC3-A758-EC4033606B82}

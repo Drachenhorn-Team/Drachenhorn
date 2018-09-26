@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
@@ -66,22 +67,27 @@ namespace Drachenhorn.Desktop
 
             InitializeData();
 
-            var filePath = "";
+            var allArgs = new List<string>();
+
+            allArgs.AddRange(e.Args);
             var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
             if (args != null)
-                foreach (var item in args)
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(item);
+                allArgs.AddRange(args);
 
-                    var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(CharacterSheet.Extension)
-                        || temp.EndsWith(SheetTemplate.Extension)
-                        && !temp.StartsWith(SheetTemplate.BaseDirectory))
-                    {
-                        filePath = temp;
-                        break;
-                    }
+            var filePath = "";
+            foreach (var item in allArgs)
+            {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(item);
+
+                var temp = new Uri(item).LocalPath;
+                if (temp.EndsWith(CharacterSheet.Extension)
+                    || temp.EndsWith(SheetTemplate.Extension)
+                    && !temp.StartsWith(SheetTemplate.BaseDirectory))
+                {
+                    filePath = temp;
+                    break;
                 }
+            }
 
             if (filePath.EndsWith(SheetTemplate.Extension))
             {
