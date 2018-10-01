@@ -868,7 +868,20 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <FileAssociation Include=".dsac">
+      <Visible>False</Visible>
+      <Description>Drachenhorn Character-Sheet</Description>
+      <Progid>Drachenhorn Sheet</Progid>
+      <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
+    </FileAssociation>
+    <FileAssociation Include=".dsat">
+      <Visible>False</Visible>
+      <Description>Drachenhorn Character-Template</Description>
+      <Progid>Drachenhorn Template</Progid>
+      <DefaultIcon>Images\Common\SaveTemplateIcon.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Drachenhorn.Core\Drachenhorn.Core.csproj">
       <Project>{ec066881-e87c-46c3-8dab-04a19696dc99}</Project>
