@@ -368,6 +368,9 @@
     <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
       <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\TemplateInformationControl.xaml.cs">
+      <DependentUpon>TemplateInformationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\InventoryControl.xaml.cs">
       <DependentUpon>InventoryControl.xaml</DependentUpon>
     </Compile>
@@ -435,6 +438,10 @@
     <Compile Include="Views\TemplateMainView.xaml.cs">
       <DependentUpon>TemplateMainView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Converter\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\CommonMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -544,6 +551,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Common\RaceDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\TemplateInformationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

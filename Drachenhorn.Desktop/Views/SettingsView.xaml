@@ -14,9 +14,6 @@
                      Title="{lang:Translate UI.Properties}" Height="500" Width="700">
     <Window.Resources>
         <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultures" />
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
-        <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="VisualThemeTypes">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="enum:VisualThemeType" />

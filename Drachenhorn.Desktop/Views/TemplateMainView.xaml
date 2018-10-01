@@ -46,7 +46,9 @@
 
 
         <TabControl>
-            <TabItem Header="{lang:Translate Template.Common}" />
+            <TabItem Header="{lang:Translate Template.Common}">
+                <common:TemplateInformationControl DataContext="{Binding Template.Information}"/>
+            </TabItem>
             <TabItem Header="{lang:Translate Template.APTable}">
                 <common:APTableControl DataContext="{Binding Template.APTable}" />
             </TabItem>

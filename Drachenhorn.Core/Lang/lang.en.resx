@@ -750,4 +750,16 @@
   <data name="CoatOfArms.New.AreYouSure" xml:space="preserve">
     <value>Adding a new Coat of Arms will remove the old one.\n Do you want to do that?</value>
   </data>
+  <data name="Template.Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="Template.GenerationType" xml:space="preserve">
+    <value>Generation-Type</value>
+  </data>
+  <data name="TemplateGenerationType.GenerationPoints" xml:space="preserve">
+    <value>Generation-Points</value>
+  </data>
+  <data name="TemplateGenerationType.AdventurePoints" xml:space="preserve">
+    <value>Adventure-Points</value>
+  </data>
 </root>

@@ -36,6 +36,9 @@ namespace Drachenhorn.Xml.Calculation
 
             var e = new Expression(Expression);
 
+            // Adding custom Expressions
+            e.EvaluateFunction += CustomCalculationExpression;
+
             // Adding All Parameters
             AddParameterList(ref e, ParentSheet?.Attributes);
 
@@ -226,5 +229,28 @@ namespace Drachenhorn.Xml.Calculation
         }
 
         #endregion CalculateEvent
+
+        #region CustomCalculationFunctions
+
+        private static void CustomCalculationExpression(string name, FunctionArgs args)
+        {
+            if (name.ToLower() == "random")
+            {
+                if (args.Parameters.Length == 0)
+                {
+                    args.Result = new Random().Next();
+                }
+                else if (args.Parameters.Length == 1)
+                {
+                    args.Result = new Random().Next((int)args.Parameters[0].Evaluate());
+                }
+                else if (args.Parameters.Length == 2)
+                {
+                    args.Result = new Random().Next((int)args.Parameters[0].Evaluate(), (int)args.Parameters[1].Evaluate());
+                }
+            }
+        }
+
+        #endregion CustomCalculationFunctions
     }
 }

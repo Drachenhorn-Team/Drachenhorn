@@ -77,6 +77,27 @@ namespace Drachenhorn.Xml.Template
 
         #region Properties
 
+        [XmlIgnore] private TemplateInformation _information = new TemplateInformation();
+
+        /// <summary>
+        /// Gets or sets the information.
+        /// </summary>
+        /// <value>
+        /// The information.
+        /// </value>
+        [XmlElement("Information")]
+        public TemplateInformation Information
+        {
+            get => _information;
+            set
+            {
+                if (_information == value)
+                    return;
+                _information = value;
+                OnPropertyChanged();
+            }
+        }
+
         [XmlIgnore] private APTable _apTable = new APTable();
 
         /// <summary>

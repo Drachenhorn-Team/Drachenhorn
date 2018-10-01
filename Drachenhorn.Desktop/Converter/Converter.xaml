@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Drachenhorn.Desktop.Converter">
+    
+    <local:AllowedDaysConverter x:Key="AllowedDaysConverter"/>
+    <local:Base64ImageConverter x:Key="Base64ImageConverter"/>
+    <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
+    <local:BoolToInVisibilityConverter x:Key="BoolToInVisibilityConverter"/>
+    <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <local:DisAdvantageTypeStringConverter x:Key="DisAdvantageTypeStringConverter"/>
+    <local:EnumListStringConverter x:Key="EnumListStringConverter"/>
+    <local:EnumToAbbreviationConverter x:Key="EnumToAbbreviationConverter"/>
+    <local:EnumToStringConverter x:Key="EnumToStringConverter"/>
+    <local:MapTileColorConverter x:Key="MapTileColorConverter"/>
+    <local:ValueTranslationConverter x:Key="ValueTranslationConverter"/>
+    
+</ResourceDictionary>

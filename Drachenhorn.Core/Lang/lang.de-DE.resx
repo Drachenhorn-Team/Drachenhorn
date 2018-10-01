@@ -750,4 +750,16 @@
   <data name="CoatOfArms.New.AreYouSure" xml:space="preserve">
     <value>Wollen sie ein neues Wappen erstellen?\n Das alte wird dabei entfernt.</value>
   </data>
+  <data name="Template.Common" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="Template.GenerationType" xml:space="preserve">
+    <value>Generierungsart</value>
+  </data>
+  <data name="TemplateGenerationType.GenerationPoints" xml:space="preserve">
+    <value>Generationspunkte</value>
+  </data>
+  <data name="TemplateGenerationType.AdventurePoints" xml:space="preserve">
+    <value>Abenteuerpunkte</value>
+  </data>
 </root>
