@@ -53,9 +53,8 @@ namespace Drachenhorn.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            _console.Show();
-
 #if DEBUG
+            _console.Show();
             _console.Visibility = Visibility.Visible;
 #endif
 
@@ -128,7 +127,11 @@ namespace Drachenhorn.Desktop
             {
                 if (args.PropertyName == "ShowConsole")
                     if (settings.ShowConsole == true)
+                    {
+                        if (!Application.Current.Windows.OfType<ConsoleWindow>().Any())
+                            _console.Show();
                         _console.Visibility = Visibility.Visible;
+                    }
                     else
                         _console.Visibility = Visibility.Collapsed;
             };

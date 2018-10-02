@@ -68,6 +68,11 @@
                           IsChecked="{Binding Settings.ShowConsole}" />
             </Grid>
         </TabItem>
+        <TabItem Header="{lang:Translate UI.Properties.OtherContent}" Name="OtherContentTab">
+            <StackPanel>
+                <Button x:Name="DownloadLanguages" Content="{lang:Translate UI.Languages}" Margin="5"/>
+            </StackPanel>
+        </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
             <StackPanel>
                 <Border Margin="5" BorderThickness="2"

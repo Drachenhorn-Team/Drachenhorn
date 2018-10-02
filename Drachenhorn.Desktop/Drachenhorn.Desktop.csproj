@@ -921,8 +921,7 @@
       <Visible>False</Visible>
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
-      <Group>
-      </Group>
+      <Group>de-DE</Group>
       <TargetPath>
       </TargetPath>
       <FileType>Satellite</FileType>

@@ -7,7 +7,7 @@
         Background="Black"
         ResizeMode="NoResize"
         Loaded="ConsoleWindow_OnLoaded"
-        Closing="ConsoleWindow_OnClosing" Visibility="Hidden"
+        Closing="ConsoleWindow_OnClosing"
         Title="Console" Height="500" Width="800">
     <Grid>
         <ScrollViewer Name="ConsoleScroll" Margin="0">
