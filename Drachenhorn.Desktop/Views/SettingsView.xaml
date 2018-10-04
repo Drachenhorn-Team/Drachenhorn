@@ -3,12 +3,12 @@
                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:glob="clr-namespace:Drachenhorn.Core.Lang;assembly=Drachenhorn.Core"
-                     xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
                      xmlns:enum="clr-namespace:Drachenhorn.Core.Settings;assembly=Drachenhorn.Core"
                      xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                      xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
                      xmlns:fluent="urn:fluent-ribbon"
+                     xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib"
                      x:Class="Drachenhorn.Desktop.Views.SettingsView"
                      mc:Ignorable="d" IsIconVisible="False"
                      Title="{lang:Translate UI.Properties}" Height="500" Width="700">
@@ -67,11 +67,6 @@
                 <CheckBox Margin="5" Grid.Column="1" Grid.Row="2"
                           IsChecked="{Binding Settings.ShowConsole}" />
             </Grid>
-        </TabItem>
-        <TabItem Header="{lang:Translate UI.Properties.OtherContent}" Name="OtherContentTab">
-            <StackPanel>
-                <Button x:Name="DownloadLanguages" Content="{lang:Translate UI.Languages}" Margin="5"/>
-            </StackPanel>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
             <StackPanel>
