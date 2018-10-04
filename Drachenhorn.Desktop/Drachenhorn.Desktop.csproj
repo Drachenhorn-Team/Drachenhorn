@@ -26,9 +26,9 @@
     <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/</InstallUrl>
-    <SupportUrl>https://github.com/lightlike/Drachenhorn/wiki</SupportUrl>
-    <ErrorReportUrl>https://github.com/lightlike/Drachenhorn/issues</ErrorReportUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/</InstallUrl>
+    <SupportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/wiki</SupportUrl>
+    <ErrorReportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/issues</ErrorReportUrl>
     <ProductName>Drachenhorn</ProductName>
     <PublisherName>lightlike</PublisherName>
     <SuiteName>DSA</SuiteName>
