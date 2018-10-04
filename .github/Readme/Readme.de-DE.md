@@ -9,7 +9,7 @@ Und so hat das alles angefangen.
 
 ## Download
 
-<a href="https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/setup.exe" download="setup.exe">
+<a href="https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/setup.exe" download="setup.exe">
   <img src="../../img/Black/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
@@ -27,7 +27,7 @@ Der Code für die Verwendung der Charakterbogen-Dateien befindet sich auf NuGet 
 
 ## Support/Bugs
 
-Für Unterstützung bitte ein neues [Issue](https://github.com/lightlike/Drachenhorn/issues) erzeugen.
+Für Unterstützung bitte ein neues [Issue](https://github.com/Drachenhorn-Team/Drachenhorn/issues) erzeugen.
 
 ## Entwickeln
 

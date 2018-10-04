@@ -2,10 +2,10 @@
 <!--<h1 align="center">Drachenhorn Charakterbogen</h1>-->
 
 <p align="center">
-  <a href="https://github.com/lightlike/Drachenhorn/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/Drachenhorn-Team/Drachenhorn/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License">
   </a>
-  <a href="https://github.com/lightlike/Drachenhorn/tree/publish" target="_blank">
+  <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
     <img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg?style=flat-square" alt="Publish">
   </a>
 </p>
@@ -38,7 +38,7 @@ And that is how this all started.
 
 ## Download
 
-<a href="https://raw.githubusercontent.com/lightlike/Drachenhorn/publish/setup.exe" download="setup.exe">
+<a href="https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/setup.exe" download="setup.exe">
   <img src="/img/Black/Common/Download.png" width="40" title="setup.exe"/>
 </a>
 
@@ -56,7 +56,7 @@ The code to read the Character-Sheets (".dsac") and Rule-Templates (".dsat") can
 
 ## Support/Bugs
 
-For any Bug-Reports or Feature-Request please open an [Issue](https://github.com/lightlike/Drachenhorn/issues) containing all needed information.
+For any Bug-Reports or Feature-Request please open an [Issue](https://github.com/Drachenhorn-Team/Drachenhorn/issues) containing all needed information.
 
 ## Development
 
