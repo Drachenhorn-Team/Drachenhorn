@@ -15,6 +15,15 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class Attribute : CalculationValue, IInfoObject, IFormulaKeyItem
     {
+        internal Attribute() : base(null) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Attribute"/> class.
+        /// </summary>
+        /// <param name="sheet">Current Sheet</param>
+        public Attribute(CharacterSheet sheet) : base(sheet) { }
+
+
         [XmlIgnore] private string _key;
 
 

@@ -11,7 +11,7 @@ namespace Drachenhorn.Desktop.Converter.Validation
             if (!(value is string))
                 return new ValidationResult(false, null);
 
-            var formula = new Formula();
+            var formula = new Formula(null);
             formula.Expression = value.ToString();
 
             return new ValidationResult(formula.IsValid, formula.ValidationMessage);

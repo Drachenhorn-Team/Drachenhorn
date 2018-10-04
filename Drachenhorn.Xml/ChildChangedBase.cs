@@ -110,6 +110,14 @@ namespace Drachenhorn.Xml
         /// <param name="args">The <see cref="PropertyChangedEventArgs" /> instance containing the event data.</param>
         private void SelfPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
+            if (args.PropertyName == null)
+            {
+                foreach (var prop in GetType().GetProperties())
+                    SelfPropertyChanged(sender, new PropertyChangedEventArgs(prop.Name));
+
+                return;
+            }
+
             var property = GetType().GetProperty(args.PropertyName).GetValue(this);
 
             if (property is INotifyChildChanged)

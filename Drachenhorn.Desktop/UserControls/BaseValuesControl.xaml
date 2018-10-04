@@ -24,8 +24,8 @@
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" SharedSizeGroup="Name" />
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Modifier" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="StartValue" />
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Modifier" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="CurrentValue" />
             </Grid.ColumnDefinitions>
 
@@ -53,8 +53,8 @@
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" SharedSizeGroup="Name" />
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Modifier" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="StartValue" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Modifier" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="CurrentValue" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="RemoveButton" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="InfoButton" />
@@ -62,10 +62,10 @@
 
                         <TextBlock Text="{Binding Name}"
                                    Margin="5" Grid.Column="0" />
-                        <TextBlock Text="{Binding Modifier}"
+                        <TextBlock Text="{Binding StartValue}"
                                    HorizontalAlignment="Center"
                                    Margin="5" Grid.Column="1" />
-                        <TextBlock Text="{Binding StartValue}"
+                        <TextBlock Text="{Binding Modifier}"
                                    HorizontalAlignment="Center"
                                    Margin="5" Grid.Column="2" />
                         <TextBlock Text="{Binding Value}"

@@ -2,7 +2,11 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using Drachenhorn.Core.ViewModels.Sheet;
+using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.UserControls
@@ -22,7 +26,9 @@ namespace Drachenhorn.Desktop.UserControls
             if (!(List.ItemsSource is IList<Attribute>))
                 return;
 
-            var newItem = new Attribute();
+            var newItem =
+                new Attribute((this.FindParent<CharacterSheetControl>().DataContext as CharacterSheetViewModel)
+                    ?.CurrentSheet);
             new AttributeView(newItem).ShowDialog();
 
             ((IList<Attribute>) List.ItemsSource).Add(newItem);

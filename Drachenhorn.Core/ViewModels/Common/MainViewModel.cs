@@ -52,7 +52,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                 if (_currentSheetViewModel == value)
                     return;
                 _currentSheetViewModel = value;
-                Formula.CurrentSheet = value?.CurrentSheet;
                 RaisePropertyChanged();
             }
         }

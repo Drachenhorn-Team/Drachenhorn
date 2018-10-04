@@ -337,6 +337,9 @@ namespace Drachenhorn.Xml.Sheet
 
             foreach (var baseValue in sheet.BaseValues)
                 baseValue.Formula.ParentSheet = sheet;
+
+            foreach (var attribute in sheet.Attributes)
+                attribute.Formula.ParentSheet = sheet;
         }
 
         /// <summary>

@@ -18,9 +18,18 @@ namespace Drachenhorn.Xml.Calculation
         /// <summary>
         ///     Initializes a new instance of the <see cref="Formula" /> class.
         /// </summary>
-        public Formula()
+        [Obsolete("Only to be used by Xml-Serializer")]
+        internal Formula()
         {
-            ParentSheet = CurrentSheet;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Formula"/> class.
+        /// </summary>
+        /// <param name="parentSheet">The parent sheet.</param>
+        public Formula(CharacterSheet parentSheet)
+        {
+            ParentSheet = parentSheet;
         }
 
         #endregion c'tor
@@ -68,14 +77,6 @@ namespace Drachenhorn.Xml.Calculation
 
         #region Properties
 
-        /// <summary>
-        ///     Gets or sets the current sheet.
-        /// </summary>
-        /// <value>
-        ///     The current sheet.
-        /// </value>
-        public static CharacterSheet CurrentSheet { get; set; }
-
         private CharacterSheet _parentSheet;
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Drachenhorn.Xml.Calculation
                 if (_parentSheet == value)
                     return;
                 _parentSheet = value;
+                OnPropertyChanged(null);
             }
         }
 

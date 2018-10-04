@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Xml.Calculation
 {
@@ -15,13 +16,11 @@ namespace Drachenhorn.Xml.Calculation
         /// <summary>
         ///     Initializes a new instance of the <see cref="CalculationValue" /> class.
         /// </summary>
-        public CalculationValue()
+        public CalculationValue(CharacterSheet sheet)
         {
-            Formula.PropertyChanged += (sender, args) =>
-            {
-                if (args.PropertyName == "Expression")
-                    StartValue = (int) Math.Round(Formula.Calculate());
-            };
+            Formula = new Formula(sheet);
+
+            Formula.PropertyChanged += (sender, args) => { StartValue = (int) Math.Round(Formula.Calculate()); };
 
             Formula.OnCalculateAll += (sender, args) =>
             {
@@ -39,6 +38,10 @@ namespace Drachenhorn.Xml.Calculation
         {
             if (!string.IsNullOrEmpty(Formula.Expression))
                 dictionary.Add("%Info.Formula", Formula.Expression);
+
+            dictionary.Add("%Info.StartValue", StartValue.ToString());
+            dictionary.Add("%Info.Modifier", Modifier.ToString());
+            dictionary.Add("%Info.Value", Value.ToString());
         }
 
         #region Properties
@@ -61,7 +64,7 @@ namespace Drachenhorn.Xml.Calculation
                     return;
                 _startValue = value;
                 OnPropertyChanged();
-                OnPropertyChanged("CurrentValue");
+                OnPropertyChanged("Value");
             }
         }
 
@@ -106,7 +109,7 @@ namespace Drachenhorn.Xml.Calculation
             }
         }
 
-        [XmlIgnore] private Formula _formula = new Formula();
+        [XmlIgnore] private Formula _formula;
 
         /// <summary>
         ///     Gets or sets the formula.
@@ -140,7 +143,7 @@ namespace Drachenhorn.Xml.Calculation
             set
             {
                 if (Formula == null)
-                    Formula = new Formula();
+                    return;
 
                 if (Formula.Expression == value)
                     return;

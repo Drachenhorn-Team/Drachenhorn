@@ -354,6 +354,7 @@
     <Compile Include="UI\Dialogs\ThemeChooseDialog.xaml.cs">
       <DependentUpon>ThemeChooseDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Extensions.cs" />
     <Compile Include="UI\Lang\TranslateTextExtension.cs" />
     <Compile Include="UI\Lang\TranslateExtension.cs" />
     <Compile Include="UI\MVVM\DialogService.cs" />

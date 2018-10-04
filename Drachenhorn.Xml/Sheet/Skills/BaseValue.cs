@@ -15,6 +15,15 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class BaseValue : CalculationValue, IInfoObject, IFormulaKeyItem
     {
+        internal BaseValue() : base(null) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseValue"/> class.
+        /// </summary>
+        /// <param name="sheet">Current Sheet</param>
+        public BaseValue(CharacterSheet sheet) : base(sheet) { }
+
+
         #region InfoObject
 
         /// <inheritdoc />
