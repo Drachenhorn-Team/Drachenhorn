@@ -10,7 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{97542ADA-C7B
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		Drachenhorn.Documentation.shfbproj = Drachenhorn.Documentation.shfbproj
 		LICENSE = LICENSE
-		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.Desktop", "Drachenhorn.Desktop\Drachenhorn.Desktop.csproj", "{0A0D0CBA-8A83-435C-8D44-FB890A70EE2F}"
