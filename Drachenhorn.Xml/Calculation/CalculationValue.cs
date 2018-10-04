@@ -16,7 +16,7 @@ namespace Drachenhorn.Xml.Calculation
         /// <summary>
         ///     Initializes a new instance of the <see cref="CalculationValue" /> class.
         /// </summary>
-        public CalculationValue(CharacterSheet sheet)
+        protected CalculationValue(CharacterSheet sheet)
         {
             Formula = new Formula(sheet);
 
