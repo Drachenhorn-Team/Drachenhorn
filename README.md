@@ -3,37 +3,40 @@
 
 <p align="center">
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/blob/master/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn.svg?style=flat" alt="License">
+    <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn.svg?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
-    <img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg?style=flat" alt="Publish">
+    <img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg?style=flat-square" alt="Publish">
+  </a>
+  <a href="https://gitter.im/Drachenhorn-Team/Drachenhorn" target="_blank">
+    <img src="https://img.shields.io/gitter/room/Drachenhorn-Team/Drachenhorn.svg?style=flat-square" alt="Gitter">
   </a>
 </p>
 
 <p align="center">
   <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
-    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat" alt="Beta-Build">
+    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat-square" alt="Beta-Build">
   </a>
 </p>
 
 <p align="center">
   <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
-    <img src="https://img.shields.io/nuget/v/Drachenhorn.Xml.svg?label=NuGet&style=flat" alt="License">
+    <img src="https://img.shields.io/nuget/v/Drachenhorn.Xml.svg?label=NuGet&style=flat-square" alt="License">
   </a>
   <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
-    <img src="https://img.shields.io/nuget/dt/Drachenhorn.Xml.svg?style=flat" alt="Publish">
+    <img src="https://img.shields.io/nuget/dt/Drachenhorn.Xml.svg?style=flat-square" alt="Publish">
   </a>
 </p>
 
 <p align="center">
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2.svg?label=Beta&style=flat" alt="Beta-Build">
+    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2.svg?label=Beta&style=flat-square" alt="Beta-Build">
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=2&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/5.svg?label=Release&style=flat" alt="Release-Build">
+    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/5.svg?label=Release&style=flat-square" alt="Release-Build">
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=6&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/6.svg?label=NuGet&style=flat" alt="NuGet-Build">
+    <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/6.svg?label=NuGet&style=flat-square" alt="NuGet-Build">
   </a>
 </p>
 
