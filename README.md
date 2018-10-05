@@ -11,6 +11,12 @@
 </p>
 
 <p align="center">
+  <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
+    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat" alt="Beta-Build">
+  </a>
+</p>
+
+<p align="center">
   <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
     <img src="https://img.shields.io/nuget/v/Drachenhorn.Xml.svg?label=NuGet&style=flat" alt="License">
   </a>
@@ -29,12 +35,6 @@
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=6&view=buildsHistory" target="_blank">
     <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/6.svg?label=NuGet&style=flat" alt="NuGet-Build">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
-    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat" alt="Beta-Build">
   </a>
 </p>
 
