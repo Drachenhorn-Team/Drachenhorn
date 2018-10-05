@@ -25,7 +25,6 @@
   </a>
 </p>
 
-<p align="center">Builds</p>
 <p align="center">
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
     <img src="https://img.shields.io/vso/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/2.svg?label=Beta&style=flat" alt="Beta-Build">
