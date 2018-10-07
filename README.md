@@ -8,24 +8,6 @@
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
     <img src="https://img.shields.io/badge/Publish-ClickOnce-lightgrey.svg?style=flat-square" alt="Publish">
   </a>
-  <a href="https://gitter.im/Drachenhorn-Team/Drachenhorn" target="_blank">
-    <img src="https://img.shields.io/gitter/room/Drachenhorn-Team/Drachenhorn.svg?style=flat-square" alt="Gitter">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
-    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat-square" alt="Beta-Build">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
-    <img src="https://img.shields.io/nuget/v/Drachenhorn.Xml.svg?label=NuGet&style=flat-square" alt="License">
-  </a>
-  <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
-    <img src="https://img.shields.io/nuget/dt/Drachenhorn.Xml.svg?style=flat-square" alt="Publish">
-  </a>
 </p>
 
 <p align="center">
@@ -57,6 +39,13 @@ Drachenhorn is a Programm to create "Pen & Paper"-Characters on any Rule-System 
 
 And that is how this all started.
 
+
+<br>
+<a href="https://gitter.im/Drachenhorn-Team/Drachenhorn" target="_blank">
+  <img src="https://img.shields.io/gitter/room/Drachenhorn-Team/Drachenhorn.svg?style=flat-square" alt="Gitter">
+</a>
+<br>
+
 ## Download
 
 <a href="https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/setup.exe" download="setup.exe">
@@ -71,11 +60,25 @@ Select a Rule-System and create the Character using the helper like a simple Ins
 
 The code to read the Character-Sheets (".dsac") and Rule-Templates (".dsat") can be found on NuGet for anybody to use.
 
+<p>
+  <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
+    <img src="https://img.shields.io/nuget/v/Drachenhorn.Xml.svg?label=NuGet&style=flat-square" alt="License">
+  </a>
+  <a href="https://www.nuget.org/packages/Drachenhorn.Xml" target="_blank">
+    <img src="https://img.shields.io/nuget/dt/Drachenhorn.Xml.svg?style=flat-square" alt="Publish">
+  </a>
+</p>
 <a href="https://www.nuget.org/packages/Drachenhorn.Xml/" style="padding: 5">
 	<img src="https://www.nuget.org/Content/gallery/img/default-package-icon.svg" width="30" title="nuget"/>
 </a>
 
 ## Support/Bugs
+
+<p>
+  <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
+    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat-square" alt="Beta-Build">
+  </a>
+</p>
 
 For any Bug-Reports or Feature-Request please open an [Issue](https://github.com/Drachenhorn-Team/Drachenhorn/issues) containing all needed information.
 
