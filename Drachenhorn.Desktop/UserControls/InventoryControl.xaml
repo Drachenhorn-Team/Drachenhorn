@@ -27,6 +27,10 @@
             <TextBlock Text="{lang:Translate CharacterSheet.Type}" Grid.Column="3" />
             <TextBlock Text="{lang:Translate CharacterSheet.Handycap}" Grid.Column="4" />
         </Grid>
+        <WrapPanel DockPanel.Dock="Bottom">
+            <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5"/>
+            <TextBlock Text="{Binding TotalWeight}" Margin="5"/>
+        </WrapPanel>
         <ListBox ItemsSource="{Binding Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

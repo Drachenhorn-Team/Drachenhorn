@@ -47,6 +47,27 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
+        /// <summary>
+        /// Gets the total weight of all items.
+        /// </summary>
+        /// <value>
+        /// The total weight.
+        /// </value>
+        [XmlIgnore]
+        public double TotalWeight
+        {
+            get
+            {
+                var result = 0d;
+                foreach (var item in Items)
+                {
+                    result += item.Weight;
+                }
+
+                return result;
+            }
+        }
+
         #endregion Properties
     }
 }
