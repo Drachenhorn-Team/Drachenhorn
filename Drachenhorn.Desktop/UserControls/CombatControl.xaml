@@ -31,7 +31,7 @@
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
-            <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="True"
+            <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
@@ -61,7 +61,13 @@
             <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
                 <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Header="*" Binding="{Binding IsActive}" />
+                    <DataGridTemplateColumn Header="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsActive}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                         Width="*" />

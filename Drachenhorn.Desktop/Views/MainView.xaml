@@ -91,6 +91,7 @@
             <fluent:RibbonTabItem Header="{lang:Translate UI.Other}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Map}">
                     <fluent:Button Header="{lang:Translate UI.ShowMap}"
+                                   LargeIcon="{DynamicResource MapIcon}"
                                    Command="{Binding ShowMap}"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>

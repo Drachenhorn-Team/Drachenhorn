@@ -39,9 +39,9 @@ namespace Drachenhorn.Xml.Calculation
             if (!string.IsNullOrEmpty(Formula.Expression))
                 dictionary.Add("%Info.Formula", Formula.Expression);
 
-            dictionary.Add("%Info.StartValue", StartValue.ToString());
-            dictionary.Add("%Info.Modifier", Modifier.ToString());
-            dictionary.Add("%Info.Value", Value.ToString());
+            dictionary.Add("%CharacterSheet.StartValue", StartValue.ToString());
+            dictionary.Add("%CharacterSheet.Modifier", Modifier.ToString());
+            dictionary.Add("%CharacterSheet.Value", Value.ToString());
         }
 
         #region Properties

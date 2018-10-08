@@ -13,8 +13,8 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class CombatControl : UserControl
     {
-        private ICollectionView WeaponCollectionView;
-        private ICollectionView ArmorCollectionView;
+        private ICollectionView _weaponCollectionView;
+        private ICollectionView _armorCollectionView;
 
         public CombatControl()
         {
@@ -38,20 +38,20 @@ namespace Drachenhorn.Desktop.UserControls
         {
             if (this.DataContext is Inventory)
             {
-                WeaponCollectionView = new CollectionViewSource() {Source = ((Inventory)this.DataContext).Items}.View;
-                WeaponCollectionView.Filter = w => w is Weapon;
+                _weaponCollectionView = new CollectionViewSource() {Source = ((Inventory)this.DataContext).Items}.View;
+                _weaponCollectionView.Filter = w => w is Weapon;
             }
 
-            WeaponDataGrid.ItemsSource = WeaponCollectionView;
+            WeaponDataGrid.ItemsSource = _weaponCollectionView;
 
 
             if (this.DataContext is Inventory)
             {
-                ArmorCollectionView = new CollectionViewSource() { Source = ((Inventory)this.DataContext).Items }.View;
-                ArmorCollectionView.Filter = w => w is ArmorPart;
+                _armorCollectionView = new CollectionViewSource() { Source = ((Inventory)this.DataContext).Items }.View;
+                _armorCollectionView.Filter = w => w is ArmorPart;
             }
 
-            ArmorDataGrid.ItemsSource = ArmorCollectionView;
+            ArmorDataGrid.ItemsSource = _armorCollectionView;
         }
 
         private void AddWeaponButton_OnClick(object sender, RoutedEventArgs e)

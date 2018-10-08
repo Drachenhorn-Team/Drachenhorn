@@ -34,11 +34,18 @@
                                      IsEnabled="{Binding IsChecked, ElementName=UseOwn}"/>
                     <fluent:Button LargeIcon="{StaticResource PrintIcon}" Header="{lang:Translate UI.Print}" Command="Print"/>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox>
-                    <userElements:LoadingElement Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" Height="50"/>
-                </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
-        <WebBrowser x:Name="Browser"/>
+        <Grid>
+            <WebBrowser x:Name="Browser"/>
+            <Popup IsOpen="{Binding IsLoading}" AllowsTransparency="True" Placement="Center"
+                   Width="{Binding ActualWidth, ElementName=Browser, Mode=OneWay}"
+                   Height="{Binding ActualHeight, ElementName=Browser, Mode=OneWay}"
+                   PlacementTarget="{Binding ElementName=Browser}" Opacity="0.5" Margin="3">
+                <Border Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
+                    <userElements:LoadingElement Height="50"/>
+                </Border>
+            </Popup>
+        </Grid>
     </DockPanel>
 </fluent:RibbonWindow>

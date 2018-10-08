@@ -2,6 +2,7 @@
 using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
+using System.IO.Packaging;
 using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
@@ -84,6 +85,9 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             get
             {
+                DesktopBridge.Helpers helpers = new DesktopBridge.Helpers();
+                if (helpers.IsRunningAsUwp())
+                    return "Version managed by Windows-Store";
                 if (ApplicationDeployment.IsNetworkDeployed)
                     return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
                 return "Application not installed.";

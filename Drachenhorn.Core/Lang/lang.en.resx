@@ -762,4 +762,22 @@
   <data name="TemplateGenerationType.AdventurePoints" xml:space="preserve">
     <value>Adventure-Points</value>
   </data>
+  <data name="UI.Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="UI.Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="UI.ShowMap" xml:space="preserve">
+    <value>Show Map</value>
+  </data>
+  <data name="CharacterSheet.Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Map.Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="Map.Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
 </root>

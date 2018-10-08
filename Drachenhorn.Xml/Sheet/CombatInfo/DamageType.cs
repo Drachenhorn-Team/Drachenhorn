@@ -18,11 +18,6 @@
         /// <summary>
         ///     Ranged Damage.
         /// </summary>
-        Ranged,
-
-        /// <summary>
-        ///     Magic Damage.
-        /// </summary>
-        Magic
+        Ranged
     }
 }

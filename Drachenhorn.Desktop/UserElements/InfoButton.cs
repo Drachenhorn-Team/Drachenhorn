@@ -18,7 +18,7 @@ namespace Drachenhorn.Desktop.UserElements
         {
             base.OnApplyTemplate();
             var button = Template.FindName("PART_InfoButton", this) as Button;
-            if (button != null) button.Click += (s, a) => { new InfoView(InfoObject).Show(); };
+            if (button != null) button.Click += (s, a) => { new InfoView(InfoObject).ShowDialog(); };
         }
 
         #region Properties

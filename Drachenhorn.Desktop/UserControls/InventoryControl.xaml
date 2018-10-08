@@ -40,15 +40,14 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="{Binding Name}" Grid.Column="0" />
-                        <TextBlock Text="{Binding StoragePlace}" Grid.Column="1" />
+                        <TextBox Text="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1" />
                         <TextBlock Text="{Binding Weight}" Grid.Column="2" />
-                        <TextBlock Text="{Binding Type}" Grid.Column="3" />
-                        <TextBlock Text="{Binding Handycap}" Grid.Column="4" />
+                        <TextBlock Text="{Binding Type, Converter={StaticResource EnumToStringConverter}}" Grid.Column="3" />
+                        <TextBlock Text="{Binding Handicap}" Grid.Column="4" />
 
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
     </DockPanel>
 </UserControl>

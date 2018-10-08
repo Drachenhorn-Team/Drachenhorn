@@ -27,6 +27,7 @@
     <BitmapImage x:Key="TemplateIcon" UriSource="pack://application:,,,/Images/Black/Templates.png" />
 
     <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Black/Calculate.png" />
+    <BitmapImage x:Key="MapIcon" UriSource="pack://application:,,,/Images/Black/Map.png" />
 
 
     <BitmapImage x:Key="Loading1" UriSource="pack://application:,,,/Images/Black/Loading/Loading_1.png" />
