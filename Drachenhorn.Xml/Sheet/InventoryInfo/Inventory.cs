@@ -60,9 +60,7 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             {
                 var result = 0d;
                 foreach (var item in Items)
-                {
                     result += item.Weight;
-                }
 
                 return result;
             }
