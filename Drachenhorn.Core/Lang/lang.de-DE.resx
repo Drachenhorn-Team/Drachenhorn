@@ -780,4 +780,7 @@
   <data name="Map.Generate" xml:space="preserve">
     <value>Erstellen</value>
   </data>
+  <data name="CharacterSheet.TotalWeight" xml:space="preserve">
+    <value>Gesamtgewicht</value>
+  </data>
 </root>
