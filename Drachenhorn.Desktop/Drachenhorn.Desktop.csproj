@@ -840,6 +840,9 @@
     <Resource Include="..\img\White\Map.png">
       <Link>Images\White\Map.png</Link>
     </Resource>
+    <Resource Include="..\img\Icons\WindowIcon.png">
+      <Link>Images\Common\WindowIcon.png</Link>
+    </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

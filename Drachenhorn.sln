@@ -150,11 +150,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{C33A6F64-25C3-436D-A81D-26F751955FDA}"
 	ProjectSection(SolutionItems) = preProject
 		img\Icons\AppIcon.ico = img\Icons\AppIcon.ico
+		img\Icons\ColoredIcon600x600.png = img\Icons\ColoredIcon600x600.png
+		img\Icons\ColoredIcon64x64.png = img\Icons\ColoredIcon64x64.png
+		img\Icons\Drachenhorn.ico = img\Icons\Drachenhorn.ico
 		img\Icons\Drachenhorn.png = img\Icons\Drachenhorn.png
 		img\Icons\Icon600x600.png = img\Icons\Icon600x600.png
 		img\Icons\Icon64x64.png = img\Icons\Icon64x64.png
 		img\Icons\Sheet.png = img\Icons\Sheet.png
 		img\Icons\Template.png = img\Icons\Template.png
+		img\Icons\WindowIcon.png = img\Icons\WindowIcon.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{43F2B957-DC58-4291-819C-8FA7D2057D96}"
