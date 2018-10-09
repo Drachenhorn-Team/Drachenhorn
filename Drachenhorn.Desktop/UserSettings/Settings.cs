@@ -183,7 +183,7 @@ namespace Drachenhorn.Desktop.UserSettings
                     temp.IsNew = false;
 
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
-                        .Info("Finished loading Settings.");
+                        .Debug("Finished loading Settings.");
 
                     return temp;
                 }
