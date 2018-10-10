@@ -4,6 +4,7 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                     xmlns:fluent="urn:fluent-ribbon"
+                    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
                     mc:Ignorable="d">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Images/Common.xaml" />
@@ -186,6 +187,17 @@
            BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Background" Value="{StaticResource SeperatorBrush}" />
+    </Style>
+    
+    <Style TargetType="controls:AutoCompleteBox">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
     </Style>
 
     <Style TargetType="{x:Type TabControl}">

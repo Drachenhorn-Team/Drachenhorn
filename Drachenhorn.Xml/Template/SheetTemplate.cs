@@ -182,21 +182,6 @@ namespace Drachenhorn.Xml.Template
         #region Save/Load
 
         /// <summary>
-        ///     Gets the Template BaseDirectory.
-        /// </summary>
-        /// <value>
-        ///     The Template BaseDirectory.
-        /// </value>
-        public static string BaseDirectory => System.IO.Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Drachenhorn", "Templates");
-
-        /// <summary>
-        ///     The Template Extension
-        /// </summary>
-        public static readonly string Extension = ".dsat";
-
-        /// <summary>
         ///     Loads a CharacterSheet from a selected path.
         /// </summary>
         /// <param name="path">Path to the Template File</param>
@@ -220,6 +205,9 @@ namespace Drachenhorn.Xml.Template
         /// <returns><c>True</c> if successful, otherwise <c>False</c></returns>
         public bool Save()
         {
+            if (string.IsNullOrEmpty(Path))
+                Path = System.IO.Path.Combine(BaseDirectory, Name + Extension);
+
             return Save(Path);
         }
 

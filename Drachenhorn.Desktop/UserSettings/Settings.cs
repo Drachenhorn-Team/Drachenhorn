@@ -142,7 +142,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
         [XmlIgnore] private TemplateMetadata _currentTemplate;
 
-        [XmlIgnore]
+        [XmlElement("CurrentTemplate")]
         public TemplateMetadata CurrentTemplate
         {
             get => _currentTemplate;

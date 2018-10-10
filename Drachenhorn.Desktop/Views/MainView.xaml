@@ -80,10 +80,19 @@
 
             <fluent:RibbonTabItem Header="{lang:Translate UI.Templates}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Templates}">
-                    <fluent:ComboBox Header="{lang:Translate UI.SelectedTemplate}"
-                                     Icon="{DynamicResource TemplateIcon}"
-                                     Name="TemplateComboBox"
-                                     SelectedItem="{Binding CurrentTemplate}"/>
+                    <fluent:InRibbonGallery Name="TemplateGallery"
+                                            MinItemsInRow="3" MaxItemsInRow="4"
+                                            ItemWidth="60" ItemHeight="56"
+                                            SelectedItem="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=DataContext.CurrentTemplate}">
+                        <fluent:InRibbonGallery.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Name}"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Version}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </fluent:InRibbonGallery.ItemTemplate>
+                    </fluent:InRibbonGallery>
                     <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
                                    LargeIcon="{DynamicResource TemplateIcon}"
                                    Command="{Binding OpenTemplates}" />

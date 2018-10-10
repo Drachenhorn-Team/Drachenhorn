@@ -26,7 +26,7 @@ namespace Drachenhorn.UnitTest
                 {
                     Name = "test",
                     Race = new RaceInformation {Name = "testRace"},
-                    Culture = new CultureInformation {Name = "testCulture", Specification = "test"},
+                    Culture = new CultureInformation {Name = "testCulture", Description = "test"},
                     Profession = new ProfessionInformation {Name = "testProfession"}
                 }
             };

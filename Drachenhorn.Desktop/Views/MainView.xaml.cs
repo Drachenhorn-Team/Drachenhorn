@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Common;
@@ -22,6 +23,8 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class MainView : RibbonWindow
     {
+        private MainViewModel Model => DataContext is MainViewModel model ? model : null;
+
         public MainView(string path)
         {
             InitializeComponent();
@@ -31,8 +34,9 @@ namespace Drachenhorn.Desktop.Views
             if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) =>
             {
                 OpenFile(path);
-                TemplateComboBox.ItemsSource = SheetTemplate.AvailableTemplates;
             };
+
+            TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
 
@@ -76,6 +80,7 @@ namespace Drachenhorn.Desktop.Views
             else if (message.Notification == "ShowOpenTemplates")
             {
                 new TemplateSelectorDialog().ShowDialog();
+                TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
             }
             else if (message.Notification == "ShowMap")
             {
@@ -85,9 +90,9 @@ namespace Drachenhorn.Desktop.Views
 
         private void MainView_OnClosing(object sender, CancelEventArgs e)
         {
-            if (!(DataContext is MainViewModel model)) return;
+            if (Model == null) return;
 
-            if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
+            if (!Model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
             var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 LanguageManager.Translate("UI.SouldCloseBunch"),

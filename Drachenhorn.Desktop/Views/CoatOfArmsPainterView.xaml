@@ -9,7 +9,7 @@
                      mc:Ignorable="d" ResizeMode="CanMinimize" IsIconVisible="False"
                      Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
     <Window.Resources>
-        <ResourceDictionary Source="../UI/Themes/WhiteTheme.xaml" />
+        <ResourceDictionary Source="../UI/Themes/LightTheme.xaml" />
     </Window.Resources>
 
     <DockPanel>

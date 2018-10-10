@@ -18,7 +18,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore] private string _name;
 
-        [XmlIgnore] private string _specification;
+        [XmlIgnore] private string _description;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -45,15 +45,15 @@ namespace Drachenhorn.Xml.Sheet.Common
         /// <value>
         ///     The specification.
         /// </value>
-        [XmlAttribute("Specification")]
-        public string Specification
+        [XmlAttribute("Description")]
+        public string Description
         {
-            get => _specification;
+            get => _description;
             set
             {
-                if (_specification == value)
+                if (_description == value)
                     return;
-                _specification = value;
+                _description = value;
                 OnPropertyChanged();
             }
         }
@@ -83,13 +83,20 @@ namespace Drachenhorn.Xml.Sheet.Common
             var result = new Dictionary<string, string>();
 
             if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
 
             var baseValues = "";
             foreach (var baseValue in BaseValues) baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
-            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues);
+            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
 
 
             return result;
+        }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

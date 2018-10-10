@@ -80,8 +80,8 @@ namespace Drachenhorn.Desktop
 
                 var temp = new Uri(item).LocalPath;
                 if (temp.EndsWith(CharacterSheet.Extension)
-                    || temp.EndsWith(SheetTemplate.Extension)
-                    && !temp.StartsWith(SheetTemplate.BaseDirectory))
+                    || temp.EndsWith(TemplateMetadata.Extension)
+                    && !temp.StartsWith(TemplateMetadata.BaseDirectory))
                 {
                     filePath = temp;
                     break;

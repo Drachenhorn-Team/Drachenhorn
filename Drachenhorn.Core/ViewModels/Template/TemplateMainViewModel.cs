@@ -51,7 +51,7 @@ namespace Drachenhorn.Core.ViewModels.Template
 
         private void ExecuteExport()
         {
-            SimpleIoc.Default.GetInstance<IIoService>().SaveAs(Template, Template.Name, SheetTemplate.Extension,
+            SimpleIoc.Default.GetInstance<IIoService>().SaveAs(Template, Template.Name, TemplateMetadata.Extension,
                 "Drachenhorn Template", LanguageManager.Translate("UI.Export"));
         }
 

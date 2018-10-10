@@ -50,6 +50,8 @@ namespace Drachenhorn.Xml.Calculation
 
             // Adding All Parameters
             AddParameterList(ref e, ParentSheet?.Attributes);
+            AddParameterList(ref e, ParentSheet?.Characteristics.Race.BaseValues);
+            AddParameterList(ref e, ParentSheet?.Characteristics.Culture.BaseValues);
 
             try
             {
@@ -179,7 +181,15 @@ namespace Drachenhorn.Xml.Calculation
             if (expression == null || string.IsNullOrEmpty(item?.Key))
                 return;
 
-            expression.Parameters[item.Key] = item.Value;
+            if (expression.Parameters.ContainsKey(item.Key))
+            {
+                var temp = expression.Parameters[item.Key] as int?;
+
+                if (temp != null)
+                    expression.Parameters[item.Key] = temp + item.Value;
+            }
+            else
+                expression.Parameters[item.Key] = item.Value;
         }
 
         /// <summary>

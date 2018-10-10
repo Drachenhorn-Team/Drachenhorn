@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -10,8 +11,23 @@ namespace Drachenhorn.Xml.Template
     ///     Basic Metadata for Template
     /// </summary>
     [Serializable]
-    public class TemplateMetadata : ChildChangedBase
+    public class TemplateMetadata : ChildChangedBase, IEquatable<TemplateMetadata>
     {
+        /// <summary>
+        ///     Gets the Template BaseDirectory.
+        /// </summary>
+        /// <value>
+        ///     The Template BaseDirectory.
+        /// </value>
+        public static string BaseDirectory => System.IO.Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "Drachenhorn", "Templates");
+
+        /// <summary>
+        ///     The Template Extension
+        /// </summary>
+        public static readonly string Extension = ".dsat";
+
         #region Properties
 
         [XmlIgnore] private double _version;
@@ -69,26 +85,6 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        [XmlIgnore] private SheetTemplate _completeTemplate;
-
-        /// <summary>
-        /// Gets the complete template.
-        /// </summary>
-        /// <value>
-        /// The complete template.
-        /// </value>
-        [XmlIgnore]
-        public SheetTemplate CompleteTemplate
-        {
-            get
-            {
-                if (_completeTemplate == null && !string.IsNullOrEmpty(Path))
-                    _completeTemplate = SheetTemplate.Load(Path);
-
-                return _completeTemplate;
-            }
-        }
-
         #endregion Properties
 
 
@@ -134,7 +130,7 @@ namespace Drachenhorn.Xml.Template
         /// <param name="line">Second line of the XML.</param>
         protected void SetVersionAndNameFromXmlLine(string line)
         {
-            var versionMatch = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(line).Value;
+            var versionMatch = new Regex("Version=\"[0-9]+[.]?[0-9]*\"").Match(line).Value;
 
             if (!string.IsNullOrEmpty(versionMatch))
                 Version = double.Parse(versionMatch.Substring(9, versionMatch.Length - 10), CultureInfo.InvariantCulture);
@@ -155,6 +151,15 @@ namespace Drachenhorn.Xml.Template
             return obj is TemplateMetadata metadata && this.Equals(metadata);
         }
 
+        /// <inheritdoc />
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Version.GetHashCode() * 397) ^ (Name != null ? Name.GetHashCode() : 0);
+            }
+        }
+
         /// <summary>
         /// Checks if objects are Equal.
         /// </summary>
@@ -162,7 +167,38 @@ namespace Drachenhorn.Xml.Template
         /// <returns>True if Equal</returns>
         public bool Equals(TemplateMetadata obj)
         {
-            return this.Path == obj.Path && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+            if (obj == null) return false;
+
+            return this.Name == obj.Name && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+        }
+
+        /// <summary>
+        /// Implements the operator ==.
+        /// </summary>
+        /// <param name="lhs">The LHS.</param>
+        /// <param name="rhs">The RHS.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static bool operator ==(TemplateMetadata lhs, TemplateMetadata rhs)
+        {
+            if ((object)lhs == null)
+                return ((object)rhs == null);
+
+            return lhs.Equals(rhs);
+        }
+
+        /// <summary>
+        /// Implements the operator !=.
+        /// </summary>
+        /// <param name="lhs">The LHS.</param>
+        /// <param name="rhs">The RHS.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static bool operator !=(TemplateMetadata lhs, TemplateMetadata rhs)
+        {
+            return !(rhs == lhs);
         }
 
         #endregion Equals

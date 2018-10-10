@@ -38,9 +38,9 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             YesButton.Click += (sender, args) =>
             {
                 var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateImportDialog>();
-                logger.Info("Copying " + file.FullName + " to " + SheetTemplate.BaseDirectory);
+                logger.Info("Copying " + file.FullName + " to " + TemplateMetadata.BaseDirectory);
 
-                file.CopyTo(Path.Combine(SheetTemplate.BaseDirectory, fileName), true);
+                file.CopyTo(Path.Combine(TemplateMetadata.BaseDirectory, fileName), true);
                 Close();
             };
         }

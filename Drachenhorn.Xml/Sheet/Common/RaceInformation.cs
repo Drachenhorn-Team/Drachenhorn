@@ -88,7 +88,7 @@ namespace Drachenhorn.Xml.Sheet.Common
 
             var baseValues = "";
             foreach (var baseValue in BaseValues) baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
-            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues);
+            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
 
 
             return result;

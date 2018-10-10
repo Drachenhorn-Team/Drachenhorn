@@ -1,11 +1,15 @@
-﻿using Drachenhorn.Xml.Data.AP;
+﻿using System.Collections.ObjectModel;
+using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Objects;
+using Drachenhorn.Xml.Sheet;
+using Drachenhorn.Xml.Sheet.Common;
+using Drachenhorn.Xml.Sheet.Skills;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Drachenhorn.UnitTest
 {
     [TestClass]
-    public class FileReaderTest
+    public class XmlTest
     {
         [TestMethod]
         public void DSADateFormatTest()
@@ -41,6 +45,22 @@ namespace Drachenhorn.UnitTest
             table["A"].Add(10);
 
             Assert.AreEqual(table.Calculate("A", -2, 9), (uint) 66);
+        }
+
+        [TestMethod]
+        public void FormulaCalculationTest()
+        {
+            var sheet = new CharacterSheet();
+
+            var values = new ObservableCollection<BonusValue>();
+            values.Add(new BonusValue(){Key = "CHB", Value = 2});
+            values.Add(new BonusValue(){Key = "KKB", Value = 2});
+
+            sheet.Characteristics.Race = new RaceInformation() {BaseValues = values};
+
+            sheet.Attributes.Add(new Attribute(sheet) {FormulaText = "[CHB] + 4"});
+
+            Assert.AreEqual(sheet.Attributes[0].Value, 6);
         }
     }
 }

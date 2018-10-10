@@ -30,7 +30,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         {
             var view = new TemplateMainView(new SheetTemplate());
 
-            view.Show();
+            view.ShowDialog();
 
             Close();
         }
@@ -44,7 +44,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             var view = new TemplateMainView(SheetTemplate.Load(data?.Path));
 
-            view.Show();
+            view.ShowDialog();
 
             Close();
         }
@@ -64,7 +64,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             var data = ((Button) sender).DataContext as TemplateMetadata;
 
-            File.Delete(Path.Combine(SheetTemplate.BaseDirectory, data?.Name + SheetTemplate.Extension));
+            File.Delete(Path.Combine(TemplateMetadata.BaseDirectory, data?.Name + TemplateMetadata.Extension));
 
             Selector_OnSelectionChanged(sender, null);
         }

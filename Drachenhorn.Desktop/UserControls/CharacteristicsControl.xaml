@@ -78,10 +78,10 @@
                    Grid.Column="0" Grid.Row="3" />
         <DockPanel Grid.Column="1" Grid.Row="3">
             <userElements:InfoButton InfoObject="{Binding Race}" DockPanel.Dock="Right" />
-            <controls:AutoCompleteBox SelectedItem="{Binding Race}"
-                                      ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CurrentTemplate.Races}"
-                                      VerticalAlignment="Center"
-                                      Name="CompleteBox"/>
+            <controls:AutoCompleteBox SelectedItem="{Binding Race, Mode=TwoWay}"
+                                      ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
+                                                    Path=DataContext.CurrentCompleteTemplate.Races}"
+                                      VerticalAlignment="Center"/>
             <!--<TextBox Text="{Binding Race.Name}" />-->
         </DockPanel>
 
@@ -109,7 +109,10 @@
                    Grid.Column="0" Grid.Row="5" />
         <DockPanel Grid.Column="1" Grid.Row="5">
             <userElements:InfoButton InfoObject="{Binding Culture}" DockPanel.Dock="Right" />
-            <TextBox Text="{Binding Culture.Name}" />
+            <controls:AutoCompleteBox SelectedItem="{Binding Culture, Mode=TwoWay}"
+                                      ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
+                                                    Path=DataContext.CurrentCompleteTemplate.Cultures}"
+                                      VerticalAlignment="Center"/>
         </DockPanel>
 
         <TextBlock Text="{lang:Translate Characteristics.Profession}"

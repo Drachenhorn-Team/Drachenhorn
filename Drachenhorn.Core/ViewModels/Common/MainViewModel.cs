@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
@@ -67,6 +68,21 @@ namespace Drachenhorn.Core.ViewModels.Common
                     return;
                 SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        private SheetTemplate _currentCompleteTemplate;
+        public SheetTemplate CurrentCompleteTemplate
+        {
+            get
+            {
+                if (_currentCompleteTemplate == null)
+                {
+                    var temp = SheetTemplate.AvailableTemplates.FirstOrDefault(CurrentTemplate.Equals);
+                    if (temp != null) _currentCompleteTemplate = SheetTemplate.Load(temp.Path);
+                }
+
+                return _currentCompleteTemplate;
             }
         }
 
