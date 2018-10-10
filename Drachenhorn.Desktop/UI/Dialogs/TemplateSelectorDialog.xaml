@@ -87,15 +87,17 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <Border Background="{StaticResource BackgroundBrush}"
-                        Margin="5" BorderBrush="{StaticResource BorderBrush}"
-                        Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
-                    <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
-                               Style="{StaticResource MorpheusTextStyle}"
-                               HorizontalAlignment="Center" />
-                </Border>
-                <userElements:LoadingElement Height="50"
-                                             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" />
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <userElements:LoadingElement Height="50"
+                                                 Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    <Border Background="{StaticResource BackgroundBrush}"
+                            Margin="5" BorderBrush="{StaticResource BorderBrush}"
+                            Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
+                        <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
+                                   Style="{StaticResource MorpheusTextStyle}"
+                                   HorizontalAlignment="Center" />
+                    </Border>
+                </StackPanel>
             </Grid>
         </TabItem>
     </TabControl>

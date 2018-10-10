@@ -59,14 +59,7 @@ namespace Drachenhorn.Xml.Template
                     if (!file.EndsWith(Extension))
                         continue;
 
-                    using (var sr = new StreamReader(File.OpenRead(file)))
-                    {
-                        sr.ReadLine();
-
-                        result.Add(new TemplateMetadata(
-                            new FileInfo(file).Name.Replace(Extension, ""),
-                            sr.ReadLine()));
-                    }
+                    result.Add(new TemplateMetadata(file));
                 }
 
                 return result;
@@ -194,7 +187,7 @@ namespace Drachenhorn.Xml.Template
         /// <value>
         ///     The Template BaseDirectory.
         /// </value>
-        public static string BaseDirectory => Path.Combine(
+        public static string BaseDirectory => System.IO.Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
             "Drachenhorn", "Templates");
 
@@ -204,37 +197,17 @@ namespace Drachenhorn.Xml.Template
         public static readonly string Extension = ".dsat";
 
         /// <summary>
-        ///     Gets the Current Template FilePath.
-        /// </summary>
-        /// <value>
-        ///     The Current Template FilePath.
-        /// </value>
-        [XmlIgnore]
-        public string FilePath
-        {
-            get => Path.Combine(BaseDirectory, Name + Extension);
-            private set
-            {
-                if (value.StartsWith(BaseDirectory))
-                    Name = value.Replace(BaseDirectory, "").Replace("\\", "").Replace(Extension, "");
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
         ///     Loads a CharacterSheet from a selected path.
         /// </summary>
-        /// <param name="fileName">Name of Template File</param>
+        /// <param name="path">Path to the Template File</param>
         /// <returns>Loaded CharacterSheet</returns>
-        public static SheetTemplate Load(string fileName)
+        public static SheetTemplate Load(string path)
         {
-            var path = Path.Combine(BaseDirectory, fileName + Extension);
-
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 var serializer = new XmlSerializer(typeof(SheetTemplate));
                 var temp = (SheetTemplate) serializer.Deserialize(stream);
-                temp.FilePath = path;
+                temp.Path = path;
                 temp.HasChanged = false;
 
                 return temp;
@@ -247,7 +220,7 @@ namespace Drachenhorn.Xml.Template
         /// <returns><c>True</c> if successful, otherwise <c>False</c></returns>
         public bool Save()
         {
-            return Save(FilePath);
+            return Save(Path);
         }
 
         /// <summary>

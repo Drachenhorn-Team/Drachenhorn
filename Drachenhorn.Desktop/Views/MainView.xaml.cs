@@ -8,6 +8,7 @@ using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Xml.Sheet;
+using Drachenhorn.Xml.Template;
 using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
@@ -27,7 +28,11 @@ namespace Drachenhorn.Desktop.Views
 
             //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
 
-            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) => OpenFile(path);
+            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) =>
+            {
+                OpenFile(path);
+                TemplateComboBox.ItemsSource = SheetTemplate.AvailableTemplates;
+            };
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
 
@@ -42,9 +47,8 @@ namespace Drachenhorn.Desktop.Views
         {
             var temp = new Uri(path).LocalPath;
             if (temp.EndsWith(CharacterSheet.Extension))
-                if (DataContext is MainViewModel)
+                if (DataContext is MainViewModel model)
                 {
-                    var model = (MainViewModel) DataContext;
                     var sheetModel = new CharacterSheetViewModel(CharacterSheet.Load(path));
                     model.CharacterSheetViewModels.Add(sheetModel);
                     model.CurrentSheetViewModel = sheetModel;
@@ -62,10 +66,8 @@ namespace Drachenhorn.Desktop.Views
             }
             else if (message.Notification == "ShowPrintView")
             {
-                if (DataContext is MainViewModel)
+                if (DataContext is MainViewModel model)
                 {
-                    var model = (MainViewModel) DataContext;
-
                     if (model.CurrentSheetViewModel == null) return;
 
                     new PrintView(model.CurrentSheetViewModel.CurrentSheet).ShowDialog();
@@ -83,21 +85,18 @@ namespace Drachenhorn.Desktop.Views
 
         private void MainView_OnClosing(object sender, CancelEventArgs e)
         {
-            if (DataContext is MainViewModel)
-            {
-                var model = (MainViewModel) DataContext;
+            if (!(DataContext is MainViewModel model)) return;
 
-                if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
+            if (!model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
-                var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("UI.SouldCloseBunch"),
-                    LanguageManager.Translate("UI.SouldCloseBunch.Caption"),
-                    LanguageManager.Translate("UI.Yes"),
-                    LanguageManager.Translate("UI.No"), null);
+            var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                LanguageManager.Translate("UI.SouldCloseBunch"),
+                LanguageManager.Translate("UI.SouldCloseBunch.Caption"),
+                LanguageManager.Translate("UI.Yes"),
+                LanguageManager.Translate("UI.No"), null);
 
-                if (!task.Result)
-                    e.Cancel = true;
-            }
+            if (!task.Result)
+                e.Cancel = true;
         }
     }
 }

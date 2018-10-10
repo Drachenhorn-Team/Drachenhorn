@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -47,7 +48,15 @@ namespace Drachenhorn.Core.Downloader
 
                 if (result != null)
                     foreach (var line in lines)
-                        result.Add(new OnlineTemplate(line));
+                        try
+                        {
+                            result.Add(new OnlineTemplate(line));
+                        }
+                        catch (InvalidOperationException e)
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
+                                .Warn("Unable to read online Link.", e);
+                        }
 
                 IsLoading = false;
 
@@ -98,8 +107,10 @@ namespace Drachenhorn.Core.Downloader
                     Task.Run(() =>
                     {
                         var templates = LoadTemplatesAsync().Result;
-                        IsConnectionSuccessful = templates != null;
-                        Templates = templates;
+                        IsConnectionSuccessful = templates != null && templates.Count > 0;
+
+                        if (IsConnectionSuccessful)
+                            Templates = templates;
                     });
                 return _templates;
             }

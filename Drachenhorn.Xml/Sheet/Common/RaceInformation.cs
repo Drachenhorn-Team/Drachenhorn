@@ -93,5 +93,11 @@ namespace Drachenhorn.Xml.Sheet.Common
 
             return result;
         }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

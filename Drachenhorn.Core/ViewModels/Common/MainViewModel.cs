@@ -3,9 +3,11 @@ using System.Collections.ObjectModel;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
+using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Exceptions;
+using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
@@ -52,6 +54,18 @@ namespace Drachenhorn.Core.ViewModels.Common
                 if (_currentSheetViewModel == value)
                     return;
                 _currentSheetViewModel = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public TemplateMetadata CurrentTemplate
+        {
+            get => SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate;
+            set
+            {
+                if (SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate == value)
+                    return;
+                SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = value;
                 RaisePropertyChanged();
             }
         }

@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Xml.Template;
@@ -14,35 +16,25 @@ namespace Drachenhorn.Core.Downloader
     {
         #region c'tor
 
-        public OnlineTemplate(string line)
+        public OnlineTemplate(string link)
         {
-            var split = line.Split(' ');
-
-            if (split.Length < 2)
-                return;
-
-            Link = split[0];
+            Link = link;
 
             try
             {
-                using (var sr = new StreamReader(new WebClient().OpenRead(Link)))
+                using (var sr = new StreamReader(new WebClient().OpenRead(link)))
                 {
                     sr.ReadLine();
                     var secondLine = sr.ReadLine();
 
                     if (!string.IsNullOrEmpty(secondLine))
-                        SetVersionFromXMLLine(secondLine);
+                        SetVersionAndNameFromXmlLine(secondLine);
                 }
             }
             catch (WebException e)
             {
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger<OnlineTemplate>().Warn("Template not found.", e);
             }
-
-            for (var i = 1; i < split.Length; ++i)
-                Name += split[i] + " ";
-
-            Name = Name.Remove(Name.Length - 1);
         }
 
         #endregion c'tor
@@ -56,12 +48,19 @@ namespace Drachenhorn.Core.Downloader
             {
                 var webClient = new WebClient();
                 webClient.DownloadProgressChanged += (sender, args) => { Progress = args.ProgressPercentage; };
-                var result = await webClient.DownloadStringTaskAsync(new Uri(Link));
+
+                //await webClient.DownloadStringTaskAsync(Link);
+                //var contentType = webClient.ResponseHeaders["Content-Type"];
+                //var charset = Regex.Match(contentType, "charset=([^;]+)").Groups[1].Value;
+
+                //webClient.Encoding = Encoding.GetEncoding(charset);
+                webClient.Encoding = Encoding.UTF8;
+                var result = await webClient.DownloadStringTaskAsync(Link);
 
 
                 SimpleIoc.Default.GetInstance<IIoService>()
                     .SaveString(
-                        Path.Combine(
+                        System.IO.Path.Combine(
                             SheetTemplate.BaseDirectory,
                             Name + SheetTemplate.Extension),
                         result);

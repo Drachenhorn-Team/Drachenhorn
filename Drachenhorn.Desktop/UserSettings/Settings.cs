@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Xml;
+using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
@@ -135,6 +136,21 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (_showConsole == value)
                     return;
                 _showConsole = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private TemplateMetadata _currentTemplate;
+
+        [XmlIgnore]
+        public TemplateMetadata CurrentTemplate
+        {
+            get => _currentTemplate;
+            set
+            {
+                if (_currentTemplate == value)
+                    return;
+                _currentTemplate = value;
                 OnPropertyChanged();
             }
         }

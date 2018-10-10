@@ -42,7 +42,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             var data = ((Button) sender).DataContext as TemplateMetadata;
 
-            var view = new TemplateMainView(SheetTemplate.Load(data?.Name));
+            var view = new TemplateMainView(SheetTemplate.Load(data?.Path));
 
             view.Show();
 

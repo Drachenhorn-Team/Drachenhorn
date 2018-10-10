@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -31,15 +32,31 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        [XmlIgnore] private string _name;
+        [XmlIgnore] private string _path;
+        /// <summary>
+        ///     Path of the Template
+        /// </summary>
+        [XmlIgnore]
+        public string Path
+        {
+            get => _path;
+            set
+            {
+                if (_path == value)
+                    return;
+                _path = value;
+                OnPropertyChanged();
+            }
+        }
 
+        [XmlIgnore] private string _name;
         /// <summary>
         ///     Gets or sets the name of the file.
         /// </summary>
         /// <value>
         ///     The name of the file.
         /// </value>
-        [XmlIgnore]
+        [XmlAttribute("Name")]
         public string Name
         {
             get => _name;
@@ -49,6 +66,26 @@ namespace Drachenhorn.Xml.Template
                     return;
                 _name = value;
                 OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private SheetTemplate _completeTemplate;
+
+        /// <summary>
+        /// Gets the complete template.
+        /// </summary>
+        /// <value>
+        /// The complete template.
+        /// </value>
+        [XmlIgnore]
+        public SheetTemplate CompleteTemplate
+        {
+            get
+            {
+                if (_completeTemplate == null && !string.IsNullOrEmpty(Path))
+                    _completeTemplate = SheetTemplate.Load(Path);
+
+                return _completeTemplate;
             }
         }
 
@@ -62,12 +99,13 @@ namespace Drachenhorn.Xml.Template
         /// </summary>
         protected TemplateMetadata()
         {
+            Name = "unnamed";
         }
 
         /// <summary>
         ///     Basic constructor.
         /// </summary>
-        /// <param name="name">Name of the File.</param>
+        /// <param name="name">Path of the File.</param>
         /// <param name="version">Version of the Template.</param>
         public TemplateMetadata(string name, double version)
         {
@@ -78,26 +116,55 @@ namespace Drachenhorn.Xml.Template
         /// <summary>
         ///     Basic constructor.
         /// </summary>
-        /// <param name="name">Name of the File.</param>
-        /// <param name="versionLine">Line containing the Version of the Template. (second line of XML)</param>
-        public TemplateMetadata(string name, string versionLine)
+        /// <param name="path">Path of the File.</param>
+        public TemplateMetadata(string path)
         {
-            Name = name;
-            SetVersionFromXMLLine(versionLine);
+            Path = path;
+
+            using (var sr = new StreamReader(File.OpenRead(path)))
+            {
+                sr.ReadLine();
+                SetVersionAndNameFromXmlLine(sr.ReadLine());
+            }
         }
 
         /// <summary>
         ///     Sets Version based on the second line of the XML-File
         /// </summary>
         /// <param name="line">Second line of the XML.</param>
-        protected void SetVersionFromXMLLine(string line)
+        protected void SetVersionAndNameFromXmlLine(string line)
         {
-            var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(line).Value;
+            var versionMatch = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(line).Value;
 
-            if (!string.IsNullOrEmpty(match))
-                Version = double.Parse(match.Substring(9, match.Length - 10), CultureInfo.InvariantCulture);
+            if (!string.IsNullOrEmpty(versionMatch))
+                Version = double.Parse(versionMatch.Substring(9, versionMatch.Length - 10), CultureInfo.InvariantCulture);
+
+            var nameMatch = new Regex("Name=\"[^\"]*\"").Match(line).Value;
+
+            Name = !string.IsNullOrEmpty(nameMatch) ? nameMatch.Substring(6, nameMatch.Length - 7) : "unnamed";
         }
 
         #endregion c'tor
+
+
+        #region Equals
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+        {
+            return obj is TemplateMetadata metadata && this.Equals(metadata);
+        }
+
+        /// <summary>
+        /// Checks if objects are Equal.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>True if Equal</returns>
+        public bool Equals(TemplateMetadata obj)
+        {
+            return this.Path == obj.Path && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+        }
+
+        #endregion Equals
     }
 }

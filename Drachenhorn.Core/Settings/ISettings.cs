@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Core.Settings
 {
@@ -13,5 +14,7 @@ namespace Drachenhorn.Core.Settings
         VisualThemeType VisualTheme { get; set; }
 
         bool? ShowConsole { get; set; }
+
+        TemplateMetadata CurrentTemplate { get; set; }
     }
 }

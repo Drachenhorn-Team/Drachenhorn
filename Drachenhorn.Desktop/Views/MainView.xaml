@@ -11,7 +11,8 @@
                      mc:Ignorable="d"
                      WindowState="Maximized"
                      Closing="MainView_OnClosing"
-                     Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100">
+                     Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100"
+                     DataContext="{Binding Path=MainView, Source={StaticResource Locator}}">
     <Window.Resources>
         <ResourceDictionary>
             <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
@@ -19,9 +20,6 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Window.DataContext>
-        <Binding Path="MainView" Source="{StaticResource Locator}" />
-    </Window.DataContext>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}" />
         <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}" />
@@ -82,6 +80,10 @@
 
             <fluent:RibbonTabItem Header="{lang:Translate UI.Templates}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Templates}">
+                    <fluent:ComboBox Header="{lang:Translate UI.SelectedTemplate}"
+                                     Icon="{DynamicResource TemplateIcon}"
+                                     Name="TemplateComboBox"
+                                     SelectedItem="{Binding CurrentTemplate}"/>
                     <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
                                    LargeIcon="{DynamicResource TemplateIcon}"
                                    Command="{Binding OpenTemplates}" />
@@ -123,13 +125,10 @@
                                        Visibility="{Binding CurrentSheet.HasChanged, Converter={StaticResource BoolToVisibilityConverter}}"
                                        VerticalAlignment="Center" />
                         </StackPanel>
-                        <Button
-                            Command="{Binding RelativeSource= {RelativeSource FindAncestor,
-                                            AncestorType={x:Type TabControl}},
-                                            Path= DataContext.CloseSheet}"
-                            CommandParameter="{Binding}"
-                            MinHeight="0" Height="20" MinWidth="0" Width="20"
-                            Margin="5 5 -3 5">
+                        <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path= DataContext.CloseSheet}"
+                                CommandParameter="{Binding}"
+                                MinHeight="0" Height="20" MinWidth="0" Width="20"
+                                Margin="5 5 -3 5">
                             <Image Source="{Binding Source={StaticResource RemoveIcon}}"
                                    Margin="-10 2 -10 0" Width="16" Height="16" />
                         </Button>
