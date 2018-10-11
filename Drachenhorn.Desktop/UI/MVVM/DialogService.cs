@@ -11,7 +11,7 @@ namespace Drachenhorn.Desktop.UI.MVVM
     {
         public Task ShowError(string message, string title, string buttonText, Action afterHideCallback)
         {
-            throw new NotImplementedException();
+            return ShowMessage(message, title, buttonText, afterHideCallback);
         }
 
         public async Task ShowError(Exception error, string title, string buttonText, Action afterHideCallback)
@@ -32,19 +32,21 @@ namespace Drachenhorn.Desktop.UI.MVVM
 
         public Task ShowMessage(string message, string title, string buttonText, Action afterHideCallback)
         {
-            throw new NotImplementedException();
+            var result = new CommonMessageBox(message, title, buttonText).ShowDialog() == true;
+
+            afterHideCallback?.Invoke();
+
+            return Task.Run(() => result);
         }
 
         public Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText,
             Action<bool> afterHideCallback)
         {
-            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true
-                ? true
-                : false;
+            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true;
 
             afterHideCallback?.Invoke(result);
 
-            return Task.Run(() => { return result; });
+            return Task.Run(() => result);
         }
 
         public async Task ShowMessageBox(string message, string title)

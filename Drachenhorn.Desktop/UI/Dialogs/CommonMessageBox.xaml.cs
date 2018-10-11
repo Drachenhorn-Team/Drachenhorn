@@ -7,14 +7,18 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class CommonMessageBox : Window
     {
-        public CommonMessageBox(string message, string title, string buttonConfirmText, string buttonCancelText)
+        public CommonMessageBox(string message, string title, string buttonConfirmText, string buttonCancelText = null)
         {
             InitializeComponent();
 
             Title = title;
             MessageBlock.Text = message;
             ConfirmButton.Content = buttonConfirmText;
-            CancelButton.Content = buttonCancelText;
+
+            if (string.IsNullOrEmpty(buttonCancelText))
+                CancelButton.Visibility = Visibility.Collapsed;
+            else
+                CancelButton.Content = buttonCancelText;
         }
 
         private void ConfirmButton_OnClick(object sender, RoutedEventArgs e)
