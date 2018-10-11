@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.Settings;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Exceptions;
@@ -19,15 +21,6 @@ namespace Drachenhorn.Core.ViewModels.Common
 {
     public class MainViewModel : ViewModelBase
     {
-        #region c'tor
-
-        public MainViewModel()
-        {
-            InitializeCommands();
-        }
-
-        #endregion c'tor
-
         #region Properties
 
         private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels =
@@ -90,30 +83,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         #region Commands
 
-        private void InitializeCommands()
-        {
-            Save = new RelayCommand(ExecuteSave);
-            SaveAs = new RelayCommand(ExecuteSaveAs);
-            SaveAll = new RelayCommand(ExecuteSaveAll);
-            Open = new RelayCommand(ExecuteOpen);
-            New = new RelayCommand(ExecuteNew);
-
-            Print = new RelayCommand(ExecutePrint);
-
-            GenerateHtml = new RelayCommand(ExecuteGenerateHtml);
-
-            ShowSettings = new RelayCommand(ExecuteShowSettings);
-
-            CloseSheet = new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
-
-            CalculateAll = new RelayCommand(ExecuteCalculateAll);
-
-            OpenTemplates = new RelayCommand(ExecuteOpenTemplates);
-
-            ShowMap = new RelayCommand(ExecuteShowMap);
-        }
-
-        public RelayCommand Save { get; private set; }
+        public RelayCommand Save => new RelayCommand(ExecuteSave);
 
         private void ExecuteSave()
         {
@@ -130,21 +100,21 @@ namespace Drachenhorn.Core.ViewModels.Common
                 ExecuteSaveAs();
         }
 
-        public RelayCommand SaveAs { get; private set; }
+        public RelayCommand SaveAs => new RelayCommand(ExecuteSaveAs);
 
         private void ExecuteSaveAs()
         {
             CurrentSheetViewModel?.SaveAs();
         }
 
-        public RelayCommand SaveAll { get; private set; }
+        public RelayCommand SaveAll => new RelayCommand(ExecuteSaveAll);
 
         private void ExecuteSaveAll()
         {
             foreach (var model in CharacterSheetViewModels) model.Save();
         }
 
-        public RelayCommand Open { get; private set; }
+        public RelayCommand Open => new RelayCommand(ExecuteOpen);
 
         private void ExecuteOpen()
         {
@@ -167,7 +137,7 @@ namespace Drachenhorn.Core.ViewModels.Common
             }
         }
 
-        public RelayCommand New { get; private set; }
+        public RelayCommand New => new RelayCommand(ExecuteNew);
 
         private void ExecuteNew()
         {
@@ -176,39 +146,36 @@ namespace Drachenhorn.Core.ViewModels.Common
             CurrentSheetViewModel = model;
         }
 
-        public RelayCommand ShowSettings { get; private set; }
+        public RelayCommand ShowSettings => new RelayCommand(ExecuteShowSettings);
 
         private void ExecuteShowSettings()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowSettingsView"));
         }
 
-        public RelayCommand GenerateHtml { get; private set; }
-
-        private void ExecuteGenerateHtml()
-        {
-            var ioService = SimpleIoc.Default.GetInstance<IIoService>();
-
-            ioService.SaveStringDialog(
-                string.IsNullOrEmpty(CurrentSheetViewModel.CurrentSheet.Characteristics.Name)
-                    ? LanguageManager.Translate("HTML.DefaultFileName")
-                    : CurrentSheetViewModel.CurrentSheet.Characteristics.Name,
-                ".html",
-                LanguageManager.Translate("HTML.FileType.Name"),
-                LanguageManager.Translate("HTML.SaveDialog.Title"),
-                PrintingManager.GenerateHtml(CurrentSheetViewModel.CurrentSheet),
-                true
-            );
-        }
-
-        public RelayCommand Print { get; private set; }
+        public RelayCommand Print => new RelayCommand(ExecutePrint);
 
         private void ExecutePrint()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowPrintView"));
         }
 
-        public RelayCommand<CharacterSheetViewModel> CloseSheet { get; private set; }
+        public RelayCommand GeneratePDF => new RelayCommand(ExecuteGeneratePDF);
+
+        private async void ExecuteGeneratePDF()
+        {
+            if (CurrentSheetViewModel?.CurrentSheet == null)
+                await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                                LanguageManager.Translate("UI.NothingSelected"),
+                                LanguageManager.Translate("UI.NothingSelected.Title"));
+
+            SimpleIoc.Default.GetInstance<IUIService>().SetBusyState();
+
+            await PrintingManager.GeneratePDFAsync(CurrentSheetViewModel.CurrentSheet);
+        }
+
+        public RelayCommand<CharacterSheetViewModel> CloseSheet =>
+            new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
 
         private async void ExecuteCloseSheet(CharacterSheetViewModel model)
         {
@@ -228,7 +195,7 @@ namespace Drachenhorn.Core.ViewModels.Common
                 CharacterSheetViewModels.Remove(model);
         }
 
-        public RelayCommand CalculateAll { get; private set; }
+        public RelayCommand CalculateAll => new RelayCommand(ExecuteCalculateAll);
 
         private void ExecuteCalculateAll()
         {
@@ -239,7 +206,7 @@ namespace Drachenhorn.Core.ViewModels.Common
         }
 
 
-        public RelayCommand OpenTemplates { get; private set; }
+        public RelayCommand OpenTemplates => new RelayCommand(ExecuteOpenTemplates);
 
         private void ExecuteOpenTemplates()
         {
@@ -247,7 +214,7 @@ namespace Drachenhorn.Core.ViewModels.Common
         }
 
 
-        public RelayCommand ShowMap { get; private set; }
+        public RelayCommand ShowMap => new RelayCommand(ExecuteShowMap);
 
         private void ExecuteShowMap()
         {

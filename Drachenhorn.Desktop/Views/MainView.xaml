@@ -64,10 +64,14 @@
                     </fluent:DropDownButton>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
-                    <fluent:Button Header="{lang:Translate UI.Print}"
+                    <!--<fluent:Button Header="{lang:Translate UI.Print}"
                                    LargeIcon="{DynamicResource PrintIcon}"
                                    ToolTip="{lang:TranslateText %UI.Print (%Keyboard.Ctrl + P)}"
-                                   Command="{Binding Print}" />
+                                   Command="{Binding Print}" />-->
+                    <fluent:Button Header="{lang:Translate UI.GeneratePDF}"
+                                   LargeIcon="{DynamicResource PdfIcon}"
+                                   ToolTip="{lang:TranslateText %UI.GeneratePDF}"
+                                   Command="{Binding GeneratePDF}" />
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Properties}">
                     <fluent:Button Header="{lang:Translate UI.Properties}"

@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="Easy.Logger.Interfaces" Version="1.1.0" />
+    <PackageReference Include="itext7.pdfhtml" Version="2.1.0" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1" />
     <PackageReference Include="RazorLight.Unofficial" Version="2.0.0-beta1.2" />
   </ItemGroup>
@@ -37,6 +38,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj" />
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.1\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

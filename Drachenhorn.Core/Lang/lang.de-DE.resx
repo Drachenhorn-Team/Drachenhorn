@@ -459,7 +459,7 @@
   <data name="UI.GenerateHtml" xml:space="preserve">
     <value>Html generieren</value>
   </data>
-  <data name="UI.GeneratePdf" xml:space="preserve">
+  <data name="UI.GeneratePDF" xml:space="preserve">
     <value>PDF erstellen</value>
   </data>
   <data name="CharacterSheet.Skill.Category" xml:space="preserve">

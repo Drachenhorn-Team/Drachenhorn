@@ -11,6 +11,21 @@ namespace Drachenhorn.Desktop.IO
 {
     public class IoService : IIoService
     {
+        public void FileSaverDialog(
+            string fileName,
+            string fileExtension,
+            string fileTypeName,
+            string title,
+            Action<string> fileSaveAction)
+        {
+            var fileDialog = GetSaveFileDialog(fileName, fileExtension, fileTypeName, title);
+
+            if (fileDialog.ShowDialog() != true) return;
+
+            fileSaveAction(fileDialog.FileName);
+        }
+
+
         public void SaveDataDialog(
             string fileName,
             string fileExtension,
@@ -19,13 +34,12 @@ namespace Drachenhorn.Desktop.IO
             byte[] data,
             bool openAfterFinished = false)
         {
-            var fileDialog = GetSaveFileDialog(fileName, fileExtension, fileTypeName, title);
+            FileSaverDialog(fileName, fileExtension, fileTypeName, title, x =>
+            {
+                File.WriteAllBytes(x, data);
 
-            if (fileDialog.ShowDialog() != true) return;
-
-            File.WriteAllBytes(fileDialog.FileName, data);
-
-            if (openAfterFinished) Process.Start(fileDialog.FileName);
+                if (openAfterFinished) Process.Start(x);
+            });
         }
 
         public byte[] OpenDataDialog(

@@ -9,7 +9,9 @@ using System.Windows;
 using System.Windows.Threading;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Settings;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.IO;
+using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UI.MVVM;
 using Drachenhorn.Desktop.UserSettings;
@@ -113,6 +115,8 @@ namespace Drachenhorn.Desktop
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
             
             SimpleIoc.Default.Register<IDialogService, DialogService>();
+
+            SimpleIoc.Default.Register<IUIService>(() => new UIService());
 
             Messenger.Default.Register<Exception>(this,
                 ex => { new ExceptionMessageBox(ex, ex.Message).ShowDialog(); });

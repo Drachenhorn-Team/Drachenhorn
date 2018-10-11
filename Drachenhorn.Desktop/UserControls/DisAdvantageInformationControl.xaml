@@ -14,31 +14,33 @@
             <converter:DisAdvantageTypeStringConverter x:Key="DisAdvantageTypeStringConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
-    <DataGrid MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding .}" Margin="5"
-              CanUserAddRows="True"
-              PreviewMouseWheel="DataGrid_PreviewMouseWheel" ScrollViewer.PanningMode="None">
-        <DataGrid.Columns>
-            <DataGridTextColumn Binding="{Binding Type, Converter={StaticResource DisAdvantageTypeStringConverter}}"
-                                Width="Auto" MinWidth="50" IsReadOnly="True"
-                                FontFamily="{StaticResource Morpheus}"
-                                FontSize="16"/>
-            <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
-                                Binding="{Binding Name}" Width="Auto" MinWidth="50"
-                                FontFamily="{StaticResource Morpheus}"
-                                FontSize="16"/>
-            <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}"
-                                Binding="{Binding Value}" Width="Auto" MinWidth="50"/>
-            <DataGridTextColumn Header="{lang:Translate CharacterSheet.Specialization}"
-                                Binding="{Binding Specialization}" Width="*" 
-                                FontFamily="{StaticResource Morpheus}"
-                                FontSize="16"/>
-            <DataGridTemplateColumn>
-                <DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate>
-                        <userElements:InfoButton InfoObject="{Binding .}" Margin="0"/>
-                    </DataTemplate>
-                </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-        </DataGrid.Columns>
-    </DataGrid>
+    <DockPanel>
+        <TextBlock Text="{lang:Translate CharacterSheet.DisAdvantages}"
+                   TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
+        
+        <DataGrid MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding .}" Margin="5"
+                  CanUserAddRows="True"
+                  PreviewMouseWheel="DataGrid_PreviewMouseWheel" ScrollViewer.PanningMode="None">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Type, Converter={StaticResource DisAdvantageTypeStringConverter}}"
+                                    Width="Auto" MinWidth="50" IsReadOnly="True"
+                                    FontSize="16"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
+                                    Binding="{Binding Name}" Width="Auto" MinWidth="50"
+                                    FontSize="16"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}"
+                                    Binding="{Binding Value}" Width="Auto" MinWidth="50"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Specialization}"
+                                    Binding="{Binding Specialization}" Width="*"
+                                    FontSize="16"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <userElements:InfoButton InfoObject="{Binding .}" Margin="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </UserControl>

@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Drachenhorn.Xml.Sheet;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
 namespace Drachenhorn.Core.ViewModels.Sheet
 {

@@ -4,10 +4,14 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security;
 using System.Text;
-using Drachenhorn.Core.Printing.Exceptions;
+using System.Threading.Tasks;
+using Drachenhorn.Core.IO;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
+using GalaSoft.MvvmLight.Ioc;
+using iText.Html2pdf;
 using RazorLight;
 using RazorLight.Caching;
 
@@ -67,6 +71,24 @@ namespace Drachenhorn.Core.Printing
             {
                 throw new InvalidOperationException("Unable to create PrintView.", e);
             }
+        }
+
+        public static Task GeneratePDFAsync(CharacterSheet sheet)
+        {
+            return Task.Run(() =>
+            {
+                var html = GenerateHtml(sheet);
+
+                SimpleIoc.Default.GetInstance<IIoService>().FileSaverDialog(
+                    sheet.Characteristics.Name,
+                    ".pdf", "PDF", "PDF-Export", x =>
+                    {
+                        using (var fs = new FileStream(x, FileMode.Create))
+                        {
+                            HtmlConverter.ConvertToPdf(html, fs);
+                        }
+                    });
+            });
         }
 
         #endregion Generate HTML

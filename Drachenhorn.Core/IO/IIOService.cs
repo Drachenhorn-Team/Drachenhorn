@@ -1,10 +1,18 @@
-﻿using Drachenhorn.Xml.Interfaces;
+﻿using System;
+using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet;
 
 namespace Drachenhorn.Core.IO
 {
     public interface IIoService
     {
+        void FileSaverDialog(
+            string fileName,
+            string fileExtension,
+            string fileTypeName,
+            string title,
+            Action<string> fileSaveAction);
+
         void SaveDataDialog(
             string fileName,
             string fileExtension,
