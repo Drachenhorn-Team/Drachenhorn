@@ -75,7 +75,7 @@
         <Setter Property="BorderThickness" Value="0" />
     </Style>
 
-    <Style TargetType="{x:Type DataGrid}">
+    <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource BaseControlStyle}">
         <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
         <Setter Property="CanUserSortColumns" Value="False" />

@@ -81,7 +81,7 @@
             <controls:AutoCompleteBox SelectedItem="{Binding Race, Mode=TwoWay}"
                                       ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
                                                     Path=DataContext.CurrentCompleteTemplate.Races}"
-                                      VerticalAlignment="Center"/>
+                                      VerticalContentAlignment="Center" Height="28"/>
             <!--<TextBox Text="{Binding Race.Name}" />-->
         </DockPanel>
 
@@ -112,7 +112,7 @@
             <controls:AutoCompleteBox SelectedItem="{Binding Culture, Mode=TwoWay}"
                                       ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
                                                     Path=DataContext.CurrentCompleteTemplate.Cultures}"
-                                      VerticalAlignment="Center"/>
+                                      VerticalContentAlignment="Center" Height="28"/>
         </DockPanel>
 
         <TextBlock Text="{lang:Translate Characteristics.Profession}"
