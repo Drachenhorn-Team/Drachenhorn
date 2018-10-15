@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CoreCLR-NCalc" Version="2.2.34" />
+    <PackageReference Include="CoreCLR-NCalc" Version="2.2.45" />
   </ItemGroup>
 
 </Project>

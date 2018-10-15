@@ -61,10 +61,11 @@ namespace Drachenhorn.Map.BSPT
                 // if leaf node, create a dungeon within the minimum size constraints
                 int dungeonTop = (_height - MIN_SIZE <= 0) ? 0 : Randomizer.Get(0, _height - MIN_SIZE);
                 int dungeonLeft = (_width - MIN_SIZE <= 0) ? 0 : Randomizer.Get(0, _width - MIN_SIZE);
+
                 int dungeonHeight = Math.Max(Randomizer.Get(0, _height - dungeonTop), MIN_SIZE);
-                ;
+
                 int dungeonWidth = Math.Max(Randomizer.Get(0, _width - dungeonLeft), MIN_SIZE);
-                ;
+
                 Dungeon = new Leaf(_top + dungeonTop, _left + dungeonLeft, dungeonHeight, dungeonWidth);
             }
         }

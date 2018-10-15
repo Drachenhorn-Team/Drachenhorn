@@ -1,9 +1,11 @@
 ﻿using System.Reflection;
+using System.Reflection.PortableExecutable;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Characteristics = Drachenhorn.Xml.Sheet.Common.Characteristics;
 
 namespace Drachenhorn.UnitTest
 {

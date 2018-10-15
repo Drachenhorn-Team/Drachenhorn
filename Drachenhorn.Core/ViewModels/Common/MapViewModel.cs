@@ -52,7 +52,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         private void ExecuteGenerate()
         {
-            var grid = BSPTManager.GenerateMap(60, 30);
+            var grid = LeafGenerator.GenerateLeaf();
             List<List<TileType>> result = new List<List<TileType>>();
 
 

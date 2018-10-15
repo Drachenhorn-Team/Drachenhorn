@@ -9,7 +9,6 @@ using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
 using GalaSoft.MvvmLight.Command;
-using mshtml;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -99,8 +98,8 @@ namespace Drachenhorn.Desktop.Views
 
         private void ExecutePrint(object sender, ExecutedRoutedEventArgs e)
         {
-            var doc = Browser.Document as IHTMLDocument2;
-            doc?.execCommand("Print", true, null);
+            //var doc = Browser.Document as IHTMLDocument2;
+            //doc?.execCommand("Print", true, null);
         }
 
         private void PrintCommand_OnCanExecute(object sender, CanExecuteRoutedEventArgs e)

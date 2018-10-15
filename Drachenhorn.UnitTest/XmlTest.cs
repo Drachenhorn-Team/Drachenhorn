@@ -6,7 +6,7 @@ using Drachenhorn.Xml.Sheet.Common;
 using Drachenhorn.Xml.Sheet.Skills;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Drachenhorn.UnitTest
+namespace Darchenhorn.UnitTest
 {
     [TestClass]
     public class XmlTest

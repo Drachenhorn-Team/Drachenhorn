@@ -42,12 +42,12 @@ namespace Drachenhorn.Map.Random
 
         public static int Get(ushort max)
         {
-            return _random.Next(0, max);
+            return _random.Next(0, max + 1);
         }
 
         public static int Get(int min, int max)
         {
-            return _random.Next(min, max);
+            return _random.Next(min, max + 1);
         }
     }
 }

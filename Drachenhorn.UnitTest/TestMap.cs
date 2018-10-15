@@ -10,7 +10,7 @@ namespace Drachenhorn.UnitTest
         [TestMethod]
         public void BSPTMap()
         {
-            var grid = BSPTManager.GenerateMap(50, 50);
+            var grid = LeafGenerator.GenerateLeaf();
         }
     }
 }
