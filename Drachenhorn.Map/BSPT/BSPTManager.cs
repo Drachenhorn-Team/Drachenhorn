@@ -9,7 +9,7 @@ namespace Drachenhorn.Map.BSPT
     {
         public static TileType[,] GenerateMap(int width, int height)
         {
-            var leaf = new Leaf(0, 0, width, height);
+            var leaf = new OldLeaf(0, 0, width, height);
 
             var grid = new TileType[width, height];
             leaf.DrawToGrid(ref grid);
