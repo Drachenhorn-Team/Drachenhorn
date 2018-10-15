@@ -35,15 +35,15 @@ namespace Drachenhorn.Core.Printing
 
         public static string GenerateHtml(CharacterSheet sheet)
         {
-            string template;
+            string template = "";
 
-            var assembly = Assembly.GetExecutingAssembly();
+            //var assembly = Assembly.GetExecutingAssembly();
 
-            using (Stream stream = assembly.GetManifestResourceStream("Drachenhorn.Core.Printing.Templates.CharacterSheet.cshtml"))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                template = reader.ReadToEnd();
-            }
+            //using (Stream stream = assembly.GetManifestResourceStream("Drachenhorn.Core.Printing.Templates.CharacterSheet.cshtml"))
+            //using (StreamReader reader = new StreamReader(stream))
+            //{
+            //    template = reader.ReadToEnd();
+            //}
 
             return GenerateHtml(sheet, template);
         }
@@ -58,11 +58,12 @@ namespace Drachenhorn.Core.Printing
             try
             {
                 var engine = new RazorLightEngineBuilder()
-                    .SetOperatingAssembly(Assembly.GetExecutingAssembly())
+                    .UseFileSystemProject(Path.Combine(Environment.CurrentDirectory, "Printing", "Templates"))
+                    .SetOperatingAssembly(Assembly.GetCallingAssembly())
                     .UseCachingProvider(new MemoryCachingProvider())
                     .Build();
 
-                string result = engine.CompileRenderAsync("templateKey", template, new CharacterSheetViewModel(sheet))
+                string result = engine.CompileRenderAsync("CharacterSheet", new CharacterSheetViewModel(sheet))
                     .Result;
 
                 return result;

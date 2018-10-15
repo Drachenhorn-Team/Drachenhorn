@@ -2,7 +2,8 @@
 @using Drachenhorn.Core.Lang
 @using Drachenhorn.Xml.Sheet
 @using Drachenhorn.Xml.Sheet.Enums
-@inherits RazorLight.TemplatePage<Drachenhorn.Core.ViewModels.Sheet.CharacterSheetViewModel>
+@using Drachenhorn.Core.ViewModels.Sheet
+@inherits RazorLight.TemplatePage<CharacterSheetViewModel>
 
 @{ CharacterSheet sheet = Model.CurrentSheet; }
 
@@ -145,7 +146,7 @@
                         }
                     </table>
                 </td>
-                @if (!string.IsNullOrEmpty(sheet.CoatOfArms.Base64String))
+                @if (!string.IsNullOrEmpty(sheet.CoatOfArms?.Base64String))
                 {
                     <td>
                         <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.CoatOfArms")</h4>
@@ -162,27 +163,33 @@
         <tr>
             <td>
                 <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
-                    @foreach (var attribute in sheet.Attributes)
+                    @if (sheet.Attributes != null)
                     {
-                        <tr>
-                            <td>@attribute.Name</td>
-                            <td>@attribute.Modifier</td>
-                            <td>@attribute.StartValue</td>
-                            <td>@attribute.Value</td>
-                        </tr>
+                        foreach (var attribute in sheet.Attributes)
+                        {
+                             <tr>
+                                 <td>@attribute.Name</td>
+                                 <td>@attribute.Modifier</td>
+                                 <td>@attribute.StartValue</td>
+                                 <td>@attribute.Value</td>
+                             </tr>
+                        }
                     }
                 </table>
             </td>
             <td>
                 <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
-                    @foreach (var baseValue in sheet.BaseValues)
+                    @if (sheet.BaseValues != null)
                     {
-                        <tr>
-                            <td>@baseValue.Name</td>
-                            <td>@baseValue.Modifier</td>
-                            <td>@baseValue.StartValue</td>
-                            <td>@baseValue.Value</td>
-                        </tr>
+                        foreach (var baseValue in sheet.BaseValues)
+                        {
+                             <tr>
+                                 <td>@baseValue.Name</td>
+                                 <td>@baseValue.Modifier</td>
+                                 <td>@baseValue.StartValue</td>
+                                 <td>@baseValue.Value</td>
+                             </tr>
+                        }
                     }
                 </table>
             </td>
@@ -192,46 +199,52 @@
     <table>
         <tr>
             <td>@LanguageManager.Translate("CharacterSheet.TotalAP")</td>
-            <td>@sheet.AdventurePoints.Total</td>
+            <td>@sheet.AdventurePoints?.Total</td>
             <td>@LanguageManager.Translate("CharacterSheet.UsedAP")</td>
-            <td>@sheet.AdventurePoints.Used</td>
+            <td>@sheet.AdventurePoints?.Used</td>
             <td>@LanguageManager.Translate("CharacterSheet.LeftoverAP")</td>
-            <td>@sheet.AdventurePoints.CurrentLeft</td>
+            <td>@sheet.AdventurePoints?.CurrentLeft</td>
         </tr>
     </table>
-
-    <table>
-        <tr>
-            <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
-            <th>@LanguageManager.Translate("CharacterSheet.Attributes")</th>
-            <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
-        </tr>
-        @{ string currentGroup = null;}
-        @foreach (var skill in sheet.Skills)
-        {
-            if (currentGroup != skill.Category)
+    
+    @if (sheet.Skills != null)
+    {
+        <table>
+            <tr>
+                <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+                <th>@LanguageManager.Translate("CharacterSheet.Attributes")</th>
+                <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
+            </tr>
+            @{ string currentGroup = null;}
+            @foreach (var skill in sheet.Skills)
             {
-                currentGroup = skill.Category;
+                if (currentGroup != skill.Category)
+                {
+                    currentGroup = skill.Category;
+                    <tr>
+                        <th colspan="5" style="text-align: left; background: lightgray">@skill.Category</th>
+                    </tr>
+                }
+
                 <tr>
-                    <th colspan="5" style="text-align: left; background: lightgray">@skill.Category</th>
+                    <td>@skill.Name</td>
+                    <td>@skill.RollAttributes</td>
                 </tr>
             }
-
-            <tr>
-                <td>@skill.Name</td>
-                <td>@skill.RollAttributes</td>
-            </tr>
-        }
-    </table>
-
-    <table>
-        @foreach (var specialSkill in sheet.SpecialSkills)
-        {
-            <tr>
-                <td>@specialSkill.Name</td>
-            </tr>
-        }
-    </table>
+        </table>
+    }
+    
+    @if (sheet.SpecialSkills != null)
+    {
+        <table>
+            @foreach (var specialSkill in sheet.SpecialSkills)
+            {
+                <tr>
+                    <td>@specialSkill.Name</td>
+                </tr>
+            }
+        </table>
+    }
 </div>
 
 </body>
