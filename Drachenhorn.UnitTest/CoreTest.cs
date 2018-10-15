@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Reflection.PortableExecutable;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels;
 using Drachenhorn.Xml.Sheet;
