@@ -699,6 +699,9 @@
     <PackageReference Include="MvvmLightLibsStd10">
       <Version>5.4.1.1</Version>
     </PackageReference>
+    <PackageReference Include="NETStandard.Library">
+      <Version>2.0.3</Version>
+    </PackageReference>
     <PackageReference Include="RichTextBoxAppender">
       <Version>1.0.1</Version>
     </PackageReference>

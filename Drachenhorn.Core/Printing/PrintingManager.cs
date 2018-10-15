@@ -58,7 +58,7 @@ namespace Drachenhorn.Core.Printing
             try
             {
                 var engine = new RazorLightEngineBuilder()
-                    .UseFileSystemProject(Path.Combine(Environment.CurrentDirectory, "Printing", "Templates"))
+                    .UseEmbeddedResourcesProject(Assembly.GetAssembly(typeof(CharacterSheet)))
                     .SetOperatingAssembly(Assembly.GetCallingAssembly())
                     .UseCachingProvider(new MemoryCachingProvider())
                     .Build();
