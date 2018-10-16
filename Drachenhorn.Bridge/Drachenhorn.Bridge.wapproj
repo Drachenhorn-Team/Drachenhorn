@@ -51,8 +51,8 @@
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <DefaultLanguage>de-DE</DefaultLanguage>
     <PackageCertificateKeyFile>Drachenhorn.pfx</PackageCertificateKeyFile>
-    <EntryPointProjectUniqueName>..\Drachenhorn.Desktop\Drachenhorn.Desktop.csproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>30ECEBBB9AD1E86385D2CBB0E4928163FA80A291</PackageCertificateThumbprint>
+    <EntryPointProjectUniqueName>..\Drachenhorn.Desktop\Drachenhorn.Desktop.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

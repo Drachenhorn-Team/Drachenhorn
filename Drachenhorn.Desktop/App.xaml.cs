@@ -113,7 +113,7 @@ namespace Drachenhorn.Desktop
         private void InitializeData()
         {
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
-            
+
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             SimpleIoc.Default.Register<IUIService>(() => new UIService());
@@ -213,7 +213,7 @@ namespace Drachenhorn.Desktop
                 return false;
             }
 
-            var listenThread = new Thread(Listen) {IsBackground = true};
+            var listenThread = new Thread(Listen) { IsBackground = true };
             listenThread.Start();
 
             return true;
@@ -225,7 +225,7 @@ namespace Drachenhorn.Desktop
             {
                 using (var reader = new StreamReader(server))
                 {
-                    for (;;)
+                    for (; ; )
                     {
                         server.WaitForConnection();
 
@@ -235,7 +235,7 @@ namespace Drachenhorn.Desktop
                         {
                             if (MainWindow is MainView)
                             {
-                                var view = (MainView) MainWindow;
+                                var view = (MainView)MainWindow;
                                 view.OpenFile(text);
                             }
                         });

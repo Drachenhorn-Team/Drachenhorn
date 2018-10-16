@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A0D0CBA-8A83-435C-8D44-FB890A70EE2F}</ProjectGuid>
+    <ProjectGuid>{D9CAC2E5-91AF-4AE2-898F-1BE5EBBABBD1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Drachenhorn.Desktop</RootNamespace>
     <AssemblyName>Drachenhorn.Desktop</AssemblyName>
@@ -12,11 +13,8 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -31,13 +29,11 @@
     <SupportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/issues</ErrorReportUrl>
     <ProductName>Drachenhorn</ProductName>
-    <PublisherName>lightlike</PublisherName>
+    <PublisherName>Drachenhorn-Team</PublisherName>
     <SuiteName>DSA</SuiteName>
-    <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
-    <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>47</ApplicationRevision>
-    <ApplicationVersion>0.0.11.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.11.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,7 +48,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,9 +62,6 @@
     <ApplicationIcon>Images\Common\Drachenhorn.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
@@ -78,32 +70,32 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
-    <OutputPath>bin\Beta\</OutputPath>
-  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converter\AllowedDaysConverter.cs" />
-    <Compile Include="Converter\Base64ImageConverter.cs" />
-    <Compile Include="Converter\BoolInverterConverter.cs" />
-    <Compile Include="Converter\BoolToInVisibilityConverter.cs" />
-    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
-    <Compile Include="Converter\DisAdvantageTypeStringConverter.cs" />
-    <Compile Include="Converter\EnumListStringConverter.cs" />
-    <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
-    <Compile Include="Converter\EnumToStringConverter.cs" />
-    <Compile Include="Converter\MapTileColorConverter.cs" />
-    <Compile Include="Converter\Validation\FormulaValidationRule.cs" />
-    <Compile Include="Converter\ValueTranslationConverter.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
     </Compile>
@@ -113,7 +105,6 @@
     <Compile Include="UI\Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IO\IOService.cs" />
     <Compile Include="UI\Dialogs\TemplateImportDialog.xaml.cs">
       <DependentUpon>TemplateImportDialog.xaml</DependentUpon>
     </Compile>
@@ -124,12 +115,33 @@
       <DependentUpon>ThemeChooseDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Extensions.cs" />
-    <Compile Include="UI\Lang\TranslateTextExtension.cs" />
     <Compile Include="UI\Lang\TranslateExtension.cs" />
+    <Compile Include="UI\Lang\TranslateTextExtension.cs" />
     <Compile Include="UI\MVVM\DialogService.cs" />
+    <Compile Include="UI\Splash\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\UIService.cs" />
+    <Compile Include="UserControls\AdventurePointsControl.xaml.cs">
+      <DependentUpon>AdventurePointsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttributesControl.xaml.cs">
+      <DependentUpon>AttributesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseValuesControl.xaml.cs">
+      <DependentUpon>BaseValuesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CharacteristicsControl.xaml.cs">
       <DependentUpon>CharacteristicsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
+      <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CoatOfArmsControl.xaml.cs">
+      <DependentUpon>CoatOfArmsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CombatControl.xaml.cs">
+      <DependentUpon>CombatControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Common\APTableControl.xaml.cs">
       <DependentUpon>APTableControl.xaml</DependentUpon>
@@ -143,38 +155,11 @@
     <Compile Include="UserControls\Common\TemplateInformationControl.xaml.cs">
       <DependentUpon>TemplateInformationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\InventoryControl.xaml.cs">
-      <DependentUpon>InventoryControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserElements\DsaDatePicker.cs" />
-    <Compile Include="UserElements\InfoButton.cs" />
-    <Compile Include="UserElements\ListEditor.cs" />
-    <Compile Include="UserElements\LoadingElement.cs" />
-    <Compile Include="UserElements\LocalizedComboBox.cs" />
-    <Compile Include="UserSettings\Settings.cs" />
-    <Compile Include="UI\Splash\SplashScreen.xaml.cs">
-      <DependentUpon>SplashScreen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\DisAdvantageInformationControl.xaml.cs">
       <DependentUpon>DisAdvantageInformationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\AdventurePointsControl.xaml.cs">
-      <DependentUpon>AdventurePointsControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\AttributesControl.xaml.cs">
-      <DependentUpon>AttributesControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\BaseValuesControl.xaml.cs">
-      <DependentUpon>BaseValuesControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\CharacterSheetControl.xaml.cs">
-      <DependentUpon>CharacterSheetControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\CoatOfArmsControl.xaml.cs">
-      <DependentUpon>CoatOfArmsControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\CombatControl.xaml.cs">
-      <DependentUpon>CombatControl.xaml</DependentUpon>
+    <Compile Include="UserControls\InventoryControl.xaml.cs">
+      <DependentUpon>InventoryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SkillListControl.xaml.cs">
       <DependentUpon>SkillListControl.xaml</DependentUpon>
@@ -182,7 +167,13 @@
     <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserElements\DsaDatePicker.cs" />
+    <Compile Include="UserElements\InfoButton.cs" />
+    <Compile Include="UserElements\ListEditor.cs" />
+    <Compile Include="UserElements\LoadingElement.cs" />
+    <Compile Include="UserElements\LocalizedComboBox.cs" />
     <Compile Include="UserElements\SkillButton.cs" />
+    <Compile Include="UserSettings\Settings.cs" />
     <Compile Include="Views\AttributeView.xaml.cs">
       <DependentUpon>AttributeView.xaml</DependentUpon>
     </Compile>
@@ -210,229 +201,24 @@
     <Compile Include="Views\TemplateMainView.xaml.cs">
       <DependentUpon>TemplateMainView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Converter\Converter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\CommonMessageBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\ConsoleWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\TemplateImportDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="UI\Dialogs\TemplateSelectorDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\ThemeChooseDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Splash\SplashScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\BaseTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Colors\Dark.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Colors\Light.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\ComboBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\DataGrid.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\ListBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\RadioButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\ScrollViewer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\Slider.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Controls\ToolBar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\DarkTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Images\Black.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Images\Common.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\Images\White.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Themes\LightTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Common\APTableControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Common\CultureDisplayControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Common\RaceDisplayControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Common\TemplateInformationControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\DisAdvantageInformationControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\AdventurePointsControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\AttributesControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\BaseValuesControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\CharacteristicsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\CharacterSheetControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\CoatOfArmsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\CombatControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\InventoryControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\SkillListControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\SpecialSkillControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AttributeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\BaseValueView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CoatOfArmsPainterView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\InfoView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MapView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PrintView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TemplateMainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\AllowedDaysConverter.cs" />
+    <Compile Include="Converter\Base64ImageConverter.cs" />
+    <Compile Include="Converter\BoolInverterConverter.cs" />
+    <Compile Include="Converter\BoolToInVisibilityConverter.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\DisadvantageTypeStringConverter.cs" />
+    <Compile Include="Converter\EnumListStringConverter.cs" />
+    <Compile Include="Converter\EnumToAbbreviationConverter.cs" />
+    <Compile Include="Converter\EnumToStringConverter.cs" />
+    <Compile Include="Converter\MapTileColorConverter.cs" />
+    <Compile Include="Converter\Validation\FormulaValidationRule.cs" />
+    <Compile Include="Converter\ValueTranslationConverter.cs" />
+    <Compile Include="IO\IOService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Resource Include="..\img\Logo.png">
-      <Link>Images\Common\Logo.png</Link>
-    </Resource>
-    <Resource Include="..\img\Banner.jpg">
-      <Link>Images\Common\Banner.jpg</Link>
-    </Resource>
-    <Resource Include="..\img\Flags\de-DE.png">
-      <Link>Images\Flags\de-DE.png</Link>
-    </Resource>
-    <Resource Include="..\img\Flags\en.png">
-      <Link>Images\Flags\en.png</Link>
-    </Resource>
-    <Resource Include="..\img\Flags\invariant.png">
-      <Link>Images\Flags\invariant.png</Link>
-    </Resource>
-    <Resource Include="..\img\Flags\nds-DE.png">
-      <Link>Images\Flags\nds-DE.png</Link>
-    </Resource>
     <Resource Include="..\img\Black\Calculate.png">
       <Link>Images\Black\Calculate.png</Link>
     </Resource>
@@ -450,6 +236,9 @@
     </Resource>
     <Resource Include="..\img\Black\InfoIcon.png">
       <Link>Images\Black\InfoIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Map.png">
+      <Link>Images\Black\Map.png</Link>
     </Resource>
     <Resource Include="..\img\Black\MenuIcon.png">
       <Link>Images\Black\MenuIcon.png</Link>
@@ -514,6 +303,24 @@
     <Resource Include="..\img\Black\Loading\Loading_8.png">
       <Link>Images\Black\Loading\Loading_8.png</Link>
     </Resource>
+    <Resource Include="..\img\Banner.jpg">
+      <Link>Images\Common\Banner.jpg</Link>
+    </Resource>
+    <Resource Include="..\img\Logo.png">
+      <Link>Images\Common\Logo.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\de-DE.png">
+      <Link>Images\Flags\de-DE.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\en.png">
+      <Link>Images\Flags\en.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\invariant.png">
+      <Link>Images\Flags\invariant.png</Link>
+    </Resource>
+    <Resource Include="..\img\Flags\nds-DE.png">
+      <Link>Images\Flags\nds-DE.png</Link>
+    </Resource>
     <Resource Include="..\img\White\Calculate.png">
       <Link>Images\White\Calculate.png</Link>
     </Resource>
@@ -531,6 +338,9 @@
     </Resource>
     <Resource Include="..\img\White\InfoIcon.png">
       <Link>Images\White\InfoIcon.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Map.png">
+      <Link>Images\White\Map.png</Link>
     </Resource>
     <Resource Include="..\img\White\MenuIcon.png">
       <Link>Images\White\MenuIcon.png</Link>
@@ -571,6 +381,30 @@
     <Resource Include="..\img\White\Common\Remove.png">
       <Link>Images\White\Common\Remove.png</Link>
     </Resource>
+    <Resource Include="..\img\White\Loading\Loading_1.png">
+      <Link>Images\White\Loading\Loading_1.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_2.png">
+      <Link>Images\White\Loading\Loading_2.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_3.png">
+      <Link>Images\White\Loading\Loading_3.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_4.png">
+      <Link>Images\White\Loading\Loading_4.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_5.png">
+      <Link>Images\White\Loading\Loading_5.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_6.png">
+      <Link>Images\White\Loading\Loading_6.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_7.png">
+      <Link>Images\White\Loading\Loading_7.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Loading\Loading_8.png">
+      <Link>Images\White\Loading\Loading_8.png</Link>
+    </Resource>
     <Resource Include="..\img\Black\Painting\Brush.png">
       <Link>Images\Black\Painting\Brush.png</Link>
     </Resource>
@@ -601,41 +435,240 @@
     <Resource Include="..\img\Black\Painting\Width.png">
       <Link>Images\Black\Painting\Width.png</Link>
     </Resource>
-    <Resource Include="..\img\Black\Map.png">
-      <Link>Images\Black\Map.png</Link>
-    </Resource>
-    <Resource Include="..\img\White\Map.png">
-      <Link>Images\White\Map.png</Link>
-    </Resource>
-    <Resource Include="..\img\Icons\WindowIcon.png">
-      <Link>Images\Common\WindowIcon.png</Link>
-    </Resource>
     <Content Include="commit">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\Common\Drachenhorn.ico" />
-    <Content Include="Images\Common\SaveTemplateIcon.ico" />
-    <None Include="Images\Common\SaveFileIcon.svg" />
-    <None Include="Images\Common\SaveTemplateIcon.svg" />
     <Content Include="Images\Common\SaveFileIcon.ico" />
-    <Resource Include="Images\White\Loading\Loading_1.png" />
-    <Resource Include="Images\White\Loading\Loading_2.png" />
-    <Resource Include="Images\White\Loading\Loading_3.png" />
-    <Resource Include="Images\White\Loading\Loading_4.png" />
-    <Resource Include="Images\White\Loading\Loading_5.png" />
-    <Resource Include="Images\White\Loading\Loading_6.png" />
-    <Resource Include="Images\White\Loading\Loading_7.png" />
-    <Resource Include="Images\White\Loading\Loading_8.png" />
+    <Content Include="Images\Common\SaveTemplateIcon.ico" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
     </Content>
-    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <Resource Include="Resources\Morpheus.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\CommonMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\ConsoleWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\TemplateImportDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\TemplateSelectorDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\ThemeChooseDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Splash\SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\BaseTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Colors\Dark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Colors\Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Controls\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Images\Black.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Images\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\Images\White.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AdventurePointsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AttributesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\BaseValuesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CharacteristicsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CharacterSheetControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CoatOfArmsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CombatControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\APTableControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\CultureDisplayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\RaceDisplayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\TemplateInformationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DisAdvantageInformationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\InventoryControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SkillListControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SpecialSkillControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AttributeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BaseValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CoatOfArmsPainterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MapView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrintView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TemplateMainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ControlzEx">
+      <Version>3.0.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="DesktopBridge.Helpers">
+      <Version>1.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="DotNetProjects.Wpf.Toolkit">
+      <Version>5.0.43</Version>
+    </PackageReference>
+    <PackageReference Include="Easy.Logger">
+      <Version>3.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>3.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Fluent.Ribbon">
+      <Version>6.1.0.326</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmLightLibsStd10">
+      <Version>5.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="RichTextBoxAppender">
+      <Version>1.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -673,38 +706,9 @@
       <Name>Drachenhorn.Map</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj">
-      <Project>{0B148A79-13FE-45C1-9A50-73FCC0C03613}</Project>
+      <Project>{0b148a79-13fe-45c1-9a50-73fcc0c03613}</Project>
       <Name>Drachenhorn.Xml</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="ControlzEx">
-      <Version>3.0.2.4</Version>
-    </PackageReference>
-    <PackageReference Include="DesktopBridge.Helpers">
-      <Version>1.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="DotNetProjects.Wpf.Toolkit">
-      <Version>5.0.43</Version>
-    </PackageReference>
-    <PackageReference Include="Easy.Logger">
-      <Version>3.7.2</Version>
-    </PackageReference>
-    <PackageReference Include="Extended.Wpf.Toolkit">
-      <Version>3.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="Fluent.Ribbon">
-      <Version>6.1.0.326</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmLightLibsStd10">
-      <Version>5.4.1</Version>
-    </PackageReference>
-    <PackageReference Include="RichTextBoxAppender">
-      <Version>1.0.1</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Deployment" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
