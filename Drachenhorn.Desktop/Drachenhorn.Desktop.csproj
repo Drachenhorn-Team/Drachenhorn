@@ -36,8 +36,8 @@
     <MinimumRequiredVersion>1.0.2.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>38</ApplicationRevision>
-    <ApplicationVersion>0.0.8.%2a</ApplicationVersion>
+    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationVersion>0.0.11.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -697,10 +697,7 @@
       <Version>6.1.0.326</Version>
     </PackageReference>
     <PackageReference Include="MvvmLightLibsStd10">
-      <Version>5.4.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="NETStandard.Library">
-      <Version>2.0.3</Version>
+      <Version>5.4.1</Version>
     </PackageReference>
     <PackageReference Include="RichTextBoxAppender">
       <Version>1.0.1</Version>

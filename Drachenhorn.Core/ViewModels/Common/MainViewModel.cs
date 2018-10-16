@@ -69,7 +69,7 @@ namespace Drachenhorn.Core.ViewModels.Common
         {
             get
             {
-                if (_currentCompleteTemplate == null)
+                if (_currentCompleteTemplate == null && CurrentTemplate != null)
                 {
                     var temp = SheetTemplate.AvailableTemplates.FirstOrDefault(CurrentTemplate.Equals);
                     if (temp != null) _currentCompleteTemplate = SheetTemplate.Load(temp.Path);
