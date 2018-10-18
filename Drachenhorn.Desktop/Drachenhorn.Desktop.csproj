@@ -25,7 +25,7 @@
     <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/</InstallUrl>
+    <InstallUrl>https://rawcdn.githack.com/Drachenhorn-Team/Drachenhorn/publish/</InstallUrl>
     <SupportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/Drachenhorn-Team/Drachenhorn/issues</ErrorReportUrl>
     <ProductName>Drachenhorn</ProductName>
