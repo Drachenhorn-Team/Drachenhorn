@@ -3,9 +3,9 @@
   <metadata>
     <id>Drachenhorn</id>
     <version>0.0.1</version>
-    <authors>Drachenhorn-Team</authors>
+    <authors>Drachenhorn</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>DSA Character Sheet Designer</description>
+    <description>Drachenhorn</description>
     <copyright>Copyright 2017 - 2018</copyright>
   </metadata>
   <files>
