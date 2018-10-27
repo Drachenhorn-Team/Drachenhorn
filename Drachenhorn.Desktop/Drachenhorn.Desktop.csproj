@@ -444,6 +444,7 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Drachenhorn.nuspec" />
     <None Include="Properties\app.manifest" />
     <Resource Include="Resources\Morpheus.ttf" />
   </ItemGroup>
@@ -672,6 +673,9 @@
     </PackageReference>
     <PackageReference Include="RichTextBoxAppender">
       <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="squirrel.windows">
+      <Version>1.9.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
