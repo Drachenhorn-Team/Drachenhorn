@@ -9,14 +9,10 @@
              mc:Ignorable="d"
              d:DesignHeight="5000" d:DesignWidth="900"
              d:DataContext="{d:DesignInstance sheet:CharacterSheetViewModel}">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}" />
-        </ResourceDictionary>
-    </UserControl.Resources>
     <StackPanel>
         <Image Source="{StaticResource DrachenhornLogo}" Width="300" />
-        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontWeight="Bold" TextAlignment="Center" />
+        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontFamily="{StaticResource Morpheus}"
+                   FontWeight="Bold" TextAlignment="Center" />
 
         <Border Style="{StaticResource FrameBorder}">
             <controls:CharacteristicsControl DataContext="{Binding CurrentSheet.Characteristics}" />

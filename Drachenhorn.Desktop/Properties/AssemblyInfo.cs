@@ -52,7 +52,7 @@ using Squirrel;
 //
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
-[assembly: AssemblyVersion("1.0.4")]
+[assembly: AssemblyVersion("1.0.5")]
 
 
 [assembly: AssemblyMetadata("SquirrelAwareVersion", "1")]
