@@ -6,7 +6,7 @@
     <authors>Drachenhorn</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Drachenhorn</description>
-    <copyright>Copyright 2017 - 2018</copyright>
+    <copyright>Copyright ©  2017 - 2018</copyright>
   </metadata>
   <files>
     <file src="bin\Release\**\*.dll" target="lib\net45" />

@@ -4,18 +4,6 @@
     <VisualStudioVersion>15.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Beta|AnyCPU">
-      <Configuration>Beta</Configuration>
-      <Platform>AnyCPU</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Beta|x64">
-      <Configuration>Beta</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Beta|x86">
-      <Configuration>Beta</Configuration>
-      <Platform>x86</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x86">
       <Configuration>Debug</Configuration>
       <Platform>x86</Platform>
