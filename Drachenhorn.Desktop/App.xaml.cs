@@ -5,6 +5,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Drachenhorn.Core.IO;
@@ -24,6 +25,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Win32;
+using Squirrel;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
 
 namespace Drachenhorn.Desktop
@@ -34,6 +36,18 @@ namespace Drachenhorn.Desktop
     /// </summary>
     public partial class App : Application
     {
+        #region c'tor
+
+        public App() : base()
+        {
+            SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
+
+            Task.Run(() => UpdateSquirrelAsync());
+        }
+
+        #endregion c'tor
+
+
         private readonly ConsoleWindow _console = new ConsoleWindow();
 
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
@@ -71,23 +85,27 @@ namespace Drachenhorn.Desktop
             var allArgs = new List<string>();
 
             allArgs.AddRange(e.Args);
-            var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-            if (args != null)
-                allArgs.AddRange(args);
+            //var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
+            //if (args != null)
+            //    allArgs.AddRange(args);
 
             var filePath = "";
-            foreach (var item in allArgs)
+            foreach (var item in allArgs.Where(x => !x.Contains("squirrel")))
             {
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(item);
 
-                var temp = new Uri(item).LocalPath;
-                if (temp.EndsWith(CharacterSheet.Extension)
-                    || temp.EndsWith(TemplateMetadata.Extension)
-                    && !temp.StartsWith(TemplateMetadata.BaseDirectory))
+                try
                 {
-                    filePath = temp;
-                    break;
+                    var temp = new Uri(item).LocalPath;
+                    if (temp.EndsWith(CharacterSheet.Extension)
+                        || temp.EndsWith(TemplateMetadata.Extension)
+                        && !temp.StartsWith(TemplateMetadata.BaseDirectory))
+                    {
+                        filePath = temp;
+                        break;
+                    }
                 }
+                catch (UriFormatException) { }
             }
 
             if (filePath.EndsWith(SheetTemplate.Extension))
@@ -112,8 +130,6 @@ namespace Drachenhorn.Desktop
 
         private void InitializeData()
         {
-            SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
-
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             SimpleIoc.Default.Register<IUIService>(() => new UIService());
@@ -249,5 +265,65 @@ namespace Drachenhorn.Desktop
         }
 
         #endregion SingleInstance
+
+
+        #region Squirrel
+
+        private async void UpdateSquirrelAsync()
+        {
+            using (var mgr = new UpdateManager("D:\\Users\\Daniel Nietfeld\\Documents\\dev\\Drachenhorn\\Releases"))
+            {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+
+                SquirrelAwareApp.HandleEvents(arguments: Environment.GetCommandLineArgs(),
+                    onInitialInstall: v =>
+                    {
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
+                        mgr.CreateShortcutForThisExe();
+
+                        if (Registry.ClassesRoot.GetSubKeyNames().All(x => x != "Drachenhorn"))
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Register File Extensions");
+                            using (var key = Registry.ClassesRoot.CreateSubKey("Drachenhorn", true))
+                            {
+                                using (var key2 = key.CreateSubKey("shell"))
+                                {
+                                    using (var key3 = key2.CreateSubKey("open"))
+                                    {
+                                        using (var key4 = key3.CreateSubKey("command"))
+                                            key4.SetValue("(Default)", Path.Combine(mgr.RootAppDirectory, AppDomain.CurrentDomain.FriendlyName) + " %1");
+                                    }
+                                }
+                            }
+
+                            using (var key = Registry.ClassesRoot.CreateSubKey(".dsac", true))
+                            {
+                                key.SetValue("(Default)", "Drachenhorn", RegistryValueKind.String);
+                            }
+
+                            using (var key = Registry.ClassesRoot.CreateSubKey(".dsat", true))
+                            {
+                                key.SetValue("(Default)", "Drachenhorn", RegistryValueKind.String);
+                            }
+                        }
+                    },
+                    onAppUpdate: v =>
+                    {
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
+                        mgr.CreateShortcutForThisExe();
+                    },
+                    onAppUninstall: v =>
+                    {
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
+                        mgr.RemoveShortcutForThisExe();
+
+                        Registry.ClassesRoot.DeleteSubKey("Drachenhorn");
+                    });
+
+                await mgr.UpdateApp();
+            }
+        }
+
+        #endregion Squirrel
     }
 }

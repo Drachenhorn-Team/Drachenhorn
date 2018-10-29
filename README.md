@@ -48,9 +48,7 @@ And that is how this all started.
 
 ## Download
 
-<a href="https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/publish/setup.exe" download="setup.exe">
-  <img src="/img/Black/Common/Download.png" width="40" title="setup.exe"/>
-</a>
+Currently disable due to issues with ClickOnce. (Currently moving to Squirrel)
 
 ## Usage
 
