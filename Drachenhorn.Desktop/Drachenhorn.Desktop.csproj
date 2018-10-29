@@ -76,8 +76,10 @@
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -231,6 +233,8 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Resources\Drachenhorn.reg" />
+    <EmbeddedResource Include="Resources\DrachenhornDelete.reg" />
     <Resource Include="..\img\Black\Calculate.png">
       <Link>Images\Black\Calculate.png</Link>
     </Resource>
@@ -447,17 +451,20 @@
     <Resource Include="..\img\Black\Painting\Width.png">
       <Link>Images\Black\Painting\Width.png</Link>
     </Resource>
+    <EmbeddedResource Include="..\img\SaveFileIcon.ico">
+      <Link>Images\Common\SaveFileIcon.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\img\SaveTemplateIcon.ico">
+      <Link>Images\Common\SaveTemplateIcon.ico</Link>
+    </EmbeddedResource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\Common\Drachenhorn.ico" />
-    <Content Include="Images\Common\SaveFileIcon.ico" />
-    <Content Include="Images\Common\SaveTemplateIcon.ico" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Drachenhorn.nuspec" />
-    <None Include="Properties\app.manifest" />
     <Resource Include="Resources\Morpheus.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -711,20 +718,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <FileAssociation Include=".dsac">
-      <Visible>False</Visible>
-      <Description>Drachenhorn Character-Sheet</Description>
-      <Progid>Drachenhorn Sheet</Progid>
-      <DefaultIcon>Images\Common\SaveFileIcon.ico</DefaultIcon>
-    </FileAssociation>
-    <FileAssociation Include=".dsat">
-      <Visible>False</Visible>
-      <Description>Drachenhorn Character-Template</Description>
-      <Progid>Drachenhorn Template</Progid>
-      <DefaultIcon>Images\Common\SaveTemplateIcon.ico</DefaultIcon>
-    </FileAssociation>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Drachenhorn.Core\Drachenhorn.Core.csproj">
       <Project>{ec066881-e87c-46c3-8dab-04a19696dc99}</Project>

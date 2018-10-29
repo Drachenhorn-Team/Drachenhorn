@@ -12,7 +12,7 @@ using Squirrel;
 [assembly: AssemblyTitle("Drachenhorn.Desktop")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Drachenhorn-Team")]
+[assembly: AssemblyCompany("Drachenhorn")]
 [assembly: AssemblyProduct("Drachenhorn")]
 [assembly: AssemblyCopyright("Copyright ©  2017 - 2018")]
 [assembly: AssemblyTrademark("Drachenhorn")]
@@ -52,7 +52,7 @@ using Squirrel;
 //
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
-[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyVersion("1.0.4")]
 
 
 [assembly: AssemblyMetadata("SquirrelAwareVersion", "1")]

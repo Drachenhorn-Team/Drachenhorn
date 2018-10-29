@@ -208,7 +208,9 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
                     .Warn("Settings not found. Generating new.");
-                return new Settings();
+                var s = new Settings();
+                s.Save();
+                return s;
             }
             catch (InvalidOperationException)
             {
@@ -217,7 +219,9 @@ namespace Drachenhorn.Desktop.UserSettings
 
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
                     .Warn("Settings corrupted. Generating new.");
-                return new Settings();
+                var s = new Settings();
+                s.Save();
+                return s;
             }
         }
 
