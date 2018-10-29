@@ -12,20 +12,20 @@
         </Style>
     </UserControl.Resources>
     <DockPanel Grid.IsSharedSizeScope="True">
-        <Grid DockPanel.Dock="Top">
+        <Grid DockPanel.Dock="Top" Margin="5 0 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Name" />
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Weight" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Type" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" />
-            <TextBlock Text="{lang:Translate CharacterSheet.StoragePlace}" Grid.Column="1" />
-            <TextBlock Text="{lang:Translate CharacterSheet.Weight}" Grid.Column="2" />
-            <TextBlock Text="{lang:Translate CharacterSheet.Type}" Grid.Column="3" />
-            <TextBlock Text="{lang:Translate CharacterSheet.Handycap}" Grid.Column="4" />
+            <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Margin="5"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.StoragePlace}" Grid.Column="1" Margin="5"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Weight}" Grid.Column="2" Margin="5"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Type}" Grid.Column="3" Margin="5"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.Handycap}" Grid.Column="4" Margin="5"/>
         </Grid>
         <WrapPanel DockPanel.Dock="Bottom">
             <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5"/>
@@ -36,18 +36,18 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Name" />
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace" />
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Weight" />
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Type" />
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Weight"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Type"/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="{Binding Name}" Grid.Column="0" />
+                        <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"/>
                         <TextBox Text="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1" />
-                        <TextBlock Text="{Binding Weight}" Grid.Column="2" />
-                        <TextBlock Text="{Binding Type, Converter={StaticResource EnumToStringConverter}}" Grid.Column="3" />
-                        <TextBlock Text="{Binding Handicap}" Grid.Column="4" />
+                        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="2" />
+                        <TextBlock Text="{Binding Type, Converter={StaticResource EnumToStringConverter}}" Grid.Column="3" Margin="5"/>
+                        <TextBlock Text="{Binding Handicap}" Grid.Column="4" Margin="5"/>
 
                     </Grid>
                 </DataTemplate>
