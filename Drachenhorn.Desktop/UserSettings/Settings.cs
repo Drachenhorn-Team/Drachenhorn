@@ -91,9 +91,17 @@ namespace Drachenhorn.Desktop.UserSettings
                 DesktopBridge.Helpers helpers = new DesktopBridge.Helpers();
                 if (helpers.IsRunningAsUwp())
                     return "Version managed by Windows-Store";
-                if (File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "..", "Update.exe")))
-                    using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
-                        return mgr.Result.CurrentlyInstalledVersion().ToString();
+
+                try
+                {
+                    using (var mgr = new UpdateManager(""))
+                        return mgr.CurrentlyInstalledVersion().ToString();
+                }
+                catch(Exception e)
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Debug("Unable to load Squirrel Version.", e);
+                }
+
                 return "Application not installed.";
             }
         }
