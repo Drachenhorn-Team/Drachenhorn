@@ -272,11 +272,49 @@ namespace Drachenhorn.Desktop
 
         private void SquirrelManager()
         {
-            UpdateManager mgr;
-
             try
             {
-                mgr = new UpdateManager("C:");
+                using (var mgr = new UpdateManager("C:"))
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+
+                    SquirrelAwareApp.HandleEvents(
+                        onInitialInstall: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
+                            mgr.CreateShortcutForThisExe();
+
+                            CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+
+                            RegisterFileTypes(mgr.RootAppDirectory);
+
+                            UpdateManager.RestartApp();
+                        },
+                        onAppUpdate: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
+                            //mgr.CreateShortcutForThisExe();
+                        },
+                        onAppUninstall: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
+                            mgr.RemoveShortcutForThisExe();
+
+                            // ReSharper disable once AssignNullToNotNullAttribute
+                            var reg = new StreamReader(Assembly.GetExecutingAssembly()
+                                    .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
+                                .ReadToEnd();
+
+                            var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
+
+                            File.WriteAllText(tempFile, reg);
+
+                            // ReSharper disable once PossibleNullReferenceException
+                            Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
+
+                            this.Shutdown();
+                        });
+                }
             }
             catch (Exception e)
             {
@@ -287,49 +325,8 @@ namespace Drachenhorn.Desktop
                 return;
             }
 
-            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
-
-            SquirrelAwareApp.HandleEvents(
-                onInitialInstall: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
-                    mgr.CreateShortcutForThisExe();
-
-                    CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
-
-                    RegisterFileTypes(mgr.RootAppDirectory);
-
-                    this.Shutdown();
-                },
-                onAppUpdate: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
-                    //mgr.CreateShortcutForThisExe();
-                },
-                onAppUninstall: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
-                    mgr.RemoveShortcutForThisExe();
-
-                    // ReSharper disable once AssignNullToNotNullAttribute
-                    var reg = new StreamReader(Assembly.GetExecutingAssembly()
-                            .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
-                        .ReadToEnd();
-
-                    var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
-
-                    File.WriteAllText(tempFile, reg);
-
-                    // ReSharper disable once PossibleNullReferenceException
-                    Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
-
-                    this.Shutdown();
-                });
-
-            mgr.Dispose();
-
-            var thread = new Thread(()  => UpdateSquirrel());
-            thread.IsBackground = true;
+            var thread = new Thread(UpdateSquirrel);
+            thread.IsBackground = false;
             thread.Start();
         }
 
