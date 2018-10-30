@@ -3,6 +3,7 @@ using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
 using System.IO.Packaging;
+using System.Reflection;
 using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
@@ -11,6 +12,7 @@ using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
+using Squirrel;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
@@ -89,8 +91,10 @@ namespace Drachenhorn.Desktop.UserSettings
                 DesktopBridge.Helpers helpers = new DesktopBridge.Helpers();
                 if (helpers.IsRunningAsUwp())
                     return "Version managed by Windows-Store";
-                if (ApplicationDeployment.IsNetworkDeployed)
-                    return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+                if (File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "..", "Update.exe")))
+                    using (var mgr =
+                        UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
+                        mgr.Result.CurrentlyInstalledVersion().ToString();
                 return "Application not installed.";
             }
         }

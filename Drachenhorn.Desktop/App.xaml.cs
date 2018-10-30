@@ -338,8 +338,8 @@ namespace Drachenhorn.Desktop
         {
             try
             {
-                using (var mgr = new UpdateManager("C:\\dev\\Drachenhorn\\Drachenhorn.Desktop\\Releases"))
-                    await mgr.UpdateApp();
+                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
+                    await mgr.Result.UpdateApp();
             }
             catch (Exception e)
             {
