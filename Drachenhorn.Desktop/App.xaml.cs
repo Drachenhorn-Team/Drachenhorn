@@ -57,6 +57,7 @@ namespace Drachenhorn.Desktop
             window.ShowDialog();
         }
 
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
@@ -323,7 +324,9 @@ namespace Drachenhorn.Desktop
                     this.Shutdown();
                 });
 
-            Task.Run(() => UpdateSquirrel());
+            var thread = new Thread(()  => UpdateSquirrel());
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         private async void UpdateSquirrel()
