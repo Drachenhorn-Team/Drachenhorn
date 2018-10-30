@@ -48,7 +48,9 @@ And that is how this all started.
 
 ## Download
 
-Currently disable due to issues with ClickOnce. (Currently moving to Squirrel)
+<a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
+  <img src="https://simpleicons.org/icons/windows.svg" width="32" alt="Windows">
+</a>
 
 ## Usage
 
