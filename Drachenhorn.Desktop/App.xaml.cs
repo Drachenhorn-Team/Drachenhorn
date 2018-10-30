@@ -72,8 +72,10 @@ namespace Drachenhorn.Desktop
             var splash = new SplashScreen();
             splash.Show();
 
-            if (!IsSingleInstance())
-                Current.Shutdown();
+            //TODO: fix single instance
+            //Disable due to Problems with Squirrel
+            //if (!IsSingleInstance())
+            //    Current.Shutdown();
 
             InitializeData();
 
