@@ -92,9 +92,8 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (helpers.IsRunningAsUwp())
                     return "Version managed by Windows-Store";
                 if (File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "..", "Update.exe")))
-                    using (var mgr =
-                        UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
-                        mgr.Result.CurrentlyInstalledVersion().ToString();
+                    using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
+                        return mgr.Result.CurrentlyInstalledVersion().ToString();
                 return "Application not installed.";
             }
         }
