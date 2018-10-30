@@ -38,6 +38,18 @@ namespace Drachenhorn.Desktop
     /// </summary>
     public partial class App : Application
     {
+        #region c'tor
+
+        public App()
+        {
+            SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
+
+            SquirrelManager();
+        }
+
+        #endregion c'tor
+
+
         private readonly ConsoleWindow _console = new ConsoleWindow();
 
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
@@ -60,10 +72,6 @@ namespace Drachenhorn.Desktop
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
-
-            SquirrelManager();
-
 #if DEBUG
             _console.Show();
             _console.Visibility = Visibility.Visible;
@@ -258,8 +266,6 @@ namespace Drachenhorn.Desktop
                         });
 
                         server.Disconnect();
-                        //Dispatch the message, probably onto the thread your form
-                        //  was contructed on with Form.BeginInvoke
                     }
                 }
             }
