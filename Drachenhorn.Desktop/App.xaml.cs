@@ -326,6 +326,8 @@ namespace Drachenhorn.Desktop
                     this.Shutdown();
                 });
 
+            mgr.Dispose();
+
             var thread = new Thread(()  => UpdateSquirrel());
             thread.IsBackground = true;
             thread.Start();
