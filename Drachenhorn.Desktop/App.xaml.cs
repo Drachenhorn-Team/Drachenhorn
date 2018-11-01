@@ -335,7 +335,7 @@ namespace Drachenhorn.Desktop
                     this.Shutdown();
                 });
 
-            var thread = new Thread(UpdateSquirrel) {IsBackground = true};
+            var thread = new Thread(UpdateSquirrel) {IsBackground = false};
             thread.Start();
         }
 
@@ -343,8 +343,11 @@ namespace Drachenhorn.Desktop
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
-                    await mgr.Result.UpdateApp();
+                IUpdateManager mgr;
+                using (mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
+                    await mgr.UpdateApp();
+                mgr = null;
+                GC.WaitForFullGCComplete();
             }
             catch (Exception e)
             {
@@ -352,7 +355,6 @@ namespace Drachenhorn.Desktop
 #if RELEASE
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
-                return;
             }
         }
 
