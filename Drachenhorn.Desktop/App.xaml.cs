@@ -290,61 +290,52 @@ namespace Drachenhorn.Desktop
 
         private void SquirrelManager()
         {
-            try
-            {
-                using (var mgr = new UpdateManager("C:"))
+            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+
+            SquirrelAwareApp.HandleEvents(
+                onInitialInstall: v =>
                 {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
 
-                    SquirrelAwareApp.HandleEvents(
-                        onInitialInstall: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
-                            mgr.CreateShortcutForThisExe();
+                    using (var mgr = new UpdateManager("C:"))
+                    {
+                        mgr.CreateShortcutForThisExe();
 
-                            CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+                        CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
 
-                            RegisterFileTypes(mgr.RootAppDirectory);
+                        RegisterFileTypes(mgr.RootAppDirectory);
+                    }
 
-                            UpdateManager.RestartApp();
-                        },
-                        onAppUpdate: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
-                            //mgr.CreateShortcutForThisExe();
-                        },
-                        onAppUninstall: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
-                            mgr.RemoveShortcutForThisExe();
+                    UpdateManager.RestartApp();
+                },
+                onAppUpdate: v =>
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
+                    //mgr.CreateShortcutForThisExe();
+                },
+                onAppUninstall: v =>
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
 
-                            // ReSharper disable once AssignNullToNotNullAttribute
-                            var reg = new StreamReader(Assembly.GetExecutingAssembly()
-                                    .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
-                                .ReadToEnd();
+                    using (var mgr = new UpdateManager("C:"))
+                        mgr.RemoveShortcutForThisExe();
 
-                            var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
+                    // ReSharper disable once AssignNullToNotNullAttribute
+                    var reg = new StreamReader(Assembly.GetExecutingAssembly()
+                            .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
+                        .ReadToEnd();
 
-                            File.WriteAllText(tempFile, reg);
+                    var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
 
-                            // ReSharper disable once PossibleNullReferenceException
-                            Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
+                    File.WriteAllText(tempFile, reg);
 
-                            this.Shutdown();
-                        });
-                }
-            }
-            catch (Exception e)
-            {
-                // ignored
-#if !DEBUG
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
-                return;
-            }
+                    // ReSharper disable once PossibleNullReferenceException
+                    Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
 
-            var thread = new Thread(UpdateSquirrel);
-            thread.IsBackground = false;
+                    this.Shutdown();
+                });
+
+            var thread = new Thread(UpdateSquirrel) {IsBackground = true};
             thread.Start();
         }
 
