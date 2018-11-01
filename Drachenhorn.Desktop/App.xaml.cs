@@ -47,7 +47,7 @@ namespace Drachenhorn.Desktop
 
         #region c'tor
 
-        public App() : base()
+        public App()
         {
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
 
@@ -82,6 +82,7 @@ namespace Drachenhorn.Desktop
             var window = new ExceptionMessageBox(e.Exception, "Im Programm ist ein Fehler aufgetreten.", true);
             window.ShowDialog();
         }
+
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -277,8 +278,6 @@ namespace Drachenhorn.Desktop
                         });
 
                         server.Disconnect();
-                        //Dispatch the message, probably onto the thread your form
-                        //  was contructed on with Form.BeginInvoke
                     }
                 }
             }
@@ -291,11 +290,49 @@ namespace Drachenhorn.Desktop
 
         private void SquirrelManager()
         {
-            UpdateManager mgr;
-
             try
             {
-                mgr = new UpdateManager("C:");
+                using (var mgr = new UpdateManager("C:"))
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+
+                    SquirrelAwareApp.HandleEvents(
+                        onInitialInstall: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
+                            mgr.CreateShortcutForThisExe();
+
+                            CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+
+                            RegisterFileTypes(mgr.RootAppDirectory);
+
+                            UpdateManager.RestartApp();
+                        },
+                        onAppUpdate: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
+                            //mgr.CreateShortcutForThisExe();
+                        },
+                        onAppUninstall: v =>
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
+                            mgr.RemoveShortcutForThisExe();
+
+                            // ReSharper disable once AssignNullToNotNullAttribute
+                            var reg = new StreamReader(Assembly.GetExecutingAssembly()
+                                    .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
+                                .ReadToEnd();
+
+                            var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
+
+                            File.WriteAllText(tempFile, reg);
+
+                            // ReSharper disable once PossibleNullReferenceException
+                            Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
+
+                            this.Shutdown();
+                        });
+                }
             }
             catch (Exception e)
             {
@@ -306,46 +343,9 @@ namespace Drachenhorn.Desktop
                 return;
             }
 
-            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
-
-            SquirrelAwareApp.HandleEvents(
-                onInitialInstall: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
-                    mgr.CreateShortcutForThisExe();
-
-                    CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
-
-                    RegisterFileTypes(mgr.RootAppDirectory);
-
-                    this.Shutdown();
-                },
-                onAppUpdate: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
-                    //mgr.CreateShortcutForThisExe();
-                },
-                onAppUninstall: v =>
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
-                    mgr.RemoveShortcutForThisExe();
-
-                    // ReSharper disable once AssignNullToNotNullAttribute
-                    var reg = new StreamReader(Assembly.GetExecutingAssembly()
-                            .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
-                        .ReadToEnd();
-
-                    var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
-
-                    File.WriteAllText(tempFile, reg);
-
-                    // ReSharper disable once PossibleNullReferenceException
-                    Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
-
-                    this.Shutdown();
-                });
-
-            Task.Run(() => UpdateSquirrel());
+            var thread = new Thread(UpdateSquirrel);
+            thread.IsBackground = false;
+            thread.Start();
         }
 
         private async void UpdateSquirrel()
