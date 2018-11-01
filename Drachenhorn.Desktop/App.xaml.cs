@@ -38,6 +38,13 @@ namespace Drachenhorn.Desktop
     /// </summary>
     public partial class App : Application
     {
+        #region Properties
+
+        private bool _isClosing;
+
+        #endregion Properties
+
+
         #region c'tor
 
         public App() : base()
@@ -45,6 +52,13 @@ namespace Drachenhorn.Desktop
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
 
             SquirrelManager();
+
+            var instance = new Task<bool>(IsSingleInstance);
+            instance.ContinueWith(x =>
+            {
+                if (!x.Result) Current.Shutdown();
+            });
+            instance.Start();
         }
 
         #endregion c'tor
@@ -79,17 +93,9 @@ namespace Drachenhorn.Desktop
             var splash = new SplashScreen();
             splash.Show();
 
-            if (!IsSingleInstance())
-                Current.Shutdown();
-
             InitializeData();
 
-            var allArgs = new List<string>();
-
-            allArgs.AddRange(e.Args);
-            //var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-            //if (args != null)
-            //    allArgs.AddRange(args);
+            var allArgs = new List<string>(e.Args);
 
             var filePath = "";
             foreach (var item in allArgs)
@@ -130,6 +136,8 @@ namespace Drachenhorn.Desktop
 
             MainWindow.Closed += (s, a) =>
             {
+                _isClosing = true;
+
                 _console.ShouldClose = true;
                 _console.Close();
             };
@@ -210,13 +218,17 @@ namespace Drachenhorn.Desktop
 
         private bool IsSingleInstance()
         {
-            if (IsProcessOpen())
+            try
             {
-                using (var client = new NamedPipeClientStream(AppDomain.CurrentDomain.FriendlyName))
+                if (IsProcessOpen())
                 {
-                    var text = "";
-                    var args = AppDomain.CurrentDomain?.SetupInformation?.ActivationArguments?.ActivationData;
-                    if (args != null)
+                    using (var client = new NamedPipeClientStream(AppDomain.CurrentDomain.FriendlyName))
+                    {
+                        client.Connect(1000);
+
+                        var text = "";
+                        var args = Environment.GetCommandLineArgs().Where(x => !x.Contains("squirrel"));
+
                         foreach (var item in args)
                         {
                             var temp = new Uri(item).LocalPath;
@@ -224,20 +236,22 @@ namespace Drachenhorn.Desktop
                                 text = item;
                         }
 
-                    if (string.IsNullOrEmpty(text)) return false;
+                        if (string.IsNullOrEmpty(text)) return false;
 
-                    client.Connect();
-                    using (var writer = new StreamWriter(client))
-                    {
-                        writer.WriteLine(text);
+                        using (var writer = new StreamWriter(client))
+                        {
+                            writer.WriteLine(text);
+                        }
                     }
+
+                    return false;
                 }
-
-                return false;
             }
-
-            var listenThread = new Thread(Listen) { IsBackground = true };
-            listenThread.Start();
+            catch (TimeoutException)
+            {
+                var listenThread = new Thread(Listen) { IsBackground = true };
+                listenThread.Start();
+            }
 
             return true;
         }
@@ -248,7 +262,7 @@ namespace Drachenhorn.Desktop
             {
                 using (var reader = new StreamReader(server))
                 {
-                    for (; ; )
+                    while (!_isClosing)
                     {
                         server.WaitForConnection();
 
