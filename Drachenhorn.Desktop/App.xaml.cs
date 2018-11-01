@@ -343,11 +343,8 @@ namespace Drachenhorn.Desktop
         {
             try
             {
-                IUpdateManager mgr;
-                using (mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
+                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
                     await mgr.UpdateApp();
-                mgr = null;
-                GC.WaitForFullGCComplete();
             }
             catch (Exception e)
             {
