@@ -379,7 +379,7 @@ namespace Drachenhorn.Desktop
 
         private void RegisterFileTypes(string basePath)
         {
-            if (Registry.ClassesRoot.GetSubKeyNames().All(x => x != "Drachenhorn"))
+            if (Registry.ClassesRoot.GetSubKeyNames().All(x => !x.Contains("Drachenhorn")))
             {
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater")
                     .Info("Register File Extensions: " + basePath);
