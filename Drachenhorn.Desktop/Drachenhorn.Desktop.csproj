@@ -188,6 +188,7 @@
     <Compile Include="UserElements\LocalizedComboBox.cs" />
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
+    <Compile Include="UserSettings\SquirrelManager.cs" />
     <Compile Include="Views\AttributeView.xaml.cs">
       <DependentUpon>AttributeView.xaml</DependentUpon>
     </Compile>

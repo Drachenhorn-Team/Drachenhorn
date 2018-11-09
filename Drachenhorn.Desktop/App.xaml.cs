@@ -44,7 +44,9 @@ namespace Drachenhorn.Desktop
         {
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
 
-            SquirrelManager();
+            SquirrelManager.Startup();
+
+            Task.Run(() => SquirrelManager.UpdateSquirrel());
         }
 
         #endregion c'tor
@@ -272,131 +274,5 @@ namespace Drachenhorn.Desktop
         }
 
         #endregion SingleInstance
-
-
-        #region Squirrel
-
-        private void SquirrelManager()
-        {
-            try
-            {
-                using (var mgr = new UpdateManager("C:"))
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
-
-                    SquirrelAwareApp.HandleEvents(
-                        onInitialInstall: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Initial Install");
-                            mgr.CreateShortcutForThisExe();
-
-                            CopyFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
-
-                            RegisterFileTypes(mgr.RootAppDirectory);
-
-                            UpdateManager.RestartApp();
-                        },
-                        onAppUpdate: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("AppUpdate");
-                            //mgr.CreateShortcutForThisExe();
-                        },
-                        onAppUninstall: v =>
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Uninstall");
-                            mgr.RemoveShortcutForThisExe();
-
-                            // ReSharper disable once AssignNullToNotNullAttribute
-                            var reg = new StreamReader(Assembly.GetExecutingAssembly()
-                                    .GetManifestResourceStream("Drachenhorn.Desktop.Resources.DrachenhornDelete.reg"))
-                                .ReadToEnd();
-
-                            var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
-
-                            File.WriteAllText(tempFile, reg);
-
-                            // ReSharper disable once PossibleNullReferenceException
-                            Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
-
-                            this.Shutdown();
-                        });
-                }
-            }
-            catch (Exception e)
-            {
-                // ignored
-#if !DEBUG
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
-                return;
-            }
-
-            var thread = new Thread(UpdateSquirrel);
-            thread.IsBackground = false;
-            thread.Start();
-        }
-
-        private async void UpdateSquirrel()
-        {
-            try
-            {
-                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn"))
-                    await mgr.Result.UpdateApp();
-            }
-            catch (Exception e)
-            {
-                // ignored
-#if RELEASE
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
-                return;
-            }
-        }
-
-        private void CopyFileIcons(string dir)
-        {
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
-
-            var fileNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-
-            foreach (var fileName in fileNames)
-            {
-                if (!fileName.EndsWith(".ico")) continue;
-
-                var split = fileName.Split('.');
-
-                using (FileStream fileStream = File.Create(
-                    Path.Combine(dir, split[split.Length - 2] + "." + split[split.Length - 1])))
-                {
-                    // ReSharper disable once PossibleNullReferenceException
-                    Assembly.GetExecutingAssembly().GetManifestResourceStream(fileName).CopyTo(fileStream);
-                }
-            }
-        }
-
-        private void RegisterFileTypes(string basePath)
-        {
-            if (Registry.ClassesRoot.GetSubKeyNames().All(x => x != "Drachenhorn"))
-            {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater")
-                    .Info("Register File Extensions: " + basePath);
-
-                // ReSharper disable once AssignNullToNotNullAttribute
-                var reg = new StreamReader(Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("Drachenhorn.Desktop.Resources.Drachenhorn.reg")).ReadToEnd();
-
-                reg = reg.Replace("%dir%", basePath.Replace("\\", "\\\\"));
-
-                var tempFile = Path.GetTempPath() + Guid.NewGuid() + ".reg";
-
-                File.WriteAllText(tempFile, reg);
-
-                // ReSharper disable once PossibleNullReferenceException
-                Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
-            }
-        }
-
-        #endregion Squirrel
     }
 }
