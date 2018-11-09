@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +25,6 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Win32;
-using Squirrel;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
 using StreamReader = System.IO.StreamReader;
 
