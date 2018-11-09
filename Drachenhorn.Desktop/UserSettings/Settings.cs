@@ -94,7 +94,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
                 try
                 {
-                    using (var mgr = new UpdateManager(""))
+                    using (var mgr = new UpdateManager(null))
                         return mgr.CurrentlyInstalledVersion().ToString();
                 }
                 catch(Exception e)
