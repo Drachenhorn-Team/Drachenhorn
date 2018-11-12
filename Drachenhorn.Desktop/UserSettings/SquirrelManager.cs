@@ -46,18 +46,14 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        public static async Task<bool> IsUpdateAvailable(Action<int> progress = null, Action<SemanticVersion> onIsUpdateAvailable = null)
+        public static async Task<bool> IsUpdateAvailable(Action<int> progress = null)
         {
             try
             {
                 using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
                 {
                     var update = await mgr.CheckForUpdate(progress: progress);
-                    if (update.ReleasesToApply.Any())
-                    {
-                        onIsUpdateAvailable?.Invoke(update.FutureReleaseEntry.Version);
-                        return true;
-                    }
+                    return update.ReleasesToApply.Any();
                 }
             }
             catch (Exception e)

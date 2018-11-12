@@ -116,8 +116,7 @@ namespace Drachenhorn.Desktop.Views
         {
             Task.Run(async () =>
             {
-                await SquirrelManager.IsUpdateAvailable(null, x =>
-                {
+                if (await SquirrelManager.IsUpdateAvailable())
                     NotificationContainer.Manager.CreateMessage()
                         .Accent((SolidColorBrush) this.Resources["InfoBrush"])
                         .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
@@ -126,11 +125,10 @@ namespace Drachenhorn.Desktop.Views
                         .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
                         .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
                         .Queue();
-                });
             });
         }
 
-        private void DoUpdate(object o)
+        private void DoUpdate(INotificationMessageButton button)
         {
             var progressBar = new ProgressBar
             {
