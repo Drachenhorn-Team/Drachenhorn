@@ -113,14 +113,6 @@ namespace Drachenhorn.Desktop.Views
 
         private void MainView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            NotificationContainer.Manager.CreateMessage()
-                .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
-                .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
-                .HasBadge("Update")
-                .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
-                .Dismiss().WithDelay(5000)
-                .Queue();
-
             Task.Run(async () =>
             {
                 if (await SquirrelManager.IsUpdateAvailable())

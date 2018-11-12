@@ -20,6 +20,8 @@ namespace Drachenhorn.Desktop.UserSettings
     {
         #region Squirrel
 
+        private static readonly string GithubUpdatePath = "https://github.com/Drachenhorn-Team/Drachenhorn";
+
         public static void Startup()
         {
             try
@@ -50,7 +52,7 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
+                using (var mgr = UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result)
                 {
                     var update = await mgr.CheckForUpdate(progress: progress);
                     return update.ReleasesToApply.Any();
@@ -70,7 +72,7 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
+                using (var mgr = UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result)
                 {
                     var release = await mgr.UpdateApp(progress);
                     finished?.Invoke(true, release.Version);
