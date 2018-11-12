@@ -51,7 +51,7 @@ namespace Drachenhorn.Desktop
 
             SquirrelManager.Startup();
 
-            Task.Run(() => SquirrelManager.UpdateSquirrel());
+            //Task.Run(() => SquirrelManager.UpdateSquirrel());
 
             var instance = new Task<bool>(IsSingleInstance);
             instance.ContinueWith(x =>
