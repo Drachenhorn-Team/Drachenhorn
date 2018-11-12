@@ -11,6 +11,7 @@ using System.Windows;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Win32;
+using NuGet;
 using Squirrel;
 
 namespace Drachenhorn.Desktop.UserSettings
@@ -27,7 +28,12 @@ namespace Drachenhorn.Desktop.UserSettings
                 {
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
 
-                    SquirrelAwareApp.HandleEvents(OnInitialInstall, OnAppUpdate, OnAppObsoleted, OnAppUninstall);
+                    SquirrelAwareApp.HandleEvents(
+                        OnInitialInstall,
+                        OnAppUpdate,
+                        OnAppObsoleted,
+                        OnAppUninstall,
+                        OnFirstRun);
                 }
             }
             catch (Exception e)
@@ -40,14 +46,18 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        public static async Task<bool> IsUpdateAvailable()
+        public static async Task<bool> IsUpdateAvailable(Action<int> progress = null, Action<SemanticVersion> onIsUpdateAvailable = null)
         {
             try
             {
                 using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
                 {
-                    var update = await mgr.CheckForUpdate();
-                    return update.ReleasesToApply.Any();
+                    var update = await mgr.CheckForUpdate(progress: progress);
+                    if (update.ReleasesToApply.Any())
+                    {
+                        onIsUpdateAvailable?.Invoke(update.FutureReleaseEntry.Version);
+                        return true;
+                    }
                 }
             }
             catch (Exception e)
@@ -56,17 +66,18 @@ namespace Drachenhorn.Desktop.UserSettings
 #if RELEASE
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
-                return false;
             }
+            return false;
         }
 
-        public static async void UpdateSquirrel(Action<int> progress = null)
+        public static async void UpdateSquirrel(Action<int> progress = null, Action<bool, SemanticVersion> finished = null)
         {
             try
             {
                 using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Drachenhorn-Team/Drachenhorn").Result)
                 {
-                    await mgr.UpdateApp(progress);
+                    var release = await mgr.UpdateApp(progress);
+                    finished?.Invoke(true, release.Version);
                 }
             }
             catch (Exception e)
@@ -76,6 +87,8 @@ namespace Drachenhorn.Desktop.UserSettings
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
             }
+
+            finished?.Invoke(true, null);
         }
 
         #endregion Squirrel
@@ -149,6 +162,14 @@ namespace Drachenhorn.Desktop.UserSettings
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
             }
+        }
+
+        private static void OnFirstRun()
+        {
+            using (var mgr = new UpdateManager("C:"))
+                ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+
+            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("OnAppUpdate");
         }
 
         #endregion Events

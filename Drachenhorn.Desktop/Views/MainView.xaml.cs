@@ -1,15 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI.Dialogs;
+using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Template;
+using Enterwell.Clients.Wpf.Notifications;
 using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
@@ -28,6 +32,8 @@ namespace Drachenhorn.Desktop.Views
         public MainView(string path)
         {
             InitializeComponent();
+
+            NotificationContainer.Manager = new NotificationMessageManager();
 
             //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
 
@@ -103,5 +109,74 @@ namespace Drachenhorn.Desktop.Views
             if (!task.Result)
                 e.Cancel = true;
         }
+
+        #region Update
+
+        private void MainView_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            Task.Run(async () =>
+            {
+                await SquirrelManager.IsUpdateAvailable(null, x =>
+                {
+                    NotificationContainer.Manager.CreateMessage()
+                        .Accent((SolidColorBrush) this.Resources["InfoBrush"])
+                        .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
+                        .HasBadge("Update")
+                        .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
+                        .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
+                        .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
+                        .Queue();
+                });
+            });
+        }
+
+        private void DoUpdate(object o)
+        {
+            var progressBar = new ProgressBar
+            {
+                VerticalAlignment = VerticalAlignment.Bottom,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Height = 3,
+                BorderThickness = new Thickness(0),
+                Foreground = (SolidColorBrush)this.Resources["ForegroundBrush"],
+                Background = Brushes.Transparent,
+                IsHitTestVisible = false,
+                Value = 0,
+                Maximum = 100,
+                Minimum = -1
+            };
+
+            var notif = NotificationContainer.Manager.CreateMessage()
+                .Accent((SolidColorBrush)this.Resources["InfoBrush"])
+                .Background((SolidColorBrush)this.Resources["BackgroundBrush"])
+                .HasBadge("Update")
+                .HasMessage(LanguageManager.Translate("Updater.Updating"))
+                .WithOverlay(progressBar)
+                .Queue();
+
+            SquirrelManager.UpdateSquirrel(x => progressBar.Value = x, (f, x) =>
+            {
+                NotificationContainer.Manager.Dismiss(notif);
+
+                if (f)
+                    NotificationContainer.Manager.CreateMessage()
+                        .Accent((SolidColorBrush) this.Resources["InfoBrush"])
+                        .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
+                        .HasBadge("Update")
+                        .HasMessage(LanguageManager.Translate("Updater.UpdateFinished"))
+                        .Dismiss().WithDelay(5000)
+                        .Queue();
+                else
+                    NotificationContainer.Manager.CreateMessage()
+                        .Accent((SolidColorBrush)this.Resources["InfoBrush"])
+                        .Background((SolidColorBrush)this.Resources["BackgroundBrush"])
+                        .HasBadge("Update")
+                        .HasMessage(LanguageManager.Translate("Updater.UpdateFailed"))
+                        .Dismiss().WithDelay(5000)
+                        .Queue();
+            });
+        }
+
+        #endregion Update
     }
 }
