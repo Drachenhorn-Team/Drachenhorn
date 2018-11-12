@@ -31,7 +31,6 @@
     </Window.InputBindings>
 
     <Grid>
-        <controls1:NotificationMessageContainer Name="NotificationContainer"/>
         <DockPanel>
             <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False"
                        IsQuickAccessToolBarVisible="False">
@@ -160,5 +159,8 @@
                 </TabControl.ContentTemplate>
             </TabControl>
         </DockPanel>
+        <controls1:NotificationMessageContainer Name="NotificationContainer"
+                                                Background="{StaticResource BackgroundBrush}"
+                                                HorizontalAlignment="Center"/>
     </Grid>
 </fluent:RibbonWindow>

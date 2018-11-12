@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Drachenhorn.Core.Lang;
-using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI.Dialogs;
@@ -114,12 +113,20 @@ namespace Drachenhorn.Desktop.Views
 
         private void MainView_OnLoaded(object sender, RoutedEventArgs e)
         {
+            NotificationContainer.Manager.CreateMessage()
+                .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
+                .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
+                .HasBadge("Update")
+                .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
+                .Dismiss().WithDelay(5000)
+                .Queue();
+
             Task.Run(async () =>
             {
                 if (await SquirrelManager.IsUpdateAvailable())
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) this.Resources["InfoBrush"])
-                        .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
+                        .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
+                        .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
                         .HasBadge("Update")
                         .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                         .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
@@ -136,7 +143,7 @@ namespace Drachenhorn.Desktop.Views
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Height = 3,
                 BorderThickness = new Thickness(0),
-                Foreground = (SolidColorBrush)this.Resources["BorderBrush"],
+                Foreground = (SolidColorBrush)this.FindResource("BorderBrush"),
                 Background = Brushes.Transparent,
                 IsHitTestVisible = false,
                 Value = 0,
@@ -145,8 +152,8 @@ namespace Drachenhorn.Desktop.Views
             };
 
             var notif = NotificationContainer.Manager.CreateMessage()
-                .Accent((SolidColorBrush)this.Resources["InfoBrush"])
-                .Background((SolidColorBrush)this.Resources["BackgroundBrush"])
+                .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
+                .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
                 .HasBadge("Update")
                 .HasMessage(LanguageManager.Translate("Updater.Updating"))
                 .WithOverlay(progressBar)
@@ -158,8 +165,8 @@ namespace Drachenhorn.Desktop.Views
 
                 if (f)
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) this.Resources["InfoBrush"])
-                        .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
+                        .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
+                        .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
                         .HasBadge("Update")
                         .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
                         .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
@@ -167,8 +174,8 @@ namespace Drachenhorn.Desktop.Views
                         .Queue();
                 else
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush)this.Resources["InfoBrush"])
-                        .Background((SolidColorBrush)this.Resources["BackgroundBrush"])
+                        .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
+                        .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
                         .HasBadge("Update")
                         .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
                         .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
