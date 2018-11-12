@@ -22,6 +22,15 @@ namespace Drachenhorn.Desktop.UserSettings
 
         private static readonly string GithubUpdatePath = "https://github.com/Drachenhorn-Team/Drachenhorn";
 
+        private static IUpdateManager GetUpdateManager()
+        {
+#if RELEASE
+            return UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result;
+#else
+            return new UpdateManager("C:");
+#endif
+        }
+
         public static void Startup()
         {
             try
@@ -52,7 +61,7 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result)
+                using (var mgr = GetUpdateManager())
                 {
                     var update = await mgr.CheckForUpdate(progress: progress);
                     return update.ReleasesToApply.Any();
@@ -72,7 +81,7 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result)
+                using (var mgr = GetUpdateManager())
                 {
                     var release = await mgr.UpdateApp(progress);
                     finished?.Invoke(true, release.Version);

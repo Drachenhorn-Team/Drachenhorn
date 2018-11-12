@@ -113,9 +113,9 @@ namespace Drachenhorn.Desktop.Views
 
         private void MainView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            Task.Run(async () =>
+            Task.Run(() =>
             {
-                if (await SquirrelManager.IsUpdateAvailable())
+                if (SquirrelManager.IsUpdateAvailable().Result)
                     NotificationContainer.Manager.CreateMessage()
                         .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
                         .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
