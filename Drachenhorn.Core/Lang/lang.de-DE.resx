@@ -783,4 +783,28 @@
   <data name="CharacterSheet.TotalWeight" xml:space="preserve">
     <value>Gesamtgewicht</value>
   </data>
+  <data name="Updater.UpdateAvailable" xml:space="preserve">
+    <value>Update verfügbar</value>
+  </data>
+  <data name="Updater.DoUpdate" xml:space="preserve">
+    <value>Installieren</value>
+  </data>
+  <data name="Updater.Dismiss" xml:space="preserve">
+    <value>Nicht jetzt</value>
+  </data>
+  <data name="Updater.Updating" xml:space="preserve">
+    <value>Installiere Update...</value>
+  </data>
+  <data name="Updater.UpdateFinished" xml:space="preserve">
+    <value>Update abgeschlossen</value>
+  </data>
+  <data name="Updater.UpdateFinished.Sub" xml:space="preserve">
+    <value>Neue Version wird bei Neustart der App ausgeführt.</value>
+  </data>
+  <data name="Updater.UpdateFailed" xml:space="preserve">
+    <value>Update fehlgeschlagen</value>
+  </data>
+  <data name="Updater.UpdateFailed.Sub" xml:space="preserve">
+    <value>Versuchen sie es später erneut.</value>
+  </data>
 </root>

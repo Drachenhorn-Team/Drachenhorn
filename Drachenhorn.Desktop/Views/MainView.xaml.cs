@@ -138,7 +138,7 @@ namespace Drachenhorn.Desktop.Views
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Height = 3,
                 BorderThickness = new Thickness(0),
-                Foreground = (SolidColorBrush)this.Resources["ForegroundBrush"],
+                Foreground = (SolidColorBrush)this.Resources["BorderBrush"],
                 Background = Brushes.Transparent,
                 IsHitTestVisible = false,
                 Value = 0,
@@ -163,7 +163,8 @@ namespace Drachenhorn.Desktop.Views
                         .Accent((SolidColorBrush) this.Resources["InfoBrush"])
                         .Background((SolidColorBrush) this.Resources["BackgroundBrush"])
                         .HasBadge("Update")
-                        .HasMessage(LanguageManager.Translate("Updater.UpdateFinished"))
+                        .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
+                        .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
                         .Dismiss().WithDelay(5000)
                         .Queue();
                 else
@@ -171,7 +172,8 @@ namespace Drachenhorn.Desktop.Views
                         .Accent((SolidColorBrush)this.Resources["InfoBrush"])
                         .Background((SolidColorBrush)this.Resources["BackgroundBrush"])
                         .HasBadge("Update")
-                        .HasMessage(LanguageManager.Translate("Updater.UpdateFailed"))
+                        .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
+                        .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
                         .Dismiss().WithDelay(5000)
                         .Queue();
             });
