@@ -56,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_p_column_8cs.html",
-"class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html#adfc6eaba2dffbbe085da26847ff785d3"
+"class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html#a994e25db0417784ba6fa88b446e696cc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
