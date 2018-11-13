@@ -117,57 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AttributeType.Constitution" xml:space="preserve">
-    <value>Konstitution</value>
-  </data>
-  <data name="AttributeType.Courage" xml:space="preserve">
-    <value>Mut</value>
-  </data>
-  <data name="AttributeType.Finesse" xml:space="preserve">
-    <value>Gewandtheit</value>
-  </data>
-  <data name="AttributeType.Intuition" xml:space="preserve">
-    <value>Intuition</value>
-  </data>
-  <data name="AttributeType.PhysicalStrength" xml:space="preserve">
-    <value>Körperkraft</value>
-  </data>
-  <data name="AttributeType.Prestidigitation" xml:space="preserve">
-    <value>Fingerfertigkeit</value>
-  </data>
-  <data name="AttributeType.Speed" xml:space="preserve">
-    <value>Geschwindigkeit</value>
-  </data>
-  <data name="AttributeType.Wisdom" xml:space="preserve">
-    <value>Klugheit</value>
-  </data>
-  <data name="BaseValue.AstralEnergy" xml:space="preserve">
-    <value>Astralenergie</value>
-  </data>
-  <data name="BaseValue.BaseAttack" xml:space="preserve">
-    <value>AT-Basiswert</value>
-  </data>
-  <data name="BaseValue.BaseInitiative" xml:space="preserve">
-    <value>INI-Basiswert</value>
-  </data>
-  <data name="BaseValue.BaseLongRangeAttack" xml:space="preserve">
-    <value>FK-Basiswert</value>
-  </data>
-  <data name="BaseValue.BaseParry" xml:space="preserve">
-    <value>PA-Basiswert</value>
-  </data>
-  <data name="BaseValue.Endurance" xml:space="preserve">
-    <value>Ausdauer</value>
-  </data>
-  <data name="BaseValue.HealthPoints" xml:space="preserve">
-    <value>Lebenspunkte</value>
-  </data>
-  <data name="BaseValue.KarmaEnergy" xml:space="preserve">
-    <value>Karmaenergie</value>
-  </data>
-  <data name="BaseValue.MagicResistance" xml:space="preserve">
-    <value>Magieresistenz</value>
-  </data>
   <data name="Characteristics.Age" xml:space="preserve">
     <value>Alter</value>
   </data>
@@ -270,9 +219,6 @@
   <data name="WeaponInformation.Type" xml:space="preserve">
     <value>Typ</value>
   </data>
-  <data name="BaseValue.HealthPoints.Abbr" xml:space="preserve">
-    <value>LP</value>
-  </data>
   <data name="UI.Properties" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
@@ -306,9 +252,6 @@
   <data name="About.IconsBy" xml:space="preserve">
     <value>Bilder von:</value>
   </data>
-  <data name="AttributeType.Charisma" xml:space="preserve">
-    <value>Charisma</value>
-  </data>
   <data name="About.Version" xml:space="preserve">
     <value>Version:</value>
   </data>
@@ -317,12 +260,6 @@
   </data>
   <data name="About.GitCommit" xml:space="preserve">
     <value>Git Commit:</value>
-  </data>
-  <data name="Update.Available.ToolTip" xml:space="preserve">
-    <value>Update ist verfügbar. Neu starten zum updaten.</value>
-  </data>
-  <data name="Update.Available" xml:space="preserve">
-    <value>Update verfügbar.</value>
   </data>
   <data name="About.OfficialImagesBy" xml:space="preserve">
     <value>Offizielle Bilder von:</value>
@@ -342,17 +279,8 @@
   <data name="Painter.Clear" xml:space="preserve">
     <value>Alles löschen</value>
   </data>
-  <data name="About.CheckForUpdate" xml:space="preserve">
+  <data name="Updater.CheckForUpdate" xml:space="preserve">
     <value>Auf Updates prüfen</value>
-  </data>
-  <data name="Update.CheckForUpdate.Finished.Successful" xml:space="preserve">
-    <value>Es wurde ein Update gefunden. Bitte starten sie für die Installation das Programm neu.</value>
-  </data>
-  <data name="Update.CheckForUpdate.Finished.Failed" xml:space="preserve">
-    <value>Es wurde kein Update gefunden.</value>
-  </data>
-  <data name="Update.CheckForUpdate.Finished.Caption" xml:space="preserve">
-    <value>Überprüfung auf Update abgeschlossen</value>
   </data>
   <data name="Colors.Standard.Header" xml:space="preserve">
     <value>Standard</value>
@@ -365,9 +293,6 @@
   </data>
   <data name="Colors.Recent.Header" xml:space="preserve">
     <value>Zuletzt verwendet</value>
-  </data>
-  <data name="UpdateSourceTrigger.CheckForUpdate.Text" xml:space="preserve">
-    <value>Suche nach Update.</value>
   </data>
   <data name="Painter.Select" xml:space="preserve">
     <value>Auswählen</value>
@@ -416,36 +341,6 @@
   </data>
   <data name="UI.Remove" xml:space="preserve">
     <value>Entfernen</value>
-  </data>
-  <data name="AttributeType.None" xml:space="preserve">
-    <value>N/A</value>
-  </data>
-  <data name="AttributeType.None.Abbr" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="AttributeType.Charisma.Abbr" xml:space="preserve">
-    <value>CH</value>
-  </data>
-  <data name="AttributeType.Constitution.Abbr" xml:space="preserve">
-    <value>KO</value>
-  </data>
-  <data name="AttributeType.Courage.Abbr" xml:space="preserve">
-    <value>MU</value>
-  </data>
-  <data name="AttributeType.Finesse.Abbr" xml:space="preserve">
-    <value>GE</value>
-  </data>
-  <data name="AttributeType.Intuition.Abbr" xml:space="preserve">
-    <value>IN</value>
-  </data>
-  <data name="AttributeType.PhysicalStrength.Abbr" xml:space="preserve">
-    <value>KO</value>
-  </data>
-  <data name="AttributeType.Prestidigitation.Abbr" xml:space="preserve">
-    <value>FF</value>
-  </data>
-  <data name="AttributeType.Wisdom.Abbr" xml:space="preserve">
-    <value>KL</value>
   </data>
   <data name="CharacterSheet.RollAttributes" xml:space="preserve">
     <value>Attribute</value>
@@ -638,12 +533,6 @@
   </data>
   <data name="UI.No" xml:space="preserve">
     <value>Nein</value>
-  </data>
-  <data name="VisualThemeType.White" xml:space="preserve">
-    <value>Weiß</value>
-  </data>
-  <data name="VisualThemeType.Black" xml:space="preserve">
-    <value>Schwarz</value>
   </data>
   <data name="Templates.ServerNotFound" xml:space="preserve">
     <value>Der Server konnte nicht gefunden werden. Bitte überprüfen sie ihre Internet-Verbindung.</value>

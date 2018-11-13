@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BaseValue.Endurance" xml:space="preserve">
-    <value>Utdüür</value>
-  </data>
   <data name="Characteristics.Age" xml:space="preserve">
     <value>Oller</value>
   </data>
@@ -137,12 +134,6 @@
   </data>
   <data name="About.Publisher" xml:space="preserve">
     <value>Maker:</value>
-  </data>
-  <data name="BaseValue.HealthPoints" xml:space="preserve">
-    <value>Levenspunkte</value>
-  </data>
-  <data name="BaseValue.HealthPoints.Abbr" xml:space="preserve">
-    <value>LP</value>
   </data>
   <data name="Characteristics.EyeColor" xml:space="preserve">
     <value>Oogenfarv</value>
@@ -239,15 +230,6 @@
   </data>
   <data name="About.IconsBy" xml:space="preserve">
     <value>Biller sünd van:</value>
-  </data>
-  <data name="AttributeType.Courage" xml:space="preserve">
-    <value>Mood</value>
-  </data>
-  <data name="AttributeType.PhysicalStrength" xml:space="preserve">
-    <value>Kraft</value>
-  </data>
-  <data name="AttributeType.Speed" xml:space="preserve">
-    <value>Gauheid</value>
   </data>
   <data name="UI.Properties.About" xml:space="preserve">
     <value>Over</value>
