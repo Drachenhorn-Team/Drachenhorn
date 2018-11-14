@@ -36,7 +36,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ],
@@ -56,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_p_column_8cs.html",
-"class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html#a994e25db0417784ba6fa88b446e696cc"
+"class_drachenhorn_1_1_xml_1_1_sheet_1_1_roll_1_1_roll_attributes.html#a28710884c28ece183837546ac6cf8aa8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

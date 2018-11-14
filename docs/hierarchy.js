@@ -58,6 +58,9 @@ var hierarchy =
           [ "Drachenhorn.Xml.Sheet.Skills.BaseValue", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html", null ]
         ] ],
         [ "Drachenhorn.Xml.ChildChangedBase", "class_drachenhorn_1_1_xml_1_1_child_changed_base.html", null ],
+        [ "Drachenhorn.Xml.Objects.Currency", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency.html", null ],
+        [ "Drachenhorn.Xml.Objects.CurrencyConversion", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_conversion.html", null ],
+        [ "Drachenhorn.Xml.Objects.CurrencyPart", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html", null ],
         [ "Drachenhorn.Xml.Objects.DSADate", "class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html", null ],
         [ "Drachenhorn.Xml.Sheet.Skills.SpecialSkill", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html", null ]
       ] ],
