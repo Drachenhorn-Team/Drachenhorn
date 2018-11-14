@@ -37,7 +37,7 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 using (var mgr = new UpdateManager("C:"))
                 {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Starting");
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Startup");
 
                     SquirrelAwareApp.HandleEvents(
                         OnInitialInstall,
@@ -61,10 +61,15 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Checking for Update");
                 using (var mgr = GetUpdateManager())
                 {
                     var update = await mgr.CheckForUpdate(progress: progress);
-                    return update.ReleasesToApply.Any();
+                    if (update.ReleasesToApply.Any())
+                    {
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Update available");
+                        return true;
+                    }
                 }
             }
             catch (Exception e)
@@ -81,9 +86,11 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             try
             {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Doing Update");
                 using (var mgr = GetUpdateManager())
                 {
                     var release = await mgr.UpdateApp(progress);
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Update finished");
                     finished?.Invoke(true, release.Version);
                 }
             }

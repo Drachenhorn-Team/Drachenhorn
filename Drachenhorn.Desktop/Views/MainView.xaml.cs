@@ -116,14 +116,17 @@ namespace Drachenhorn.Desktop.Views
             Task.Run(() =>
             {
                 if (SquirrelManager.IsUpdateAvailable().Result)
-                    NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                        .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
-                        .HasBadge("Update")
-                        .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
-                        .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
-                        .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
-                        .Queue();
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        NotificationContainer.Manager.CreateMessage()
+                            .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
+                            .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                            .HasBadge("Update")
+                            .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
+                            .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
+                            .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
+                            .Queue();
+                    });
             });
         }
 
