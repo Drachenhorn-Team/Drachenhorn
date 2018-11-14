@@ -3,6 +3,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Template
 {
+    /// <inheritdoc />
+    /// <summary>
+    ///     Basic Template Information
+    /// </summary>
     [Serializable]
     public class TemplateInformation : ChildChangedBase
     {

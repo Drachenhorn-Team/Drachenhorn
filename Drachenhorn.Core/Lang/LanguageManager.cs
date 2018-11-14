@@ -45,7 +45,7 @@ namespace Drachenhorn.Core.Lang
         {
             try
             {
-                return _resourceManager.GetString(identifier, CurrentCulture).Replace("\\n", "\n");
+                return _resourceManager.GetString(identifier, CurrentCulture)?.Replace("\\n", "\n");
             }
             catch (MissingManifestResourceException)
             {

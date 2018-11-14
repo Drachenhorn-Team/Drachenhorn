@@ -19,7 +19,7 @@ namespace Drachenhorn.Desktop.UserSettings
     public static class SquirrelManager
     {
         #region Squirrel
-
+        
         private static readonly string GithubUpdatePath = "https://github.com/Drachenhorn-Team/Drachenhorn";
 
         private static IUpdateManager GetUpdateManager()

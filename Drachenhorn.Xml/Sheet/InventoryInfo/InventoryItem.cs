@@ -75,6 +75,11 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
+        [XmlIgnore] private int _price;
+
+        [XmlAttribute("Price")]
+        public int Price
+
         #endregion Properties
     }
 }
