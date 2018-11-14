@@ -79,6 +79,16 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
 
         [XmlAttribute("Price")]
         public int Price
+        {
+            get => _price;
+            set
+            {
+                if (_price == value)
+                    return;
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
 
         #endregion Properties
     }

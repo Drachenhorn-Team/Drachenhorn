@@ -47,7 +47,7 @@ namespace Drachenhorn.Xml.Objects
 
         public string ToString(int amound)
         {
-
+            throw new NotImplementedException();
         }
 
         #endregion Conversion

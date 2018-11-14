@@ -31,8 +31,6 @@ namespace Drachenhorn.Xml.Objects
 
         #region Operators
 
-        public double this[string baseCurrency, string targetCurrency] => (double)this[targetCurrency] / this[baseCurrency];
-
         public Currency this[string currency] => Conversions.Where(x => x.Name == currency)?.First() ??
                                             throw new KeyNotFoundException("Unable to find currency: " + currency);
 
