@@ -132,50 +132,46 @@ namespace Drachenhorn.Desktop.Views
 
         private void DoUpdate(INotificationMessageButton button)
         {
-            var progressBar = new ProgressBar
+            Task.Run(() =>
             {
-                VerticalAlignment = VerticalAlignment.Bottom,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Height = 3,
-                BorderThickness = new Thickness(0),
-                Foreground = (SolidColorBrush)this.FindResource("BorderBrush"),
-                Background = Brushes.Transparent,
-                IsHitTestVisible = false,
-                Value = 0,
-                Maximum = 100,
-                Minimum = -1
-            };
-
-            var notif = NotificationContainer.Manager.CreateMessage()
-                .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
-                .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
-                .HasBadge("Update")
-                .HasMessage(LanguageManager.Translate("Updater.Updating"))
-                .WithOverlay(progressBar)
-                .Queue();
-
-            SquirrelManager.UpdateSquirrel(x => progressBar.Value = x, (f, x) =>
-            {
-                NotificationContainer.Manager.Dismiss(notif);
-
-                if (f)
+                Dispatcher.Invoke(() =>
+                {
                     NotificationContainer.Manager.CreateMessage()
                         .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
                         .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
                         .HasBadge("Update")
-                        .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
-                        .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
+                        .HasMessage(LanguageManager.Translate("Updater.Updating"))
                         .Dismiss().WithDelay(5000)
                         .Queue();
-                else
-                    NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush)this.FindResource("InfoBrush"))
-                        .Background((SolidColorBrush)this.FindResource("BackgroundBrush"))
-                        .HasBadge("Update")
-                        .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
-                        .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
-                        .Dismiss().WithDelay(5000)
-                        .Queue();
+                });
+
+                SquirrelManager.UpdateSquirrel(null, (f, x) =>
+                {
+                    if (f)
+                        Dispatcher.Invoke(() =>
+                        {
+                            NotificationContainer.Manager.CreateMessage()
+                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
+                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                                .HasBadge("Update")
+                                .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
+                                .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
+                                .Dismiss().WithDelay(5000)
+                                .Queue();
+                        });
+                    else
+                        Dispatcher.Invoke(() =>
+                        {
+                            NotificationContainer.Manager.CreateMessage()
+                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
+                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                                .HasBadge("Update")
+                                .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
+                                .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
+                                .Dismiss().WithDelay(5000)
+                                .Queue();
+                        });
+                });
             });
         }
 
