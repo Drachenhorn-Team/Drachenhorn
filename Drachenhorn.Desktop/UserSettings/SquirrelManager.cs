@@ -100,9 +100,8 @@ namespace Drachenhorn.Desktop.UserSettings
 #if RELEASE
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
+                finished?.Invoke(false, null);
             }
-
-            finished?.Invoke(true, null);
         }
 
         #endregion Squirrel
