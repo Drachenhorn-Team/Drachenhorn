@@ -5,18 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Drachenhorn.Core.ViewModels;assembly=Drachenhorn.Core"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
              Startup="Application_Startup"
              mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="UI/Themes/LightTheme.xaml" />
+                <!--<ResourceDictionary Source="UI/Themes/LightTheme.xaml" />
+                <ResourceDictionary Source="Converter/Converter.xaml"/>-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
+                <ResourceDictionary Source="UI/Themes/Images/White.xaml"/>
                 <ResourceDictionary Source="Converter/Converter.xaml"/>
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            
+            <Style TargetType="Control">
+                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

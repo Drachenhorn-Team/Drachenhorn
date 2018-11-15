@@ -70,12 +70,11 @@
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
             <StackPanel>
-                <Border Margin="5" BorderThickness="2"
-                        BorderBrush="{StaticResource BorderBrush}">
+                <Border Margin="5" BorderThickness="2">
                     <Grid>
                         <Grid.Resources>
                             <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}" />
+                                <Style TargetType="{x:Type TextBlock}"/>
                             </ResourceDictionary>
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
@@ -110,12 +109,11 @@
                     </Grid>
                 </Border>
 
-                <Border Margin="5" BorderThickness="2"
-                        BorderBrush="{StaticResource BorderBrush}">
+                <Border Margin="5" BorderThickness="2">
                     <Grid>
                         <Grid.Resources>
                             <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MorpheusTextStyle}" />
+                                <Style TargetType="{x:Type TextBlock}"/>
                             </ResourceDictionary>
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>

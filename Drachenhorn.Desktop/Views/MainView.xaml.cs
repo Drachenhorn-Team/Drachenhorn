@@ -17,6 +17,7 @@ using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
+using MahApps.Metro.Controls;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -24,7 +25,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für MainView.xaml
     /// </summary>
-    public partial class MainView : RibbonWindow
+    public partial class MainView
     {
         private MainViewModel Model => DataContext is MainViewModel model ? model : null;
 
@@ -41,7 +42,7 @@ namespace Drachenhorn.Desktop.Views
                 OpenFile(path);
             };
 
-            TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
+            //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
 
@@ -85,7 +86,7 @@ namespace Drachenhorn.Desktop.Views
             else if (message.Notification == "ShowOpenTemplates")
             {
                 new TemplateSelectorDialog().ShowDialog();
-                TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
+                //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
             }
             else if (message.Notification == "ShowMap")
             {
@@ -116,11 +117,11 @@ namespace Drachenhorn.Desktop.Views
             Task.Run(() =>
             {
                 if (SquirrelManager.IsUpdateAvailable().Result)
-                    this.Dispatcher.Invoke(() =>
+                    Dispatcher.Invoke(() =>
                     {
                         NotificationContainer.Manager.CreateMessage()
-                            .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                            .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                            .Accent((SolidColorBrush) FindResource("InfoBrush"))
+                            .Background((SolidColorBrush) FindResource("BackgroundBrush"))
                             .HasBadge("Update")
                             .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
@@ -137,8 +138,8 @@ namespace Drachenhorn.Desktop.Views
                 Dispatcher.Invoke(() =>
                 {
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                        .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                        .Accent((SolidColorBrush) FindResource("InfoBrush"))
+                        .Background((SolidColorBrush) FindResource("BackgroundBrush"))
                         .HasBadge("Update")
                         .HasMessage(LanguageManager.Translate("Updater.Updating"))
                         .Dismiss().WithDelay(5000)
@@ -151,8 +152,8 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                                .Accent((SolidColorBrush) FindResource("InfoBrush"))
+                                .Background((SolidColorBrush) FindResource("BackgroundBrush"))
                                 .HasBadge("Update")
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
@@ -163,8 +164,8 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
+                                .Accent((SolidColorBrush) FindResource("InfoBrush"))
+                                .Background((SolidColorBrush) FindResource("BackgroundBrush"))
                                 .HasBadge("Update")
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))

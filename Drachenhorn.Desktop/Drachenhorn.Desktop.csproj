@@ -660,6 +660,9 @@
     <PackageReference Include="Fluent.Ribbon">
       <Version>6.1.0.326</Version>
     </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.6.5</Version>
+    </PackageReference>
     <PackageReference Include="MvvmLightLibsStd10">
       <Version>5.4.1.1</Version>
     </PackageReference>

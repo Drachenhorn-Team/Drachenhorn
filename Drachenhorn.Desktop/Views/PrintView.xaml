@@ -17,7 +17,6 @@
     <Window.Resources>
         <ResourceDictionary>
             <ObjectDataProvider x:Key="PrintTemplatesProvider" ObjectType="printing:PrintingManager" MethodName="GetPrintTemplates"/>
-            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Window.CommandBindings>

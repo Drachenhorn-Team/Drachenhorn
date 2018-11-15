@@ -132,6 +132,7 @@ namespace Drachenhorn.Desktop
                 new ThemeChooseDialog().ShowDialog();
 
             MainWindow = new MainView(filePath);
+            //MainWindow = new SheetView();
             MainWindow.Show();
             splash.Close();
 
@@ -186,24 +187,24 @@ namespace Drachenhorn.Desktop
 
         public static void SetTheme(VisualThemeType theme)
         {
-            if (theme == VisualThemeType.System)
-            {
-                var isDark = Registry.GetValue(
-                    "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                    "AppsUseLightTheme", null);
+            //if (theme == VisualThemeType.System)
+            //{
+            //    var isDark = Registry.GetValue(
+            //        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+            //        "AppsUseLightTheme", null);
 
-                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
-            }
+            //    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+            //}
 
-            var uri = "UI/Themes/" + theme + "Theme.xaml";
+            //var uri = "UI/Themes/" + theme + "Theme.xaml";
 
-            if (string.IsNullOrEmpty(uri)) return;
+            //if (string.IsNullOrEmpty(uri)) return;
 
-            Current.Resources.MergedDictionaries[0] =
-                new ResourceDictionary
-                {
-                    Source = new Uri(uri, UriKind.Relative)
-                };
+            //Current.Resources.MergedDictionaries[0] =
+            //    new ResourceDictionary
+            //    {
+            //        Source = new Uri(uri, UriKind.Relative)
+            //    };
         }
 
         #endregion Theme

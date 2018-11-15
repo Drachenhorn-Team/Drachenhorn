@@ -13,7 +13,7 @@
         ResizeMode="CanMinimize"
         Title="{Binding Name}" MinHeight="200" Width="500" SizeToContent="Height">
     <Window.Resources>
-        <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}">
+        <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="5" />
         </Style>
     </Window.Resources>

@@ -19,9 +19,6 @@
         </WrapPanel>
 
         <Grid DockPanel.Dock="Top">
-            <Grid.Resources>
-                <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}" />
-            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" SharedSizeGroup="Name" />
                 <ColumnDefinition Width="Auto" SharedSizeGroup="StartValue" />
@@ -48,9 +45,6 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="skills:BaseValue">
                     <Grid>
-                        <Grid.Resources>
-                            <Style TargetType="TextBlock" BasedOn="{StaticResource MorpheusTextStyle}" />
-                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" SharedSizeGroup="Name" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="StartValue" />

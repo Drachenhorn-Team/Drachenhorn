@@ -30,11 +30,9 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Margin="2 2 8 2" FontWeight="Bold"
                                    Text="{Binding Key, Converter={StaticResource ValueTranslationConverter}}"
-                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="0" />
                         <TextBlock Margin="2" TextWrapping="Wrap"
                                    Text="{Binding Value}"
-                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="1" />
                     </Grid>
                 </DataTemplate>
