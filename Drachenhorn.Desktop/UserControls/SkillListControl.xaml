@@ -11,11 +11,20 @@
              xmlns:skills="clr-namespace:Drachenhorn.Xml.Sheet.Skills;assembly=Drachenhorn.Xml"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
-    <DockPanel>
-        <TextBlock Text="{lang:Translate CharacterSheet.Skills}" DockPanel.Dock="Top" Margin="5"
-                   HorizontalAlignment="Center" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <DockPanel DockPanel.Dock="Left">
+        <TextBlock Text="{lang:Translate CharacterSheet.Skills}" Margin="5" HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Grid.Row="0"/>
+
+        <DockPanel Grid.Column="0" Grid.Row="1">
             <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
                 <Button Click="AddButton_Click" Width="30" Height="30" Margin="5"
                         ToolTip="{lang:Translate UI.Add}">
@@ -27,37 +36,44 @@
                 </Button>
             </WrapPanel>
 
-            <ListView Name="List" ItemsSource="{Binding .}"
-                      PreviewMouseWheel="List_PreviewMouseWheel"
-                      MinHeight="150" Width="600" Margin="5">
-                <ListView.GroupStyle>
-                    <GroupStyle>
-                        <GroupStyle.HeaderTemplate>
-                            <DataTemplate>
-                                <Border BorderBrush="{StaticResource BorderBrush}"
-                                        Background="{StaticResource BackgroundBrush2}"
-                                        BorderThickness="1" Margin="5">
-                                    <TextBlock FontWeight="Bold"
-                                               Style="{StaticResource MorpheusTextStyle}"
-                                               FontSize="14" Text="{Binding Name}" Margin="5 0 0 0" />
-                                </Border>
-                            </DataTemplate>
-                        </GroupStyle.HeaderTemplate>
-                    </GroupStyle>
-                </ListView.GroupStyle>
-
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="{x:Type GridViewColumnHeader}"
-                                   BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
-                                <Setter Property="IsEnabled" Value="False" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="{lang:Translate CharacterSheet.Name}"
-                                        DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="{lang:Translate CharacterSheet.RollAttributes}">
-                            <GridViewColumn.CellTemplate>
+            <Grid Name="DataGrid">
+                <Grid.Resources>
+                    <CollectionViewSource x:Key="SkillViewSource" Source="{Binding .}"
+                                          IsLiveGroupingRequested="True">
+                        <CollectionViewSource.GroupDescriptions>
+                            <PropertyGroupDescription PropertyName="Category" />
+                        </CollectionViewSource.GroupDescriptions>
+                    </CollectionViewSource>
+                </Grid.Resources>
+                <DataGrid Name="List" ItemsSource="{Binding Source={StaticResource SkillViewSource}}"
+                          AutoGenerateColumns="False" PreviewMouseWheel="List_PreviewMouseWheel"
+                          CanUserAddRows="False">
+                    <DataGrid.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="GroupItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                <Expander IsExpanded="True">
+                                                    <Expander.Header>
+                                                        <TextBlock Text="{Binding Name}" />
+                                                    </Expander.Header>
+                                                    <ItemsPresenter/>
+                                                </Expander>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </DataGrid.GroupStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
+                                            Binding="{Binding Name}" IsReadOnly="True"/>
+                        <DataGridTemplateColumn Header="{lang:Translate CharacterSheet.RollAttributes}"
+                                                IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate DataType="skills:Skill">
                                     <WrapPanel MinWidth="100">
                                         <TextBlock Text="{Binding RollAttributes.Roll1}" />
@@ -67,16 +83,17 @@
                                         <TextBlock Text="{Binding RollAttributes.Roll3}" />
                                     </WrapPanel>
                                 </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="{lang:Translate CharacterSheet.Value}"
-                                        DisplayMemberBinding="{Binding Value}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}"
+                                            Binding="{Binding Value}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </DockPanel>
 
-        <Grid DataContext="{Binding SelectedItem, ElementName=List}" d:DataContext="{d:DesignInstance {x:Type skills:Skill}}">
+        <Grid DataContext="{Binding SelectedItem, ElementName=List}" Grid.Column="1" Grid.Row="1"
+              d:DataContext="{d:DesignInstance {x:Type skills:Skill}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -93,9 +110,8 @@
             <TextBlock Text="{lang:Translate CharacterSheet.Name}" Margin="5" Grid.Row="0" Grid.Column="0" />
             <DockPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" >
                 <userElements:InfoButton InfoObject="{Binding .}" DockPanel.Dock="Right" Margin="0 5 5 5"/>
-                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" />
+                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
-            <!--<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" Margin="5" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />-->
 
             <TextBlock Text="{lang:Translate CharacterSheet.RollAttributes}" Margin="5" Grid.Row="1" Grid.Column="0" />
             <TextBox Text="{Binding RollAttributes.Roll1}" Margin="5" Grid.Row="1" Grid.Column="1" />
@@ -103,8 +119,7 @@
             <TextBox Text="{Binding RollAttributes.Roll3}" Margin="5" Grid.Row="1" Grid.Column="3" />
 
             <TextBlock Text="{lang:Translate CharacterSheet.Skill.Category}" Margin="5" Grid.Row="2" Grid.Column="0" />
-            <TextBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}"
-                     TextChanged="CategoryBox_TextChanged" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
+            <TextBox Text="{Binding Category, UpdateSourceTrigger=LostFocus}" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
         </Grid>
-    </DockPanel>
+    </Grid>
 </UserControl>

@@ -17,62 +17,25 @@ namespace Drachenhorn.Desktop.UserControls
         public SkillListControl()
         {
             InitializeComponent();
-
-            TypeDescriptor.GetProperties(List)["ItemsSource"]
-                .AddValueChanged(List, UpdateList);
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(List.ItemsSource is IList<Skill>))
+            var source = DataGrid.Resources["SkillViewSource"] as CollectionViewSource;
+            if (!(source?.Source is IList<Skill>))
                 return;
 
             var newItem = new Skill();
 
-            ((IList<Skill>) List.ItemsSource).Add(newItem);
+            ((IList<Skill>)source?.Source).Add(newItem);
             List.SelectedItem = newItem;
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(List.ItemsSource is IList<Skill>))
-                return;
+            var source = DataGrid.Resources["SkillViewSource"] as CollectionViewSource;
 
-            ((IList<Skill>) List.ItemsSource).Remove((Skill) List.SelectedItem);
-        }
-
-        private void UpdateList(object sender, EventArgs e)
-        {
-            if (List.ItemsSource == null) return;
-
-            var view = (CollectionView) CollectionViewSource.GetDefaultView(List.ItemsSource);
-            view.GroupDescriptions.Clear();
-            var groupDescription = new PropertyGroupDescription("Category");
-            view.GroupDescriptions.Add(groupDescription);
-
-            UpdateListViewColumns(sender, e);
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            UpdateListViewColumns(sender, e);
-        }
-
-        private void CategoryBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            UpdateList(sender, e);
-        }
-
-        private void UpdateListViewColumns(object sender, EventArgs args)
-        {
-            var gridView = List.View as GridView;
-
-            if (gridView != null)
-                foreach (var column in gridView.Columns)
-                {
-                    column.Width = column.ActualWidth;
-                    column.Width = double.NaN;
-                }
+            (source?.Source as IList<Skill>)?.Remove((Skill) List.SelectedItem);
         }
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
