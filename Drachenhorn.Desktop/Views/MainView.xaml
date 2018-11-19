@@ -65,19 +65,19 @@
                                 Background="{DynamicResource MahApps.Metro.HamburgerMenu.PaneBackgroundBrush}">
                             <ContentControl Focusable="False"
                                             Margin="0" Padding="0"
-                                            Foreground="{DynamicResource IdealForegroundColorBrush}"
+                                            Foreground="White"
                                             Content="{Binding ToolTip}"/>
                         </Border>
                         <ContentControl Grid.Row="1"
                                         Focusable="False"
-                                        Foreground="{DynamicResource IdealForegroundColorBrush}"
+                                        Foreground="White"
                                         Content="{Binding Tag}" />
                     </Grid>
                 </DataTemplate>
             </mah:HamburgerMenu.ContentTemplate>
             <mah:HamburgerMenu.ItemsSource>
                 <mah:HamburgerMenuItemCollection>
-                    <mah:HamburgerMenuIconItem Icon="{StaticResource EditIcon}"
+                    <mah:HamburgerMenuIconItem Icon="{StaticResource EditIconWhite}"
                                                Label="{lang:Translate UI.Edit}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
@@ -89,28 +89,29 @@
                                         <Setter Property="Height" Value="32"/>
                                         <Setter Property="BorderThickness" Value="0"/>
                                         <Setter Property="Margin" Value="5"/>
-                                        <Setter Property="Background" Value="{DynamicResource SubMenuBackgroundBrush}"></Setter>
+                                        <Setter Property="Background"
+                                                Value="{DynamicResource MahApps.Metro.HamburgerMenu.PaneBackgroundBrush}"/>
                                     </Style>
                                 </StackPanel.Resources>
                                 <Button ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
                                         Command="{Binding New}">
-                                    <Image Source="{DynamicResource NewIcon}"/>
+                                    <Image Source="{DynamicResource NewIconWhite}"/>
                                 </Button>
                                 <Button ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
                                         Command="{Binding Open}">
-                                    <Image Source="{DynamicResource EditIcon}"/>
+                                    <Image Source="{DynamicResource EditIconWhite}"/>
                                 </Button>
                                 <Button ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
                                         Command="{Binding Save}">
-                                    <Image Source="{DynamicResource SaveIcon}"/>
+                                    <Image Source="{DynamicResource SaveIconWhite}"/>
                                 </Button>
                                 <Button ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
                                         Command="{Binding SaveAll}">
-                                    <Image Source="{DynamicResource SaveAllIcon}"/>
+                                    <Image Source="{DynamicResource SaveAllIconWhite}"/>
                                 </Button>
                                 <Button ToolTip="{lang:TranslateText %UI.GeneratePDF}"
                                         Command="{Binding GeneratePDF}">
-                                    <Image Source="{DynamicResource PdfIcon}"/>
+                                    <Image Source="{DynamicResource PdfIconWhite}"/>
                                 </Button>
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
@@ -147,7 +148,7 @@
                                 </TabControl.ItemTemplate>
                                 <TabControl.ContentTemplate>
                                     <DataTemplate>
-                                        <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundBrush}">
+                                        <ScrollViewer PanningMode="Both">
                                             <controls:CharacterSheetControl />
                                         </ScrollViewer>
                                     </DataTemplate>
@@ -159,7 +160,7 @@
             </mah:HamburgerMenu.ItemsSource>
             <mah:HamburgerMenu.OptionsItemsSource>
                 <mah:HamburgerMenuItemCollection>
-                    <mah:HamburgerMenuIconItem Icon="{StaticResource PropertiesIcon}"
+                    <mah:HamburgerMenuIconItem Icon="{StaticResource PropertiesIconWhite}"
                                                Label="{lang:Translate UI.Properties}"
                                                Command="{Binding ShowSettings}"/>
                 </mah:HamburgerMenuItemCollection>

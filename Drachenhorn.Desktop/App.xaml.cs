@@ -28,6 +28,7 @@ using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
 using StreamReader = System.IO.StreamReader;
+using Uri = System.Uri;
 
 namespace Drachenhorn.Desktop
 {
@@ -195,7 +196,16 @@ namespace Drachenhorn.Desktop
 
                 theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
             }
-            
+
+            var imageUri = new Uri(
+                "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml",
+                UriKind.Relative);
+
+            var res = Current.Resources.FindName("IconsRes") as ResourceDictionary;
+
+            if (res != null) res.Source = imageUri;
+
+
             var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
             var mahAccent = ThemeManager.GetAccent(name);
 

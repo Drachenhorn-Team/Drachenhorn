@@ -15,5 +15,34 @@
     <BitmapImage x:Key="BannerIcon" UriSource="pack://application:,,,/Images/Common/Banner.jpg" />
     <BitmapImage x:Key="DrachenhornLogo" UriSource="pack://application:,,,/Images/Common/Logo.png" />
     <BitmapImage x:Key="WindowIcon" UriSource="pack://application:,,,/Images/Common/WindowIcon.png" />
+    
+    
+    <!-- White Images -->
+
+    <BitmapImage x:Key="AddIconWhite" UriSource="pack://application:,,,/Images/White/Common/Add.png" />
+    <BitmapImage x:Key="RemoveIconWhite" UriSource="pack://application:,,,/Images/White/Common/Remove.png" />
+    <BitmapImage x:Key="ArrowBlockDownIconWhite" UriSource="pack://application:,,,/Images/White/Common/ArrowBlockDown.png" />
+    <BitmapImage x:Key="DownloadIconWhite" UriSource="pack://application:,,,/Images/White/Common/Download.png" />
+
+    <BitmapImage x:Key="ImportIconWhite" UriSource="pack://application:,,,/Images/White/Import.png" />
+    <BitmapImage x:Key="ExportIconWhite" UriSource="pack://application:,,,/Images/White/Export.png" />
+
+    <BitmapImage x:Key="EditIconWhite" UriSource="pack://application:,,,/Images/White/EditIcon.png" />
+    <BitmapImage x:Key="HtmlIconWhite" UriSource="pack://application:,,,/Images/White/Html.png" />
+    <BitmapImage x:Key="InfoIconWhite" UriSource="pack://application:,,,/Images/White/InfoIcon.png" />
+    <BitmapImage x:Key="MenuIconWhite" UriSource="pack://application:,,,/Images/White/MenuIcon.png" />
+    <BitmapImage x:Key="NewIconWhite" UriSource="pack://application:,,,/Images/White/NewIcon.png" />
+    <BitmapImage x:Key="PdfIconWhite" UriSource="pack://application:,,,/Images/White/Pdf.png" />
+    <BitmapImage x:Key="PrintIconWhite" UriSource="pack://application:,,,/Images/White/PrintIcon.png" />
+    <BitmapImage x:Key="PropertiesIconWhite" UriSource="pack://application:,,,/Images/White/PropertiesIcon.png" />
+    <BitmapImage x:Key="SaveAllIconWhite" UriSource="pack://application:,,,/Images/White/SaveAllIcon.png" />
+    <BitmapImage x:Key="SaveIconWhite" UriSource="pack://application:,,,/Images/White/SaveIcon.png" />
+    <BitmapImage x:Key="SaveAsIconWhite" UriSource="pack://application:,,,/Images/White/SaveIcon.png" />
+    <BitmapImage x:Key="UpdateAvailableIconWhite" UriSource="pack://application:,,,/Images/White/UpdateAvailable.png" />
+
+    <BitmapImage x:Key="TemplateIconWhite" UriSource="pack://application:,,,/Images/White/Templates.png" />
+
+    <BitmapImage x:Key="CalculateIconWhite" UriSource="pack://application:,,,/Images/White/Calculate.png" />
+    <BitmapImage x:Key="MapIconWhite" UriSource="pack://application:,,,/Images/White/Map.png" />
 
 </ResourceDictionary>
