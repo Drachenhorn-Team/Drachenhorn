@@ -5,7 +5,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// <summary>
     ///     Interaktionslogik für CommonMessageBox.xaml
     /// </summary>
-    public partial class CommonMessageBox : Window
+    public partial class CommonMessageBox
     {
         public CommonMessageBox(string message, string title, string buttonConfirmText, string buttonCancelText = null)
         {

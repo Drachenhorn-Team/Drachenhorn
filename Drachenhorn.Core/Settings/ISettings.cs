@@ -12,6 +12,7 @@ namespace Drachenhorn.Core.Settings
         string GitCommit { get; }
 
         VisualThemeType VisualTheme { get; set; }
+        string AccentColor { get; set; }
 
         bool? ShowConsole { get; set; }
 

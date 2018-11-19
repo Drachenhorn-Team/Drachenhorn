@@ -8,6 +8,7 @@
         xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
         xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
         xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         Style="{StaticResource {x:Type Window}}"
         Title="TemplateSelectorDialog" Height="450" Width="800">
@@ -88,13 +89,11 @@
                 </ListBox>
 
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <userElements:LoadingElement Height="50"
-                                                 Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" />
-                    <Border Background="{StaticResource BackgroundBrush}"
-                            Margin="5" BorderBrush="{StaticResource BorderBrush}"
+                    <mah:ProgressRing Height="50" IsActive="{Binding IsLoading}" Foreground="{DynamicResource AccentColorBrush}"/>
+                    <Border Background="{StaticResource ControlBackgroundBrush}"
+                            Margin="5" BorderBrush="{StaticResource ControlBorderBrush}"
                             Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">
                         <TextBlock Text="{lang:Translate Templates.ServerNotFound}"
-                                   Style="{StaticResource MorpheusTextStyle}"
                                    HorizontalAlignment="Center" />
                     </Border>
                 </StackPanel>

@@ -94,49 +94,6 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:LoadingElement}">
-        <Setter Property="Height" Value="20" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:LoadingElement}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <Image>
-                            <Image.Triggers>
-                                <EventTrigger RoutedEvent="Loaded">
-                                    <BeginStoryboard>
-                                        <Storyboard RepeatBehavior="Forever">
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source"
-                                                                           Duration="0:0:0.8">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.0"
-                                                                        Value="{DynamicResource Loading1}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1"
-                                                                        Value="{DynamicResource Loading2}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2"
-                                                                        Value="{DynamicResource Loading3}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3"
-                                                                        Value="{DynamicResource Loading4}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.4"
-                                                                        Value="{DynamicResource Loading5}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.5"
-                                                                        Value="{DynamicResource Loading6}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.6"
-                                                                        Value="{DynamicResource Loading7}" />
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.7"
-                                                                        Value="{DynamicResource Loading8}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Image.Triggers>
-                        </Image>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <Style TargetType="{x:Type local:LocalizedComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}" />
 
     <Style TargetType="{x:Type local:ListEditor}">

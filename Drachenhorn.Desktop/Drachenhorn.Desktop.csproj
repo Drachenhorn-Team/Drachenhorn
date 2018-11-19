@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -72,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
     </Compile>
@@ -149,7 +151,6 @@
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserElements\ListEditor.cs" />
-    <Compile Include="UserElements\LoadingElement.cs" />
     <Compile Include="UserElements\LocalizedComboBox.cs" />
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />

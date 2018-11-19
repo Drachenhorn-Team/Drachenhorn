@@ -30,6 +30,9 @@
             <Style TargetType="Control">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
             </Style>
+            <Style TargetType="Window">
+                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+            </Style>
 
         </ResourceDictionary>
     </Application.Resources>

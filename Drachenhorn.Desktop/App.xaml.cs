@@ -24,6 +24,7 @@ using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
+using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
 using StreamReader = System.IO.StreamReader;
@@ -132,7 +133,6 @@ namespace Drachenhorn.Desktop
                 new ThemeChooseDialog().ShowDialog();
 
             MainWindow = new MainView(filePath);
-            //MainWindow = new SheetView();
             MainWindow.Show();
             splash.Close();
 
@@ -174,37 +174,32 @@ namespace Drachenhorn.Desktop
             };
 
             SimpleIoc.Default.Register<ISettings>(() => settings);
-
-            SetTheme(settings.VisualTheme);
+            
+            SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             settings.PropertyChanged += (sender, args) =>
             {
-                if (args.PropertyName == "VisualTheme")
-                    SetTheme(settings.VisualTheme);
+                if (args.PropertyName == "VisualTheme" || args.PropertyName == "AccentColor")
+                    SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             };
         }
 
         #region Theme
 
-        public static void SetTheme(VisualThemeType theme)
+        public static void SetAccentAndTheme(string name, VisualThemeType theme)
         {
-            //if (theme == VisualThemeType.System)
-            //{
-            //    var isDark = Registry.GetValue(
-            //        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-            //        "AppsUseLightTheme", null);
+            if (theme == VisualThemeType.System)
+            {
+                var isDark = Registry.GetValue(
+                    "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                    "AppsUseLightTheme", null);
 
-            //    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
-            //}
+                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+            }
+            
+            var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
+            var mahAccent = ThemeManager.GetAccent(name);
 
-            //var uri = "UI/Themes/" + theme + "Theme.xaml";
-
-            //if (string.IsNullOrEmpty(uri)) return;
-
-            //Current.Resources.MergedDictionaries[0] =
-            //    new ResourceDictionary
-            //    {
-            //        Source = new Uri(uri, UriKind.Relative)
-            //    };
+            ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
         }
 
         #endregion Theme

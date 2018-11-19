@@ -6,21 +6,18 @@
                  xmlns:controls="clr-namespace:Drachenhorn.Desktop.UserControls"
                  xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                  xmlns:sheet="clr-namespace:Drachenhorn.Core.ViewModels.Sheet;assembly=Drachenhorn.Core"
-                 xmlns:fluent="urn:fluent-ribbon"
                  xmlns:controls1="clr-namespace:Enterwell.Clients.Wpf.Notifications.Controls;assembly=Enterwell.Clients.Wpf.Notifications"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
+                 xmlns:common="clr-namespace:Drachenhorn.Core.ViewModels.Common;assembly=Drachenhorn.Core"
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
                  Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100"
                  DataContext="{Binding Path=MainView, Source={StaticResource Locator}}">
     <Window.Resources>
-        <ResourceDictionary>
-            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-            <converter:Base64ImageConverter x:Key="Base64ImageConverter" />
-        </ResourceDictionary>
+        <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}" />
     </Window.Resources>
-
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}" />
         <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}" />
@@ -31,44 +28,144 @@
     </Window.InputBindings>
 
     <Grid>
-        <DockPanel>
-            <DockPanel.Resources>
-                <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type mah:HamburgerMenuIconItem}">
-                    <Grid Height="48">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="48" />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0"
-                               Width="34"
-                               HorizontalAlignment="Center"
+        <Grid.Resources>
+            <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type mah:HamburgerMenuIconItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Width="34"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="{Binding Icon}" />
+                    <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
-                               Source="{Binding Icon}" />
-                        <TextBlock Grid.Column="1"
-                                   VerticalAlignment="Center"
-                                   FontSize="16"
-                                   Foreground="White"
-                                   Text="{Binding Label}" />
+                               FontSize="16"
+                               Foreground="{DynamicResource IdealForegroundColorBrush}"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
+        <mah:HamburgerMenu ItemTemplate="{StaticResource MenuItemTemplate}"
+                           OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                           SelectedIndex="0"
+                           DisplayMode="CompactInline"
+                           Name="HamburgerMenuControl"
+                           ItemClick="HamburgerMenu_OnItemClick">
+            <mah:HamburgerMenu.ContentTemplate>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
+                    <Grid x:Name="TheContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                Background="{DynamicResource MahApps.Metro.HamburgerMenu.PaneBackgroundBrush}">
+                            <ContentControl Focusable="False"
+                                            Margin="0" Padding="0"
+                                            Foreground="{DynamicResource IdealForegroundColorBrush}"
+                                            Content="{Binding ToolTip}"/>
+                        </Border>
+                        <ContentControl Grid.Row="1"
+                                        Focusable="False"
+                                        Foreground="{DynamicResource IdealForegroundColorBrush}"
+                                        Content="{Binding Tag}" />
                     </Grid>
                 </DataTemplate>
-            </DockPanel.Resources>
-            <mah:HamburgerMenu ItemTemplate="{StaticResource MenuItemTemplate}"
-                               OptionsItemTemplate="{StaticResource MenuItemTemplate}"
-                               DisplayMode="CompactInline">
-                <mah:HamburgerMenu.ItemsSource>
-                    <mah:HamburgerMenuItemCollection>
-                        <mah:HamburgerMenuIconItem Icon="{StaticResource EditIcon}"/>
-                    </mah:HamburgerMenuItemCollection>
-                </mah:HamburgerMenu.ItemsSource>
-                <mah:HamburgerMenu.OptionsItemsSource>
-                    <mah:HamburgerMenuItemCollection>
-                        <mah:HamburgerMenuIconItem Icon="{StaticResource PropertiesIcon}"
-                                                   Label="{lang:Translate UI.Properties}"
-                                                   Command="{Binding ShowSettings}"/>
-                    </mah:HamburgerMenuItemCollection>
-                </mah:HamburgerMenu.OptionsItemsSource>
-            </mah:HamburgerMenu>
-            <!--<fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False"
+            </mah:HamburgerMenu.ContentTemplate>
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuIconItem Icon="{StaticResource EditIcon}"
+                                               Label="{lang:Translate UI.Edit}">
+                        <mah:HamburgerMenuItem.ToolTip>
+                            <StackPanel Orientation="Horizontal"
+                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
+                                <StackPanel.Resources>
+                                    <Style TargetType="Button">
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="Width" Value="32"/>
+                                        <Setter Property="Height" Value="32"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Margin" Value="5"/>
+                                        <Setter Property="Background" Value="{DynamicResource SubMenuBackgroundBrush}"></Setter>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <Button ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
+                                        Command="{Binding New}">
+                                    <Image Source="{DynamicResource NewIcon}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
+                                        Command="{Binding Open}">
+                                    <Image Source="{DynamicResource EditIcon}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
+                                        Command="{Binding Save}">
+                                    <Image Source="{DynamicResource SaveIcon}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
+                                        Command="{Binding SaveAll}">
+                                    <Image Source="{DynamicResource SaveAllIcon}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.GeneratePDF}"
+                                        Command="{Binding GeneratePDF}">
+                                    <Image Source="{DynamicResource PdfIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </mah:HamburgerMenuItem.ToolTip>
+                        <mah:HamburgerMenuItem.Tag>
+                            <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
+                                        SelectedItem="{Binding CurrentSheetViewModel}"
+                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
+                                <TabControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel Height="30">
+                                            <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path= DataContext.CloseSheet}"
+                                                    CommandParameter="{Binding}"
+                                                    MinHeight="0" Height="20" MinWidth="0" Width="20"
+                                                    Margin="5 5 -3 5">
+                                                <Image Source="{Binding Source={StaticResource RemoveIcon}}"
+                                                       Margin="-10 2 -10 0" Width="16" Height="16" />
+                                            </Button>
+                                            <StackPanel Orientation="Horizontal"
+                                                        d:DataContext="{d:DesignInstance {x:Type sheet:CharacterSheetViewModel}}">
+                                                <Border Background="GhostWhite" BorderThickness="1" CornerRadius="1"
+                                                        ClipToBounds="True" Margin="0 2 4 2">
+                                                    <Image Source="{Binding CurrentSheet.CoatOfArms.Base64String,
+                                                                Converter={StaticResource Base64ImageConverter}}"
+                                                           MaxWidth="30" MaxHeight="20" MinWidth="20" />
+                                                </Border>
+                                                <TextBlock Text="{Binding CurrentSheet.Characteristics.Name}"
+                                                           FontSize="12" VerticalAlignment="Center" />
+                                                <TextBlock Text="*" FontSize="12"
+                                                           Visibility="{Binding CurrentSheet.HasChanged, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                           VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </TabControl.ItemTemplate>
+                                <TabControl.ContentTemplate>
+                                    <DataTemplate>
+                                        <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundBrush}">
+                                            <controls:CharacterSheetControl />
+                                        </ScrollViewer>
+                                    </DataTemplate>
+                                </TabControl.ContentTemplate>
+                            </TabControl>
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.ItemsSource>
+            <mah:HamburgerMenu.OptionsItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuIconItem Icon="{StaticResource PropertiesIcon}"
+                                               Label="{lang:Translate UI.Properties}"
+                                               Command="{Binding ShowSettings}"/>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.OptionsItemsSource>
+        </mah:HamburgerMenu>
+        <!--<fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False"
                        IsQuickAccessToolBarVisible="False">
 
                 <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
@@ -147,46 +244,6 @@
             </fluent:Ribbon>
 
             <fluent:StatusBar DockPanel.Dock="Bottom" BorderThickness="0 1 0 0" />-->
-
-            <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
-                    SelectedItem="{Binding CurrentSheetViewModel}">
-                <TabControl.ItemTemplate>
-                    <DataTemplate>
-                        <WrapPanel Height="30">
-                            <StackPanel Orientation="Horizontal"
-                                    d:DataContext="{d:DesignInstance {x:Type sheet:CharacterSheetViewModel}}">
-                                <Border Background="GhostWhite" BorderThickness="1" CornerRadius="1"
-                                        ClipToBounds="True" Margin="0 2 4 2">
-                                    <Image Source="{Binding CurrentSheet.CoatOfArms.Base64String,
-                                                        Converter={StaticResource Base64ImageConverter}}"
-                                           MaxWidth="30" MaxHeight="20" MinWidth="20" />
-                                </Border>
-                                <TextBlock Text="{Binding CurrentSheet.Characteristics.Name}"
-                                       FontSize="12"
-                                       VerticalAlignment="Center" />
-                                <TextBlock Text="*" FontSize="12"
-                                       Visibility="{Binding CurrentSheet.HasChanged, Converter={StaticResource BoolToVisibilityConverter}}"
-                                       VerticalAlignment="Center" />
-                            </StackPanel>
-                            <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path= DataContext.CloseSheet}"
-                                CommandParameter="{Binding}"
-                                MinHeight="0" Height="20" MinWidth="0" Width="20"
-                                Margin="5 5 -3 5">
-                                <Image Source="{Binding Source={StaticResource RemoveIcon}}"
-                                   Margin="-10 2 -10 0" Width="16" Height="16" />
-                            </Button>
-                        </WrapPanel>
-                    </DataTemplate>
-                </TabControl.ItemTemplate>
-                <TabControl.ContentTemplate>
-                    <DataTemplate>
-                        <ScrollViewer PanningMode="Both" Background="{DynamicResource BackgroundBrush}">
-                            <controls:CharacterSheetControl />
-                        </ScrollViewer>
-                    </DataTemplate>
-                </TabControl.ContentTemplate>
-            </TabControl>
-        </DockPanel>
         <controls1:NotificationMessageContainer Name="NotificationContainer" HorizontalAlignment="Center"/>
     </Grid>
 </mah:MetroWindow>

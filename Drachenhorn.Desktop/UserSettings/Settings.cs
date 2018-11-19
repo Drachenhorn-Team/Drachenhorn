@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
 using System.IO.Packaging;
+using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
@@ -12,6 +14,7 @@ using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
+using MahApps.Metro;
 using Squirrel;
 
 namespace Drachenhorn.Desktop.UserSettings
@@ -132,6 +135,21 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (_visualTheme == value)
                     return;
                 _visualTheme = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore] private string _accentColor;
+
+        [XmlElement("AccentColor")]
+        public string AccentColor
+        {
+            get => _accentColor;
+            set
+            {
+                if (_accentColor == value)
+                    return;
+                _accentColor = value;
                 OnPropertyChanged();
             }
         }
@@ -260,5 +278,14 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         #endregion Save/Load
+
+        #region AccentColors
+
+        public static IEnumerable<string> GetAccents()
+        {
+            return ThemeManager.Accents.Select(x => x.Name);
+        }
+
+        #endregion AccentColors
     }
 }

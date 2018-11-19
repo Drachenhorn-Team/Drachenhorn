@@ -13,7 +13,6 @@ using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Template;
 using Enterwell.Clients.Wpf.Notifications;
-using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
@@ -47,10 +46,10 @@ namespace Drachenhorn.Desktop.Views
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
 
 
-            SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (sender, args) =>
-            {
-                RibbonLocalization.Current.Culture = args.NewCulture;
-            };
+            //SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (sender, args) =>
+            //{
+            //    RibbonLocalization.Current.Culture = args.NewCulture;
+            //};
         }
 
         public void OpenFile(string path)
@@ -177,5 +176,14 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion Update
+
+        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            // set the content
+            if (e.ClickedItem is HamburgerMenuItem item && item.Tag != null)
+                this.HamburgerMenuControl.Content = item;
+            // close the pane
+            this.HamburgerMenuControl.IsPaneOpen = false;
+        }
     }
 }
