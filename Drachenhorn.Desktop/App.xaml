@@ -22,6 +22,7 @@
                 <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
                 <ResourceDictionary x:Name="IconsRes" Source="UI/Themes/Images/Black.xaml"/>
                 <ResourceDictionary Source="Converter/Converter.xaml"/>
+                <ResourceDictionary Source="UI/Themes/Controls.xaml"/>
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
                 </ResourceDictionary>

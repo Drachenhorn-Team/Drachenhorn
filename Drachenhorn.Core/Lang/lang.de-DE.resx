@@ -696,4 +696,13 @@
   <data name="Updater.UpdateFailed.Sub" xml:space="preserve">
     <value>Versuchen sie es später erneut.</value>
   </data>
+  <data name="CharacterSheet.DisAdvantages" xml:space="preserve">
+    <value>Vor-/Nachteile</value>
+  </data>
+  <data name="UI.AccentColor" xml:space="preserve">
+    <value>Akzentfarbe</value>
+  </data>
+  <data name="Info.BaseValues" xml:space="preserve">
+    <value>Basiswerte</value>
+  </data>
 </root>

@@ -60,7 +60,9 @@ namespace Drachenhorn.Core.ViewModels.Common
                 if (SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate == value)
                     return;
                 SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = value;
+                _currentCompleteTemplate = null;
                 RaisePropertyChanged();
+                RaisePropertyChanged("CurrentCompleteTemplate");
             }
         }
 

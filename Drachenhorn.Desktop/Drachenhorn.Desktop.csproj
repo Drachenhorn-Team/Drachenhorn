@@ -474,17 +474,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Themes\BaseTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UI\Themes\Controls.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Colors\Dark.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Colors\Light.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Themes\Controls\ComboBox.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -518,10 +510,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Themes\DarkTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UI\Themes\Images\Black.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -534,9 +522,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Themes\LightTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UI\Themes\TitleBarButton.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AdventurePointsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
