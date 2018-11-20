@@ -36,7 +36,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <controls:AttributesControl DataContext="{Binding CurrentSheet.Attributes}"
-                                        Margin="5" Grid.Column="1"/>
+                                        Margin="5" Grid.Column="0"/>
 
             <controls:BaseValuesControl DataContext="{Binding CurrentSheet.BaseValues}"
                                         Margin="5" Grid.Column="1"/>

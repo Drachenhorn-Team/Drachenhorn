@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -201,9 +202,26 @@ namespace Drachenhorn.Desktop
                 "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml",
                 UriKind.Relative);
 
-            var res = Current.Resources.FindName("IconsRes") as ResourceDictionary;
+            var newRes = new ResourceDictionary() {Source = imageUri};
 
-            if (res != null) res.Source = imageUri;
+            var oldRes = Current.Resources.FindName("IconsRes") as ResourceDictionary;
+
+            if (oldRes != null)
+            {
+                oldRes.BeginInit();
+
+                foreach (DictionaryEntry r in newRes)
+                {
+                    if (oldRes.Contains(r.Key))
+                    {
+                        oldRes.Remove(r.Key);
+                    }
+
+                    oldRes.Add(r.Key, r.Value);
+                }
+
+                oldRes.EndInit();
+            }
 
 
             var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
