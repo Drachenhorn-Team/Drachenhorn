@@ -207,9 +207,10 @@ namespace Drachenhorn.Desktop
 
 
             var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
-            var mahAccent = ThemeManager.GetAccent(name);
+            var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
 
-            ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
+            if (mahTheme != null)
+                ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
         }
 
         #endregion Theme

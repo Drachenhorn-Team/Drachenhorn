@@ -50,8 +50,9 @@ namespace Drachenhorn.Desktop.UserSettings
             catch (Exception e)
             {
                 // ignored
-#if !DEBUG
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
+#if RELEASE
+                if (!e.Message.StartsWith("Update.exe not found"))
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
                 return;
             }
@@ -76,7 +77,8 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 // ignored
 #if RELEASE
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
+                if (!e.Message.StartsWith("Update.exe not found"))
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
             }
             return false;
@@ -98,7 +100,8 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 // ignored
 #if RELEASE
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
+                if (!e.Message.StartsWith("Update.exe not found"))
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
                 finished?.Invoke(false, null);
             }
@@ -128,7 +131,8 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 // ignored
 #if RELEASE
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
+                if (!e.Message.StartsWith("Update.exe not found"))
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
             }
         }
@@ -172,7 +176,8 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 // ignored
 #if RELEASE
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
+                if (!e.Message.StartsWith("Update.exe not found"))
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
 #endif
             }
         }
