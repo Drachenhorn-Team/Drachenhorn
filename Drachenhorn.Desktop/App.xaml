@@ -34,6 +34,12 @@
             <Style TargetType="Window">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
             </Style>
+            
+            <!--Help to see TextBlocks-->
+            <Style TargetType="TextBlock">
+                <Setter Property="Text" Value="Translated"/>
+            </Style>
+
 
         </ResourceDictionary>
     </Application.Resources>

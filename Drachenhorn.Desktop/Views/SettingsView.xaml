@@ -20,6 +20,13 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider MethodName="GetAccents" ObjectType="{x:Type userSettings:Settings}" x:Key="AccentColors"/>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
     </Window.Resources>
     <Window.DataContext>
         <Binding Path="SettingsView" Source="{StaticResource Locator}" />
@@ -81,11 +88,6 @@
             <StackPanel>
                 <Border Margin="5" BorderThickness="2">
                     <Grid>
-                        <Grid.Resources>
-                            <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}"/>
-                            </ResourceDictionary>
-                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
@@ -103,9 +105,12 @@
 
                         <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="1" Grid.Column="0"
                                    Margin="5" />
-                        <Button Content="{Binding Settings.GitCommit, FallbackValue=commit}"
-                                Click="GitCommit_Click" Grid.Row="1" Grid.Column="1" Margin="5"
-                                HorizontalAlignment="Left" />
+                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1">
+                            <Hyperlink NavigateUri="{Binding Settings.GitCommitLink}"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Run Text="{Binding Settings.GitCommit, FallbackValue=commit, Mode=OneWay}" />
+                            </Hyperlink>
+                        </TextBlock>
 
                         <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="2" Grid.Column="0"
                                    Margin="5" />
@@ -120,11 +125,6 @@
 
                 <Border Margin="5" BorderThickness="2">
                     <Grid>
-                        <Grid.Resources>
-                            <ResourceDictionary>
-                                <Style TargetType="{x:Type TextBlock}"/>
-                            </ResourceDictionary>
-                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />

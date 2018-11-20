@@ -124,6 +124,17 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
+        [XmlIgnore]
+        public string GitCommitLink
+        {
+            get
+            {
+                if (GitCommit.Contains(" "))
+                    return null;
+                return @"https://github.com/lightlike/Drachenhorn/commit/" + GitCommit;
+            }
+        }
+
         [XmlIgnore] private VisualThemeType _visualTheme;
 
         [XmlElement("VisualTheme")]

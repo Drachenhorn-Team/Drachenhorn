@@ -30,17 +30,6 @@ namespace Drachenhorn.Desktop.Views
             e.Handled = true;
         }
 
-        private void GitCommit_Click(object sender, RoutedEventArgs e)
-        {
-            if (!(sender is Button))
-                return;
-
-            var button = (Button) sender;
-            if (button.Content.ToString() != "Application not published")
-                Process.Start(
-                    new ProcessStartInfo(@"https://github.com/lightlike/Drachenhorn/commit/" + button.Content));
-        }
-
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (FlagImage == null) return;

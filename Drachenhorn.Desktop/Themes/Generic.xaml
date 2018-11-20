@@ -9,10 +9,10 @@
     xmlns:objects="clr-namespace:Drachenhorn.Xml.Objects;assembly=Drachenhorn.Xml"
     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
     mc:Ignorable="d">
-    <ResourceDictionary.MergedDictionaries>
+    <!--<ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../UI/Themes/Images/Common.xaml"/>
         <ResourceDictionary Source="../UI/Themes/Controls.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary.MergedDictionaries>-->
     <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
     <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
     <converter:AllowedDaysConverter x:Key="AllowedDaysConverter" />
@@ -29,7 +29,7 @@
                 <ControlTemplate TargetType="{x:Type local:InfoButton}">
                     <Button Name="PART_InfoButton"
                             IsEnabled="{TemplateBinding CanShowInfo}"
-                            BorderThickness="0" Margin="0"
+                            Margin="0"
                             Width="28" Height="28" Style="{StaticResource TitleBarButton}">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"
                                HorizontalAlignment="Center" VerticalAlignment="Center"
