@@ -126,7 +126,7 @@
                                                     CommandParameter="{Binding}"
                                                     Height="20" Width="20" Style="{StaticResource TitleBarButton}"
                                                     DockPanel.Dock="Right">
-                                                <Image Source="{Binding Source={StaticResource RemoveIcon}}"
+                                                <Image Source="{Binding Source={StaticResource RemoveIconWhite}}"
                                                        Width="16" Height="16"/>
                                             </Button>
                                             <StackPanel Orientation="Horizontal"

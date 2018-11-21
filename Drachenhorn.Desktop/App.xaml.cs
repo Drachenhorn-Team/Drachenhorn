@@ -189,46 +189,35 @@ namespace Drachenhorn.Desktop
 
         public static void SetAccentAndTheme(string name, VisualThemeType theme)
         {
-            if (theme == VisualThemeType.System)
+            App.Current.Dispatcher.Invoke(() =>
             {
-                var isDark = Registry.GetValue(
-                    "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                    "AppsUseLightTheme", null);
-
-                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
-            }
-
-            var imageUri = new Uri(
-                "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml",
-                UriKind.Relative);
-
-            var newRes = new ResourceDictionary() {Source = imageUri};
-
-            var oldRes = Current.Resources.FindName("IconsRes") as ResourceDictionary;
-
-            if (oldRes != null)
-            {
-                oldRes.BeginInit();
-
-                foreach (DictionaryEntry r in newRes)
+                if (theme == VisualThemeType.System)
                 {
-                    if (oldRes.Contains(r.Key))
-                    {
-                        oldRes.Remove(r.Key);
-                    }
+                    var isDark = Registry.GetValue(
+                        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                        "AppsUseLightTheme", null);
 
-                    oldRes.Add(r.Key, r.Value);
+                    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
                 }
 
-                oldRes.EndInit();
-            }
+                var uri = "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml";
+                
 
+                if (!string.IsNullOrEmpty(uri))
+                {
+                    Current.Resources.MergedDictionaries[0] =
+                        new ResourceDictionary
+                        {
+                            Source = new Uri(uri, UriKind.Relative)
+                        };
+                }
 
-            var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
-            var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
+                var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
+                var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
 
-            if (mahTheme != null)
-                ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
+                if (mahTheme != null)
+                    ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
+            });
         }
 
         #endregion Theme

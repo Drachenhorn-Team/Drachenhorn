@@ -14,9 +14,8 @@
 
     <BitmapImage x:Key="BannerIcon" UriSource="pack://application:,,,/Images/Common/Banner.jpg" />
     <BitmapImage x:Key="DrachenhornLogo" UriSource="pack://application:,,,/Images/Common/Logo.png" />
-    <BitmapImage x:Key="WindowIcon" UriSource="pack://application:,,,/Images/Common/WindowIcon.png" />
-    
-    
+
+
     <!-- White Images -->
 
     <BitmapImage x:Key="AddIconWhite" UriSource="pack://application:,,,/Images/White/Common/Add.png" />
