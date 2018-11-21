@@ -34,6 +34,7 @@ namespace Drachenhorn.Core.ViewModels
             SimpleIoc.Default.Register<PrintViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<TemplateMainViewModel>();
+            SimpleIoc.Default.Register<TemplateViewModel>();
             SimpleIoc.Default.Register<MapViewModel>();
         }
 
@@ -46,6 +47,8 @@ namespace Drachenhorn.Core.ViewModels
         public SettingsViewModel SettingsView => SimpleIoc.Default.GetInstance<SettingsViewModel>();
 
         public TemplateMainViewModel TemplateMainView => SimpleIoc.Default.GetInstance<TemplateMainViewModel>();
+
+        public TemplateViewModel TemplateView => SimpleIoc.Default.GetInstance<TemplateViewModel>();
 
         public TemplateDownloader TemplateDownloader => SimpleIoc.Default.GetInstance<TemplateDownloader>();
 

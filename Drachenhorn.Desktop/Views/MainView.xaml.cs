@@ -182,6 +182,7 @@ namespace Drachenhorn.Desktop.Views
             // set the content
             if (e.ClickedItem is HamburgerMenuItem item && item.Tag != null)
                 this.HamburgerMenuControl.Content = item;
+
             // close the pane
             this.HamburgerMenuControl.IsPaneOpen = false;
         }

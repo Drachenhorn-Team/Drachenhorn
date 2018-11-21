@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet;
 using Microsoft.Win32;
@@ -107,6 +108,23 @@ namespace Drachenhorn.Desktop.IO
                 File.Delete(path);
 
             File.WriteAllText(path, text);
+        }
+
+        /// <summary>
+        /// Opens a Dialog in which the User can select a File inside a Directory.
+        /// </summary>
+        /// <param name="dir">Directory to show.</param>
+        /// <param name="fileExtension">File-Extension to search from.</param>
+        /// <param name="title">Title of the Dialog.</param>
+        /// <returns>Selected File. Null if empty.</returns>
+        public string OpenDirDialog(string dir, string fileExtension, string title)
+        {
+            var window = new DirectorySelectorDialog(dir, fileExtension, title);
+
+            if (window.ShowDialog() == true)
+                return window.SelectedFile;
+
+            return null;
         }
 
         #region Helper

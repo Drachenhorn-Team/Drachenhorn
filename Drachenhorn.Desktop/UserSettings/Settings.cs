@@ -294,7 +294,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public static IEnumerable<string> GetAccents()
         {
-            return ThemeManager.Accents.Select(x => x.Name);
+            return ThemeManager.Accents.Select(x => x.Name).OrderBy(x => x);
         }
 
         #endregion AccentColors

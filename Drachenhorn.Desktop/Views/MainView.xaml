@@ -10,6 +10,7 @@
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
                  xmlns:common="clr-namespace:Drachenhorn.Core.ViewModels.Common;assembly=Drachenhorn.Core"
+                 xmlns:template="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
@@ -17,6 +18,7 @@
                  DataContext="{Binding Path=MainView, Source={StaticResource Locator}}">
     <Window.Resources>
         <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}" />
+        <helper:BindingProxy x:Key="TemplateViewModel" Data="{Binding TemplateView, Source={StaticResource Locator}}"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}" />
@@ -84,14 +86,13 @@
             </mah:HamburgerMenu.ContentTemplate>
             <mah:HamburgerMenu.ItemsSource>
                 <mah:HamburgerMenuItemCollection>
-                    <mah:HamburgerMenuIconItem Icon="{StaticResource EditIconWhite}"
+                    <mah:HamburgerMenuIconItem Icon="{StaticResource DrachenhornIconSmall}"
                                                Label="{lang:Translate UI.Edit}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
                                         DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
                                 <StackPanel.Resources>
-                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
-                                    </Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
                                 </StackPanel.Resources>
                                 <Button ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
                                         Command="{Binding New}">
@@ -160,17 +161,30 @@
                                                Label="{lang:Translate UI.Templates}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
-                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
+                                        DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}">
                                 <StackPanel.Resources>
-                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
-                                    </Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
                                 </StackPanel.Resources>
+                                <Button ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
+                                        Command="{Binding New}">
+                                    <Image Source="{DynamicResource NewIconWhite}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
+                                        Command="{Binding Open}">
+                                    <Image Source="{DynamicResource EditIconWhite}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
+                                        Command="{Binding Save}">
+                                    <Image Source="{DynamicResource SaveIconWhite}"/>
+                                </Button>
+                                <Button ToolTip="{lang:TranslateText %UI.Close}"
+                                        Command="{Binding Close}">
+                                    <Image Source="{DynamicResource RemoveIconWhite}"/>
+                                </Button>
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <ListBox>
-
-                            </ListBox>
+                            <template:TemplateControl DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>

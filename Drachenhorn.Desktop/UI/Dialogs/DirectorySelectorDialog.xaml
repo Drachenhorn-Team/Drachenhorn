@@ -1,0 +1,26 @@
+﻿<mah:MetroWindow x:Class="Drachenhorn.Desktop.UI.Dialogs.DirectorySelectorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        mc:Ignorable="d"
+        Title="DirectorySelectorDialog" Height="400" Width="500">
+    <Window.Resources>
+        <collections:ArrayList x:Key="FileList" />
+    </Window.Resources>
+    
+    <DockPanel Margin="10">
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button Content="{lang:Translate UI.OK}" Click="OKButton_OnClick"/>
+            <Button Content="{lang:Translate UI.Cancel}" Click="CancelButton_OnClick"/>
+        </WrapPanel>
+
+        <ListBox Name="FileBox" ItemsSource="{DynamicResource FileList}" DisplayMemberPath="Name"
+                 FontSize="20"/>
+    </DockPanel>
+</mah:MetroWindow>
+

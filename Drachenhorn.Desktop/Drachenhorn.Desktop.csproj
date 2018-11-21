@@ -80,6 +80,9 @@
     <Compile Include="UI\Dialogs\ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\DirectorySelectorDialog.xaml.cs">
+      <DependentUpon>DirectorySelectorDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,9 @@
     </Compile>
     <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Template\TemplateControl.xaml.cs">
+      <DependentUpon>TemplateControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
@@ -424,6 +430,27 @@
     <EmbeddedResource Include="..\img\SaveTemplateIcon.ico">
       <Link>Images\Common\SaveTemplateIcon.ico</Link>
     </EmbeddedResource>
+    <Resource Include="..\img\Icons\AppIcon.ico">
+      <Link>Images\Common\AppIcon.ico</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\ColoredIcon600x600.png">
+      <Link>Images\Common\ColoredIcon600x600.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\ColoredIcon64x64.png">
+      <Link>Images\Common\ColoredIcon64x64.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Drachenhorn.png">
+      <Link>Images\Common\Drachenhorn.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Icon600x600.png">
+      <Link>Images\Common\Icon600x600.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Icon64x64.png">
+      <Link>Images\Common\Icon64x64.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\WindowIcon.png">
+      <Link>Images\Common\WindowIcon.png</Link>
+    </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -453,6 +480,10 @@
     <Page Include="UI\Dialogs\ConsoleWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\DirectorySelectorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -589,6 +620,10 @@
     <Page Include="UserControls\SpecialSkillControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Template\TemplateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AttributeView.xaml">
       <Generator>MSBuild:Compile</Generator>
