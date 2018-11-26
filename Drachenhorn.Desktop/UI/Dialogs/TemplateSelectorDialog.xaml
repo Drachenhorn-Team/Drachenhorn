@@ -43,10 +43,10 @@
 
                                 <WrapPanel Grid.Column="2">
                                     <Button Click="OpenButton_OnClick" Margin="5" Width="20">
-                                        <Image Source="{DynamicResource EditIcon}" />
+                                        <Image Source="{StaticResource EditIcon}" />
                                     </Button>
                                     <Button Click="RemoveButton_OnClick" Margin="5" Width="20">
-                                        <Image Source="{DynamicResource RemoveIcon}" />
+                                        <Image Source="{StaticResource RemoveIcon}" />
                                     </Button>
                                 </WrapPanel>
 

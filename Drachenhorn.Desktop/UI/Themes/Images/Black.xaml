@@ -3,39 +3,29 @@
 
     <!--Images-->
 
-    <BitmapImage x:Key="AddIcon" UriSource="pack://application:,,,/Images/Black/Common/Add.png" />
-    <BitmapImage x:Key="RemoveIcon" UriSource="pack://application:,,,/Images/Black/Common/Remove.png" />
-    <BitmapImage x:Key="ArrowBlockDownIcon" UriSource="pack://application:,,,/Images/Black/Common/ArrowBlockDown.png" />
-    <BitmapImage x:Key="DownloadIcon" UriSource="pack://application:,,,/Images/Black/Common/Download.png" />
+    <BitmapImage x:Key="AddIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Add.png" />
+    <BitmapImage x:Key="RemoveIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Remove.png" />
+    <BitmapImage x:Key="ArrowBlockDownIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/ArrowBlockDown.png" />
+    <BitmapImage x:Key="DownloadIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Download.png" />
 
-    <BitmapImage x:Key="ImportIcon" UriSource="pack://application:,,,/Images/Black/Import.png" />
-    <BitmapImage x:Key="ExportIcon" UriSource="pack://application:,,,/Images/Black/Export.png" />
+    <BitmapImage x:Key="ImportIconDynamic" UriSource="pack://application:,,,/Images/Black/Import.png" />
+    <BitmapImage x:Key="ExportIconDynamic" UriSource="pack://application:,,,/Images/Black/Export.png" />
 
-    <BitmapImage x:Key="EditIcon" UriSource="pack://application:,,,/Images/Black/EditIcon.png" />
-    <BitmapImage x:Key="HtmlIcon" UriSource="pack://application:,,,/Images/Black/Html.png" />
-    <BitmapImage x:Key="InfoIcon" UriSource="pack://application:,,,/Images/Black/InfoIcon.png" />
-    <BitmapImage x:Key="MenuIcon" UriSource="pack://application:,,,/Images/Black/MenuIcon.png" />
-    <BitmapImage x:Key="NewIcon" UriSource="pack://application:,,,/Images/Black/NewIcon.png" />
-    <BitmapImage x:Key="PdfIcon" UriSource="pack://application:,,,/Images/Black/Pdf.png" />
-    <BitmapImage x:Key="PrintIcon" UriSource="pack://application:,,,/Images/Black/PrintIcon.png" />
-    <BitmapImage x:Key="PropertiesIcon" UriSource="pack://application:,,,/Images/Black/PropertiesIcon.png" />
-    <BitmapImage x:Key="SaveAllIcon" UriSource="pack://application:,,,/Images/Black/SaveAllIcon.png" />
-    <BitmapImage x:Key="SaveIcon" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
-    <BitmapImage x:Key="SaveAsIcon" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
-    <BitmapImage x:Key="UpdateAvailableIcon" UriSource="pack://application:,,,/Images/Black/UpdateAvailable.png" />
+    <BitmapImage x:Key="EditIconDynamic" UriSource="pack://application:,,,/Images/Black/EditIcon.png" />
+    <BitmapImage x:Key="HtmlIconDynamic" UriSource="pack://application:,,,/Images/Black/Html.png" />
+    <BitmapImage x:Key="InfoIconDynamic" UriSource="pack://application:,,,/Images/Black/InfoIcon.png" />
+    <BitmapImage x:Key="MenuIconDynamic" UriSource="pack://application:,,,/Images/Black/MenuIcon.png" />
+    <BitmapImage x:Key="NewIconDynamic" UriSource="pack://application:,,,/Images/Black/NewIcon.png" />
+    <BitmapImage x:Key="PdfIconDynamic" UriSource="pack://application:,,,/Images/Black/Pdf.png" />
+    <BitmapImage x:Key="PrintIconDynamic" UriSource="pack://application:,,,/Images/Black/PrintIcon.png" />
+    <BitmapImage x:Key="PropertiesIconDynamic" UriSource="pack://application:,,,/Images/Black/PropertiesIcon.png" />
+    <BitmapImage x:Key="SaveAllIconDynamic" UriSource="pack://application:,,,/Images/Black/SaveAllIcon.png" />
+    <BitmapImage x:Key="SaveIconDynamic" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
+    <BitmapImage x:Key="SaveAsIconDynamic" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
+    <BitmapImage x:Key="UpdateAvailableIconDynamic" UriSource="pack://application:,,,/Images/Black/UpdateAvailable.png" />
 
-    <BitmapImage x:Key="TemplateIcon" UriSource="pack://application:,,,/Images/Black/Templates.png" />
+    <BitmapImage x:Key="TemplateIconDynamic" UriSource="pack://application:,,,/Images/Black/Templates.png" />
 
-    <BitmapImage x:Key="CalculateIcon" UriSource="pack://application:,,,/Images/Black/Calculate.png" />
-    <BitmapImage x:Key="MapIcon" UriSource="pack://application:,,,/Images/Black/Map.png" />
-
-
-    <BitmapImage x:Key="Loading1" UriSource="pack://application:,,,/Images/Black/Loading/Loading_1.png" />
-    <BitmapImage x:Key="Loading2" UriSource="pack://application:,,,/Images/Black/Loading/Loading_2.png" />
-    <BitmapImage x:Key="Loading3" UriSource="pack://application:,,,/Images/Black/Loading/Loading_3.png" />
-    <BitmapImage x:Key="Loading4" UriSource="pack://application:,,,/Images/Black/Loading/Loading_4.png" />
-    <BitmapImage x:Key="Loading5" UriSource="pack://application:,,,/Images/Black/Loading/Loading_5.png" />
-    <BitmapImage x:Key="Loading6" UriSource="pack://application:,,,/Images/Black/Loading/Loading_6.png" />
-    <BitmapImage x:Key="Loading7" UriSource="pack://application:,,,/Images/Black/Loading/Loading_7.png" />
-    <BitmapImage x:Key="Loading8" UriSource="pack://application:,,,/Images/Black/Loading/Loading_8.png" />
+    <BitmapImage x:Key="CalculateIconDynamic" UriSource="pack://application:,,,/Images/Black/Calculate.png" />
+    <BitmapImage x:Key="MapIconDynamic" UriSource="pack://application:,,,/Images/Black/Map.png" />
 </ResourceDictionary>

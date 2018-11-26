@@ -87,7 +87,8 @@ namespace Drachenhorn.Xml.Sheet.Common
             //if (Math.Abs(GPCost) > Double.Epsilon) result.Add("%Info.GPCost", GPCost.ToString(CultureInfo.CurrentCulture));
 
             var baseValues = "";
-            foreach (var baseValue in BaseValues) baseValues += baseValue.Name + ": " + baseValue.Value + "\n";
+            foreach (var baseValue in BaseValues)
+                baseValues += baseValue.Name + ": " + baseValue.Value + " (" + baseValue.Key + ")" + "\n";
             if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
 
 

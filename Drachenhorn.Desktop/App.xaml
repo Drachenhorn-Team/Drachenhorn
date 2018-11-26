@@ -40,6 +40,8 @@
                 <Setter Property="Text" Value="Translated"/>
             </Style>
 
+            <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>
+
 
         </ResourceDictionary>
     </Application.Resources>
