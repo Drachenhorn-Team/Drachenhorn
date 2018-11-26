@@ -56,7 +56,8 @@
                            SelectedIndex="0"
                            DisplayMode="CompactInline"
                            Name="HamburgerMenuControl"
-                           ItemClick="HamburgerMenu_OnItemClick">
+                           ItemClick="HamburgerMenu_OnItemClick"
+                           OptionsItemClick="HamburgerMenu_OnItemClick">
             <mah:HamburgerMenu.ContentTemplate>
                 <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
                     <Grid x:Name="TheContentGrid">
@@ -211,8 +212,11 @@
             <mah:HamburgerMenu.OptionsItemsSource>
                 <mah:HamburgerMenuItemCollection>
                     <mah:HamburgerMenuIconItem Icon="{StaticResource PropertiesIconWhite}"
-                                               Label="{lang:Translate UI.Properties}"
-                                               Command="{Binding ShowSettings}"/>
+                                               Label="{lang:Translate UI.Properties}">
+                        <mah:HamburgerMenuItem.Tag>
+                            <common1:SettingsViewControl/>
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.OptionsItemsSource>
         </mah:HamburgerMenu>

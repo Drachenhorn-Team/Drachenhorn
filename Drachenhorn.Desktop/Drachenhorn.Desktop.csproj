@@ -136,6 +136,9 @@
     <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
       <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\SettingsViewControl.xaml.cs">
+      <DependentUpon>SettingsViewControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Common\TemplateInformationControl.xaml.cs">
       <DependentUpon>TemplateInformationControl.xaml</DependentUpon>
     </Compile>
@@ -603,6 +606,10 @@
     <Page Include="UserControls\Common\RaceDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\SettingsViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Common\TemplateInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
