@@ -32,20 +32,7 @@ namespace Drachenhorn.Desktop.UserControls
             new AttributeView(newItem).ShowDialog();
 
             ((IList<Attribute>) List.ItemsSource).Add(newItem);
-            //List.SelectedItem = newItem;
-        }
-
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!(sender is Button))
-                return;
-
-            var button = (Button) sender;
-
-            if (!(button.DataContext is Attribute))
-                return;
-
-            (List.ItemsSource as IList<Attribute>)?.Remove((Attribute) button.DataContext);
+            List.SelectedItem = newItem;
         }
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

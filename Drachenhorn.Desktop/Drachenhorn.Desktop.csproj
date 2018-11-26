@@ -424,12 +424,6 @@
     <Resource Include="..\img\Black\Painting\Width.png">
       <Link>Images\Black\Painting\Width.png</Link>
     </Resource>
-    <EmbeddedResource Include="..\img\SaveFileIcon.ico">
-      <Link>Images\Common\SaveFileIcon.ico</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\img\SaveTemplateIcon.ico">
-      <Link>Images\Common\SaveTemplateIcon.ico</Link>
-    </EmbeddedResource>
     <Resource Include="..\img\Icons\AppIcon.ico">
       <Link>Images\Common\AppIcon.ico</Link>
     </Resource>
@@ -451,6 +445,12 @@
     <Resource Include="..\img\Icons\WindowIcon.png">
       <Link>Images\Common\WindowIcon.png</Link>
     </Resource>
+    <EmbeddedResource Include="..\img\Icons\SaveFileIcon.ico">
+      <Link>Images\Common\SaveFileIcon.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\img\Icons\SaveTemplateIcon.ico">
+      <Link>Images\Common\SaveTemplateIcon.ico</Link>
+    </EmbeddedResource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
