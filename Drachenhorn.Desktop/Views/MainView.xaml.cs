@@ -103,8 +103,8 @@ namespace Drachenhorn.Desktop.Views
                     Dispatcher.Invoke(() =>
                     {
                         NotificationContainer.Manager.CreateMessage()
-                            .Accent((SolidColorBrush) FindResource("InfoBrush"))
-                            .Background((SolidColorBrush) FindResource("BackgroundBrush"))
+                            .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                            .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                             .HasBadge("Update")
                             .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
@@ -121,8 +121,8 @@ namespace Drachenhorn.Desktop.Views
                 Dispatcher.Invoke(() =>
                 {
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) FindResource("InfoBrush"))
-                        .Background((SolidColorBrush) FindResource("BackgroundBrush"))
+                        .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                        .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                         .HasBadge("Update")
                         .HasMessage(LanguageManager.Translate("Updater.Updating"))
                         .Dismiss().WithDelay(5000)
@@ -135,8 +135,8 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) FindResource("BackgroundBrush"))
+                                .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                                 .HasBadge("Update")
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
@@ -147,8 +147,8 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) FindResource("BackgroundBrush"))
+                                .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                                 .HasBadge("Update")
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
