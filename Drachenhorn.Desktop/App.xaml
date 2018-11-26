@@ -12,18 +12,17 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Do Not Move from first entry -->
-                <ResourceDictionary Source="UI/Themes/Images/Black.xaml"/>
-                <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
-                <ResourceDictionary Source="Converter/Converter.xaml"/>
-                <!--<ResourceDictionary Source="UI/Themes/LightTheme.xaml" />
-                <ResourceDictionary Source="Converter/Converter.xaml"/>-->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                
                 <ResourceDictionary Source="UI/Themes/Controls.xaml"/>
+                <ResourceDictionary Source="UI/Themes/Images/Black.xaml"/>
+                <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
+                <ResourceDictionary Source="Converter/Converter.xaml"/>
+
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
                 </ResourceDictionary>

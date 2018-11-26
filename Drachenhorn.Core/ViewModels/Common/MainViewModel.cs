@@ -148,13 +148,6 @@ namespace Drachenhorn.Core.ViewModels.Common
             CurrentSheetViewModel = model;
         }
 
-        public RelayCommand ShowSettings => new RelayCommand(ExecuteShowSettings);
-
-        private void ExecuteShowSettings()
-        {
-            Messenger.Default.Send(new NotificationMessage(this, "ShowSettingsView"));
-        }
-
         public RelayCommand Print => new RelayCommand(ExecutePrint);
 
         private void ExecutePrint()
@@ -213,14 +206,6 @@ namespace Drachenhorn.Core.ViewModels.Common
         private void ExecuteOpenTemplates()
         {
             Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));
-        }
-
-
-        public RelayCommand ShowMap => new RelayCommand(ExecuteShowMap);
-
-        private void ExecuteShowMap()
-        {
-            Messenger.Default.Send(new NotificationMessage(this, "ShowMap"));
         }
 
         #endregion Commands

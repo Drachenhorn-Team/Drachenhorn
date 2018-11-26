@@ -205,11 +205,19 @@ namespace Drachenhorn.Desktop
 
                 if (!string.IsNullOrEmpty(uri))
                 {
-                    Current.Resources.MergedDictionaries[0] =
-                        new ResourceDictionary
-                        {
-                            Source = new Uri(uri, UriKind.Relative)
-                        };
+                    var res = Current.Resources;
+
+                    res.BeginInit();
+
+                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary { Source = new Uri(uri, UriKind.Relative) })
+                    {
+                        if (!res.Contains(dictionaryEntry.Key))
+                            res.Add(dictionaryEntry.Key, dictionaryEntry.Value);
+                        else
+                            res[dictionaryEntry.Key] = dictionaryEntry.Value;
+                    }
+
+                    res.EndInit();
                 }
 
                 var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");

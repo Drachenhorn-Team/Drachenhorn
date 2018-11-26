@@ -34,8 +34,6 @@ namespace Drachenhorn.Desktop.Views
 
             NotificationContainer.Manager = new NotificationMessageManager();
 
-            //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
-
             if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) =>
             {
                 OpenFile(path);
@@ -44,12 +42,6 @@ namespace Drachenhorn.Desktop.Views
             //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
-
-
-            //SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (sender, args) =>
-            //{
-            //    RibbonLocalization.Current.Culture = args.NewCulture;
-            //};
         }
 
         public void OpenFile(string path)
@@ -69,11 +61,7 @@ namespace Drachenhorn.Desktop.Views
 
         private void RecieveMessage(NotificationMessage message)
         {
-            if (message.Notification == "ShowSettingsView")
-            {
-                new SettingsView().ShowDialog();
-            }
-            else if (message.Notification == "ShowPrintView")
+            if (message.Notification == "ShowPrintView")
             {
                 if (DataContext is MainViewModel model)
                 {
@@ -86,10 +74,6 @@ namespace Drachenhorn.Desktop.Views
             {
                 new TemplateSelectorDialog().ShowDialog();
                 //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
-            }
-            else if (message.Notification == "ShowMap")
-            {
-                new MapView().ShowDialog();
             }
         }
 
