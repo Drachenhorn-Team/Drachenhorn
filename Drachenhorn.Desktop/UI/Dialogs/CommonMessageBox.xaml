@@ -8,12 +8,13 @@
         mc:Ignorable="d"
         MinWidth="300"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" TitleCharacterCasing="Normal"
         Title="CommonMessageBox" SizeToContent="WidthAndHeight">
     <StackPanel>
         <TextBlock Name="MessageBlock"
                    Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                   Margin="5" MaxWidth="350" MinHeight="50"
+                   Margin="10" MaxWidth="350" MinHeight="80"
+                   VerticalAlignment="Center"
                    TextWrapping="WrapWithOverflow" />
         <WrapPanel HorizontalAlignment="Right">
             <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="80"

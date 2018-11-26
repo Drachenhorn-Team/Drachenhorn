@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Core.Settings

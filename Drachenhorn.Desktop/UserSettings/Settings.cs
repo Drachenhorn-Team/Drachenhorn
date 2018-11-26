@@ -6,6 +6,7 @@ using System.IO;
 using System.IO.Packaging;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
@@ -191,21 +192,6 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (_currentTemplate == value)
                     return;
                 _currentTemplate = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private bool _isUpdateAvailable;
-
-        [XmlIgnore]
-        public bool IsUpdateAvailable
-        {
-            get => _isUpdateAvailable;
-            private set
-            {
-                if (_isUpdateAvailable == value)
-                    return;
-                _isUpdateAvailable = value;
                 OnPropertyChanged();
             }
         }

@@ -7,8 +7,9 @@
                  xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  mc:Ignorable="d"
-                 ResizeMode="CanResizeWithGrip" SizeToContent="Height"
-                 MinHeight="200" Height="450" Width="800"
+                 ResizeMode="CanResizeWithGrip"
+                 MinHeight="200" SizeToContent="Height" Width="800"
+                 TitleCharacterCasing="Normal"
                  WindowStartupLocation="CenterScreen"
                  Title="{lang:Translate InfoView.Title}">
     <Window.Resources>
@@ -20,6 +21,11 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition SharedSizeGroup="Key" />
                             <ColumnDefinition SharedSizeGroup="Value" />

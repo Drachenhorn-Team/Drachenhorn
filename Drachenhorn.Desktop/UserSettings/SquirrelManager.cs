@@ -24,11 +24,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
         private static IUpdateManager GetUpdateManager()
         {
-#if RELEASE
             return UpdateManager.GitHubUpdateManager(GithubUpdatePath).Result;
-#else
-            return new UpdateManager("C:");
-#endif
         }
 
         public static void Startup()

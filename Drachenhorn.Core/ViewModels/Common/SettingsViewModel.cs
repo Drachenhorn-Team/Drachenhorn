@@ -1,8 +1,9 @@
 ﻿using Drachenhorn.Core.Settings;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
-namespace Drachenhorn.Core.ViewModels.Sheet
+namespace Drachenhorn.Core.ViewModels.Common
 {
     public class SettingsViewModel : ViewModelBase
     {
@@ -29,20 +30,6 @@ namespace Drachenhorn.Core.ViewModels.Sheet
                 if (_settings == value)
                     return;
                 _settings = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private bool _isCheckingUpdate;
-
-        public bool IsCheckingUpdate
-        {
-            get => _isCheckingUpdate;
-            private set
-            {
-                if (_isCheckingUpdate == value)
-                    return;
-                _isCheckingUpdate = value;
                 RaisePropertyChanged();
             }
         }

@@ -705,4 +705,13 @@
   <data name="Info.BaseValues" xml:space="preserve">
     <value>Basiswerte</value>
   </data>
+  <data name="Updater.Title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UI.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Updater.NoUpdateAvailable" xml:space="preserve">
+    <value>Kein neues Update gefunden.</value>
+  </data>
 </root>
