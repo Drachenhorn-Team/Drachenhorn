@@ -130,6 +130,9 @@
     <Compile Include="UserControls\Common\CultureDisplayControl.xaml.cs">
       <DependentUpon>CultureDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
       <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
     </Compile>
@@ -592,6 +595,10 @@
     <Page Include="UserControls\Common\CultureDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Common\RaceDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>

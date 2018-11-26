@@ -31,7 +31,7 @@
             <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5"/>
             <TextBlock Text="{Binding TotalWeight}" Margin="5"/>
         </WrapPanel>
-        <ListBox ItemsSource="{Binding Items}">
+        <ListBox ItemsSource="{Binding Items}" PreviewMouseWheel="List_PreviewMouseWheel">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

@@ -11,6 +11,7 @@
                  xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
                  xmlns:common="clr-namespace:Drachenhorn.Core.ViewModels.Common;assembly=Drachenhorn.Core"
                  xmlns:template="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
+                 xmlns:common1="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
@@ -19,6 +20,7 @@
     <Window.Resources>
         <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}" />
         <helper:BindingProxy x:Key="TemplateViewModel" Data="{Binding TemplateView, Source={StaticResource Locator}}"/>
+        <helper:BindingProxy x:Key="MapViewModel" Data="{Binding MapView, Source={StaticResource Locator}}"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}" />
@@ -26,7 +28,6 @@
         <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding Save}" />
         <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="{Binding SaveAll}" />
         <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding Print}" />
-        <KeyBinding Key="F9" Command="{Binding ShowSettings}" />
     </Window.InputBindings>
 
     <Grid>
@@ -185,6 +186,24 @@
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
                             <template:TemplateControl DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"/>
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    <mah:HamburgerMenuIconItem Label="{lang:Translate UI.Map}"
+                                               Icon="{StaticResource MapIconWhite}">
+                        <mah:HamburgerMenuItem.ToolTip>
+                            <StackPanel Orientation="Horizontal"
+                                        DataContext="{Binding Data, Source={StaticResource MapViewModel}}">
+                                <StackPanel.Resources>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
+                                </StackPanel.Resources>
+                                <Button ToolTip="{lang:TranslateText %Map.Generate (%Keyboard.Ctrl + G)}"
+                                        Command="{Binding Generate}">
+                                    <Image Source="{DynamicResource MapIconWhite}"/>
+                                </Button>
+                            </StackPanel>
+                        </mah:HamburgerMenuItem.ToolTip>
+                        <mah:HamburgerMenuItem.Tag>
+                            <common1:MapControl DataContext="{Binding Grid}"/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>

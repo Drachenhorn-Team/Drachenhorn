@@ -13,8 +13,6 @@
              Loaded="CombatControl_OnLoaded"
              d:DesignHeight="300" d:DesignWidth="800">
     <UserControl.Resources>
-        <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
-        <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="WeaponTypeEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="combatInfo1:DamageType" />
@@ -32,7 +30,7 @@
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
             <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
-                      CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
@@ -59,7 +57,7 @@
             <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" />
             <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
-                      CanUserResizeColumns="False" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="*">
                         <DataGridTemplateColumn.CellTemplate>
