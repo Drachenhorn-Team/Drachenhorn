@@ -148,6 +148,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{C33A6F64
 		img\Icons\ColoredIcon64x64.png = img\Icons\ColoredIcon64x64.png
 		img\Icons\Drachenhorn.ico = img\Icons\Drachenhorn.ico
 		img\Icons\Drachenhorn.png = img\Icons\Drachenhorn.png
+		img\Icons\Drachenhorn256x256.png = img\Icons\Drachenhorn256x256.png
 		img\Icons\Icon600x600.png = img\Icons\Icon600x600.png
 		img\Icons\Icon64x64.png = img\Icons\Icon64x64.png
 		img\Icons\Sheet.png = img\Icons\Sheet.png
