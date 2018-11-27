@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Desktop.UserSettings;
+using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 
@@ -103,12 +104,26 @@ namespace Drachenhorn.Desktop.UserControls.Common
                     }));
             }
             else
-            {
                 SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                     LanguageManager.Translate("Updater.NoUpdateAvailable"),
                     LanguageManager.Translate("Updater.Title"),
                     LanguageManager.Translate("UI.OK"), null);
-            }
+        }
+
+        private void TemplateRadioButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is RadioButton))
+                return;
+
+            var template = ((RadioButton) sender).Tag as TemplateMetadata;
+
+            if (template != null)
+                SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = template;
+        }
+
+        private void SettingsViewControl_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            ((ObjectDataProvider)Resources["SelectableTemplates"]).Refresh();
         }
     }
 }
