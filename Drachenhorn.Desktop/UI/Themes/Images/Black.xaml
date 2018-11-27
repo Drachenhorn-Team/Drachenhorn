@@ -23,6 +23,7 @@
     <BitmapImage x:Key="SaveIconDynamic" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
     <BitmapImage x:Key="SaveAsIconDynamic" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
     <BitmapImage x:Key="UpdateAvailableIconDynamic" UriSource="pack://application:,,,/Images/Black/UpdateAvailable.png" />
+    <BitmapImage x:Key="AddImageIconDynamic" UriSource="pack://application:,,,/Images/Black/AddImage.png" />
 
     <BitmapImage x:Key="TemplateIconDynamic" UriSource="pack://application:,,,/Images/Black/Templates.png" />
 

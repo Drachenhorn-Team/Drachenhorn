@@ -36,7 +36,11 @@ namespace Drachenhorn.Desktop.UserControls
 
             var view = new CoatOfArmsPainterView();
 
-            view.Closing += (s, args) => { ((CoatOfArms) DataContext).Base64String = view.GetBase64(); };
+            view.Closing += (s, args) =>
+            {
+                if (view.DialogResult == true)
+                    ((CoatOfArms) DataContext).Base64String = view.GetBase64();
+            };
 
             view.Show();
         }

@@ -149,5 +149,11 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion OnPropertyChanged
+
+        private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            this.Close();
+        }
     }
 }

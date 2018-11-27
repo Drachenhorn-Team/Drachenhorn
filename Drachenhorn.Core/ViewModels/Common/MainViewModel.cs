@@ -200,14 +200,6 @@ namespace Drachenhorn.Core.ViewModels.Common
             Formula.RaiseCalculateAll(CurrentSheetViewModel.CurrentSheet);
         }
 
-
-        public RelayCommand OpenTemplates => new RelayCommand(ExecuteOpenTemplates);
-
-        private void ExecuteOpenTemplates()
-        {
-            Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));
-        }
-
         #endregion Commands
     }
 }

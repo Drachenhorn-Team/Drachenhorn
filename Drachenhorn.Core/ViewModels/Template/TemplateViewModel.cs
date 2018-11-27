@@ -7,6 +7,7 @@ using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Core.ViewModels.Template
@@ -54,11 +55,27 @@ namespace Drachenhorn.Core.ViewModels.Template
                 if (result != true) return;
             }
 
-            var file = SimpleIoc.Default.GetInstance<IIoService>()
-                .OpenDirDialog(TemplateMetadata.BaseDirectory, TemplateMetadata.Extension, "test");
+            Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));
 
-            if (file != null)
-                Template = SheetTemplate.Load(file);
+            //var file = SimpleIoc.Default.GetInstance<IIoService>()
+            //    .OpenDirDialog(TemplateMetadata.BaseDirectory, TemplateMetadata.Extension, "test");
+
+            //if (file != null)
+            //    Template = SheetTemplate.Load(file);
+        }
+
+        public RelayCommand Save => new RelayCommand(ExecuteSave);
+
+        private void ExecuteSave()
+        {
+            Template?.Save();
+        }
+
+        public RelayCommand Close => new RelayCommand(ExecuteClose);
+
+        private void ExecuteClose()
+        {
+            Template = null;
         }
 
         #endregion Commands

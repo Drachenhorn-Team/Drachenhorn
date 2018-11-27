@@ -8,6 +8,8 @@ using System.Windows.Media;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
+using Drachenhorn.Core.ViewModels.Template;
+using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Sheet;
@@ -72,7 +74,13 @@ namespace Drachenhorn.Desktop.Views
             }
             else if (message.Notification == "ShowOpenTemplates")
             {
-                new TemplateSelectorDialog().ShowDialog();
+                var diag = new TemplateSelectorDialog();
+                if (diag.ShowDialog() == true)
+                {
+                    if (Resources["TemplateViewModel"] != null)
+                        ((TemplateViewModel) ((BindingProxy) Resources["TemplateViewModel"]).Data).Template =
+                            diag.SelectedTemplate;
+                }
                 //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
             }
         }

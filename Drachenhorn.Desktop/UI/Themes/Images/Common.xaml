@@ -40,6 +40,7 @@
     <BitmapImage x:Key="SaveIcon" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
     <BitmapImage x:Key="SaveAsIcon" UriSource="pack://application:,,,/Images/Black/SaveIcon.png" />
     <BitmapImage x:Key="UpdateAvailableIcon" UriSource="pack://application:,,,/Images/Black/UpdateAvailable.png" />
+    <BitmapImage x:Key="AddImageIcon" UriSource="pack://application:,,,/Images/Black/AddImage.png" />
 
     <BitmapImage x:Key="TemplateIcon" UriSource="pack://application:,,,/Images/Black/Templates.png" />
 
@@ -69,6 +70,7 @@
     <BitmapImage x:Key="SaveIconWhite" UriSource="pack://application:,,,/Images/White/SaveIcon.png" />
     <BitmapImage x:Key="SaveAsIconWhite" UriSource="pack://application:,,,/Images/White/SaveIcon.png" />
     <BitmapImage x:Key="UpdateAvailableIconWhite" UriSource="pack://application:,,,/Images/White/UpdateAvailable.png" />
+    <BitmapImage x:Key="AddImageIconWhite" UriSource="pack://application:,,,/Images/White/AddImage.png" />
 
     <BitmapImage x:Key="TemplateIconWhite" UriSource="pack://application:,,,/Images/White/Templates.png" />
 

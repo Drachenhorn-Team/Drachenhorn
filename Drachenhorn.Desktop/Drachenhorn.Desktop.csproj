@@ -451,6 +451,12 @@
     <EmbeddedResource Include="..\img\Icons\SaveTemplateIcon.ico">
       <Link>Images\Common\SaveTemplateIcon.ico</Link>
     </EmbeddedResource>
+    <Resource Include="..\img\Black\AddImage.png">
+      <Link>Images\Black\AddImage.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\AddImage.png">
+      <Link>Images\White\AddImage.png</Link>
+    </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

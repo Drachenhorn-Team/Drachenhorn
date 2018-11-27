@@ -21,6 +21,14 @@
 
     <DockPanel>
         <fluent:Ribbon DockPanel.Dock="Top">
+            <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.File}">
+                    <fluent:Button LargeIcon="{StaticResource AddImageIcon}"
+                                   KeyTip="Strg + S"
+                                   Header="{lang:Translate UI.Apply}"
+                                   Click="ApplyButton_OnClick"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
             <fluent:RibbonTabItem Header="{lang:Translate UI.Paint}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
                     <fluent:Button LargeIcon="{StaticResource UndoIcon}"

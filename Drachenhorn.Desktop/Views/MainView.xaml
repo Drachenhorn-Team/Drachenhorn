@@ -10,13 +10,15 @@
                  xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
                  xmlns:template="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
                  xmlns:common1="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
+                 xmlns:template1="clr-namespace:Drachenhorn.Core.ViewModels.Template;assembly=Drachenhorn.Core"
+                 xmlns:common="clr-namespace:Drachenhorn.Core.ViewModels.Common;assembly=Drachenhorn.Core"
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
                  Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100"
                  DataContext="{Binding Path=MainView, Source={StaticResource Locator}}">
     <Window.Resources>
-        <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}" />
+        <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}"/>
         <helper:BindingProxy x:Key="TemplateViewModel" Data="{Binding TemplateView, Source={StaticResource Locator}}"/>
         <helper:BindingProxy x:Key="MapViewModel" Data="{Binding MapView, Source={StaticResource Locator}}"/>
     </Window.Resources>
@@ -90,7 +92,8 @@
                                                Label="{lang:Translate UI.Edit}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
-                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
+                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}"
+                                        d:DataContext="{d:DesignInstance common:MainViewModel}">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
                                 </StackPanel.Resources>
@@ -119,7 +122,8 @@
                         <mah:HamburgerMenuItem.Tag>
                             <TabControl ItemsSource="{Binding CharacterSheetViewModels}"
                                         SelectedItem="{Binding CurrentSheetViewModel}"
-                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}">
+                                        DataContext="{Binding Data, Source={StaticResource MainViewModel}}"
+                                        d:DataContext="{d:DesignInstance common:MainViewModel}">
                                 <TabControl.ItemTemplate>
                                     <DataTemplate>
                                         <DockPanel Height="30">
@@ -161,7 +165,8 @@
                                                Label="{lang:Translate UI.Templates}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
-                                        DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}">
+                                        DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"
+                                        d:DataContext="{d:DesignInstance template1:TemplateViewModel}">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
                                 </StackPanel.Resources>
@@ -184,14 +189,16 @@
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <template:TemplateControl DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"/>
+                            <template:TemplateControl DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"
+                                                      d:DataContext="{d:DesignInstance template1:TemplateViewModel}"/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                     <mah:HamburgerMenuIconItem Label="{lang:Translate UI.Map}"
                                                Icon="{StaticResource MapIconWhite}">
                         <mah:HamburgerMenuItem.ToolTip>
                             <StackPanel Orientation="Horizontal"
-                                        DataContext="{Binding Data, Source={StaticResource MapViewModel}}">
+                                        DataContext="{Binding Data, Source={StaticResource MapViewModel}}"
+                                        d:DataContext="{d:DesignInstance common:MapViewModel}">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
                                 </StackPanel.Resources>
@@ -202,7 +209,7 @@
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <common1:MapControl DataContext="{Binding Grid}"/>
+                            <common1:MapControl DataContext="{Binding Data.Grid, Source={StaticResource MapViewModel}}"/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>
