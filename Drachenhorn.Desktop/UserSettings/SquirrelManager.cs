@@ -45,12 +45,8 @@ namespace Drachenhorn.Desktop.UserSettings
             }
             catch (Exception e)
             {
-                // ignored
-#if RELEASE
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
-                return;
             }
         }
 
@@ -71,11 +67,8 @@ namespace Drachenhorn.Desktop.UserSettings
             }
             catch (Exception e)
             {
-                // ignored
-#if RELEASE
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
             }
             return false;
         }
@@ -94,11 +87,8 @@ namespace Drachenhorn.Desktop.UserSettings
             }
             catch (Exception e)
             {
-                // ignored
-#if RELEASE
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
                 finished?.Invoke(false, null);
             }
         }
@@ -120,16 +110,14 @@ namespace Drachenhorn.Desktop.UserSettings
 
                     RegisterFileTypes(mgr.RootAppDirectory);
 
-                    UpdateManager.RestartApp();
+                    //UpdateManager.RestartAppWhenExited();
+                    //Application.Current.Shutdown();
                 }
             }
             catch (Exception e)
             {
-                // ignored
-#if RELEASE
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
             }
         }
 
