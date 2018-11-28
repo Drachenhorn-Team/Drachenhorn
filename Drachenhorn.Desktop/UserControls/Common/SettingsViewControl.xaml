@@ -10,9 +10,11 @@
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-             mc:Ignorable="d" 
+             xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
+             mc:Ignorable="d" Loaded="SettingsViewControl_OnLoaded"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <ObjectDataProvider x:Key="SelectableTemplates" ObjectType="template:SheetTemplate" MethodName="get_AvailableTemplates"/>
         <ObjectDataProvider x:Key="Languages" ObjectType="{x:Type glob:LanguageManager}" MethodName="GetAllCultures" />
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="VisualThemeTypes">
             <ObjectDataProvider.MethodParameters>
@@ -83,6 +85,26 @@
                 <CheckBox Margin="5" Grid.Column="1" Grid.Row="3"
                           IsChecked="{Binding Settings.ShowConsole}" />
             </Grid>
+        </TabItem>
+        <TabItem Header="{lang:Translate UI.Properties.Templates}">
+            <ItemsControl ItemsSource="{Binding Source={StaticResource SelectableTemplates}}" Margin="5">
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel IsItemsHost="True" Background="{StaticResource ControlBackgroundBrush}"/>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource ControlBorderBrush}" BorderThickness="1" Margin="2">
+                            <RadioButton Tag="{Binding .}" Click="TemplateRadioButton_OnClick"
+                                         GroupName="TemplateRadio" Content="{Binding Name}"
+                                         Style="{StaticResource MetroFlatToggleButton}"/>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
             <StackPanel>

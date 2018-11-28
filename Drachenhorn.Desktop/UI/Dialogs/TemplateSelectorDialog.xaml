@@ -3,12 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
-        xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
-        xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:downloader="clr-namespace:Drachenhorn.Core.Downloader;assembly=Drachenhorn.Core"
         mc:Ignorable="d" TitleCharacterCasing="Normal"
         Style="{StaticResource {x:Type Window}}"
         Title="{lang:Translate Template.SelectorDialog}" Height="450" Width="800">
@@ -20,7 +17,8 @@
                             Margin="5" Padding="8" />
                 </WrapPanel>
 
-                <DataGrid Name="TemplateList" Margin="5" AutoGenerateColumns="False" MouseDoubleClick="OpenButton_OnClick">
+                <DataGrid Name="TemplateList" Margin="5" AutoGenerateColumns="False"
+                          MouseDoubleClick="OpenButton_OnClick" RowHeight="40">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate Template.Name}" FontSize="16"
                                             Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
@@ -29,7 +27,7 @@
                         <DataGridTemplateColumn Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Click="OpenButton_OnClick" Margin="5" Width="32">
+                                    <Button Click="OpenButton_OnClick" Margin="5">
                                         <Image Source="{StaticResource EditIcon}" />
                                     </Button>
                                 </DataTemplate>
@@ -38,7 +36,7 @@
                         <DataGridTemplateColumn Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Click="RemoveButton_OnClick" Margin="5" Width="32">
+                                    <Button Click="RemoveButton_OnClick" Margin="5">
                                         <Image Source="{StaticResource RemoveIcon}" />
                                     </Button>
                                 </DataTemplate>
@@ -60,7 +58,7 @@
                                             Binding="{Binding Version}" IsReadOnly="True" FontSize="16"/>
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="downloader:OnlineTemplate">
                                     <ProgressBar Value="{Binding Progress, Mode=OneWay}"
                                                  Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
                                                  Margin="5" VerticalAlignment="Center"/>
@@ -69,10 +67,9 @@
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="downloader:OnlineTemplate">
                                     <Button Click="DownloadButton_OnClick"
-                                            Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}"
-                                            Width="32">
+                                            Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}">
                                         <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
                                     </Button>
                                 </DataTemplate>
