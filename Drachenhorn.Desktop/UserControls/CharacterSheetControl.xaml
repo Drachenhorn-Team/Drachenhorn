@@ -11,30 +11,20 @@
              d:DataContext="{d:DesignInstance sheet:CharacterSheetViewModel}">
     <StackPanel>
         <Image Source="{StaticResource DrachenhornLogo}" Width="300" />
-        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontFamily="{StaticResource Morpheus}"
+        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50"
                    FontWeight="Bold" TextAlignment="Center" />
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:CharacteristicsControl DataContext="{Binding CurrentSheet.Characteristics}" />
-        </Border>
+        <controls:CharacteristicsControl DataContext="{Binding CurrentSheet.Characteristics}" />
 
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-
-            <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:DisAdvantageInformationControl
-                    DataContext="{Binding CurrentSheet.DisAdvantages}"
-                    Margin="5" />
-            </Border>
-
-            <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
-                <controls:CoatOfArmsControl
-                    DataContext="{Binding CurrentSheet.CoatOfArms}"
-                    Margin="5" Width="400" />
-            </Border>
+            <controls:DisAdvantageInformationControl DataContext="{Binding CurrentSheet.DisAdvantages}"
+                                                     Margin="5" />
+            <controls:CoatOfArmsControl DataContext="{Binding CurrentSheet.CoatOfArms}"
+                                        Margin="5" Width="400" Grid.Column="1"/>
         </Grid>
 
         <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold"
@@ -45,48 +35,26 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <controls:AttributesControl DataContext="{Binding CurrentSheet.Attributes}"
+                                        Margin="5" Grid.Column="0"/>
 
-            <Border Style="{StaticResource FrameBorder}" Grid.Column="0">
-                <controls:AttributesControl
-                    DataContext="{Binding CurrentSheet.Attributes}"
-                    Margin="5" />
-            </Border>
-
-            <Border Style="{StaticResource FrameBorder}" Grid.Column="1">
-                <controls:BaseValuesControl
-                    DataContext="{Binding CurrentSheet.BaseValues}"
-                    Margin="5" />
-            </Border>
+            <controls:BaseValuesControl DataContext="{Binding CurrentSheet.BaseValues}"
+                                        Margin="5" Grid.Column="1"/>
         </Grid>
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:AdventurePointsControl
-                DataContext="{Binding CurrentSheet.AdventurePoints}"
-                Margin="5" />
-        </Border>
+        <controls:AdventurePointsControl DataContext="{Binding CurrentSheet.AdventurePoints}"
+                                         Margin="5" />
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:SkillListControl
-                DataContext="{Binding CurrentSheet.Skills}"
-                Margin="5" />
-        </Border>
+        <controls:SkillListControl DataContext="{Binding CurrentSheet.Skills}"
+                                   Margin="5" />
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:SpecialSkillControl
-                DataContext="{Binding CurrentSheet.SpecialSkills}"
-                Margin="5" />
-        </Border>
+        <controls:SpecialSkillControl DataContext="{Binding CurrentSheet.SpecialSkills}"
+                                      Margin="5" />
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:CombatControl
-                DataContext="{Binding CurrentSheet.Inventory}"
-                Margin="5" />
-        </Border>
+        <controls:CombatControl DataContext="{Binding CurrentSheet.Inventory}"
+                                Margin="5" />
 
-        <Border Style="{StaticResource FrameBorder}">
-            <controls:InventoryControl
-                DataContext="{Binding CurrentSheet.Inventory}"
-                Margin="5" />
-        </Border>
+        <controls:InventoryControl DataContext="{Binding CurrentSheet.Inventory}"
+                                   Margin="5" />
     </StackPanel>
 </UserControl>

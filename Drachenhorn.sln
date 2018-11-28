@@ -29,8 +29,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A
 		img\Drachenhorn.ico = img\Drachenhorn.ico
 		img\ImageSource.md = img\ImageSource.md
 		img\Logo.png = img\Logo.png
-		img\SaveFileIcon.ico = img\SaveFileIcon.ico
-		img\SaveTemplateIcon.ico = img\SaveTemplateIcon.ico
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{9FAE5CD2-7EEF-4510-AED4-05AB5FBDBE8B}"
@@ -41,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEM
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Black", "Black", "{F5FD20BD-575B-4E7B-B87B-A851A8A588A2}"
 	ProjectSection(SolutionItems) = preProject
+		img\Black\AddImage.png = img\Black\AddImage.png
 		img\Black\Calculate.png = img\Black\Calculate.png
 		img\Black\EditIcon.png = img\Black\EditIcon.png
 		img\Black\Export.png = img\Black\Export.png
@@ -61,6 +60,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Black", "Black", "{F5FD20BD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "White", "White", "{2F7C9A37-6AB7-458F-B425-1BE09996CB46}"
 	ProjectSection(SolutionItems) = preProject
+		img\White\AddImage.png = img\White\AddImage.png
 		img\White\Calculate.png = img\White\Calculate.png
 		img\White\EditIcon.png = img\White\EditIcon.png
 		img\White\Export.png = img\White\Export.png
@@ -148,10 +148,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{C33A6F64
 		img\Icons\ColoredIcon64x64.png = img\Icons\ColoredIcon64x64.png
 		img\Icons\Drachenhorn.ico = img\Icons\Drachenhorn.ico
 		img\Icons\Drachenhorn.png = img\Icons\Drachenhorn.png
+		img\Icons\Drachenhorn256x256.png = img\Icons\Drachenhorn256x256.png
 		img\Icons\Icon600x600.png = img\Icons\Icon600x600.png
 		img\Icons\Icon64x64.png = img\Icons\Icon64x64.png
+		img\Icons\SaveFileIcon.ico = img\Icons\SaveFileIcon.ico
+		img\Icons\SaveTemplateIcon.ico = img\Icons\SaveTemplateIcon.ico
 		img\Icons\Sheet.png = img\Icons\Sheet.png
+		img\Icons\SheetFile.png = img\Icons\SheetFile.png
 		img\Icons\Template.png = img\Icons\Template.png
+		img\Icons\TemplateFile.png = img\Icons\TemplateFile.png
 		img\Icons\WindowIcon.png = img\Icons\WindowIcon.png
 	EndProjectSection
 EndProject

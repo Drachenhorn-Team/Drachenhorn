@@ -8,15 +8,17 @@ using System.Windows.Media;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
+using Drachenhorn.Core.ViewModels.Template;
+using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Template;
 using Enterwell.Clients.Wpf.Notifications;
-using Fluent;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
+using MahApps.Metro.Controls;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -24,7 +26,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für MainView.xaml
     /// </summary>
-    public partial class MainView : RibbonWindow
+    public partial class MainView
     {
         private MainViewModel Model => DataContext is MainViewModel model ? model : null;
 
@@ -34,22 +36,14 @@ namespace Drachenhorn.Desktop.Views
 
             NotificationContainer.Manager = new NotificationMessageManager();
 
-            //Menu.Background = SystemParameters.WindowGlassBrush != null ? SystemParameters.WindowGlassBrush : new SolidColorBrush(Colors.Green);
-
             if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) =>
             {
                 OpenFile(path);
             };
 
-            TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
+            //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
-
-
-            SimpleIoc.Default.GetInstance<LanguageManager>().LanguageChanged += (sender, args) =>
-            {
-                RibbonLocalization.Current.Culture = args.NewCulture;
-            };
         }
 
         public void OpenFile(string path)
@@ -69,11 +63,7 @@ namespace Drachenhorn.Desktop.Views
 
         private void RecieveMessage(NotificationMessage message)
         {
-            if (message.Notification == "ShowSettingsView")
-            {
-                new SettingsView().ShowDialog();
-            }
-            else if (message.Notification == "ShowPrintView")
+            if (message.Notification == "ShowPrintView")
             {
                 if (DataContext is MainViewModel model)
                 {
@@ -84,12 +74,14 @@ namespace Drachenhorn.Desktop.Views
             }
             else if (message.Notification == "ShowOpenTemplates")
             {
-                new TemplateSelectorDialog().ShowDialog();
-                TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
-            }
-            else if (message.Notification == "ShowMap")
-            {
-                new MapView().ShowDialog();
+                var diag = new TemplateSelectorDialog();
+                if (diag.ShowDialog() == true)
+                {
+                    if (Resources["TemplateViewModel"] != null)
+                        ((TemplateViewModel) ((BindingProxy) Resources["TemplateViewModel"]).Data).Template =
+                            diag.SelectedTemplate;
+                }
+                //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
             }
         }
 
@@ -116,12 +108,12 @@ namespace Drachenhorn.Desktop.Views
             Task.Run(() =>
             {
                 if (SquirrelManager.IsUpdateAvailable().Result)
-                    this.Dispatcher.Invoke(() =>
+                    Dispatcher.Invoke(() =>
                     {
                         NotificationContainer.Manager.CreateMessage()
-                            .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                            .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
-                            .HasBadge("Update")
+                            .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                            .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                            .HasBadge(LanguageManager.Translate("Updater.Title"))
                             .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
@@ -137,9 +129,9 @@ namespace Drachenhorn.Desktop.Views
                 Dispatcher.Invoke(() =>
                 {
                     NotificationContainer.Manager.CreateMessage()
-                        .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                        .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
-                        .HasBadge("Update")
+                        .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                        .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                        .HasBadge(LanguageManager.Translate("Updater.Title"))
                         .HasMessage(LanguageManager.Translate("Updater.Updating"))
                         .Dismiss().WithDelay(5000)
                         .Queue();
@@ -151,9 +143,9 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
-                                .HasBadge("Update")
+                                .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                                .HasBadge(LanguageManager.Translate("Updater.Title"))
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
                                 .Dismiss().WithDelay(5000)
@@ -163,9 +155,9 @@ namespace Drachenhorn.Desktop.Views
                         Dispatcher.Invoke(() =>
                         {
                             NotificationContainer.Manager.CreateMessage()
-                                .Accent((SolidColorBrush) this.FindResource("InfoBrush"))
-                                .Background((SolidColorBrush) this.FindResource("BackgroundBrush"))
-                                .HasBadge("Update")
+                                .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
+                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                                .HasBadge(LanguageManager.Translate("Updater.Title"))
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
                                 .Dismiss().WithDelay(5000)
@@ -176,5 +168,15 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion Update
+
+        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            // set the content
+            if (e.ClickedItem is HamburgerMenuItem item && item.Tag != null)
+                this.HamburgerMenuControl.Content = item;
+
+            // close the pane
+            this.HamburgerMenuControl.IsPaneOpen = false;
+        }
     }
 }

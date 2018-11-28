@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Drachenhorn.Desktop.Views
+namespace Drachenhorn.Desktop.UserControls.Template
 {
     /// <summary>
-    /// Interaktionslogik für MapView.xaml
+    /// Interaktionslogik für TemplateControl.xaml
     /// </summary>
-    public partial class MapView
+    public partial class TemplateControl : UserControl
     {
-        public MapView()
+        public TemplateControl()
         {
             InitializeComponent();
         }

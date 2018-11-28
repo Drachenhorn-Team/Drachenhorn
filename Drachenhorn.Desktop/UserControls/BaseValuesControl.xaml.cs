@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.Views;
@@ -32,17 +33,17 @@ namespace Drachenhorn.Desktop.UserControls
             //List.SelectedItem = newItem;
         }
 
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            if (!(sender is Button))
+            if (e.Handled || e.MouseDevice.Captured is ComboBox)
                 return;
 
-            var button = (Button) sender;
-
-            if (!(button.DataContext is BaseValue))
-                return;
-
-            (List.ItemsSource as IList<BaseValue>)?.Remove((BaseValue) button.DataContext);
+            e.Handled = true;
+            var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArg.RoutedEvent = MouseWheelEvent;
+            eventArg.Source = sender;
+            var parent = ((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArg);
         }
     }
 }

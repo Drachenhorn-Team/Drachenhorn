@@ -19,7 +19,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für CoatOfArmsPainterView.xaml
     /// </summary>
-    public partial class CoatOfArmsPainterView : RibbonWindow, INotifyPropertyChanged
+    public partial class CoatOfArmsPainterView : INotifyPropertyChanged
     {
         private ObservableCollection<Stroke> _strokes;
 
@@ -149,5 +149,11 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion OnPropertyChanged
+
+        private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            this.Close();
+        }
     }
 }

@@ -44,5 +44,7 @@ namespace Drachenhorn.Core.IO
         CharacterSheet OpenCharacterSheet();
 
         void SaveString(string path, string text, bool writeNew = true);
+
+        string OpenDirDialog(string dir, string fileExtension, string title);
     }
 }

@@ -9,10 +9,15 @@
         Title="ThemeChooseDialog" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="../Themes/Images/Black.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
             <DataTemplate x:Key="ShowTheme">
-                <Border BorderBrush="{DynamicResource BorderBrush}"
-                        Background="{DynamicResource BackgroundBrush}"
-                        BorderThickness="2" Margin="5">
+                <Border BorderThickness="2" Padding="5" Background="{DynamicResource ControlBackgroundBrush}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -33,9 +38,9 @@
                                    FontSize="28"
                                    FontFamily="{StaticResource Morpheus}" />
 
-                        <Image Source="{DynamicResource SaveIcon}" Grid.Column="0" Grid.Row="1" Margin="5" />
-                        <Image Source="{DynamicResource AddIcon}" Grid.Column="1" Grid.Row="1" Margin="5" />
-                        <Image Source="{DynamicResource NewIcon}" Grid.Column="2" Grid.Row="1" Margin="5" />
+                        <Image Source="{DynamicResource SaveIconDynamic}" Grid.Column="0" Grid.Row="1" Margin="5" />
+                        <Image Source="{DynamicResource AddIconDynamic}" Grid.Column="1" Grid.Row="1" Margin="5" />
+                        <Image Source="{DynamicResource NewIconDynamic}" Grid.Column="2" Grid.Row="1" Margin="5" />
 
                         <Button Content="Lorem Ipsum" Margin="5"
                                 Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2"
@@ -66,11 +71,20 @@
         <Separator Grid.ColumnSpan="20" Grid.Row="1" />
 
         <Grid Grid.Row="0" Grid.Column="0">
-            <Grid.Resources>
-                <ResourceDictionary Source="../Themes/LightTheme.xaml" />
-            </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Light}" />
+                              Content="{lang:Translate VisualThemeType.Light}">
+                <ContentPresenter.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                            <ResourceDictionary Source="../Themes/Images/Black.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </ResourceDictionary>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
         </Grid>
         <Button Margin="5" Click="VisualTheme_Light_OnClick"
                 Content="{lang:Translate UI.Select}"
@@ -78,11 +92,20 @@
                 ToolTip="{lang:Translate VisualThemeType.Light}" />
 
         <Grid Grid.Row="0" Grid.Column="1">
-            <Grid.Resources>
-                <ResourceDictionary Source="../Themes/DarkTheme.xaml" />
-            </Grid.Resources>
             <ContentPresenter ContentTemplate="{StaticResource ShowTheme}"
-                              Content="{lang:Translate VisualThemeType.Dark}" />
+                              Content="{lang:Translate VisualThemeType.Dark}">
+                <ContentPresenter.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                            <ResourceDictionary Source="../Themes/Images/White.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </ResourceDictionary>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
         </Grid>
         <Button Margin="5" Click="VisualTheme_Dark_OnClick"
                 Content="{lang:Translate UI.Select}"

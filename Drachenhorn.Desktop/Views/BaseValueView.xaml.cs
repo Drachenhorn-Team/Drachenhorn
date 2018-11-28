@@ -6,7 +6,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für BaseValueView.xaml
     /// </summary>
-    public partial class BaseValueView : Window
+    public partial class BaseValueView
     {
         private BaseValue _baseValue;
 

@@ -13,5 +13,5 @@
     <local:EnumToStringConverter x:Key="EnumToStringConverter"/>
     <local:MapTileColorConverter x:Key="MapTileColorConverter"/>
     <local:ValueTranslationConverter x:Key="ValueTranslationConverter"/>
-    
+
 </ResourceDictionary>

@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -72,11 +73,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\DirectorySelectorDialog.xaml.cs">
+      <DependentUpon>DirectorySelectorDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\ExceptionMessageBox.xaml.cs">
       <DependentUpon>ExceptionMessageBox.xaml</DependentUpon>
@@ -125,8 +130,14 @@
     <Compile Include="UserControls\Common\CultureDisplayControl.xaml.cs">
       <DependentUpon>CultureDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
       <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\SettingsViewControl.xaml.cs">
+      <DependentUpon>SettingsViewControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Common\TemplateInformationControl.xaml.cs">
       <DependentUpon>TemplateInformationControl.xaml</DependentUpon>
@@ -146,10 +157,12 @@
     <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Template\TemplateControl.xaml.cs">
+      <DependentUpon>TemplateControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserElements\DsaDatePicker.cs" />
     <Compile Include="UserElements\InfoButton.cs" />
     <Compile Include="UserElements\ListEditor.cs" />
-    <Compile Include="UserElements\LoadingElement.cs" />
     <Compile Include="UserElements\LocalizedComboBox.cs" />
     <Compile Include="UserElements\SkillButton.cs" />
     <Compile Include="UserSettings\Settings.cs" />
@@ -169,14 +182,8 @@
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MapView.xaml.cs">
-      <DependentUpon>MapView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PrintView.xaml.cs">
       <DependentUpon>PrintView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TemplateMainView.xaml.cs">
       <DependentUpon>TemplateMainView.xaml</DependentUpon>
@@ -417,12 +424,39 @@
     <Resource Include="..\img\Black\Painting\Width.png">
       <Link>Images\Black\Painting\Width.png</Link>
     </Resource>
-    <EmbeddedResource Include="..\img\SaveFileIcon.ico">
+    <Resource Include="..\img\Icons\AppIcon.ico">
+      <Link>Images\Common\AppIcon.ico</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\ColoredIcon600x600.png">
+      <Link>Images\Common\ColoredIcon600x600.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\ColoredIcon64x64.png">
+      <Link>Images\Common\ColoredIcon64x64.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Drachenhorn.png">
+      <Link>Images\Common\Drachenhorn.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Icon600x600.png">
+      <Link>Images\Common\Icon600x600.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\Icon64x64.png">
+      <Link>Images\Common\Icon64x64.png</Link>
+    </Resource>
+    <Resource Include="..\img\Icons\WindowIcon.png">
+      <Link>Images\Common\WindowIcon.png</Link>
+    </Resource>
+    <EmbeddedResource Include="..\img\Icons\SaveFileIcon.ico">
       <Link>Images\Common\SaveFileIcon.ico</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\img\SaveTemplateIcon.ico">
+    <EmbeddedResource Include="..\img\Icons\SaveTemplateIcon.ico">
       <Link>Images\Common\SaveTemplateIcon.ico</Link>
     </EmbeddedResource>
+    <Resource Include="..\img\Black\AddImage.png">
+      <Link>Images\Black\AddImage.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\AddImage.png">
+      <Link>Images\White\AddImage.png</Link>
+    </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -453,6 +487,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UI\Dialogs\DirectorySelectorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\ExceptionMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -473,53 +511,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Themes\BaseTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UI\Themes\Controls\Button.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Themes\Colors\Dark.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UI\Themes\Controls.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Colors\Light.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\ComboBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\DataGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\ListBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\Menu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\RadioButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\ScrollViewer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\Slider.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\Controls\ToolBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\DarkTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Themes\Images\Black.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -530,10 +528,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Themes\Images\White.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Themes\LightTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -573,9 +567,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\Common\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Common\RaceDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\SettingsViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Common\TemplateInformationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -601,6 +603,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\Template\TemplateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AttributeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -621,15 +627,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MapView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\PrintView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\SettingsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -659,6 +657,9 @@
     </PackageReference>
     <PackageReference Include="Fluent.Ribbon">
       <Version>6.1.0.326</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.6.5</Version>
     </PackageReference>
     <PackageReference Include="MvvmLightLibsStd10">
       <Version>5.4.1.1</Version>

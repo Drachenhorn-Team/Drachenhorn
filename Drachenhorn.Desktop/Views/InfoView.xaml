@@ -1,21 +1,18 @@
-﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.Views.InfoView"
-                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                     xmlns:local="clr-namespace:Drachenhorn.Desktop.Views"
-                     xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
-                     xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
-                     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-                     xmlns:fluent="urn:fluent-ribbon"
-                     mc:Ignorable="d" IsIconVisible="False"
-                     ResizeMode="NoResize" SizeToContent="Height"
-                     MinHeight="200" Height="450" Width="800"
-                     WindowStartupLocation="CenterScreen"
-                     Style="{StaticResource {x:Type Window}}"
-                     Title="{lang:Translate InfoView.Title}">
+﻿<mah:MetroWindow x:Class="Drachenhorn.Desktop.Views.InfoView"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+                 xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 mc:Ignorable="d"
+                 ResizeMode="CanResizeWithGrip"
+                 MinHeight="200" SizeToContent="Height" Width="800"
+                 TitleCharacterCasing="Normal"
+                 WindowStartupLocation="CenterScreen"
+                 Title="{lang:Translate InfoView.Title}">
     <Window.Resources>
-        <converter:ValueTranslationConverter x:Key="ValueTranslationConverter" />
         <collections:ArrayList x:Key="Information" />
     </Window.Resources>
 
@@ -24,21 +21,24 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition SharedSizeGroup="Key" />
                             <ColumnDefinition SharedSizeGroup="Value" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Margin="2 2 8 2" FontWeight="Bold"
                                    Text="{Binding Key, Converter={StaticResource ValueTranslationConverter}}"
-                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="0" />
                         <TextBlock Margin="2" TextWrapping="Wrap"
                                    Text="{Binding Value}"
-                                   Style="{StaticResource MorpheusTextStyle}"
                                    Grid.Column="1" />
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
     </Grid>
-</fluent:RibbonWindow>
+</mah:MetroWindow>

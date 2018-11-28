@@ -1,4 +1,4 @@
-﻿<fluent:RibbonWindow x:Class="Drachenhorn.Desktop.Views.CoatOfArmsPainterView"
+﻿<mah:MetroWindow x:Class="Drachenhorn.Desktop.Views.CoatOfArmsPainterView"
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,14 +6,29 @@
                      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                      xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                      xmlns:fluent="urn:fluent-ribbon"
-                     mc:Ignorable="d" ResizeMode="CanMinimize" IsIconVisible="False"
+                     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                     mc:Ignorable="d" ResizeMode="CanMinimize"
                      Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
     <Window.Resources>
-        <ResourceDictionary Source="../UI/Themes/LightTheme.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Colors/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
 
     <DockPanel>
-        <fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarVisible="False">
+        <fluent:Ribbon DockPanel.Dock="Top">
+            <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
+                <fluent:RibbonGroupBox Header="{lang:Translate UI.File}">
+                    <fluent:Button LargeIcon="{StaticResource AddImageIcon}"
+                                   KeyTip="Strg + S"
+                                   Header="{lang:Translate UI.Apply}"
+                                   Click="ApplyButton_OnClick"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
             <fluent:RibbonTabItem Header="{lang:Translate UI.Paint}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
                     <fluent:Button LargeIcon="{StaticResource UndoIcon}"
@@ -117,7 +132,7 @@
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
 
-        <Border Name="InkBorder" Background="GhostWhite" BorderBrush="{StaticResource BorderBrush}"
+        <Border Name="InkBorder" Background="GhostWhite"
                 BorderThickness="1" MinHeight="600">
             <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True">
                 <InkCanvas.DefaultDrawingAttributes>
@@ -129,4 +144,4 @@
             </InkCanvas>
         </Border>
     </DockPanel>
-</fluent:RibbonWindow>
+</mah:MetroWindow>

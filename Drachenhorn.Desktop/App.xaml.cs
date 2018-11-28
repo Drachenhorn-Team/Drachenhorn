@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -24,9 +25,11 @@ using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
+using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
 using StreamReader = System.IO.StreamReader;
+using Uri = System.Uri;
 
 namespace Drachenhorn.Desktop
 {
@@ -50,8 +53,6 @@ namespace Drachenhorn.Desktop
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
 
             SquirrelManager.Startup();
-
-            //Task.Run(() => SquirrelManager.UpdateSquirrel());
 
             var instance = new Task<bool>(IsSingleInstance);
             instance.ContinueWith(x =>
@@ -173,37 +174,56 @@ namespace Drachenhorn.Desktop
             };
 
             SimpleIoc.Default.Register<ISettings>(() => settings);
-
-            SetTheme(settings.VisualTheme);
+            
+            SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             settings.PropertyChanged += (sender, args) =>
             {
-                if (args.PropertyName == "VisualTheme")
-                    SetTheme(settings.VisualTheme);
+                if (args.PropertyName == "VisualTheme" || args.PropertyName == "AccentColor")
+                    SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             };
         }
 
         #region Theme
 
-        public static void SetTheme(VisualThemeType theme)
+        public static void SetAccentAndTheme(string name, VisualThemeType theme)
         {
-            if (theme == VisualThemeType.System)
+            App.Current.Dispatcher.Invoke(() =>
             {
-                var isDark = Registry.GetValue(
-                    "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                    "AppsUseLightTheme", null);
-
-                theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
-            }
-
-            var uri = "UI/Themes/" + theme + "Theme.xaml";
-
-            if (string.IsNullOrEmpty(uri)) return;
-
-            Current.Resources.MergedDictionaries[0] =
-                new ResourceDictionary
+                if (theme == VisualThemeType.System)
                 {
-                    Source = new Uri(uri, UriKind.Relative)
-                };
+                    var isDark = Registry.GetValue(
+                        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                        "AppsUseLightTheme", null);
+
+                    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+                }
+
+                var uri = "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml";
+                
+
+                if (!string.IsNullOrEmpty(uri))
+                {
+                    var res = Current.Resources;
+
+                    res.BeginInit();
+
+                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary { Source = new Uri(uri, UriKind.Relative) })
+                    {
+                        if (!res.Contains(dictionaryEntry.Key))
+                            res.Add(dictionaryEntry.Key, dictionaryEntry.Value);
+                        else
+                            res[dictionaryEntry.Key] = dictionaryEntry.Value;
+                    }
+
+                    res.EndInit();
+                }
+
+                var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
+                var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
+
+                if (mahTheme != null)
+                    ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
+            });
         }
 
         #endregion Theme

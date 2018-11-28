@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Drachenhorn.Desktop.UserControls.Template.TemplateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Drachenhorn.Desktop.UserControls.Template"
+             xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+             xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
+             xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+             xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </UserControl.Resources>
+    <TabControl>
+        <TabItem Header="{lang:Translate Template.Common}">
+            <DockPanel>
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{lang:Translate Template.Name}" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox Text="{Binding Template.Name}" Grid.Column="1" Grid.Row="0"/>
+
+                    <TextBlock Text="{lang:Translate Template.Version}" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Text="{Binding Template.Version}" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+
+                <common:TemplateInformationControl DataContext="{Binding Template.Information}"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="{lang:Translate Template.APTable}">
+            <common:APTableControl DataContext="{Binding Template.APTable}" />
+        </TabItem>
+        <TabItem Header="{lang:Translate Template.Races}">
+            <userElements:ListEditor DataContext="{Binding Template.Races}"
+                                     DisplayMemberPath="Name"
+                                     ContentType="{x:Type xmlCommon:RaceInformation}">
+                <userElements:ListEditor.ContentTemplate>
+                    <DataTemplate>
+                        <common:RaceDisplayControl />
+                    </DataTemplate>
+                </userElements:ListEditor.ContentTemplate>
+            </userElements:ListEditor>
+        </TabItem>
+        <TabItem Header="{lang:Translate Template.Cultures}">
+            <userElements:ListEditor DataContext="{Binding Template.Cultures}"
+                                     DisplayMemberPath="Name"
+                                     ContentType="{x:Type xmlCommon:CultureInformation}">
+                <userElements:ListEditor.ContentTemplate>
+                    <DataTemplate>
+                        <common:CultureDisplayControl />
+                    </DataTemplate>
+                </userElements:ListEditor.ContentTemplate>
+            </userElements:ListEditor>
+        </TabItem>
+    </TabControl>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Core.Settings
@@ -10,8 +11,10 @@ namespace Drachenhorn.Core.Settings
         CultureInfo CurrentCulture { get; set; }
         string Version { get; }
         string GitCommit { get; }
+        string GitCommitLink { get; }
 
         VisualThemeType VisualTheme { get; set; }
+        string AccentColor { get; set; }
 
         bool? ShowConsole { get; set; }
 

@@ -21,7 +21,7 @@ namespace Drachenhorn.Desktop.UserControls
             InitializeComponent();
         }
 
-        private void DataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             if (e.Handled || e.MouseDevice.Captured is ComboBox)
                 return;

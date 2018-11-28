@@ -6,7 +6,7 @@ namespace Drachenhorn.Desktop.Views
     /// <summary>
     ///     Interaktionslogik für AttributeView.xaml
     /// </summary>
-    public partial class AttributeView : Window
+    public partial class AttributeView
     {
         private Attribute _attribute;
 

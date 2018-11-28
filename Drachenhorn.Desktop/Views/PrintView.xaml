@@ -9,6 +9,7 @@
         xmlns:printing="clr-namespace:Drachenhorn.Core.Printing;assembly=Drachenhorn.Core"
         xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
         xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         IsIconVisible="False"
         Style="{StaticResource {x:Type Window}}"
@@ -17,7 +18,6 @@
     <Window.Resources>
         <ResourceDictionary>
             <ObjectDataProvider x:Key="PrintTemplatesProvider" ObjectType="printing:PrintingManager" MethodName="GetPrintTemplates"/>
-            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Window.CommandBindings>
@@ -42,8 +42,8 @@
                    Width="{Binding ActualWidth, ElementName=Browser, Mode=OneWay}"
                    Height="{Binding ActualHeight, ElementName=Browser, Mode=OneWay}"
                    PlacementTarget="{Binding ElementName=Browser}" Opacity="0.5" Margin="3">
-                <Border Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
-                    <userElements:LoadingElement Height="50"/>
+                <Border Background="{StaticResource ControlBackgroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
+                    <mah:ProgressRing Height="50" Foreground="{DynamicResource AccentColorBrush}"/>
                 </Border>
             </Popup>
         </Grid>
