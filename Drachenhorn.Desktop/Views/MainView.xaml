@@ -23,11 +23,24 @@
         <helper:BindingProxy x:Key="MapViewModel" Data="{Binding MapView, Source={StaticResource Locator}}"/>
     </Window.Resources>
     <Window.InputBindings>
-        <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding New}" />
-        <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding Open}" />
-        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding Save}" />
-        <KeyBinding Key="S" Modifiers="Ctrl + Shift" Command="{Binding SaveAll}" />
-        <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding Print}" />
+        <KeyBinding Key="N" Modifiers="Ctrl"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.New,
+                                      ElementName=HamburgerMenuControl}"/>
+        <KeyBinding Key="O" Modifiers="Ctrl"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.Open,
+                                      ElementName=HamburgerMenuControl}" />
+        <KeyBinding Key="S" Modifiers="Ctrl"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.Save,
+                                      ElementName=HamburgerMenuControl}" />
+        <KeyBinding Key="S" Modifiers="Ctrl + Shift"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.SaveAll,
+                                      ElementName=HamburgerMenuControl}" />
+        <KeyBinding Key="P" Modifiers="Ctrl"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.GeneratePDF,
+                                      ElementName=HamburgerMenuControl}" />
+        <KeyBinding Key="W" Modifiers="Ctrl"
+                    Command="{Binding SelectedItem.ToolTip.DataContext.Close,
+                                      ElementName=HamburgerMenuControl}" />
     </Window.InputBindings>
 
     <Grid>
@@ -113,7 +126,7 @@
                                         Command="{Binding SaveAll}">
                                     <Image Source="{DynamicResource SaveAllIconWhite}"/>
                                 </Button>
-                                <Button ToolTip="{lang:TranslateText %UI.GeneratePDF}"
+                                <Button ToolTip="{lang:TranslateText %UI.GeneratePDF (%Keyboard.Ctrl + P)}"
                                         Command="{Binding GeneratePDF}">
                                     <Image Source="{DynamicResource PdfIconWhite}"/>
                                 </Button>
@@ -129,6 +142,7 @@
                                         <DockPanel Height="30">
                                             <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path= DataContext.CloseSheet}"
                                                     CommandParameter="{Binding}"
+                                                    ToolTip="{lang:TranslateText %UI.Close (%Keyboard.Ctrl + W)}"
                                                     Height="20" Width="20" Style="{StaticResource TitleBarButton}"
                                                     DockPanel.Dock="Right">
                                                 <Image Source="{Binding Source={StaticResource RemoveIconWhite}}"
@@ -182,7 +196,7 @@
                                         Command="{Binding Save}">
                                     <Image Source="{DynamicResource SaveIconWhite}"/>
                                 </Button>
-                                <Button ToolTip="{lang:TranslateText %UI.Close}"
+                                <Button ToolTip="{lang:TranslateText %UI.Close (%keyboard.Ctrl + W)}"
                                         Command="{Binding Close}">
                                     <Image Source="{DynamicResource RemoveIconWhite}"/>
                                 </Button>

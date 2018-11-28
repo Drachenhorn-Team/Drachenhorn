@@ -169,11 +169,13 @@ namespace Drachenhorn.Core.ViewModels.Common
             await PrintingManager.GeneratePDFAsync(CurrentSheetViewModel.CurrentSheet);
         }
 
-        public RelayCommand<CharacterSheetViewModel> CloseSheet =>
-            new RelayCommand<CharacterSheetViewModel>(ExecuteCloseSheet);
+        public RelayCommand<CharacterSheetViewModel> Close => new RelayCommand<CharacterSheetViewModel>(ExecuteClose);
 
-        private async void ExecuteCloseSheet(CharacterSheetViewModel model)
+        private async void ExecuteClose(CharacterSheetViewModel model)
         {
+            if (model == null)
+                model = CurrentSheetViewModel;
+
             if (!model.CurrentSheet.HasChanged)
             {
                 CharacterSheetViewModels.Remove(model);
