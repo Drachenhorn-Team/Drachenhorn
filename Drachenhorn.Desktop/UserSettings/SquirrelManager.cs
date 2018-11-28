@@ -110,6 +110,9 @@ namespace Drachenhorn.Desktop.UserSettings
         private static void OnAppUpdate(Version version)
         {
             SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("OnAppUpdate");
+
+            using (var mgr = new UpdateManager("C:"))
+                ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
             //mgr.CreateShortcutForThisExe();
         }
 
@@ -151,9 +154,6 @@ namespace Drachenhorn.Desktop.UserSettings
 
         private static void OnFirstRun()
         {
-            using (var mgr = new UpdateManager("C:"))
-                ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
-
             SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("OnAppUpdate");
         }
 
