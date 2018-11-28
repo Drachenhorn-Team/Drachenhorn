@@ -29,25 +29,14 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public static void Startup()
         {
-            try
-            {
-                using (var mgr = new UpdateManager("C:"))
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Startup");
+            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Startup");
 
-                    SquirrelAwareApp.HandleEvents(
-                        OnInitialInstall,
-                        OnAppUpdate,
-                        OnAppObsoleted,
-                        OnAppUninstall,
-                        OnFirstRun);
-                }
-            }
-            catch (Exception e)
-            {
-                if (!e.Message.StartsWith("Update.exe not found"))
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-            }
+            SquirrelAwareApp.HandleEvents(
+                OnInitialInstall,
+                OnAppUpdate,
+                OnAppObsoleted,
+                OnAppUninstall,
+                OnFirstRun);
         }
 
         public static async Task<bool> IsUpdateAvailable(Action<int> progress = null)
@@ -158,11 +147,8 @@ namespace Drachenhorn.Desktop.UserSettings
             }
             catch (Exception e)
             {
-                // ignored
-#if RELEASE
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
-#endif
             }
         }
 
@@ -191,8 +177,12 @@ namespace Drachenhorn.Desktop.UserSettings
 
                 var split = fileName.Split('.');
 
-                using (FileStream fileStream = File.Create(
-                    Path.Combine(dir, split[split.Length - 2] + "." + split[split.Length - 1])))
+                var filePath = Path.Combine(dir, split[split.Length - 2] + "." + split[split.Length - 1]);
+
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
+
+                using (FileStream fileStream = File.Create(filePath))
                 {
                     // ReSharper disable once PossibleNullReferenceException
                     Assembly.GetExecutingAssembly().GetManifestResourceStream(fileName).CopyTo(fileStream);
