@@ -7,8 +7,8 @@
                      xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                      xmlns:fluent="urn:fluent-ribbon"
                      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-                     mc:Ignorable="d" ResizeMode="CanMinimize"
-                     Title="{lang:Translate CharacterSheet.CoatOfArms}" SizeToContent="WidthAndHeight">
+                     mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
+                     Title="{lang:Translate CharacterSheet.CoatOfArms}" Width="800" Height="600">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -133,7 +133,7 @@
         </fluent:Ribbon>
 
         <Border Name="InkBorder" Background="GhostWhite"
-                BorderThickness="1" MinHeight="600">
+                BorderThickness="1">
             <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True">
                 <InkCanvas.DefaultDrawingAttributes>
                     <DrawingAttributes IgnorePressure="True" FitToCurve="True" Height="5" Width="5" />

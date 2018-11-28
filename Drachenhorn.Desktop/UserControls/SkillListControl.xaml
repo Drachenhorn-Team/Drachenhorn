@@ -110,7 +110,7 @@
             <TextBlock Text="{lang:Translate CharacterSheet.Name}" Margin="5" Grid.Row="0" Grid.Column="0" />
             <DockPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" >
                 <userElements:InfoButton InfoObject="{Binding .}" DockPanel.Dock="Right" Margin="0 5 5 5"/>
-                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
             </DockPanel>
 
             <TextBlock Text="{lang:Translate CharacterSheet.RollAttributes}" Margin="5" Grid.Row="1" Grid.Column="0" />

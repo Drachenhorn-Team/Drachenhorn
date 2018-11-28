@@ -11,7 +11,7 @@
              d:DataContext="{d:DesignInstance sheet:CharacterSheetViewModel}">
     <StackPanel>
         <Image Source="{StaticResource DrachenhornLogo}" Width="300" />
-        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50"
+        <TextBlock Text="{lang:Translate CharacterSheet.Title}" FontSize="50" FontFamily="{StaticResource Morpheus}"
                    FontWeight="Bold" TextAlignment="Center" />
 
         <controls:CharacteristicsControl DataContext="{Binding CurrentSheet.Characteristics}" />
