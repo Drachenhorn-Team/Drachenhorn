@@ -436,9 +436,9 @@
     <EmbeddedResource Include="..\img\Icons\Sheet\Sheet.ico">
       <Link>Images\Common\Sheet.ico</Link>
     </EmbeddedResource>
-    <Resource Include="..\img\Icons\Template\Template.ico">
+    <EmbeddedResource Include="..\img\Icons\Template\Template.ico">
       <Link>Images\Common\Template.ico</Link>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="..\img\Icons\App\Icon600x600.png">
       <Link>Images\Common\Icon600x600.png</Link>
     </Resource>
