@@ -153,13 +153,19 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sheet", "Sheet", "{9A08893A-135F-4C11-8219-19B30580E940}"
 	ProjectSection(SolutionItems) = preProject
 		img\Icons\Sheet\Sheet.ico = img\Icons\Sheet\Sheet.ico
+		img\Icons\Sheet\Sheet16x16.png = img\Icons\Sheet\Sheet16x16.png
 		img\Icons\Sheet\Sheet256x256.png = img\Icons\Sheet\Sheet256x256.png
+		img\Icons\Sheet\Sheet32x32.png = img\Icons\Sheet\Sheet32x32.png
+		img\Icons\Sheet\Sheet48x48.png = img\Icons\Sheet\Sheet48x48.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template", "Template", "{B5AB97FC-88FE-4E2A-8072-9E99D47605C2}"
 	ProjectSection(SolutionItems) = preProject
 		img\Icons\Template\Template.ico = img\Icons\Template\Template.ico
+		img\Icons\Template\Template16x16.png = img\Icons\Template\Template16x16.png
 		img\Icons\Template\Template256x256.png = img\Icons\Template\Template256x256.png
+		img\Icons\Template\Template32x32.png = img\Icons\Template\Template32x32.png
+		img\Icons\Template\Template48x48.png = img\Icons\Template\Template48x48.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{865C13A4-F6F9-4196-8533-1608132BF5B1}"
@@ -173,7 +179,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exe", "Exe", "{8DFC64DF-A05F-4F61-BC2E-12D435A8DA23}"
 	ProjectSection(SolutionItems) = preProject
 		img\Icons\Exe\Drachenhorn.ico = img\Icons\Exe\Drachenhorn.ico
+		img\Icons\Exe\Drachenhorn16x16.png = img\Icons\Exe\Drachenhorn16x16.png
 		img\Icons\Exe\Drachenhorn256x256.png = img\Icons\Exe\Drachenhorn256x256.png
+		img\Icons\Exe\Drachenhorn32x32.png = img\Icons\Exe\Drachenhorn32x32.png
 		img\Icons\Exe\Drachenhorn48x48.png = img\Icons\Exe\Drachenhorn48x48.png
 	EndProjectSection
 EndProject
