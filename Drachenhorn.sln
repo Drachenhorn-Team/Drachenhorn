@@ -143,26 +143,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Map", "Drachenh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{C33A6F64-25C3-436D-A81D-26F751955FDA}"
 	ProjectSection(SolutionItems) = preProject
-		img\Icons\AppIcon.ico = img\Icons\AppIcon.ico
-		img\Icons\ColoredIcon600x600.png = img\Icons\ColoredIcon600x600.png
-		img\Icons\ColoredIcon64x64.png = img\Icons\ColoredIcon64x64.png
-		img\Icons\Drachenhorn.ico = img\Icons\Drachenhorn.ico
 		img\Icons\Drachenhorn.png = img\Icons\Drachenhorn.png
-		img\Icons\Drachenhorn256x256.png = img\Icons\Drachenhorn256x256.png
-		img\Icons\Icon600x600.png = img\Icons\Icon600x600.png
-		img\Icons\Icon64x64.png = img\Icons\Icon64x64.png
-		img\Icons\SaveFileIcon.ico = img\Icons\SaveFileIcon.ico
-		img\Icons\SaveTemplateIcon.ico = img\Icons\SaveTemplateIcon.ico
-		img\Icons\Sheet.png = img\Icons\Sheet.png
-		img\Icons\SheetFile.png = img\Icons\SheetFile.png
-		img\Icons\Template.png = img\Icons\Template.png
-		img\Icons\TemplateFile.png = img\Icons\TemplateFile.png
-		img\Icons\WindowIcon.png = img\Icons\WindowIcon.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.UnitTest", "Drachenhorn.UnitTest\Drachenhorn.UnitTest.csproj", "{5F130C8F-7203-4F24-8520-7BE89EC16187}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.Desktop", "Drachenhorn.Desktop\Drachenhorn.Desktop.csproj", "{D9CAC2E5-91AF-4AE2-898F-1BE5EBBABBD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sheet", "Sheet", "{9A08893A-135F-4C11-8219-19B30580E940}"
+	ProjectSection(SolutionItems) = preProject
+		img\Icons\Sheet\Sheet.ico = img\Icons\Sheet\Sheet.ico
+		img\Icons\Sheet\Sheet256x256.png = img\Icons\Sheet\Sheet256x256.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template", "Template", "{B5AB97FC-88FE-4E2A-8072-9E99D47605C2}"
+	ProjectSection(SolutionItems) = preProject
+		img\Icons\Template\Template.ico = img\Icons\Template\Template.ico
+		img\Icons\Template\Template256x256.png = img\Icons\Template\Template256x256.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{865C13A4-F6F9-4196-8533-1608132BF5B1}"
+	ProjectSection(SolutionItems) = preProject
+		img\Icons\App\ColoredIcon600x600.png = img\Icons\App\ColoredIcon600x600.png
+		img\Icons\App\ColoredIcon64x64.png = img\Icons\App\ColoredIcon64x64.png
+		img\Icons\App\Icon600x600.png = img\Icons\App\Icon600x600.png
+		img\Icons\App\Icon64x64.png = img\Icons\App\Icon64x64.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exe", "Exe", "{8DFC64DF-A05F-4F61-BC2E-12D435A8DA23}"
+	ProjectSection(SolutionItems) = preProject
+		img\Icons\Exe\Drachenhorn.ico = img\Icons\Exe\Drachenhorn.ico
+		img\Icons\Exe\Drachenhorn256x256.png = img\Icons\Exe\Drachenhorn256x256.png
+		img\Icons\Exe\Drachenhorn48x48.png = img\Icons\Exe\Drachenhorn48x48.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -363,6 +376,10 @@ Global
 		{F24CCF9B-685A-453C-BE26-885B8A7C4357} = {9781D075-7CB1-4A03-8669-55612191A73C}
 		{C33A6F64-25C3-436D-A81D-26F751955FDA} = {71A056D4-84A9-4E93-A370-A38F54B29CB5}
 		{5F130C8F-7203-4F24-8520-7BE89EC16187} = {A30811E5-D212-4297-9D49-3554FF805BE7}
+		{9A08893A-135F-4C11-8219-19B30580E940} = {C33A6F64-25C3-436D-A81D-26F751955FDA}
+		{B5AB97FC-88FE-4E2A-8072-9E99D47605C2} = {C33A6F64-25C3-436D-A81D-26F751955FDA}
+		{865C13A4-F6F9-4196-8533-1608132BF5B1} = {C33A6F64-25C3-436D-A81D-26F751955FDA}
+		{8DFC64DF-A05F-4F61-BC2E-12D435A8DA23} = {C33A6F64-25C3-436D-A81D-26F751955FDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6587F46C-F568-4DC3-A758-EC4033606B82}

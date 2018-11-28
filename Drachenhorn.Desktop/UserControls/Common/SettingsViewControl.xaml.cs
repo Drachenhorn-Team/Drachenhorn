@@ -110,17 +110,6 @@ namespace Drachenhorn.Desktop.UserControls.Common
                     LanguageManager.Translate("UI.OK"), null);
         }
 
-        private void TemplateRadioButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (!(sender is RadioButton))
-                return;
-
-            var template = ((RadioButton) sender).Tag as TemplateMetadata;
-
-            if (template != null)
-                SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = template;
-        }
-
         private void SettingsViewControl_OnLoaded(object sender, RoutedEventArgs e)
         {
             ((ObjectDataProvider)Resources["SelectableTemplates"]).Refresh();

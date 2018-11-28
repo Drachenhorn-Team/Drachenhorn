@@ -41,6 +41,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -84,27 +85,15 @@
                            VerticalAlignment="Center" HorizontalAlignment="Center" />
                 <CheckBox Margin="5" Grid.Column="1" Grid.Row="3"
                           IsChecked="{Binding Settings.ShowConsole}" />
+
+
+                <TextBlock Text="{lang:Translate UI.Templates}"
+                           Grid.Column="0" Grid.Row="4"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <ComboBox ItemsSource="{Binding Source={StaticResource SelectableTemplates}}"
+                          SelectedItem="{Binding Settings.CurrentTemplate}" DisplayMemberPath="Name"
+                          Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"/>
             </Grid>
-        </TabItem>
-        <TabItem Header="{lang:Translate UI.Properties.Templates}">
-            <ItemsControl ItemsSource="{Binding Source={StaticResource SelectableTemplates}}" Margin="5">
-                <ItemsControl.Template>
-                    <ControlTemplate>
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                            <StackPanel IsItemsHost="True" Background="{StaticResource ControlBackgroundBrush}"/>
-                        </ScrollViewer>
-                    </ControlTemplate>
-                </ItemsControl.Template>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="{StaticResource ControlBorderBrush}" BorderThickness="1" Margin="2">
-                            <RadioButton Tag="{Binding .}" Click="TemplateRadioButton_OnClick"
-                                         GroupName="TemplateRadio" Content="{Binding Name}"
-                                         Style="{StaticResource MetroFlatToggleButton}"/>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">
             <StackPanel>

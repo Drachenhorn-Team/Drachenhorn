@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 using Drachenhorn.Core.Lang;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Desktop.UI.Lang
