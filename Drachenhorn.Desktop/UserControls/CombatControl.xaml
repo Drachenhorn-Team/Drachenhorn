@@ -29,6 +29,7 @@
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
+
             <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>
@@ -56,6 +57,7 @@
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30"
                        HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
+
             <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>
@@ -79,7 +81,7 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
                                         Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
-                                        Width="Auto" MinWidth="40" />
+                                        Width="Auto" MinWidth="40"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button Margin="5 0 5 5" Height="20" Click="AddArmorButton_OnClick">

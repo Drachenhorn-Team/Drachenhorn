@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel>
-        <TextBlock Text="{lang:Translate CharacterSheet.DisAdvantages}"
+        <TextBlock Text="{lang:Translate CharacterSheet.DisAdvantages}" FontFamily="{StaticResource Morpheus}"
                    TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
         
         <DataGrid MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding .}" Margin="5"
