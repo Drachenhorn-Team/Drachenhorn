@@ -11,7 +11,7 @@
              d:DesignHeight="300" d:DesignWidth="800">
     <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.SpecialSkills}" DockPanel.Dock="Top" Margin="5"
-                   HorizontalAlignment="Center" />
+                   HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
         <DataGrid Name="List" ItemsSource="{Binding .}" AutoGenerateColumns="False"
                       PreviewMouseWheel="List_PreviewMouseWheel">
             <DataGrid.Columns>

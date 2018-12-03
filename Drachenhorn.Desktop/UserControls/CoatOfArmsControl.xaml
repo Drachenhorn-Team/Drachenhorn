@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.CoatOfArms}"
-                   TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" />
+                   TextAlignment="Center" DockPanel.Dock="Top" FontSize="24" FontFamily="{StaticResource Morpheus}"/>
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Button Click="EditButton_Click" Margin="5" Width="20" ToolTip="{lang:Translate UI.New}">
                 <Image Source="{DynamicResource NewIcon}" />

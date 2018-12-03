@@ -12,6 +12,10 @@
         </Style>
     </UserControl.Resources>
     <DockPanel Grid.IsSharedSizeScope="True">
+        <TextBlock Text="{lang:Translate CharacterSheet.Inventory}" Margin="10" FontSize="30"
+                   HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}" DockPanel.Dock="Top"/>
+
+
         <Grid DockPanel.Dock="Top" Margin="5 0 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>

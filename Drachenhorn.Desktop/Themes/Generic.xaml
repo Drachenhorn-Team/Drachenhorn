@@ -100,7 +100,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:LocalizedComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}" />
+    <Style TargetType="{x:Type local:LocalizedComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
 
     <Style TargetType="{x:Type local:ListEditor}">
         <Setter Property="Template">

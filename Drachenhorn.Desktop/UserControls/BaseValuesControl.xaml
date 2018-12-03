@@ -22,13 +22,13 @@
                   PreviewMouseWheel="List_PreviewMouseWheel">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Binding="{Binding Name}"
-                                    Width="Auto"/>
+                                    Width="*"/>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.StartValue}" Binding="{Binding StartValue}"
                                     Width="Auto" IsReadOnly="True"/>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Modifier}" Binding="{Binding Modifier}"
                                     Width="Auto"/>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}" Binding="{Binding Value}"
-                                    Width="*"/>
+                                    Width="Auto"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

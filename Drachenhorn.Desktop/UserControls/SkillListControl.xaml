@@ -3,9 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:local="clr-namespace:Drachenhorn.Desktop.UserControls"
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:skills="clr-namespace:Drachenhorn.Xml.Sheet.Skills;assembly=Drachenhorn.Xml"
@@ -22,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="{lang:Translate CharacterSheet.Skills}" Margin="5" HorizontalAlignment="Center"
-                   Grid.ColumnSpan="2" Grid.Row="0"/>
+                   Grid.ColumnSpan="2" Grid.Row="0" FontFamily="{StaticResource Morpheus}"/>
 
         <DockPanel Grid.Column="0" Grid.Row="1">
             <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">

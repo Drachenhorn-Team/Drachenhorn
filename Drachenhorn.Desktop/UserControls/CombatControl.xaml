@@ -28,7 +28,7 @@
     <UniformGrid Columns="2">
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.WeaponInformation}" Margin="10" FontSize="30"
-                       HorizontalAlignment="Center" />
+                       HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
             <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>
@@ -55,7 +55,7 @@
 
         <StackPanel>
             <TextBlock Text="{lang:Translate CharacterSheet.ArmorInformation}" Margin="10" FontSize="30"
-                       HorizontalAlignment="Center" />
+                       HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
             <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
                       CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
                 <DataGrid.Columns>

@@ -28,7 +28,7 @@
         </Grid>
 
         <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold"
-                   TextAlignment="Center" />
+                   TextAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
 
         <Grid>
             <Grid.ColumnDefinitions>
