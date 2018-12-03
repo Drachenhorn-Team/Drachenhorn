@@ -34,15 +34,8 @@
             <Style TargetType="Window">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
             </Style>
-            
-            <!--Help to see TextBlocks-->
-            <Style TargetType="TextBlock">
-                <Setter Property="Text" Value="Translated"/>
-            </Style>
 
             <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>
-
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
