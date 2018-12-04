@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:converter="clr-namespace:Drachenhorn.Desktop.Converter"
-             xmlns:local="clr-namespace:Drachenhorn.Desktop.UserControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:combatInfo1="clr-namespace:Drachenhorn.Xml.Sheet.CombatInfo;assembly=Drachenhorn.Xml"
@@ -31,7 +29,8 @@
                        HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
 
             <DataGrid Name="WeaponDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
-                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
+                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel"
+                      d:DataContext="{d:DesignInstance combatInfo1:Weapon }">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
                                         Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
@@ -44,6 +43,9 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{lang:Translate WeaponInformation.Range}"
+                                        Binding="{Binding Range, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="Auto"/>
                     <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap.Abbr}"
                                         Binding="{Binding Handicap, UpdateSourceTrigger=PropertyChanged}"
                                         Width="Auto" MinWidth="40" />
@@ -59,7 +61,8 @@
                        HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
 
             <DataGrid Name="ArmorDataGrid" AutoGenerateColumns="False" Margin="5" CanUserAddRows="False"
-                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel">
+                      CanUserResizeColumns="False" PreviewMouseWheel="List_PreviewMouseWheel"
+                      d:DataContext="{d:DesignInstance combatInfo1:ArmorPart }">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="*">
                         <DataGridTemplateColumn.CellTemplate>

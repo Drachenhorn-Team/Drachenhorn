@@ -73,6 +73,27 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
+        [XmlIgnore] private string _range;
+
+        /// <summary>
+        ///     Gets or sets the WeaponRange.
+        /// </summary>
+        /// <value>
+        ///     The WeaponRange.
+        /// </value>
+        [XmlAttribute("Range")]
+        public string Range
+        {
+            get => _range;
+            set
+            {
+                if (_range == value)
+                    return;
+                _range = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion Properties
     }
 }

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+             xmlns:inventoryInfo="clr-namespace:Drachenhorn.Xml.Sheet.InventoryInfo;assembly=Drachenhorn.Xml"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,51 +12,30 @@
             <Setter Property="Margin" Value="5" />
         </Style>
     </UserControl.Resources>
-    <DockPanel Grid.IsSharedSizeScope="True">
+    <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.Inventory}" Margin="10" FontSize="30"
                    HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}" DockPanel.Dock="Top"/>
 
-
-        <Grid DockPanel.Dock="Top" Margin="5 0 0 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace" />
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Weight" />
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Type" />
-                <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap" />
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Margin="5"/>
-            <TextBlock Text="{lang:Translate CharacterSheet.StoragePlace}" Grid.Column="1" Margin="5"/>
-            <TextBlock Text="{lang:Translate CharacterSheet.Weight}" Grid.Column="2" Margin="5"/>
-            <TextBlock Text="{lang:Translate CharacterSheet.Type}" Grid.Column="3" Margin="5"/>
-            <TextBlock Text="{lang:Translate CharacterSheet.Handycap}" Grid.Column="4" Margin="5"/>
-        </Grid>
         <WrapPanel DockPanel.Dock="Bottom">
             <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5"/>
             <TextBlock Text="{Binding TotalWeight}" Margin="5"/>
         </WrapPanel>
-        <ListBox ItemsSource="{Binding Items}" PreviewMouseWheel="List_PreviewMouseWheel">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Name"/>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="StoragePlace"/>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Weight"/>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Type"/>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="Handycap"/>
-                        </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"/>
-                        <TextBox Text="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1" />
-                        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="2" />
-                        <TextBlock Text="{Binding Type, Converter={StaticResource EnumToStringConverter}}" Grid.Column="3" Margin="5"/>
-                        <TextBlock Text="{Binding Handicap}" Grid.Column="4" Margin="5"/>
-
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <DataGrid ItemsSource="{Binding Items}" PreviewMouseWheel="List_PreviewMouseWheel"
+                  AutoGenerateColumns="False" d:DataContext="{d:DesignInstance inventoryInfo:InventoryItem}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
+                                    Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.StoragePlace}"
+                                    Binding="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Weight}"
+                                    Binding="{Binding Weight, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Type}"
+                                    Binding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap}"
+                                    Binding="{Binding Handycap}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </UserControl>
