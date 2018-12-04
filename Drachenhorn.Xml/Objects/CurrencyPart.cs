@@ -26,7 +26,29 @@ namespace Drachenhorn.Xml.Objects
         }
 
         [XmlIgnore]
+        private string _symbol;
+        /// <summary>
+        ///     Symbol of the Currency. '%' will be replaced with the value.
+        ///     If there is no '%' the Symbol will be added to the end.
+        /// </summary>
+        [XmlAttribute("Symbol")]
+        public string Symbol
+        {
+            get => _symbol;
+            set
+            {
+                if (_symbol == value)
+                    return;
+                _symbol = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
         private int _value;
+        /// <summary>
+        ///     Value compared to minimum of all Currencies.
+        /// </summary>
         [XmlAttribute("Value")]
         public int Value
         {
@@ -41,5 +63,20 @@ namespace Drachenhorn.Xml.Objects
         }
 
         #endregion Properties
+
+
+        #region ToString
+
+        public string ToString(int amount)
+        {
+            if (Symbol.Contains("%"))
+            {
+                return Symbol.Replace("%", amount.ToString());
+            }
+
+            return amount + " " + Symbol;
+        }
+
+        #endregion ToString
     }
 }
