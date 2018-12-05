@@ -13,16 +13,16 @@ namespace Drachenhorn.Xml.Objects
         #region Properties
 
         [XmlIgnore]
-        private ObservableCollection<Currency> _conversions = new ObservableCollection<Currency>();
-        [XmlElement("Conversions")]
-        internal ObservableCollection<Currency> Conversions
+        private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
+        [XmlElement("Currencies")]
+        internal ObservableCollection<Currency> Currencies
         {
-            get { return _conversions; }
+            get { return _currencies; }
             set
             {
-                if (_conversions == value)
+                if (_currencies == value)
                     return;
-                _conversions = value;
+                _currencies = value;
                 OnPropertyChanged();
             }
         }
@@ -31,7 +31,12 @@ namespace Drachenhorn.Xml.Objects
 
         #region Operators
 
-        public Currency this[string currency] => Conversions.Where(x => x.Name == currency)?.First() ??
+        /// <summary>
+        ///    Gets the Currency with set name.
+        /// </summary>
+        /// <param name="currency">Name of the Currency.</param>
+        /// <returns>Currency with fitting name.</returns>
+        public Currency this[string currency] => Currencies.Where(x => x.Name == currency)?.First() ??
                                             throw new KeyNotFoundException("Unable to find currency: " + currency);
 
         #endregion Operators
@@ -40,7 +45,7 @@ namespace Drachenhorn.Xml.Objects
 
         public string ToString(int amound, string currency)
         {
-            return this[currency].ToString(amound);
+            return this[currency].ToString(amound, 'p');
         }
 
         #endregion Conversion

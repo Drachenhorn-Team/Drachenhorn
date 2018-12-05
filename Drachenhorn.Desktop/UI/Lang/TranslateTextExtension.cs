@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Data;
 using Drachenhorn.Core.Lang;
 using GalaSoft.MvvmLight;
@@ -16,7 +17,10 @@ namespace Drachenhorn.Desktop.UI.Lang
         {
             try
             {
-                Source = SimpleIoc.Default.GetInstance<LanguageManager>();
+                if (ViewModelBase.IsInDesignModeStatic)
+                    Source = new LanguageManager() { CurrentCulture = CultureInfo.CurrentCulture };
+                else
+                    Source = SimpleIoc.Default.GetInstance<LanguageManager>();
             }
             catch (Exception e)
             {

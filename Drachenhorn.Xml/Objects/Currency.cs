@@ -55,19 +55,23 @@ namespace Drachenhorn.Xml.Objects
         ///     'p' for maximal parts e.g. '1 € 20 c'
         ///     'f' for minimal parts e.g. '120 c'
         /// </param>
-        /// <param name="currency">Currency to be converted to.</param>
-        /// <returns></returns>
-        public static string ToString(int amount, char format, Currency currency)
+        /// <returns>Currency String.</returns>
+        public string ToString(int amount, char format)
         {
-            throw new NotImplementedException();
+            if (format == 'p')
+                return ToMaximumParts(amount);
+            else if (format == 'f')
+                return ToMinimumParts(amount);
+
+            throw new FormatException("Unknown format: " + format);
         }
 
 
-        private static string ToMaximumParts(int amount, Currency currency)
+        private string ToMaximumParts(int amount)
         {
             string result = "";
 
-            var currs = from x in currency.CurrencyParts orderby x.Value descending select x;
+            var currs = from x in this.CurrencyParts orderby x.Value descending select x;
 
             foreach (var curr in currs)
             {
@@ -79,6 +83,19 @@ namespace Drachenhorn.Xml.Objects
             }
 
             return result;
+        }
+
+        private string ToMinimumParts(int amount)
+        {
+            var currs = from x in this.CurrencyParts orderby x.Value descending select x;
+
+            foreach (var curr in currs)
+            {
+                if (amount % curr.Value == 0)
+                    return curr.ToString(amount / curr.Value);
+            }
+
+            return null;
         }
 
         #endregion Conversion
