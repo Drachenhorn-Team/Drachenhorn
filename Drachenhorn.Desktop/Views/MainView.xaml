@@ -21,6 +21,7 @@
         <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}"/>
         <helper:BindingProxy x:Key="TemplateViewModel" Data="{Binding TemplateView, Source={StaticResource Locator}}"/>
         <helper:BindingProxy x:Key="MapViewModel" Data="{Binding MapView, Source={StaticResource Locator}}"/>
+        <helper:BindingProxy x:Key="CurrencyCalcuatorViewModel" Data="{Binding CurrentCalculatorView, Source={StaticResource Locator}}"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl"
@@ -205,6 +206,25 @@
                         <mah:HamburgerMenuItem.Tag>
                             <template:TemplateControl DataContext="{Binding Data, Source={StaticResource TemplateViewModel}}"
                                                       d:DataContext="{d:DesignInstance template1:TemplateViewModel}"/>
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    <mah:HamburgerMenuIconItem Label="{lang:Translate UI.CurrencyCalculator}"
+                                               Icon="{StaticResource CalculateIconWhite}">
+                        <mah:HamburgerMenuItem.ToolTip>
+                            <StackPanel Orientation="Horizontal"
+                                        DataContext="{Binding Data, Source={StaticResource CurrencyCalcuatorViewModel}}"
+                                        d:DataContext="{d:DesignInstance common:CurrencyCalculatorViewModel}">
+                                <StackPanel.Resources>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TitleBarButton}"/>
+                                </StackPanel.Resources>
+                                <Button ToolTip="{lang:TranslateText %CurrencyCalculator.Calculate}"
+                                        Command="{Binding Calculate}">
+                                    <Image Source="{DynamicResource CalculateIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </mah:HamburgerMenuItem.ToolTip>
+                        <mah:HamburgerMenuItem.Tag>
+                            <common1:CurrencyCalculatorControl/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                     <mah:HamburgerMenuIconItem Label="{lang:Translate UI.Map}"
