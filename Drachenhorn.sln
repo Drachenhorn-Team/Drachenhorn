@@ -27,8 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{71A056D4-84A
 		img\Cover.jpg = img\Cover.jpg
 		img\Cover_tr.png = img\Cover_tr.png
 		img\Drachenhorn.ico = img\Drachenhorn.ico
-		img\ImageSource.md = img\ImageSource.md
 		img\Logo.png = img\Logo.png
+		img\Readme.md = img\Readme.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{9FAE5CD2-7EEF-4510-AED4-05AB5FBDBE8B}"
@@ -136,7 +136,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{8D668A0E-9DCF-41CD-A9FC-1DC1FF4C4A5A}"
 	ProjectSection(SolutionItems) = preProject
 		.github\Readme\Readme.de-DE.md = .github\Readme\Readme.de-DE.md
-		README.md = README.md
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Map", "Drachenhorn.Map\Drachenhorn.Map.csproj", "{F24CCF9B-685A-453C-BE26-885B8A7C4357}"
