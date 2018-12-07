@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.Downloader;
@@ -67,7 +68,8 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             else
                 data = TemplateList.SelectedItem as TemplateMetadata;
 
-            File.Delete(Path.Combine(TemplateMetadata.BaseDirectory, data?.Name + TemplateMetadata.Extension));
+            Debug.Assert(data?.Path != null, "data?.Path != null");
+            File.Delete(data?.Path);
 
             Selector_OnSelectionChanged(sender, null);
         }
