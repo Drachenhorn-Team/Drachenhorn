@@ -73,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converter\Validation\XmlStringValidation.cs" />
     <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
@@ -159,6 +160,9 @@
     </Compile>
     <Compile Include="UserControls\SpecialSkillControl.xaml.cs">
       <DependentUpon>SpecialSkillControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Template\CurrenciesControl.xaml.cs">
+      <DependentUpon>CurrenciesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Template\TemplateControl.xaml.cs">
       <DependentUpon>TemplateControl.xaml</DependentUpon>
@@ -597,6 +601,10 @@
     <Page Include="UserControls\SpecialSkillControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Template\CurrenciesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Template\TemplateControl.xaml">
       <SubType>Designer</SubType>

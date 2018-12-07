@@ -5,6 +5,7 @@ using System.IO;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Interfaces;
+using Drachenhorn.Xml.Objects;
 using Drachenhorn.Xml.Sheet.Common;
 using Drachenhorn.Xml.Sheet.Skills;
 
@@ -173,6 +174,25 @@ namespace Drachenhorn.Xml.Template
                 if (_specialSkills == value)
                     return;
                 _specialSkills = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
+        private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
+
+        /// <summary>
+        ///     Gets or sets the currencies
+        /// </summary>
+        [XmlElement("Currency")]
+        public ObservableCollection<Currency> Currencies
+        {
+            get => _currencies;
+            set
+            {
+                if (_currencies == value)
+                    return;
+                _currencies = value;
                 OnPropertyChanged();
             }
         }

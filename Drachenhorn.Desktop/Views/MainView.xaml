@@ -219,7 +219,7 @@
                                 </StackPanel.Resources>
                                 <Button ToolTip="{lang:TranslateText %CurrencyCalculator.Calculate}"
                                         Command="{Binding Calculate}">
-                                    <Image Source="{DynamicResource CalculateIcon}"/>
+                                    <Image Source="{DynamicResource CalculateIconWhite}"/>
                                 </Button>
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
@@ -259,85 +259,6 @@
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.OptionsItemsSource>
         </mah:HamburgerMenu>
-        <!--<fluent:Ribbon DockPanel.Dock="Top" IsQuickAccessToolBarMenuDropDownVisible="False"
-                       IsQuickAccessToolBarVisible="False">
-
-                <fluent:RibbonTabItem Header="{lang:Translate UI.File}">
-                    <fluent:RibbonGroupBox Header="{lang:Translate UI.SaveLoad}">
-                        <fluent:Button Header="{lang:Translate UI.New}"
-                                   LargeIcon="{DynamicResource NewIcon}"
-                                   ToolTip="{lang:TranslateText %UI.New (%Keyboard.Ctrl + N)}"
-                                   Command="{Binding New}" />
-                        <fluent:Button Header="{lang:Translate UI.Edit}"
-                                   LargeIcon="{DynamicResource EditIcon}"
-                                   ToolTip="{lang:TranslateText %UI.Edit (%Keyboard.Ctrl + O)}"
-                                   Command="{Binding Open}" />
-
-                        <fluent:DropDownButton Header="{lang:Translate UI.Save}"
-                                           LargeIcon="{DynamicResource SaveIcon}"
-                                           ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}">
-                            <fluent:Button Header="{lang:Translate UI.Save}"
-                                       Icon="{DynamicResource SaveIcon}"
-                                       ToolTip="{lang:TranslateText %UI.Save (%Keyboard.Ctrl + S)}"
-                                       Size="Middle"
-                                       Command="{Binding Save}" />
-                            <fluent:Button Header="{lang:Translate UI.SaveAll}"
-                                       Icon="{DynamicResource SaveAllIcon}"
-                                       ToolTip="{lang:TranslateText %UI.SaveAll (%Keyboard.Ctrl + %Keyboard.Shift + S)}"
-                                       Size="Middle"
-                                       Command="{Binding SaveAll}" />
-                            <fluent:Button Header="{lang:Translate UI.SaveAs}"
-                                       Icon="{DynamicResource SaveAsIcon}"
-                                       Size="Middle"
-                                       Command="{Binding SaveAs}" />
-                        </fluent:DropDownButton>
-                    </fluent:RibbonGroupBox>
-                    <fluent:RibbonGroupBox Header="{lang:Translate UI.Print}">
-                        <fluent:Button Header="{lang:Translate UI.GeneratePDF}"
-                                   LargeIcon="{DynamicResource PdfIcon}"
-                                   ToolTip="{lang:TranslateText %UI.GeneratePDF}"
-                                   Command="{Binding GeneratePDF}" />
-                    </fluent:RibbonGroupBox>
-                    <fluent:RibbonGroupBox Header="{lang:Translate UI.Properties}">
-                        <fluent:Button Header="{lang:Translate UI.Properties}"
-                                   LargeIcon="{DynamicResource PropertiesIcon}"
-                                   ToolTip="{lang:TranslateText %UI.Properties (F9)}"
-                                   Command="{Binding ShowSettings}" />
-                    </fluent:RibbonGroupBox>
-                </fluent:RibbonTabItem>
-
-
-                <fluent:RibbonTabItem Header="{lang:Translate UI.Templates}">
-                    <fluent:RibbonGroupBox Header="{lang:Translate UI.Templates}">
-                        <fluent:InRibbonGallery Name="TemplateGallery"
-                                            MinItemsInRow="3" MaxItemsInRow="4"
-                                            ItemWidth="60" ItemHeight="56"
-                                            SelectedItem="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=DataContext.CurrentTemplate}">
-                            <fluent:InRibbonGallery.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock HorizontalAlignment="Center" Text="{Binding Name}"/>
-                                        <TextBlock HorizontalAlignment="Center" Text="{Binding Version}"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </fluent:InRibbonGallery.ItemTemplate>
-                        </fluent:InRibbonGallery>
-                        <fluent:Button Header="{lang:Translate UI.ShowTemplates}"
-                                   LargeIcon="{DynamicResource TemplateIcon}"
-                                   Command="{Binding OpenTemplates}" />
-                    </fluent:RibbonGroupBox>
-                </fluent:RibbonTabItem>
-
-                <fluent:RibbonTabItem Header="{lang:Translate UI.Other}">
-                    <fluent:RibbonGroupBox Header="{lang:Translate UI.Map}">
-                        <fluent:Button Header="{lang:Translate UI.ShowMap}"
-                                   LargeIcon="{DynamicResource MapIcon}"
-                                   Command="{Binding ShowMap}"/>
-                    </fluent:RibbonGroupBox>
-                </fluent:RibbonTabItem>
-            </fluent:Ribbon>
-
-            <fluent:StatusBar DockPanel.Dock="Bottom" BorderThickness="0 1 0 0" />-->
         <controls1:NotificationMessageContainer Name="NotificationContainer" HorizontalAlignment="Center"/>
     </Grid>
 </mah:MetroWindow>
