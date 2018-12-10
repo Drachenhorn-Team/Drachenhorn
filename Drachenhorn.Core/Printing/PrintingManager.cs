@@ -73,22 +73,24 @@ namespace Drachenhorn.Core.Printing
             }
         }
 
+        public static void GeneratePDF(CharacterSheet sheet)
+        {
+            var html = GenerateHtml(sheet);
+
+            SimpleIoc.Default.GetInstance<IIoService>().FileSaverDialog(
+                sheet.Characteristics.Name,
+                ".pdf", "PDF", "PDF-Export", x =>
+                {
+                    using (var fs = new FileStream(x, FileMode.Create))
+                    {
+                        HtmlConverter.ConvertToPdf(html, fs);
+                    }
+                });
+        }
+
         public static Task GeneratePDFAsync(CharacterSheet sheet)
         {
-            return Task.Run(() =>
-            {
-                var html = GenerateHtml(sheet);
-
-                SimpleIoc.Default.GetInstance<IIoService>().FileSaverDialog(
-                    sheet.Characteristics.Name,
-                    ".pdf", "PDF", "PDF-Export", x =>
-                    {
-                        using (var fs = new FileStream(x, FileMode.Create))
-                        {
-                            HtmlConverter.ConvertToPdf(html, fs);
-                        }
-                    });
-            });
+            return Task.Run(() => GeneratePDF(sheet));
         }
 
         #endregion Generate HTML

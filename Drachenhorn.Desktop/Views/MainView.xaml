@@ -141,7 +141,7 @@
                                 <TabControl.ItemTemplate>
                                     <DataTemplate>
                                         <DockPanel Height="30">
-                                            <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path= DataContext.CloseSheet}"
+                                            <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabControl}}, Path=DataContext.Close}"
                                                     CommandParameter="{Binding}"
                                                     ToolTip="{lang:TranslateText %UI.Close (%Keyboard.Ctrl + W)}"
                                                     Height="20" Width="20" Style="{StaticResource TitleBarButton}"

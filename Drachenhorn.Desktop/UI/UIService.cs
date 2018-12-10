@@ -20,7 +20,7 @@ namespace Drachenhorn.Desktop.UI
             SetBusyState(true);
         }
 
-        private void SetBusyState(bool busy)
+        private void SetBusyState(bool busy, int seconds = 5)
         {
             if (busy != _isBusy)
             {
@@ -29,7 +29,7 @@ namespace Drachenhorn.Desktop.UI
 
                 if (_isBusy)
                 {
-                    new DispatcherTimer(TimeSpan.FromSeconds(5), DispatcherPriority.ContextIdle,
+                    new DispatcherTimer(TimeSpan.FromSeconds(seconds), DispatcherPriority.ContextIdle,
                         dispatcherTimer_Tick, Application.Current.Dispatcher);
                 }
             }
@@ -37,8 +37,7 @@ namespace Drachenhorn.Desktop.UI
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            var dispatcherTimer = sender as DispatcherTimer;
-            if (dispatcherTimer != null)
+            if (sender is DispatcherTimer dispatcherTimer)
             {
                 SetBusyState(false);
                 dispatcherTimer.Stop();

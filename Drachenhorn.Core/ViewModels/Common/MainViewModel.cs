@@ -166,7 +166,7 @@ namespace Drachenhorn.Core.ViewModels.Common
 
             SimpleIoc.Default.GetInstance<IUIService>().SetBusyState();
 
-            await PrintingManager.GeneratePDFAsync(CurrentSheetViewModel.CurrentSheet);
+            await PrintingManager.GeneratePDFAsync(CurrentSheetViewModel?.CurrentSheet);
         }
 
         public RelayCommand<CharacterSheetViewModel> Close => new RelayCommand<CharacterSheetViewModel>(ExecuteClose);
