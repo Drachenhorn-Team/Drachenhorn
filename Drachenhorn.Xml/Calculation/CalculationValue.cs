@@ -22,7 +22,9 @@ namespace Drachenhorn.Xml.Calculation
 
             Formula.PropertyChanged += (sender, args) => { StartValue = (int) Math.Round(Formula.Calculate()); };
 
-            Formula.OnCalculateAll += (sender, args) =>
+            Formula.ParameterChanged += () => { StartValue = (int)Math.Round(Formula.Calculate()); };
+
+            Formula.CalculateAll += (sender, args) =>
             {
                 Formula.CalculateAsync(x => { StartValue = (int) Math.Round(x); });
             };

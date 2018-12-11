@@ -224,7 +224,7 @@
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <common1:CurrencyCalculatorControl/>
+                            <common1:CurrencyCalculatorControl DataContext="{Binding Data, Source={StaticResource MainViewModel}}"/>
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                     <mah:HamburgerMenuIconItem Label="{lang:Translate UI.Map}"

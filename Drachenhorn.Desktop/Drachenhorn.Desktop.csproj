@@ -73,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converter\CurrencyPartConverter.cs" />
     <Compile Include="Converter\Validation\XmlStringValidation.cs" />
     <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">

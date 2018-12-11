@@ -187,6 +187,12 @@ namespace Drachenhorn.Xml.Calculation
 
                 if (temp != null)
                     expression.Parameters[item.Key] = temp + item.Value;
+
+                item.PropertyChanged += (sender, args) =>
+                {
+                    if (args.PropertyName == "Value")
+                        RaiseParameterChanged();
+                };
             }
             else
                 expression.Parameters[item.Key] = item.Value;
@@ -214,21 +220,36 @@ namespace Drachenhorn.Xml.Calculation
             }
         }
 
+        /// <summary>
+        ///    The Handler to recalculate if Parameters change
+        /// </summary>
+        public delegate void ParameterChangedHandler();
+
+        /// <summary>
+        ///     Occures when [parameter changed].
+        /// </summary>
+        public event ParameterChangedHandler ParameterChanged;
+
+        private void RaiseParameterChanged()
+        {
+            ParameterChanged?.Invoke();
+        }
+
         #endregion Parameter
 
         #region CalculateEvent
 
         /// <summary>
-        ///     The Hendler to Calculate all Formulas.
+        ///     The Handler to Calculate all Formulas.
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="CalculateEventArgs" /> instance containing the event data.</param>
         public delegate void CalculateAllHandler(object sender, CalculateEventArgs e);
 
         /// <summary>
-        ///     Occurs when [on calculate all].
+        ///     Occurs when [calculate all].
         /// </summary>
-        public static event CalculateAllHandler OnCalculateAll;
+        public static event CalculateAllHandler CalculateAll;
 
         /// <summary>
         ///     Raises the calculate all.
@@ -236,7 +257,7 @@ namespace Drachenhorn.Xml.Calculation
         /// <param name="sheet">The sheet.</param>
         public static void RaiseCalculateAll(CharacterSheet sheet)
         {
-            var handler = OnCalculateAll;
+            var handler = CalculateAll;
             handler?.Invoke(typeof(Formula), new CalculateEventArgs(sheet));
         }
 

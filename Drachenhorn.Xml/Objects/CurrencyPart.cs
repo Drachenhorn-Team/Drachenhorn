@@ -67,8 +67,15 @@ namespace Drachenhorn.Xml.Objects
 
         #region ToString
 
+        public int Convert(int amount)
+        {
+            return amount / Value;
+        }
+
         public string ToString(int amount)
         {
+            amount = Convert(amount);
+
             if (Symbol.Contains("%"))
             {
                 return Symbol.Replace("%", amount.ToString());

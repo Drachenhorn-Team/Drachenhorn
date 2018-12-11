@@ -1,9 +1,11 @@
-﻿namespace Drachenhorn.Xml.Calculation
+﻿using System.ComponentModel;
+
+namespace Drachenhorn.Xml.Calculation
 {
     /// <summary>
     ///     Interface to use as Parameter in Calculation.
     /// </summary>
-    public interface IFormulaKeyItem
+    public interface IFormulaKeyItem : INotifyPropertyChanged
     {
         /// <summary>
         ///     Gets the key.

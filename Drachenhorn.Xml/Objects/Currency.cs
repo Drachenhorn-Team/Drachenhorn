@@ -42,6 +42,9 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
+        [XmlIgnore]
+        public int MaxValue => CurrencyParts.Max(x => x.Value);
+
         #endregion Properties
 
         #region Conversion
@@ -77,7 +80,7 @@ namespace Drachenhorn.Xml.Objects
             {
                 if ((double) amount / curr.Value > 0)
                 {
-                    result = curr.ToString(amount / curr.Value);
+                    result = curr.ToString(amount);
                     amount = amount % curr.Value;
                 }
             }
@@ -92,7 +95,7 @@ namespace Drachenhorn.Xml.Objects
             foreach (var curr in currs)
             {
                 if (amount % curr.Value == 0)
-                    return curr.ToString(amount / curr.Value);
+                    return curr.ToString(amount);
             }
 
             return null;

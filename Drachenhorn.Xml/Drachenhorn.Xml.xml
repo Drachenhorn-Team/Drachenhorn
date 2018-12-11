@@ -1,0 +1,1925 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Drachenhorn.Xml</name>
+    </assembly>
+    <members>
+        <member name="T:Drachenhorn.Xml.AdventurePoints">
+            <summary>
+                Character Adventure Points
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.BindableBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.AdventurePoints.Total">
+            <summary>
+                Gets or sets the total points.
+            </summary>
+            <value>
+                The total points.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.AdventurePoints.Used">
+            <summary>
+                Gets or sets the used points.
+            </summary>
+            <value>
+                The used points.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.AdventurePoints.CurrentLeft">
+            <summary>
+                Gets the current left points.
+            </summary>
+            <value>
+                The current left points.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.BindableBase">
+            <summary>
+                Bindable Base Class
+            </summary>
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+        </member>
+        <member name="E:Drachenhorn.Xml.BindableBase.PropertyChanged">
+            <summary>
+                Occurs when a property value changes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.BindableBase.OnPropertyChanged(System.String)">
+            <summary>
+                Called when [property changed].
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Calculation.CalculateEventArgs">
+            <summary>
+                CalculationEventArgs
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.CalculateEventArgs.#ctor(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Calculation.CalculateEventArgs" /> class.
+            </summary>
+            <param name="sheet">The sheet.</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculateEventArgs.Sheet">
+            <summary>
+                Gets the sheet.
+            </summary>
+            <value>
+                The sheet.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Calculation.CalculationValue">
+            <summary>
+                Base-Class for calculated values.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.BindableBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.CalculationValue.#ctor(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Calculation.CalculationValue" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.CalculationValue.GetInformation(System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+                Gets the information.
+            </summary>
+            <param name="dictionary">The dictionary to add the Information to.</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculationValue.StartValue">
+            <summary>
+                Gets the StartValue.
+            </summary>
+            <value>
+                The StartValue.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculationValue.Modifier">
+            <summary>
+                Gets or sets the modifier.
+            </summary>
+            <value>
+                The modifier.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculationValue.Value">
+            <summary>
+                Gets or sets the current value.
+            </summary>
+            <value>
+                The current value.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculationValue.Formula">
+            <summary>
+                Gets or sets the formula.
+            </summary>
+            <value>
+                The formula.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.CalculationValue.FormulaText">
+            <summary>
+                Gets or sets the formula text.
+            </summary>
+            <value>
+                The formula text.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Calculation.Formula">
+            <summary>
+                Formula for Calculation.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Calculation.Formula" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.#ctor(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Calculation.Formula"/> class.
+            </summary>
+            <param name="parentSheet">The parent sheet.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.Calculate">
+            <summary>
+                Calculates this instance.
+            </summary>
+            <returns>The calculated Value.</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.CalculateAsync(System.Action{System.Double})">
+            <summary>
+                Calculates the value asynchronous.
+            </summary>
+            <param name="finished">Action executed on finish.</param>
+            <returns>The running task.</returns>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.Formula.ParentSheet">
+            <summary>
+                Gets or sets the parent sheet.
+            </summary>
+            <value>
+                The parent sheet.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.Formula.Expression">
+            <summary>
+                Gets or sets the expression.
+            </summary>
+            <value>
+                The expression.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.Formula.ValidationMessage">
+            <summary>
+                Gets or sets the validation message.
+            </summary>
+            <value>
+                The validation message.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.Formula.IsValid">
+            <summary>
+                Returns true if Expression is valid.
+            </summary>
+            <value>
+                <c>true</c> if this instance is valid; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameter(NCalc.Expression@,Drachenhorn.Xml.Calculation.IFormulaKeyItem)">
+            <summary>
+                Adds the parameter.
+            </summary>
+            <param name="expression">The expression.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameterList(NCalc.Expression@,System.Collections.Generic.IEnumerable{Drachenhorn.Xml.Calculation.IFormulaKeyItem})">
+            <summary>
+                Adds the parameter list.
+            </summary>
+            <param name="expression">The expression.</param>
+            <param name="list">The list.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Calculation.Formula.CalculateAllHandler">
+            <summary>
+                The Hendler to Calculate all Formulas.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Drachenhorn.Xml.Calculation.CalculateEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="E:Drachenhorn.Xml.Calculation.Formula.OnCalculateAll">
+            <summary>
+                Occurs when [on calculate all].
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.RaiseCalculateAll(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+                Raises the calculate all.
+            </summary>
+            <param name="sheet">The sheet.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Calculation.IFormulaKeyItem">
+            <summary>
+                Interface to use as Parameter in Calculation.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.IFormulaKeyItem.Key">
+            <summary>
+                Gets the key.
+            </summary>
+            <value>
+                The key.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Calculation.IFormulaKeyItem.Value">
+            <summary>
+                Gets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.ChildChangedBase">
+            <summary>
+                Base class notifying ChildChanged
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.BindableBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.INotifyChildChanged" />
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.ChildChangedBase" /> class.
+            </summary>
+        </member>
+        <member name="E:Drachenhorn.Xml.ChildChangedBase.ChildChanged">
+            <summary>
+                Occurs when [child changed].
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.OnChildChanged(System.String)">
+            <summary>
+                Called when [child changed].
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.OnChildChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+                Called when [child changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.SetValuesChanged">
+            <summary>
+                Sets the ValueChanged.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.ChildCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+                Sets the Childs CollectionChanged.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.ChildChangedBase.SelfPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+                Sets Self PropertyChanged.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Data.AP.APColumn">
+            <summary>
+                The Column of an AP-Table
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APColumn.CalculateCosts(System.Int32,System.Int32)">
+            <summary>
+                Calculates the costs.
+            </summary>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APColumn.Add(System.UInt16)">
+            <summary>
+                Add new Value to the Column
+            </summary>
+            <param name="value">Value to be added.</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APColumn.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APColumn.Factor">
+            <summary>
+                Gets or sets the factor.
+            </summary>
+            <value>
+                The factor.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APColumn.Negative">
+            <summary>
+                Gets or sets the negative.
+            </summary>
+            <value>
+                The negative.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APColumn.Costs">
+            <summary>
+                Gets or sets the costs.
+            </summary>
+            <value>
+                The costs.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APColumn.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Data.AP.APColumn" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APColumn.#ctor(System.String,System.UInt16,System.UInt16)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Data.AP.APColumn" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="factor">The factor.</param>
+            <param name="negative">The negative.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Data.AP.APTable">
+            <summary>
+                AP-Cost-Table for leveling a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APTable.Item(System.String)">
+            <summary>
+                Gets or sets the <see cref="T:Drachenhorn.Xml.Data.AP.APColumn" /> with the specified key.
+            </summary>
+            <value>
+                The <see cref="T:Drachenhorn.Xml.Data.AP.APColumn" />.
+            </value>
+            <param name="key">The Name of the Column.</param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">
+            </exception>
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APTable.Calculate(System.String,System.Int32,System.Int32)">
+            <summary>
+                Calculates the leveling cost for the specified key.
+            </summary>
+            <param name="key">The Column-Key.</param>
+            <param name="from">Current Skill value.</param>
+            <param name="to">Target Skill value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APTable.APColumns">
+            <summary>
+                Gets or sets the AP-Columns.
+            </summary>
+            <value>
+                The AP-Columns.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APTable.ColumnNames">
+            <summary>
+                Gets the column names.
+            </summary>
+            <value>
+                The column names.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Data.AP.APValue">
+            <summary>
+                Value for AP-Columns
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Data.AP.APValue.Value">
+            <summary>
+                AP-Value
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APValue.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APValue.#ctor(System.UInt16)">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APValue.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Data.AP.APValue.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Exceptions.SheetLoadingException">
+            <summary>
+                Exception thrown when a CharacterSheet could not be loaded.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Exceptions.SheetLoadingException.#ctor(System.String,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Exceptions.SheetLoadingException" /> class.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Exceptions.SheetLoadingException.Path">
+            <summary>
+                Gets the path of the file.
+            </summary>
+            <value>
+                The path of the file.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Exceptions.SheetSavingException">
+            <summary>
+                Exception thrown when a CharacterSheet could not be saved.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Exceptions.SheetSavingException.#ctor(System.String,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Exceptions.SheetSavingException" /> class.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Exceptions.SheetSavingException.Path">
+            <summary>
+                Gets the path of the file.
+            </summary>
+            <value>
+                The path of the file.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Interfaces.IInfoObject">
+            <summary>
+                Interface to display information about a Class.
+            </summary>
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Interfaces.IInfoObject.GetInformation">
+            <summary>
+                Gets the relevant information of the Object.
+            </summary>
+            <returns>Dictionary of information name (not translated) to information</returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Interfaces.INotifyChildChanged">
+            <summary>
+                Interface to note if a child has changed.
+            </summary>
+        </member>
+        <member name="E:Drachenhorn.Xml.Interfaces.INotifyChildChanged.ChildChanged">
+            <summary>
+                Occurs when [child changed].
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Interfaces.ISavable">
+            <summary>
+                Interface for Savable objects.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Interfaces.ISavable.Save(System.String)">
+            <summary>
+                Saving-Method
+            </summary>
+            <param name="path">Path to save to.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.Currency.ToString(System.Int32,System.Char)">
+            <summary>
+                Forms String out of amount.
+            </summary>
+            <param name="amount">Amount of money to be converted</param>
+            <param name="format">
+                Format if the string.
+                'p' for maximal parts e.g. '1 € 20 c'
+                'f' for minimal parts e.g. '120 c'
+            </param>
+            <returns>Currency String.</returns>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.CurrencyPart.Symbol">
+            <summary>
+                Symbol of the Currency. '%' will be replaced with the value.
+                If there is no '%' the Symbol will be added to the end.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.CurrencyPart.Value">
+            <summary>
+                Value compared to minimum of all Currencies.
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Objects.DSADate">
+            <summary>
+                Represents a Date in the world of DSA
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.BindableBase" />
+            <seealso>
+                <cref>System.IComparable{Drachenhorn.Xml.Objects.DSADate}</cref>
+            </seealso>
+            <seealso cref="T:System.IFormattable" />
+            <seealso cref="T:System.Runtime.Serialization.ISerializable" />
+            <seealso>
+                <cref>System.IEquatable{Drachenhorn.Xml.Objects.DSADate}</cref>
+            </seealso>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.DSADate.Day">
+            <summary>
+                Gets or sets the day.
+            </summary>
+            <value>
+                The day.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.DSADate.Month">
+            <summary>
+                Gets or sets the month.
+            </summary>
+            <value>
+                The month.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.DSADate.Year">
+            <summary>
+                Gets or sets the year.
+            </summary>
+            <value>
+                The year.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Objects.DSADate" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Objects.DSADate" /> class.
+            </summary>
+            <param name="day">The day.</param>
+            <param name="month">The month.</param>
+            <param name="year">The year.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.#ctor(System.Int32,Drachenhorn.Xml.Objects.DSAMonth,System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Objects.DSADate" /> class.
+            </summary>
+            <param name="day">The day.</param>
+            <param name="month">The month.</param>
+            <param name="year">The year.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.Equals(System.Object)">
+            <summary>
+                Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+                <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.Equals(Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+                true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.GetHashCode">
+            <summary>
+                Returns a hash code for this instance.
+            </summary>
+            <returns>
+                A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_GreaterThan(Drachenhorn.Xml.Objects.DSADate,Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Implements the operator &gt;.
+            </summary>
+            <param name="obj1">The obj1.</param>
+            <param name="obj2">The obj2.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_LessThan(Drachenhorn.Xml.Objects.DSADate,Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Implements the operator &lt;.
+            </summary>
+            <param name="obj1">The obj1.</param>
+            <param name="obj2">The obj2.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_Addition(Drachenhorn.Xml.Objects.DSADate,System.Int32)">
+            <summary>
+                Implements the operator +.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="value">The value.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_Addition(Drachenhorn.Xml.Objects.DSADate,Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Implements the operator +.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="date2">The date2.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.Add(Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Adds the specified date.
+            </summary>
+            <param name="date">The date.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.AddDays(System.UInt32)">
+            <summary>
+                Adds the days.
+            </summary>
+            <param name="days">The days.</param>
+            <exception cref="T:System.ArgumentException">Days can not be smaller than or equal to 0</exception>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.AddMonths(System.UInt32)">
+            <summary>
+                Adds the months.
+            </summary>
+            <param name="months">The months.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.AddYears(System.UInt32)">
+            <summary>
+                Adds the years.
+            </summary>
+            <param name="years">The years.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_Subtraction(Drachenhorn.Xml.Objects.DSADate,System.Int32)">
+            <summary>
+                Implements the operator -.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="value">The value.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.op_Subtraction(Drachenhorn.Xml.Objects.DSADate,Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Implements the operator -.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="date2">The date2.</param>
+            <returns>
+                The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.Subtract(Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Subtracts the specified date.
+            </summary>
+            <param name="date">The date.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.SubtractDays(System.UInt32)">
+            <summary>
+                Subtracts the days.
+            </summary>
+            <param name="days">The days.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.SubtractMonths(System.UInt32)">
+            <summary>
+                Subtracts the months.
+            </summary>
+            <param name="months">The months.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.SubtractYears(System.UInt32)">
+            <summary>
+                Subtracts the years.
+            </summary>
+            <param name="years">The years.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.CompareTo(Drachenhorn.Xml.Objects.DSADate)">
+            <summary>
+                Compares to other Date.
+            </summary>
+            <param name="other">The other Date.</param>
+            <returns>1 if later. 0 if Equal. -1 if earlyer.</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.ToString">
+            <summary>
+                Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+                A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.ToString(System.String)">
+            <summary>
+                Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <returns>
+                A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSADate.ToString(System.String,System.IFormatProvider)">
+            <summary>
+                Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>
+                A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Objects.DSAMonth">
+            <summary>
+                List of DSA Months
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Praios">
+            <summary>
+                1st month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Rondra">
+            <summary>
+                2nd month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Efferd">
+            <summary>
+                3rd month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Travia">
+            <summary>
+                4th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Boron">
+            <summary>
+                5th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Hesinde">
+            <summary>
+                6th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Firun">
+            <summary>
+                7th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Tsa">
+            <summary>
+                8th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Phex">
+            <summary>
+                9th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Peraine">
+            <summary>
+                10th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Ingerimm">
+            <summary>
+                11th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Rahja">
+            <summary>
+                12th month of a year.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Objects.DSAMonth.Nameless">
+            <summary>
+                Last 5 days of a year.
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Objects.DSAMonthExtensions">
+            <summary>
+                Extensions for DSAMonth
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.DSAMonthExtensions.GetAllowedDays(Drachenhorn.Xml.Objects.DSAMonth)">
+            <summary>
+                Gets the AllowedDays for a Month
+            </summary>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CharacterSheet">
+            <summary>
+                Object containing all data for a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CharacterSheet.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.CharacterSheet" /> class.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.Characteristics">
+            <summary>
+                Gets or sets the Characteristics.
+            </summary>
+            <value>
+                The Characteristics.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.GpBase">
+            <summary>
+                Gets or sets the GPBase.
+            </summary>
+            <value>
+                The GPBase.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.CoatOfArms">
+            <summary>
+                Gets or sets the CoatOfArms.
+            </summary>
+            <value>
+                The CoatOfArms.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.DisAdvantages">
+            <summary>
+                Gets or sets the (Dis-)Advantages.
+            </summary>
+            <value>
+                The (Dis-)Advantages.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.Attributes">
+            <summary>
+                Gets or sets the Attributes.
+            </summary>
+            <value>
+                The Attributes.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.BaseValues">
+            <summary>
+                Gets or sets the BaseValues.
+            </summary>
+            <value>
+                The BaseValues.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.AdventurePoints">
+            <summary>
+                Gets or sets the Adventure Points.
+            </summary>
+            <value>
+                The Adventure Points.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.Skills">
+            <summary>
+                Gets or sets the Skills.
+            </summary>
+            <value>
+                The Skills.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.SpecialSkills">
+            <summary>
+                Gets or sets the Special Skills.
+            </summary>
+            <value>
+                The Special Skills.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.Inventory">
+            <summary>
+                Gets or sets the Inventory.
+            </summary>
+            <value>
+                The Inventory.
+            </value>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CharacterSheet.Extension">
+            <summary>
+                The extension of a CharacterSheet File
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.HasChanged">
+            <summary>
+                Gets a value indicating whether this instance has changed.
+            </summary>
+            <value>
+                <c>true</c> if this instance has changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.FilePath">
+            <summary>
+                Gets the Current File Path.
+            </summary>
+            <value>
+                The Current File Path.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CharacterSheet.Load(System.String)">
+            <summary>
+                Loads a CharacterSheet from a selected path.
+            </summary>
+            <param name="path">Path to file.</param>
+            <returns>Loaded CharacterSheet</returns>
+            <exception cref="T:Drachenhorn.Xml.Exceptions.SheetLoadingException" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CharacterSheet.Save">
+            <summary>
+                Saves this Sheet.
+            </summary>
+            <returns>
+                <c>true</c> if successful; otherwise, <c>false</c>
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CharacterSheet.Save(System.String)">
+            <summary>
+                Saves the current CharacterSheet to a selected path.
+            </summary>
+            <param name="path">Path to file.</param>
+            <exception cref="T:Drachenhorn.Xml.Exceptions.SheetSavingException" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CharacterSheet.Drachenhorn#Xml#Interfaces#ISavable#Save(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart">
+            <summary>
+                Part of an Armor.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart.IsActive">
+            <summary>
+                Gets or sets a value indicating whether this ArmorPart is active.
+            </summary>
+            <value>
+                <c>true</c> if this ArmorPart is active; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart.Type">
+            <summary>
+                Gets or sets the ArmorType.
+            </summary>
+            <value>
+                The ArmorType.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.ArmorPart.Handicap">
+            <summary>
+                Gets or sets the Handicap.
+            </summary>
+            <value>
+                The Handicap.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType">
+            <summary>
+                Area in which the Armor can be worn.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.None">
+            <summary>
+                Armor-Area unspecified.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.Head">
+            <summary>
+                Armor can be worn on the Head.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.Body">
+            <summary>
+                Armor can be worn on the Body.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.Hands">
+            <summary>
+                Armor can be worn on the Hands.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.Legs">
+            <summary>
+                Armor can be worn on the Legs.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.ArmorType.Other">
+            <summary>
+                Armor can be worn in other regions.
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CombatInfo.DamageType">
+            <summary>
+                Defines the Type of a Damage for a Weapon or a Attack
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.DamageType.None">
+            <summary>
+                Unspecified WeaponType
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.DamageType.Melee">
+            <summary>
+                Melee Damage.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.CombatInfo.DamageType.Ranged">
+            <summary>
+                Ranged Damage.
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CombatInfo.Magic.Spell">
+            <summary>
+            Character-Spell
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.Magic.Spell.Cost">
+            <summary>
+            The Cost of the Spell
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.CombatInfo.Magic.Spell.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.CombatInfo.Weapon">
+            <summary>
+                Weapons that can be used by a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.Weapon.Skill">
+            <summary>
+            Gets or sets the Skill needed to use the weapon.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.Weapon.Handicap">
+            <summary>
+                Gets or sets the Handicap.
+            </summary>
+            <value>
+                The Handicap.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.Weapon.Type">
+            <summary>
+                Gets or sets the WeaponType.
+            </summary>
+            <value>
+                The WeaponType.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.CombatInfo.Weapon.Range">
+            <summary>
+                Gets or sets the WeaponRange.
+            </summary>
+            <value>
+                The WeaponRange.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.BonusValue">
+            <summary>
+                Bonus Values for Character Generation
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Calculation.IFormulaKeyItem" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.BonusValue.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.BonusValue.Key">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.BonusValue.Value">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.Characteristics">
+            <summary>
+                The Characteristics of a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Family">
+            <summary>
+                Gets or sets the family.
+            </summary>
+            <value>
+                The family.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.PlaceOfBirth">
+            <summary>
+                Gets or sets the place of birth.
+            </summary>
+            <value>
+                The place of birth.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.BirthDate">
+            <summary>
+                Gets or sets the birth date.
+            </summary>
+            <value>
+                The birth date.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Gender">
+            <summary>
+                Gets or sets the gender.
+            </summary>
+            <value>
+                The gender.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Age">
+            <summary>
+                Gets or sets the age.
+            </summary>
+            <value>
+                The age.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Height">
+            <summary>
+                Gets or sets the height.
+            </summary>
+            <value>
+                The height.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Weight">
+            <summary>
+                Gets or sets the weight.
+            </summary>
+            <value>
+                The weight.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.HairColor">
+            <summary>
+                Gets or sets the color of the hair.
+            </summary>
+            <value>
+                The color of the hair.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.EyeColor">
+            <summary>
+                Gets or sets the color of the eye.
+            </summary>
+            <value>
+                The color of the eye.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.SocialStatus">
+            <summary>
+                Gets or sets the social status.
+            </summary>
+            <value>
+                The social status.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Other">
+            <summary>
+                Gets or sets the other information.
+            </summary>
+            <value>
+                The other information.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Title">
+            <summary>
+                Gets or sets the title.
+            </summary>
+            <value>
+                The title.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Race">
+            <summary>
+                Gets or sets the race.
+            </summary>
+            <value>
+                The race.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Culture">
+            <summary>
+                Gets or sets the culture.
+            </summary>
+            <value>
+                The culture.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.Characteristics.Profession">
+            <summary>
+                Gets or sets the profession.
+            </summary>
+            <value>
+                The profession.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.CoatOfArms">
+            <summary>
+                The CoatOfArms of a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.CoatOfArms.Base64String">
+            <summary>
+                Gets or sets the base64 string.
+            </summary>
+            <value>
+                The base64 string.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.CultureInformation">
+            <summary>
+                Cultural Information
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.CultureInformation.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.CultureInformation.Description">
+            <summary>
+                Gets or sets the specification.
+            </summary>
+            <value>
+                The specification.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.CultureInformation.BaseValues">
+            <summary>
+                Gets or sets the base values.
+            </summary>
+            <value>
+                The base values.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.CultureInformation.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.CultureInformation.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.DisAdvantage">
+            <summary>
+                (Dis-)Advantages
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.DisAdvantage.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.DisAdvantage.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.DisAdvantage.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.DisAdvantage.Specialization">
+            <summary>
+                Gets or sets the specialization.
+            </summary>
+            <value>
+                The specialization.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.DisAdvantage.Type">
+            <summary>
+                Gets or sets the type.
+            </summary>
+            <value>
+                The type.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.ProfessionInformation">
+            <summary>
+                Profession-Information
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.Description">
+            <summary>
+                Gets or sets the description.
+            </summary>
+            <value>
+                The description.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.GpCost">
+            <summary>
+                Gets or sets the gp cost.
+            </summary>
+            <value>
+                The gp cost.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Common.RaceInformation">
+            <summary>
+                Race-Information
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.RaceInformation.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.RaceInformation.Description">
+            <summary>
+                Gets or sets the description.
+            </summary>
+            <value>
+                The description.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.RaceInformation.BaseValues">
+            <summary>
+                Gets or sets the base values.
+            </summary>
+            <value>
+                The base values.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.RaceInformation.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.RaceInformation.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Enums.DisAdvantageType">
+            <summary>
+                Sets if the DisAdvantage is an Advantage or a Disadvantage
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.Enums.DisAdvantageType.Advantage">
+            <summary>
+                The advantage
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.Enums.DisAdvantageType.Disadvantage">
+            <summary>
+                The disadvantage
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Enums.Gender">
+            <summary>
+                Gender of a Character
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.Enums.Gender.Male">
+            <summary>
+                The male gender.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.Enums.Gender.Female">
+            <summary>
+                The female gender
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Sheet.Enums.Gender.Unspecified">
+            <summary>
+                The unspecified gender
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.InventoryInfo.Inventory">
+            <summary>
+                Data about the Inventory of a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.InventoryInfo.Inventory.GetWholeWeight">
+            <summary>
+                Gets the whole weight in the Inventory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.Inventory.Items">
+            <summary>
+                Gets or sets the items.
+            </summary>
+            <value>
+                The items.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.Inventory.TotalWeight">
+            <summary>
+            Gets the total weight of all items.
+            </summary>
+            <value>
+            The total weight.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem">
+            <summary>
+                Basic inventory item.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem.StoragePlace">
+            <summary>
+                Gets or sets the storage place.
+            </summary>
+            <value>
+                The storage place.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem.Weight">
+            <summary>
+                Gets or sets the weight.
+            </summary>
+            <value>
+                The weight.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Roll.RollAttributes">
+            <summary>
+                Roll Attributes.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Roll.RollAttributes.Roll1">
+            <summary>
+                Gets or sets the roll1.
+            </summary>
+            <value>
+                The roll1.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Roll.RollAttributes.Roll2">
+            <summary>
+                Gets or sets the roll2.
+            </summary>
+            <value>
+                The roll2.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Roll.RollAttributes.Roll3">
+            <summary>
+                Gets or sets the roll3.
+            </summary>
+            <value>
+                The roll3.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Roll.RollAttributes.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Roll.RollAttributes" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Roll.RollAttributes.#ctor(System.String,System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Roll.RollAttributes" /> class.
+            </summary>
+            <param name="roll1">The roll1.</param>
+            <param name="roll2">The roll2.</param>
+            <param name="roll3">The roll3.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Roll.RollAttributes.ToString">
+            <summary>
+                Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+                A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Roll.RollAttributes.ToString(System.String)">
+            <summary>
+                Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <param name="seperator">The seperator.</param>
+            <returns>
+                A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Skills.Attribute">
+            <summary>
+                Attribute of a Character
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.Calculation.CalculationValue" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+            <seealso cref="T:Drachenhorn.Xml.Calculation.IFormulaKeyItem" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.Attribute.#ctor(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Skills.Attribute"/> class.
+            </summary>
+            <param name="sheet">Current Sheet</param>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.Attribute.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.Attribute.Key">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.Attribute.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Skills.BaseValue">
+            <summary>
+                Base Value of a Character.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.Calculation.CalculationValue" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+            <seealso cref="T:Drachenhorn.Xml.Calculation.IFormulaKeyItem" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.BaseValue.#ctor(Drachenhorn.Xml.Sheet.CharacterSheet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Skills.BaseValue"/> class.
+            </summary>
+            <param name="sheet">Current Sheet</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.BaseValue.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.BaseValue.Key">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.BaseValue.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Skills.Skill">
+            <summary>
+                Character-Skill
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.Skill.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.Skill.Category">
+            <summary>
+                Gets or sets the category.
+            </summary>
+            <value>
+                The category.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.Skill.RollAttributes">
+            <summary>
+                Gets or sets the roll attributes.
+            </summary>
+            <value>
+                The roll attributes.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.Skill.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="T:Drachenhorn.Xml.Sheet.Skills.SpecialSkill">
+            <summary>
+                Specialskill of a Character.
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.BindableBase" />
+            <seealso cref="T:Drachenhorn.Xml.Interfaces.IInfoObject" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.GetInformation">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.Description">
+            <summary>
+                Gets or sets the description.
+            </summary>
+            <value>
+                The description.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Skills.SpecialSkill" /> class.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Sheet.Skills.SpecialSkill" /> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.SheetTemplate">
+            <summary>
+                Templating Class
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.ChildChangedBase" />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.SheetTemplate.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Template.SheetTemplate" /> class.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.AvailableTemplates">
+            <summary>
+                Gets the available templates.
+            </summary>
+            <value>
+                The available templates.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Information">
+            <summary>
+            Gets or sets the information.
+            </summary>
+            <value>
+            The information.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.APTable">
+            <summary>
+                Gets or sets the AP-Table.
+            </summary>
+            <value>
+                The AP-Table.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Races">
+            <summary>
+                Gets or sets the Races.
+            </summary>
+            <value>
+                The Races.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Cultures">
+            <summary>
+                Gets or sets the Cultures.
+            </summary>
+            <value>
+                The Cultures.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.SpecialSkills">
+            <summary>
+                Gets or sets the special skills.
+            </summary>
+            <value>
+                The special skills.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Currencies">
+            <summary>
+                Gets or sets the currencies
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.SheetTemplate.Load(System.String)">
+            <summary>
+                Loads a CharacterSheet from a selected path.
+            </summary>
+            <param name="path">Path to the Template File</param>
+            <returns>Loaded CharacterSheet</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.SheetTemplate.Save">
+            <summary>
+                Saves the current Template to a selected path.
+            </summary>
+            <returns><c>True</c> if successful, otherwise <c>False</c></returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.SheetTemplate.Save(System.String)">
+            <summary>
+                Saves the current Template to a given path.
+            </summary>
+            <param name="path">Path to save to.</param>
+            <returns><c>True</c> if successful, otherwise <c>False</c>.</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.SheetTemplate.Drachenhorn#Xml#Interfaces#ISavable#Save(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.HasChanged">
+            <summary>
+                Gets or sets a value indicating whether this instance has changed.
+            </summary>
+            <value>
+                <c>true</c> if this instance has changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.TemplateGenerationType">
+            <summary>
+                Sets the Generation-Type for a specific template.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Template.TemplateGenerationType.GenerationPoints">
+            <summary>
+                Generation with seperate points from later leveling.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Template.TemplateGenerationType.AdventurePoints">
+            <summary>
+                Same generation as later leveling.
+            </summary>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.TemplateInformation">
+            <inheritdoc />
+            <summary>
+                Basic Template Information
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateInformation.GenerationType">
+            <summary>
+            Gets or sets the type of the generation.
+            </summary>
+            <value>
+            The type of the generation.
+            </value>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.TemplateMetadata">
+            <summary>
+                Basic Metadata for Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.BaseDirectory">
+            <summary>
+                Gets the Template BaseDirectory.
+            </summary>
+            <value>
+                The Template BaseDirectory.
+            </value>
+        </member>
+        <member name="F:Drachenhorn.Xml.Template.TemplateMetadata.Extension">
+            <summary>
+                The Template Extension
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Version">
+            <summary>
+                Version of the Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Path">
+            <summary>
+                Path of the Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Name">
+            <summary>
+                Gets or sets the name of the file.
+            </summary>
+            <value>
+                The name of the file.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.#ctor">
+            <summary>
+                Basic constructor.
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.#ctor(System.String,System.Double)">
+            <summary>
+                Basic constructor.
+            </summary>
+            <param name="name">Path of the File.</param>
+            <param name="version">Version of the Template.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.#ctor(System.String)">
+            <summary>
+                Basic constructor.
+            </summary>
+            <param name="path">Path of the File.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.SetVersionAndNameFromXmlLine(System.String)">
+            <summary>
+                Sets Version based on the second line of the XML-File
+            </summary>
+            <param name="line">Second line of the XML.</param>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Equals(Drachenhorn.Xml.Template.TemplateMetadata)">
+            <summary>
+            Checks if objects are Equal.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>True if Equal</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.op_Equality(Drachenhorn.Xml.Template.TemplateMetadata,Drachenhorn.Xml.Template.TemplateMetadata)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="lhs">The LHS.</param>
+            <param name="rhs">The RHS.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.op_Inequality(Drachenhorn.Xml.Template.TemplateMetadata,Drachenhorn.Xml.Template.TemplateMetadata)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="lhs">The LHS.</param>
+            <param name="rhs">The RHS.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+    </members>
+</doc>
