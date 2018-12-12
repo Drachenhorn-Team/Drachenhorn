@@ -59,7 +59,7 @@ namespace Drachenhorn.Xml.Objects
         ///     'f' for minimal parts e.g. '120 c'
         /// </param>
         /// <returns>Currency String.</returns>
-        public string ToString(int amount, char format)
+        public string ToString(long amount, char format)
         {
             if (format == 'p')
                 return ToMaximumParts(amount);
@@ -70,7 +70,7 @@ namespace Drachenhorn.Xml.Objects
         }
 
 
-        private string ToMaximumParts(int amount)
+        private string ToMaximumParts(long amount)
         {
             string result = "";
 
@@ -88,7 +88,7 @@ namespace Drachenhorn.Xml.Objects
             return result;
         }
 
-        private string ToMinimumParts(int amount)
+        private string ToMinimumParts(long amount)
         {
             var currs = from x in this.CurrencyParts orderby x.Value descending select x;
 
@@ -99,6 +99,11 @@ namespace Drachenhorn.Xml.Objects
             }
 
             return null;
+        }
+
+        public long ToValue(string value)
+        {
+            return -1;
         }
 
         #endregion Conversion

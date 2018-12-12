@@ -12,6 +12,7 @@ using System.Windows.Threading;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
+using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.IO;
 using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.UI.Dialogs;
@@ -129,9 +130,6 @@ namespace Drachenhorn.Desktop
                 filePath = "";
             }
 
-            if (SimpleIoc.Default.GetInstance<ISettings>().IsNew)
-                new ThemeChooseDialog().ShowDialog();
-
             MainWindow = new MainView(filePath);
             MainWindow.Show();
             splash.Close();
@@ -157,6 +155,9 @@ namespace Drachenhorn.Desktop
             SimpleIoc.Default.Register<IIoService>(() => new IoService());
 
             var settings = Settings.Load();
+
+            this.Resources["Settings"] = settings;
+            this.Resources["TemplateManager"] = TemplateManager.Manager;
 
             _console.Visibility = settings.ShowConsole == true ? Visibility.Visible : Visibility.Hidden;
 

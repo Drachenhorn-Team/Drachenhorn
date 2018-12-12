@@ -74,6 +74,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converter\CurrencyPartConverter.cs" />
+    <Compile Include="Converter\TemplatePathOpenConverter.cs" />
     <Compile Include="Converter\Validation\XmlStringValidation.cs" />
     <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
@@ -192,9 +193,6 @@
     </Compile>
     <Compile Include="Views\PrintView.xaml.cs">
       <DependentUpon>PrintView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TemplateMainView.xaml.cs">
-      <DependentUpon>TemplateMainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -632,10 +630,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PrintView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\TemplateMainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

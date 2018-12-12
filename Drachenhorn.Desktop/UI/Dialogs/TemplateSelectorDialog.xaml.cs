@@ -26,7 +26,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (LocalTemplates.IsSelected)
-                TemplateList.ItemsSource = SheetTemplate.AvailableTemplates;
+                (Resources["TemplateManager"] as TemplateManager)?.ResetAvailableTemplates();
         }
 
         private void NewButton_OnClick(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             else
                 data = TemplateList.SelectedItem as TemplateMetadata;
             
-            SelectedTemplate = SheetTemplate.Load(data?.Path);
+            SelectedTemplate = data?.EntireTemplate;
             DialogResult = true;
 
             Close();

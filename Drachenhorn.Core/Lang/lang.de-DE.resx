@@ -714,4 +714,7 @@
   <data name="Updater.NoUpdateAvailable" xml:space="preserve">
     <value>Kein neues Update gefunden.</value>
   </data>
+  <data name="Currency.ValueBasedOn" xml:space="preserve">
+    <value>Der Wert basiert auf dem Wert einer Münze, Schein, u.ä..</value>
+  </data>
 </root>

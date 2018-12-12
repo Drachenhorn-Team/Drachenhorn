@@ -10,37 +10,37 @@
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+             xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
+             xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <ResourceDictionary>
-            <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GenderEnum">
-                <ObjectDataProvider.MethodParameters>
-                    <x:Type TypeName="enum:Gender" />
-                </ObjectDataProvider.MethodParameters>
-            </ObjectDataProvider>
-            
-            <Style TargetType="TextBox">
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="Height" Value="28"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-            </Style>
-            <Style TargetType="controls:AutoCompleteBox">
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-                <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}"/>
-            </Style>
-            <Style TargetType="TextBlock">
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="20"/>
-            </Style>
-            <Style TargetType="userElements:InfoButton">
-                <Setter Property="Margin" Value="0 0 5 0"/>
-            </Style>
-        </ResourceDictionary>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GenderEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:Gender" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="controls:AutoCompleteBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="userElements:InfoButton">
+            <Setter Property="Margin" Value="0 0 5 0"/>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -98,8 +98,7 @@
         <DockPanel Grid.Column="1" Grid.Row="3">
             <userElements:InfoButton InfoObject="{Binding Race}" DockPanel.Dock="Right" />
             <controls:AutoCompleteBox SelectedItem="{Binding Race, Mode=TwoWay}"
-                                      ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
-                                                    Path=DataContext.CurrentCompleteTemplate.Races}"
+                                      ItemsSource="{Binding CurrentTemplate.Races, Source={StaticResource Settings}}"
                                       VerticalContentAlignment="Center" Height="28"/>
             <!--<TextBox Text="{Binding Race.Name}" />-->
         </DockPanel>

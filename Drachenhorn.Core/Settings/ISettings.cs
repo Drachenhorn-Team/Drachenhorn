@@ -18,6 +18,7 @@ namespace Drachenhorn.Core.Settings
 
         bool? ShowConsole { get; set; }
 
-        TemplateMetadata CurrentTemplate { get; set; }
+        string CurrentTemplatePath { get; set; }
+        SheetTemplate CurrentTemplate { get; set; }
     }
 }

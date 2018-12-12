@@ -67,12 +67,12 @@ namespace Drachenhorn.Xml.Objects
 
         #region ToString
 
-        public int Convert(int amount)
+        public long Convert(long amount)
         {
             return amount / Value;
         }
 
-        public string ToString(int amount)
+        public string ToString(long amount)
         {
             amount = Convert(amount);
 

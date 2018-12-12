@@ -6,6 +6,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Drachenhorn.Core.ViewModels;assembly=Drachenhorn.Core"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
+             xmlns:userSettings="clr-namespace:Drachenhorn.Desktop.UserSettings"
+             xmlns:helper="clr-namespace:Drachenhorn.Desktop.Helper"
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
              Startup="Application_Startup"
              mc:Ignorable="d">
@@ -22,9 +25,11 @@
                 <ResourceDictionary Source="UI/Themes/Images/Black.xaml"/>
                 <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
                 <ResourceDictionary Source="Converter/Converter.xaml"/>
-
+                
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
+                    <template:TemplateManager x:Key="TemplateManager"/>
+                    <userSettings:Settings x:Key="Settings"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             

@@ -52,35 +52,6 @@ namespace Drachenhorn.Core.ViewModels.Common
             }
         }
 
-        public TemplateMetadata CurrentTemplate
-        {
-            get => SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate;
-            set
-            {
-                if (SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate == value)
-                    return;
-                SimpleIoc.Default.GetInstance<ISettings>().CurrentTemplate = value;
-                _currentCompleteTemplate = null;
-                RaisePropertyChanged();
-                RaisePropertyChanged("CurrentCompleteTemplate");
-            }
-        }
-
-        private SheetTemplate _currentCompleteTemplate;
-        public SheetTemplate CurrentCompleteTemplate
-        {
-            get
-            {
-                if (_currentCompleteTemplate == null && CurrentTemplate != null)
-                {
-                    var temp = SheetTemplate.AvailableTemplates.FirstOrDefault(CurrentTemplate.Equals);
-                    if (temp != null) _currentCompleteTemplate = SheetTemplate.Load(temp.Path);
-                }
-
-                return _currentCompleteTemplate;
-            }
-        }
-
         #endregion Properties
 
         #region Commands

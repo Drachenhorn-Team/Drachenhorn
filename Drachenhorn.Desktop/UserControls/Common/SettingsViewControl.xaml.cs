@@ -112,7 +112,7 @@ namespace Drachenhorn.Desktop.UserControls.Common
 
         private void SettingsViewControl_OnLoaded(object sender, RoutedEventArgs e)
         {
-            ((ObjectDataProvider)Resources["SelectableTemplates"]).Refresh();
+            //((ObjectDataProvider)Resources["SelectableTemplates"]).Refresh();
         }
     }
 }

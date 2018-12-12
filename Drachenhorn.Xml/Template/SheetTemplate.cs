@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Net;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Interfaces;
@@ -36,38 +37,6 @@ namespace Drachenhorn.Xml.Template
         }
 
         #endregion c'tor
-
-        #region Static
-
-        /// <summary>
-        ///     Gets the available templates.
-        /// </summary>
-        /// <value>
-        ///     The available templates.
-        /// </value>
-        public static IEnumerable<TemplateMetadata> AvailableTemplates
-        {
-            get
-            {
-                if (!Directory.Exists(BaseDirectory))
-                    Directory.CreateDirectory(BaseDirectory);
-
-                var result = new List<TemplateMetadata>();
-                var files = Directory.GetFiles(BaseDirectory);
-
-                foreach (var file in files)
-                {
-                    if (!file.EndsWith(Extension))
-                        continue;
-
-                    result.Add(new TemplateMetadata(file));
-                }
-
-                return result;
-            }
-        }
-
-        #endregion Static
 
         #region Properties
 

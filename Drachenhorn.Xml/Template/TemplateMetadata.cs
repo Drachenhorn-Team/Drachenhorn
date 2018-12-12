@@ -85,6 +85,18 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        private SheetTemplate _template;
+
+        public SheetTemplate EntireTemplate
+        {
+            get
+            {
+                if (_template == null && !string.IsNullOrEmpty(Path))
+                    _template = SheetTemplate.Load(Path);
+                return _template;
+            }
+        }
+
         #endregion Properties
 
 

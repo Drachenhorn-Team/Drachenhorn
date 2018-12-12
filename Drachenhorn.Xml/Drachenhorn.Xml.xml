@@ -205,16 +205,26 @@
             <param name="expression">The expression.</param>
             <param name="list">The list.</param>
         </member>
+        <member name="T:Drachenhorn.Xml.Calculation.Formula.ParameterChangedHandler">
+            <summary>
+               The Handler to recalculate if Parameters change
+            </summary>
+        </member>
+        <member name="E:Drachenhorn.Xml.Calculation.Formula.ParameterChanged">
+            <summary>
+                Occures when [parameter changed].
+            </summary>
+        </member>
         <member name="T:Drachenhorn.Xml.Calculation.Formula.CalculateAllHandler">
             <summary>
-                The Hendler to Calculate all Formulas.
+                The Handler to Calculate all Formulas.
             </summary>
             <param name="sender">The sender.</param>
             <param name="e">The <see cref="T:Drachenhorn.Xml.Calculation.CalculateEventArgs" /> instance containing the event data.</param>
         </member>
-        <member name="E:Drachenhorn.Xml.Calculation.Formula.OnCalculateAll">
+        <member name="E:Drachenhorn.Xml.Calculation.Formula.CalculateAll">
             <summary>
-                Occurs when [on calculate all].
+                Occurs when [calculate all].
             </summary>
         </member>
         <member name="M:Drachenhorn.Xml.Calculation.Formula.RaiseCalculateAll(Drachenhorn.Xml.Sheet.CharacterSheet)">
@@ -498,7 +508,7 @@
             </summary>
             <param name="path">Path to save to.</param>
         </member>
-        <member name="M:Drachenhorn.Xml.Objects.Currency.ToString(System.Int32,System.Char)">
+        <member name="M:Drachenhorn.Xml.Objects.Currency.ToString(System.Int64,System.Char)">
             <summary>
                 Forms String out of amount.
             </summary>
@@ -1715,14 +1725,6 @@
                 Initializes a new instance of the <see cref="T:Drachenhorn.Xml.Template.SheetTemplate" /> class.
             </summary>
         </member>
-        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.AvailableTemplates">
-            <summary>
-                Gets the available templates.
-            </summary>
-            <value>
-                The available templates.
-            </value>
-        </member>
         <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Information">
             <summary>
             Gets or sets the information.
@@ -1827,6 +1829,26 @@
             <value>
             The type of the generation.
             </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateManager.AvailableTemplates">
+            <summary>
+                Gets the available templates.
+            </summary>
+            <value>
+                The available templates.
+            </value>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateManager.GetTemplate(System.String)">
+            <summary>
+                Gets the Template for the Path.
+            </summary>
+            <param name="path">Path to the template.</param>
+            <returns>Selected TemplateMetadata-Object</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateManager.ResetAvailableTemplates">
+            <summary>
+                Resets the availableTemplates
+            </summary>
         </member>
         <member name="T:Drachenhorn.Xml.Template.TemplateMetadata">
             <summary>

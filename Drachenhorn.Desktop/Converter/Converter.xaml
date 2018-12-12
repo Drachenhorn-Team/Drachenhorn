@@ -14,5 +14,7 @@
     <local:MapTileColorConverter x:Key="MapTileColorConverter"/>
     <local:ValueTranslationConverter x:Key="ValueTranslationConverter"/>
     <local:CurrencyPartConverter x:Key="CurrencyPartConverter"/>
+    
+    <local:TemplatePathOpenConverter x:Key="TemplatePathOpenConverter"/>
 
 </ResourceDictionary>

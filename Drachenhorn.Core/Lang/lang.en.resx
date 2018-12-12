@@ -714,4 +714,7 @@
   <data name="Updater.NoUpdateAvailable" xml:space="preserve">
     <value>No new version found.</value>
   </data>
+  <data name="Currency.ValueBasedOn" xml:space="preserve">
+    <value>The value is based the value of one Coin, Bill, etc..</value>
+  </data>
 </root>

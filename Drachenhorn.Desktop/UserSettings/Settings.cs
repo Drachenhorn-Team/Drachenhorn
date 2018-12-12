@@ -181,10 +181,10 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore] private TemplateMetadata _currentTemplate;
+        [XmlIgnore] private SheetTemplate _currentTemplate;
 
-        [XmlElement("CurrentTemplate")]
-        public TemplateMetadata CurrentTemplate
+        [XmlIgnore]
+        public SheetTemplate CurrentTemplate
         {
             get => _currentTemplate;
             set
@@ -194,6 +194,13 @@ namespace Drachenhorn.Desktop.UserSettings
                 _currentTemplate = value;
                 OnPropertyChanged();
             }
+        }
+
+        [XmlAttribute("CurrentTemplatePath")]
+        public string CurrentTemplatePath
+        {
+            get => CurrentTemplate.Path;
+            set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
         }
 
         #endregion Properties

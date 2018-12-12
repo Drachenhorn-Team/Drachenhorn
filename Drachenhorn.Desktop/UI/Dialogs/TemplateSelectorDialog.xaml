@@ -18,7 +18,8 @@
                 </WrapPanel>
 
                 <DataGrid Name="TemplateList" Margin="5" AutoGenerateColumns="False"
-                          MouseDoubleClick="OpenButton_OnClick" RowHeight="40">
+                          MouseDoubleClick="OpenButton_OnClick" RowHeight="40"
+                          ItemsSource="{Binding AvailableTemplates, Source={StaticResource TemplateManager}}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate Template.Name}" FontSize="16"
                                             Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
