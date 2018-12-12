@@ -128,8 +128,7 @@
         <DockPanel Grid.Column="1" Grid.Row="5">
             <userElements:InfoButton InfoObject="{Binding Culture}" DockPanel.Dock="Right" />
             <controls:AutoCompleteBox SelectedItem="{Binding Culture, Mode=TwoWay}"
-                                      ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}},
-                                                    Path=DataContext.CurrentCompleteTemplate.Cultures}"
+                                      ItemsSource="{Binding CurrentTemplate.Cultures, Source={StaticResource Settings}}"
                                       VerticalContentAlignment="Center" Height="28"/>
         </DockPanel>
 

@@ -17,8 +17,7 @@ namespace Drachenhorn.Core.Settings
         string AccentColor { get; set; }
 
         bool? ShowConsole { get; set; }
-
-        string CurrentTemplatePath { get; set; }
+        
         SheetTemplate CurrentTemplate { get; set; }
     }
 }

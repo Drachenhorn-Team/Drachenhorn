@@ -197,7 +197,7 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         [XmlAttribute("CurrentTemplatePath")]
-        public string CurrentTemplatePath
+        internal string CurrentTemplatePath
         {
             get => CurrentTemplate.Path;
             set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
