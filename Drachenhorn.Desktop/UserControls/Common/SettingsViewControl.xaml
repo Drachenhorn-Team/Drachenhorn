@@ -90,8 +90,8 @@
                            Grid.Column="0" Grid.Row="4"
                            VerticalAlignment="Center" HorizontalAlignment="Center" />
                 <ComboBox ItemsSource="{Binding AvailableTemplates, Source={StaticResource TemplateManager}}"
-                          SelectedItem="{Binding Settings.CurrentTemplate}" DisplayMemberPath="Name"
-                          Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"/>
+                          SelectedItem="{Binding Settings.CurrentTemplate, Converter={StaticResource TemplateMetadataConverter}}"
+                          DisplayMemberPath="Name" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"/>
             </Grid>
         </TabItem>
         <TabItem Header="{lang:Translate UI.Properties.About}">

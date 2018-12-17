@@ -15,7 +15,7 @@
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
-                 Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100" FontSize="16"
+                 Title="{lang:Translate CharacterSheet.Title}" Height="800" Width="1100"
                  DataContext="{Binding Path=MainView, Source={StaticResource Locator}}">
     <Window.Resources>
         <helper:BindingProxy x:Key="MainViewModel" Data="{Binding}"/>

@@ -715,6 +715,6 @@
     <value>Kein neues Update gefunden.</value>
   </data>
   <data name="Currency.ValueBasedOn" xml:space="preserve">
-    <value>Der Wert basiert auf dem Wert einer Münze, Schein, u.ä..</value>
+    <value>Der Wert ist auf dem kleinsten gemeinsamen Teiler bezogen.</value>
   </data>
 </root>

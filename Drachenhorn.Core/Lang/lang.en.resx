@@ -715,6 +715,6 @@
     <value>No new version found.</value>
   </data>
   <data name="Currency.ValueBasedOn" xml:space="preserve">
-    <value>The value is based the value of one Coin, Bill, etc..</value>
+    <value>The value is based on the smallest common divisor</value>
   </data>
 </root>
