@@ -16,7 +16,7 @@ namespace Drachenhorn.Desktop.UserSettings
     public static class SquirrelManager
     {
         #region Squirrel
-        
+
         private static readonly string GithubUpdatePath = "https://github.com/Drachenhorn-Team/Drachenhorn";
 
         private static IUpdateManager GetUpdateManager()
@@ -56,10 +56,12 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (!e.Message.StartsWith("Update.exe not found"))
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Warn("Error with Squirrel.", e);
             }
+
             return false;
         }
 
-        public static async void UpdateSquirrel(Action<int> progress = null, Action<bool, SemanticVersion> finished = null)
+        public static async void UpdateSquirrel(Action<int> progress = null,
+            Action<bool, SemanticVersion> finished = null)
         {
             try
             {
@@ -112,7 +114,10 @@ namespace Drachenhorn.Desktop.UserSettings
             SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("OnAppUpdate");
 
             using (var mgr = new UpdateManager("C:"))
+            {
                 ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+            }
+
             //mgr.CreateShortcutForThisExe();
         }
 
@@ -179,7 +184,7 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (File.Exists(filePath))
                     File.Delete(filePath);
 
-                using (FileStream fileStream = File.Create(filePath))
+                using (var fileStream = File.Create(filePath))
                 {
                     // ReSharper disable once PossibleNullReferenceException
                     Assembly.GetExecutingAssembly().GetManifestResourceStream(fileName).CopyTo(fileStream);

@@ -13,15 +13,21 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _skill;
+        [XmlIgnore] private int _handicap;
+
+        [XmlIgnore] private string _range;
+
+        [XmlIgnore] private string _skill;
+
+        [XmlIgnore] private DamageType _type;
+
         /// <summary>
-        /// Gets or sets the Skill needed to use the weapon.
+        ///     Gets or sets the Skill needed to use the weapon.
         /// </summary>
         [XmlAttribute("Skill")]
         public string Skill
         {
-            get { return _skill; }
+            get => _skill;
             set
             {
                 if (_skill == value)
@@ -31,8 +37,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
-
-        [XmlIgnore] private int _handicap;
         /// <summary>
         ///     Gets or sets the Handicap.
         /// </summary>
@@ -51,8 +55,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private DamageType _type;
 
         /// <summary>
         ///     Gets or sets the WeaponType.
@@ -73,8 +75,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
-        [XmlIgnore] private string _range;
-
         /// <summary>
         ///     Gets or sets the WeaponRange.
         /// </summary>
@@ -94,6 +94,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

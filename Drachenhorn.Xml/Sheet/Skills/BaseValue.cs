@@ -15,51 +15,25 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class BaseValue : CalculationValue, IInfoObject, IFormulaKeyItem
     {
-        internal BaseValue() : base(null) { }
+        #region c'tor
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BaseValue"/> class.
-        /// </summary>
-        /// <param name="sheet">Current Sheet</param>
-        public BaseValue(CharacterSheet sheet) : base(sheet) { }
-
-
-        #region InfoObject
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
+        internal BaseValue() : base(null)
         {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Key))
-                result.Add("%Info.Key", Key);
-            if (!string.IsNullOrEmpty(Name))
-                result.Add("%Info.Name", Name);
-
-            GetInformation(ref result);
-
-            return result;
         }
 
-        #endregion InfoObject
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="BaseValue" /> class.
+        /// </summary>
+        /// <param name="sheet">Current Sheet</param>
+        public BaseValue(CharacterSheet sheet) : base(sheet)
+        {
+        }
+
+        #endregion
 
         #region Properties
 
         [XmlIgnore] private string _key;
-
-        /// <inheritdoc />
-        [XmlAttribute("Key")]
-        public string Key
-        {
-            get => _key;
-            set
-            {
-                if (_key == value)
-                    return;
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
 
         [XmlIgnore] private string _name;
 
@@ -82,6 +56,40 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        #endregion Properties
+        #endregion
+
+        /// <inheritdoc />
+        [XmlAttribute("Key")]
+        public string Key
+        {
+            get => _key;
+            set
+            {
+                if (_key == value)
+                    return;
+                _key = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        #region InfoObject
+
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Key))
+                result.Add("%Info.Key", Key);
+            if (!string.IsNullOrEmpty(Name))
+                result.Add("%Info.Name", Name);
+
+            GetInformation(ref result);
+
+            return result;
+        }
+
+        #endregion InfoObject
     }
 }

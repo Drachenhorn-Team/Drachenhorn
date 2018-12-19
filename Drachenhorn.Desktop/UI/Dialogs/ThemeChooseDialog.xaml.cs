@@ -9,10 +9,14 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class ThemeChooseDialog : Window
     {
+        #region c'tor
+
         public ThemeChooseDialog()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void VisualTheme_Light_OnClick(object sender, RoutedEventArgs e)
         {

@@ -14,27 +14,27 @@
     </UserControl.Resources>
     <DockPanel>
         <TextBlock Text="{lang:Translate CharacterSheet.Inventory}" Margin="10" FontSize="30"
-                   HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}" DockPanel.Dock="Top"/>
+                   HorizontalAlignment="Center" FontFamily="{StaticResource Morpheus}" DockPanel.Dock="Top" />
 
         <WrapPanel DockPanel.Dock="Bottom">
-            <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5"/>
-            <TextBlock Text="{Binding TotalWeight}" Margin="5"/>
+            <TextBlock Text="{lang:Translate CharacterSheet.TotalWeight}" Margin="5" />
+            <TextBlock Text="{Binding TotalWeight}" Margin="5" />
         </WrapPanel>
 
         <DataGrid ItemsSource="{Binding Items}" PreviewMouseWheel="List_PreviewMouseWheel"
                   AutoGenerateColumns="False" d:DataContext="{d:DesignInstance inventoryInfo:InventoryItem}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
-                                    Binding="{Binding Name}" IsReadOnly="True"/>
+                                    Binding="{Binding Name}" IsReadOnly="True" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.StoragePlace}"
-                                    Binding="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}"/>
+                                    Binding="{Binding StoragePlace, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Weight}"
-                                    Binding="{Binding Weight, UpdateSourceTrigger=PropertyChanged}"/>
+                                    Binding="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Type}"
                                     Binding="{Binding Type, Converter={StaticResource EnumToStringConverter}}"
-                                    IsReadOnly="True"/>
+                                    IsReadOnly="True" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Handycap}"
-                                    Binding="{Binding Handycap}" IsReadOnly="True"/>
+                                    Binding="{Binding Handycap}" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>

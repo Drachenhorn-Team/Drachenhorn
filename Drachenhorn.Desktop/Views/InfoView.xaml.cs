@@ -7,11 +7,15 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class InfoView
     {
+        #region c'tor
+
         public InfoView(IInfoObject infoObject)
         {
             InitializeComponent();
 
             Resources["Information"] = infoObject.GetInformation();
         }
+
+        #endregion
     }
 }

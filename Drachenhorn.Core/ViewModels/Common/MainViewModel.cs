@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
-using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Exceptions;
-using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
@@ -26,6 +22,8 @@ namespace Drachenhorn.Core.ViewModels.Common
         private ObservableCollection<CharacterSheetViewModel> _characterSheetViewModels =
             new ObservableCollection<CharacterSheetViewModel>();
 
+        private CharacterSheetViewModel _currentSheetViewModel;
+
         public ObservableCollection<CharacterSheetViewModel> CharacterSheetViewModels
         {
             get => _characterSheetViewModels;
@@ -37,8 +35,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                 RaisePropertyChanged();
             }
         }
-
-        private CharacterSheetViewModel _currentSheetViewModel;
 
         public CharacterSheetViewModel CurrentSheetViewModel
         {
@@ -52,7 +48,7 @@ namespace Drachenhorn.Core.ViewModels.Common
             }
         }
 
-        #endregion Properties
+        #endregion
 
         #region Commands
 
@@ -132,8 +128,8 @@ namespace Drachenhorn.Core.ViewModels.Common
         {
             if (CurrentSheetViewModel?.CurrentSheet == null)
                 await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                                LanguageManager.Translate("UI.NothingSelected"),
-                                LanguageManager.Translate("UI.NothingSelected.Title"));
+                    LanguageManager.Translate("UI.NothingSelected"),
+                    LanguageManager.Translate("UI.NothingSelected.Title"));
 
             SimpleIoc.Default.GetInstance<IUIService>().SetBusyState();
 

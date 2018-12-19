@@ -22,7 +22,7 @@ namespace Drachenhorn.Xml
             SetValuesChanged();
         }
 
-        #endregion c'tor
+        #endregion
 
         #region OnChildChanged
 

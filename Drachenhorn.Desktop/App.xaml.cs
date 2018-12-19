@@ -12,7 +12,6 @@ using System.Windows.Threading;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
-using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.IO;
 using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.UI.Dialogs;
@@ -29,8 +28,6 @@ using GalaSoft.MvvmLight.Views;
 using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
-using StreamReader = System.IO.StreamReader;
-using Uri = System.Uri;
 
 namespace Drachenhorn.Desktop
 {
@@ -40,13 +37,6 @@ namespace Drachenhorn.Desktop
     /// </summary>
     public partial class App : Application
     {
-        #region Properties
-
-        private bool _isClosing;
-
-        #endregion Properties
-
-
         #region c'tor
 
         public App()
@@ -63,10 +53,15 @@ namespace Drachenhorn.Desktop
             instance.Start();
         }
 
-        #endregion c'tor
+        #endregion
 
+        #region Properties
 
         private readonly ConsoleWindow _console = new ConsoleWindow();
+
+        private bool _isClosing;
+
+        #endregion
 
         private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
@@ -156,8 +151,8 @@ namespace Drachenhorn.Desktop
 
             var settings = Settings.Load();
 
-            this.Resources["Settings"] = settings;
-            this.Resources["TemplateManager"] = TemplateManager.Manager;
+            Resources["Settings"] = settings;
+            Resources["TemplateManager"] = TemplateManager.Manager;
 
             _console.Visibility = settings.ShowConsole == true ? Visibility.Visible : Visibility.Hidden;
 
@@ -166,16 +161,18 @@ namespace Drachenhorn.Desktop
                 if (args.PropertyName == "ShowConsole")
                     if (settings.ShowConsole == true)
                     {
-                        if (!Application.Current.Windows.OfType<ConsoleWindow>().Any())
+                        if (!Current.Windows.OfType<ConsoleWindow>().Any())
                             _console.Show();
                         _console.Visibility = Visibility.Visible;
                     }
                     else
+                    {
                         _console.Visibility = Visibility.Collapsed;
+                    }
             };
 
             SimpleIoc.Default.Register<ISettings>(() => settings);
-            
+
             SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             settings.PropertyChanged += (sender, args) =>
             {
@@ -188,7 +185,7 @@ namespace Drachenhorn.Desktop
 
         public static void SetAccentAndTheme(string name, VisualThemeType theme)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Current.Dispatcher.Invoke(() =>
             {
                 if (theme == VisualThemeType.System)
                 {
@@ -200,7 +197,7 @@ namespace Drachenhorn.Desktop
                 }
 
                 var uri = "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml";
-                
+
 
                 if (!string.IsNullOrEmpty(uri))
                 {
@@ -208,13 +205,14 @@ namespace Drachenhorn.Desktop
 
                     res.BeginInit();
 
-                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary { Source = new Uri(uri, UriKind.Relative) })
+                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary
                     {
+                        Source = new Uri(uri, UriKind.Relative)
+                    })
                         if (!res.Contains(dictionaryEntry.Key))
                             res.Add(dictionaryEntry.Key, dictionaryEntry.Value);
                         else
                             res[dictionaryEntry.Key] = dictionaryEntry.Value;
-                    }
 
                     res.EndInit();
                 }
@@ -271,7 +269,7 @@ namespace Drachenhorn.Desktop
             }
             catch (TimeoutException)
             {
-                var listenThread = new Thread(Listen) { IsBackground = true };
+                var listenThread = new Thread(Listen) {IsBackground = true};
                 listenThread.Start();
             }
 
@@ -292,10 +290,7 @@ namespace Drachenhorn.Desktop
 
                         Dispatcher.Invoke(() =>
                         {
-                            if (MainWindow is MainView view)
-                            {
-                                view.OpenFile(text);
-                            }
+                            if (MainWindow is MainView view) view.OpenFile(text);
                         });
 
                         server.Disconnect();

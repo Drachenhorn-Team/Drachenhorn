@@ -1,13 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using System.Reflection;
-using Drachenhorn.Core.Printing;
-using Drachenhorn.Core.ViewModels;
-using Drachenhorn.Xml.Sheet;
-using Drachenhorn.Xml.Sheet.Common;
-using Drachenhorn.Xml.Sheet.Enums;
-using Drachenhorn.Xml.Sheet.Skills;
+﻿using Drachenhorn.Core.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Characteristics = Drachenhorn.Xml.Sheet.Common.Characteristics;
 
 namespace Drachenhorn.UnitTest
 {
@@ -23,7 +15,7 @@ namespace Drachenhorn.UnitTest
         //public void TestPrinting()
         //{
         //    InitializeData();
-            
+
         //    var sheet = new CharacterSheet
         //    {
         //        Characteristics = new Characteristics

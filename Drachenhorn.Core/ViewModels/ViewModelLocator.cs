@@ -14,6 +14,8 @@ namespace Drachenhorn.Core.ViewModels
     /// </summary>
     public class ViewModelLocator
     {
+        #region c'tor
+
         /// <summary>
         ///     Initializes a new instance of the ViewModelLocator class.
         /// </summary>
@@ -38,6 +40,10 @@ namespace Drachenhorn.Core.ViewModels
             SimpleIoc.Default.Register<CurrencyCalculatorViewModel>();
         }
 
+        #endregion
+
+        #region Properties
+
         public LanguageManager LanguageManager => SimpleIoc.Default.GetInstance<LanguageManager>();
 
         public MainViewModel MainView => SimpleIoc.Default.GetInstance<MainViewModel>();
@@ -52,7 +58,10 @@ namespace Drachenhorn.Core.ViewModels
 
         public MapViewModel MapView => SimpleIoc.Default.GetInstance<MapViewModel>();
 
-        public CurrencyCalculatorViewModel CurrentCalculatorView => SimpleIoc.Default.GetInstance<CurrencyCalculatorViewModel>();
+        public CurrencyCalculatorViewModel CurrentCalculatorView =>
+            SimpleIoc.Default.GetInstance<CurrencyCalculatorViewModel>();
+
+        #endregion
 
         public static void Cleanup()
         {

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
-using Drachenhorn.Xml.Sheet.Roll;
 using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Xml.Sheet.CombatInfo.Magic
 {
     /// <summary>
-    /// Character-Spell
+    ///     Character-Spell
     /// </summary>
     [Serializable]
     public class Spell : Skill
@@ -18,7 +16,7 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo.Magic
         [XmlIgnore] private int _cost;
 
         /// <summary>
-        /// The Cost of the Spell
+        ///     The Cost of the Spell
         /// </summary>
         [XmlAttribute("Cost")]
         public int Cost
@@ -33,8 +31,7 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo.Magic
             }
         }
 
-        #endregion Properties
-
+        #endregion
 
         #region Info
 

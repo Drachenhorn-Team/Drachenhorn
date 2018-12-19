@@ -2,11 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Desktop.UI;
 using Drachenhorn.Desktop.Views;
-using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.UserControls
@@ -16,10 +14,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class AttributesControl : UserControl
     {
+        #region c'tor
+
         public AttributesControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {

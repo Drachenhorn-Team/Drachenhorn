@@ -22,70 +22,6 @@ namespace Drachenhorn.Xml.Objects
     [Serializable]
     public class DSADate : BindableBase, IComparable<DSADate>, IFormattable, ISerializable, IEquatable<DSADate>
     {
-        #region Properties
-
-        private int _day = 1;
-
-        /// <summary>
-        ///     Gets or sets the day.
-        /// </summary>
-        /// <value>
-        ///     The day.
-        /// </value>
-        public int Day
-        {
-            get => _day;
-            set
-            {
-                if (_day == value)
-                    return;
-                _day = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private DSAMonth _month = DSAMonth.Praios;
-
-        /// <summary>
-        ///     Gets or sets the month.
-        /// </summary>
-        /// <value>
-        ///     The month.
-        /// </value>
-        public DSAMonth Month
-        {
-            get => _month;
-            set
-            {
-                if (_month == value)
-                    return;
-                _month = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _year = 1;
-
-        /// <summary>
-        ///     Gets or sets the year.
-        /// </summary>
-        /// <value>
-        ///     The year.
-        /// </value>
-        public int Year
-        {
-            get => _year;
-            set
-            {
-                if (_year == value)
-                    return;
-                _year = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion Properties
-
         #region c'tor
 
         /// <summary>
@@ -118,7 +54,71 @@ namespace Drachenhorn.Xml.Objects
             Year = year;
         }
 
-        #endregion c'tor
+        #endregion
+
+        #region Properties
+
+        private int _day = 1;
+
+        private DSAMonth _month = DSAMonth.Praios;
+
+        private int _year = 1;
+
+        /// <summary>
+        ///     Gets or sets the day.
+        /// </summary>
+        /// <value>
+        ///     The day.
+        /// </value>
+        public int Day
+        {
+            get => _day;
+            set
+            {
+                if (_day == value)
+                    return;
+                _day = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the month.
+        /// </summary>
+        /// <value>
+        ///     The month.
+        /// </value>
+        public DSAMonth Month
+        {
+            get => _month;
+            set
+            {
+                if (_month == value)
+                    return;
+                _month = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the year.
+        /// </summary>
+        /// <value>
+        ///     The year.
+        /// </value>
+        public int Year
+        {
+            get => _year;
+            set
+            {
+                if (_year == value)
+                    return;
+                _year = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         #region Operators
 

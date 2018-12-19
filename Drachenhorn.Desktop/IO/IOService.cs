@@ -111,7 +111,7 @@ namespace Drachenhorn.Desktop.IO
         }
 
         /// <summary>
-        /// Opens a Dialog in which the User can select a File inside a Directory.
+        ///     Opens a Dialog in which the User can select a File inside a Directory.
         /// </summary>
         /// <param name="dir">Directory to show.</param>
         /// <param name="fileExtension">File-Extension to search from.</param>

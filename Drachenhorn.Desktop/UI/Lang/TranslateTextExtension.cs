@@ -9,6 +9,8 @@ namespace Drachenhorn.Desktop.UI.Lang
 {
     public class TranslateTextExtension : Binding
     {
+        #region c'tor
+
         /// <summary>
         ///     Translates the given TranslateID
         /// </summary>
@@ -18,7 +20,7 @@ namespace Drachenhorn.Desktop.UI.Lang
             try
             {
                 if (ViewModelBase.IsInDesignModeStatic)
-                    Source = new LanguageManager() { CurrentCulture = CultureInfo.CurrentCulture };
+                    Source = new LanguageManager {CurrentCulture = CultureInfo.CurrentCulture};
                 else
                     Source = SimpleIoc.Default.GetInstance<LanguageManager>();
             }
@@ -27,5 +29,7 @@ namespace Drachenhorn.Desktop.UI.Lang
                 Console.WriteLine(e);
             }
         }
+
+        #endregion
     }
 }

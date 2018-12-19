@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.Downloader;
 using Drachenhorn.Core.Lang;
-using Drachenhorn.Desktop.Views;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
@@ -16,12 +15,20 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class TemplateSelectorDialog
     {
-        public SheetTemplate SelectedTemplate { get; private set; }
+        #region c'tor
 
         public TemplateSelectorDialog()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Properties
+
+        public SheetTemplate SelectedTemplate { get; private set; }
+
+        #endregion
 
         private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -45,7 +52,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 data = button.DataContext as TemplateMetadata;
             else
                 data = TemplateList.SelectedItem as TemplateMetadata;
-            
+
             SelectedTemplate = data?.EntireTemplate;
             DialogResult = true;
 
@@ -60,7 +67,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 LanguageManager.Translate("UI.Yes"),
                 LanguageManager.Translate("UI.No"), null).Result)
                 return;
-            
+
             TemplateMetadata data;
 
             if (sender is Button button)

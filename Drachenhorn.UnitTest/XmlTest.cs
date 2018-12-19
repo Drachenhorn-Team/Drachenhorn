@@ -53,10 +53,10 @@ namespace Darchenhorn.UnitTest
             var sheet = new CharacterSheet();
 
             var values = new ObservableCollection<BonusValue>();
-            values.Add(new BonusValue(){Key = "CHB", Value = 2});
-            values.Add(new BonusValue(){Key = "KKB", Value = 2});
+            values.Add(new BonusValue {Key = "CHB", Value = 2});
+            values.Add(new BonusValue {Key = "KKB", Value = 2});
 
-            sheet.Characteristics.Race = new RaceInformation() {BaseValues = values};
+            sheet.Characteristics.Race = new RaceInformation {BaseValues = values};
 
             sheet.Attributes.Add(new Attribute(sheet) {FormulaText = "[CHB] + 4"});
 

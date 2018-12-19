@@ -16,7 +16,13 @@ namespace Drachenhorn.Xml.Sheet.Skills
     {
         #region Properties
 
+        [XmlIgnore] private string _category;
+
         [XmlIgnore] private string _name;
+
+        [XmlIgnore] private RollAttributes _rollAttributes = new RollAttributes();
+
+        [XmlIgnore] private int _value;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -37,7 +43,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        [XmlIgnore] private string _category;
         /// <summary>
         ///     Gets or sets the category.
         /// </summary>
@@ -56,8 +61,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private RollAttributes _rollAttributes = new RollAttributes();
 
         /// <summary>
         ///     Gets or sets the roll attributes.
@@ -78,8 +81,20 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        #endregion Properties
+        [XmlAttribute("Value")]
+        public int Value
+        {
+            get => _value;
+            set
+            {
+                if (_value == value)
+                    return;
+                _value = value;
+                OnPropertyChanged();
+            }
+        }
 
+        #endregion
 
         #region Info
 

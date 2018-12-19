@@ -14,6 +14,8 @@ namespace Drachenhorn.Xml
 
         [XmlIgnore] private int _total;
 
+        [XmlIgnore] private int _used;
+
         /// <summary>
         ///     Gets or sets the total points.
         /// </summary>
@@ -32,8 +34,6 @@ namespace Drachenhorn.Xml
                 OnPropertyChanged(null);
             }
         }
-
-        [XmlIgnore] private int _used;
 
         /// <summary>
         ///     Gets or sets the used points.
@@ -63,6 +63,6 @@ namespace Drachenhorn.Xml
         [XmlIgnore]
         public int CurrentLeft => Total - Used;
 
-        #endregion Properties
+        #endregion
     }
 }

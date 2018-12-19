@@ -10,8 +10,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class ExceptionMessageBox
     {
-        private readonly List<string> _exceptionInformationList = new List<string>();
-        private readonly string _userExceptionMessage;
+        #region c'tor
 
         public ExceptionMessageBox(Exception e, string userExceptionMessage, bool closeApp = false)
         {
@@ -30,6 +29,15 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             Closed += (sender, args) => { Application.Current.Shutdown(2); };
         }
+
+        #endregion
+
+        #region Properties
+
+        private readonly List<string> _exceptionInformationList = new List<string>();
+        private readonly string _userExceptionMessage;
+
+        #endregion
 
         private void BuildTreeLayer(Exception e, TreeViewItem parent)
         {
@@ -82,8 +90,12 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
         private class TreeViewStringSet
         {
+            #region Properties
+
             public string Header { get; set; }
             public string Content { get; set; }
+
+            #endregion
 
             public override string ToString()
             {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -10,7 +9,7 @@ namespace Drachenhorn.Xml.Template
         public static TemplateManager Manager = new TemplateManager();
 
         #region Templates
-        
+
         private IEnumerable<TemplateMetadata> _availableTemplates;
 
         /// <summary>

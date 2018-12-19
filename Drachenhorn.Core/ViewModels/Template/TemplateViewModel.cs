@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Drachenhorn.Core.IO;
-using Drachenhorn.Core.Lang;
+﻿using Drachenhorn.Core.Lang;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -20,7 +16,7 @@ namespace Drachenhorn.Core.ViewModels.Template
 
         public SheetTemplate Template
         {
-            get { return _template; }
+            get => _template;
             set
             {
                 if (_template == value)
@@ -30,7 +26,7 @@ namespace Drachenhorn.Core.ViewModels.Template
             }
         }
 
-        #endregion Properties
+        #endregion
 
         #region Commands
 

@@ -5,12 +5,18 @@ namespace Drachenhorn.Core.Objects
 {
     public class LimitedList<T> : IList<T>
     {
-        private uint _limit;
+        #region c'tor
 
         public LimitedList(uint limit)
         {
             Limit = limit;
         }
+
+        #endregion
+
+        #region Properties
+
+        private uint _limit;
 
         public uint Limit
         {
@@ -24,6 +30,8 @@ namespace Drachenhorn.Core.Objects
         }
 
         public List<T> List { get; } = new List<T>();
+
+        #endregion
 
         public int Count => List.Count;
 

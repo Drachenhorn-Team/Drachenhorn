@@ -6,19 +6,23 @@ namespace Drachenhorn.Desktop.UserElements
 {
     public class DsaDatePicker : Control
     {
+        public static DependencyProperty DateProperty =
+            DependencyProperty.Register(
+                "Date",
+                typeof(DSADate),
+                typeof(DsaDatePicker));
+
+        #region c'tor
+
         static DsaDatePicker()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DsaDatePicker),
                 new FrameworkPropertyMetadata(typeof(DsaDatePicker)));
         }
 
-        #region Properties
+        #endregion
 
-        public static DependencyProperty DateProperty =
-            DependencyProperty.Register(
-                "Date",
-                typeof(DSADate),
-                typeof(DsaDatePicker));
+        #region Properties
 
         public DSADate Date
         {
@@ -26,6 +30,6 @@ namespace Drachenhorn.Desktop.UserElements
             set => SetValue(DateProperty, value);
         }
 
-        #endregion Properties
+        #endregion
     }
 }

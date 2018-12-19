@@ -7,6 +7,8 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class CommonMessageBox
     {
+        #region c'tor
+
         public CommonMessageBox(string message, string title, string buttonConfirmText, string buttonCancelText = null)
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             else
                 CancelButton.Content = buttonCancelText;
         }
+
+        #endregion
 
         private void ConfirmButton_OnClick(object sender, RoutedEventArgs e)
         {

@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
@@ -13,7 +12,6 @@ using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Sheet;
-using Drachenhorn.Xml.Template;
 using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
@@ -28,7 +26,7 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class MainView
     {
-        private MainViewModel Model => DataContext is MainViewModel model ? model : null;
+        #region c'tor
 
         public MainView(string path)
         {
@@ -36,15 +34,20 @@ namespace Drachenhorn.Desktop.Views
 
             NotificationContainer.Manager = new NotificationMessageManager();
 
-            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) =>
-            {
-                OpenFile(path);
-            };
+            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) => { OpenFile(path); };
 
             //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
         }
+
+        #endregion
+
+        #region Properties
+
+        private MainViewModel Model => DataContext is MainViewModel model ? model : null;
+
+        #endregion
 
         public void OpenFile(string path)
         {
@@ -76,11 +79,9 @@ namespace Drachenhorn.Desktop.Views
             {
                 var diag = new TemplateSelectorDialog();
                 if (diag.ShowDialog() == true)
-                {
                     if (Resources["TemplateViewModel"] != null)
                         ((TemplateViewModel) ((BindingProxy) Resources["TemplateViewModel"]).Data).Template =
                             diag.SelectedTemplate;
-                }
                 //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
             }
         }
@@ -101,6 +102,16 @@ namespace Drachenhorn.Desktop.Views
                 e.Cancel = true;
         }
 
+        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            // set the content
+            if (e.ClickedItem is HamburgerMenuItem item && item.Tag != null)
+                HamburgerMenuControl.Content = item;
+
+            // close the pane
+            HamburgerMenuControl.IsPaneOpen = false;
+        }
+
         #region Update
 
         private void MainView_OnLoaded(object sender, RoutedEventArgs e)
@@ -112,7 +123,8 @@ namespace Drachenhorn.Desktop.Views
                     {
                         NotificationContainer.Manager.CreateMessage()
                             .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
-                            .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                            .Background(
+                                (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                             .HasBadge(LanguageManager.Translate("Updater.Title"))
                             .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
@@ -144,7 +156,8 @@ namespace Drachenhorn.Desktop.Views
                         {
                             NotificationContainer.Manager.CreateMessage()
                                 .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
-                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                                .Background(
+                                    (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                                 .HasBadge(LanguageManager.Translate("Updater.Title"))
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
@@ -156,7 +169,8 @@ namespace Drachenhorn.Desktop.Views
                         {
                             NotificationContainer.Manager.CreateMessage()
                                 .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
-                                .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
+                                .Background(
+                                    (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
                                 .HasBadge(LanguageManager.Translate("Updater.Title"))
                                 .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
                                 .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
@@ -168,15 +182,5 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion Update
-
-        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
-        {
-            // set the content
-            if (e.ClickedItem is HamburgerMenuItem item && item.Tag != null)
-                this.HamburgerMenuControl.Content = item;
-
-            // close the pane
-            this.HamburgerMenuControl.IsPaneOpen = false;
-        }
     }
 }

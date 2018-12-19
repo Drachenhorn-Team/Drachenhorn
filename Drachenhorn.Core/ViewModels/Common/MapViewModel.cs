@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Text;
+﻿using System.Collections.Generic;
 using Drachenhorn.Map.BSPT;
 using Drachenhorn.Map.Common;
 using GalaSoft.MvvmLight;
@@ -12,13 +8,22 @@ namespace Drachenhorn.Core.ViewModels.Common
 {
     public class MapViewModel : ViewModelBase
     {
+        #region c'tor
+
+        public MapViewModel()
+        {
+            InitializeCommands();
+        }
+
+        #endregion
+
         #region Properties
 
         private List<List<TileType>> _grid;
 
         public List<List<TileType>> Grid
         {
-            get { return _grid; }
+            get => _grid;
             set
             {
                 if (_grid == value)
@@ -28,17 +33,7 @@ namespace Drachenhorn.Core.ViewModels.Common
             }
         }
 
-        #endregion Properties
-
-
-        #region c'tor
-
-        public MapViewModel()
-        {
-            InitializeCommands();
-        }
-
-        #endregion c'tor
+        #endregion
 
 
         #region Commands
@@ -53,16 +48,13 @@ namespace Drachenhorn.Core.ViewModels.Common
         private void ExecuteGenerate()
         {
             var grid = LeafGenerator.GenerateLeaf();
-            List<List<TileType>> result = new List<List<TileType>>();
+            var result = new List<List<TileType>>();
 
 
-            for (int i = 0; i < grid.GetLength(1); ++i)
+            for (var i = 0; i < grid.GetLength(1); ++i)
             {
                 var temp = new List<TileType>();
-                for (int j = 0; j < grid.GetLength(0); ++j)
-                {
-                    temp.Add(grid[j,i]);
-                }
+                for (var j = 0; j < grid.GetLength(0); ++j) temp.Add(grid[j, i]);
 
                 result.Add(temp);
             }

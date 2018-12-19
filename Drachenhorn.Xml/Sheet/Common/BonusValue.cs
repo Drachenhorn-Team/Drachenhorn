@@ -12,6 +12,8 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class BonusValue : ChildChangedBase, IFormulaKeyItem
     {
+        #region Properties
+
         [XmlIgnore] private string _key;
 
         [XmlIgnore] private string _name;
@@ -36,6 +38,8 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
+
+        #endregion
 
         /// <inheritdoc />
         [XmlAttribute("Key")]

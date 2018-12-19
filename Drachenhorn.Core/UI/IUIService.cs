@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Drachenhorn.Core.UI
+﻿namespace Drachenhorn.Core.UI
 {
     public interface IUIService
     {

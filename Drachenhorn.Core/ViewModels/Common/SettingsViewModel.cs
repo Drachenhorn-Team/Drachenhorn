@@ -1,6 +1,5 @@
 ﻿using Drachenhorn.Core.Settings;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Core.ViewModels.Common
@@ -16,7 +15,7 @@ namespace Drachenhorn.Core.ViewModels.Common
             DialogService = dialogService;
         }
 
-        #endregion c'tor
+        #endregion
 
         #region Properties
 
@@ -36,6 +35,6 @@ namespace Drachenhorn.Core.ViewModels.Common
 
         private IDialogService DialogService { get; }
 
-        #endregion Properties
+        #endregion
     }
 }

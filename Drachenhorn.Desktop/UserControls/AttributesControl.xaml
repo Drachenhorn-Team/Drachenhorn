@@ -10,24 +10,24 @@
     <DockPanel>
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Click="AddButton_Click">
-                <Image Source="{StaticResource AddIcon}" Width="24"/>
+                <Image Source="{StaticResource AddIcon}" Width="24" />
             </Button>
         </WrapPanel>
         <DataGrid Name="List" ItemsSource="{Binding .}" AutoGenerateColumns="False" CanUserAddRows="True"
                   PreviewMouseWheel="List_PreviewMouseWheel">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Binding="{Binding Name}"
-                                    Width="*"/>
+                                    Width="*" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.StartValue}" Binding="{Binding StartValue}"
-                                    Width="Auto" IsReadOnly="True"/>
+                                    Width="Auto" IsReadOnly="True" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Modifier}" Binding="{Binding Modifier}"
-                                    Width="Auto"/>
+                                    Width="Auto" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}" Binding="{Binding Value}"
-                                    Width="Auto"/>
+                                    Width="Auto" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <userElements:InfoButton InfoObject="{Binding .}"/>
+                            <userElements:InfoButton InfoObject="{Binding .}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

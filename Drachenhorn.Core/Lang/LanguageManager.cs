@@ -11,6 +11,8 @@ namespace Drachenhorn.Core.Lang
 {
     public class LanguageManager : BindableBase, INotifyLanguageChanged
     {
+        #region Properties
+
         private readonly ResourceManager _resourceManager =
             new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
@@ -35,6 +37,8 @@ namespace Drachenhorn.Core.Lang
         /// <param name="key">TranslateID</param>
         /// <returns>Translated Text</returns>
         public string this[string key] => TranslateText(key);
+
+        #endregion
 
         /// <summary>
         ///     Returns the translated Text for the TranslateID.

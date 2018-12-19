@@ -11,7 +11,7 @@ namespace Drachenhorn.Xml.Calculation
     /// <seealso cref="Drachenhorn.Xml.BindableBase" />
     public abstract class CalculationValue : BindableBase
     {
-        #region c'tor  
+        #region c'tor
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="CalculationValue" /> class.
@@ -22,7 +22,7 @@ namespace Drachenhorn.Xml.Calculation
 
             Formula.PropertyChanged += (sender, args) => { StartValue = (int) Math.Round(Formula.Calculate()); };
 
-            Formula.ParameterChanged += () => { StartValue = (int)Math.Round(Formula.Calculate()); };
+            Formula.ParameterChanged += () => { StartValue = (int) Math.Round(Formula.Calculate()); };
 
             Formula.CalculateAll += (sender, args) =>
             {
@@ -30,23 +30,15 @@ namespace Drachenhorn.Xml.Calculation
             };
         }
 
-        #endregion c'tor
-
-        /// <summary>
-        ///     Gets the information.
-        /// </summary>
-        /// <param name="dictionary">The dictionary to add the Information to.</param>
-        public void GetInformation(ref Dictionary<string, string> dictionary)
-        {
-            if (!string.IsNullOrEmpty(Formula.Expression))
-                dictionary.Add("%Info.Formula", Formula.Expression);
-
-            dictionary.Add("%CharacterSheet.StartValue", StartValue.ToString());
-            dictionary.Add("%CharacterSheet.Modifier", Modifier.ToString());
-            dictionary.Add("%CharacterSheet.Value", Value.ToString());
-        }
+        #endregion
 
         #region Properties
+
+        [XmlIgnore] private int _currentValueDiff;
+
+        [XmlIgnore] private Formula _formula;
+
+        [XmlIgnore] private int _modifier;
 
         [XmlIgnore] private int _startValue;
 
@@ -70,8 +62,6 @@ namespace Drachenhorn.Xml.Calculation
             }
         }
 
-        [XmlIgnore] private int _modifier;
-
         /// <summary>
         ///     Gets or sets the modifier.
         /// </summary>
@@ -92,8 +82,6 @@ namespace Drachenhorn.Xml.Calculation
             }
         }
 
-        [XmlIgnore] private int _currentValueDiff;
-
         /// <summary>
         ///     Gets or sets the current value.
         /// </summary>
@@ -110,8 +98,6 @@ namespace Drachenhorn.Xml.Calculation
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private Formula _formula;
 
         /// <summary>
         ///     Gets or sets the formula.
@@ -154,6 +140,20 @@ namespace Drachenhorn.Xml.Calculation
             }
         }
 
-        #endregion Properties
+        #endregion
+
+        /// <summary>
+        ///     Gets the information.
+        /// </summary>
+        /// <param name="dictionary">The dictionary to add the Information to.</param>
+        public void GetInformation(ref Dictionary<string, string> dictionary)
+        {
+            if (!string.IsNullOrEmpty(Formula.Expression))
+                dictionary.Add("%Info.Formula", Formula.Expression);
+
+            dictionary.Add("%CharacterSheet.StartValue", StartValue.ToString());
+            dictionary.Add("%CharacterSheet.Modifier", Modifier.ToString());
+            dictionary.Add("%CharacterSheet.Value", Value.ToString());
+        }
     }
 }

@@ -14,7 +14,37 @@ namespace Drachenhorn.Xml.Sheet.Common
     {
         #region Properties
 
+        [XmlIgnore] private uint _age;
+
+        [XmlIgnore] private DSADate _birthDate = new DSADate();
+
+        [XmlIgnore] private CultureInformation _culture = new CultureInformation();
+
+        [XmlIgnore] private string _eyeColor;
+
+        [XmlIgnore] private string _family;
+
+        [XmlIgnore] private Gender _gender;
+
+        [XmlIgnore] private string _hairColor;
+
+        [XmlIgnore] private double _height;
+
         [XmlIgnore] private string _name;
+
+        [XmlIgnore] private string _other;
+
+        [XmlIgnore] private string _placeOfBirth;
+
+        [XmlIgnore] private ProfessionInformation _profession = new ProfessionInformation();
+
+        [XmlIgnore] private RaceInformation _race = new RaceInformation();
+
+        [XmlIgnore] private uint _socialStatus;
+
+        [XmlIgnore] private string _title;
+
+        [XmlIgnore] private double _weight;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -35,8 +65,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private string _family;
-
         /// <summary>
         ///     Gets or sets the family.
         /// </summary>
@@ -55,8 +83,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private string _placeOfBirth;
 
         /// <summary>
         ///     Gets or sets the place of birth.
@@ -77,8 +103,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private DSADate _birthDate = new DSADate();
-
         /// <summary>
         ///     Gets or sets the birth date.
         /// </summary>
@@ -97,8 +121,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private Gender _gender;
 
         /// <summary>
         ///     Gets or sets the gender.
@@ -119,8 +141,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private uint _age;
-
         /// <summary>
         ///     Gets or sets the age.
         /// </summary>
@@ -139,8 +159,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private double _height;
 
         /// <summary>
         ///     Gets or sets the height.
@@ -161,8 +179,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private double _weight;
-
         /// <summary>
         ///     Gets or sets the weight.
         /// </summary>
@@ -181,8 +197,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private string _hairColor;
 
         /// <summary>
         ///     Gets or sets the color of the hair.
@@ -203,8 +217,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private string _eyeColor;
-
         /// <summary>
         ///     Gets or sets the color of the eye.
         /// </summary>
@@ -223,8 +235,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private uint _socialStatus;
 
         /// <summary>
         ///     Gets or sets the social status.
@@ -245,8 +255,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private string _other;
-
         /// <summary>
         ///     Gets or sets the other information.
         /// </summary>
@@ -265,8 +273,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private string _title;
 
         /// <summary>
         ///     Gets or sets the title.
@@ -287,8 +293,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private RaceInformation _race = new RaceInformation();
-
         /// <summary>
         ///     Gets or sets the race.
         /// </summary>
@@ -307,8 +311,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private CultureInformation _culture = new CultureInformation();
 
         /// <summary>
         ///     Gets or sets the culture.
@@ -329,8 +331,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private ProfessionInformation _profession = new ProfessionInformation();
-
         /// <summary>
         ///     Gets or sets the profession.
         /// </summary>
@@ -350,6 +350,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

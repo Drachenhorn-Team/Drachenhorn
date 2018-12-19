@@ -19,25 +19,26 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                
-                <ResourceDictionary Source="UI/Themes/Controls.xaml"/>
-                <ResourceDictionary Source="UI/Themes/Images/Black.xaml"/>
-                <ResourceDictionary Source="UI/Themes/Images/Common.xaml"/>
-                <ResourceDictionary Source="Converter/Converter.xaml"/>
-                
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+
+                <ResourceDictionary Source="UI/Themes/Controls.xaml" />
+                <ResourceDictionary Source="UI/Themes/Images/Black.xaml" />
+                <ResourceDictionary Source="UI/Themes/Images/Common.xaml" />
+                <ResourceDictionary Source="Converter/Converter.xaml" />
+
                 <ResourceDictionary>
-                    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
-                    <template:TemplateManager x:Key="TemplateManager"/>
-                    <userSettings:Settings x:Key="Settings"/>
+                    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+                    <template:TemplateManager x:Key="TemplateManager" />
+                    <userSettings:Settings x:Key="Settings" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-            
+
             <Style TargetType="Control">
-                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
             </Style>
             <Style TargetType="Window">
-                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+                <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
             </Style>
 
             <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>

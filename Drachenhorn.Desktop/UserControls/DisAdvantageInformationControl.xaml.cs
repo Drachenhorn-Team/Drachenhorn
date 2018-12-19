@@ -9,10 +9,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class DisAdvantageInformationControl : UserControl
     {
+        #region c'tor
+
         public DisAdvantageInformationControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void DataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {

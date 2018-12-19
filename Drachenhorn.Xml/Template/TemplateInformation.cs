@@ -15,10 +15,10 @@ namespace Drachenhorn.Xml.Template
         [XmlIgnore] private TemplateGenerationType _generationType = TemplateGenerationType.GenerationPoints;
 
         /// <summary>
-        /// Gets or sets the type of the generation.
+        ///     Gets or sets the type of the generation.
         /// </summary>
         /// <value>
-        /// The type of the generation.
+        ///     The type of the generation.
         /// </value>
         [XmlAttribute("GenerationType")]
         public TemplateGenerationType GenerationType
@@ -33,6 +33,6 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

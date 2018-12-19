@@ -8,6 +8,8 @@ namespace Drachenhorn.Desktop.UserElements
 {
     public class LocalizedComboBox : ComboBox
     {
+        #region c'tor
+
         static LocalizedComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LocalizedComboBox),
@@ -35,5 +37,7 @@ namespace Drachenhorn.Desktop.UserElements
                 }
             };
         }
+
+        #endregion
     }
 }

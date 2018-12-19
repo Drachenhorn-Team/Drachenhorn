@@ -24,7 +24,7 @@ namespace Drachenhorn.Xml.Calculation
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Formula"/> class.
+        ///     Initializes a new instance of the <see cref="Formula" /> class.
         /// </summary>
         /// <param name="parentSheet">The parent sheet.</param>
         public Formula(CharacterSheet parentSheet)
@@ -32,7 +32,51 @@ namespace Drachenhorn.Xml.Calculation
             ParentSheet = parentSheet;
         }
 
-        #endregion c'tor
+        #endregion
+
+        #region Properties
+
+        private string _expression;
+
+        private CharacterSheet _parentSheet;
+
+        /// <summary>
+        ///     Gets or sets the parent sheet.
+        /// </summary>
+        /// <value>
+        ///     The parent sheet.
+        /// </value>
+        public CharacterSheet ParentSheet
+        {
+            get => _parentSheet;
+            set
+            {
+                if (_parentSheet == value)
+                    return;
+                _parentSheet = value;
+                OnPropertyChanged(null);
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the expression.
+        /// </summary>
+        /// <value>
+        ///     The expression.
+        /// </value>
+        public string Expression
+        {
+            get => _expression;
+            set
+            {
+                if (_expression == value)
+                    return;
+                _expression = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         /// <summary>
         ///     Calculates this instance.
@@ -77,47 +121,21 @@ namespace Drachenhorn.Xml.Calculation
             return Task.Run(() => { finished(Calculate()); });
         }
 
-        #region Properties
+        #region CustomCalculationFunctions
 
-        private CharacterSheet _parentSheet;
-
-        /// <summary>
-        ///     Gets or sets the parent sheet.
-        /// </summary>
-        /// <value>
-        ///     The parent sheet.
-        /// </value>
-        public CharacterSheet ParentSheet
+        private static void CustomCalculationExpression(string name, FunctionArgs args)
         {
-            get => _parentSheet;
-            set
-            {
-                if (_parentSheet == value)
-                    return;
-                _parentSheet = value;
-                OnPropertyChanged(null);
-            }
+            if (name.ToLower() == "random")
+                if (args.Parameters.Length == 0)
+                    args.Result = new Random().Next();
+                else if (args.Parameters.Length == 1)
+                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate());
+                else if (args.Parameters.Length == 2)
+                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate(),
+                        (int) args.Parameters[1].Evaluate());
         }
 
-        private string _expression;
-
-        /// <summary>
-        ///     Gets or sets the expression.
-        /// </summary>
-        /// <value>
-        ///     The expression.
-        /// </value>
-        public string Expression
-        {
-            get => _expression;
-            set
-            {
-                if (_expression == value)
-                    return;
-                _expression = value;
-                OnPropertyChanged();
-            }
-        }
+        #endregion CustomCalculationFunctions
 
 
         #region Validation
@@ -167,8 +185,6 @@ namespace Drachenhorn.Xml.Calculation
 
         #endregion Validation
 
-        #endregion Properties
-
         #region Parameter
 
         /// <summary>
@@ -195,7 +211,9 @@ namespace Drachenhorn.Xml.Calculation
                 };
             }
             else
+            {
                 expression.Parameters[item.Key] = item.Value;
+            }
         }
 
         /// <summary>
@@ -221,7 +239,7 @@ namespace Drachenhorn.Xml.Calculation
         }
 
         /// <summary>
-        ///    The Handler to recalculate if Parameters change
+        ///     The Handler to recalculate if Parameters change
         /// </summary>
         public delegate void ParameterChangedHandler();
 
@@ -262,28 +280,5 @@ namespace Drachenhorn.Xml.Calculation
         }
 
         #endregion CalculateEvent
-
-        #region CustomCalculationFunctions
-
-        private static void CustomCalculationExpression(string name, FunctionArgs args)
-        {
-            if (name.ToLower() == "random")
-            {
-                if (args.Parameters.Length == 0)
-                {
-                    args.Result = new Random().Next();
-                }
-                else if (args.Parameters.Length == 1)
-                {
-                    args.Result = new Random().Next((int)args.Parameters[0].Evaluate());
-                }
-                else if (args.Parameters.Length == 2)
-                {
-                    args.Result = new Random().Next((int)args.Parameters[0].Evaluate(), (int)args.Parameters[1].Evaluate());
-                }
-            }
-        }
-
-        #endregion CustomCalculationFunctions
     }
 }

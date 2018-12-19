@@ -15,10 +15,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class CoatOfArmsControl : UserControl
     {
+        #region c'tor
+
         public CoatOfArmsControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {

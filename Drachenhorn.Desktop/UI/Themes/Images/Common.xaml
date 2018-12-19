@@ -15,8 +15,8 @@
     <BitmapImage x:Key="BannerIcon" UriSource="pack://application:,,,/Images/Common/Banner.jpg" />
     <BitmapImage x:Key="DrachenhornLogo" UriSource="pack://application:,,,/Images/Common/Logo.png" />
 
-    <BitmapImage x:Key="DrachenhornIcon" UriSource="pack://application:,,,/Images/Common/Icon600x600.png"/>
-    <BitmapImage x:Key="DrachenhornIconSmall" UriSource="pack://application:,,,/Images/Common/Icon64x64.png"/>
+    <BitmapImage x:Key="DrachenhornIcon" UriSource="pack://application:,,,/Images/Common/Icon600x600.png" />
+    <BitmapImage x:Key="DrachenhornIconSmall" UriSource="pack://application:,,,/Images/Common/Icon64x64.png" />
 
     <!-- Black Images -->
 
@@ -52,7 +52,8 @@
 
     <BitmapImage x:Key="AddIconWhite" UriSource="pack://application:,,,/Images/White/Common/Add.png" />
     <BitmapImage x:Key="RemoveIconWhite" UriSource="pack://application:,,,/Images/White/Common/Remove.png" />
-    <BitmapImage x:Key="ArrowBlockDownIconWhite" UriSource="pack://application:,,,/Images/White/Common/ArrowBlockDown.png" />
+    <BitmapImage x:Key="ArrowBlockDownIconWhite"
+                 UriSource="pack://application:,,,/Images/White/Common/ArrowBlockDown.png" />
     <BitmapImage x:Key="DownloadIconWhite" UriSource="pack://application:,,,/Images/White/Common/Download.png" />
 
     <BitmapImage x:Key="ImportIconWhite" UriSource="pack://application:,,,/Images/White/Import.png" />

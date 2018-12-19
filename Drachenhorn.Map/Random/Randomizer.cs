@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Drachenhorn.Map.Random
+﻿namespace Drachenhorn.Map.Random
 {
     public static class Randomizer
     {
         private static System.Random _random = new System.Random();
 
         private static int _seed;
+
+        #region Properties
+
         public static int Seed
         {
             get
@@ -26,10 +25,12 @@ namespace Drachenhorn.Map.Random
             }
         }
 
+        #endregion
+
         public static void Reset(int seed = 0)
         {
             if (seed == 0)
-                seed = new System.Random().Next(Int32.MinValue, Int32.MaxValue);
+                seed = new System.Random().Next(int.MinValue, int.MaxValue);
 
             Seed = seed;
         }

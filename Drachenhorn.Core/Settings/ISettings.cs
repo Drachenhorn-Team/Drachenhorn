@@ -1,11 +1,12 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Core.Settings
 {
     public interface ISettings
     {
+        #region Properties
+
         bool IsNew { get; }
 
         CultureInfo CurrentCulture { get; set; }
@@ -17,7 +18,9 @@ namespace Drachenhorn.Core.Settings
         string AccentColor { get; set; }
 
         bool? ShowConsole { get; set; }
-        
+
         SheetTemplate CurrentTemplate { get; set; }
+
+        #endregion
     }
 }

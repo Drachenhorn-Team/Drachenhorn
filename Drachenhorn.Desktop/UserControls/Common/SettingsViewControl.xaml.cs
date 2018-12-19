@@ -1,39 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Desktop.UserSettings;
-using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UserControls.Common
 {
     /// <summary>
-    /// Interaktionslogik für SettingsViewControl.xaml
+    ///     Interaktionslogik für SettingsViewControl.xaml
     /// </summary>
     public partial class SettingsViewControl : UserControl
     {
+        #region c'tor
+
         public SettingsViewControl()
         {
             InitializeComponent();
 
             Loaded += (sender, args) => { LanguageComboBox_SelectionChanged(sender, null); };
         }
+
+        #endregion
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -104,10 +99,12 @@ namespace Drachenhorn.Desktop.UserControls.Common
                     }));
             }
             else
+            {
                 SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                     LanguageManager.Translate("Updater.NoUpdateAvailable"),
                     LanguageManager.Translate("Updater.Title"),
                     LanguageManager.Translate("UI.OK"), null);
+            }
         }
 
         private void SettingsViewControl_OnLoaded(object sender, RoutedEventArgs e)

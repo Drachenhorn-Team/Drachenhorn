@@ -14,10 +14,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class BaseValuesControl : UserControl
     {
+        #region c'tor
+
         public BaseValuesControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +46,7 @@ namespace Drachenhorn.Desktop.UserControls
             var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
             eventArg.RoutedEvent = MouseWheelEvent;
             eventArg.Source = sender;
-            var parent = ((Control)sender).Parent as UIElement;
+            var parent = ((Control) sender).Parent as UIElement;
             parent.RaiseEvent(eventArg);
         }
     }

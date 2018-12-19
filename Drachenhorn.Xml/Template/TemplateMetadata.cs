@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -14,91 +13,9 @@ namespace Drachenhorn.Xml.Template
     public class TemplateMetadata : ChildChangedBase, IEquatable<TemplateMetadata>
     {
         /// <summary>
-        ///     Gets the Template BaseDirectory.
-        /// </summary>
-        /// <value>
-        ///     The Template BaseDirectory.
-        /// </value>
-        public static string BaseDirectory => System.IO.Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Drachenhorn", "Templates");
-
-        /// <summary>
         ///     The Template Extension
         /// </summary>
         public static readonly string Extension = ".dsat";
-
-        #region Properties
-
-        [XmlIgnore] private double _version;
-
-        /// <summary>
-        ///     Version of the Template
-        /// </summary>
-        [XmlAttribute("Version")]
-        public double Version
-        {
-            get => _version;
-            set
-            {
-                if (Math.Abs(_version - value) < double.Epsilon)
-                    return;
-                _version = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private string _path;
-        /// <summary>
-        ///     Path of the Template
-        /// </summary>
-        [XmlIgnore]
-        public string Path
-        {
-            get => _path;
-            set
-            {
-                if (_path == value)
-                    return;
-                _path = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private string _name;
-        /// <summary>
-        ///     Gets or sets the name of the file.
-        /// </summary>
-        /// <value>
-        ///     The name of the file.
-        /// </value>
-        [XmlAttribute("Name")]
-        public string Name
-        {
-            get => _name;
-            set
-            {
-                if (_name == value)
-                    return;
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private SheetTemplate _template;
-
-        public SheetTemplate EntireTemplate
-        {
-            get
-            {
-                if (_template == null && !string.IsNullOrEmpty(Path))
-                    _template = SheetTemplate.Load(Path);
-                return _template;
-            }
-        }
-
-        #endregion Properties
-
 
         #region c'tor
 
@@ -136,6 +53,91 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        #endregion
+
+        #region Properties
+
+        [XmlIgnore] private string _name;
+
+        [XmlIgnore] private string _path;
+
+        private SheetTemplate _template;
+
+        [XmlIgnore] private double _version;
+
+        /// <summary>
+        ///     Gets the Template BaseDirectory.
+        /// </summary>
+        /// <value>
+        ///     The Template BaseDirectory.
+        /// </value>
+        public static string BaseDirectory => System.IO.Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "Drachenhorn", "Templates");
+
+        /// <summary>
+        ///     Version of the Template
+        /// </summary>
+        [XmlAttribute("Version")]
+        public double Version
+        {
+            get => _version;
+            set
+            {
+                if (Math.Abs(_version - value) < double.Epsilon)
+                    return;
+                _version = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Path of the Template
+        /// </summary>
+        [XmlIgnore]
+        public string Path
+        {
+            get => _path;
+            set
+            {
+                if (_path == value)
+                    return;
+                _path = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the name of the file.
+        /// </summary>
+        /// <value>
+        ///     The name of the file.
+        /// </value>
+        [XmlAttribute("Name")]
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name == value)
+                    return;
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public SheetTemplate EntireTemplate
+        {
+            get
+            {
+                if (_template == null && !string.IsNullOrEmpty(Path))
+                    _template = SheetTemplate.Load(Path);
+                return _template;
+            }
+        }
+
+        #endregion
+
         /// <summary>
         ///     Sets Version based on the second line of the XML-File
         /// </summary>
@@ -145,14 +147,13 @@ namespace Drachenhorn.Xml.Template
             var versionMatch = new Regex("Version=\"[0-9]+[.]?[0-9]*\"").Match(line).Value;
 
             if (!string.IsNullOrEmpty(versionMatch))
-                Version = double.Parse(versionMatch.Substring(9, versionMatch.Length - 10), CultureInfo.InvariantCulture);
+                Version = double.Parse(versionMatch.Substring(9, versionMatch.Length - 10),
+                    CultureInfo.InvariantCulture);
 
             var nameMatch = new Regex("Name=\"[^\"]*\"").Match(line).Value;
 
             Name = !string.IsNullOrEmpty(nameMatch) ? nameMatch.Substring(6, nameMatch.Length - 7) : "unnamed";
         }
-
-        #endregion c'tor
 
 
         #region Equals
@@ -160,7 +161,7 @@ namespace Drachenhorn.Xml.Template
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            return obj is TemplateMetadata metadata && this.Equals(metadata);
+            return obj is TemplateMetadata metadata && Equals(metadata);
         }
 
         /// <inheritdoc />
@@ -173,7 +174,7 @@ namespace Drachenhorn.Xml.Template
         }
 
         /// <summary>
-        /// Checks if objects are Equal.
+        ///     Checks if objects are Equal.
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns>True if Equal</returns>
@@ -181,32 +182,32 @@ namespace Drachenhorn.Xml.Template
         {
             if (obj == null) return false;
 
-            return this.Name == obj.Name && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+            return Name == obj.Name && Math.Abs(Version - obj.Version) < double.Epsilon;
         }
 
         /// <summary>
-        /// Implements the operator ==.
+        ///     Implements the operator ==.
         /// </summary>
         /// <param name="lhs">The LHS.</param>
         /// <param name="rhs">The RHS.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator ==(TemplateMetadata lhs, TemplateMetadata rhs)
         {
-            if ((object)lhs == null)
-                return ((object)rhs == null);
+            if ((object) lhs == null)
+                return (object) rhs == null;
 
             return lhs.Equals(rhs);
         }
 
         /// <summary>
-        /// Implements the operator !=.
+        ///     Implements the operator !=.
         /// </summary>
         /// <param name="lhs">The LHS.</param>
         /// <param name="rhs">The RHS.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator !=(TemplateMetadata lhs, TemplateMetadata rhs)
         {

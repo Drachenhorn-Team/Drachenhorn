@@ -1,14 +1,14 @@
 ﻿<mah:MetroWindow x:Class="Drachenhorn.Desktop.UI.Dialogs.TemplateSelectorDialog"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:downloader="clr-namespace:Drachenhorn.Core.Downloader;assembly=Drachenhorn.Core"
-        mc:Ignorable="d" TitleCharacterCasing="Normal"
-        Style="{StaticResource {x:Type Window}}"
-        Title="{lang:Translate Template.SelectorDialog}" Height="450" Width="800">
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:downloader="clr-namespace:Drachenhorn.Core.Downloader;assembly=Drachenhorn.Core"
+                 mc:Ignorable="d" TitleCharacterCasing="Normal"
+                 Style="{StaticResource {x:Type Window}}"
+                 Title="{lang:Translate Template.SelectorDialog}" Height="450" Width="800">
     <TabControl SelectionChanged="Selector_OnSelectionChanged">
         <TabItem Name="LocalTemplates" Header="{lang:Translate UI.Installed}">
             <DockPanel>
@@ -22,9 +22,9 @@
                           ItemsSource="{Binding AvailableTemplates, Source={StaticResource TemplateManager}}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate Template.Name}" FontSize="16"
-                                            Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
+                                            Binding="{Binding Name}" IsReadOnly="True" Width="Auto" />
                         <DataGridTextColumn Header="{lang:Translate Template.Version}" FontSize="16"
-                                            Binding="{Binding Version}" IsReadOnly="True" Width="*"/>
+                                            Binding="{Binding Version}" IsReadOnly="True" Width="*" />
                         <DataGridTemplateColumn Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -54,15 +54,15 @@
                           AutoGenerateColumns="False" RowHeight="40">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate Template.Name}" Width="Auto"
-                                            Binding="{Binding Name}" IsReadOnly="True" FontSize="16"/>
+                                            Binding="{Binding Name}" IsReadOnly="True" FontSize="16" />
                         <DataGridTextColumn Header="{lang:Translate Template.Version}" Width="Auto"
-                                            Binding="{Binding Version}" IsReadOnly="True" FontSize="16"/>
+                                            Binding="{Binding Version}" IsReadOnly="True" FontSize="16" />
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate DataType="downloader:OnlineTemplate">
                                     <ProgressBar Value="{Binding Progress, Mode=OneWay}"
                                                  Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
-                                                 Margin="5" VerticalAlignment="Center"/>
+                                                 Margin="5" VerticalAlignment="Center" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -71,7 +71,7 @@
                                 <DataTemplate DataType="downloader:OnlineTemplate">
                                     <Button Click="DownloadButton_OnClick"
                                             Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}">
-                                        <Image Source="{StaticResource DownloadIcon}" Margin="2"/>
+                                        <Image Source="{StaticResource DownloadIcon}" Margin="2" />
                                     </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -80,7 +80,7 @@
                 </DataGrid>
 
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <mah:ProgressRing IsActive="{Binding IsLoading}" Foreground="{DynamicResource AccentColorBrush}"/>
+                    <mah:ProgressRing IsActive="{Binding IsLoading}" Foreground="{DynamicResource AccentColorBrush}" />
                     <Border Background="{StaticResource ControlBackgroundBrush}"
                             Margin="5" BorderBrush="{StaticResource ControlBorderBrush}"
                             Visibility="{Binding IsConnectionSuccessful, Converter={StaticResource BoolToInVisibilityConverter}}">

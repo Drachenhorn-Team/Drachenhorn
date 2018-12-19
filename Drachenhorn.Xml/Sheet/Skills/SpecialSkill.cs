@@ -13,18 +13,29 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class SpecialSkill : BindableBase, IInfoObject
     {
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
+        #region c'tor
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
+        /// </summary>
+        public SpecialSkill()
         {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-
-            return result;
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        public SpecialSkill(string name)
+        {
+            Name = name;
+        }
+
+        #endregion
+
         #region Properties
+
+        [XmlIgnore] private string _description;
 
         [XmlIgnore] private string _name = "";
 
@@ -47,8 +58,6 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        [XmlIgnore] private string _description;
-
         /// <summary>
         ///     Gets or sets the description.
         /// </summary>
@@ -68,26 +77,17 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
-        #endregion Properties
+        #endregion
 
-        #region c'tor
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
-        /// </summary>
-        public SpecialSkill()
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
         {
-        }
+            var result = new Dictionary<string, string>();
 
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="SpecialSkill" /> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public SpecialSkill(string name)
-        {
-            Name = name;
-        }
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
 
-        #endregion c'tor
+            return result;
+        }
     }
 }

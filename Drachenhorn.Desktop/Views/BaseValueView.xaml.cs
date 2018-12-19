@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using Drachenhorn.Xml.Sheet.Skills;
+﻿using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -8,7 +7,7 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class BaseValueView
     {
-        private BaseValue _baseValue;
+        #region c'tor
 
         public BaseValueView(BaseValue baseValue)
         {
@@ -18,6 +17,12 @@ namespace Drachenhorn.Desktop.Views
 
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Properties
+
+        private BaseValue _baseValue;
 
         public BaseValue BaseValue
         {
@@ -29,5 +34,7 @@ namespace Drachenhorn.Desktop.Views
                 _baseValue = value;
             }
         }
+
+        #endregion
     }
 }

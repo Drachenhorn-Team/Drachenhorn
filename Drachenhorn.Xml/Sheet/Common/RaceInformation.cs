@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
+using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Xml.Sheet.Common
 {
@@ -14,11 +15,15 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class RaceInformation : ChildChangedBase, IInfoObject
     {
+        #region Properties
+
         [XmlIgnore] private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
 
         [XmlIgnore] private string _description;
 
         [XmlIgnore] private string _name;
+        
+        [XmlIgnore] private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
 
         /// <summary>
         ///     Gets or sets the name.
@@ -42,9 +47,6 @@ namespace Drachenhorn.Xml.Sheet.Common
         /// <summary>
         ///     Gets or sets the description.
         /// </summary>
-        /// <value>
-        ///     The description.
-        /// </value>
         [XmlAttribute("Description")]
         public string Description
         {
@@ -61,9 +63,6 @@ namespace Drachenhorn.Xml.Sheet.Common
         /// <summary>
         ///     Gets or sets the base values.
         /// </summary>
-        /// <value>
-        ///     The base values.
-        /// </value>
         [XmlElement("BaseValue")]
         public ObservableCollection<BonusValue> BaseValues
         {
@@ -77,6 +76,24 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
+        /// <summary>
+        ///     Gets or sets the skills.
+        /// </summary>
+        [XmlElement("Skill")]
+        public ObservableCollection<Skill> Skills
+        {
+            get => _skills;
+            set
+            {
+                if (_skills == value)
+                    return;
+                _skills = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
@@ -89,7 +106,8 @@ namespace Drachenhorn.Xml.Sheet.Common
             var baseValues = "";
             foreach (var baseValue in BaseValues)
                 baseValues += baseValue.Name + ": " + baseValue.Value + " (" + baseValue.Key + ")" + "\n";
-            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
+            if (!string.IsNullOrEmpty(baseValues))
+                result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
 
 
             return result;

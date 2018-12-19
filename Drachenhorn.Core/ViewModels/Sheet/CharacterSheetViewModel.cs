@@ -11,6 +11,19 @@ namespace Drachenhorn.Core.ViewModels.Sheet
 {
     public class CharacterSheetViewModel : ViewModelBase
     {
+        #region c'tor
+
+        public CharacterSheetViewModel()
+        {
+        }
+
+        public CharacterSheetViewModel(CharacterSheet sheet)
+        {
+            CurrentSheet = sheet;
+        }
+
+        #endregion
+
         #region Properties
 
         private CharacterSheet _currentSheet = new CharacterSheet();
@@ -27,20 +40,7 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
-        #endregion Properties
-
-        #region c'tor
-
-        public CharacterSheetViewModel()
-        {
-        }
-
-        public CharacterSheetViewModel(CharacterSheet sheet)
-        {
-            CurrentSheet = sheet;
-        }
-
-        #endregion c'tor
+        #endregion
 
         #region Actions
 

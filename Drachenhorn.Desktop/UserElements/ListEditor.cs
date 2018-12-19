@@ -25,11 +25,17 @@ namespace Drachenhorn.Desktop.UserElements
                 typeof(string),
                 typeof(ListEditor));
 
+        #region c'tor
+
         static ListEditor()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ListEditor),
                 new FrameworkPropertyMetadata(typeof(ListEditor)));
         }
+
+        #endregion
+
+        #region Properties
 
         public DataTemplate ContentTemplate
         {
@@ -48,6 +54,8 @@ namespace Drachenhorn.Desktop.UserElements
             get => (string) GetValue(DisplayMemberPathProperty);
             set => SetValue(DisplayMemberPathProperty, value);
         }
+
+        #endregion
 
 
         public override void OnApplyTemplate()

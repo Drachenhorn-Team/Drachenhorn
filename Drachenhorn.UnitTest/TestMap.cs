@@ -1,5 +1,4 @@
-﻿using System;
-using Drachenhorn.Map.BSPT;
+﻿using Drachenhorn.Map.BSPT;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Drachenhorn.UnitTest

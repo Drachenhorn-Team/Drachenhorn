@@ -10,73 +10,6 @@ namespace Drachenhorn.Xml.Sheet.Roll
     [Serializable]
     public class RollAttributes : ChildChangedBase
     {
-        #region Properties
-
-        [XmlIgnore] private string _roll1;
-
-        /// <summary>
-        ///     Gets or sets the roll1.
-        /// </summary>
-        /// <value>
-        ///     The roll1.
-        /// </value>
-        [XmlAttribute("Roll_1")]
-        public string Roll1
-        {
-            get => _roll1;
-            set
-            {
-                if (_roll1 == value)
-                    return;
-                _roll1 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private string _roll2;
-
-        /// <summary>
-        ///     Gets or sets the roll2.
-        /// </summary>
-        /// <value>
-        ///     The roll2.
-        /// </value>
-        [XmlAttribute("Roll_2")]
-        public string Roll2
-        {
-            get => _roll2;
-            set
-            {
-                if (_roll2 == value)
-                    return;
-                _roll2 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private string _roll3;
-
-        /// <summary>
-        ///     Gets or sets the roll3.
-        /// </summary>
-        /// <value>
-        ///     The roll3.
-        /// </value>
-        [XmlAttribute("Roll_3")]
-        public string Roll3
-        {
-            get => _roll3;
-            set
-            {
-                if (_roll3 == value)
-                    return;
-                _roll3 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion Properties
-
         #region c'tor
 
         /// <summary>
@@ -99,7 +32,74 @@ namespace Drachenhorn.Xml.Sheet.Roll
             Roll3 = roll3;
         }
 
-        #endregion c'tor
+        #endregion
+
+        #region Properties
+
+        [XmlIgnore] private string _roll1;
+
+        [XmlIgnore] private string _roll2;
+
+        [XmlIgnore] private string _roll3;
+
+        /// <summary>
+        ///     Gets or sets the roll1.
+        /// </summary>
+        /// <value>
+        ///     The roll1.
+        /// </value>
+        [XmlAttribute("Roll_1")]
+        public string Roll1
+        {
+            get => _roll1;
+            set
+            {
+                if (_roll1 == value)
+                    return;
+                _roll1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the roll2.
+        /// </summary>
+        /// <value>
+        ///     The roll2.
+        /// </value>
+        [XmlAttribute("Roll_2")]
+        public string Roll2
+        {
+            get => _roll2;
+            set
+            {
+                if (_roll2 == value)
+                    return;
+                _roll2 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the roll3.
+        /// </summary>
+        /// <value>
+        ///     The roll3.
+        /// </value>
+        [XmlAttribute("Roll_3")]
+        public string Roll3
+        {
+            get => _roll3;
+            set
+            {
+                if (_roll3 == value)
+                    return;
+                _roll3 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         #region ToString
 

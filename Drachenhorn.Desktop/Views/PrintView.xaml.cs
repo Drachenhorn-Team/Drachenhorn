@@ -1,14 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Xml.Sheet;
-using GalaSoft.MvvmLight.Command;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -17,13 +14,15 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class PrintView
     {
+        #region c'tor
+
         public PrintView(CharacterSheet sheet)
         {
             InitializeComponent();
 
-            if (!(this.DataContext is PrintViewModel)) return;
+            if (!(DataContext is PrintViewModel)) return;
 
-            var model = (PrintViewModel) this.DataContext;
+            var model = (PrintViewModel) DataContext;
 
             model.CurrentSheet = sheet;
             model.PropertyChanged += TemplateSelectionChanged;
@@ -40,12 +39,14 @@ namespace Drachenhorn.Desktop.Views
             TemplateSelectionChanged(this, new PropertyChangedEventArgs("SelectedTemplate"));
         }
 
+        #endregion
+
         private void TemplateSelectionChanged(object sender, PropertyChangedEventArgs args)
         {
-            if (args.PropertyName != "SelectedTemplate" || !(this.DataContext is PrintViewModel))
+            if (args.PropertyName != "SelectedTemplate" || !(DataContext is PrintViewModel))
                 return;
 
-            var model = (PrintViewModel) this.DataContext;
+            var model = (PrintViewModel) DataContext;
 
             if (UseOwn.IsChecked == true && model.SelectedTemplate == null)
             {
@@ -61,10 +62,10 @@ namespace Drachenhorn.Desktop.Views
 
         private void PrintToBrowser(Func<string> generateFunc)
         {
-            if (!(this.DataContext is PrintViewModel))
+            if (!(DataContext is PrintViewModel))
                 return;
 
-            var model = (PrintViewModel)this.DataContext;
+            var model = (PrintViewModel) DataContext;
 
 
             Task.Run(() =>
@@ -82,9 +83,7 @@ namespace Drachenhorn.Desktop.Views
 
                     if (e.InnerException is AggregateException)
                         foreach (var exception in (e.InnerException as AggregateException)?.InnerExceptions)
-                        {
                             errorHtml += "<p>" + exception.Message + "</p>";
-                        }
 
                     return errorHtml + "</body></html>";
                 }
@@ -104,9 +103,9 @@ namespace Drachenhorn.Desktop.Views
 
         private void PrintCommand_OnCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (!(this.DataContext is PrintViewModel)) return;
+            if (!(DataContext is PrintViewModel)) return;
 
-            e.CanExecute = ((PrintViewModel)this.DataContext).CanPrint;
+            e.CanExecute = ((PrintViewModel) DataContext).CanPrint;
         }
 
         #region OnPropertyChanged

@@ -3,7 +3,6 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Xml.Template;
@@ -37,7 +36,25 @@ namespace Drachenhorn.Core.Downloader
             }
         }
 
-        #endregion c'tor
+        #endregion
+
+        #region Properties
+
+        private string _link;
+
+        public string Link
+        {
+            get => _link;
+            private set
+            {
+                if (_link == value)
+                    return;
+                _link = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
 
         #region Download
@@ -61,8 +78,8 @@ namespace Drachenhorn.Core.Downloader
                 SimpleIoc.Default.GetInstance<IIoService>()
                     .SaveString(
                         System.IO.Path.Combine(
-                            SheetTemplate.BaseDirectory,
-                            Name + SheetTemplate.Extension),
+                            BaseDirectory,
+                            Name + Extension),
                         result);
 
                 IsDownloadStarted = false;
@@ -85,22 +102,6 @@ namespace Drachenhorn.Core.Downloader
         }
 
         #endregion ToString
-
-        #region Properties
-
-        private string _link;
-
-        public string Link
-        {
-            get => _link;
-            private set
-            {
-                if (_link == value)
-                    return;
-                _link = value;
-                OnPropertyChanged();
-            }
-        }
 
         #region Download
 
@@ -133,7 +134,5 @@ namespace Drachenhorn.Core.Downloader
         }
 
         #endregion Download
-
-        #endregion Properties
     }
 }

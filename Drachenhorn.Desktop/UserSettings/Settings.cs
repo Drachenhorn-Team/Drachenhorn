@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Deployment.Application;
 using System.Globalization;
 using System.IO;
-using System.IO.Packaging;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DesktopBridge;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Xml;
@@ -37,24 +34,21 @@ namespace Drachenhorn.Desktop.UserSettings
             PropertyChanged += (sender, args) => { Save(); };
         }
 
-        #endregion c'tor
+        #endregion
 
         #region Properties
 
+        [XmlIgnore] private string _accentColor;
+
+        [XmlIgnore] private SheetTemplate _currentTemplate;
+
+        [XmlIgnore] private string _gitCommit;
+
         [XmlIgnore] private bool _isNew = true;
 
-        [XmlIgnore]
-        public bool IsNew
-        {
-            get => _isNew;
-            private set
-            {
-                if (_isNew == value)
-                    return;
-                _isNew = value;
-                OnPropertyChanged();
-            }
-        }
+        [XmlIgnore] private bool? _showConsole = false;
+
+        [XmlIgnore] private VisualThemeType _visualTheme;
 
         [XmlElement("CurrentCulture")]
         public string CurrentCultureString
@@ -70,6 +64,54 @@ namespace Drachenhorn.Desktop.UserSettings
                 {
                     CurrentCulture = CultureInfo.CurrentUICulture;
                 }
+            }
+        }
+
+        [XmlElement("AccentColor")]
+        public string AccentColor
+        {
+            get => _accentColor;
+            set
+            {
+                if (_accentColor == value)
+                    return;
+                _accentColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlElement("ShowConsole")]
+        public bool? ShowConsole
+        {
+            get => _showConsole;
+            set
+            {
+                if (_showConsole == value)
+                    return;
+                _showConsole = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlElement("CurrentTemplatePath")]
+        public string CurrentTemplatePath
+        {
+            get => CurrentTemplate?.Path;
+            set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
+        }
+
+        #endregion
+
+        [XmlIgnore]
+        public bool IsNew
+        {
+            get => _isNew;
+            private set
+            {
+                if (_isNew == value)
+                    return;
+                _isNew = value;
+                OnPropertyChanged();
             }
         }
 
@@ -92,25 +134,26 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             get
             {
-                DesktopBridge.Helpers helpers = new DesktopBridge.Helpers();
+                var helpers = new Helpers();
                 if (helpers.IsRunningAsUwp())
                     return "Version managed by Windows-Store";
 
                 try
                 {
                     using (var mgr = new UpdateManager(null))
+                    {
                         return mgr.CurrentlyInstalledVersion().ToString();
+                    }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>().Debug("Unable to load Squirrel Version.", e);
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
+                        .Debug("Unable to load Squirrel Version.", e);
                 }
 
                 return "Application not installed.";
             }
         }
-
-        [XmlIgnore] private string _gitCommit;
 
         [XmlIgnore]
         public string GitCommit
@@ -136,8 +179,6 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore] private VisualThemeType _visualTheme;
-
         [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme
         {
@@ -151,37 +192,6 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore] private string _accentColor;
-
-        [XmlElement("AccentColor")]
-        public string AccentColor
-        {
-            get => _accentColor;
-            set
-            {
-                if (_accentColor == value)
-                    return;
-                _accentColor = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private bool? _showConsole = false;
-
-        [XmlElement("ShowConsole")]
-        public bool? ShowConsole
-        {
-            get => _showConsole;
-            set
-            {
-                if (_showConsole == value)
-                    return;
-                _showConsole = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore] private SheetTemplate _currentTemplate;
 
         [XmlIgnore]
         public SheetTemplate CurrentTemplate
@@ -196,14 +206,14 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlElement("CurrentTemplatePath")]
-        public string CurrentTemplatePath
+        #region AccentColors
+
+        public static IEnumerable<string> GetAccents()
         {
-            get => CurrentTemplate?.Path;
-            set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
+            return ThemeManager.Accents.Select(x => x.Name).OrderBy(x => x);
         }
 
-        #endregion Properties
+        #endregion AccentColors
 
         #region Save/Load
 
@@ -282,14 +292,5 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         #endregion Save/Load
-
-        #region AccentColors
-
-        public static IEnumerable<string> GetAccents()
-        {
-            return ThemeManager.Accents.Select(x => x.Name).OrderBy(x => x);
-        }
-
-        #endregion AccentColors
     }
 }

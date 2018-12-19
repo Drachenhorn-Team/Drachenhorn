@@ -34,11 +34,31 @@ namespace Drachenhorn.Xml.Sheet
             ChildChanged += (sender, args) => { HasChanged = true; };
         }
 
-        #endregion c'tor
+        #endregion
 
         #region Properties
 
+        [XmlIgnore] private AdventurePoints _adventurePoints = new AdventurePoints();
+
+        [XmlIgnore] private ObservableCollection<Attribute> _attributes = new ObservableCollection<Attribute>();
+
+        [XmlIgnore] private ObservableCollection<BaseValue> _baseValues = new ObservableCollection<BaseValue>();
+
         [XmlIgnore] private Characteristics _characteristics = new Characteristics();
+
+        [XmlIgnore] private CoatOfArms _coatOfArms = new CoatOfArms();
+
+        [XmlIgnore]
+        private ObservableCollection<DisAdvantage> _disAdvantages = new ObservableCollection<DisAdvantage>();
+
+        [XmlIgnore] private double _gpBase;
+
+        [XmlIgnore] private Inventory _inventory = new Inventory();
+
+        [XmlIgnore] private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
+
+        [XmlIgnore]
+        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
 
         /// <summary>
         ///     Gets or sets the Characteristics.
@@ -59,8 +79,6 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        [XmlIgnore] private double _gpBase;
-
         /// <summary>
         ///     Gets or sets the GPBase.
         /// </summary>
@@ -79,8 +97,6 @@ namespace Drachenhorn.Xml.Sheet
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private CoatOfArms _coatOfArms = new CoatOfArms();
 
         /// <summary>
         ///     Gets or sets the CoatOfArms.
@@ -101,9 +117,6 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        [XmlIgnore]
-        private ObservableCollection<DisAdvantage> _disAdvantages = new ObservableCollection<DisAdvantage>();
-
         /// <summary>
         ///     Gets or sets the (Dis-)Advantages.
         /// </summary>
@@ -122,8 +135,6 @@ namespace Drachenhorn.Xml.Sheet
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private ObservableCollection<Attribute> _attributes = new ObservableCollection<Attribute>();
 
         /// <summary>
         ///     Gets or sets the Attributes.
@@ -144,8 +155,6 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        [XmlIgnore] private ObservableCollection<BaseValue> _baseValues = new ObservableCollection<BaseValue>();
-
         /// <summary>
         ///     Gets or sets the BaseValues.
         /// </summary>
@@ -164,8 +173,6 @@ namespace Drachenhorn.Xml.Sheet
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private AdventurePoints _adventurePoints = new AdventurePoints();
 
         /// <summary>
         ///     Gets or sets the Adventure Points.
@@ -186,8 +193,6 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        [XmlIgnore] private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
-
         /// <summary>
         ///     Gets or sets the Skills.
         /// </summary>
@@ -206,9 +211,6 @@ namespace Drachenhorn.Xml.Sheet
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore]
-        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
 
         /// <summary>
         ///     Gets or sets the Special Skills.
@@ -229,8 +231,6 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        [XmlIgnore] private Inventory _inventory = new Inventory();
-
         /// <summary>
         ///     Gets or sets the Inventory.
         /// </summary>
@@ -250,7 +250,7 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
-        #endregion Properties
+        #endregion
 
         #region Save/Load
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,10 +12,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class SkillListControl : UserControl
     {
+        #region c'tor
+
         public SkillListControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
@@ -27,7 +29,7 @@ namespace Drachenhorn.Desktop.UserControls
 
             var newItem = new Skill();
 
-            ((IList<Skill>)source?.Source).Add(newItem);
+            ((IList<Skill>) source?.Source).Add(newItem);
             List.SelectedItem = newItem;
         }
 

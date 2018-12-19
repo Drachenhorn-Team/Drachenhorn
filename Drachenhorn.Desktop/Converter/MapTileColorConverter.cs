@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 using Drachenhorn.Map.Common;
@@ -17,7 +13,7 @@ namespace Drachenhorn.Desktop.Converter
             if (!(value is TileType))
                 return null;
 
-            switch ((TileType)value)
+            switch ((TileType) value)
             {
                 case TileType.Floor:
                     return new SolidColorBrush(Colors.White);

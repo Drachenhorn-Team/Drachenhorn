@@ -22,24 +22,24 @@
         </ObjectDataProvider>
 
         <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Height" Value="28"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="28" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
         <Style TargetType="controls:AutoCompleteBox">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-            <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}"/>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}" />
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
         </Style>
         <Style TargetType="userElements:InfoButton">
-            <Setter Property="Margin" Value="0 0 5 0"/>
+            <Setter Property="Margin" Value="0 0 5 0" />
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -99,7 +99,7 @@
             <userElements:InfoButton InfoObject="{Binding Race}" DockPanel.Dock="Right" />
             <controls:AutoCompleteBox SelectedItem="{Binding Race, Mode=TwoWay}"
                                       ItemsSource="{Binding CurrentTemplate.Races, Source={StaticResource Settings}}"
-                                      VerticalContentAlignment="Center" Height="28"/>
+                                      VerticalContentAlignment="Center" Height="28" />
             <!--<TextBox Text="{Binding Race.Name}" />-->
         </DockPanel>
 
@@ -129,7 +129,7 @@
             <userElements:InfoButton InfoObject="{Binding Culture}" DockPanel.Dock="Right" />
             <controls:AutoCompleteBox SelectedItem="{Binding Culture, Mode=TwoWay}"
                                       ItemsSource="{Binding CurrentTemplate.Cultures, Source={StaticResource Settings}}"
-                                      VerticalContentAlignment="Center" Height="28"/>
+                                      VerticalContentAlignment="Center" Height="28" />
         </DockPanel>
 
         <TextBlock Text="{lang:Translate Characteristics.Profession}"

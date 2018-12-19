@@ -11,10 +11,14 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class SpecialSkillControl : UserControl
     {
+        #region c'tor
+
         public SpecialSkillControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {

@@ -7,6 +7,8 @@ namespace Drachenhorn.Xml.Calculation
     /// </summary>
     public interface IFormulaKeyItem : INotifyPropertyChanged
     {
+        #region Properties
+
         /// <summary>
         ///     Gets the key.
         /// </summary>
@@ -22,5 +24,7 @@ namespace Drachenhorn.Xml.Calculation
         ///     The value.
         /// </value>
         int Value { get; }
+
+        #endregion
     }
 }

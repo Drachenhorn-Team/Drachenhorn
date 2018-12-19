@@ -12,6 +12,8 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class TemplateImportDialog : Window
     {
+        #region c'tor
+
         public TemplateImportDialog(string filePath)
         {
             InitializeComponent();
@@ -44,5 +46,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 Close();
             };
         }
+
+        #endregion
     }
 }

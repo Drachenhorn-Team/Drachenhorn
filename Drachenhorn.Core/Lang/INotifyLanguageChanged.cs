@@ -12,11 +12,19 @@ namespace Drachenhorn.Core.Lang
 
     public class LanguageChangedEventArgs : EventArgs
     {
+        #region c'tor
+
         public LanguageChangedEventArgs(CultureInfo newCulture)
         {
             NewCulture = newCulture;
         }
 
+        #endregion
+
+        #region Properties
+
         public CultureInfo NewCulture { get; }
+
+        #endregion
     }
 }

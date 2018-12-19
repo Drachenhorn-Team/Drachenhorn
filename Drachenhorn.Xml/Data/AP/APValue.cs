@@ -9,6 +9,21 @@ namespace Drachenhorn.Xml.Data.AP
     /// </summary>
     public class APValue : ChildChangedBase, ISerializable
     {
+        #region c'tor
+
+        /// <inheritdoc />
+        public APValue()
+        {
+        }
+
+        /// <inheritdoc />
+        public APValue(ushort value)
+        {
+            Value = value;
+        }
+
+        #endregion
+
         #region Properties
 
         private ushort _value;
@@ -28,23 +43,7 @@ namespace Drachenhorn.Xml.Data.AP
             }
         }
 
-        #endregion Properties
-
-
-        #region c'tor
-
-        /// <inheritdoc />
-        public APValue()
-        {
-        }
-
-        /// <inheritdoc />
-        public APValue(ushort value)
-        {
-            Value = value;
-        }
-
-        #endregion c'tor
+        #endregion
 
 
         #region Interface

@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
-using Squirrel;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
@@ -35,11 +31,11 @@ using Squirrel;
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //Speicherort der designspezifischen Ressourcenwörterbücher
-                                     //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
-                                     // oder in den Anwendungsressourcen-Wörterbüchern nicht gefunden werden kann.)
+    //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
+    // oder in den Anwendungsressourcen-Wörterbüchern nicht gefunden werden kann.)
     ResourceDictionaryLocation.SourceAssembly //Speicherort des generischen Ressourcenwörterbuchs
-                                              //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
-                                              // designspezifischen Ressourcenwörterbuch nicht gefunden werden kann.)
+    //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
+    // designspezifischen Ressourcenwörterbuch nicht gefunden werden kann.)
 )]
 
 

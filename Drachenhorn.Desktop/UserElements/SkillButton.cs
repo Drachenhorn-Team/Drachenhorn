@@ -5,11 +5,15 @@ namespace Drachenhorn.Desktop.UserElements
 {
     public class SkillButton : Button
     {
+        #region c'tor
+
         public SkillButton()
         {
             DataContext = this;
             SetBinding(ContentProperty, "Value");
         }
+
+        #endregion
 
         #region ValueProperty
 

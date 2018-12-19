@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Drachenhorn.Core.Objects;
-using Fluent;
 using Xceed.Wpf.Toolkit;
 
 namespace Drachenhorn.Desktop.Views
@@ -21,9 +20,7 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class CoatOfArmsPainterView : INotifyPropertyChanged
     {
-        private ObservableCollection<Stroke> _strokes;
-
-        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
+        #region c'tor
 
         public CoatOfArmsPainterView()
         {
@@ -44,6 +41,14 @@ namespace Drachenhorn.Desktop.Views
             };
         }
 
+        #endregion
+
+        #region Properties
+
+        private ObservableCollection<Stroke> _strokes;
+
+        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
+
         public ObservableCollection<Stroke> Strokes
         {
             get => _strokes;
@@ -55,6 +60,8 @@ namespace Drachenhorn.Desktop.Views
                 OnPropertyChanged();
             }
         }
+
+        #endregion
 
         public string GetBase64()
         {
@@ -117,6 +124,12 @@ namespace Drachenhorn.Desktop.Views
                 Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
         }
 
+        private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
         #region BrushType
 
         private void BrushType_Checked_1(object sender, RoutedEventArgs e)
@@ -149,11 +162,5 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion OnPropertyChanged
-
-        private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-            this.Close();
-        }
     }
 }

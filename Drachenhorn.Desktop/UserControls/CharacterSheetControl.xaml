@@ -24,11 +24,11 @@
             <controls:DisAdvantageInformationControl DataContext="{Binding CurrentSheet.DisAdvantages}"
                                                      Margin="5" />
             <controls:CoatOfArmsControl DataContext="{Binding CurrentSheet.CoatOfArms}"
-                                        Margin="5" Width="400" Grid.Column="1"/>
+                                        Margin="5" Width="400" Grid.Column="1" />
         </Grid>
 
         <TextBlock Text="{lang:Translate CharacterSheet.BaseValues}" FontSize="45" FontWeight="Bold"
-                   TextAlignment="Center" FontFamily="{StaticResource Morpheus}"/>
+                   TextAlignment="Center" FontFamily="{StaticResource Morpheus}" />
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -36,10 +36,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <controls:AttributesControl DataContext="{Binding CurrentSheet.Attributes}"
-                                        Margin="5" Grid.Column="0"/>
+                                        Margin="5" Grid.Column="0" />
 
             <controls:BaseValuesControl DataContext="{Binding CurrentSheet.BaseValues}"
-                                        Margin="5" Grid.Column="1"/>
+                                        Margin="5" Grid.Column="1" />
         </Grid>
 
         <controls:AdventurePointsControl DataContext="{Binding CurrentSheet.AdventurePoints}"

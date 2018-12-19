@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Drachenhorn.Xml.Objects;
 
 namespace Drachenhorn.Desktop.UserControls.Template
 {
     /// <summary>
-    /// Interaktionslogik für CurrenciesControl.xaml
+    ///     Interaktionslogik für CurrenciesControl.xaml
     /// </summary>
     public partial class CurrenciesControl : UserControl
     {
+        #region c'tor
+
         public CurrenciesControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddButton_OnClick(object sender, RoutedEventArgs e)
         {
@@ -46,7 +40,7 @@ namespace Drachenhorn.Desktop.UserControls.Template
             if (!(CurrencyList.DataContext is IList<Currency>))
                 return;
 
-            var list = (IList<Currency>)CurrencyList.DataContext;
+            var list = (IList<Currency>) CurrencyList.DataContext;
 
             var control = (Control) sender;
 
@@ -65,7 +59,7 @@ namespace Drachenhorn.Desktop.UserControls.Template
             var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
             eventArg.RoutedEvent = MouseWheelEvent;
             eventArg.Source = sender;
-            var parent = ((Control)sender).Parent as UIElement;
+            var parent = ((Control) sender).Parent as UIElement;
             parent.RaiseEvent(eventArg);
         }
     }

@@ -11,10 +11,14 @@ namespace Drachenhorn.Desktop.UserControls.Common
     /// </summary>
     public partial class APTableControl : UserControl
     {
+        #region c'tor
+
         public APTableControl()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         private void AddValueButton_OnClick(object sender, RoutedEventArgs e)
         {

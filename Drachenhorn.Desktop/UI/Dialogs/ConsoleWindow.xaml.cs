@@ -18,7 +18,8 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     {
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
-        public bool ShouldClose = false;
+
+        #region c'tor
 
         public ConsoleWindow()
         {
@@ -28,6 +29,14 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             RichTextBoxAppender.rtb = RichTextBox;
         }
+
+        #endregion
+
+        #region Properties
+
+        public bool ShouldClose = false;
+
+        #endregion
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern int GetWindowLong(IntPtr hWnd, int nIndex);

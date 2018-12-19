@@ -13,7 +13,8 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Colors/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -27,7 +28,7 @@
                     <fluent:Button LargeIcon="{StaticResource AddImageIcon}"
                                    KeyTip="Strg + S"
                                    Header="{lang:Translate UI.Apply}"
-                                   Click="ApplyButton_OnClick"/>
+                                   Click="ApplyButton_OnClick" />
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Actions}">
                     <fluent:Button LargeIcon="{StaticResource UndoIcon}"

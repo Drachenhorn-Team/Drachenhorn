@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
@@ -13,7 +11,10 @@ namespace Drachenhorn.Xml.Objects
         #region Properties
 
         [XmlIgnore]
-        private string _name;
+        private ObservableCollection<CurrencyPart> _currencyParts = new ObservableCollection<CurrencyPart>();
+
+        [XmlIgnore] private string _name;
+
         [XmlAttribute("Name")]
         public string Name
         {
@@ -27,8 +28,6 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
-        [XmlIgnore]
-        private ObservableCollection<CurrencyPart> _currencyParts = new ObservableCollection<CurrencyPart>();
         [XmlElement("CurrencyPart")]
         public ObservableCollection<CurrencyPart> CurrencyParts
         {
@@ -42,10 +41,9 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
-        [XmlIgnore]
-        public int MaxValue => CurrencyParts.Max(x => x.Value);
+        [XmlIgnore] public int MaxValue => CurrencyParts.Max(x => x.Value);
 
-        #endregion Properties
+        #endregion
 
         #region Conversion
 
@@ -63,7 +61,7 @@ namespace Drachenhorn.Xml.Objects
         {
             if (format == 'p')
                 return ToMaximumParts(amount);
-            else if (format == 'f')
+            if (format == 'f')
                 return ToMinimumParts(amount);
 
             throw new FormatException("Unknown format: " + format);
@@ -72,31 +70,27 @@ namespace Drachenhorn.Xml.Objects
 
         private string ToMaximumParts(long amount)
         {
-            string result = "";
+            var result = "";
 
-            var currs = from x in this.CurrencyParts orderby x.Value descending select x;
+            var currs = from x in CurrencyParts orderby x.Value descending select x;
 
             foreach (var curr in currs)
-            {
                 if ((double) amount / curr.Value > 0)
                 {
                     result = curr.ToString(amount);
                     amount = amount % curr.Value;
                 }
-            }
 
             return result;
         }
 
         private string ToMinimumParts(long amount)
         {
-            var currs = from x in this.CurrencyParts orderby x.Value descending select x;
+            var currs = from x in CurrencyParts orderby x.Value descending select x;
 
             foreach (var curr in currs)
-            {
                 if (amount % curr.Value == 0)
                     return curr.ToString(amount);
-            }
 
             return null;
         }

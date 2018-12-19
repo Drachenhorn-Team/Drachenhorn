@@ -13,6 +13,8 @@ namespace Drachenhorn.Xml.Sheet.Common
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
     public class ProfessionInformation : ChildChangedBase, IInfoObject
     {
+        #region Properties
+
         [XmlIgnore] private string _description;
 
         [XmlIgnore] private double _gpCost;
@@ -75,6 +77,8 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
+
+        #endregion
 
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()

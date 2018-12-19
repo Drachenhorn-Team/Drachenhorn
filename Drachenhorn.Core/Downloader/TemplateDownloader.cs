@@ -14,6 +14,65 @@ namespace Drachenhorn.Core.Downloader
         private static readonly string RawPath =
             "https://gist.githubusercontent.com/lightlike/2a26930578a805d1739fe598404e60cb/raw/";
 
+        #region Properties
+
+        private bool _isConnectionSuccessful = true;
+
+        private bool _isLoading;
+
+
+        private ObservableCollection<OnlineTemplate> _templates = new ObservableCollection<OnlineTemplate>();
+
+        public bool IsConnectionSuccessful
+        {
+            get => _isConnectionSuccessful;
+            private set
+            {
+                if (_isConnectionSuccessful == value)
+                    return;
+                _isConnectionSuccessful = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsLoading
+        {
+            get => _isLoading;
+            private set
+            {
+                if (_isLoading == value)
+                    return;
+                _isLoading = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<OnlineTemplate> Templates
+        {
+            get
+            {
+                if (_templates == null || !_templates.Any())
+                    Task.Run(() =>
+                    {
+                        var templates = LoadTemplatesAsync().Result;
+                        IsConnectionSuccessful = templates != null && templates.Count > 0;
+
+                        if (IsConnectionSuccessful)
+                            Templates = templates;
+                    });
+                return _templates;
+            }
+            private set
+            {
+                if (_templates == value)
+                    return;
+                _templates = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
         #region Loading
 
         /// <summary>
@@ -65,65 +124,6 @@ namespace Drachenhorn.Core.Downloader
         }
 
         #endregion Loading
-
-        #region Properties
-
-        private bool _isConnectionSuccessful = true;
-
-        public bool IsConnectionSuccessful
-        {
-            get => _isConnectionSuccessful;
-            private set
-            {
-                if (_isConnectionSuccessful == value)
-                    return;
-                _isConnectionSuccessful = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private bool _isLoading;
-
-        public bool IsLoading
-        {
-            get => _isLoading;
-            private set
-            {
-                if (_isLoading == value)
-                    return;
-                _isLoading = value;
-                OnPropertyChanged();
-            }
-        }
-
-
-        private ObservableCollection<OnlineTemplate> _templates = new ObservableCollection<OnlineTemplate>();
-
-        public ObservableCollection<OnlineTemplate> Templates
-        {
-            get
-            {
-                if (_templates == null || !_templates.Any())
-                    Task.Run(() =>
-                    {
-                        var templates = LoadTemplatesAsync().Result;
-                        IsConnectionSuccessful = templates != null && templates.Count > 0;
-
-                        if (IsConnectionSuccessful)
-                            Templates = templates;
-                    });
-                return _templates;
-            }
-            private set
-            {
-                if (_templates == value)
-                    return;
-                _templates = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion Properties
 
 
         #region Download

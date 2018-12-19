@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using Drachenhorn.Xml.Sheet;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
 
 namespace Drachenhorn.Core.ViewModels.Sheet
 {
@@ -9,10 +8,17 @@ namespace Drachenhorn.Core.ViewModels.Sheet
     {
         #region Properties
 
+        private bool _canPrint;
+
         private CharacterSheet _currentSheet;
+
+        private bool _isLoading;
+
+        private FileInfo _selectedTemplate;
+
         public CharacterSheet CurrentSheet
         {
-            get { return _currentSheet; }
+            get => _currentSheet;
             set
             {
                 if (_currentSheet == value)
@@ -22,7 +28,6 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
-        private bool _canPrint;
         public bool CanPrint
         {
             get => _canPrint;
@@ -35,10 +40,9 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
-        private FileInfo _selectedTemplate;
         public FileInfo SelectedTemplate
         {
-            get { return _selectedTemplate; }
+            get => _selectedTemplate;
             set
             {
                 if (_selectedTemplate == value)
@@ -48,11 +52,9 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
-        private bool _isLoading;
-
         public bool IsLoading
         {
-            get { return _isLoading; }
+            get => _isLoading;
             set
             {
                 if (_isLoading == value)
@@ -62,6 +64,6 @@ namespace Drachenhorn.Core.ViewModels.Sheet
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

@@ -7,9 +7,13 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class CharacterSheetControl : UserControl
     {
+        #region c'tor
+
         public CharacterSheetControl()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }

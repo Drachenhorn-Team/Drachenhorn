@@ -13,13 +13,21 @@ namespace Drachenhorn.Desktop.UserControls
     /// </summary>
     public partial class CombatControl : UserControl
     {
-        private ICollectionView _weaponCollectionView;
-        private ICollectionView _armorCollectionView;
+        #region c'tor
 
         public CombatControl()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Properties
+
+        private ICollectionView _armorCollectionView;
+        private ICollectionView _weaponCollectionView;
+
+        #endregion
 
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
@@ -36,18 +44,18 @@ namespace Drachenhorn.Desktop.UserControls
 
         private void CombatControl_OnLoaded(object sender, RoutedEventArgs e)
         {
-            if (this.DataContext is Inventory)
+            if (DataContext is Inventory)
             {
-                _weaponCollectionView = new CollectionViewSource() {Source = ((Inventory)this.DataContext).Items}.View;
+                _weaponCollectionView = new CollectionViewSource {Source = ((Inventory) DataContext).Items}.View;
                 _weaponCollectionView.Filter = w => w is Weapon;
             }
 
             WeaponDataGrid.ItemsSource = _weaponCollectionView;
 
 
-            if (this.DataContext is Inventory)
+            if (DataContext is Inventory)
             {
-                _armorCollectionView = new CollectionViewSource() { Source = ((Inventory)this.DataContext).Items }.View;
+                _armorCollectionView = new CollectionViewSource {Source = ((Inventory) DataContext).Items}.View;
                 _armorCollectionView.Filter = w => w is ArmorPart;
             }
 
@@ -56,18 +64,18 @@ namespace Drachenhorn.Desktop.UserControls
 
         private void AddWeaponButton_OnClick(object sender, RoutedEventArgs e)
         {
-            if (!(this.DataContext is Inventory))
+            if (!(DataContext is Inventory))
                 return;
 
-            ((Inventory)this.DataContext).Items.Add(new Weapon());
+            ((Inventory) DataContext).Items.Add(new Weapon());
         }
 
         private void AddArmorButton_OnClick(object sender, RoutedEventArgs e)
         {
-            if (!(this.DataContext is Inventory))
+            if (!(DataContext is Inventory))
                 return;
 
-            ((Inventory)this.DataContext).Items.Add(new ArmorPart());
+            ((Inventory) DataContext).Items.Add(new ArmorPart());
         }
     }
 }

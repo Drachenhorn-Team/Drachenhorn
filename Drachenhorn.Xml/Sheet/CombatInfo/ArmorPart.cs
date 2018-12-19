@@ -13,7 +13,11 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
     {
         #region Properties
 
+        [XmlIgnore] private int _handicap;
+
         [XmlIgnore] private bool _isActive;
+
+        [XmlIgnore] private ArmorType _type = ArmorType.None;
 
         /// <summary>
         ///     Gets or sets a value indicating whether this ArmorPart is active.
@@ -34,8 +38,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
-        [XmlIgnore] private ArmorType _type = ArmorType.None;
-
         /// <summary>
         ///     Gets or sets the ArmorType.
         /// </summary>
@@ -54,8 +56,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private int _handicap;
 
         /// <summary>
         ///     Gets or sets the Handicap.
@@ -76,6 +76,6 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

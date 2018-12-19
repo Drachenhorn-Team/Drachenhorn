@@ -5,7 +5,8 @@
 
     <BitmapImage x:Key="AddIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Add.png" />
     <BitmapImage x:Key="RemoveIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Remove.png" />
-    <BitmapImage x:Key="ArrowBlockDownIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/ArrowBlockDown.png" />
+    <BitmapImage x:Key="ArrowBlockDownIconDynamic"
+                 UriSource="pack://application:,,,/Images/Black/Common/ArrowBlockDown.png" />
     <BitmapImage x:Key="DownloadIconDynamic" UriSource="pack://application:,,,/Images/Black/Common/Download.png" />
 
     <BitmapImage x:Key="ImportIconDynamic" UriSource="pack://application:,,,/Images/Black/Import.png" />

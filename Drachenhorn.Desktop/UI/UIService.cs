@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -13,7 +9,11 @@ namespace Drachenhorn.Desktop.UI
 {
     public class UIService : BindableBase, IUIService
     {
+        #region Properties
+
         private bool _isBusy;
+
+        #endregion
 
         public void SetBusyState()
         {
@@ -28,10 +28,8 @@ namespace Drachenhorn.Desktop.UI
                 Mouse.OverrideCursor = busy ? Cursors.Wait : null;
 
                 if (_isBusy)
-                {
                     new DispatcherTimer(TimeSpan.FromSeconds(seconds), DispatcherPriority.ContextIdle,
                         dispatcherTimer_Tick, Application.Current.Dispatcher);
-                }
             }
         }
 

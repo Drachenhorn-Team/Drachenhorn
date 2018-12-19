@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
@@ -10,8 +8,12 @@ namespace Drachenhorn.Xml.Objects
     {
         #region Properties
 
-        [XmlIgnore]
-        private string _name;
+        [XmlIgnore] private string _name;
+
+        [XmlIgnore] private string _symbol;
+
+        [XmlIgnore] private int _value;
+
         [XmlAttribute("Name")]
         public string Name
         {
@@ -25,8 +27,6 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
-        [XmlIgnore]
-        private string _symbol;
         /// <summary>
         ///     Symbol of the Currency. '%' will be replaced with the value.
         ///     If there is no '%' the Symbol will be added to the end.
@@ -44,8 +44,6 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
-        [XmlIgnore]
-        private int _value;
         /// <summary>
         ///     Value compared to minimum of all Currencies.
         /// </summary>
@@ -62,7 +60,7 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
-        #endregion Properties
+        #endregion
 
 
         #region ToString
@@ -76,10 +74,7 @@ namespace Drachenhorn.Xml.Objects
         {
             amount = Convert(amount);
 
-            if (Symbol.Contains("%"))
-            {
-                return Symbol.Replace("%", amount.ToString());
-            }
+            if (Symbol.Contains("%")) return Symbol.Replace("%", amount.ToString());
 
             return amount + " " + Symbol;
         }

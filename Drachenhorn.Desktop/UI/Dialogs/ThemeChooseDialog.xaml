@@ -10,11 +10,12 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary Source="../Themes/Images/Black.xaml"/>
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="../Themes/Images/Black.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Foreground" Value="Black" />
             </Style>
             <DataTemplate x:Key="ShowTheme">
                 <Border BorderThickness="2" Padding="5" Background="{DynamicResource ControlBackgroundBrush}">
@@ -76,11 +77,12 @@
                 <ContentPresenter.Resources>
                     <ResourceDictionary>
                         <ResourceDictionary.MergedDictionaries>
-                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                            <ResourceDictionary Source="../Themes/Images/Black.xaml"/>
+                            <ResourceDictionary
+                                Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                            <ResourceDictionary Source="../Themes/Images/Black.xaml" />
                         </ResourceDictionary.MergedDictionaries>
                         <Style TargetType="TextBlock">
-                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Foreground" Value="Black" />
                         </Style>
                     </ResourceDictionary>
                 </ContentPresenter.Resources>
@@ -97,11 +99,12 @@
                 <ContentPresenter.Resources>
                     <ResourceDictionary>
                         <ResourceDictionary.MergedDictionaries>
-                            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
-                            <ResourceDictionary Source="../Themes/Images/White.xaml"/>
+                            <ResourceDictionary
+                                Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                            <ResourceDictionary Source="../Themes/Images/White.xaml" />
                         </ResourceDictionary.MergedDictionaries>
                         <Style TargetType="TextBlock">
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Foreground" Value="White" />
                         </Style>
                     </ResourceDictionary>
                 </ContentPresenter.Resources>

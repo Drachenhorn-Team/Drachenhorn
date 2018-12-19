@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Net;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Interfaces;
@@ -36,17 +34,29 @@ namespace Drachenhorn.Xml.Template
             ChildChanged += (sender, args) => { HasChanged = true; };
         }
 
-        #endregion c'tor
+        #endregion
 
         #region Properties
 
+        [XmlIgnore] private APTable _apTable = new APTable();
+
+        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures =
+            new ObservableCollection<CultureInformation>();
+
+        [XmlIgnore] private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
+
         [XmlIgnore] private TemplateInformation _information = new TemplateInformation();
 
+        [XmlIgnore] private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
+
+        [XmlIgnore]
+        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
+
         /// <summary>
-        /// Gets or sets the information.
+        ///     Gets or sets the information.
         /// </summary>
         /// <value>
-        /// The information.
+        ///     The information.
         /// </value>
         [XmlElement("Information")]
         public TemplateInformation Information
@@ -60,8 +70,6 @@ namespace Drachenhorn.Xml.Template
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private APTable _apTable = new APTable();
 
         /// <summary>
         ///     Gets or sets the AP-Table.
@@ -82,8 +90,6 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        [XmlIgnore] private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
-
         /// <summary>
         ///     Gets or sets the Races.
         /// </summary>
@@ -102,9 +108,6 @@ namespace Drachenhorn.Xml.Template
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures =
-            new ObservableCollection<CultureInformation>();
 
         /// <summary>
         ///     Gets or sets the Cultures.
@@ -125,9 +128,6 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        [XmlIgnore]
-        private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
-
         /// <summary>
         ///     Gets or sets the special skills.
         /// </summary>
@@ -147,9 +147,6 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        [XmlIgnore]
-        private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
-
         /// <summary>
         ///     Gets or sets the currencies
         /// </summary>
@@ -166,7 +163,7 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        #endregion Properties
+        #endregion
 
         #region Save/Load
 

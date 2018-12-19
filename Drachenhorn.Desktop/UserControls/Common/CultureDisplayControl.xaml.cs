@@ -7,9 +7,13 @@ namespace Drachenhorn.Desktop.UserControls.Common
     /// </summary>
     public partial class CultureDisplayControl : UserControl
     {
+        #region c'tor
+
         public CultureDisplayControl()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }

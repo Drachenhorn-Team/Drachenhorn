@@ -10,6 +10,8 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class CoatOfArms : ChildChangedBase
     {
+        #region Properties
+
         [XmlIgnore] private string _base64String;
 
         /// <summary>
@@ -30,5 +32,7 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
+
+        #endregion
     }
 }

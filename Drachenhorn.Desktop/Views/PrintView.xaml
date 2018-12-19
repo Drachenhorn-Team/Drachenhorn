@@ -1,45 +1,48 @@
 ﻿<mah:MetroWindow x:Class="Drachenhorn.Desktop.Views.PrintView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
-        xmlns:fluent="urn:fluent-ribbon"
-        xmlns:printing="clr-namespace:Drachenhorn.Core.Printing;assembly=Drachenhorn.Core"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-        mc:Ignorable="d"
-        Style="{StaticResource {x:Type Window}}"
-        DataContext="{Binding PrintView, Source={StaticResource Locator}}"
-        Title="{lang:Translate PrintView.Title}" Height="600" Width="800">
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+                 xmlns:fluent="urn:fluent-ribbon"
+                 xmlns:printing="clr-namespace:Drachenhorn.Core.Printing;assembly=Drachenhorn.Core"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 mc:Ignorable="d"
+                 Style="{StaticResource {x:Type Window}}"
+                 DataContext="{Binding PrintView, Source={StaticResource Locator}}"
+                 Title="{lang:Translate PrintView.Title}" Height="600" Width="800">
     <Window.Resources>
         <ResourceDictionary>
-            <ObjectDataProvider x:Key="PrintTemplatesProvider" ObjectType="printing:PrintingManager" MethodName="GetPrintTemplates"/>
+            <ObjectDataProvider x:Key="PrintTemplatesProvider" ObjectType="printing:PrintingManager"
+                                MethodName="GetPrintTemplates" />
         </ResourceDictionary>
     </Window.Resources>
     <Window.CommandBindings>
-        <CommandBinding Command="Print" Executed="ExecutePrint" CanExecute="PrintCommand_OnCanExecute"/>
+        <CommandBinding Command="Print" Executed="ExecutePrint" CanExecute="PrintCommand_OnCanExecute" />
     </Window.CommandBindings>
     <DockPanel>
         <fluent:Ribbon DockPanel.Dock="Top">
             <fluent:RibbonTabItem Header="{lang:Translate UI.Print}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Tempalte}">
-                    <fluent:CheckBox Name="UseOwn" Header="{lang:Translate Print.UseOwn}"/>
+                    <fluent:CheckBox Name="UseOwn" Header="{lang:Translate Print.UseOwn}" />
                     <fluent:ComboBox Icon="{StaticResource EditIcon}" Padding="0" IsEditable="False"
                                      SelectedItem="{Binding CurrentSheet}"
                                      ItemsSource="{Binding Source={StaticResource PrintTemplatesProvider}}"
-                                     IsEnabled="{Binding IsChecked, ElementName=UseOwn}"/>
-                    <fluent:Button LargeIcon="{StaticResource PrintIcon}" Header="{lang:Translate UI.Print}" Command="Print"/>
+                                     IsEnabled="{Binding IsChecked, ElementName=UseOwn}" />
+                    <fluent:Button LargeIcon="{StaticResource PrintIcon}" Header="{lang:Translate UI.Print}"
+                                   Command="Print" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
         <Grid>
-            <WebBrowser x:Name="Browser"/>
+            <WebBrowser x:Name="Browser" />
             <Popup IsOpen="{Binding IsLoading}" AllowsTransparency="True" Placement="Center"
                    Width="{Binding ActualWidth, ElementName=Browser, Mode=OneWay}"
                    Height="{Binding ActualHeight, ElementName=Browser, Mode=OneWay}"
                    PlacementTarget="{Binding ElementName=Browser}" Opacity="0.5" Margin="3">
-                <Border Background="{StaticResource ControlBackgroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
-                    <mah:ProgressRing Height="50" Foreground="{DynamicResource AccentColorBrush}"/>
+                <Border Background="{StaticResource ControlBackgroundBrush}" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" CornerRadius="20">
+                    <mah:ProgressRing Height="50" Foreground="{DynamicResource AccentColorBrush}" />
                 </Border>
             </Popup>
         </Grid>

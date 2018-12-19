@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using Drachenhorn.Xml.Sheet.Skills;
+﻿using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -8,7 +7,7 @@ namespace Drachenhorn.Desktop.Views
     /// </summary>
     public partial class AttributeView
     {
-        private Attribute _attribute;
+        #region c'tor
 
         public AttributeView(Attribute attribute)
         {
@@ -18,6 +17,12 @@ namespace Drachenhorn.Desktop.Views
 
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Properties
+
+        private Attribute _attribute;
 
         public Attribute Attribute
         {
@@ -29,5 +34,7 @@ namespace Drachenhorn.Desktop.Views
                 _attribute = value;
             }
         }
+
+        #endregion
     }
 }

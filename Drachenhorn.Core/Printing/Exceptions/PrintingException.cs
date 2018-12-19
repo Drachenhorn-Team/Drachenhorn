@@ -10,6 +10,6 @@ namespace Drachenhorn.Core.Printing.Exceptions
         {
         }
 
-        #endregion c'tor
+        #endregion
     }
 }

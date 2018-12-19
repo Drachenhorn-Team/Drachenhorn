@@ -7,7 +7,7 @@
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:common="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance common:RaceInformation}">
+             d:DesignHeight="750" d:DesignWidth="800" d:DataContext="{d:DesignInstance common:RaceInformation}">
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBlock">
@@ -24,19 +24,42 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="{lang:Translate CharacterSheet.Name}" Grid.Column="0" Grid.Row="0" />
-        <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="0" />
+        <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="0" Margin="5" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.Description}" Grid.Column="0" Grid.Row="1" />
         <TextBox Text="{Binding Description}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
-                 Grid.Column="1" Grid.Row="1" Height="200" />
+                 Grid.Column="1" Grid.Row="1" Height="200" Margin="5" />
 
         <TextBlock Text="{lang:Translate CharacterSheet.StartValues}"
                    Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" />
-        <DataGrid ItemsSource="{Binding BaseValues}"
-                  AutoGenerateColumns="True"
-                  Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Grid.Row="3" />
+        <DataGrid ItemsSource="{Binding BaseValues}" AutoGenerateColumns="False"
+                  Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Grid.Row="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Key}" Width="Auto"
+                                    Binding="{Binding Key}" />
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Width="Auto"
+                                    Binding="{Binding Name}" />
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}" Width="*"
+                                    Binding="{Binding Value}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Text="{lang:Translate CharacterSheet.Skills}"
+                   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" />
+        <DataGrid ItemsSource="{Binding Skills}"
+                  AutoGenerateColumns="False"
+                  Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Grid.Row="5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}" Width="Auto"
+                                    Binding="{Binding Name}" />
+                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}" Width="*"
+                                    Binding="{Binding Value}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

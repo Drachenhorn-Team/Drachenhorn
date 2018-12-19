@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Drachenhorn.Map.Common;
 using Drachenhorn.Map.Random;
 
@@ -11,29 +9,30 @@ namespace Drachenhorn.Map.BSPT
         public static TileType[,] GenerateLeaf()
         {
             var leafs = new List<Leaf>(); // flat rectangle store to help pick a random one
-            Leaf root = new Leaf(0, 0, 60, 120); //
+            var root = new Leaf(0, 0, 60, 120); //
             leafs.Add(root); //populate rectangle store with root area
             while (leafs.Count < 19)
-            { // this will give us 10 leaf areas
-                int splitIdx = Randomizer.Get(0, leafs.Count - 1); // choose a random element
-                Leaf toSplit = leafs[splitIdx];
+            {
+                // this will give us 10 leaf areas
+                var splitIdx = Randomizer.Get(0, leafs.Count - 1); // choose a random element
+                var toSplit = leafs[splitIdx];
                 if (toSplit.Split())
-                { //attempt to split
+                {
+                    //attempt to split
                     leafs.Add(toSplit.LeftChild);
                     leafs.Add(toSplit.RightChild);
                 }
-
             }
+
             root.GenerateDungeon(); //generate dungeons
 
             return PrintDungeons(leafs);
         }
 
 
-
         private static TileType[,] PrintDungeons(IList<Leaf> leafes)
         {
-            var lines = new TileType[60,120];
+            var lines = new TileType[60, 120];
 
             //for (int i = 0; i < lines.GetLength(0); i++)
             //{
@@ -46,13 +45,11 @@ namespace Drachenhorn.Map.BSPT
             {
                 if (leaf.Dungeon == null)
                     continue;
-                Leaf d = leaf.Dungeon;
-                for (int i = 0; i < d._height; i++)
-                {
-                    for (int j = 0; j < d._width; j++)
+                var d = leaf.Dungeon;
+                for (var i = 0; i < d._height; i++)
+                for (var j = 0; j < d._width; j++)
 
-                        lines[d._top + i, d._left + j] = TileType.Floor;
-                }
+                    lines[d._top + i, d._left + j] = TileType.Floor;
             }
 
             return lines;

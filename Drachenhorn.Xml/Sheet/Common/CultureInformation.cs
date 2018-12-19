@@ -14,11 +14,13 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class CultureInformation : ChildChangedBase, IInfoObject
     {
+        #region Properties
+
         [XmlIgnore] private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
 
-        [XmlIgnore] private string _name;
-
         [XmlIgnore] private string _description;
+
+        [XmlIgnore] private string _name;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -77,6 +79,8 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
+        #endregion
+
         /// <inheritdoc />
         public Dictionary<string, string> GetInformation()
         {
@@ -89,7 +93,8 @@ namespace Drachenhorn.Xml.Sheet.Common
             foreach (var baseValue in BaseValues)
                 baseValues += baseValue.Name + ": " + baseValue.Value + " (" + baseValue.Key + ")" + "\n";
 
-            if (!string.IsNullOrEmpty(baseValues)) result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
+            if (!string.IsNullOrEmpty(baseValues))
+                result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
 
 
             return result;

@@ -14,6 +14,12 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
 
         [XmlIgnore] private string _name;
 
+        [XmlIgnore] private int _price;
+
+        [XmlIgnore] private string _storagePlace;
+
+        [XmlIgnore] private double _weight;
+
         /// <summary>
         ///     Gets or sets the name.
         /// </summary>
@@ -32,8 +38,6 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private string _storagePlace;
 
         /// <summary>
         ///     Gets or sets the storage place.
@@ -54,8 +58,6 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
-        [XmlIgnore] private double _weight;
-
         /// <summary>
         ///     Gets or sets the weight.
         /// </summary>
@@ -75,8 +77,6 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
-        [XmlIgnore] private int _price;
-
         [XmlAttribute("Price")]
         public int Price
         {
@@ -90,6 +90,6 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
-        #endregion Properties
+        #endregion
     }
 }

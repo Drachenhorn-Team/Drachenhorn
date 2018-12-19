@@ -14,20 +14,15 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class DisAdvantage : ChildChangedBase, IInfoObject
     {
-        /// <inheritdoc />
-        public virtual Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Specialization)) result.Add("%Info.Specialization", Specialization);
-
-            return result;
-        }
-
         #region Properties
 
         [XmlIgnore] private string _name;
+
+        [XmlIgnore] private string _specialization;
+
+        [XmlIgnore] private DisAdvantageType _type;
+
+        [XmlIgnore] private uint _value;
 
         /// <summary>
         ///     Gets or sets the name.
@@ -48,17 +43,16 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private uint _value;
         /// <summary>
-        /// Gets or sets the value.
+        ///     Gets or sets the value.
         /// </summary>
         /// <value>
-        /// The value.
+        ///     The value.
         /// </value>
         [XmlAttribute("Value")]
         public uint Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 if (_value == value)
@@ -67,8 +61,6 @@ namespace Drachenhorn.Xml.Sheet.Common
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] private string _specialization;
 
         /// <summary>
         ///     Gets or sets the specialization.
@@ -89,8 +81,6 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        [XmlIgnore] private DisAdvantageType _type;
-
         /// <summary>
         ///     Gets or sets the type.
         /// </summary>
@@ -110,6 +100,17 @@ namespace Drachenhorn.Xml.Sheet.Common
             }
         }
 
-        #endregion Properties
+        #endregion
+
+        /// <inheritdoc />
+        public virtual Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Specialization)) result.Add("%Info.Specialization", Specialization);
+
+            return result;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Drachenhorn.Xml.Exceptions
     /// <seealso cref="System.Exception" />
     public class SheetLoadingException : Exception
     {
-        private string _path;
+        #region c'tor
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="SheetLoadingException" /> class.
@@ -20,6 +20,12 @@ namespace Drachenhorn.Xml.Exceptions
         {
             Path = path;
         }
+
+        #endregion
+
+        #region Properties
+
+        private string _path;
 
         /// <summary>
         ///     Gets the path of the file.
@@ -37,5 +43,7 @@ namespace Drachenhorn.Xml.Exceptions
                 _path = value;
             }
         }
+
+        #endregion
     }
 }

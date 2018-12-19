@@ -9,6 +9,8 @@ namespace Drachenhorn.Xml.Calculation
     /// <seealso cref="System.EventArgs" />
     public class CalculateEventArgs : EventArgs
     {
+        #region c'tor
+
         /// <summary>
         ///     Initializes a new instance of the <see cref="CalculateEventArgs" /> class.
         /// </summary>
@@ -18,6 +20,10 @@ namespace Drachenhorn.Xml.Calculation
             Sheet = sheet;
         }
 
+        #endregion
+
+        #region Properties
+
         /// <summary>
         ///     Gets the sheet.
         /// </summary>
@@ -25,5 +31,7 @@ namespace Drachenhorn.Xml.Calculation
         ///     The sheet.
         /// </value>
         public CharacterSheet Sheet { get; }
+
+        #endregion
     }
 }

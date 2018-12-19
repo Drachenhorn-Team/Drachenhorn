@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security;
-using System.Text;
 using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.ViewModels.Sheet;
@@ -27,7 +24,8 @@ namespace Drachenhorn.Core.Printing
         {
             if (!Directory.Exists(TemplatesDirectory)) Directory.CreateDirectory(TemplatesDirectory);
 
-            return Directory.GetFiles(TemplatesDirectory).Where(x => x.EndsWith(".cshtml")).Select(x => new FileInfo(x));
+            return Directory.GetFiles(TemplatesDirectory).Where(x => x.EndsWith(".cshtml"))
+                .Select(x => new FileInfo(x));
         }
 
 
@@ -35,12 +33,13 @@ namespace Drachenhorn.Core.Printing
 
         public static string GenerateHtml(CharacterSheet sheet)
         {
-            string template = "";
+            var template = "";
 
             var assembly = Assembly.GetExecutingAssembly();
 
-            using (Stream stream = assembly.GetManifestResourceStream("Drachenhorn.Core.Printing.Templates.CharacterSheet.cshtml"))
-            using (StreamReader reader = new StreamReader(stream))
+            using (var stream =
+                assembly.GetManifestResourceStream("Drachenhorn.Core.Printing.Templates.CharacterSheet.cshtml"))
+            using (var reader = new StreamReader(stream))
             {
                 template = reader.ReadToEnd();
             }
@@ -62,7 +61,7 @@ namespace Drachenhorn.Core.Printing
                     .UseCachingProvider(new MemoryCachingProvider())
                     .Build();
 
-                string result = engine.CompileRenderAsync("CharacterSheet", template, new CharacterSheetViewModel(sheet))
+                var result = engine.CompileRenderAsync("CharacterSheet", template, new CharacterSheetViewModel(sheet))
                     .Result;
 
                 return result;
