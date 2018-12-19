@@ -81,6 +81,9 @@ namespace Drachenhorn.Xml.Sheet.Skills
             }
         }
 
+        /// <summary>
+        ///     Gets or sets the value.
+        /// </summary>
         [XmlAttribute("Value")]
         public int Value
         {

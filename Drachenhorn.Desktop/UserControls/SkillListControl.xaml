@@ -6,6 +6,7 @@
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:skills="clr-namespace:Drachenhorn.Xml.Sheet.Skills;assembly=Drachenhorn.Xml"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="800">
     <Grid>
@@ -44,7 +45,8 @@
                 </Grid.Resources>
                 <DataGrid Name="List" ItemsSource="{Binding Source={StaticResource SkillViewSource}}"
                           AutoGenerateColumns="False" PreviewMouseWheel="List_PreviewMouseWheel"
-                          CanUserAddRows="False">
+                          CanUserAddRows="False" VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollBarVisibility="Hidden">
                     <DataGrid.GroupStyle>
                         <GroupStyle>
                             <GroupStyle.ContainerStyle>
@@ -67,23 +69,12 @@
                     </DataGrid.GroupStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
-                                            Binding="{Binding Name}" IsReadOnly="True" />
-                        <DataGridTemplateColumn Header="{lang:Translate CharacterSheet.RollAttributes}"
-                                                IsReadOnly="True">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate DataType="skills:Skill">
-                                    <WrapPanel MinWidth="100">
-                                        <TextBlock Text="{Binding RollAttributes.Roll1}" />
-                                        <TextBlock Text="|" />
-                                        <TextBlock Text="{Binding RollAttributes.Roll2}" />
-                                        <TextBlock Text="|" />
-                                        <TextBlock Text="{Binding RollAttributes.Roll3}" />
-                                    </WrapPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                                            Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll1}" IsReadOnly="True" Width="Auto"/>
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll2}" IsReadOnly="True" Width="Auto"/>
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll3}" IsReadOnly="True" Width="Auto"/>
                         <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}"
-                                            Binding="{Binding Value}" IsReadOnly="True" />
+                                            Binding="{Binding Value}" IsReadOnly="True" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -116,8 +107,11 @@
             <TextBox Text="{Binding RollAttributes.Roll3}" Margin="5" Grid.Row="1" Grid.Column="3" />
 
             <TextBlock Text="{lang:Translate CharacterSheet.Skill.Category}" Margin="5" Grid.Row="2" Grid.Column="0" />
-            <TextBox Text="{Binding Category, UpdateSourceTrigger=LostFocus}" Margin="5" Grid.Row="2" Grid.Column="1"
-                     Grid.ColumnSpan="3" />
+            <controls:AutoCompleteBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                                      Margin="5"
+                                      ItemsSource="{Binding DataContext, ElementName=List,
+                                                            Converter={StaticResource SkillCategoryConverter}}"
+                                      Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
         </Grid>
     </Grid>
 </UserControl>
