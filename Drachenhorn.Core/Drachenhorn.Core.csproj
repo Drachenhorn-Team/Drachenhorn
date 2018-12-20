@@ -35,27 +35,4 @@
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Lang\lang.de-DE.resx">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Lang\lang.en.resx">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Lang\lang.nds-DE.resx">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Printing\Templates\CharacterSheet.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CharacterSheet.html</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
 </Project>
