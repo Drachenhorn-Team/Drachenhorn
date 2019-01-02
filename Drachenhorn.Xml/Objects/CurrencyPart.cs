@@ -3,6 +3,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
 {
+    /// <inheritdoc />
+    /// <summary>
+    ///     Single part of a currency (e.g. cent, Euro)
+    /// </summary>
     [Serializable]
     public class CurrencyPart : BindableBase
     {
@@ -14,6 +18,9 @@ namespace Drachenhorn.Xml.Objects
 
         [XmlIgnore] private int _value;
 
+        /// <summary>
+        ///     Gets or sets the name of the CurrencyPart.
+        /// </summary>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -65,11 +72,21 @@ namespace Drachenhorn.Xml.Objects
 
         #region ToString
 
+        /// <summary>
+        ///     Converts the basic amount to the value of the CurrencyPart.
+        /// </summary>
+        /// <param name="amount">Internal amount.</param>
+        /// <returns>Value in the current CurrencyPart.</returns>
         public long Convert(long amount)
         {
             return amount / Value;
         }
 
+        /// <summary>
+        ///     Converts an amount of money to a string
+        /// </summary>
+        /// <param name="amount">Internal amount.</param>
+        /// <returns>String for the current CurrencyPart.</returns>
         public string ToString(long amount)
         {
             amount = Convert(amount);

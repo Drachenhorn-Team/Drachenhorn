@@ -4,9 +4,26 @@ using System.Linq;
 
 namespace Drachenhorn.Xml.Template
 {
+    /// <inheritdoc />
+    /// <summary>
+    ///     Manages all available Templates.
+    /// </summary>
     public class TemplateManager : BindableBase
     {
+        /// <summary>
+        ///     Static instance of the manager.
+        /// </summary>
         public static TemplateManager Manager = new TemplateManager();
+
+        #region c'tor
+
+        private TemplateManager()
+        {
+
+        }
+
+        #endregion c'tor
+
 
         #region Templates
 
@@ -60,7 +77,7 @@ namespace Drachenhorn.Xml.Template
         public void ResetAvailableTemplates()
         {
             _availableTemplates = null;
-            OnPropertyChanged("AvailableTemplates");
+            OnPropertyChanged($"AvailableTemplates");
         }
 
         #endregion Templates

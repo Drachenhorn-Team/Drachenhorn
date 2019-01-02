@@ -22,5 +22,5 @@ var searchData=
   ['attribute',['Attribute',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html',1,'Drachenhorn.Xml.Sheet.Skills.Attribute'],['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html#a4cec45541c0b01cee03e6c693efd964b',1,'Drachenhorn.Xml.Sheet.Skills.Attribute.Attribute()'],['../_character_sheet_8cs.html#a11dafb31e521287e6fd90ccec0c371fa',1,'Attribute():&#160;CharacterSheet.cs']]],
   ['attribute_2ecs',['Attribute.cs',['../_attribute_8cs.html',1,'']]],
   ['attributes',['Attributes',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#a98eeacced26fab98229b87aaca3f281b',1,'Drachenhorn::Xml::Sheet::CharacterSheet']]],
-  ['availabletemplates',['AvailableTemplates',['../class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab91aae53d797d07123f957c935e78ce3',1,'Drachenhorn::Xml::Template::SheetTemplate']]]
+  ['availabletemplates',['AvailableTemplates',['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_manager.html#a355811fc149a82d55c210ae00e3a312c',1,'Drachenhorn::Xml::Template::TemplateManager']]]
 ];

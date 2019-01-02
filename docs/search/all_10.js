@@ -12,7 +12,7 @@ var searchData=
   ['sheettemplate_2ecs',['SheetTemplate.cs',['../_sheet_template_8cs.html',1,'']]],
   ['skill',['Skill',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_skill.html',1,'Drachenhorn.Xml.Sheet.Skills.Skill'],['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_combat_info_1_1_weapon.html#a3c8d09e0d11b9381305feb32e8d59f79',1,'Drachenhorn.Xml.Sheet.CombatInfo.Weapon.Skill()']]],
   ['skill_2ecs',['Skill.cs',['../_skill_8cs.html',1,'']]],
-  ['skills',['Skills',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#a4b6aefcb05c89149e3fb1394bf0af32f',1,'Drachenhorn::Xml::Sheet::CharacterSheet']]],
+  ['skills',['Skills',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#a4b6aefcb05c89149e3fb1394bf0af32f',1,'Drachenhorn.Xml.Sheet.CharacterSheet.Skills()'],['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_race_information.html#a071b38cad8323894b3815f6b352b65a3',1,'Drachenhorn.Xml.Sheet.Common.RaceInformation.Skills()']]],
   ['socialstatus',['SocialStatus',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_characteristics.html#aea431c1aa5185145c24e63c65931e019',1,'Drachenhorn::Xml::Sheet::Common::Characteristics']]],
   ['specialization',['Specialization',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_dis_advantage.html#a19fd75cd49f406376c62037665255066',1,'Drachenhorn::Xml::Sheet::Common::DisAdvantage']]],
   ['specialskill',['SpecialSkill',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html',1,'Drachenhorn.Xml.Sheet.Skills.SpecialSkill'],['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html#a277bf4c67c218a87c2979d015cf428c6',1,'Drachenhorn.Xml.Sheet.Skills.SpecialSkill.SpecialSkill()'],['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html#ae49f6646c270b3b44029d84eb68cbafe',1,'Drachenhorn.Xml.Sheet.Skills.SpecialSkill.SpecialSkill(string name)']]],
@@ -25,5 +25,6 @@ var searchData=
   ['subtract',['Subtract',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a846991bb7cc6c09aaab6f6e8ee2cce4d',1,'Drachenhorn::Xml::Objects::DSADate']]],
   ['subtractdays',['SubtractDays',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a9c76a28e737f6fd21ff9e66fc859b9aa',1,'Drachenhorn::Xml::Objects::DSADate']]],
   ['subtractmonths',['SubtractMonths',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a00f49e7805f0a116559eae7453af5357',1,'Drachenhorn::Xml::Objects::DSADate']]],
-  ['subtractyears',['SubtractYears',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a7a312af9ef2a1a43ad7746c4996fe2fe',1,'Drachenhorn::Xml::Objects::DSADate']]]
+  ['subtractyears',['SubtractYears',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a7a312af9ef2a1a43ad7746c4996fe2fe',1,'Drachenhorn::Xml::Objects::DSADate']]],
+  ['symbol',['Symbol',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html#a60971bd59f95d3a6e74dba13817b0a79',1,'Drachenhorn::Xml::Objects::CurrencyPart']]]
 ];

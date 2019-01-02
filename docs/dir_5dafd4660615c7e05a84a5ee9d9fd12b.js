@@ -3,9 +3,6 @@ var dir_5dafd4660615c7e05a84a5ee9d9fd12b =
     [ "Currency.cs", "_currency_8cs.html", [
       [ "Currency", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency.html", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency" ]
     ] ],
-    [ "CurrencyConversion.cs", "_currency_conversion_8cs.html", [
-      [ "CurrencyConversion", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_conversion.html", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_conversion" ]
-    ] ],
     [ "CurrencyPart.cs", "_currency_part_8cs.html", [
       [ "CurrencyPart", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part" ]
     ] ],

@@ -126,6 +126,9 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        /// <summary>
+        ///     Gets the one single instance of the entire template.
+        /// </summary>
         public SheetTemplate EntireTemplate
         {
             get

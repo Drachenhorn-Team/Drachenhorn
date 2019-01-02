@@ -5,5 +5,5 @@ var searchData=
   ['apcolumns',['APColumns',['../class_drachenhorn_1_1_xml_1_1_data_1_1_a_p_1_1_a_p_table.html#a6d3a2212438193a8d2d9c49ae8c549dd',1,'Drachenhorn::Xml::Data::AP::APTable']]],
   ['aptable',['APTable',['../class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab4c3730251df311c170d06268dfe4890',1,'Drachenhorn::Xml::Template::SheetTemplate']]],
   ['attributes',['Attributes',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#a98eeacced26fab98229b87aaca3f281b',1,'Drachenhorn::Xml::Sheet::CharacterSheet']]],
-  ['availabletemplates',['AvailableTemplates',['../class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab91aae53d797d07123f957c935e78ce3',1,'Drachenhorn::Xml::Template::SheetTemplate']]]
+  ['availabletemplates',['AvailableTemplates',['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_manager.html#a355811fc149a82d55c210ae00e3a312c',1,'Drachenhorn::Xml::Template::TemplateManager']]]
 ];

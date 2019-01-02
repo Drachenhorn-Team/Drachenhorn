@@ -8,6 +8,5 @@ var searchData=
   ['coatofarms',['CoatOfArms',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_coat_of_arms.html',1,'Drachenhorn::Xml::Sheet::Common']]],
   ['cultureinformation',['CultureInformation',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_culture_information.html',1,'Drachenhorn::Xml::Sheet::Common']]],
   ['currency',['Currency',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_currency.html',1,'Drachenhorn::Xml::Objects']]],
-  ['currencyconversion',['CurrencyConversion',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_conversion.html',1,'Drachenhorn::Xml::Objects']]],
   ['currencypart',['CurrencyPart',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html',1,'Drachenhorn::Xml::Objects']]]
 ];

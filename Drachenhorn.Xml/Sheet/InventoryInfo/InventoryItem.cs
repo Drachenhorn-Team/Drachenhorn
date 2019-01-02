@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Objects;
 
 namespace Drachenhorn.Xml.Sheet.InventoryInfo
 {
@@ -77,6 +78,13 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
             }
         }
 
+        /// <summary>
+        ///     Gets or sets the price of the item (for calculation see Currency)
+        /// </summary>
+        /// <seealso cref="Currency" />
+        /// <value>
+        ///     The price
+        /// </value>
         [XmlAttribute("Price")]
         public int Price
         {

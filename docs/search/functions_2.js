@@ -6,5 +6,6 @@ var searchData=
   ['calculationvalue',['CalculationValue',['../class_drachenhorn_1_1_xml_1_1_calculation_1_1_calculation_value.html#a4ff3a236473ae633abea088392def2cb',1,'Drachenhorn::Xml::Calculation::CalculationValue']]],
   ['charactersheet',['CharacterSheet',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#ac2c40346f75ec2c95fe2fd83e6677a8f',1,'Drachenhorn::Xml::Sheet::CharacterSheet']]],
   ['childchangedbase',['ChildChangedBase',['../class_drachenhorn_1_1_xml_1_1_child_changed_base.html#af7e48c34b65ec0d06ba953a8c54bedf1',1,'Drachenhorn::Xml::ChildChangedBase']]],
-  ['compareto',['CompareTo',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#accbea7086e8d243620b20d7d3c153f6e',1,'Drachenhorn::Xml::Objects::DSADate']]]
+  ['compareto',['CompareTo',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#accbea7086e8d243620b20d7d3c153f6e',1,'Drachenhorn::Xml::Objects::DSADate']]],
+  ['convert',['Convert',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html#ae0572201079dd9e99e2b7fc93c875f76',1,'Drachenhorn::Xml::Objects::CurrencyPart']]]
 ];

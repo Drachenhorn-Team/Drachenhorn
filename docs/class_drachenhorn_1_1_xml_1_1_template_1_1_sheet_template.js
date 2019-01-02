@@ -5,6 +5,7 @@ var class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template =
     [ "Save", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#a96802a7a6700eefcb1da92f17c713a5d", null ],
     [ "APTable", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab4c3730251df311c170d06268dfe4890", null ],
     [ "Cultures", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab74a494166f2faab39267cd1df40d1f6", null ],
+    [ "Currencies", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#ab422b8b23c65be3a0ba933383e62167b", null ],
     [ "HasChanged", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#a67f591efaa31262f7f5d8db5fafc184b", null ],
     [ "Information", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#adea803963faf37c820cd94d37580b947", null ],
     [ "Races", "class_drachenhorn_1_1_xml_1_1_template_1_1_sheet_template.html#a51770ecb577e376020c731f1f40899a6", null ],

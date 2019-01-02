@@ -1,0 +1,5 @@
+<map id="Drachenhorn.Xml.Calculation.CalculationValue" name="Drachenhorn.Xml.Calculation.CalculationValue">
+<area shape="rect" id="node4" href="$class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html" title="Attribute of a Character " alt="" coords="5,244,204,285"/>
+<area shape="rect" id="node5" href="$class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html" title="Base Value of a Character. " alt="" coords="228,244,427,285"/>
+<area shape="rect" id="node2" href="$class_drachenhorn_1_1_xml_1_1_bindable_base.html" title="Bindable Base Class " alt="" coords="164,80,267,107"/>
+</map>

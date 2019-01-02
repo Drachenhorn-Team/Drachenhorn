@@ -5,6 +5,10 @@ using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
 {
+    /// <inheritdoc />
+    /// <summary>
+    ///     A Currency for calculating money and exchange
+    /// </summary>
     [Serializable]
     public class Currency : BindableBase
     {
@@ -15,6 +19,9 @@ namespace Drachenhorn.Xml.Objects
 
         [XmlIgnore] private string _name;
 
+        /// <summary>
+        ///     Gets or sets the Name of the Currency.
+        /// </summary>
         [XmlAttribute("Name")]
         public string Name
         {
@@ -28,6 +35,9 @@ namespace Drachenhorn.Xml.Objects
             }
         }
 
+        /// <summary>
+        ///     Gets or sets the CurrencyParts.
+        /// </summary>
         [XmlElement("CurrencyPart")]
         public ObservableCollection<CurrencyPart> CurrencyParts
         {
@@ -40,8 +50,6 @@ namespace Drachenhorn.Xml.Objects
                 OnPropertyChanged();
             }
         }
-
-        [XmlIgnore] public int MaxValue => CurrencyParts.Max(x => x.Value);
 
         #endregion
 
@@ -93,11 +101,6 @@ namespace Drachenhorn.Xml.Objects
                     return curr.ToString(amount);
 
             return null;
-        }
-
-        public long ToValue(string value)
-        {
-            return -1;
         }
 
         #endregion Conversion

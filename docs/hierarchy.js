@@ -19,11 +19,6 @@ var hierarchy =
     [ "IFormattable", null, [
       [ "Drachenhorn.Xml.Objects.DSADate", "class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html", null ]
     ] ],
-    [ "Drachenhorn.Xml.Calculation.IFormulaKeyItem", "interface_drachenhorn_1_1_xml_1_1_calculation_1_1_i_formula_key_item.html", [
-      [ "Drachenhorn.Xml.Sheet.Common.BonusValue", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_bonus_value.html", null ],
-      [ "Drachenhorn.Xml.Sheet.Skills.Attribute", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html", null ],
-      [ "Drachenhorn.Xml.Sheet.Skills.BaseValue", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html", null ]
-    ] ],
     [ "Drachenhorn.Xml.Interfaces.INotifyChildChanged", "interface_drachenhorn_1_1_xml_1_1_interfaces_1_1_i_notify_child_changed.html", [
       [ "Drachenhorn.Xml.ChildChangedBase", "class_drachenhorn_1_1_xml_1_1_child_changed_base.html", [
         [ "Drachenhorn.Xml.Data.AP.APColumn", "class_drachenhorn_1_1_xml_1_1_data_1_1_a_p_1_1_a_p_column.html", null ],
@@ -59,10 +54,15 @@ var hierarchy =
         ] ],
         [ "Drachenhorn.Xml.ChildChangedBase", "class_drachenhorn_1_1_xml_1_1_child_changed_base.html", null ],
         [ "Drachenhorn.Xml.Objects.Currency", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency.html", null ],
-        [ "Drachenhorn.Xml.Objects.CurrencyConversion", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_conversion.html", null ],
         [ "Drachenhorn.Xml.Objects.CurrencyPart", "class_drachenhorn_1_1_xml_1_1_objects_1_1_currency_part.html", null ],
         [ "Drachenhorn.Xml.Objects.DSADate", "class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html", null ],
-        [ "Drachenhorn.Xml.Sheet.Skills.SpecialSkill", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html", null ]
+        [ "Drachenhorn.Xml.Sheet.Skills.SpecialSkill", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_special_skill.html", null ],
+        [ "Drachenhorn.Xml.Template.TemplateManager", "class_drachenhorn_1_1_xml_1_1_template_1_1_template_manager.html", null ]
+      ] ],
+      [ "Drachenhorn.Xml.Calculation.IFormulaKeyItem", "interface_drachenhorn_1_1_xml_1_1_calculation_1_1_i_formula_key_item.html", [
+        [ "Drachenhorn.Xml.Sheet.Common.BonusValue", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_bonus_value.html", null ],
+        [ "Drachenhorn.Xml.Sheet.Skills.Attribute", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_attribute.html", null ],
+        [ "Drachenhorn.Xml.Sheet.Skills.BaseValue", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_skills_1_1_base_value.html", null ]
       ] ],
       [ "Drachenhorn.Xml.Interfaces.IInfoObject", "interface_drachenhorn_1_1_xml_1_1_interfaces_1_1_i_info_object.html", [
         [ "Drachenhorn.Xml.Sheet.Common.CultureInformation", "class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_culture_information.html", null ],

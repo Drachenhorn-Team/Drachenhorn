@@ -1,0 +1,7 @@
+<map id="Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem" name="Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem">
+<area shape="rect" id="node6" href="$class_drachenhorn_1_1_xml_1_1_sheet_1_1_combat_info_1_1_armor_part.html" title="Part of an Armor. " alt="" coords="840,5,1047,47"/>
+<area shape="rect" id="node7" href="$class_drachenhorn_1_1_xml_1_1_sheet_1_1_combat_info_1_1_weapon.html" title="Weapons that can be used by a Character " alt="" coords="840,71,1047,112"/>
+<area shape="rect" id="node2" href="$class_drachenhorn_1_1_xml_1_1_child_changed_base.html" title="Base class notifying ChildChanged " alt="" coords="399,46,531,73"/>
+<area shape="rect" id="node3" href="$class_drachenhorn_1_1_xml_1_1_bindable_base.html" title="Bindable Base Class " alt="" coords="230,21,333,47"/>
+<area shape="rect" id="node5" href="$interface_drachenhorn_1_1_xml_1_1_interfaces_1_1_i_notify_child_changed.html" title="Interface to note if a child has changed. " alt="" coords="212,71,351,98"/>
+</map>
