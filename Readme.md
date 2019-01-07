@@ -58,7 +58,7 @@ And that is how this all started.
 ## Download
 
 <a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
-  <img src="https://simpleicons.org/icons/windows.svg" width="32" alt="Windows">
+  <img src="https://simpleicons.org/icons/windows.svg" width="32" alt="Windows" title="Download 'Setup.exe' only.">
 </a>
 
 ## Usage
