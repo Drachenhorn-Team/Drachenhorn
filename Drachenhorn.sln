@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{97542ADA-C7B
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
-		Drachenhorn.Documentation.shfbproj = Drachenhorn.Documentation.shfbproj
 		LICENSE = LICENSE
 	EndProjectSection
 EndProject

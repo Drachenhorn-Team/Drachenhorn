@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
@@ -94,6 +95,15 @@ namespace Drachenhorn.Xml.Objects
             if (Symbol.Contains("%")) return Symbol.Replace("%", amount.ToString());
 
             return amount + " " + Symbol;
+        }
+
+        public long Parse(string value)
+        {
+            var regex = Symbol.Contains("%") ? Symbol.Replace("%", "[0-9]*") : "[0-9]*" + Symbol;
+
+            long.TryParse(Regex.Match(value, regex).Value, out var result);
+
+            return result * Value;
         }
 
         #endregion ToString
