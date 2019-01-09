@@ -94,14 +94,26 @@ namespace Drachenhorn.Xml.Objects
 
             if (Symbol.Contains("%")) return Symbol.Replace("%", amount.ToString());
 
-            return amount + " " + Symbol;
+            return amount + Symbol;
         }
 
         public long Parse(string value)
         {
-            var regex = Symbol.Contains("%") ? Symbol.Replace("%", "[0-9]*") : "[0-9]*" + Symbol;
+            var containsChar = Symbol.Contains("%");
 
-            long.TryParse(Regex.Match(value, regex).Value, out var result);
+            var regex = containsChar ? Symbol.Replace("%", "[0-9]*") : "[0-9]*" + Symbol;
+
+            var part = Regex.Match(value, regex).Value;
+
+            var before = containsChar ? Symbol.Substring(0, Symbol.IndexOf('%')) : "";
+            var after  = containsChar ? Symbol.Substring(Symbol.IndexOf('%') + 1) : Symbol;
+
+            if (!String.IsNullOrEmpty(before))
+                part = part.Replace(before, "");
+            if (!String.IsNullOrEmpty(after))
+                part = part.Replace(after, "");
+
+            long.TryParse(part, out var result);
 
             return result * Value;
         }

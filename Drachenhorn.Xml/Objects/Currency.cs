@@ -86,11 +86,11 @@ namespace Drachenhorn.Xml.Objects
             foreach (var curr in currs)
                 if ((double) amount / curr.Value > 0)
                 {
-                    result = curr.ToString(amount);
+                    result += curr.ToString(amount) + " ";
                     amount = amount % curr.Value;
                 }
 
-            return result;
+            return result.Substring(0, result.Length - 1);
         }
 
         private string ToMinimumParts(long amount)

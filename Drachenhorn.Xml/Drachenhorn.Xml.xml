@@ -508,6 +508,22 @@
             </summary>
             <param name="path">Path to save to.</param>
         </member>
+        <member name="T:Drachenhorn.Xml.Objects.Currency">
+            <inheritdoc />
+            <summary>
+                A Currency for calculating money and exchange
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.Currency.Name">
+            <summary>
+                Gets or sets the Name of the Currency.
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.Currency.CurrencyParts">
+            <summary>
+                Gets or sets the CurrencyParts.
+            </summary>
+        </member>
         <member name="M:Drachenhorn.Xml.Objects.Currency.ToString(System.Int64,System.Char)">
             <summary>
                 Forms String out of amount.
@@ -520,6 +536,17 @@
             </param>
             <returns>Currency String.</returns>
         </member>
+        <member name="T:Drachenhorn.Xml.Objects.CurrencyPart">
+            <inheritdoc />
+            <summary>
+                Single part of a currency (e.g. cent, Euro)
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Objects.CurrencyPart.Name">
+            <summary>
+                Gets or sets the name of the CurrencyPart.
+            </summary>
+        </member>
         <member name="P:Drachenhorn.Xml.Objects.CurrencyPart.Symbol">
             <summary>
                 Symbol of the Currency. '%' will be replaced with the value.
@@ -530,6 +557,20 @@
             <summary>
                 Value compared to minimum of all Currencies.
             </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.CurrencyPart.Convert(System.Int64)">
+            <summary>
+                Converts the basic amount to the value of the CurrencyPart.
+            </summary>
+            <param name="amount">Internal amount.</param>
+            <returns>Value in the current CurrencyPart.</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Objects.CurrencyPart.ToString(System.Int64)">
+            <summary>
+                Converts an amount of money to a string
+            </summary>
+            <param name="amount">Internal amount.</param>
+            <returns>String for the current CurrencyPart.</returns>
         </member>
         <member name="T:Drachenhorn.Xml.Objects.DSADate">
             <summary>
@@ -1526,6 +1567,15 @@
                 The weight.
             </value>
         </member>
+        <member name="P:Drachenhorn.Xml.Sheet.InventoryInfo.InventoryItem.Price">
+            <summary>
+                Gets or sets the price of the item (for calculation see Currency)
+            </summary>
+            <seealso cref="T:Drachenhorn.Xml.Objects.Currency" />
+            <value>
+                The price
+            </value>
+        </member>
         <member name="T:Drachenhorn.Xml.Sheet.Roll.RollAttributes">
             <summary>
                 Roll Attributes.
@@ -1834,6 +1884,17 @@
                 The type of the generation.
             </value>
         </member>
+        <member name="T:Drachenhorn.Xml.Template.TemplateManager">
+            <inheritdoc />
+            <summary>
+                Manages all available Templates.
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Template.TemplateManager.Manager">
+            <summary>
+                Static instance of the manager.
+            </summary>
+        </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateManager.AvailableTemplates">
             <summary>
                 Gets the available templates.
@@ -1907,6 +1968,11 @@
             <value>
                 The name of the file.
             </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.EntireTemplate">
+            <summary>
+                Gets the one single instance of the entire template.
+            </summary>
         </member>
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.SetVersionAndNameFromXmlLine(System.String)">
             <summary>
