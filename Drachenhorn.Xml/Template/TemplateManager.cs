@@ -15,16 +15,6 @@ namespace Drachenhorn.Xml.Template
         /// </summary>
         public static TemplateManager Manager = new TemplateManager();
 
-        #region c'tor
-
-        private TemplateManager()
-        {
-
-        }
-
-        #endregion c'tor
-
-
         #region Templates
 
         private IEnumerable<TemplateMetadata> _availableTemplates;

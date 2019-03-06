@@ -201,7 +201,7 @@
                                         Command="{Binding Save}">
                                     <Image Source="{DynamicResource SaveIconWhite}" />
                                 </Button>
-                                <Button ToolTip="{lang:TranslateText %UI.Close (%keyboard.Ctrl + W)}"
+                                <Button ToolTip="{lang:TranslateText %UI.Close (%Keyboard.Ctrl + W)}"
                                         Command="{Binding Close}">
                                     <Image Source="{DynamicResource RemoveIconWhite}" />
                                 </Button>

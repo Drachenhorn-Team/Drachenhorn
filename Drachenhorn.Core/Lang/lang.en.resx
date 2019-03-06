@@ -717,4 +717,16 @@
   <data name="Currency.ValueBasedOn" xml:space="preserve">
     <value>The value is based on the smallest common divisor</value>
   </data>
+  <data name="UI.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Template.Currencies" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="UI.CurrencyCalculator" xml:space="preserve">
+    <value>Currency Calculator</value>
+  </data>
+  <data name="CurrencyCalculator.Calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
 </root>

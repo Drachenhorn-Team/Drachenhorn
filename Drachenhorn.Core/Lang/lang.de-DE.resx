@@ -717,4 +717,16 @@
   <data name="Currency.ValueBasedOn" xml:space="preserve">
     <value>Der Wert ist auf dem kleinsten gemeinsamen Teiler bezogen.</value>
   </data>
+  <data name="UI.Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="Template.Currencies" xml:space="preserve">
+    <value>Währungen</value>
+  </data>
+  <data name="UI.CurrencyCalculator" xml:space="preserve">
+    <value>Währungsrechner</value>
+  </data>
+  <data name="CurrencyCalculator.Calculate" xml:space="preserve">
+    <value>Berechnen</value>
+  </data>
 </root>

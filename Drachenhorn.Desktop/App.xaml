@@ -29,7 +29,7 @@
 
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
-                    <template:TemplateManager x:Key="TemplateManager" />
+                    <template:TemplateManager x:Key="TemplateManager"/>
                     <userSettings:Settings x:Key="Settings" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
