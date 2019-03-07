@@ -152,7 +152,6 @@ namespace Drachenhorn.Desktop
             var settings = Settings.Load();
 
             Resources["Settings"] = settings;
-            Resources["TemplateManager"] = TemplateManager.Manager;
 
             _console.Visibility = settings.ShowConsole == true ? Visibility.Visible : Visibility.Hidden;
 

@@ -162,6 +162,11 @@
                 The expression.
             </value>
         </member>
+        <member name="F:Drachenhorn.Xml.Calculation.Formula._parameters">
+            <summary>
+                Contains all used parameters for the used Expression
+            </summary>
+        </member>
         <member name="M:Drachenhorn.Xml.Calculation.Formula.Calculate">
             <summary>
                 Calculates this instance.
@@ -191,18 +196,16 @@
                 <c>true</c> if this instance is valid; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameter(NCalc.Expression@,Drachenhorn.Xml.Calculation.IFormulaKeyItem)">
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameter(Drachenhorn.Xml.Calculation.IFormulaKeyItem)">
             <summary>
                 Adds the parameter.
             </summary>
-            <param name="expression">The expression.</param>
             <param name="item">The item.</param>
         </member>
-        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameterList(NCalc.Expression@,System.Collections.Generic.IEnumerable{Drachenhorn.Xml.Calculation.IFormulaKeyItem})">
+        <member name="M:Drachenhorn.Xml.Calculation.Formula.AddParameterList(System.Collections.Generic.IEnumerable{Drachenhorn.Xml.Calculation.IFormulaKeyItem})">
             <summary>
                 Adds the parameter list.
             </summary>
-            <param name="expression">The expression.</param>
             <param name="list">The list.</param>
         </member>
         <member name="T:Drachenhorn.Xml.Calculation.Formula.ParameterChangedHandler">
@@ -214,24 +217,6 @@
             <summary>
                 Occures when [parameter changed].
             </summary>
-        </member>
-        <member name="T:Drachenhorn.Xml.Calculation.Formula.CalculateAllHandler">
-            <summary>
-                The Handler to Calculate all Formulas.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The <see cref="T:Drachenhorn.Xml.Calculation.CalculateEventArgs" /> instance containing the event data.</param>
-        </member>
-        <member name="E:Drachenhorn.Xml.Calculation.Formula.CalculateAll">
-            <summary>
-                Occurs when [calculate all].
-            </summary>
-        </member>
-        <member name="M:Drachenhorn.Xml.Calculation.Formula.RaiseCalculateAll(Drachenhorn.Xml.Sheet.CharacterSheet)">
-            <summary>
-                Raises the calculate all.
-            </summary>
-            <param name="sheet">The sheet.</param>
         </member>
         <member name="T:Drachenhorn.Xml.Calculation.IFormulaKeyItem">
             <summary>
@@ -1890,7 +1875,7 @@
                 Manages all available Templates.
             </summary>
         </member>
-        <member name="F:Drachenhorn.Xml.Template.TemplateManager.Manager">
+        <member name="F:Drachenhorn.Xml.Template.TemplateManager._manager">
             <summary>
                 Static instance of the manager.
             </summary>

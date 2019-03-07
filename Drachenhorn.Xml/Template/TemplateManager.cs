@@ -13,7 +13,20 @@ namespace Drachenhorn.Xml.Template
         /// <summary>
         ///     Static instance of the manager.
         /// </summary>
-        public static TemplateManager Manager = new TemplateManager();
+        private static TemplateManager _manager = new TemplateManager();
+
+        public static TemplateManager Manager
+        {
+            get => _manager;
+            private set => _manager = value;
+        }
+
+
+        #region c'tor
+
+        private TemplateManager() { }
+
+        #endregion c'tor
 
         #region Templates
 

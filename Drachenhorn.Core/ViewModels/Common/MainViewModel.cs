@@ -159,16 +159,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                 CharacterSheetViewModels.Remove(model);
         }
 
-        public RelayCommand CalculateAll => new RelayCommand(ExecuteCalculateAll);
-
-        private void ExecuteCalculateAll()
-        {
-            if (CurrentSheetViewModel?.CurrentSheet == null)
-                return;
-
-            Formula.RaiseCalculateAll(CurrentSheetViewModel.CurrentSheet);
-        }
-
         #endregion Commands
     }
 }

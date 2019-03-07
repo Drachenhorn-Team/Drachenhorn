@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="600">
     <DockPanel>
@@ -20,10 +21,22 @@
                                     Width="*" />
                 <DataGridTextColumn Header="{lang:Translate CharacterSheet.StartValue}" Binding="{Binding StartValue}"
                                     Width="Auto" IsReadOnly="True" />
-                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Modifier}" Binding="{Binding Modifier}"
-                                    Width="Auto" />
-                <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}" Binding="{Binding Value}"
-                                    Width="Auto" />
+                <DataGridTemplateColumn Header="{lang:Translate CharacterSheet.Modifier}" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <mah:NumericUpDown Value="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}"
+                                               BorderThickness="0" Margin="0" Background="Transparent"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{lang:Translate CharacterSheet.Value}" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <mah:NumericUpDown Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
+                                               BorderThickness="0" Margin="0" Background="Transparent"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -10,10 +10,10 @@ namespace Drachenhorn.Desktop.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is DisAdvantage))
+            if (!(value is DisAdvantageType))
                 return null;
 
-            var type = ((DisAdvantage) value).Type;
+            var type = ((DisAdvantageType)value);
 
             return type == DisAdvantageType.Advantage ? "+" : "-";
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Drachenhorn.Xml.Sheet;
@@ -54,6 +55,7 @@ namespace Drachenhorn.Xml.Calculation
                 if (_parentSheet == value)
                     return;
                 _parentSheet = value;
+                ResetParameters();
                 OnPropertyChanged(null);
             }
         }
@@ -72,11 +74,37 @@ namespace Drachenhorn.Xml.Calculation
                 if (_expression == value)
                     return;
                 _expression = value;
+                ResetParameters();
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        ///     Contains all used parameters for the used Expression
+        /// </summary>
+        private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
+
+
         #endregion
+
+        private void ResetParameters()
+        {
+            _parameters.Clear();
+
+            // Adding All Parameters
+            AddParameterList(ParentSheet?.Attributes);
+            AddParameterList(ParentSheet?.Characteristics.Race.BaseValues);
+            AddParameterList(ParentSheet?.Characteristics.Culture.BaseValues);
+
+            // Set Unknown Parameters to 0
+            foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))
+            {
+                var parameter = match.ToString().Replace("[", "").Replace("]", "");
+
+                if (!_parameters.ContainsKey(parameter))
+                    _parameters[parameter] = 0;
+            }
+        }
 
         /// <summary>
         ///     Calculates this instance.
@@ -92,10 +120,7 @@ namespace Drachenhorn.Xml.Calculation
             // Adding custom Expressions
             e.EvaluateFunction += CustomCalculationExpression;
 
-            // Adding All Parameters
-            AddParameterList(ref e, ParentSheet?.Attributes);
-            AddParameterList(ref e, ParentSheet?.Characteristics.Race.BaseValues);
-            AddParameterList(ref e, ParentSheet?.Characteristics.Culture.BaseValues);
+            e.Parameters = _parameters;
 
             try
             {
@@ -104,9 +129,7 @@ namespace Drachenhorn.Xml.Calculation
                 if (result != null)
                     return Convert.ToDouble(result);
             }
-            catch (ArgumentException)
-            {
-            }
+            catch (ArgumentException) { }
 
             return 0.0;
         }
@@ -190,95 +213,67 @@ namespace Drachenhorn.Xml.Calculation
         /// <summary>
         ///     Adds the parameter.
         /// </summary>
-        /// <param name="expression">The expression.</param>
         /// <param name="item">The item.</param>
-        private void AddParameter(ref Expression expression, IFormulaKeyItem item)
+        private void AddParameter(IFormulaKeyItem item)
         {
-            if (expression == null || string.IsNullOrEmpty(item?.Key))
+            if (string.IsNullOrEmpty(item?.Key))
                 return;
 
-            if (expression.Parameters.ContainsKey(item.Key))
+            if (!Expression.Contains("[" + item.Key + "]"))
+                return;
+
+            if (_parameters.ContainsKey(item.Key))
             {
-                var temp = expression.Parameters[item.Key] as int?;
+                var temp = _parameters[item.Key] as int?;
 
                 if (temp != null)
-                    expression.Parameters[item.Key] = temp + item.Value;
-
-                item.PropertyChanged += (sender, args) =>
-                {
-                    if (args.PropertyName == "Value")
-                        RaiseParameterChanged();
-                };
+                    _parameters[item.Key] = temp + item.Value;
             }
             else
             {
-                expression.Parameters[item.Key] = item.Value;
+                _parameters[item.Key] = item.Value;
             }
+
+            void ChangedHandler(object sender, PropertyChangedEventArgs args)
+            {
+                if (args.PropertyName == "Value")
+                {
+                    RaiseParameterChanged(item.Key, item.Value);
+                    item.PropertyChanged -= ChangedHandler;
+                }
+            }
+            
+            item.PropertyChanged += ChangedHandler;
         }
 
         /// <summary>
         ///     Adds the parameter list.
         /// </summary>
-        /// <param name="expression">The expression.</param>
         /// <param name="list">The list.</param>
-        private void AddParameterList(ref Expression expression, IEnumerable<IFormulaKeyItem> list)
+        private void AddParameterList(IEnumerable<IFormulaKeyItem> list)
         {
-            if (expression == null || list == null) return;
+            if (list == null) return;
 
             foreach (var item in list)
-                if (Expression.Contains("[" + item.Key + "]"))
-                    AddParameter(ref expression, item);
-
-            foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))
-            {
-                var parameter = match.ToString().Replace("[", "").Replace("]", "");
-
-                if (!expression.Parameters.ContainsKey(parameter))
-                    expression.Parameters[parameter] = 0;
-            }
+                AddParameter(item);
         }
 
         /// <summary>
         ///     The Handler to recalculate if Parameters change
         /// </summary>
-        public delegate void ParameterChangedHandler();
+        public delegate void ParameterChangedHandler(string key, int value);
 
         /// <summary>
         ///     Occures when [parameter changed].
         /// </summary>
         public event ParameterChangedHandler ParameterChanged;
 
-        private void RaiseParameterChanged()
+        private void RaiseParameterChanged(string key, int value)
         {
-            ParameterChanged?.Invoke();
+            ResetParameters();
+            ParameterChanged?.Invoke(key, value);
         }
 
         #endregion Parameter
-
-        #region CalculateEvent
-
-        /// <summary>
-        ///     The Handler to Calculate all Formulas.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="CalculateEventArgs" /> instance containing the event data.</param>
-        public delegate void CalculateAllHandler(object sender, CalculateEventArgs e);
-
-        /// <summary>
-        ///     Occurs when [calculate all].
-        /// </summary>
-        public static event CalculateAllHandler CalculateAll;
-
-        /// <summary>
-        ///     Raises the calculate all.
-        /// </summary>
-        /// <param name="sheet">The sheet.</param>
-        public static void RaiseCalculateAll(CharacterSheet sheet)
-        {
-            var handler = CalculateAll;
-            handler?.Invoke(typeof(Formula), new CalculateEventArgs(sheet));
-        }
-
-        #endregion CalculateEvent
     }
 }
