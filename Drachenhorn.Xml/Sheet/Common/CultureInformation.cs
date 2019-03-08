@@ -20,6 +20,8 @@ namespace Drachenhorn.Xml.Sheet.Common
 
         [XmlIgnore] private string _description;
 
+        [XmlIgnore] private double _gpCost;
+
         [XmlIgnore] private string _name;
 
         /// <summary>
@@ -56,6 +58,25 @@ namespace Drachenhorn.Xml.Sheet.Common
                 if (_description == value)
                     return;
                 _description = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the gp cost.
+        /// </summary>
+        /// <value>
+        ///     The gp cost.
+        /// </value>
+        [XmlAttribute("GPCost")]
+        public double GpCost
+        {
+            get => _gpCost;
+            set
+            {
+                if (_gpCost == value)
+                    return;
+                _gpCost = value;
                 OnPropertyChanged();
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
@@ -11,9 +12,12 @@ namespace Drachenhorn.Xml.Sheet.Common
     /// </summary>
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     /// <seealso cref="Drachenhorn.Xml.Interfaces.IInfoObject" />
+    [Serializable]
     public class ProfessionInformation : ChildChangedBase, IInfoObject
     {
         #region Properties
+
+        [XmlIgnore] private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
 
         [XmlIgnore] private string _description;
 
@@ -74,6 +78,25 @@ namespace Drachenhorn.Xml.Sheet.Common
                 if (_gpCost == value)
                     return;
                 _gpCost = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the base values.
+        /// </summary>
+        /// <value>
+        ///     The base values.
+        /// </value>
+        [XmlElement("BaseValue")]
+        public ObservableCollection<BonusValue> BaseValues
+        {
+            get => _baseValues;
+            set
+            {
+                if (_baseValues == value)
+                    return;
+                _baseValues = value;
                 OnPropertyChanged();
             }
         }

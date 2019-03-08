@@ -11,18 +11,9 @@ namespace Drachenhorn.Xml.Template
     public class TemplateManager : BindableBase
     {
         /// <summary>
-        ///     Static instance of the manager.
-        /// </summary>
-        private static TemplateManager _manager = new TemplateManager();
-
-        /// <summary>
         ///     Manager for all instances of SheetTemplates
         /// </summary>
-        public static TemplateManager Manager
-        {
-            get => _manager;
-            private set => _manager = value;
-        }
+        public static TemplateManager Manager { get; private set; } = new TemplateManager();
 
 
         #region c'tor

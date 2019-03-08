@@ -74,6 +74,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converter\CurrencyPartConverter.cs" />
+    <Compile Include="Converter\NullVisibilityConverter.cs" />
     <Compile Include="Converter\SkillCategoryConverter.cs" />
     <Compile Include="Converter\TemplateMetadataConverter.cs" />
     <Compile Include="Converter\TemplatePathOpenConverter.cs" />

@@ -11,6 +11,7 @@
              xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
              xmlns:validation="clr-namespace:Drachenhorn.Desktop.Converter.Validation"
              xmlns:template1="clr-namespace:Drachenhorn.Core.ViewModels.Template;assembly=Drachenhorn.Core"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" FontSize="16"
              d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance template:SheetTemplate}">
     <UserControl.Resources>
@@ -27,8 +28,8 @@
             <Setter Property="FontSize" Value="16" />
         </Style>
     </UserControl.Resources>
-    <TabControl d:DataContext="{d:DesignInstance template1:TemplateViewModel }">
-        <TabItem Header="{lang:Translate Template.Common}">
+    <mah:MetroTabControl d:DataContext="{d:DesignInstance template1:TemplateViewModel }">
+        <mah:MetroTabItem Header="{lang:Translate Template.Common}">
             <DockPanel>
                 <Grid DockPanel.Dock="Top">
                     <Grid.ColumnDefinitions>
@@ -57,11 +58,11 @@
 
                 <common:TemplateInformationControl DataContext="{Binding Template.Information}" />
             </DockPanel>
-        </TabItem>
-        <TabItem Header="{lang:Translate Template.APTable}">
+        </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.APTable}">
             <common:APTableControl DataContext="{Binding Template.APTable}" />
-        </TabItem>
-        <TabItem Header="{lang:Translate Template.Races}">
+        </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.Races}">
             <userElements:ListEditor DataContext="{Binding Template.Races}"
                                      DisplayMemberPath="Name"
                                      ContentType="{x:Type xmlCommon:RaceInformation}">
@@ -71,8 +72,8 @@
                     </DataTemplate>
                 </userElements:ListEditor.ContentTemplate>
             </userElements:ListEditor>
-        </TabItem>
-        <TabItem Header="{lang:Translate Template.Cultures}">
+        </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.Cultures}">
             <userElements:ListEditor DataContext="{Binding Template.Cultures}"
                                      DisplayMemberPath="Name"
                                      ContentType="{x:Type xmlCommon:CultureInformation}">
@@ -82,9 +83,9 @@
                     </DataTemplate>
                 </userElements:ListEditor.ContentTemplate>
             </userElements:ListEditor>
-        </TabItem>
-        <TabItem Header="{lang:Translate Template.Currencies}">
+        </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.Currencies}">
             <local:CurrenciesControl DataContext="{Binding Template.Currencies}" />
-        </TabItem>
-    </TabControl>
+        </mah:MetroTabItem>
+    </mah:MetroTabControl>
 </UserControl>

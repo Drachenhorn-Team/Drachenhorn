@@ -19,5 +19,6 @@
     <local:SkillCategoryConverter x:Key="SkillCategoryConverter"/>
 
     <local:TemplatePathOpenConverter x:Key="TemplatePathOpenConverter" />
+    <local:NullVisibilityConverter x:Key="NullVisibilityConverter"/>
 
 </ResourceDictionary>

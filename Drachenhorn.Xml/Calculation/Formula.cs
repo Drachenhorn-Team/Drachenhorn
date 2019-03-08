@@ -95,6 +95,7 @@ namespace Drachenhorn.Xml.Calculation
             AddParameterList(ParentSheet?.Attributes);
             AddParameterList(ParentSheet?.Characteristics.Race.BaseValues);
             AddParameterList(ParentSheet?.Characteristics.Culture.BaseValues);
+            AddParameterList(ParentSheet?.Characteristics.Profession.BaseValues);
 
             // Set Unknown Parameters to 0
             foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))

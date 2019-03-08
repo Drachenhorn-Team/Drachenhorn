@@ -40,14 +40,15 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore] private APTable _apTable = new APTable();
 
-        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures =
-            new ObservableCollection<CultureInformation>();
+        [XmlIgnore] private TemplateInformation _information = new TemplateInformation();
+
+        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures = new ObservableCollection<CultureInformation>();
 
         [XmlIgnore] private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
 
-        [XmlIgnore] private TemplateInformation _information = new TemplateInformation();
-
         [XmlIgnore] private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
+
+        [XmlIgnore] private ObservableCollection<ProfessionInformation> _professions = new ObservableCollection<ProfessionInformation>();
 
         [XmlIgnore]
         private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
@@ -105,6 +106,25 @@ namespace Drachenhorn.Xml.Template
                 if (_races == value)
                     return;
                 _races = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets the Professions.
+        /// </summary>
+        /// <value>
+        ///     The Professions.
+        /// </value>
+        [XmlElement("Profession")]
+        public ObservableCollection<ProfessionInformation> Professions
+        {
+            get => _professions;
+            set
+            {
+                if (_professions == value)
+                    return;
+                _professions = value;
                 OnPropertyChanged();
             }
         }

@@ -50,10 +50,6 @@
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
             </Style>
 
-            <!-- Set MetroTabControl to same Style as notmal TabControl -->
-            <Style BasedOn="{StaticResource {x:Type TabItem}}" TargetType="mah:MetroTabItem" />
-            <Style BasedOn="{StaticResource {x:Type TabControl}}" TargetType="mah:MetroTabControl" />
-
             <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>
         </ResourceDictionary>
     </Application.Resources>

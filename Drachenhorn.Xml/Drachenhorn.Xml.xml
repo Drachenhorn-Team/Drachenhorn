@@ -1347,6 +1347,14 @@
                 The specification.
             </value>
         </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.CultureInformation.GpCost">
+            <summary>
+                Gets or sets the gp cost.
+            </summary>
+            <value>
+                The gp cost.
+            </value>
+        </member>
         <member name="P:Drachenhorn.Xml.Sheet.Common.CultureInformation.BaseValues">
             <summary>
                 Gets or sets the base values.
@@ -1432,6 +1440,14 @@
             </summary>
             <value>
                 The gp cost.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.BaseValues">
+            <summary>
+                Gets or sets the base values.
+            </summary>
+            <value>
+                The base values.
             </value>
         </member>
         <member name="M:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.GetInformation">
@@ -1802,6 +1818,14 @@
                 The Races.
             </value>
         </member>
+        <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Professions">
+            <summary>
+                Gets or sets the Professions.
+            </summary>
+            <value>
+                The Professions.
+            </value>
+        </member>
         <member name="P:Drachenhorn.Xml.Template.SheetTemplate.Cultures">
             <summary>
                 Gets or sets the Cultures.
@@ -1887,11 +1911,6 @@
             <inheritdoc />
             <summary>
                 Manages all available Templates.
-            </summary>
-        </member>
-        <member name="F:Drachenhorn.Xml.Template.TemplateManager._manager">
-            <summary>
-                Static instance of the manager.
             </summary>
         </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateManager.Manager">
