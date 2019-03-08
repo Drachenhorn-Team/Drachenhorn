@@ -17,6 +17,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -182,5 +183,26 @@ namespace Drachenhorn.Desktop.Views
         }
 
         #endregion Update
+
+        private void BaseMetroTabControl_OnTabItemClosing(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
+        {
+            if (!(e.ClosingTabItem.DataContext as CharacterSheetViewModel)?.CurrentSheet?.HasChanged == true)
+                return;
+
+            var result = this.ShowModalMessageExternal(
+                LanguageManager.Translate("UI.SouldClose.Caption"),
+                LanguageManager.Translate("UI.SouldClose"),
+                MessageDialogStyle.AffirmativeAndNegative,
+                new MetroDialogSettings()
+                {
+                    AffirmativeButtonText = LanguageManager.Translate("UI.Yes"),
+                    NegativeButtonText = LanguageManager.Translate("UI.No"),
+                    AnimateHide = false,
+                    AnimateShow = false
+                });
+
+            if (result == MessageDialogResult.Negative)
+                e.Cancel = true;
+        }
     }
 }

@@ -16,11 +16,12 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Styles.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
-                <ResourceDictionary
-                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
 
                 <ResourceDictionary Source="UI/Themes/Controls.xaml" />
                 <ResourceDictionary Source="UI/Themes/Images/Black.xaml" />
@@ -36,12 +37,21 @@
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
+            <SolidColorBrush x:Key="BackgroundSelected" Color="{DynamicResource AccentColor}"/>
+            <SolidColorBrush x:Key="BorderBrushSelected" Color="{DynamicResource AccentColor2}"/>
+            <SolidColorBrush x:Key="WindowGlowBrush" Color="{DynamicResource AccentColor3}"/>
+            <SolidColorBrush x:Key="CloseButtonBackgroundHighlighted" Color="{DynamicResource AccentBaseColor}"/>
+            <SolidColorBrush x:Key="CloseButtonBackgroundPressed" Color="{DynamicResource AccentColor4}"/>
+
             <Style TargetType="Control">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
             </Style>
             <Style TargetType="Window">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
             </Style>
+
+            <Style BasedOn="{StaticResource {x:Type TabItem}}" TargetType="mah:MetroTabItem" />
+            <Style BasedOn="{StaticResource {x:Type TabControl}}" TargetType="mah:MetroTabControl" />
 
             <FontFamily x:Key="Morpheus">pack://application:,,,/Resources/#Morpheus</FontFamily>
         </ResourceDictionary>

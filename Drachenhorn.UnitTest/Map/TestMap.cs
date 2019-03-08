@@ -1,7 +1,7 @@
 ﻿using Drachenhorn.Map.BSPT;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Drachenhorn.UnitTest
+namespace Drachenhorn.UnitTest.Map
 {
     [TestClass]
     public class TestMap

@@ -1,7 +1,7 @@
 ﻿using Drachenhorn.Core.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Drachenhorn.UnitTest
+namespace Drachenhorn.UnitTest.Core
 {
     [TestClass]
     public class CoreTest

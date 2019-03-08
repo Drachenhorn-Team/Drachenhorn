@@ -1,8 +1,7 @@
-﻿using System;
-using Drachenhorn.Xml.Data.AP;
+﻿using Drachenhorn.Xml.Data.AP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Drachenhorn.UnitTest.DataTests
+namespace Drachenhorn.UnitTest.XML
 {
     [TestClass]
     public class APTest

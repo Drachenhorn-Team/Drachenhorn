@@ -38,13 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CoreTest.cs" />
-    <Compile Include="DataTests\CurrencyTest.cs" />
-    <Compile Include="DataTests\DateTest.cs" />
-    <Compile Include="DataTests\APTest.cs" />
-    <Compile Include="DataTests\Formula\FormulaTest.cs" />
+    <Compile Include="Core\CoreTest.cs" />
+    <Compile Include="XML\CurrencyTest.cs" />
+    <Compile Include="DataGeneratorHelper.cs" />
+    <Compile Include="XML\DateTest.cs" />
+    <Compile Include="XML\APTest.cs" />
+    <Compile Include="XML\Formula\FormulaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestMap.cs" />
+    <Compile Include="Map\TestMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Easy.Logger">

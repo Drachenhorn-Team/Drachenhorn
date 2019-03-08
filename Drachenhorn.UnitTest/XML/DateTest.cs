@@ -1,8 +1,7 @@
-﻿using System;
-using Drachenhorn.Xml.Objects;
+﻿using Drachenhorn.Xml.Objects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Drachenhorn.UnitTest.DataTests
+namespace Drachenhorn.UnitTest.XML
 {
     [TestClass]
     public class DateTest

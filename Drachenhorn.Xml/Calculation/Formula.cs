@@ -30,7 +30,7 @@ namespace Drachenhorn.Xml.Calculation
         /// <param name="parentSheet">The parent sheet.</param>
         public Formula(CharacterSheet parentSheet)
         {
-            ParentSheet = parentSheet;
+            _parentSheet = parentSheet;
         }
 
         #endregion
@@ -216,7 +216,7 @@ namespace Drachenhorn.Xml.Calculation
         /// <param name="item">The item.</param>
         private void AddParameter(IFormulaKeyItem item)
         {
-            if (string.IsNullOrEmpty(item?.Key))
+            if (string.IsNullOrEmpty(item?.Key) || string.IsNullOrEmpty(Expression))
                 return;
 
             if (!Expression.Contains("[" + item.Key + "]"))
