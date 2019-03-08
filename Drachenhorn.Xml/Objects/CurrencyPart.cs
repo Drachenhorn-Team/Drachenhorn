@@ -97,13 +97,18 @@ namespace Drachenhorn.Xml.Objects
             return amount + Symbol;
         }
 
-        public long Parse(string value)
+        /// <summary>
+        ///     Parses Currency-Text for this CurrencyPart to Value.
+        /// </summary>
+        /// <param name="text">Text to parse. Format depends on Configuration.</param>
+        /// <returns>CurrencyPart-Value</returns>
+        public long Parse(string text)
         {
             var containsChar = Symbol.Contains("%");
 
             var regex = containsChar ? Symbol.Replace("%", "[0-9]*") : "[0-9]*" + Symbol;
 
-            var part = Regex.Match(value, regex).Value;
+            var part = Regex.Match(text, regex).Value;
 
             var before = containsChar ? Symbol.Substring(0, Symbol.IndexOf('%')) : "";
             var after  = containsChar ? Symbol.Substring(Symbol.IndexOf('%') + 1) : Symbol;

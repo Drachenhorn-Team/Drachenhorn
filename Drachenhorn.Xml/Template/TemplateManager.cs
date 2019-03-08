@@ -15,6 +15,9 @@ namespace Drachenhorn.Xml.Template
         /// </summary>
         private static TemplateManager _manager = new TemplateManager();
 
+        /// <summary>
+        ///     Manager for all instances of SheetTemplates
+        /// </summary>
         public static TemplateManager Manager
         {
             get => _manager;

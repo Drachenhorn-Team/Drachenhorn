@@ -104,6 +104,11 @@ namespace Drachenhorn.Xml.Objects
             return null;
         }
 
+        /// <summary>
+        ///     Parses Currency-Text to Currency-Value
+        /// </summary>
+        /// <param name="text">Text to parse. Format depends on Configuration.</param>
+        /// <returns>Currency-Value</returns>
         public long Parse(string text)
         {
             var result = 0L;
