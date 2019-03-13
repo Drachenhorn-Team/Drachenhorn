@@ -182,6 +182,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exe", "Exe", "{8DFC64DF-A05
 		img\Icons\Exe\Drachenhorn256x256.png = img\Icons\Exe\Drachenhorn256x256.png
 		img\Icons\Exe\Drachenhorn32x32.png = img\Icons\Exe\Drachenhorn32x32.png
 		img\Icons\Exe\Drachenhorn48x48.png = img\Icons\Exe\Drachenhorn48x48.png
+		img\Icons\Exe\Drachenhorn64x64.png = img\Icons\Exe\Drachenhorn64x64.png
 	EndProjectSection
 EndProject
 Global
