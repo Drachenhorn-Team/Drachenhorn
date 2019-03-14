@@ -178,6 +178,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exe", "Exe", "{8DFC64DF-A05F-4F61-BC2E-12D435A8DA23}"
 	ProjectSection(SolutionItems) = preProject
 		img\Icons\Exe\Drachenhorn.ico = img\Icons\Exe\Drachenhorn.ico
+		img\Icons\Exe\Drachenhorn128x128.png = img\Icons\Exe\Drachenhorn128x128.png
 		img\Icons\Exe\Drachenhorn16x16.png = img\Icons\Exe\Drachenhorn16x16.png
 		img\Icons\Exe\Drachenhorn256x256.png = img\Icons\Exe\Drachenhorn256x256.png
 		img\Icons\Exe\Drachenhorn32x32.png = img\Icons\Exe\Drachenhorn32x32.png
