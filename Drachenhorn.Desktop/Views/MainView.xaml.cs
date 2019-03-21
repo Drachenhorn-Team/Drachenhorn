@@ -11,6 +11,7 @@ using Drachenhorn.Core.ViewModels.Template;
 using Drachenhorn.Desktop.Helper;
 using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UserSettings;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
 using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
@@ -53,7 +54,7 @@ namespace Drachenhorn.Desktop.Views
         public void OpenFile(string path)
         {
             var temp = new Uri(path).LocalPath;
-            if (temp.EndsWith(CharacterSheet.Extension))
+            if (temp.EndsWith(Constants.SheetExtension))
                 if (DataContext is MainViewModel model)
                 {
                     var sheetModel = new CharacterSheetViewModel(CharacterSheet.Load(path));

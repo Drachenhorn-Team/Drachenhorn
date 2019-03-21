@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Drachenhorn.Core.IO;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
@@ -77,9 +78,8 @@ namespace Drachenhorn.Core.Downloader
 
                 SimpleIoc.Default.GetInstance<IIoService>()
                     .SaveString(
-                        System.IO.Path.Combine(
-                            BaseDirectory,
-                            Name + Extension),
+                        System.IO.Path.Combine(Constants.TemplateBaseDirectory,
+                            Name + Constants.TemplateExtension),
                         result);
 
                 IsDownloadStarted = false;

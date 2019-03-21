@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Data.AP;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Objects;
@@ -212,7 +213,7 @@ namespace Drachenhorn.Xml.Template
         public bool Save()
         {
             if (string.IsNullOrEmpty(Path))
-                Path = System.IO.Path.Combine(BaseDirectory, Name + Extension);
+                Path = System.IO.Path.Combine(Constants.TemplateBaseDirectory, Name + Constants.TemplateExtension);
 
             return Save(Path);
         }

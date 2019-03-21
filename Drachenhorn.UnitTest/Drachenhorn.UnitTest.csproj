@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\CoreTest.cs" />
+    <Compile Include="Organisation\TestArguments.cs" />
     <Compile Include="XML\CurrencyTest.cs" />
     <Compile Include="DataGeneratorHelper.cs" />
     <Compile Include="XML\DateTest.cs" />
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj">
       <Project>{F24CCF9B-685A-453C-BE26-885B8A7C4357}</Project>
       <Name>Drachenhorn.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drachenhorn.Organisation\Drachenhorn.Organisation.csproj">
+      <Project>{52143107-F88B-423B-8A0D-0A5C1EEAEE69}</Project>
+      <Name>Drachenhorn.Organisation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj">
       <Project>{0B148A79-13FE-45C1-9A50-73FCC0C03613}</Project>

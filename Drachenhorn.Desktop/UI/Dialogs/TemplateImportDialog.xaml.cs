@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
@@ -40,9 +41,9 @@ namespace Drachenhorn.Desktop.UI.Dialogs
             YesButton.Click += (sender, args) =>
             {
                 var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateImportDialog>();
-                logger.Info("Copying " + file.FullName + " to " + TemplateMetadata.BaseDirectory);
+                logger.Info("Copying " + file.FullName + " to " + Constants.TemplateBaseDirectory);
 
-                file.CopyTo(Path.Combine(TemplateMetadata.BaseDirectory, fileName), true);
+                file.CopyTo(Path.Combine(Constants.TemplateBaseDirectory, fileName), true);
                 Close();
             };
         }

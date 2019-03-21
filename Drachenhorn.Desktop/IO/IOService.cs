@@ -4,6 +4,7 @@ using System.IO;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Desktop.UI.Dialogs;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet;
 using Microsoft.Win32;
@@ -95,7 +96,7 @@ namespace Drachenhorn.Desktop.IO
 
         public CharacterSheet OpenCharacterSheet()
         {
-            var fileDialog = GetOpenFileDialog(CharacterSheet.Extension,
+            var fileDialog = GetOpenFileDialog(Constants.SheetExtension,
                 LanguageManager.Translate("CharacterSheet.FileType.Name"),
                 LanguageManager.Translate("CharacterSheet.LoadDialog.Title"));
 

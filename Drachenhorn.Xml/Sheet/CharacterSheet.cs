@@ -254,11 +254,6 @@ namespace Drachenhorn.Xml.Sheet
 
         #region Save/Load
 
-        /// <summary>
-        ///     The extension of a CharacterSheet File
-        /// </summary>
-        public static readonly string Extension = ".dsac";
-
         [XmlIgnore] private bool _hasChanged;
 
         /// <summary>

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Drachenhorn.Xml.Data;
 
 namespace Drachenhorn.Xml.Template
 {
@@ -39,15 +40,15 @@ namespace Drachenhorn.Xml.Template
                 if (_availableTemplates != null)
                     return _availableTemplates;
 
-                if (!Directory.Exists(TemplateMetadata.BaseDirectory))
-                    Directory.CreateDirectory(TemplateMetadata.BaseDirectory);
+                if (!Directory.Exists(Constants.TemplateBaseDirectory))
+                    Directory.CreateDirectory(Constants.TemplateBaseDirectory);
 
                 var result = new List<TemplateMetadata>();
-                var files = Directory.GetFiles(TemplateMetadata.BaseDirectory);
+                var files = Directory.GetFiles(Constants.TemplateBaseDirectory);
 
                 foreach (var file in files)
                 {
-                    if (!file.EndsWith(TemplateMetadata.Extension))
+                    if (!file.EndsWith(Constants.TemplateExtension))
                         continue;
 
                     result.Add(new TemplateMetadata(file));

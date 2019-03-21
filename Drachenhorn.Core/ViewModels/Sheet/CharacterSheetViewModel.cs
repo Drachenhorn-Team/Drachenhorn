@@ -1,6 +1,7 @@
 ﻿using System;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Exceptions;
 using Drachenhorn.Xml.Sheet;
 using GalaSoft.MvvmLight;
@@ -62,7 +63,7 @@ namespace Drachenhorn.Core.ViewModels.Sheet
                     string.IsNullOrEmpty(CurrentSheet.Characteristics.Name)
                         ? LanguageManager.Translate("CharacterSheet.SaveDialog.DefaultFileName")
                         : CurrentSheet.Characteristics.Name,
-                    CharacterSheet.Extension,
+                    Constants.SheetExtension,
                     LanguageManager.Translate("CharacterSheet.FileType.Name"),
                     LanguageManager.Translate("CharacterSheet.SaveDialog.Title"));
             }

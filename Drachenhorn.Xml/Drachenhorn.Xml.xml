@@ -418,6 +418,26 @@
         <member name="M:Drachenhorn.Xml.Data.AP.APValue.ToString">
             <inheritdoc />
         </member>
+        <member name="T:Drachenhorn.Xml.Data.Constants">
+            <summary>
+                Constants for Drachenhorn
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Data.Constants.SheetExtension">
+            <summary>
+                CharacterSheet File Extension
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Data.Constants.TemplateExtension">
+            <summary>
+                Template File Extension
+            </summary>
+        </member>
+        <member name="F:Drachenhorn.Xml.Data.Constants.TemplateBaseDirectory">
+            <summary>
+                Template Base Directory.
+            </summary>
+        </member>
         <member name="T:Drachenhorn.Xml.Exceptions.SheetLoadingException">
             <summary>
                 Exception thrown when a CharacterSheet could not be loaded.
@@ -974,11 +994,6 @@
             <value>
                 The Inventory.
             </value>
-        </member>
-        <member name="F:Drachenhorn.Xml.Sheet.CharacterSheet.Extension">
-            <summary>
-                The extension of a CharacterSheet File
-            </summary>
         </member>
         <member name="P:Drachenhorn.Xml.Sheet.CharacterSheet.HasChanged">
             <summary>
@@ -1943,11 +1958,6 @@
                 Basic Metadata for Template
             </summary>
         </member>
-        <member name="F:Drachenhorn.Xml.Template.TemplateMetadata.Extension">
-            <summary>
-                The Template Extension
-            </summary>
-        </member>
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.#ctor">
             <summary>
                 Basic constructor.
@@ -1965,14 +1975,6 @@
                 Basic constructor.
             </summary>
             <param name="path">Path of the File.</param>
-        </member>
-        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.BaseDirectory">
-            <summary>
-                Gets the Template BaseDirectory.
-            </summary>
-            <value>
-                The Template BaseDirectory.
-            </value>
         </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Version">
             <summary>

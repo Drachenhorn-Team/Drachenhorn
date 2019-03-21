@@ -12,10 +12,6 @@ namespace Drachenhorn.Xml.Template
     [Serializable]
     public class TemplateMetadata : ChildChangedBase, IEquatable<TemplateMetadata>
     {
-        /// <summary>
-        ///     The Template Extension
-        /// </summary>
-        public static readonly string Extension = ".dsat";
 
         #region c'tor
 
@@ -64,16 +60,6 @@ namespace Drachenhorn.Xml.Template
         private SheetTemplate _template;
 
         [XmlIgnore] private double _version;
-
-        /// <summary>
-        ///     Gets the Template BaseDirectory.
-        /// </summary>
-        /// <value>
-        ///     The Template BaseDirectory.
-        /// </value>
-        public static string BaseDirectory => System.IO.Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Drachenhorn", "Templates");
 
         /// <summary>
         ///     Version of the Template

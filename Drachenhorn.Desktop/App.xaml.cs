@@ -18,6 +18,7 @@ using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UI.MVVM;
 using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Desktop.Views;
+using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Template;
 using Easy.Logger;
@@ -105,9 +106,9 @@ namespace Drachenhorn.Desktop
                 try
                 {
                     var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(CharacterSheet.Extension)
-                        || temp.EndsWith(TemplateMetadata.Extension)
-                        && !temp.StartsWith(TemplateMetadata.BaseDirectory))
+                    if (temp.EndsWith(Constants.SheetExtension)
+                        || temp.EndsWith(Constants.TemplateExtension)
+                        && !temp.StartsWith(Constants.TemplateBaseDirectory))
                     {
                         filePath = temp;
                         break;
@@ -119,7 +120,7 @@ namespace Drachenhorn.Desktop
                 }
             }
 
-            if (filePath.EndsWith(TemplateMetadata.Extension))
+            if (filePath.EndsWith(Constants.TemplateExtension))
             {
                 new TemplateImportDialog(filePath).ShowDialog();
                 filePath = "";
@@ -251,7 +252,7 @@ namespace Drachenhorn.Desktop
                         foreach (var item in args)
                         {
                             var temp = new Uri(item).LocalPath;
-                            if (temp.EndsWith(CharacterSheet.Extension))
+                            if (temp.EndsWith(Constants.SheetExtension))
                                 text = item;
                         }
 
