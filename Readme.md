@@ -83,12 +83,6 @@ The code to read the Character-Sheets (".dsac") and Rule-Templates (".dsat") can
 
 ## Support/Bugs
 
-<p>
-  <a href="https://waffle.io/Drachenhorn-Team/Drachenhorn" target="_blank">
-    <img src="https://badge.waffle.io/Drachenhorn-Team/Drachenhorn.svg?columns=all&style=flat-square" alt="Beta-Build">
-  </a>
-</p>
-
 For any Bug-Reports or Feature-Request please open an [Issue](https://github.com/Drachenhorn-Team/Drachenhorn/issues) containing all needed information.
 
 ## Development
