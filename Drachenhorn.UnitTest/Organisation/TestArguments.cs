@@ -13,13 +13,11 @@ namespace Drachenhorn.UnitTest.Organisation
         {
             string[] args = {"-p", "C:\\t t\\test.dsac"};
 
-            string[] ext = {Constants.SheetExtension, Constants.TemplateExtension};
-
-            var manager = new ArgumentManager(args, ext);
+            var manager = new ArgumentManager(args);
 
             Assert.IsTrue(manager.ShouldPrint, "Print not recognized");
 
-            Assert.Equals(manager.Files.Count, 1);
+            Assert.AreEqual(1, manager[Constants.SheetExtension].Count);
         }
     }
 }
