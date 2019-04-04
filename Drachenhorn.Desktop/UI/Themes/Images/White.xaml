@@ -8,6 +8,8 @@
     <BitmapImage x:Key="ArrowBlockDownIconDynamic"
                  UriSource="pack://application:,,,/Images/White/Common/ArrowBlockDown.png" />
     <BitmapImage x:Key="DownloadIconDynamic" UriSource="pack://application:,,,/Images/White/Common/Download.png" />
+    <BitmapImage x:Key="YesIconDynamic" UriSource="pack://application:,,,/Images/White/Common/Yes.png" />
+    <BitmapImage x:Key="NoIconDynamic" UriSource="pack://application:,,,/Images/White/Common/No.png" />
 
     <BitmapImage x:Key="ImportIconDynamic" UriSource="pack://application:,,,/Images/White/Import.png" />
     <BitmapImage x:Key="ExportIconDynamic" UriSource="pack://application:,,,/Images/White/Export.png" />

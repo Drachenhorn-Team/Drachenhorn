@@ -1999,6 +1999,11 @@
                 Gets the one single instance of the entire template.
             </summary>
         </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.ExistsInInstalled">
+            <summary>
+                Checks if the Template is already installed on this Device
+            </summary>
+        </member>
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.SetVersionAndNameFromXmlLine(System.String)">
             <summary>
                 Sets Version based on the second line of the XML-File

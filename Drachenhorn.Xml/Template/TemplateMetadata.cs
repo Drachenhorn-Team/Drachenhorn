@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
+using Drachenhorn.Xml.Data;
 
 namespace Drachenhorn.Xml.Template
 {
@@ -124,6 +125,11 @@ namespace Drachenhorn.Xml.Template
                 return _template;
             }
         }
+
+        /// <summary>
+        ///     Checks if the Template is already installed on this Device
+        /// </summary>
+        public bool ExistsInInstalled => File.Exists(System.IO.Path.Combine(Constants.TemplateBaseDirectory, Name + Constants.TemplateExtension));
 
         #endregion
 

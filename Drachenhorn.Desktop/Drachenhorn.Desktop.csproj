@@ -454,6 +454,18 @@
     <Resource Include="..\img\Icons\App\Icon64x64.png">
       <Link>Images\Common\Icon64x64.png</Link>
     </Resource>
+    <Resource Include="..\img\Black\Common\No.png">
+      <Link>Images\Black\Common\No.png</Link>
+    </Resource>
+    <Resource Include="..\img\Black\Common\Yes.png">
+      <Link>Images\Black\Common\Yes.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\No.png">
+      <Link>Images\White\Common\No.png</Link>
+    </Resource>
+    <Resource Include="..\img\White\Common\Yes.png">
+      <Link>Images\White\Common\Yes.png</Link>
+    </Resource>
     <Content Include="commit">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -698,6 +710,10 @@
     <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj">
       <Project>{f24ccf9b-685a-453c-be26-885b8a7c4357}</Project>
       <Name>Drachenhorn.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drachenhorn.Organisation\Drachenhorn.Organisation.csproj">
+      <Project>{52143107-f88b-423b-8a0d-0a5c1eeaee69}</Project>
+      <Name>Drachenhorn.Organisation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj">
       <Project>{0b148a79-13fe-45c1-9a50-73fcc0c03613}</Project>

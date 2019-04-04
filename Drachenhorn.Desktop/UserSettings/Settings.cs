@@ -46,8 +46,6 @@ namespace Drachenhorn.Desktop.UserSettings
 
         [XmlIgnore] private bool _isNew = true;
 
-        [XmlIgnore] private bool? _showConsole = false;
-
         [XmlIgnore] private VisualThemeType _visualTheme;
 
         [XmlElement("CurrentCulture")]
@@ -76,19 +74,6 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (_accentColor == value)
                     return;
                 _accentColor = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlElement("ShowConsole")]
-        public bool? ShowConsole
-        {
-            get => _showConsole;
-            set
-            {
-                if (_showConsole == value)
-                    return;
-                _showConsole = value;
                 OnPropertyChanged();
             }
         }

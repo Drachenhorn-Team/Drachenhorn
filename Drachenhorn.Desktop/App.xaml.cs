@@ -18,6 +18,7 @@ using Drachenhorn.Desktop.UI.Dialogs;
 using Drachenhorn.Desktop.UI.MVVM;
 using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Desktop.Views;
+using Drachenhorn.Organisation.Arguments;
 using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
 using Drachenhorn.Xml.Template;
@@ -58,8 +59,6 @@ namespace Drachenhorn.Desktop
 
         #region Properties
 
-        private readonly ConsoleWindow _console = new ConsoleWindow();
-
         private bool _isClosing;
 
         #endregion
@@ -85,8 +84,10 @@ namespace Drachenhorn.Desktop
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
-            _console.Show();
-            _console.Visibility = Visibility.Visible;
+            var console = new ConsoleWindow();
+
+            console.Show();
+            console.Visibility = Visibility.Visible;
 #endif
 
             var splash = new SplashScreen();
@@ -94,50 +95,57 @@ namespace Drachenhorn.Desktop
 
             InitializeData();
 
-            var allArgs = new List<string>(e.Args);
+            InitializeArgs();
 
-            var filePath = "";
-            foreach (var item in allArgs)
-            {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(item);
+            var templates = SimpleIoc.Default.GetInstance<ArgumentManager>()[Constants.TemplateExtension];
 
-                if (item.Contains("squirrel")) continue;
+            if (templates != null)
+                new TemplateImportDialog(templates).ShowDialog();
 
-                try
-                {
-                    var temp = new Uri(item).LocalPath;
-                    if (temp.EndsWith(Constants.SheetExtension)
-                        || temp.EndsWith(Constants.TemplateExtension)
-                        && !temp.StartsWith(Constants.TemplateBaseDirectory))
-                    {
-                        filePath = temp;
-                        break;
-                    }
-                }
-                catch (UriFormatException ex)
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<App>().Error("Error reading File.", ex);
-                }
-            }
+            if (SimpleIoc.Default.GetInstance<ArgumentManager>().ShouldPrint)
+                MainWindow = InitPrintView();
+            else
+                MainWindow = InitMainView();
 
-            if (filePath.EndsWith(Constants.TemplateExtension))
-            {
-                new TemplateImportDialog(filePath).ShowDialog();
-                filePath = "";
-            }
-
-            MainWindow = new MainView(filePath);
-            MainWindow.Show();
             splash.Close();
 
-            MainWindow.Closed += (s, a) =>
-            {
-                _isClosing = true;
+            if (MainWindow != null)
+                MainWindow.Closed += (s, a) => { _isClosing = true; };
 
-                _console.ShouldClose = true;
-                _console.Close();
-            };
+#if DEBUG
+            if (MainWindow != null)
+                MainWindow.Closed += (s, a) =>
+                {
+                    console.ShouldClose = true;
+                    console.Close();
+                };
+#endif
+
+            MainWindow?.Show();
         }
+
+        #region WindowsStartup
+
+        private Window InitMainView()
+        {
+            var files = SimpleIoc.Default.GetInstance<ArgumentManager>()[Constants.SheetExtension]
+                ?.Select(x => x.FullName);
+
+            return new MainView(files);
+        }
+
+        private Window InitPrintView()
+        {
+            var path = SimpleIoc.Default.GetInstance<ArgumentManager>()[Constants.SheetExtension].First().FullName;
+
+            var sheet = CharacterSheet.Load(path);
+
+            return new PrintView(sheet);
+        }
+
+        #endregion WindowStartup
+
+        #region init
 
         private void InitializeData()
         {
@@ -154,23 +162,6 @@ namespace Drachenhorn.Desktop
 
             Resources["Settings"] = settings;
 
-            _console.Visibility = settings.ShowConsole == true ? Visibility.Visible : Visibility.Hidden;
-
-            settings.PropertyChanged += (sender, args) =>
-            {
-                if (args.PropertyName == "ShowConsole")
-                    if (settings.ShowConsole == true)
-                    {
-                        if (!Current.Windows.OfType<ConsoleWindow>().Any())
-                            _console.Show();
-                        _console.Visibility = Visibility.Visible;
-                    }
-                    else
-                    {
-                        _console.Visibility = Visibility.Collapsed;
-                    }
-            };
-
             SimpleIoc.Default.Register<ISettings>(() => settings);
 
             SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
@@ -180,6 +171,29 @@ namespace Drachenhorn.Desktop
                     SetAccentAndTheme(settings.AccentColor, settings.VisualTheme);
             };
         }
+
+        private void InitializeArgs()
+        {
+            var args = Environment.GetCommandLineArgs();
+
+            //var temp = new string[temp.Length - 1];
+
+            //for (int i = 1; i < temp.Length; ++i)
+            //    temp[i - 1] = args[i];
+
+            //args = temp;
+
+            foreach (var s in args)
+            {
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info("s");
+            }
+
+            var manager = new ArgumentManager(args);
+
+            SimpleIoc.Default.Register(() => manager);
+        }
+
+        #endregion init
 
         #region Theme
 

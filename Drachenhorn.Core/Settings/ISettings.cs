@@ -1,9 +1,10 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel;
+using System.Globalization;
 using Drachenhorn.Xml.Template;
 
 namespace Drachenhorn.Core.Settings
 {
-    public interface ISettings
+    public interface ISettings : INotifyPropertyChanged
     {
         #region Properties
 
@@ -16,8 +17,6 @@ namespace Drachenhorn.Core.Settings
 
         VisualThemeType VisualTheme { get; set; }
         string AccentColor { get; set; }
-
-        bool? ShowConsole { get; set; }
 
         SheetTemplate CurrentTemplate { get; set; }
 

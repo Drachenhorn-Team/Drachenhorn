@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{97542ADA-C7B
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		.imgbotconfig = .imgbotconfig
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		LICENSE = LICENSE
 	EndProjectSection
@@ -83,7 +84,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{ED0F17
 		img\White\Common\Add.png = img\White\Common\Add.png
 		img\White\Common\ArrowBlockDown.png = img\White\Common\ArrowBlockDown.png
 		img\White\Common\Download.png = img\White\Common\Download.png
+		img\White\Common\No.png = img\White\Common\No.png
 		img\White\Common\Remove.png = img\White\Common\Remove.png
+		img\White\Common\Yes.png = img\White\Common\Yes.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Loading", "Loading", "{BF3E3F39-B247-41A4-B00C-6F863D5F64FA}"
@@ -103,7 +106,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6E2197
 		img\Black\Common\Add.png = img\Black\Common\Add.png
 		img\Black\Common\ArrowBlockDown.png = img\Black\Common\ArrowBlockDown.png
 		img\Black\Common\Download.png = img\Black\Common\Download.png
+		img\Black\Common\No.png = img\Black\Common\No.png
 		img\Black\Common\Remove.png = img\Black\Common\Remove.png
+		img\Black\Common\Yes.png = img\Black\Common\Yes.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Loading", "Loading", "{B16AA29F-2058-416C-BD85-AE34519CD128}"
@@ -186,7 +191,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exe", "Exe", "{8DFC64DF-A05
 		img\Icons\Exe\Drachenhorn64x64.png = img\Icons\Exe\Drachenhorn64x64.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.Organisation", "Drachenhorn.Organisation\Drachenhorn.Organisation.csproj", "{52143107-F88B-423B-8A0D-0A5C1EEAEE69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Organisation", "Drachenhorn.Organisation\Drachenhorn.Organisation.csproj", "{52143107-F88B-423B-8A0D-0A5C1EEAEE69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

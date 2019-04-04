@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,15 +31,20 @@ namespace Drachenhorn.Desktop.Views
     {
         #region c'tor
 
-        public MainView(string path)
+        public MainView(IEnumerable<string> files)
         {
             InitializeComponent();
 
             NotificationContainer.Manager = new NotificationMessageManager();
 
-            if (!string.IsNullOrEmpty(path)) Loaded += (sender, args) => { OpenFile(path); };
-
-            //TemplateGallery.ItemsSource = SheetTemplate.AvailableTemplates;
+            if (files != null && files.Any())
+                Loaded += (sender, args) =>
+                {
+                    foreach (var file in files)
+                    {
+                        OpenFile(file);
+                    }
+                };
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
         }

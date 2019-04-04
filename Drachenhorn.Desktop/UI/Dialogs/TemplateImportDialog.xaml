@@ -5,36 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
+        xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
-        Style="{StaticResource {x:Type Window}}"
-        Title="TemplateImportDialog" SizeToContent="Height" Width="300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="{lang:Translate Template.Name}" Margin="5"
-                   Grid.Column="0" Grid.Row="0" />
-        <TextBlock Name="NameBox" Margin="5" Grid.Column="1" Grid.Row="0" />
-
-        <TextBlock Text="{lang:Translate Template.Version}" Margin="5"
-                   Grid.Column="0" Grid.Row="1" />
-        <TextBlock Name="VersionBox" Margin="5" Grid.Column="1" Grid.Row="1" />
-
+        ResizeMode="NoResize" d:DesignHeight="100"
+        Style="{StaticResource {x:Type Window}}" Foreground="{DynamicResource Foreground}"
+        Title="TemplateImportDialog" SizeToContent="Height" Width="500">
+    <DockPanel>
         <TextBlock Text="{lang:Translate Template.DoYouWantToAdd}" Margin="5"
-                   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="WrapWithOverflow" />
+                   TextWrapping="WrapWithOverflow" DockPanel.Dock="Top"/>
 
-        <WrapPanel HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Name="YesButton" Content="{lang:Translate UI.Yes}" Margin="5" Width="100" />
             <Button Name="NoButton" Content="{lang:Translate UI.No}" Margin="5" Width="100" />
         </WrapPanel>
-    </Grid>
+
+        <ListBox Name="ItemList">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="template:TemplateMetadata">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{lang:Translate Template.Name}" Margin="5" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Name}" Margin="5" Grid.Column="1"/>
+
+                        <TextBlock Text="{lang:Translate Template.Version}" Margin="10 5 5 5" FontWeight="Bold" Grid.Column="2"/>
+                        <TextBlock Text="{Binding Version}" Margin="5" Grid.Column="3"/>
+
+                        <Image Height="23" Source="{DynamicResource YesIconDynamic}"
+                               Grid.Column="4" VerticalAlignment="Center"
+                               Visibility="{Binding ExistsInInstalled, Converter={StaticResource BoolToInVisibilityConverter}}"/>
+
+                        <Image Height="23" Source="{DynamicResource NoIconDynamic}"
+                               Grid.Column="4" VerticalAlignment="Center"
+                               Visibility="{Binding ExistsInInstalled, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
 </Window>

@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using Drachenhorn.Xml.Data;
@@ -15,35 +17,46 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     {
         #region c'tor
 
-        public TemplateImportDialog(string filePath)
+        public TemplateImportDialog(IEnumerable<FileInfo> files)
         {
             InitializeComponent();
 
-            var file = new FileInfo(filePath);
+            List<TemplateMetadata> templates = new List<TemplateMetadata>();
 
-            var fileName = file.Name;
+            foreach (var file in files)
+                templates.Add(new TemplateMetadata(file.FullName));
 
-            NameBox.Text = fileName;
+            ItemList.ItemsSource = templates;
 
-            using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
-            {
-                sr.ReadLine();
-                var secondLine = sr.ReadLine();
+            //var fileName = file.Name;
 
-                if (!string.IsNullOrEmpty(secondLine))
-                {
-                    var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(secondLine).Value;
-                    VersionBox.Text = match.Substring(9, match.Length - 10);
-                }
-            }
+            //NameBox.Text = fileName;
+
+            //using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+            //{
+            //    sr.ReadLine();
+            //    var secondLine = sr.ReadLine();
+
+            //    if (!string.IsNullOrEmpty(secondLine))
+            //    {
+            //        var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(secondLine).Value;
+            //        VersionBox.Text = match.Substring(9, match.Length - 10);
+            //    }
+            //}
 
             NoButton.Click += (sender, args) => { Close(); };
             YesButton.Click += (sender, args) =>
             {
                 var logger = SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateImportDialog>();
-                logger.Info("Copying " + file.FullName + " to " + Constants.TemplateBaseDirectory);
 
-                file.CopyTo(Path.Combine(Constants.TemplateBaseDirectory, fileName), true);
+                foreach (var template in templates)
+                {
+                    logger.Info("Copying " + template.Path + " to " + Constants.TemplateBaseDirectory);
+
+                    File.Copy(template.Path,
+                        Path.Combine(Constants.TemplateBaseDirectory, template.Name + Constants.TemplateExtension),
+                        false);
+                }
                 Close();
             };
         }
