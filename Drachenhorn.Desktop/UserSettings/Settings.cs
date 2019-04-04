@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using DesktopBridge;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Xml;
@@ -119,10 +118,6 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             get
             {
-                var helpers = new Helpers();
-                if (helpers.IsRunningAsUwp())
-                    return "Version managed by Windows-Store";
-
                 try
                 {
                     using (var mgr = new UpdateManager(null))

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.ViewModels.Common;
@@ -211,5 +213,54 @@ namespace Drachenhorn.Desktop.Views
             if (result == MessageDialogResult.Negative)
                 e.Cancel = true;
         }
+
+        #region WindowDrag
+
+        private bool _restoreForDragMove;
+
+        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                if (ResizeMode != ResizeMode.CanResize &&
+                    ResizeMode != ResizeMode.CanResizeWithGrip)
+                {
+                    return;
+                }
+
+                WindowState = WindowState == WindowState.Maximized
+                    ? WindowState.Normal
+                    : WindowState.Maximized;
+            }
+            else
+            {
+                _restoreForDragMove = WindowState == WindowState.Maximized;
+                DragMove();
+            }
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (_restoreForDragMove)
+            {
+                _restoreForDragMove = false;
+
+                var point = PointToScreen(e.MouseDevice.GetPosition(this));
+
+                Left = point.X - (RestoreBounds.Width * 0.5);
+                Top = point.Y - 20;
+
+                WindowState = WindowState.Normal;
+
+                DragMove();
+            }
+        }
+
+        private void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            _restoreForDragMove = false;
+        }
+
+        #endregion WindowDrag
     }
 }

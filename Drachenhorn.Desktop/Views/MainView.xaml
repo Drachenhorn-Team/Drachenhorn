@@ -81,6 +81,9 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Border Grid.Row="0"
+                                MouseLeftButtonDown="OnMouseLeftButtonDown"
+                                MouseMove="OnMouseMove"
+                                MouseLeftButtonUp="OnMouseLeftButtonUp"
                                 Background="{DynamicResource MahApps.Metro.HamburgerMenu.PaneBackgroundBrush}">
                             <DockPanel>
                                 <ContentControl Focusable="False"
