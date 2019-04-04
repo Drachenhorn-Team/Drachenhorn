@@ -21,7 +21,6 @@ using Drachenhorn.Desktop.Views;
 using Drachenhorn.Organisation.Arguments;
 using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
-using Drachenhorn.Xml.Template;
 using Easy.Logger;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
@@ -95,24 +94,33 @@ namespace Drachenhorn.Desktop
 
             InitializeData();
 
-            InitializeArgs();
+            var args = InitializeArgs();
 
-            var templates = SimpleIoc.Default.GetInstance<ArgumentManager>()[Constants.TemplateExtension];
+            var templates = args[Constants.TemplateExtension];
 
             if (templates != null)
                 new TemplateImportDialog(templates).ShowDialog();
 
-            if (SimpleIoc.Default.GetInstance<ArgumentManager>().ShouldPrint)
+            if (args.UrlScheme != null)
+            {
+                //TODO: implement URIScheme
+            }
+
+            if (args.ShouldPrint)
                 MainWindow = InitPrintView();
             else
                 MainWindow = InitMainView();
 
             splash.Close();
 
+
+            //Set isClosing for SingleInstance Pipe
             if (MainWindow != null)
                 MainWindow.Closed += (s, a) => { _isClosing = true; };
 
+            
 #if DEBUG
+            //Auto-Close Debug Console on Window Close
             if (MainWindow != null)
                 MainWindow.Closed += (s, a) =>
                 {
@@ -172,7 +180,7 @@ namespace Drachenhorn.Desktop
             };
         }
 
-        private void InitializeArgs()
+        private ArgumentManager InitializeArgs()
         {
             var args = Environment.GetCommandLineArgs();
 
@@ -191,6 +199,8 @@ namespace Drachenhorn.Desktop
             var manager = new ArgumentManager(args);
 
             SimpleIoc.Default.Register(() => manager);
+
+            return manager;
         }
 
         #endregion init

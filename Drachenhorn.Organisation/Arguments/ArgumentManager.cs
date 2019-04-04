@@ -25,6 +25,8 @@ namespace Drachenhorn.Organisation.Arguments
         /// <returns>List of Files matching that Extension.</returns>
         public IReadOnlyList<FileInfo> this[string key] => Files.ContainsKey(key) ? Files[key] : null;
 
+        public Uri UrlScheme { get; }
+
         #endregion Properties
 
 
@@ -42,6 +44,15 @@ namespace Drachenhorn.Organisation.Arguments
 
             foreach (var file in files)
             {
+                if (file.ToLower().StartsWith("drachenhorn:"))
+                {
+                    var text = file.Substring(12, file.Length - 12);
+
+                    UrlScheme = new Uri(text);
+
+                    continue;
+                }
+
                 try
                 {
                     var f = new FileInfo(file);
