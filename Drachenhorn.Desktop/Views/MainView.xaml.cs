@@ -247,10 +247,12 @@ namespace Drachenhorn.Desktop.Views
 
                 var point = PointToScreen(e.MouseDevice.GetPosition(this));
 
-                Left = point.X - (RestoreBounds.Width * 0.5);
-                Top = point.Y - 20;
+                var fullWidth = this.Width;
 
                 WindowState = WindowState.Normal;
+
+                Left = point.X - (RestoreBounds.Width * (point.X / fullWidth));
+                Top = 1;
 
                 DragMove();
             }

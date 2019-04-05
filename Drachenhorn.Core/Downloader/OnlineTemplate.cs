@@ -94,6 +94,16 @@ namespace Drachenhorn.Core.Downloader
         #endregion Download
 
 
+        #region CopyTo
+
+        public override void CopyToTemplateDirectory()
+        {
+            TryDownload();
+        }
+
+        #endregion CopyTo
+
+
         #region ToString
 
         public override string ToString()

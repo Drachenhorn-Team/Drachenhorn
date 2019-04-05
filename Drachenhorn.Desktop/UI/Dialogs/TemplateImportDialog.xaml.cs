@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -17,32 +18,14 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     {
         #region c'tor
 
-        public TemplateImportDialog(IEnumerable<FileInfo> files)
+        public TemplateImportDialog(TemplateMetadata template) : this(new[] { template }) { }
+
+        [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
+        public TemplateImportDialog(IEnumerable<TemplateMetadata> templates)
         {
             InitializeComponent();
 
-            List<TemplateMetadata> templates = new List<TemplateMetadata>();
-
-            foreach (var file in files)
-                templates.Add(new TemplateMetadata(file.FullName));
-
             ItemList.ItemsSource = templates;
-
-            //var fileName = file.Name;
-
-            //NameBox.Text = fileName;
-
-            //using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
-            //{
-            //    sr.ReadLine();
-            //    var secondLine = sr.ReadLine();
-
-            //    if (!string.IsNullOrEmpty(secondLine))
-            //    {
-            //        var match = new Regex("Version=\"[0-9]+[.][0-9]+\"").Match(secondLine).Value;
-            //        VersionBox.Text = match.Substring(9, match.Length - 10);
-            //    }
-            //}
 
             NoButton.Click += (sender, args) => { Close(); };
             YesButton.Click += (sender, args) =>
@@ -53,9 +36,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 {
                     logger.Info("Copying " + template.Path + " to " + Constants.TemplateBaseDirectory);
 
-                    File.Copy(template.Path,
-                        Path.Combine(Constants.TemplateBaseDirectory, template.Name + Constants.TemplateExtension),
-                        false);
+                    template.CopyToTemplateDirectory();
                 }
                 Close();
             };

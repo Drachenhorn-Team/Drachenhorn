@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using Drachenhorn.Core.Downloader;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
@@ -21,6 +22,7 @@ using Drachenhorn.Desktop.Views;
 using Drachenhorn.Organisation.Arguments;
 using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
+using Drachenhorn.Xml.Template;
 using Easy.Logger;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
@@ -99,11 +101,15 @@ namespace Drachenhorn.Desktop
             var templates = args[Constants.TemplateExtension];
 
             if (templates != null)
-                new TemplateImportDialog(templates).ShowDialog();
+                new TemplateImportDialog(
+                    from x in templates select new TemplateMetadata(x.FullName)
+                    ).ShowDialog();
 
             if (args.UrlScheme != null)
             {
-                //TODO: implement URIScheme
+                var temp = new OnlineTemplate(args.UrlScheme.AbsoluteUri);
+
+                new TemplateImportDialog(temp).ShowDialog();
             }
 
             if (args.ShouldPrint)
@@ -153,7 +159,7 @@ namespace Drachenhorn.Desktop
 
         #endregion WindowStartup
 
-        #region init
+        #region Init
 
         private void InitializeData()
         {
@@ -203,7 +209,7 @@ namespace Drachenhorn.Desktop
             return manager;
         }
 
-        #endregion init
+        #endregion Init
 
         #region Theme
 

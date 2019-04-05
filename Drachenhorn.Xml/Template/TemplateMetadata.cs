@@ -150,6 +150,22 @@ namespace Drachenhorn.Xml.Template
             Name = !string.IsNullOrEmpty(nameMatch) ? nameMatch.Substring(6, nameMatch.Length - 7) : "unnamed";
         }
 
+        #region CopyTo
+
+        /// <summary>
+        ///     Copies the Template to the Templates-Directory on the Computer
+        /// </summary>
+        public virtual void CopyToTemplateDirectory()
+        {
+            var file = new FileInfo(Path);
+            
+            file.CopyTo(System.IO.Path.Combine(Constants.TemplateBaseDirectory,
+                    this.Name + Constants.TemplateExtension),
+                    false);
+        }
+
+        #endregion CopyTo
+
 
         #region Equals
 
