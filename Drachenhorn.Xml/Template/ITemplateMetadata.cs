@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Drachenhorn.Xml.Template
 {
-    public interface ITemplateMetadata : IEquatable<ITemplateMetadata>
+    public interface ITemplateMetadata : IEquatable<ITemplateMetadata>, INotifyPropertyChanged
     {
         double Version { get; set; }
         string Name { get; set; }
 
         bool IsInstalled { get; }
+
+        bool Install();
+        Task<bool> InstallAsync();
     }
 
     /// <summary>
