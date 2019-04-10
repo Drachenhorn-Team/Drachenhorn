@@ -38,11 +38,11 @@
 
                         <Image Height="23" Source="{DynamicResource YesIconDynamic}"
                                Grid.Column="4" VerticalAlignment="Center"
-                               Visibility="{Binding ExistsInInstalled, Converter={StaticResource BoolToInVisibilityConverter}}"/>
+                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToInVisibilityConverter}}"/>
 
                         <Image Height="23" Source="{DynamicResource NoIconDynamic}"
                                Grid.Column="4" VerticalAlignment="Center"
-                               Visibility="{Binding ExistsInInstalled, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToVisibilityConverter}}"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

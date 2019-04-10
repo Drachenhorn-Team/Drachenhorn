@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Data;
 
@@ -11,7 +12,7 @@ namespace Drachenhorn.Xml.Template
     ///     Basic Metadata for Template
     /// </summary>
     [Serializable]
-    public class TemplateMetadata : ChildChangedBase, IEquatable<TemplateMetadata>
+    public class TemplateMetadata : ChildChangedBase, ITemplateMetadata
     {
 
         #region c'tor
@@ -46,7 +47,7 @@ namespace Drachenhorn.Xml.Template
             using (var sr = new StreamReader(File.OpenRead(path)))
             {
                 sr.ReadLine();
-                SetVersionAndNameFromXmlLine(sr.ReadLine());
+                this.SetVersionAndNameFromXmlLine(sr.ReadLine());
             }
         }
 
@@ -62,6 +63,7 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore] private double _version;
 
+        /// <inheritdoc />
         /// <summary>
         ///     Version of the Template
         /// </summary>
@@ -78,6 +80,7 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         ///     Path of the Template
         /// </summary>
@@ -94,6 +97,7 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         ///     Gets or sets the name of the file.
         /// </summary>
@@ -113,6 +117,36 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
+        /// <inheritdoc />
+        public bool IsInstalled => this.CheckInstalled();
+
+        /// <inheritdoc />
+        public bool Install()
+        {
+            try
+            {
+                var file = new FileInfo(Path);
+
+                var target = System.IO.Path.Combine(
+                    Constants.TemplateBaseDirectory,
+                    Name + Constants.TemplateExtension);
+
+                file.CopyTo(target, false);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <inheritdoc />
+        public Task<bool> InstallAsync()
+        {
+            return Task.Run(() => Install());
+        }
+
         /// <summary>
         ///     Gets the one single instance of the entire template.
         /// </summary>
@@ -126,45 +160,7 @@ namespace Drachenhorn.Xml.Template
             }
         }
 
-        /// <summary>
-        ///     Checks if the Template is already installed on this Device
-        /// </summary>
-        public bool ExistsInInstalled => File.Exists(System.IO.Path.Combine(Constants.TemplateBaseDirectory, Name + Constants.TemplateExtension));
-
         #endregion
-
-        /// <summary>
-        ///     Sets Version based on the second line of the XML-File
-        /// </summary>
-        /// <param name="line">Second line of the XML.</param>
-        protected void SetVersionAndNameFromXmlLine(string line)
-        {
-            var versionMatch = new Regex("Version=\"[0-9]+[.]?[0-9]*\"").Match(line).Value;
-
-            if (!string.IsNullOrEmpty(versionMatch))
-                Version = double.Parse(versionMatch.Substring(9, versionMatch.Length - 10),
-                    CultureInfo.InvariantCulture);
-
-            var nameMatch = new Regex("Name=\"[^\"]*\"").Match(line).Value;
-
-            Name = !string.IsNullOrEmpty(nameMatch) ? nameMatch.Substring(6, nameMatch.Length - 7) : "unnamed";
-        }
-
-        #region CopyTo
-
-        /// <summary>
-        ///     Copies the Template to the Templates-Directory on the Computer
-        /// </summary>
-        public virtual void CopyToTemplateDirectory()
-        {
-            var file = new FileInfo(Path);
-            
-            file.CopyTo(System.IO.Path.Combine(Constants.TemplateBaseDirectory,
-                    this.Name + Constants.TemplateExtension),
-                    false);
-        }
-
-        #endregion CopyTo
 
 
         #region Equals
@@ -172,7 +168,7 @@ namespace Drachenhorn.Xml.Template
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            return obj is TemplateMetadata metadata && Equals(metadata);
+            return obj is ITemplateMetadata metadata && this.Equals(metadata);
         }
 
         /// <inheritdoc />
@@ -180,20 +176,16 @@ namespace Drachenhorn.Xml.Template
         {
             unchecked
             {
-                return (Version.GetHashCode() * 397) ^ (Name != null ? Name.GetHashCode() : 0);
+                return (Version.GetHashCode() * 397) ^ (Name != null ? Name.GetHashCode() : 1);
             }
         }
-
-        /// <summary>
-        ///     Checks if objects are Equal.
-        /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns>True if Equal</returns>
-        public bool Equals(TemplateMetadata obj)
+        
+        /// <inheritdoc />
+        public bool Equals(ITemplateMetadata obj)
         {
             if (obj == null) return false;
 
-            return Name == obj.Name && Math.Abs(Version - obj.Version) < double.Epsilon;
+            return this.Name == obj.Name && Math.Abs(this.Version - obj.Version) < double.Epsilon;
         }
 
         /// <summary>

@@ -18,10 +18,10 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     {
         #region c'tor
 
-        public TemplateImportDialog(TemplateMetadata template) : this(new[] { template }) { }
+        public TemplateImportDialog(ITemplateMetadata template) : this(new[] { template }) { }
 
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-        public TemplateImportDialog(IEnumerable<TemplateMetadata> templates)
+        public TemplateImportDialog(IEnumerable<ITemplateMetadata> templates)
         {
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
                 {
                     logger.Info("Copying " + template.Path + " to " + Constants.TemplateBaseDirectory);
 
-                    template.CopyToTemplateDirectory();
+                    template.InstallAsync();
                 }
                 Close();
             };

@@ -1798,6 +1798,105 @@
         <member name="M:Drachenhorn.Xml.Sheet.Skills.SpecialSkill.GetInformation">
             <inheritdoc />
         </member>
+        <member name="T:Drachenhorn.Xml.Template.ITemplateMetadata">
+            <summary>
+                Basic Template Data
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.ITemplateMetadata.Path">
+            <summary>
+                Path to the Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.ITemplateMetadata.Version">
+            <summary>
+                Version of the Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.ITemplateMetadata.Name">
+            <summary>
+                Name of the Template
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.ITemplateMetadata.IsInstalled">
+            <summary>
+                True if Template is installed
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.ITemplateMetadata.Install">
+            <summary>
+                Install the current Template
+            </summary>
+            <returns>True if successful</returns>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.ITemplateMetadata.InstallAsync">
+            <summary>
+                Install the current Template (async)
+            </summary>
+            <returns>True if successful</returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.Extension">
+            <summary>
+                Extension Methods for ITemplateMetadata
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.Extension.ToString(Drachenhorn.Xml.Template.ITemplateMetadata)">
+            <summary>
+                Extension Method for getting Template as String
+            </summary>
+            <param name="meta">Template</param>
+            <returns>Template-String</returns>
+        </member>
+        <member name="T:Drachenhorn.Xml.Template.OnlineTemplate">
+            <inheritdoc cref="T:Drachenhorn.Xml.Template.ITemplateMetadata"/>
+            <summary>
+                Template for downloading Templates from the Web
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.Path">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.Version">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.IsInstalled">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.#ctor(System.String)">
+            <summary>
+                Constructor for Online Templates
+            </summary>
+            <param name="uri">Uri to Template</param>
+            <exception cref="T:System.ArgumentException">Uri is not valid</exception>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.Progress">
+            <summary>
+                Progress of the Download
+            </summary>
+        </member>
+        <member name="P:Drachenhorn.Xml.Template.OnlineTemplate.IsDownloadQueued">
+            <summary>
+                True if Download is Queued;
+            </summary>
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.Install">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.InstallAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.OnlineTemplate.Equals(Drachenhorn.Xml.Template.ITemplateMetadata)">
+            <inheritdoc />
+        </member>
         <member name="T:Drachenhorn.Xml.Template.SheetTemplate">
             <summary>
                 Templating Class
@@ -1977,16 +2076,19 @@
             <param name="path">Path of the File.</param>
         </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Version">
+            <inheritdoc />
             <summary>
                 Version of the Template
             </summary>
         </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Path">
+            <inheritdoc />
             <summary>
                 Path of the Template
             </summary>
         </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.Name">
+            <inheritdoc />
             <summary>
                 Gets or sets the name of the file.
             </summary>
@@ -1994,21 +2096,19 @@
                 The name of the file.
             </value>
         </member>
+        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.IsInstalled">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Install">
+            <inheritdoc />
+        </member>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.InstallAsync">
+            <inheritdoc />
+        </member>
         <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.EntireTemplate">
             <summary>
                 Gets the one single instance of the entire template.
             </summary>
-        </member>
-        <member name="P:Drachenhorn.Xml.Template.TemplateMetadata.ExistsInInstalled">
-            <summary>
-                Checks if the Template is already installed on this Device
-            </summary>
-        </member>
-        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.SetVersionAndNameFromXmlLine(System.String)">
-            <summary>
-                Sets Version based on the second line of the XML-File
-            </summary>
-            <param name="line">Second line of the XML.</param>
         </member>
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Equals(System.Object)">
             <inheritdoc />
@@ -2016,12 +2116,8 @@
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.GetHashCode">
             <inheritdoc />
         </member>
-        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Equals(Drachenhorn.Xml.Template.TemplateMetadata)">
-            <summary>
-                Checks if objects are Equal.
-            </summary>
-            <param name="obj">The object.</param>
-            <returns>True if Equal</returns>
+        <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.Equals(Drachenhorn.Xml.Template.ITemplateMetadata)">
+            <inheritdoc />
         </member>
         <member name="M:Drachenhorn.Xml.Template.TemplateMetadata.op_Equality(Drachenhorn.Xml.Template.TemplateMetadata,Drachenhorn.Xml.Template.TemplateMetadata)">
             <summary>

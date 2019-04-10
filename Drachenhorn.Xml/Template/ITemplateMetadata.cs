@@ -5,17 +5,45 @@ using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Drachenhorn.Xml.Data;
 
 namespace Drachenhorn.Xml.Template
 {
+    /// <summary>
+    ///     Basic Template Data
+    /// </summary>
     public interface ITemplateMetadata : IEquatable<ITemplateMetadata>, INotifyPropertyChanged
     {
+        /// <summary>
+        ///     Path to the Template
+        /// </summary>
+        string Path { get; }
+
+        /// <summary>
+        ///     Version of the Template
+        /// </summary>
         double Version { get; set; }
+
+        /// <summary>
+        ///     Name of the Template
+        /// </summary>
         string Name { get; set; }
 
+        /// <summary>
+        ///     True if Template is installed
+        /// </summary>
         bool IsInstalled { get; }
 
+        /// <summary>
+        ///     Install the current Template
+        /// </summary>
+        /// <returns>True if successful</returns>
         bool Install();
+
+        /// <summary>
+        ///     Install the current Template (async)
+        /// </summary>
+        /// <returns>True if successful</returns>
         Task<bool> InstallAsync();
     }
 
@@ -37,29 +65,24 @@ namespace Drachenhorn.Xml.Template
             meta.Name = !string.IsNullOrEmpty(nameMatch) ? nameMatch.Substring(6, nameMatch.Length - 7) : "unnamed";
         }
 
-
-        #region Equals
-        
-        internal static bool Equals(this ITemplateMetadata meta, object obj)
+        internal static bool CheckInstalled(this ITemplateMetadata meta)
         {
-            return obj is ITemplateMetadata metadata && meta.Equals(metadata);
+            return meta.Path != null && meta.Path.StartsWith(Constants.TemplateBaseDirectory);
         }
 
-        internal static int GetHashCode(this ITemplateMetadata meta)
+
+        #region ToString
+
+        /// <summary>
+        ///     Extension Method for getting Template as String
+        /// </summary>
+        /// <param name="meta">Template</param>
+        /// <returns>Template-String</returns>
+        public static string ToString(this ITemplateMetadata meta)
         {
-            unchecked
-            {
-                return (meta.Version.GetHashCode() * 397) ^ (meta.Name != null ? meta.Name.GetHashCode() : 1);
-            }
+            return meta.Name + " v" + meta.Version.ToString(CultureInfo.InvariantCulture) + " " + meta.Path;
         }
 
-        internal static bool Equals(this ITemplateMetadata meta, ITemplateMetadata obj)
-        {
-            if (obj == null) return false;
-
-            return meta.Name == obj.Name && Math.Abs(meta.Version - obj.Version) < double.Epsilon;
-        }
-
-        #endregion Equals
+        #endregion ToString
     }
 }

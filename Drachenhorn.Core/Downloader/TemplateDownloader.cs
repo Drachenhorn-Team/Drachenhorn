@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Drachenhorn.Xml;
+using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 
@@ -132,7 +133,7 @@ namespace Drachenhorn.Core.Downloader
 
         public void Download(OnlineTemplate template)
         {
-            template.IsDownloadStarted = true;
+            template.IsDownloadQueued = true;
 
             StartDownloads();
         }
@@ -146,14 +147,14 @@ namespace Drachenhorn.Core.Downloader
 
             Task.Run(async () =>
             {
-                while (Templates.Any(x => x.IsDownloadStarted))
+                while (Templates.Any(x => x.IsDownloadQueued))
                 {
-                    var nextItem = Templates.First(x => x.IsDownloadStarted);
+                    var nextItem = Templates.First(x => x.IsDownloadQueued);
 
                     SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
                         .Info("Downloading template: " + nextItem);
 
-                    await nextItem.TryDownload();
+                    await nextItem.InstallAsync();
                 }
 
                 _isDownloadInitialized = false;
