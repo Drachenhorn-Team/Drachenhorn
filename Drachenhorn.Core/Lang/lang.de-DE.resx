@@ -729,4 +729,22 @@
   <data name="CurrencyCalculator.Calculate" xml:space="preserve">
     <value>Berechnen</value>
   </data>
+  <data name="WeaponInformation.Range" xml:space="preserve">
+    <value>Reichweite</value>
+  </data>
+  <data name="CharacterSheet.Inventory" xml:space="preserve">
+    <value>Inventar</value>
+  </data>
+  <data name="Template.SelectorDialog" xml:space="preserve">
+    <value>Vorlage auswählen</value>
+  </data>
+  <data name="Currency.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Currency.Symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="Currency.Value" xml:space="preserve">
+    <value>Wert</value>
+  </data>
 </root>
