@@ -12,10 +12,10 @@
 
 <p align="center">
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/azure-devops/build/lightlike/Drachenhorn/5/master.svg?label=Beta&style=flat-square" alt="Beta-Build">
+    <img src="https://img.shields.io/azure-devops/build/lightlike/Drachenhorn/5/master.svg?label=Debug&style=flat-square" alt="Debug-Build">
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=9&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/azure-devops/build/lightlike/Drachenhorn/9/master.svg?label=Release&style=flat-square" alt="Release-Build">
+    <img src="https://img.shields.io/azure-devops/release/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/1/1?label=Release&style=flat-square" alt="Release-Build">
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=6&view=buildsHistory" target="_blank">
     <img src="https://img.shields.io/azure-devops/build/lightlike/Drachenhorn/6/master.svg?label=NuGet&style=flat-square" alt="NuGet-Build">
