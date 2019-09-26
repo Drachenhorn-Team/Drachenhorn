@@ -473,7 +473,9 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Drachenhorn.nuspec" />
+    <Content Include="Drachenhorn.nuspec">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resources\Morpheus.ttf" />
   </ItemGroup>
   <ItemGroup>
