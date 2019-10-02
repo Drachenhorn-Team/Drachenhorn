@@ -87,6 +87,6 @@ For any Bug-Reports or Feature-Request please open an [Issue](https://github.com
 
 ## Development
 
-Anyone can held if he/she wants to. I really appreciate any help. Just fork it and create Pull-Request when finished.
+Anyone can help if he/she wants to. I really appreciate any help. Just fork it and create Pull-Request when finished.
 
 *But please wait for Version [0.1.0](https://github.com/lightlike/Drachenhorn/milestone/1) for me to establish basic behavior.*
