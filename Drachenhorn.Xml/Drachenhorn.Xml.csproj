@@ -21,6 +21,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Drachenhorn.Xml.nuspec" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Drachenhorn.Xml.nuspec">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CoreCLR-NCalc" Version="2.2.45" />
   </ItemGroup>
 
