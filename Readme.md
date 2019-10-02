@@ -31,15 +31,6 @@
   </a>
 </p>
 
-
-
-### Other Languages
-
-<p>
-	<a href="/.github/Readme/Readme.de-DE.md"><img src="/img/Flags/de-DE.png"></a>
-</p>
-
-
 ## Introduction
         
 Drachenhorn is a Programm to create "Pen & Paper"-Characters on any Rule-System based on the "Das Schwarze Auge" (German, The black Eye)
