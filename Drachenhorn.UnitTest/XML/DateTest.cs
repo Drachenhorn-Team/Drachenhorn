@@ -21,5 +21,19 @@ namespace Drachenhorn.UnitTest.XML
 
             Assert.AreEqual("1.Praios.1234 BF", date.ToString());
         }
+
+        [TestMethod]
+        public void DateCompareTest()
+        {
+            var day = 2;
+            var month = 6;
+            var year = 1008;
+
+            Assert.IsTrue(new DSADate(day, month, year).Equals(new DSADate(day, month, year)));
+
+            Assert.AreEqual(-1,
+                new DSADate(day, month, year)
+                    .CompareTo(new DSADate(day, month - 1, year + 2)));
+        }
     }
 }

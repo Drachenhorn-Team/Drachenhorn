@@ -390,7 +390,7 @@ namespace Drachenhorn.Xml.Objects
         ///     Compares to other Date.
         /// </summary>
         /// <param name="other">The other Date.</param>
-        /// <returns>1 if later. 0 if Equal. -1 if earlyer.</returns>
+        /// <returns>1 if later. 0 if Equal. -1 if earlier.</returns>
         public int CompareTo(DSADate other)
         {
             if (Equals(this, other))
@@ -399,10 +399,10 @@ namespace Drachenhorn.Xml.Objects
             if (Year > other.Year)
                 return 1;
 
-            if (Month > other.Month)
+            if (Year == other.Year && Month > other.Month)
                 return 1;
 
-            if (Day > other.Day)
+            if (Year == other.Year && Month == other.Month && Day > other.Day)
                 return 1;
 
             return -1;
