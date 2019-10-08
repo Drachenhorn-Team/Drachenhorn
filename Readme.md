@@ -24,10 +24,10 @@
 
 <p align="center">
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/azure-devops/tests/lightlike/Drachenhorn/5/master.svg?style=flat-square&compact_message" alt="Beta-Tests">
+    <img src="https://img.shields.io/azure-devops/tests/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/11?style=flat-square&compact_message" alt="Debug-Tests">
   </a>
   <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
-    <img src="https://img.shields.io/azure-devops/coverage/lightlike/Drachenhorn/5/master.svg?style=flat-square&compact_message" alt="Beta-Tests">
+    <img src="https://img.shields.io/azure-devops/coverage/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/11?style=flat-square&compact_message" alt="Debug-Coverage">
   </a>
 </p>
 
