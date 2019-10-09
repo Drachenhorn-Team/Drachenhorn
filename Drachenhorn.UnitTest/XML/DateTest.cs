@@ -25,15 +25,40 @@ namespace Drachenhorn.UnitTest.XML
         [TestMethod]
         public void DateCompareTest()
         {
-            var day = 2;
-            var month = 6;
-            var year = 1008;
+            DSADate d1;
+            DSADate d2;
 
-            Assert.IsTrue(new DSADate(day, month, year).Equals(new DSADate(day, month, year)));
+            //Compare are equal
+            d1 = new DSADate(1, 1, 1000);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreEqual(d1, d2);
 
-            Assert.AreEqual(-1,
-                new DSADate(day, month, year)
-                    .CompareTo(new DSADate(day, month - 1, year + 2)));
+            d1 = new DSADate(1, 2, 1000);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreNotEqual(d1, d2);
+
+            //Compare d1 to d2
+
+            d1 = new DSADate(1, 1, 1000);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreEqual(0, d1.CompareTo(d2));
+
+            d1 = new DSADate(1, 1, 1001);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreEqual(-1, d1.CompareTo(d2));
+            Assert.AreEqual(1, d2.CompareTo(d1));
+
+            d1 = new DSADate(1, 2, 1000);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreEqual(-1, d1.CompareTo(d2));
+            Assert.AreEqual(1, d2.CompareTo(d1));
+
+            d1 = new DSADate(2, 1, 1000);
+            d2 = new DSADate(1, 1, 1000);
+            Assert.AreEqual(-1, d1.CompareTo(d2));
+            Assert.AreEqual(1, d2.CompareTo(d1));
+
+            //Calculate and Compare
         }
     }
 }

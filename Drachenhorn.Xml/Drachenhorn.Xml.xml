@@ -790,7 +790,7 @@
                 Compares to other Date.
             </summary>
             <param name="other">The other Date.</param>
-            <returns>1 if later. 0 if Equal. -1 if earlier.</returns>
+            <returns>1 if other is later. 0 if Equal. -1 if other is earlier.</returns>
         </member>
         <member name="M:Drachenhorn.Xml.Objects.DSADate.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <inheritdoc />

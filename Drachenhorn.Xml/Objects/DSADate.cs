@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
@@ -390,22 +391,28 @@ namespace Drachenhorn.Xml.Objects
         ///     Compares to other Date.
         /// </summary>
         /// <param name="other">The other Date.</param>
-        /// <returns>1 if later. 0 if Equal. -1 if earlier.</returns>
+        /// <returns>1 if other is later. 0 if Equal. -1 if other is earlier.</returns>
         public int CompareTo(DSADate other)
         {
             if (Equals(this, other))
                 return 0;
 
             if (Year > other.Year)
+                return -1;
+            if (Year < other.Year)
                 return 1;
 
-            if (Year == other.Year && Month > other.Month)
+            if (Month > other.Month)
+                return -1;
+            if (Month < other.Month)
                 return 1;
 
-            if (Year == other.Year && Month == other.Month && Day > other.Day)
+            if (Day > other.Day)
+                return -1;
+            if (Day < other.Day)
                 return 1;
 
-            return -1;
+            throw new InvalidOperationException("This Exception should never be thrown.");
         }
 
 
