@@ -179,7 +179,7 @@ namespace Drachenhorn.Xml.Objects
         /// </returns>
         public static bool operator >(DSADate obj1, DSADate obj2)
         {
-            return obj1.CompareTo(obj2) > 0;
+            return obj1.CompareTo(obj2) < 0;
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Drachenhorn.Xml.Objects
         /// </returns>
         public static bool operator <(DSADate obj1, DSADate obj2)
         {
-            return obj1.CompareTo(obj2) < 0;
+            return obj1.CompareTo(obj2) > 0;
         }
 
         #endregion Equals
