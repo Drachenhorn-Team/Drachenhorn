@@ -278,7 +278,10 @@ namespace Drachenhorn.Desktop.UserSettings
             var endDate = commitArray.First(x => x.Item2 == newCommit).Item1;
 
             return (from item in commitArray
-                where item.Item1 > startDate && item.Item1 < endDate && !item.Item3.Contains("Merge")
+                where item.Item1 > startDate
+                      && item.Item1 < endDate
+                      && !item.Item3.Contains("Merge")
+                      && item.Item2 != currentCommit
                 select item.Item3).Distinct();
         }
 
