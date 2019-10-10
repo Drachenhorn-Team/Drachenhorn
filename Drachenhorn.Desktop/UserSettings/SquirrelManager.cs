@@ -46,7 +46,13 @@ namespace Drachenhorn.Desktop.UserSettings
                     var update = await mgr.CheckForUpdate(progress: progress);
                     if (update.ReleasesToApply.Any())
                     {
-                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Update available");
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater")
+                            .Info("Update available");
+
+                        foreach (var note in update.FetchReleaseNotes())
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Release")
+                                .Info(note.Key + ": " + note.Value);
+
                         return true;
                     }
                 }

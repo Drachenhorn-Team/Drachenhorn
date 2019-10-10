@@ -6,6 +6,7 @@
                  xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  xmlns:downloader="clr-namespace:Drachenhorn.Core.Downloader;assembly=Drachenhorn.Core"
+                 xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
                  mc:Ignorable="d" TitleCharacterCasing="Normal"
                  Style="{StaticResource {x:Type Window}}"
                  Title="{lang:Translate Template.SelectorDialog}" Height="450" Width="800">
@@ -59,7 +60,7 @@
                                             Binding="{Binding Version}" IsReadOnly="True" FontSize="16" />
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate DataType="downloader:OnlineTemplate">
+                                <DataTemplate DataType="template:OnlineTemplate">
                                     <ProgressBar Value="{Binding Progress, Mode=OneWay}"
                                                  Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToVisibilityConverter}}"
                                                  Margin="5" VerticalAlignment="Center" />
@@ -68,7 +69,7 @@
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate DataType="downloader:OnlineTemplate">
+                                <DataTemplate DataType="template:OnlineTemplate">
                                     <Button Click="DownloadButton_OnClick"
                                             Visibility="{Binding IsDownloadStarted, Converter={StaticResource BoolToInVisibilityConverter}}">
                                         <Image Source="{StaticResource DownloadIcon}" Margin="2" />

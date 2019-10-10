@@ -10,6 +10,9 @@ using Drachenhorn.Xml.Sheet.Skills;
 
 namespace Drachenhorn.Xml.Sheet
 {
+    /// <summary>
+    ///     Base Class for Character Generation
+    /// </summary>
     public class GenerationDataHolder : ChildChangedBase, IInfoObject
     {
         #region Properties
@@ -58,6 +61,13 @@ namespace Drachenhorn.Xml.Sheet
             }
         }
 
+
+        /// <summary>
+        ///     Gets or sets the skills.
+        /// </summary>
+        /// <value>
+        ///     The skills.
+        /// </value>
         [XmlElement("Skill")]
         public ObservableCollection<Skill> Skills
         {

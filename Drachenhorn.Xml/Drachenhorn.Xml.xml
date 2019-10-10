@@ -1523,6 +1523,11 @@
                 The unspecified gender
             </summary>
         </member>
+        <member name="T:Drachenhorn.Xml.Sheet.GenerationDataHolder">
+            <summary>
+                Base Class for Character Generation
+            </summary>
+        </member>
         <member name="P:Drachenhorn.Xml.Sheet.GenerationDataHolder.GenerationCost">
             <summary>
                 Gets or sets the gp cost.
@@ -1537,6 +1542,14 @@
             </summary>
             <value>
                 The base values.
+            </value>
+        </member>
+        <member name="P:Drachenhorn.Xml.Sheet.GenerationDataHolder.Skills">
+            <summary>
+                Gets or sets the skills.
+            </summary>
+            <value>
+                The skills.
             </value>
         </member>
         <member name="M:Drachenhorn.Xml.Sheet.GenerationDataHolder.GetInformation">
