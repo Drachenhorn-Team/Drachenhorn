@@ -164,6 +164,8 @@ namespace Drachenhorn.Desktop.UserSettings
             using (var mgr = new UpdateManager("C:"))
             {
                 ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
+
+                RegisterFileTypes(mgr.RootAppDirectory);
             }
 
             //mgr.CreateShortcutForThisExe();

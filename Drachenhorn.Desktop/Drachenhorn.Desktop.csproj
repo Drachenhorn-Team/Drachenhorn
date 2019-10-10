@@ -80,6 +80,9 @@
     <Compile Include="Converter\TemplatePathOpenConverter.cs" />
     <Compile Include="Converter\Validation\XmlStringValidation.cs" />
     <Compile Include="Helper\BindingProxy.cs" />
+    <Compile Include="UI\Dialogs\ChangelogDialog.xaml.cs">
+      <DependentUpon>ChangelogDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\CommonMessageBox.xaml.cs">
       <DependentUpon>CommonMessageBox.xaml</DependentUpon>
     </Compile>
@@ -489,6 +492,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\ChangelogDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\CommonMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
