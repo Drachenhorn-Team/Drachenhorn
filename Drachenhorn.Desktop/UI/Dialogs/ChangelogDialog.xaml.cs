@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
-    /// <summary>
-    /// Interaktionslogik für ChangelogDialog.xaml
-    /// </summary>
     public partial class ChangelogDialog : Window
     {
         #region Properties
@@ -63,10 +60,23 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         #endregion Properties
 
 
-        public ChangelogDialog(IEnumerable<string> changes, Action updateAction)
+        public ChangelogDialog(IEnumerable<string> changes)
         {
+            Changes = changes;
+
             InitializeComponent();
             this.DataContext = this;
+        }
+
+        private void UpdateButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void CancelButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -165,7 +165,7 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 ExtractFileIcons(Path.Combine(mgr.RootAppDirectory, "icons"));
 
-                RegisterFileTypes(mgr.RootAppDirectory);
+                //RegisterFileTypes(mgr.RootAppDirectory);
             }
 
             //mgr.CreateShortcutForThisExe();

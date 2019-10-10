@@ -6,14 +6,24 @@
         xmlns:local="clr-namespace:Drachenhorn.Desktop.UI.Dialogs"
         xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
         mc:Ignorable="d"
-        Title="ChangelogDialog" Height="450" Width="800">
+        Title="{lang:Translate Updater.Changelog}" Height="400" Width="450">
     <DockPanel>
-        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button Content="{lang:Translate Updater.DoUpdate}" Margin="5"/>
-            <Button Content="{lang:Translate Updater.Dismiss}" Margin="5"/>
-        </WrapPanel>
-        <ScrollViewer>
-            <ItemsControl ItemsSource="{Binding Changes}"/>
+        <UniformGrid Columns="2" DockPanel.Dock="Bottom">
+            <Button Content="{lang:Translate Updater.DoUpdate}" Margin="5" Click="UpdateButton_OnClick"/>
+            <Button Content="{lang:Translate Updater.Dismiss}" Margin="5" Click="CancelButton_OnClick"/>
+        </UniformGrid>
+        <ScrollViewer BorderBrush="{DynamicResource BorderBrushNormal}" BorderThickness="0 0 0 1">
+            <ItemsControl ItemsSource="{Binding Changes}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{DynamicResource BorderBrushNormal}"
+                                BorderThickness="1" Margin="3">
+                            <TextBlock Text="{Binding .}" Margin="7 0 7 0"
+                                       Foreground="{DynamicResource Foreground}"/>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </ScrollViewer>
     </DockPanel>
 </Window>

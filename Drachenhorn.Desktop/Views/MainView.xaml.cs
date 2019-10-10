@@ -194,7 +194,12 @@ namespace Drachenhorn.Desktop.Views
 
         private void ShowChangelog(INotificationMessageButton button)
         {
-            
+            var dialog = new ChangelogDialog(SquirrelManager.GetReleaseNotes());
+
+            if (dialog.ShowDialog() == true)
+            {
+                DoUpdate(null);
+            }
         }
 
         #endregion Update

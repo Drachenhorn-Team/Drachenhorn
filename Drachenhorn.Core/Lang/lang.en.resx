@@ -747,4 +747,13 @@
   <data name="Currency.Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="UI.NothingSelected.Title" xml:space="preserve">
+    <value>Nothing selected</value>
+  </data>
+  <data name="UI.NothingSelected" xml:space="preserve">
+    <value>You didn't select an element.</value>
+  </data>
+  <data name="Updater.Changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
 </root>
