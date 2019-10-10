@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\CoreTest.cs" />
+    <Compile Include="Desktop\DesktopTest.cs" />
     <Compile Include="Organisation\TestArguments.cs" />
     <Compile Include="XML\CurrencyTest.cs" />
     <Compile Include="DataGeneratorHelper.cs" />
@@ -64,6 +65,10 @@
       <Project>{EC066881-E87C-46C3-8DAB-04A19696DC99}</Project>
       <Name>Drachenhorn.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Drachenhorn.Desktop\Drachenhorn.Desktop.csproj">
+      <Project>{D9CAC2E5-91AF-4AE2-898F-1BE5EBBABBD1}</Project>
+      <Name>Drachenhorn.Desktop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Drachenhorn.Map\Drachenhorn.Map.csproj">
       <Project>{F24CCF9B-685A-453C-BE26-885B8A7C4357}</Project>
       <Name>Drachenhorn.Map</Name>
@@ -80,6 +85,7 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

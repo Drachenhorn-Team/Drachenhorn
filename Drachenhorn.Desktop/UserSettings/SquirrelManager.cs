@@ -1,21 +1,65 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using NuGet;
 using Squirrel;
+using Application = System.Windows.Application;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
     public static class SquirrelManager
     {
         #region Squirrel
+
+        private static string _newVersion;
+
+        public static string NewVersion
+        {
+            get => _newVersion;
+            private set
+            {
+                if (_newVersion == null)
+                    return;
+                _newVersion = value;
+            }
+        }
+        private static string _currentVersion;
+
+        public static string CurrentVersion
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_currentVersion))
+                {
+                    try
+                    {
+                        using (var mgr = new UpdateManager(null))
+                        {
+                            _currentVersion = mgr.CurrentlyInstalledVersion().ToString();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
+                            .Debug("Unable to load Squirrel Version.", e);
+                    }
+
+                    _currentVersion = "Application not installed.";
+                }
+
+                return _currentVersion;
+            }
+        }
 
         private static readonly string GithubUpdatePath = "https://github.com/Drachenhorn-Team/Drachenhorn";
 
@@ -49,9 +93,7 @@ namespace Drachenhorn.Desktop.UserSettings
                         SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater")
                             .Info("Update available");
 
-                        foreach (var note in update.FetchReleaseNotes())
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Release")
-                                .Info(note.Key + ": " + note.Value);
+                        NewVersion = update.FutureReleaseEntry.Version.ToString();
 
                         return true;
                     }
@@ -220,6 +262,67 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
+        private static readonly string ApiUrl = "http://api.github.com/repos/drachenhorn-team/drachenhorn/";
+
+        public static IEnumerable<string> GetReleaseNotes()
+        {
+            if (NewVersion == null) throw new InvalidOperationException("Can't get Release-Notes without checking for Update first.");
+
+            var currentCommit = GetCommit(CurrentVersion);
+            var newCommit = GetCommit(NewVersion);
+
+            var commits = GetAllCommits();
+
+            var commitArray = commits as (DateTime, string, string)[] ?? commits.ToArray();
+            var startDate = commitArray.First(x => x.Item2 == currentCommit).Item1;
+            var endDate = commitArray.First(x => x.Item2 == newCommit).Item1;
+
+            return (from item in commitArray
+                where item.Item1 > startDate && item.Item1 < endDate && !item.Item3.Contains("Merge")
+                select item.Item3).Distinct();
+        }
+
+        private static string ApiGet(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest) WebRequest.Create(url);
+            request.Method = "GET";
+            request.ContentType = "application/json; charset=utf-8";
+            request.UserAgent = "Drachenhorn";
+            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        private static string GetCommit(string version)
+        {
+            var api = ApiGet(ApiUrl + "git/refs/tags/" + version);
+            var json = JObject.Parse(api);
+
+            return json.SelectToken("object.sha").ToString();
+        }
+
+        private static IEnumerable<(DateTime, string, string)> GetAllCommits()
+        {
+            var result = new List<(DateTime, string, string)>();
+
+            var api = ApiGet(ApiUrl + "commits");
+            var json = JArray.Parse(api);
+
+            foreach (var item in json.Children<JObject>())
+            {
+                var commit = item.GetValue("sha").ToString();
+                var timestamp = DateTime.Parse(item.SelectToken("commit.author.date").ToString());
+                var message = item.SelectToken("commit.message").ToString();
+
+                result.Add((timestamp, commit, message));
+            }
+
+            return from item in result orderby item.Item1 select item;
+        }
+        
         #endregion Helper
     }
 }

@@ -114,26 +114,7 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         [XmlIgnore]
-        public string Version
-        {
-            get
-            {
-                try
-                {
-                    using (var mgr = new UpdateManager(null))
-                    {
-                        return mgr.CurrentlyInstalledVersion().ToString();
-                    }
-                }
-                catch (Exception e)
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
-                        .Debug("Unable to load Squirrel Version.", e);
-                }
-
-                return "Application not installed.";
-            }
-        }
+        public string Version => SquirrelManager.CurrentVersion;
 
         [XmlIgnore]
         public string GitCommit

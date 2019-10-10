@@ -139,6 +139,7 @@ namespace Drachenhorn.Desktop.Views
                             .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
                             .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
+                            .Dismiss().WithButton(LanguageManager.Translate("Updater.Changelog"), ShowChangelog)
                             .Queue();
                     });
             });
@@ -189,6 +190,11 @@ namespace Drachenhorn.Desktop.Views
                         });
                 });
             });
+        }
+
+        private void ShowChangelog(INotificationMessageButton button)
+        {
+            
         }
 
         #endregion Update
