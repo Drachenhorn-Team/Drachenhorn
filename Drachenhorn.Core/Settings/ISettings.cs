@@ -12,8 +12,7 @@ namespace Drachenhorn.Core.Settings
 
         CultureInfo CurrentCulture { get; set; }
         string Version { get; }
-        string GitCommit { get; }
-        string GitCommitLink { get; }
+        string NewVersion { get; }
 
         VisualThemeType VisualTheme { get; set; }
         string AccentColor { get; set; }

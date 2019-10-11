@@ -469,9 +469,6 @@
     <Resource Include="..\img\White\Common\Yes.png">
       <Link>Images\White\Common\Yes.png</Link>
     </Resource>
-    <Content Include="commit">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Images\Common\Drachenhorn.ico" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

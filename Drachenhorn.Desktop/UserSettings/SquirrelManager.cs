@@ -33,6 +33,8 @@ namespace Drachenhorn.Desktop.UserSettings
                 _newVersion = value;
             }
         }
+
+
         private static string _currentVersion;
 
         public static string CurrentVersion
@@ -43,18 +45,18 @@ namespace Drachenhorn.Desktop.UserSettings
                 {
                     try
                     {
-                        using (var mgr = new UpdateManager(null))
+                        using (var mgr = new UpdateManager("C:"))
                         {
                             _currentVersion = mgr.CurrentlyInstalledVersion().ToString();
                         }
                     }
                     catch (Exception e)
                     {
+                        _currentVersion = "X.X.X";
+
                         SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
                             .Debug("Unable to load Squirrel Version.", e);
                     }
-
-                    _currentVersion = "Application not installed.";
                 }
 
                 return _currentVersion;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Resources;
 using Drachenhorn.Xml;
 using Easy.Logger.Interfaces;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Core.Lang
@@ -13,7 +14,7 @@ namespace Drachenhorn.Core.Lang
     {
         #region Properties
 
-        private readonly ResourceManager _resourceManager =
+        private readonly ResourceManager _resourceManager = 
             new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
         private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
@@ -47,6 +48,9 @@ namespace Drachenhorn.Core.Lang
         /// <returns>Translated Text.</returns>
         public string GetLanguageText(string identifier)
         {
+            if (ViewModelBase.IsInDesignModeStatic)
+                return identifier;
+
             try
             {
                 return _resourceManager.GetString(identifier, CurrentCulture)?.Replace("\\n", "\n");
