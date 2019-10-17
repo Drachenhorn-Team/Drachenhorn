@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace Drachenhorn.Desktop.UserSettings
                 GitCommit = "No Commit found";
 
             PropertyChanged += (sender, args) => { Save(); };
+            LastOpenFiles.CollectionChanged += (sender, args) => { Save(); };
         }
 
         #endregion
@@ -46,6 +48,8 @@ namespace Drachenhorn.Desktop.UserSettings
         [XmlIgnore] private bool _isNew = true;
 
         [XmlIgnore] private VisualThemeType _visualTheme;
+
+        [XmlIgnore] private ObservableCollection<string> _lastOpenFiles = new ObservableCollection<string>();
 
         [XmlElement("CurrentCulture")]
         public string CurrentCultureString
@@ -163,6 +167,20 @@ namespace Drachenhorn.Desktop.UserSettings
                 if (_currentTemplate == value)
                     return;
                 _currentTemplate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <inheritdoc />
+        [XmlElement("LastOpenFile")]
+        public ObservableCollection<string> LastOpenFiles
+        {
+            get => _lastOpenFiles;
+            set
+            {
+                if (_lastOpenFiles == value)
+                    return;
+                _lastOpenFiles = value;
                 OnPropertyChanged();
             }
         }

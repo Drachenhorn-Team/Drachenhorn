@@ -103,8 +103,8 @@ namespace Drachenhorn.Desktop.Views
             if (!Model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
             var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                LanguageManager.Translate("UI.SouldCloseBunch"),
-                LanguageManager.Translate("UI.SouldCloseBunch.Caption"),
+                LanguageManager.Translate("UI.ShouldCloseBunch"),
+                LanguageManager.Translate("UI.ShouldCloseBunch.Caption"),
                 LanguageManager.Translate("UI.Yes"),
                 LanguageManager.Translate("UI.No"), null);
 
@@ -210,8 +210,8 @@ namespace Drachenhorn.Desktop.Views
                 return;
 
             var result = this.ShowModalMessageExternal(
-                LanguageManager.Translate("UI.SouldClose.Caption"),
-                LanguageManager.Translate("UI.SouldClose"),
+                LanguageManager.Translate("UI.ShouldClose.Caption"),
+                LanguageManager.Translate("UI.ShouldClose"),
                 MessageDialogStyle.AffirmativeAndNegative,
                 new MetroDialogSettings()
                 {

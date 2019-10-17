@@ -1452,6 +1452,9 @@
         <member name="M:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.GetInformation">
             <inheritdoc />
         </member>
+        <member name="M:Drachenhorn.Xml.Sheet.Common.ProfessionInformation.ToString">
+            <inheritdoc />
+        </member>
         <member name="T:Drachenhorn.Xml.Sheet.Common.RaceInformation">
             <summary>
                 Race-Information

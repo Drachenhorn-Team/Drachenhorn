@@ -540,16 +540,16 @@
   <data name="UI.Select" xml:space="preserve">
     <value>Auswählen</value>
   </data>
-  <data name="UI.SouldCloseBunch" xml:space="preserve">
+  <data name="UI.ShouldCloseBunch" xml:space="preserve">
     <value>Die Änderungen an einer oder mehreren Datei wurden noch nicht gespeichert.\nWollen sie die Änderungen verwerfen?</value>
   </data>
-  <data name="UI.SouldCloseBunch.Caption" xml:space="preserve">
+  <data name="UI.ShouldCloseBunch.Caption" xml:space="preserve">
     <value>Ungespeicherte Änderungen</value>
   </data>
-  <data name="UI.SouldClose" xml:space="preserve">
+  <data name="UI.ShouldClose" xml:space="preserve">
     <value>Die Änderungen an der Datei wurden noch nicht gespeichert. \nWollen sie die Änderungen verwerfen?</value>
   </data>
-  <data name="UI.SouldClose.Caption" xml:space="preserve">
+  <data name="UI.ShouldClose.Caption" xml:space="preserve">
     <value>Ungespeicherte Änderungen</value>
   </data>
   <data name="UI.ShowConsole" xml:space="preserve">

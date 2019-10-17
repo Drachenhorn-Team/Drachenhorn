@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using Drachenhorn.Xml.Template;
 
@@ -19,6 +21,8 @@ namespace Drachenhorn.Core.Settings
         string AccentColor { get; set; }
 
         SheetTemplate CurrentTemplate { get; set; }
+
+        ObservableCollection<string> LastOpenFiles { get; }
 
         #endregion
     }
