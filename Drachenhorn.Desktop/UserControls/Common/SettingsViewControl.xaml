@@ -92,51 +92,45 @@
         <mah:MetroTabItem Header="{lang:Translate UI.Properties.About}"
                           CloseButtonEnabled="False">
             <StackPanel>
-                <Border Margin="5" BorderThickness="2">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{lang:Translate About.Version}"
-                                   Grid.Row="0" Grid.Column="0" Margin="5" />
-                        <TextBlock Text="{Binding Settings.Version}"
-                                   Grid.Row="0" Grid.Column="1" Margin="5" />
+                <Border Margin="5" BorderThickness="2" BorderBrush="{DynamicResource ControlBorderBrush}">
+                    <StackPanel>
 
-                        <TextBlock Text="{lang:Translate About.GitCommit}" Grid.Row="1" Grid.Column="0"
-                                   Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="1" Grid.Column="1">
-                            <Hyperlink NavigateUri="{Binding Settings.GitCommitLink}"
-                                       RequestNavigate="Hyperlink_RequestNavigate">
-                                <Run Text="{Binding Settings.GitCommit, FallbackValue=commit, Mode=OneWay}" />
-                            </Hyperlink>
-                        </TextBlock>
+                        <DockPanel Margin="10">
+                            <mah:ProgressRing Name="UpdateRing" IsActive="False" Height="55" Width="55"
+                                              Foreground="{DynamicResource AccentColorBrush}" DockPanel.Dock="Right"/>
 
-                        <WrapPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
-                            <Button Content="{lang:Translate Updater.CheckForUpdate}" HorizontalAlignment="Left"
-                                    Click="UpdateButton_OnClick" />
+                            <TextBlock Margin="5 3 5 0" DockPanel.Dock="Bottom" FontSize="12">
+                                <Hyperlink NavigateUri="https://github.com/lightlike"
+                                           RequestNavigate="Hyperlink_RequestNavigate">
+                                    <Run Text="lightlike (DanielN)" />
+                                </Hyperlink>
+                            </TextBlock>
 
-                            <mah:ProgressRing Name="UpdateRing" IsActive="False" Height="28" Width="28" />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Drachenhorn" FontSize="30" Margin="0 0 10 0" FontFamily="{StaticResource Morpheus}"/>
+                                <TextBlock Text="v" FontSize="20" FontFamily="{StaticResource Morpheus}" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="{Binding Settings.Version}" FontSize="20" FontFamily="{StaticResource Morpheus}" VerticalAlignment="Bottom"/>
+                            </StackPanel>
+                        </DockPanel>
+
+                        <WrapPanel Margin="20 5 10 0" Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
+                            <TextBlock Text="{lang:Translate Updater.UpdateAvailable}" FontSize="18"/>
+                            <TextBlock Text="{Binding Settings.NewVersion}" FontSize="18"/>
                         </WrapPanel>
 
-                        <TextBlock Text="{lang:Translate About.Publisher}" Grid.Row="3" Grid.Column="0"
-                                   Margin="5" />
-                        <TextBlock Margin="5" Grid.Row="3" Grid.Column="1">
-                            <Hyperlink NavigateUri="https://github.com/lightlike"
-                                       RequestNavigate="Hyperlink_RequestNavigate">
-                                <Run Text="lightlike (DanielN)" />
-                            </Hyperlink>
-                        </TextBlock>
-                    </Grid>
+                        <Button Content="{lang:Translate Updater.CheckForUpdate}"
+                                Click="CheckUpdateButton_OnClick" HorizontalAlignment="Right"
+                                Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}, ConverterParameter=Invert}"/>
+
+                        <WrapPanel HorizontalAlignment="Right" Margin="10 5 10 0"
+                                   Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
+                            <Button Content="{lang:Translate Updater.DoUpdate}"/>
+                            <Button Content="{lang:Translate Updater.Changelog}"/>
+                        </WrapPanel>
+                    </StackPanel>
                 </Border>
 
-                <Border Margin="5" BorderThickness="2">
+                <Border Margin="5" BorderThickness="2" BorderBrush="{DynamicResource ControlBorderBrush}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />

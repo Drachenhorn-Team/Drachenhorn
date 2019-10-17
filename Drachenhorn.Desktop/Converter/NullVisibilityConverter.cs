@@ -14,10 +14,19 @@ namespace Drachenhorn.Desktop.Converter
         /// <inheritdoc />
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null)
-                return Visibility.Collapsed;
-            else
-                return Visibility.Visible;
+            var onNull = Visibility.Collapsed;
+            var notNull = Visibility.Visible;
+
+            if (parameter != null && parameter.ToString() == "Invert")
+            {
+                onNull = Visibility.Visible;
+                notNull = Visibility.Collapsed;
+            }
+
+            if (value == null || string.IsNullOrEmpty(value.ToString()))
+                return onNull;
+
+            return notNull;
         }
 
         /// <inheritdoc />

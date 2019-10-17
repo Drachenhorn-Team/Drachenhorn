@@ -54,7 +54,7 @@ namespace Drachenhorn.Desktop.UserControls.Common
             }
         }
 
-        private void UpdateButton_OnClick(object sender, RoutedEventArgs e)
+        private void CheckUpdateButton_OnClick(object sender, RoutedEventArgs e)
         {
             UpdateRing.IsActive = true;
 

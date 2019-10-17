@@ -24,13 +24,6 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public Settings()
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "commit");
-            if (File.Exists(path))
-                GitCommit = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "commit")).Replace("\r", "")
-                    .Replace("\n", "");
-            else
-                GitCommit = "No Commit found";
-
             PropertyChanged += (sender, args) => { Save(); };
             LastOpenFiles.CollectionChanged += (sender, args) => { Save(); };
         }
@@ -42,8 +35,6 @@ namespace Drachenhorn.Desktop.UserSettings
         [XmlIgnore] private string _accentColor;
 
         [XmlIgnore] private SheetTemplate _currentTemplate;
-
-        [XmlIgnore] private string _gitCommit;
 
         [XmlIgnore] private bool _isNew = true;
 
@@ -121,28 +112,7 @@ namespace Drachenhorn.Desktop.UserSettings
         public string Version => SquirrelManager.CurrentVersion;
 
         [XmlIgnore]
-        public string GitCommit
-        {
-            get => _gitCommit;
-            private set
-            {
-                if (_gitCommit == value)
-                    return;
-                _gitCommit = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlIgnore]
-        public string GitCommitLink
-        {
-            get
-            {
-                if (GitCommit.Contains(" "))
-                    return null;
-                return @"https://github.com/lightlike/Drachenhorn/commit/" + GitCommit;
-            }
-        }
+        public string NewVersion => SquirrelManager.NewVersion;
 
         [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme

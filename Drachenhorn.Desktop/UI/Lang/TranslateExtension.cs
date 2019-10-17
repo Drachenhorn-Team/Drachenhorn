@@ -20,7 +20,7 @@ namespace Drachenhorn.Desktop.UI.Lang
             try
             {
                 if (ViewModelBase.IsInDesignModeStatic)
-                    Source = new LanguageManager {CurrentCulture = CultureInfo.CurrentCulture};
+                    Source = new LanguageManager();
                 else
                     Source = SimpleIoc.Default.GetInstance<LanguageManager>();
             }
