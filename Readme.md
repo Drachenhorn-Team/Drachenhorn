@@ -48,9 +48,21 @@ And that is how this all started.
 
 ## Download
 
-<a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
-  <img src="https://simpleicons.org/icons/windows.svg" width="32" alt="Windows" title="Download 'Setup.exe' only.">
-</a>
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
+        <img src="https://simpleicons.org/icons/windows.svg" width="32" alt="Windows" title="Download 'Setup.exe' only.">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
+        <img src="https://img.shields.io/github/v/release/Drachenhorn-Team/Drachenhorn?sort=semver&style=flat-square&compact_message" alt="Debug-Coverage" title="Download 'Setup.exe' only.">
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 ## Usage
 
