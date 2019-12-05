@@ -165,13 +165,13 @@
                 <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
                     @if (sheet.Attributes != null)
                     {
-                        foreach (var attribute in sheet.Attributes)
+                        foreach (var attributeItem in sheet.Attributes)
                         {
                              <tr>
-                                 <td>@attribute.Name</td>
-                                 <td>@attribute.Modifier</td>
-                                 <td>@attribute.StartValue</td>
-                                 <td>@attribute.Value</td>
+                                 <td>@attributeItem.Name</td>
+                                 <td>@attributeItem.Modifier</td>
+                                 <td>@attributeItem.StartValue</td>
+                                 <td>@attributeItem.Value</td>
                              </tr>
                         }
                     }
