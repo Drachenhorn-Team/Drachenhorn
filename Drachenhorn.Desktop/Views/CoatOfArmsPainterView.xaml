@@ -66,8 +66,8 @@
                 <fluent:RibbonGroupBox Header="{lang:Translate Painter.Color}">
                     <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
                                       DisplayColorAndName="True"
-                                      AdvancedButtonHeader="{lang:Translate Colors.Advanced.Header}"
-                                      StandardButtonHeader="{lang:Translate Colors.Standard.Header}"
+                                      AdvancedTabHeader="{lang:Translate Colors.Advanced.Header}"
+                                      StandardTabHeader="{lang:Translate Colors.Standard.Header}"
                                       StandardColorsHeader="{lang:Translate Colors.Standard}"
                                       RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
                                       ShowRecentColors="True"

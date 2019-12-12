@@ -28,7 +28,7 @@ namespace Drachenhorn.Desktop.UserSettings
             get => _newVersion;
             private set
             {
-                if (_newVersion == null)
+                if (_newVersion == value)
                     return;
                 _newVersion = value;
             }
@@ -84,6 +84,9 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public static async Task<bool> IsUpdateAvailable(Action<int> progress = null)
         {
+            if (CurrentVersion == "X.X.X")
+                return false;
+
             try
             {
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Updater").Info("Checking for Update");
