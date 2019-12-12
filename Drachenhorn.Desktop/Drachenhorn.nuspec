@@ -10,6 +10,7 @@
     <iconUrl>https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/master/img/Icons/Drachenhorn.ico</iconUrl>
   </metadata>
   <files>
-    <file src="**" exclude="**\*.pdb;**\*.application;**/*.nuspec" target="lib\net461" />
+    <!--lib/net45 for Squirrel no matter the net version-->
+    <file src="**" exclude="**\*.pdb;**\*.application;**/*.nuspec" target="lib\net45" />
   </files>
 </package>
