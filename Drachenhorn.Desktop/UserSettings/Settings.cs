@@ -13,7 +13,6 @@ using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using MahApps.Metro;
-using Squirrel;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
