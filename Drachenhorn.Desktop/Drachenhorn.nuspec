@@ -10,6 +10,6 @@
     <iconUrl>https://raw.githubusercontent.com/Drachenhorn-Team/Drachenhorn/master/img/Icons/Drachenhorn.ico</iconUrl>
   </metadata>
   <files>
-    <file src="**" exclude="**\*.pdb;**\*.application;**/*.nuspec" target="lib\netstandard2.0" />
+    <file src="**" exclude="**\*.pdb;**\*.application;**/*.nuspec" target="lib\net461" />
   </files>
 </package>
