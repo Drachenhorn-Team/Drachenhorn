@@ -46,7 +46,7 @@ namespace Drachenhorn.Desktop.UserControls
                     ((CoatOfArms) DataContext).Base64String = view.GetBase64();
             };
 
-            view.Show();
+            view.ShowDialog();
         }
 
         private void ClearButton_OnClick(object sender, RoutedEventArgs e)
