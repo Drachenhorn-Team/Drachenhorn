@@ -3,10 +3,10 @@
 
 <p align="center">
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/blob/master/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn.svg?style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
-    <img src="https://img.shields.io/badge/Publish-Squirrel-lightgrey.svg?style=flat-square" alt="Publish">
+    <img src="https://img.shields.io/badge/Publish-Squirrel-lightgrey?style=flat-square" alt="Publish">
   </a>
 </p>
 
