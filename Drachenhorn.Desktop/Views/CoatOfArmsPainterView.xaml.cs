@@ -65,12 +65,12 @@ namespace Drachenhorn.Desktop.Views
 
         public string GetBase64()
         {
-            var margin = (int) Canvas.Margin.Left;
-            var width = (int) Canvas.ActualWidth - margin;
-            var height = (int) Canvas.ActualHeight - margin;
+            var margin = (int) DrawCanvas.Margin.Left;
+            var width = (int) DrawCanvas.ActualWidth - margin;
+            var height = (int) DrawCanvas.ActualHeight - margin;
             var renderBitmap =
                 new RenderTargetBitmap(width, height, 96d, 96d, PixelFormats.Default);
-            renderBitmap.Render(Canvas);
+            renderBitmap.Render(DrawCanvas);
             //save the ink to a memory stream
             BitmapEncoder encoder;
             encoder = new BmpBitmapEncoder();
@@ -85,7 +85,7 @@ namespace Drachenhorn.Desktop.Views
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
-            Canvas.Strokes.Clear();
+            DrawCanvas.Strokes.Clear();
         }
 
         private void UndoButton_Click(object sender, RoutedEventArgs e)
@@ -108,20 +108,20 @@ namespace Drachenhorn.Desktop.Views
 
         private void LinkSizeToggleButton_OnChecked(object sender, RoutedEventArgs e)
         {
-            if (Canvas?.DefaultDrawingAttributes != null && Canvas?.DefaultDrawingAttributes != null)
-                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
+            if (DrawCanvas?.DefaultDrawingAttributes != null && DrawCanvas?.DefaultDrawingAttributes != null)
+                DrawCanvas.DefaultDrawingAttributes.Height = DrawCanvas.DefaultDrawingAttributes.Width;
         }
 
         private void HeightSlider_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (LinkSizeToggleButton.IsChecked == true)
-                Canvas.DefaultDrawingAttributes.Width = Canvas.DefaultDrawingAttributes.Height;
+                DrawCanvas.DefaultDrawingAttributes.Width = DrawCanvas.DefaultDrawingAttributes.Height;
         }
 
         private void WidthSlider_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (LinkSizeToggleButton.IsChecked == true)
-                Canvas.DefaultDrawingAttributes.Height = Canvas.DefaultDrawingAttributes.Width;
+                DrawCanvas.DefaultDrawingAttributes.Height = DrawCanvas.DefaultDrawingAttributes.Width;
         }
 
         private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
@@ -134,20 +134,20 @@ namespace Drachenhorn.Desktop.Views
 
         private void BrushType_Checked_1(object sender, RoutedEventArgs e)
         {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.InkAndGesture;
+            if (DrawCanvas != null)
+                DrawCanvas.EditingMode = InkCanvasEditingMode.InkAndGesture;
         }
 
         private void BrushType_Checked_2(object sender, RoutedEventArgs e)
         {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
+            if (DrawCanvas != null)
+                DrawCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
 
         private void BrushType_Checked_3(object sender, RoutedEventArgs e)
         {
-            if (Canvas != null)
-                Canvas.EditingMode = InkCanvasEditingMode.Select;
+            if (DrawCanvas != null)
+                DrawCanvas.EditingMode = InkCanvasEditingMode.Select;
         }
 
         #endregion BrushType

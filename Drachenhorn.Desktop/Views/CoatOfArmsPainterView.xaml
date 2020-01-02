@@ -9,7 +9,7 @@
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  TitleCharacterCasing="Normal"
                  mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
-                 Title="{lang:Translate CharacterSheet.CoatOfArms}" Width="900" Height="600">
+                 Title="{lang:Translate CharacterSheet.CoatOfArms}" Width="450" Height="500">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -63,19 +63,7 @@
                                          GroupName="BrushType"
                                          Checked="BrushType_Checked_3" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{lang:Translate Painter.Color}">
-                    <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
-                                      DisplayColorAndName="True"
-                                      AdvancedTabHeader="{lang:Translate Colors.Advanced.Header}"
-                                      StandardTabHeader="{lang:Translate Colors.Standard.Header}"
-                                      StandardColorsHeader="{lang:Translate Colors.Standard}"
-                                      RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
-                                      ShowRecentColors="True"
-                                      UsingAlphaChannel="True"
-                                      Width="200" Margin="2"
-                                      SelectedColor="{Binding DefaultDrawingAttributes.Color, ElementName=Canvas}" />
-                </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{lang:Translate Painter.BrushTip}">
+                <fluent:RibbonGroupBox Header="{lang:Translate Painter.Brush}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -85,7 +73,7 @@
 
                         <Image Source="{StaticResource WidthIcon}" Width="20" />
 
-                        <Slider Value="{Binding DefaultDrawingAttributes.Width, ElementName=Canvas}" Minimum="0.1"
+                        <Slider Value="{Binding DefaultDrawingAttributes.Width, ElementName=DrawCanvas}" Minimum="0.1"
                                 Maximum="20"
                                 PreviewMouseUp="WidthSlider_OnPreviewMouseUp"
                                 Grid.Column="1" VerticalAlignment="Center" Width="150"
@@ -93,7 +81,7 @@
 
                         <Border Grid.Column="2" Width="30" Margin="0 0 5 0">
                             <TextBlock
-                                Text="{Binding DefaultDrawingAttributes.Width, ElementName=Canvas, StringFormat={}0.0}"
+                                Text="{Binding DefaultDrawingAttributes.Width, ElementName=DrawCanvas, StringFormat={}0.0}"
                                 HorizontalAlignment="Right" />
                         </Border>
                     </Grid>
@@ -106,7 +94,7 @@
 
                         <Image Source="{StaticResource HeightIcon}" Width="20" />
 
-                        <Slider Value="{Binding DefaultDrawingAttributes.Height, ElementName=Canvas}" Minimum="0.1"
+                        <Slider Value="{Binding DefaultDrawingAttributes.Height, ElementName=DrawCanvas}" Minimum="0.1"
                                 Maximum="20"
                                 PreviewMouseUp="HeightSlider_OnPreviewMouseUp"
                                 Grid.Column="1" VerticalAlignment="Center" Width="150"
@@ -114,36 +102,49 @@
 
                         <Border Grid.Column="2" Width="30" Margin="0 0 5 0">
                             <TextBlock
-                                Text="{Binding DefaultDrawingAttributes.Height, ElementName=Canvas, StringFormat={}0.0}"
+                                Text="{Binding DefaultDrawingAttributes.Height, ElementName=DrawCanvas, StringFormat={}0.0}"
                                 HorizontalAlignment="Right" />
                         </Border>
                     </Grid>
+                    <xctk:ColorPicker Name="ClrPcker_Brush" AvailableColorsSortingMode="HueSaturationBrightness"
+                                      DisplayColorAndName="True"
+                                      AdvancedTabHeader="{lang:Translate Colors.Advanced.Header}"
+                                      StandardTabHeader="{lang:Translate Colors.Standard.Header}"
+                                      StandardColorsHeader="{lang:Translate Colors.Standard}"
+                                      RecentColorsHeader="{lang:Translate Colors.Recent.Header}"
+                                      ShowRecentColors="True"
+                                      UsingAlphaChannel="True"
+                                      Width="200" Margin="2"
+                                      SelectedColor="{Binding DefaultDrawingAttributes.Color, ElementName=DrawCanvas}" />
 
                     <fluent:ToggleButton Name="LinkSizeToggleButton"
                                          Size="Small" Icon="{StaticResource LinkIcon}"
                                          IsChecked="True" Checked="LinkSizeToggleButton_OnChecked" Margin="5" />
                 </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+            <fluent:RibbonTabItem Header="{lang:Translate UI.Misc}">
                 <fluent:RibbonGroupBox Header="{lang:Translate UI.Misc}">
                     <fluent:CheckBox Header="{lang:Translate Painter.FitToCurve}"
-                                     IsChecked="{Binding DefaultDrawingAttributes.FitToCurve, ElementName=Canvas}"
+                                     IsChecked="{Binding DefaultDrawingAttributes.FitToCurve, ElementName=DrawCanvas}"
                                      Margin="5" />
                     <fluent:CheckBox Header="{lang:Translate Painter.IgnorePressure}"
-                                     IsChecked="{Binding DefaultDrawingAttributes.IgnorePressure, ElementName=Canvas}"
+                                     IsChecked="{Binding DefaultDrawingAttributes.IgnorePressure, ElementName=DrawCanvas}"
                                      Margin="5" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
 
-        <Border Name="InkBorder" Background="GhostWhite"
-                BorderThickness="1">
-            <InkCanvas Name="Canvas" Strokes="{Binding Strokes}" ClipToBounds="True">
-                <InkCanvas.DefaultDrawingAttributes>
-                    <DrawingAttributes IgnorePressure="True" FitToCurve="True" Height="5" Width="5" />
-                </InkCanvas.DefaultDrawingAttributes>
-                <InkCanvas.RenderTransform>
-                    <ScaleTransform x:Name="InkCanvasScaleTransform" />
-                </InkCanvas.RenderTransform>
-            </InkCanvas>
+        <Border Background="DarkGray">
+            <Border Background="GhostWhite" BorderThickness="1" Margin="8">
+                <InkCanvas Name="DrawCanvas" Strokes="{Binding Strokes}" ClipToBounds="True">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes IgnorePressure="True" FitToCurve="True" Height="5" Width="5" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                    <InkCanvas.RenderTransform>
+                        <ScaleTransform x:Name="InkCanvasScaleTransform" />
+                    </InkCanvas.RenderTransform>
+                </InkCanvas>
+            </Border>
         </Border>
     </DockPanel>
 </mah:MetroWindow>

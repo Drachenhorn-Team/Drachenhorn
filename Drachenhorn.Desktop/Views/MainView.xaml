@@ -12,6 +12,7 @@
                  xmlns:common1="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
                  xmlns:template1="clr-namespace:Drachenhorn.Core.ViewModels.Template;assembly=Drachenhorn.Core"
                  xmlns:common="clr-namespace:Drachenhorn.Core.ViewModels.Common;assembly=Drachenhorn.Core"
+                 xmlns:characterSheet="clr-namespace:Drachenhorn.Desktop.UserControls.CharacterSheet"
                  x:Class="Drachenhorn.Desktop.Views.MainView" mc:Ignorable="d"
                  WindowState="Maximized" TitleCharacterCasing="Normal" ShowIconOnTitleBar="True"
                  ShowTitleBar="False" Closing="MainView_OnClosing" Loaded="MainView_OnLoaded"
@@ -139,14 +140,16 @@
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <mah:MetroTabControl ItemsSource="{Binding CharacterSheetViewModels}"
+                            <characterSheet:CharacterSheetTabControl 
+                                DataContext="{Binding Data, Source={StaticResource MainViewModel}}"/>
+                            <!--<mah:MetroTabControl ItemsSource="{Binding CharacterSheetViewModels}"
                                                  SelectedItem="{Binding CurrentSheetViewModel}"
                                                  DataContext="{Binding Data, Source={StaticResource MainViewModel}}"
                                                  TabItemClosingEvent="BaseMetroTabControl_OnTabItemClosing"
                                                  Style="{StaticResource StandardTabControl}"
                                                  d:DataContext="{d:DesignInstance common:MainViewModel}">
                                 <mah:MetroTabControl.Resources>
-                                    <!-- Set MetroTabControl to same Style as normal TabControl -->
+                                    //Set MetroTabControl to same Style as normal TabControl
                                     <Style BasedOn="{StaticResource {x:Type TabItem}}" TargetType="mah:MetroTabItem" />
                                     <Style BasedOn="{StaticResource {x:Type TabControl}}" TargetType="mah:MetroTabControl" />
                                 </mah:MetroTabControl.Resources>
@@ -175,7 +178,7 @@
                                         </ScrollViewer>
                                     </DataTemplate>
                                 </TabControl.ContentTemplate>
-                            </mah:MetroTabControl>
+                            </mah:MetroTabControl>-->
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuIconItem>
                     <mah:HamburgerMenuIconItem Icon="{StaticResource TemplateIconWhite}"
