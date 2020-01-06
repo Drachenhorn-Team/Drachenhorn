@@ -127,9 +127,13 @@ namespace Drachenhorn.Core.ViewModels.Common
         private async void ExecuteGeneratePDF()
         {
             if (CurrentSheetViewModel?.CurrentSheet == null)
-                await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("UI.NothingSelected"),
-                    LanguageManager.Translate("UI.NothingSelected.Title"));
+                await MessageFactory.Message()
+                    .MessageTranslated("UI.NothingSelected")
+                    .Title("UI.NothingSelected.Title")
+                    .ShowMessage();
+                //await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+                //    LanguageManager.Translate("UI.NothingSelected"),
+                //    LanguageManager.Translate("UI.NothingSelected.Title"));
 
             SimpleIoc.Default.GetInstance<IUIService>().SetBusyState();
 
@@ -149,13 +153,19 @@ namespace Drachenhorn.Core.ViewModels.Common
                 return;
             }
 
-            var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
+            var result = await MessageFactory.Message()
+                .MessageTranslated("UI.SouldClose")
+                .TitleTranslated("UI.SouldClose.Caption")
+                .ButtonTranslated("UI.Yes", 0)
+                .ButtonTranslated("UI.No", 1)
+                .ShowMessage();
+                /*await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 LanguageManager.Translate("UI.SouldClose"),
                 LanguageManager.Translate("UI.SouldClose.Caption"),
                 LanguageManager.Translate("UI.Yes"),
-                LanguageManager.Translate("UI.No"), null);
+                LanguageManager.Translate("UI.No"), null);*/
 
-            if (result)
+            if (result == 0)
                 CharacterSheetViewModels.Remove(model);
         }
 
