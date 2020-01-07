@@ -1,63 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.UI.Dialogs;
-using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UI.MVVM
 {
     public class DialogService : IDialogService
     {
-        public Task ShowError(string message, string title, string buttonText, Action afterHideCallback)
+        /// <inheritdoc />
+        public Task<int> ShowMessage(string message, string title = null,
+            IEnumerable<string> buttons = null, Action<int> afterHideCallback = null)
         {
-            return ShowMessage(message, title, buttonText, afterHideCallback);
+            //TODO: MetroMessageDialog
+            return ShowMessageExternal(message, title, buttons, afterHideCallback);
         }
 
-        public async Task ShowError(Exception error, string title, string buttonText, Action afterHideCallback)
+        /// <inheritdoc />
+        public Task<int> ShowMessageExternal(string message, string title = null,
+            IEnumerable<string> buttons = null, Action<int> afterHideCallback = null)
         {
-            await Task.Run(() => { new ExceptionMessageBox(error, title).ShowDialog(); });
-        }
+            if (buttons == null || !buttons.Any())
+                buttons = new List<string> { LanguageManager.Translate("UI.OK") };
 
-        public async Task ShowMessage(string message, string title)
-        {
-            await Task.Run(() =>
-            {
-                MessageBox.Show(
-                    LanguageManager.TextTranslate(message),
-                    LanguageManager.TextTranslate(title),
-                    MessageBoxButton.OK);
-            });
-        }
-
-        public Task ShowMessage(string message, string title, string buttonText, Action afterHideCallback)
-        {
-            var result = new CommonMessageBox(message, title, buttonText).ShowDialog() == true;
-
-            afterHideCallback?.Invoke();
-
-            return Task.Run(() => result);
-        }
-
-        public Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText,
-            Action<bool> afterHideCallback)
-        {
-            var result = new CommonMessageBox(message, title, buttonConfirmText, buttonCancelText).ShowDialog() == true;
+            var result = new CommonMessageBox(message, title, buttons.ToArray()).ShowDialog();
 
             afterHideCallback?.Invoke(result);
 
             return Task.Run(() => result);
         }
 
-        public async Task ShowMessageBox(string message, string title)
+        /// <inheritdoc />
+        public Task ShowException(Exception e, string title, Action afterHideCallback)
         {
-            await Task.Run(() =>
-            {
-                MessageBox.Show(
-                    LanguageManager.TextTranslate(message),
-                    LanguageManager.TextTranslate(title),
-                    MessageBoxButton.OK);
-            });
+            return Task.Run(() => { new ExceptionMessageBox(e, title).ShowDialog(); });
         }
     }
 }

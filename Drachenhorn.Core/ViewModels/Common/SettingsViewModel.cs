@@ -8,11 +8,9 @@ namespace Drachenhorn.Core.ViewModels.Common
     {
         #region c'tor
 
-        public SettingsViewModel(ISettings settings, IDialogService dialogService)
+        public SettingsViewModel(ISettings settings)
         {
             Settings = settings;
-
-            DialogService = dialogService;
         }
 
         #endregion
@@ -32,8 +30,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                 RaisePropertyChanged();
             }
         }
-
-        private IDialogService DialogService { get; }
 
         #endregion
     }

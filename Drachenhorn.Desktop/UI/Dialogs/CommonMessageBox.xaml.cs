@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
@@ -7,34 +10,40 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     /// </summary>
     public partial class CommonMessageBox
     {
+        private int _result = -1;
+
         #region c'tor
 
-        public CommonMessageBox(string message, string title, string buttonConfirmText, string buttonCancelText = null)
+        public CommonMessageBox(string message, string title, string[] buttons)
         {
             InitializeComponent();
 
             Title = title;
             MessageBlock.Text = message;
-            ConfirmButton.Content = buttonConfirmText;
-
-            if (string.IsNullOrEmpty(buttonCancelText))
-                CancelButton.Visibility = Visibility.Collapsed;
-            else
-                CancelButton.Content = buttonCancelText;
+            ButtonControl.ItemsSource = buttons;
         }
 
         #endregion
 
-        private void ConfirmButton_OnClick(object sender, RoutedEventArgs e)
+        private void DialogButton_OnClick(object sender, RoutedEventArgs e)
         {
+            var buttons = (string[]) ButtonControl.ItemsSource;
+            var clickText = ((Button) sender).Content.ToString();
+
+            _result = Array.FindIndex(buttons, x => x == clickText);
+
             DialogResult = true;
             Close();
         }
 
-        private void CancelButton_OnClick(object sender, RoutedEventArgs e)
+        public new int ShowDialog()
         {
-            DialogResult = false;
-            Close();
+            var result = base.ShowDialog() == true;
+
+            if (result && _result != -1)
+                return _result;
+
+            return -1;
         }
     }
 }

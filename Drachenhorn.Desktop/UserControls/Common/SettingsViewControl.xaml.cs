@@ -8,9 +8,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.UserSettings;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
+using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
 
 namespace Drachenhorn.Desktop.UserControls.Common
 {
@@ -72,38 +73,37 @@ namespace Drachenhorn.Desktop.UserControls.Common
 
             if (result)
             {
-                var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("Updater.UpdateAvailable"),
-                    LanguageManager.Translate("Updater.Title"),
-                    LanguageManager.Translate("Updater.DoUpdate"),
-                    LanguageManager.Translate("Updater.Dismiss"), null);
+                var task = MessageFactory.NewMessage()
+                    .MessageTranslated("Updater.UpdateAvailable")
+                    .TitleTranslated("Updater.Title")
+                    .ButtonTranslated("Updater.DoUpdate", 0)
+                    .ButtonTranslated("Updater.Dismiss", 1)
+                    .ShowMessage();
 
-                if (task.Result)
+                if (task.Result == 0)
                     Task.Run(() => SquirrelManager.UpdateSquirrel(null, (x, y) =>
                     {
-                        Dispatcher.Invoke(() =>
+                        Dispatcher?.Invoke(() =>
                         {
                             if (x)
-                                SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                                    LanguageManager.Translate("Updater.UpdateFinished") + "\n" +
-                                    LanguageManager.Translate("Updater.UpdateFinished.Sub"),
-                                    LanguageManager.Translate("Updater.Title"),
-                                    LanguageManager.Translate("UI.OK"), null);
+                                MessageFactory.NewMessage()
+                                    .MessageTranslated("%Updater.UpdateFinished\n%Updater.UpdateFinished.Sub", false)
+                                    .TitleTranslated("Updater.Title")
+                                    .ShowMessage();
                             else
-                                SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                                    LanguageManager.Translate("Updater.UpdateFailed") + "\n" +
-                                    LanguageManager.Translate("Updater.UpdateFailed.Sub"),
-                                    LanguageManager.Translate("Updater.Title"),
-                                    LanguageManager.Translate("UI.OK"), null);
+                                MessageFactory.NewMessage()
+                                    .MessageTranslated("%Updater.UpdateFailed\n%Updater.UpdateFailed.Sub", false)
+                                    .Title("Updater.Title")
+                                    .ShowMessage();
                         });
                     }));
             }
             else
             {
-                SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("Updater.NoUpdateAvailable"),
-                    LanguageManager.Translate("Updater.Title"),
-                    LanguageManager.Translate("UI.OK"), null);
+                MessageFactory.NewMessage()
+                    .MessageTranslated("Updater.NoUpdateAvailable")
+                    .Title("Updater.Title")
+                    .ShowMessage();
             }
         }
 

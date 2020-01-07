@@ -7,12 +7,13 @@ using System.Linq;
 using System.Xml.Serialization;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Settings;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Xml;
 using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
 using MahApps.Metro;
+using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
@@ -205,8 +206,10 @@ namespace Drachenhorn.Desktop.UserSettings
             }
             catch (InvalidOperationException)
             {
-                var service = SimpleIoc.Default.GetInstance<IDialogService>();
-                service.ShowMessage("%Notification.Settings.Corrupted", "%Notification.Header.Error");
+                MessageFactory.NewMessage()
+                    .MessageTranslated("Notification.Settings.Corrupted")
+                    .Title("Notification.Header.Error")
+                    .ShowMessage();
 
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
                     .Warn("Settings corrupted. Generating new.");

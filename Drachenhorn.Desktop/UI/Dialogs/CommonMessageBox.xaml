@@ -16,11 +16,24 @@
                    Margin="10" MaxWidth="350" MinHeight="80"
                    VerticalAlignment="Center"
                    TextWrapping="WrapWithOverflow" />
-        <WrapPanel HorizontalAlignment="Right">
+        <ItemsControl Name="ButtonControl">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Right"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding .}" Margin="5" MinWidth="80" Padding="5 2 5 2"
+                            Click="DialogButton_OnClick"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--<WrapPanel HorizontalAlignment="Right">
             <Button Name="ConfirmButton" Content="confirm" Margin="5" MinWidth="80"
                     Click="ConfirmButton_OnClick" Padding="5 2 5 2" />
             <Button Name="CancelButton" Content="cancel" Margin="5" MinWidth="80"
                     Click="CancelButton_OnClick" Padding="5 2 5 2" />
-        </WrapPanel>
+        </WrapPanel>-->
     </StackPanel>
 </mah:MetroWindow>

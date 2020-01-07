@@ -23,10 +23,10 @@ namespace Drachenhorn.Core.UI
         private string _message;
         private string _title = "Message";
         private List<string> _buttons = new List<string>();
-        private Action<string> _afterHideCallback;
+        private Action<int> _afterHideCallback;
         private MessageIcon _icons;
 
-        public static MessageFactory Message()
+        public static MessageFactory NewMessage()
         {
             return new MessageFactory();
         }
@@ -103,7 +103,7 @@ namespace Drachenhorn.Core.UI
             return this;
         }
 
-        public MessageFactory Callback(Action<string> afterHideCallback)
+        public MessageFactory Callback(Action<int> afterHideCallback)
         {
             _afterHideCallback = afterHideCallback;
             return this;
@@ -119,7 +119,7 @@ namespace Drachenhorn.Core.UI
                 {
                     service.ShowException(_exception, _title, () =>
                     {
-                        _afterHideCallback?.Invoke(null);
+                        _afterHideCallback?.Invoke(0);
                     }).Wait();
                     return 0;
                 });

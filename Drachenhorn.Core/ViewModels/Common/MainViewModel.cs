@@ -127,7 +127,7 @@ namespace Drachenhorn.Core.ViewModels.Common
         private async void ExecuteGeneratePDF()
         {
             if (CurrentSheetViewModel?.CurrentSheet == null)
-                await MessageFactory.Message()
+                await MessageFactory.NewMessage()
                     .MessageTranslated("UI.NothingSelected")
                     .Title("UI.NothingSelected.Title")
                     .ShowMessage();
@@ -153,7 +153,7 @@ namespace Drachenhorn.Core.ViewModels.Common
                 return;
             }
 
-            var result = await MessageFactory.Message()
+            var result = await MessageFactory.NewMessage()
                 .MessageTranslated("UI.SouldClose")
                 .TitleTranslated("UI.SouldClose.Caption")
                 .ButtonTranslated("UI.Yes", 0)

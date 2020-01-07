@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Core.ViewModels.Common;
 using Drachenhorn.Core.ViewModels.Sheet;
 using Drachenhorn.Core.ViewModels.Template;
@@ -19,9 +20,9 @@ using Drachenhorn.Xml.Sheet;
 using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -102,13 +103,14 @@ namespace Drachenhorn.Desktop.Views
 
             if (!Model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
-            var task = SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                LanguageManager.Translate("UI.ShouldCloseBunch"),
-                LanguageManager.Translate("UI.ShouldCloseBunch.Caption"),
-                LanguageManager.Translate("UI.Yes"),
-                LanguageManager.Translate("UI.No"), null);
+            var task = MessageFactory.NewMessage()
+                .MessageTranslated("UI.ShouldCloseBunch")
+                .Title("UI.ShouldCloseBunch.Caption")
+                .ButtonTranslated("UI.Yes", 0)
+                .ButtonTranslated("UI.No")
+                .ShowMessage();
 
-            if (!task.Result)
+            if (task.Result != 0)
                 e.Cancel = true;
         }
 
@@ -129,7 +131,7 @@ namespace Drachenhorn.Desktop.Views
             Task.Run(() =>
             {
                 if (SquirrelManager.IsUpdateAvailable().Result)
-                    Dispatcher.Invoke(() =>
+                    Dispatcher?.Invoke(() =>
                     {
                         NotificationContainer.Manager.CreateMessage()
                             .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
