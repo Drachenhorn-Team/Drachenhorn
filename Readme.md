@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
-    <img src="https://img.shields.io/badge/Publish-Squirrel-lightgrey?style=flat-square" alt="Publish">
+    <img src="https://img.shields.io/badge/Installer-Squirrel-lightgrey?style=flat-square" alt="Publish">
   </a>
 </p>
 
