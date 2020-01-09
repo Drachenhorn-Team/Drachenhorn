@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
-    public partial class ChangelogDialog : Window
+    public partial class ChangelogDialog
     {
         #region Properties
 
@@ -76,6 +76,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
         private void CancelButton_OnClick(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close();
         }
     }
