@@ -11,7 +11,7 @@ namespace Drachenhorn.UnitTest.Organisation
         [TestMethod]
         public void TestArgs()
         {
-            string[] args = {"-p", "C:\\t t\\test.dsac"};
+            string[] args = {"test.exe", "-p", "C:\\t t\\test.dsac"};
 
             var manager = new ArgumentManager(args);
 
