@@ -465,7 +465,7 @@
     </Resource>
     <Resource Include="Images\Common\Drachenhorn.ico" />
     <Content Include="log4net.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Drachenhorn.nuspec">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -474,6 +474,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Condition="'$(Configuration)' == 'Debug'" Include="log4net.debug.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Converter\Converter.xaml">

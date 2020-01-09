@@ -27,6 +27,7 @@ using Easy.Logger;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using log4net.Config;
 using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
@@ -43,6 +44,9 @@ namespace Drachenhorn.Desktop
 
         public App()
         {
+#if DEBUG
+            Log4NetService.Instance.Configure(new FileInfo("log4net.debug.config"));
+#endif
             SimpleIoc.Default.Register<ILogService>(() => Log4NetService.Instance);
 
             SquirrelManager.Startup();
