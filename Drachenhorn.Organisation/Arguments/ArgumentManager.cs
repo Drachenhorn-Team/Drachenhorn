@@ -40,7 +40,7 @@ namespace Drachenhorn.Organisation.Arguments
                 { "p|print", "print the set file(s).", p => ShouldPrint = p != null },
             };
 
-            var files = options.Parse(args);
+            var files = options.Parse(args.Skip(1));
 
             foreach (var file in files)
             {

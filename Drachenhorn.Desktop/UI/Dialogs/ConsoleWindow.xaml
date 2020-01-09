@@ -15,6 +15,7 @@
                          Background="Transparent"
                          Foreground="White"
                          TextChanged="RichTextBox_OnTextChanged"
+                         FontFamily="Consolas"
                          IsHitTestVisible="False">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">

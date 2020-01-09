@@ -198,7 +198,7 @@ namespace Drachenhorn.Desktop
 
             foreach (var s in args)
             {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info("s");
+                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(s);
             }
 
             var manager = new ArgumentManager(args);
