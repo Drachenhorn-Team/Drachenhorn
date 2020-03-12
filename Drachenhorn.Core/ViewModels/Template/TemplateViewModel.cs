@@ -44,10 +44,10 @@ namespace Drachenhorn.Core.ViewModels.Template
             if (Template != null)
             {
                 var result = await MessageFactory.NewMessage()
-                    .MessageTranslated("UI.ShouldClose")
-                    .TitleTranslated("UI.ShouldClose.Caption")
-                    .ButtonTranslated("UI.Yes", 0)
-                    .ButtonTranslated("UI.No")
+                    .MessageTranslated("Dialog.ShouldClose")
+                    .TitleTranslated("Dialog.ShouldClose_Caption")
+                    .ButtonTranslated("Dialog.Yes", 0)
+                    .ButtonTranslated("Dialog.No")
                     .ShowMessage();
                 if (result != 0) return;
             }

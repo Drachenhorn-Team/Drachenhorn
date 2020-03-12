@@ -73,10 +73,10 @@ namespace Drachenhorn.Desktop.UserControls.Common
             if (result)
             {
                 var task = MessageFactory.NewMessage()
-                    .MessageTranslated("Updater.UpdateAvailable")
-                    .TitleTranslated("Updater.Title")
-                    .ButtonTranslated("Updater.DoUpdate", 0)
-                    .ButtonTranslated("Updater.Dismiss", 1)
+                    .MessageTranslated("Dialog.UpdateAvailable")
+                    .TitleTranslated("Dialog.Update")
+                    .ButtonTranslated("Dialog.Update_Do", 0)
+                    .ButtonTranslated("Dialog.Update_Dismiss", 1)
                     .ShowMessage();
 
                 if (task.Result == 0)
@@ -86,13 +86,13 @@ namespace Drachenhorn.Desktop.UserControls.Common
                         {
                             if (x)
                                 MessageFactory.NewMessage()
-                                    .MessageTranslated("%Updater.UpdateFinished\n%Updater.UpdateFinished.Sub", false)
-                                    .TitleTranslated("Updater.Title")
+                                    .MessageTranslated("Dialog.UpdateFinished")
+                                    .TitleTranslated("Dialog.Update")
                                     .ShowMessage();
                             else
                                 MessageFactory.NewMessage()
-                                    .MessageTranslated("%Updater.UpdateFailed\n%Updater.UpdateFailed.Sub", false)
-                                    .Title("Updater.Title")
+                                    .MessageTranslated("Dialog.UpdateFailed")
+                                    .Title("Dialog.Update")
                                     .ShowMessage();
                         });
                     }));
@@ -100,8 +100,8 @@ namespace Drachenhorn.Desktop.UserControls.Common
             else
             {
                 MessageFactory.NewMessage()
-                    .MessageTranslated("Updater.NoUpdateAvailable")
-                    .Title("Updater.Title")
+                    .MessageTranslated("Dialog.UpdateNotAvailable")
+                    .Title("Dialog.Update")
                     .ShowMessage();
             }
         }

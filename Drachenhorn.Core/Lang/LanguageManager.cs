@@ -17,6 +17,9 @@ namespace Drachenhorn.Core.Lang
         private readonly ResourceManager _resourceManager = 
             new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
 
+        private readonly ResourceManager _dialogResourceManager =
+            new ResourceManager("Drachenhorn.Core.Lang.Dialog.Dialog", typeof(LanguageManager).Assembly);
+
         private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
 
         public CultureInfo CurrentCulture
@@ -48,12 +51,20 @@ namespace Drachenhorn.Core.Lang
         /// <returns>Translated Text.</returns>
         public string GetLanguageText(string identifier)
         {
-            if (ViewModelBase.IsInDesignModeStatic)
+            if (ViewModelBase.IsInDesignModeStatic || string.IsNullOrEmpty(identifier))
                 return identifier;
 
+            if (identifier.Split('.')[0] == "Dialog")
+                return GetLanguageText(identifier.Substring("Dialog.".Length), _dialogResourceManager);
+
+            return GetLanguageText(identifier, _resourceManager);
+        }
+
+        private string GetLanguageText(string identifier, ResourceManager res)
+        {
             try
             {
-                return _resourceManager.GetString(identifier, CurrentCulture)?.Replace("\\n", "\n");
+                return res.GetString(identifier, CurrentCulture)?.Replace("\\n", "\n");
             }
             catch (MissingManifestResourceException)
             {

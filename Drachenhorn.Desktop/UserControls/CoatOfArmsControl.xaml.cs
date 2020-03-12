@@ -32,12 +32,12 @@ namespace Drachenhorn.Desktop.UserControls
             if (!string.IsNullOrEmpty(((CoatOfArms) DataContext).Base64String))
             {
                 var result = MessageFactory.NewMessage()
-                    .MessageTranslated("CoatOfArms.New.AreYouSure")
-                    .TitleTranslated("UI.New")
-                    .ButtonTranslated("UI.Yes", 0)
-                    .ButtonTranslated("UI.No")
+                    .MessageTranslated("Dialog.Replace")
+                    .TitleTranslated("Dialog.Replace_Caption")
+                    .ButtonTranslated("Dialog.Yes", 0)
+                    .ButtonTranslated("Dialog.No")
                     .ShowMessage().Result;
-                if (result != 1)
+                if (result != 0)
                     return;
             }
 

@@ -208,7 +208,7 @@ namespace Drachenhorn.Desktop.UserSettings
             {
                 MessageFactory.NewMessage()
                     .MessageTranslated("Notification.Settings.Corrupted")
-                    .Title("Notification.Header.Error")
+                    .Title("Dialog.Error")
                     .ShowMessage();
 
                 SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()

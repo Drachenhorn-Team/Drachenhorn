@@ -128,8 +128,8 @@ namespace Drachenhorn.Core.ViewModels.Common
         {
             if (CurrentSheetViewModel?.CurrentSheet == null)
                 await MessageFactory.NewMessage()
-                    .MessageTranslated("UI.NothingSelected")
-                    .Title("UI.NothingSelected.Title")
+                    .MessageTranslated("Dialog.NothingSelected")
+                    .Title("Dialog.NothingSelected_Caption")
                     .ShowMessage();
                 //await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 //    LanguageManager.Translate("UI.NothingSelected"),
@@ -154,10 +154,10 @@ namespace Drachenhorn.Core.ViewModels.Common
             }
 
             var result = await MessageFactory.NewMessage()
-                .MessageTranslated("UI.SouldClose")
-                .TitleTranslated("UI.SouldClose.Caption")
-                .ButtonTranslated("UI.Yes", 0)
-                .ButtonTranslated("UI.No", 1)
+                .MessageTranslated("Dialog.ShouldClose")
+                .TitleTranslated("Dialog.ShouldClose_Caption")
+                .ButtonTranslated("Dialog.Yes", 0)
+                .ButtonTranslated("Dialog.No")
                 .ShowMessage();
                 /*await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
                 LanguageManager.Translate("UI.SouldClose"),

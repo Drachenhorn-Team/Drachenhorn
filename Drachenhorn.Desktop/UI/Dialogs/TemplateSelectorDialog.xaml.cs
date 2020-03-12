@@ -62,13 +62,13 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         private void RemoveButton_OnClick(object sender, RoutedEventArgs e)
         {
             var result = MessageFactory.NewMessage()
-                .MessageTranslated("File.Delete.Message")
-                .TitleTranslated("File.Delete.Caption")
-                .ButtonTranslated("UI.Yes", 0)
-                .ButtonTranslated("UI.No")
+                .MessageTranslated("Dialog.Delete")
+                .TitleTranslated("Dialog.Delete_Caption")
+                .ButtonTranslated("Dialog.Yes", 0)
+                .ButtonTranslated("Dialog.No")
                 .ShowMessage().Result;
 
-            if (result != 1)
+            if (result != 0)
                 return;
 
             TemplateMetadata data;

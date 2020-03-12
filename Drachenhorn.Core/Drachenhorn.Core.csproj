@@ -35,4 +35,10 @@
     <ProjectReference Include="..\Drachenhorn.Xml\Drachenhorn.Xml.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Lang\Dialog\Dialog.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

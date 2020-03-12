@@ -279,9 +279,6 @@
   <data name="Painter.Clear" xml:space="preserve">
     <value>Alles löschen</value>
   </data>
-  <data name="Updater.CheckForUpdate" xml:space="preserve">
-    <value>Auf Updates prüfen</value>
-  </data>
   <data name="Colors.Standard.Header" xml:space="preserve">
     <value>Standard</value>
   </data>
@@ -411,12 +408,6 @@
   <data name="VisualThemeType.Dark" xml:space="preserve">
     <value>Dunkel</value>
   </data>
-  <data name="Notification.Header.Error" xml:space="preserve">
-    <value>Fehler</value>
-  </data>
-  <data name="Notification.Settings.Corrupted" xml:space="preserve">
-    <value>Die Einstellungen konnten nicht ausgelesen werden und werden auf den Standard zurückgesetzt.</value>
-  </data>
   <data name="UI.TakesTime" xml:space="preserve">
     <value>Dies könnte etwas dauern.</value>
   </data>
@@ -528,9 +519,6 @@
   <data name="Template.DoYouWantToAdd" xml:space="preserve">
     <value>Wollen sie diese Vorlage installieren? (Vorhandene Vorlagen könnten überschrieben werden)</value>
   </data>
-  <data name="UI.Yes" xml:space="preserve">
-    <value>Ja</value>
-  </data>
   <data name="UI.No" xml:space="preserve">
     <value>Nein</value>
   </data>
@@ -544,12 +532,6 @@
     <value>Die Änderungen an einer oder mehreren Datei wurden noch nicht gespeichert.\nWollen sie die Änderungen verwerfen?</value>
   </data>
   <data name="UI.ShouldCloseBunch.Caption" xml:space="preserve">
-    <value>Ungespeicherte Änderungen</value>
-  </data>
-  <data name="UI.ShouldClose" xml:space="preserve">
-    <value>Die Änderungen an der Datei wurden noch nicht gespeichert. \nWollen sie die Änderungen verwerfen?</value>
-  </data>
-  <data name="UI.ShouldClose.Caption" xml:space="preserve">
     <value>Ungespeicherte Änderungen</value>
   </data>
   <data name="UI.ShowConsole" xml:space="preserve">
@@ -672,30 +654,6 @@
   <data name="CharacterSheet.TotalWeight" xml:space="preserve">
     <value>Gesamtgewicht</value>
   </data>
-  <data name="Updater.UpdateAvailable" xml:space="preserve">
-    <value>Update verfügbar</value>
-  </data>
-  <data name="Updater.DoUpdate" xml:space="preserve">
-    <value>Installieren</value>
-  </data>
-  <data name="Updater.Dismiss" xml:space="preserve">
-    <value>Nicht jetzt</value>
-  </data>
-  <data name="Updater.Updating" xml:space="preserve">
-    <value>Installiere Update...</value>
-  </data>
-  <data name="Updater.UpdateFinished" xml:space="preserve">
-    <value>Update abgeschlossen</value>
-  </data>
-  <data name="Updater.UpdateFinished.Sub" xml:space="preserve">
-    <value>Neue Version wird bei Neustart der App ausgeführt.</value>
-  </data>
-  <data name="Updater.UpdateFailed" xml:space="preserve">
-    <value>Update fehlgeschlagen</value>
-  </data>
-  <data name="Updater.UpdateFailed.Sub" xml:space="preserve">
-    <value>Versuchen sie es später erneut.</value>
-  </data>
   <data name="CharacterSheet.DisAdvantages" xml:space="preserve">
     <value>Vor-/Nachteile</value>
   </data>
@@ -705,14 +663,8 @@
   <data name="Info.BaseValues" xml:space="preserve">
     <value>Basiswerte</value>
   </data>
-  <data name="Updater.Title" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="UI.OK" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="Updater.NoUpdateAvailable" xml:space="preserve">
-    <value>Kein neues Update gefunden.</value>
   </data>
   <data name="Currency.ValueBasedOn" xml:space="preserve">
     <value>Der Wert ist auf dem kleinsten gemeinsamen Teiler bezogen.</value>
@@ -746,14 +698,5 @@
   </data>
   <data name="Currency.Value" xml:space="preserve">
     <value>Wert</value>
-  </data>
-  <data name="UI.NothingSelected.Title" xml:space="preserve">
-    <value>Nichts ausgewählt</value>
-  </data>
-  <data name="UI.NothingSelected" xml:space="preserve">
-    <value>Sie haben kein Element ausgewählt.</value>
-  </data>
-  <data name="Updater.Changelog" xml:space="preserve">
-    <value>Änderungen</value>
   </data>
 </root>

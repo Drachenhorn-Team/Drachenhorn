@@ -104,10 +104,10 @@ namespace Drachenhorn.Desktop.Views
             if (!Model.CharacterSheetViewModels.Any(x => x.CurrentSheet.HasChanged)) return;
 
             var task = MessageFactory.NewMessage()
-                .MessageTranslated("UI.ShouldCloseBunch")
-                .Title("UI.ShouldCloseBunch.Caption")
-                .ButtonTranslated("UI.Yes", 0)
-                .ButtonTranslated("UI.No")
+                .MessageTranslated("Dialog.ShouldCloseBunch")
+                .Title("Dialog.ShouldClose_Caption")
+                .ButtonTranslated("Dialog.Yes", 0)
+                .ButtonTranslated("Dialog.No")
                 .ShowMessage();
 
             if (task.Result != 0)
@@ -137,14 +137,35 @@ namespace Drachenhorn.Desktop.Views
                             .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
                             .Background(
                                 (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
-                            .HasBadge(LanguageManager.Translate("Updater.Title"))
-                            .HasMessage(LanguageManager.Translate("Updater.UpdateAvailable"))
-                            .Dismiss().WithButton(LanguageManager.Translate("Updater.DoUpdate"), DoUpdate)
-                            .Dismiss().WithButton(LanguageManager.Translate("Updater.Dismiss"), null)
-                            .Dismiss().WithButton(LanguageManager.Translate("Updater.Changelog"), ShowChangelog)
+                            .HasBadge(LanguageManager.Translate("Dialog.Update"))
+                            .HasMessage(LanguageManager.Translate("Dialog.UpdateAvailable"))
+                            .Dismiss().WithButton(LanguageManager.Translate("Dialog.Update_Do"), DoUpdate)
+                            .Dismiss().WithButton(LanguageManager.Translate("Dialog.Update_Dismiss"), null)
+                            .Dismiss().WithButton(LanguageManager.Translate("Dialog.Update_Changelog"), ShowChangelog)
                             .Queue();
                     });
             });
+        }
+
+        private (string, string) FirstLineSplitter(string val)
+        {
+            string message = "";
+            var header = val;
+
+            if (header.Contains('\n'))
+            {
+                var split = header.Split('\n');
+                header = split[0];
+                foreach (var s in split)
+                {
+                    if (s != header)
+                        message += s + "\n";
+                }
+
+                message = message.Substring(0, message.Length - 2);
+            }
+
+            return (header, message);
         }
 
         private void DoUpdate(INotificationMessageButton button)
@@ -156,8 +177,8 @@ namespace Drachenhorn.Desktop.Views
                     NotificationContainer.Manager.CreateMessage()
                         .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
                         .Background((SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
-                        .HasBadge(LanguageManager.Translate("Updater.Title"))
-                        .HasMessage(LanguageManager.Translate("Updater.Updating"))
+                        .HasBadge(LanguageManager.Translate("Dialog.Update"))
+                        .HasMessage(LanguageManager.Translate("Dialog.Updating"))
                         .Dismiss().WithDelay(5000)
                         .Queue();
                 });
@@ -167,26 +188,30 @@ namespace Drachenhorn.Desktop.Views
                     if (f)
                         Dispatcher.Invoke(() =>
                         {
+                            var temp = FirstLineSplitter(LanguageManager.Translate("Dialog.UpdateFinished"));
+
                             NotificationContainer.Manager.CreateMessage()
                                 .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
                                 .Background(
                                     (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
-                                .HasBadge(LanguageManager.Translate("Updater.Title"))
-                                .HasHeader(LanguageManager.Translate("Updater.UpdateFinished"))
-                                .HasMessage(LanguageManager.Translate("Updater.UpdateFinished.Sub"))
+                                .HasBadge(LanguageManager.Translate("Dialog.Update"))
+                                .HasHeader(temp.Item1)
+                                .HasMessage(temp.Item2)
                                 .Dismiss().WithDelay(5000)
                                 .Queue();
                         });
                     else
                         Dispatcher.Invoke(() =>
                         {
+                            var temp = FirstLineSplitter(LanguageManager.Translate("Dialog.UpdateFailed"));
+
                             NotificationContainer.Manager.CreateMessage()
                                 .Accent((SolidColorBrush) FindResource("AccentColorBrush"))
                                 .Background(
                                     (SolidColorBrush) FindResource("MahApps.Metro.HamburgerMenu.PaneBackgroundBrush"))
-                                .HasBadge(LanguageManager.Translate("Updater.Title"))
-                                .HasHeader(LanguageManager.Translate("Updater.UpdateFailed"))
-                                .HasMessage(LanguageManager.Translate("Updater.UpdateFailed.Sub"))
+                                .HasBadge(LanguageManager.Translate("Dialog.Update"))
+                                .HasHeader(temp.Item1)
+                                .HasMessage(temp.Item2)
                                 .Dismiss().WithDelay(5000)
                                 .Queue();
                         });
@@ -212,13 +237,13 @@ namespace Drachenhorn.Desktop.Views
                 return;
 
             var result = this.ShowModalMessageExternal(
-                LanguageManager.Translate("UI.ShouldClose.Caption"),
-                LanguageManager.Translate("UI.ShouldClose"),
+                LanguageManager.Translate("Dialog.ShouldClose_Caption"),
+                LanguageManager.Translate("Dialog.ShouldClose"),
                 MessageDialogStyle.AffirmativeAndNegative,
                 new MetroDialogSettings()
                 {
-                    AffirmativeButtonText = LanguageManager.Translate("UI.Yes"),
-                    NegativeButtonText = LanguageManager.Translate("UI.No"),
+                    AffirmativeButtonText = LanguageManager.Translate("Dialog.Yes"),
+                    NegativeButtonText = LanguageManager.Translate("Dialog.No"),
                     AnimateHide = false,
                     AnimateShow = false
                 });

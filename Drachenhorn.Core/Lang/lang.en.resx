@@ -279,9 +279,6 @@
   <data name="Painter.Clear" xml:space="preserve">
     <value>Clear all</value>
   </data>
-  <data name="Updater.CheckForUpdate" xml:space="preserve">
-    <value>Check for Updates</value>
-  </data>
   <data name="Colors.Standard.Header" xml:space="preserve">
     <value>Default</value>
   </data>
@@ -411,12 +408,6 @@
   <data name="VisualThemeType.Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
-  <data name="Notification.Header.Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="Notification.Settings.Corrupted" xml:space="preserve">
-    <value>Settings can not be read and will be reset.</value>
-  </data>
   <data name="UI.TakesTime" xml:space="preserve">
     <value>This coud take some time.</value>
   </data>
@@ -528,9 +519,6 @@
   <data name="Template.DoYouWantToAdd" xml:space="preserve">
     <value>Do you want to install this template? (Installed templates might get deleted)</value>
   </data>
-  <data name="UI.Yes" xml:space="preserve">
-    <value>Yes</value>
-  </data>
   <data name="UI.No" xml:space="preserve">
     <value>No</value>
   </data>
@@ -544,12 +532,6 @@
     <value>Some changes are not saved. \nDo you want to discard those changes?</value>
   </data>
   <data name="UI.ShouldCloseBunch.Caption" xml:space="preserve">
-    <value>Unsaved Changes</value>
-  </data>
-  <data name="UI.ShouldClose" xml:space="preserve">
-    <value>The File is not saved. \nDo you want to discard the changes?</value>
-  </data>
-  <data name="UI.ShouldClose.Caption" xml:space="preserve">
     <value>Unsaved Changes</value>
   </data>
   <data name="UI.ShowConsole" xml:space="preserve">
@@ -672,30 +654,6 @@
   <data name="CharacterSheet.TotalWeight" xml:space="preserve">
     <value>Total Weight</value>
   </data>
-  <data name="Updater.UpdateAvailable" xml:space="preserve">
-    <value>Update available</value>
-  </data>
-  <data name="Updater.DoUpdate" xml:space="preserve">
-    <value>Install</value>
-  </data>
-  <data name="Updater.Dismiss" xml:space="preserve">
-    <value>Not now</value>
-  </data>
-  <data name="Updater.Updating" xml:space="preserve">
-    <value>Updating...</value>
-  </data>
-  <data name="Updater.UpdateFinished" xml:space="preserve">
-    <value>Update finished</value>
-  </data>
-  <data name="Updater.UpdateFinished.Sub" xml:space="preserve">
-    <value>New Version will be startet on App-Restart.</value>
-  </data>
-  <data name="Updater.UpdateFailed" xml:space="preserve">
-    <value>Update failed</value>
-  </data>
-  <data name="Updater.UpdateFailed.Sub" xml:space="preserve">
-    <value>Please try again later.</value>
-  </data>
   <data name="CharacterSheet.DisAdvantages" xml:space="preserve">
     <value>(Dis-)Advantages</value>
   </data>
@@ -705,14 +663,8 @@
   <data name="Info.BaseValues" xml:space="preserve">
     <value>Base Values</value>
   </data>
-  <data name="Updater.Title" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="UI.OK" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="Updater.NoUpdateAvailable" xml:space="preserve">
-    <value>No new version found.</value>
   </data>
   <data name="Currency.ValueBasedOn" xml:space="preserve">
     <value>The value is based on the smallest common divisor</value>
@@ -746,14 +698,5 @@
   </data>
   <data name="Currency.Value" xml:space="preserve">
     <value>Value</value>
-  </data>
-  <data name="UI.NothingSelected.Title" xml:space="preserve">
-    <value>Nothing selected</value>
-  </data>
-  <data name="UI.NothingSelected" xml:space="preserve">
-    <value>You didn't select an element.</value>
-  </data>
-  <data name="Updater.Changelog" xml:space="preserve">
-    <value>Changelog</value>
   </data>
 </root>
