@@ -11,7 +11,6 @@ using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.UserSettings;
 using GalaSoft.MvvmLight.Ioc;
-using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
 
 namespace Drachenhorn.Desktop.UserControls.Common
 {

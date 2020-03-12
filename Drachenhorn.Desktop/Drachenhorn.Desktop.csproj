@@ -139,6 +139,9 @@
     <Compile Include="UserControls\Common\MapControl.xaml.cs">
       <DependentUpon>MapControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Common\ProfessionDisplayControl.xaml.cs">
+      <DependentUpon>ProfessionDisplayControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Common\RaceDisplayControl.xaml.cs">
       <DependentUpon>RaceDisplayControl.xaml</DependentUpon>
     </Compile>
@@ -588,6 +591,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Common\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ProfessionDisplayControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

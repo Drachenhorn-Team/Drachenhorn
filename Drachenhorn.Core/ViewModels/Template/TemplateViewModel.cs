@@ -1,10 +1,10 @@
 ﻿using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Core.ViewModels.Template
 {
@@ -43,12 +43,13 @@ namespace Drachenhorn.Core.ViewModels.Template
         {
             if (Template != null)
             {
-                var result = await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("UI.SouldClose"),
-                    LanguageManager.Translate("UI.SouldClose.Caption"),
-                    LanguageManager.Translate("UI.Yes"),
-                    LanguageManager.Translate("UI.No"), null);
-                if (result != true) return;
+                var result = await MessageFactory.NewMessage()
+                    .MessageTranslated("UI.ShouldClose")
+                    .TitleTranslated("UI.ShouldClose.Caption")
+                    .ButtonTranslated("UI.Yes", 0)
+                    .ButtonTranslated("UI.No")
+                    .ShowMessage();
+                if (result != 0) return;
             }
 
             Messenger.Default.Send(new NotificationMessage(this, "ShowOpenTemplates"));

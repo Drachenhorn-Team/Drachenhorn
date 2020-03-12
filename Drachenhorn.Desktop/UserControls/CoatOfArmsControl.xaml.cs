@@ -3,10 +3,10 @@ using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.Views;
 using Drachenhorn.Xml.Sheet.Common;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UserControls
 {
@@ -30,13 +30,16 @@ namespace Drachenhorn.Desktop.UserControls
                 return;
 
             if (!string.IsNullOrEmpty(((CoatOfArms) DataContext).Base64String))
-                if (!SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                    LanguageManager.Translate("CoatOfArms.New.AreYouSure"),
-                    LanguageManager.Translate("UI.New"),
-                    LanguageManager.Translate("UI.Yes"),
-                    LanguageManager.Translate("UI.No"),
-                    null).Result)
+            {
+                var result = MessageFactory.NewMessage()
+                    .MessageTranslated("CoatOfArms.New.AreYouSure")
+                    .TitleTranslated("UI.New")
+                    .ButtonTranslated("UI.Yes", 0)
+                    .ButtonTranslated("UI.No")
+                    .ShowMessage().Result;
+                if (result != 1)
                     return;
+            }
 
             var view = new CoatOfArmsPainterView();
 

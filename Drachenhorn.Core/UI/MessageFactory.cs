@@ -72,6 +72,9 @@ namespace Drachenhorn.Core.UI
 
         public MessageFactory Button(string buttonTitle, int index = -1)
         {
+            if (index > _buttons.Count)
+                throw new ArgumentOutOfRangeException(nameof(index), index, "Set index out of Range (start with 0)");
+
             if (index >= 0)
                 _buttons.Insert(index, buttonTitle);
             else

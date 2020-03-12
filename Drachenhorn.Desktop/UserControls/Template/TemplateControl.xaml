@@ -84,6 +84,17 @@
                 </userElements:ListEditor.ContentTemplate>
             </userElements:ListEditor>
         </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.Professions}">
+            <userElements:ListEditor DataContext="{Binding Template.Professions}"
+                                     DisplayMemberPath="Name"
+                                     ContentType="{x:Type xmlCommon:ProfessionInformation}">
+                <userElements:ListEditor.ContentTemplate>
+                    <DataTemplate>
+                        <common:ProfessionDisplayControl />
+                    </DataTemplate>
+                </userElements:ListEditor.ContentTemplate>
+            </userElements:ListEditor>
+        </mah:MetroTabItem>
         <mah:MetroTabItem Header="{lang:Translate Template.Currencies}">
             <local:CurrenciesControl DataContext="{Binding Template.Currencies}" />
         </mah:MetroTabItem>

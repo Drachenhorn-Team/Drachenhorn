@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.Downloader;
 using Drachenhorn.Core.Lang;
+using Drachenhorn.Core.UI;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {
@@ -61,11 +61,14 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
         private void RemoveButton_OnClick(object sender, RoutedEventArgs e)
         {
-            if (!SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                LanguageManager.Translate("File.Delete.Message"),
-                LanguageManager.Translate("File.Delete.Title"),
-                LanguageManager.Translate("UI.Yes"),
-                LanguageManager.Translate("UI.No"), null).Result)
+            var result = MessageFactory.NewMessage()
+                .MessageTranslated("File.Delete.Message")
+                .TitleTranslated("File.Delete.Caption")
+                .ButtonTranslated("UI.Yes", 0)
+                .ButtonTranslated("UI.No")
+                .ShowMessage().Result;
+
+            if (result != 1)
                 return;
 
             TemplateMetadata data;
