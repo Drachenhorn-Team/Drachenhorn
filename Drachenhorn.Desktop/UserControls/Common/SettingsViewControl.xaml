@@ -114,18 +114,18 @@
                         </DockPanel>
 
                         <WrapPanel Margin="20 5 10 0" Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
-                            <TextBlock Text="{lang:Translate Updater.UpdateAvailable}" FontSize="18"/>
+                            <TextBlock Text="{lang:Translate Dialog.UpdateAvailable}" FontSize="18"/>
                             <TextBlock Text="{Binding Settings.NewVersion}" FontSize="18"/>
                         </WrapPanel>
 
-                        <Button Content="{lang:Translate Updater.CheckForUpdate}"
+                        <Button Content="{lang:Translate Dialog.Update_Check}"
                                 Click="CheckUpdateButton_OnClick" HorizontalAlignment="Right"
                                 Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}, ConverterParameter=Invert}"/>
 
                         <WrapPanel HorizontalAlignment="Right" Margin="10 5 10 0"
                                    Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
-                            <Button Content="{lang:Translate Updater.DoUpdate}"/>
-                            <Button Content="{lang:Translate Updater.Changelog}"/>
+                            <Button Content="{lang:Translate Dialog.Update_Do}"/>
+                            <Button Content="{lang:Translate Dialog.Update_Changelog}"/>
                         </WrapPanel>
                     </StackPanel>
                 </Border>
