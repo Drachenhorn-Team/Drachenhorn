@@ -5,8 +5,8 @@
   <a href="https://github.com/Drachenhorn-Team/Drachenhorn/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/Drachenhorn-Team/Drachenhorn?style=flat-square" alt="License">
   </a>
-  <a href="https://github.com/Drachenhorn-Team/Drachenhorn/tree/publish" target="_blank">
-    <img src="https://img.shields.io/badge/Publish-Squirrel-lightgrey?style=flat-square" alt="Publish">
+  <a href="https://github.com/Drachenhorn-Team/Drachenhorn/releases/latest" target="_blank">
+    <img src="https://img.shields.io/badge/Installer-Squirrel-lightgrey?style=flat-square" alt="Publish">
   </a>
 </p>
 
@@ -33,7 +33,7 @@
 
 ## Introduction
         
-Drachenhorn is a Programm to create "Pen & Paper"-Characters on any Rule-System based on the "Das Schwarze Auge" (German, The black Eye)
+Drachenhorn is a Programm to create "Pen & Paper"-Characters on any Rule-System based on the "Das Schwarze Auge" (German, The Dark Eye)
 
 >"The PDF is really annoying and takes some time to fill completely. Daniel couldn't you create something to help with that?" - Our Gamemaster
 
