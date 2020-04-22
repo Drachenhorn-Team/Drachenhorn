@@ -34,26 +34,26 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
+        private static SemanticVersion _currentVersion;
 
-        private static string _currentVersion;
-
-        public static string CurrentVersion
+        public static SemanticVersion CurrentVersion
         {
             get
             {
-                if (string.IsNullOrEmpty(_currentVersion))
+                if (_currentVersion == null)
                 {
+                    _currentVersion = new SemanticVersion(0, 0, 0, 0);
+
                     try
                     {
                         using (var mgr = new UpdateManager("C:"))
                         {
-                            _currentVersion = mgr.CurrentlyInstalledVersion().ToString();
+                            if (mgr.CurrentlyInstalledVersion() != null) 
+                                _currentVersion = mgr.CurrentlyInstalledVersion();
                         }
                     }
                     catch (Exception e)
                     {
-                        _currentVersion = "X.X.X";
-
                         SimpleIoc.Default.GetInstance<ILogService>().GetLogger<Settings>()
                             .Debug("Unable to load Squirrel Version.", e);
                     }
@@ -84,7 +84,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public static async Task<bool> IsUpdateAvailable(Action<int> progress = null)
         {
-            if (CurrentVersion == "X.X.X")
+            if (CurrentVersion == new SemanticVersion(0, 0, 0, 0))
                 return false;
 
             try
@@ -275,7 +275,7 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             if (NewVersion == null) throw new InvalidOperationException("Can't get Release-Notes without checking for Update first.");
 
-            var currentCommit = GetCommit(CurrentVersion);
+            var currentCommit = GetCommit(CurrentVersion.ToString());
             var newCommit = GetCommit(NewVersion);
 
             var commits = GetAllCommits();

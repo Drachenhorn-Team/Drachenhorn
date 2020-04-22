@@ -130,7 +130,7 @@
 
                                 <ListBox Name="PART_List" ItemsSource="{Binding .}"
                                          DisplayMemberPath="{TemplateBinding DisplayMemberPath}"
-                                         MinWidth="300" />
+                                         MinWidth="300" SelectedIndex="0" />
                             </DockPanel>
 
                             <Separator Style="{DynamicResource VerticalSeperatorStyle}" DockPanel.Dock="Left" />

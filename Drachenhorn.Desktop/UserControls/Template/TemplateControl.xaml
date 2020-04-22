@@ -8,6 +8,7 @@
              xmlns:common="clr-namespace:Drachenhorn.Desktop.UserControls.Common"
              xmlns:userElements="clr-namespace:Drachenhorn.Desktop.UserElements"
              xmlns:xmlCommon="clr-namespace:Drachenhorn.Xml.Sheet.Common;assembly=Drachenhorn.Xml"
+             xmlns:xmlSkills="clr-namespace:Drachenhorn.Xml.Sheet.Skills;assembly=Drachenhorn.Xml"
              xmlns:template="clr-namespace:Drachenhorn.Xml.Template;assembly=Drachenhorn.Xml"
              xmlns:validation="clr-namespace:Drachenhorn.Desktop.Converter.Validation"
              xmlns:template1="clr-namespace:Drachenhorn.Core.ViewModels.Template;assembly=Drachenhorn.Core"
@@ -91,6 +92,17 @@
                 <userElements:ListEditor.ContentTemplate>
                     <DataTemplate>
                         <common:ProfessionDisplayControl />
+                    </DataTemplate>
+                </userElements:ListEditor.ContentTemplate>
+            </userElements:ListEditor>
+        </mah:MetroTabItem>
+        <mah:MetroTabItem Header="{lang:Translate Template.Skills}">
+            <userElements:ListEditor DataContext="{Binding Template.Skills}"
+                                     DisplayMemberPath="Name"
+                                     ContentType="{x:Type xmlSkills:Skill}">
+                <userElements:ListEditor.ContentTemplate>
+                    <DataTemplate>
+                        <common:SkillDisplayControl />
                     </DataTemplate>
                 </userElements:ListEditor.ContentTemplate>
             </userElements:ListEditor>

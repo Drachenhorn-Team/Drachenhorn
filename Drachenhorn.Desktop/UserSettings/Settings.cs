@@ -13,7 +13,9 @@ using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using MahApps.Metro;
+using NuGet;
 using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
+using ISettings = Drachenhorn.Core.Settings.ISettings;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
@@ -109,7 +111,7 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         [XmlIgnore]
-        public string Version => SquirrelManager.CurrentVersion;
+        public string Version => SquirrelManager.CurrentVersion.ToString();
 
         [XmlIgnore]
         public string NewVersion => SquirrelManager.NewVersion;

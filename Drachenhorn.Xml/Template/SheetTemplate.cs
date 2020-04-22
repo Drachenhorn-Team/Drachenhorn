@@ -54,6 +54,9 @@ namespace Drachenhorn.Xml.Template
         [XmlIgnore]
         private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
 
+        [XmlIgnore]
+        private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
+
         /// <summary>
         ///     Gets or sets the information.
         /// </summary>
@@ -180,6 +183,22 @@ namespace Drachenhorn.Xml.Template
                 if (_currencies == value)
                     return;
                 _currencies = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     List of all possible skills for a Character-Template
+        /// </summary>
+        [XmlElement("Skill")]
+        public ObservableCollection<Skill> Skills
+        {
+            get => _skills;
+            set
+            {
+                if (_skills == value)
+                    return;
+                _skills = value;
                 OnPropertyChanged();
             }
         }
