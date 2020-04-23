@@ -33,11 +33,11 @@
                         <RowDefinition Height="Auto" SharedSizeGroup="Factor" />
                         <RowDefinition Height="*" SharedSizeGroup="Values" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{lang:Translate APColumn.Name}" Grid.Row="1" Margin="5" />
+                    <TextBlock Text="{lang:Translate APColumn.Name}" Grid.Row="1" Margin="2" />
                     <Separator Grid.Row="2" Height="4" />
-                    <TextBlock Text="{lang:Translate APColumn.Negative}" Grid.Row="3" Margin="5" />
-                    <TextBlock Text="{lang:Translate APColumn.Factor}" Grid.Row="4" Margin="5" />
-                    <TextBlock Text="{lang:Translate APColumn.Values}" Grid.Row="5" VerticalAlignment="Top" Margin="5" />
+                    <TextBlock Text="{lang:Translate APColumn.Negative}" Grid.Row="3" Margin="2" />
+                    <TextBlock Text="{lang:Translate APColumn.Factor}" Grid.Row="4" Margin="2" />
+                    <TextBlock Text="{lang:Translate APColumn.Values}" Grid.Row="5" VerticalAlignment="Top" Margin="2" />
                 </Grid>
             </Border>
             <ItemsControl ItemsSource="{Binding APColumns}" local:EnterKeyTraversal.IsEnabled="True">
@@ -59,19 +59,19 @@
                                     <RowDefinition Height="*" SharedSizeGroup="Values" />
                                 </Grid.RowDefinitions>
 
-                                <Button Click="RemoveColumnButton_OnClick" Margin="5" Height="28" IsTabStop="False">
+                                <Button Click="RemoveColumnButton_OnClick" Margin="0" Height="28" IsTabStop="False">
                                     <Image Source="{DynamicResource RemoveIcon}" />
                                 </Button>
 
                                 <TextBox Text="{Binding Name}" GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
-                                         HorizontalContentAlignment="Center" Margin="5" Grid.Row="1" />
+                                         HorizontalContentAlignment="Center" Margin="0" Grid.Row="1" />
 
                                 <Separator Grid.Row="2" Height="4" />
 
                                 <TextBox Text="{Binding Negative}" GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
-                                         HorizontalContentAlignment="Center" Grid.Row="3" />
+                                         HorizontalContentAlignment="Center" Grid.Row="3" Margin="0"/>
                                 <TextBox Text="{Binding Factor}" GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
-                                         HorizontalContentAlignment="Center" Grid.Row="4" />
+                                         HorizontalContentAlignment="Center" Grid.Row="4" Margin="0"/>
                                 <Grid Grid.Row="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
@@ -85,11 +85,11 @@
                                                         <ColumnDefinition Width="*" />
                                                         <ColumnDefinition Width="Auto" />
                                                     </Grid.ColumnDefinitions>
-                                                    <TextBox Text="{Binding Value}"
+                                                    <TextBox Text="{Binding Value}" Margin="0"
                                                              GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
                                                              HorizontalContentAlignment="Center" />
                                                     <Button Click="RemoveValueButton_OnClick" Grid.Column="1"
-                                                            Margin="0 0 5 0" Height="22" IsTabStop="False"
+                                                            Margin="0 0 0 0" Height="28" Width="22" IsTabStop="False"
                                                             Tag="{Binding DataContext.Costs, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}">
                                                         <Image Source="{StaticResource RemoveIcon}" />
                                                     </Button>
@@ -97,7 +97,7 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-                                    <Button Click="AddValueButton_OnClick" Grid.Row="1" Margin="5" Height="28"
+                                    <Button Click="AddValueButton_OnClick" Grid.Row="1" Margin="0" Height="28"
                                             IsTabStop="true">
                                         <Image Source="{StaticResource AddIcon}" />
                                     </Button>

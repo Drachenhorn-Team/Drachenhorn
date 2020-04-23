@@ -70,10 +70,11 @@
         <TextBox Text="{Binding PlaceOfBirth}"
                  Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1" />
 
+        <!--Disable to rework
         <TextBlock Text="{lang:Translate Characteristics.BirthDate}"
                    Grid.Column="0" Grid.Row="2" />
         <userElements:DsaDatePicker Date="{Binding BirthDate}"
-                                    Grid.Column="1" Grid.Row="2" />
+                                    Grid.Column="1" Grid.Row="2" />-->
 
         <TextBlock Text="{lang:Translate Characteristics.Age}"
                    Grid.Column="2" Grid.Row="2" />

@@ -131,9 +131,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                     .MessageTranslated("Dialog.NothingSelected")
                     .Title("Dialog.NothingSelected_Caption")
                     .ShowMessage();
-                //await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                //    LanguageManager.Translate("UI.NothingSelected"),
-                //    LanguageManager.Translate("UI.NothingSelected.Title"));
 
             SimpleIoc.Default.GetInstance<IUIService>().SetBusyState();
 
@@ -159,11 +156,6 @@ namespace Drachenhorn.Core.ViewModels.Common
                 .ButtonTranslated("Dialog.Yes", 0)
                 .ButtonTranslated("Dialog.No")
                 .ShowMessage();
-                /*await SimpleIoc.Default.GetInstance<IDialogService>().ShowMessage(
-                LanguageManager.Translate("UI.SouldClose"),
-                LanguageManager.Translate("UI.SouldClose.Caption"),
-                LanguageManager.Translate("UI.Yes"),
-                LanguageManager.Translate("UI.No"), null);*/
 
             if (result == 0)
                 CharacterSheetViewModels.Remove(model);

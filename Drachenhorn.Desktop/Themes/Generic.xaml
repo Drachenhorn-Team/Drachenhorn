@@ -9,13 +9,9 @@
     xmlns:objects="clr-namespace:Drachenhorn.Xml.Objects;assembly=Drachenhorn.Xml"
     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
     mc:Ignorable="d">
-    <!--<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../UI/Themes/Images/Common.xaml"/>
-        <ResourceDictionary Source="../UI/Themes/Controls.xaml"/>
-    </ResourceDictionary.MergedDictionaries>-->
-    <converter:EnumToStringConverter x:Key="EnumToStringConverter" />
-    <converter:EnumListStringConverter x:Key="EnumListStringConverter" />
-    <converter:AllowedDaysConverter x:Key="AllowedDaysConverter" />
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Drachenhorn.Desktop;component/Converter/Converter.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
     <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="DsaMonthEnum">
         <ObjectDataProvider.MethodParameters>
             <x:Type TypeName="objects:DSAMonth" />
