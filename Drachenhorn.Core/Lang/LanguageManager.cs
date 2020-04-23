@@ -12,38 +12,6 @@ namespace Drachenhorn.Core.Lang
 {
     public class LanguageManager : BindableBase, INotifyLanguageChanged
     {
-        #region Properties
-
-        private readonly ResourceManager _resourceManager = 
-            new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
-
-        private readonly ResourceManager _dialogResourceManager =
-            new ResourceManager("Drachenhorn.Core.Lang.Dialog.Dialog", typeof(LanguageManager).Assembly);
-
-        private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
-
-        public CultureInfo CurrentCulture
-        {
-            get => _currentCulture;
-            set
-            {
-                if (Equals(_currentCulture, value))
-                    return;
-                _currentCulture = value;
-                OnPropertyChanged(null);
-                OnLanguageChanged(value);
-            }
-        }
-
-        /// <summary>
-        ///     Returns the translated Text for the TranslateID.
-        /// </summary>
-        /// <param name="key">TranslateID</param>
-        /// <returns>Translated Text</returns>
-        public string this[string key] => TranslateText(key);
-
-        #endregion
-
         /// <summary>
         ///     Returns the translated Text for the TranslateID.
         /// </summary>
@@ -144,6 +112,38 @@ namespace Drachenhorn.Core.Lang
 
             return result;
         }
+
+        #region Properties
+
+        private readonly ResourceManager _resourceManager =
+            new ResourceManager("Drachenhorn.Core.Lang.lang", typeof(LanguageManager).Assembly);
+
+        private readonly ResourceManager _dialogResourceManager =
+            new ResourceManager("Drachenhorn.Core.Lang.Dialog.Dialog", typeof(LanguageManager).Assembly);
+
+        private CultureInfo _currentCulture = CultureInfo.CurrentUICulture;
+
+        public CultureInfo CurrentCulture
+        {
+            get => _currentCulture;
+            set
+            {
+                if (Equals(_currentCulture, value))
+                    return;
+                _currentCulture = value;
+                OnPropertyChanged(null);
+                OnLanguageChanged(value);
+            }
+        }
+
+        /// <summary>
+        ///     Returns the translated Text for the TranslateID.
+        /// </summary>
+        /// <param name="key">TranslateID</param>
+        /// <returns>Translated Text</returns>
+        public string this[string key] => TranslateText(key);
+
+        #endregion
 
         #region static
 

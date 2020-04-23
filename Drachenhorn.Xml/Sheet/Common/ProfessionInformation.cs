@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
 
@@ -15,6 +13,25 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class ProfessionInformation : GenerationDataHolder, IInfoObject
     {
+        /// <inheritdoc />
+        public new Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
+
+            foreach (var info in base.GetInformation()) result.Add(info.Key, info.Value);
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Name;
+        }
+
         #region Properties
 
         [XmlIgnore] private string _name;
@@ -60,27 +77,5 @@ namespace Drachenhorn.Xml.Sheet.Common
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public new Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-
-            foreach (var info in base.GetInformation())
-            {
-                result.Add(info.Key, info.Value);
-            }
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

@@ -43,26 +43,6 @@ namespace Drachenhorn.Desktop.Views
 
         #endregion
 
-        #region Properties
-
-        private ObservableCollection<Stroke> _strokes;
-
-        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
-
-        public ObservableCollection<Stroke> Strokes
-        {
-            get => _strokes;
-            private set
-            {
-                if (_strokes == value)
-                    return;
-                _strokes = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion
-
         public string GetBase64()
         {
             var margin = (int) DrawCanvas.Margin.Left;
@@ -129,6 +109,26 @@ namespace Drachenhorn.Desktop.Views
             DialogResult = true;
             Close();
         }
+
+        #region Properties
+
+        private ObservableCollection<Stroke> _strokes;
+
+        public LimitedList<Stroke> UndoneStrokes = new LimitedList<Stroke>(50);
+
+        public ObservableCollection<Stroke> Strokes
+        {
+            get => _strokes;
+            private set
+            {
+                if (_strokes == value)
+                    return;
+                _strokes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         #region BrushType
 

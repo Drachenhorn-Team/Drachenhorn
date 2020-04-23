@@ -14,6 +14,17 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class DisAdvantage : ChildChangedBase, IInfoObject
     {
+        /// <inheritdoc />
+        public virtual Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Specialization)) result.Add("%Info.Specialization", Specialization);
+
+            return result;
+        }
+
         #region Properties
 
         [XmlIgnore] private string _name;
@@ -101,16 +112,5 @@ namespace Drachenhorn.Xml.Sheet.Common
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public virtual Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Specialization)) result.Add("%Info.Specialization", Specialization);
-
-            return result;
-        }
     }
 }

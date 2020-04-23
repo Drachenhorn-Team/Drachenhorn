@@ -30,7 +30,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <mah:NumericUpDown Value="{Binding Modifier, UpdateSourceTrigger=PropertyChanged}"
-                                               BorderThickness="0" Margin="0" Background="Transparent"/>
+                                               BorderThickness="0" Margin="0" Background="Transparent" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -38,7 +38,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <mah:NumericUpDown Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
-                                               BorderThickness="0" Margin="0" Background="Transparent"/>
+                                               BorderThickness="0" Margin="0" Background="Transparent" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

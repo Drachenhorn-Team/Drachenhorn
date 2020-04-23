@@ -42,6 +42,11 @@ namespace Drachenhorn.Core.ViewModels
 
         #endregion
 
+        public static void Cleanup()
+        {
+            // TODO Clear the ViewModels
+        }
+
         #region Properties
 
         public LanguageManager LanguageManager => SimpleIoc.Default.GetInstance<LanguageManager>();
@@ -62,10 +67,5 @@ namespace Drachenhorn.Core.ViewModels
             SimpleIoc.Default.GetInstance<CurrencyCalculatorViewModel>();
 
         #endregion
-
-        public static void Cleanup()
-        {
-            // TODO Clear the ViewModels
-        }
     }
 }

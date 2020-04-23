@@ -1,253 +1,245 @@
-﻿@using System
-@using Drachenhorn.Core.Lang
-@using Drachenhorn.Xml.Sheet
+﻿@using Drachenhorn.Core.Lang
 @using Drachenhorn.Xml.Sheet.Enums
-@using Drachenhorn.Core.ViewModels.Sheet
-@inherits RazorLight.TemplatePage<CharacterSheetViewModel>
+@inherits RazorLight.TemplatePage<Drachenhorn.Core.ViewModels.Sheet.CharacterSheetViewModel>
 
-@{ CharacterSheet sheet = Model.CurrentSheet; }
+@{ var sheet = Model.CurrentSheet; }
 
 <!DOCTYPE html>
 
 <html lang="@LanguageManager.CurrentUiCulture.TwoLetterISOLanguageName" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>@LanguageManager.Translate("CharacterSheet.Title")</title>
 </head>
 <body style="margin: 0px; padding: 0px; width: 100%;">
-    <style>
-        table {
-            margin: 0px;
-            padding: 0px;
-            width: 100%;
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
 
-        th, td {
-            border: 1px solid black;
-        }
+    th, td { border: 1px solid black; }
 
-        .page {
-            size: A4;
-        }
+    .page { size: A4; }
 
-        /* Default left, right, top, bottom margin is 2cm */
-        @@page {
-            margin: 2cm;
-        }
+    /* Default left, right, top, bottom margin is 2cm */
 
-        /* First page, 10 cm margin on top */
-        @@page :first {
-            margin-top: 10cm;
-        }
+    @@page {
+        margin: 2cm;
+    }
 
-        /* Left pages, a wider margin on the left */
-        @@page :left {
-            margin-left: 3cm;
-            margin-right: 2cm;
-        }
+    /* First page, 10 cm margin on top */
 
-        @@page :right {
-            margin-left: 2cm;
-            margin-right: 3cm;
-        }
+    @@page :first {
+        margin-top: 10cm;
+    }
 
-        page.section {
-            page-break-before: auto;
-        }
+    /* Left pages, a wider margin on the left */
 
-        page.h1 {
-            page-break-after: avoid;
-        }
-    </style>
+    @@page :left {
+        margin-left: 3cm;
+        margin-right: 2cm;
+    }
 
-    <div class="page">
-        <section>
-            <h1 style="text-align: center">@LanguageManager.Translate("CharacterSheet.Title")</h1>
+    @@page :right {
+        margin-left: 2cm;
+        margin-right: 3cm;
+    }
 
-            <table>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Name")</td>
-                    <td colspan="5">@sheet.Characteristics.Name</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Family")</td>
-                    <td>@sheet.Characteristics.Family</td>
-                    <td>@LanguageManager.Translate("Characteristics.PlaceOfBirth")</td>
-                    <td colspan="3">@sheet.Characteristics.PlaceOfBirth</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.BirthDate")</td>
-                    <td>@sheet.Characteristics.BirthDate</td>
-                    <td>@LanguageManager.Translate("Characteristics.Age")</td>
-                    <td>@sheet.Characteristics.Age</td>
-                    <td>@LanguageManager.Translate("Characteristics.Gender")</td>
-                    <td>@LanguageManager.Translate("Gender." + sheet.Characteristics.Gender)</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Race")</td>
-                    <td>@sheet.Characteristics.Race.Name</td>
-                    <td>@LanguageManager.Translate("Characteristics.Height")</td>
-                    <td>@sheet.Characteristics.Height</td>
-                    <td>@LanguageManager.Translate("Characteristics.Weight")</td>
-                    <td>@sheet.Characteristics.Weight</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.HairColor")</td>
-                    <td>@sheet.Characteristics.HairColor</td>
-                    <td>@LanguageManager.Translate("Characteristics.EyeColor")</td>
-                    <td colspan="3">@sheet.Characteristics.EyeColor</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Culture")</td>
-                    <td>@sheet.Characteristics.Culture.Name</td>
-                    <td>@LanguageManager.Translate("Characteristics.Profession")</td>
-                    <td colspan="3">@sheet.Characteristics.Profession.Name</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Title")</td>
-                    <td>@sheet.Characteristics.Title</td>
-                    <td>@LanguageManager.Translate("Characteristics.SocialStatus")</td>
-                    <td colspan="3">@sheet.Characteristics.SocialStatus</td>
-                </tr>
-                <tr>
-                    <td>@LanguageManager.Translate("Characteristics.Other")</td>
-                    <td colspan="5">@sheet.Characteristics.Other</td>
-                </tr>
-            </table>
-        </section>
+    page.section { page-break-before: auto; }
 
-        <section>
-            <table>
-                <tr>
-                    <td>
-                        <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.DisAdvantages")</h4>
-                        <table>
-                            <tr>
-                                <th />
-                                <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
-                                <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
-                                <th>@LanguageManager.Translate("CharacterSheet.Specialization")</th>
-                            </tr>
-                            @foreach (var disAdvantage in sheet.DisAdvantages)
-                            {
-                                <tr>
-                                    @if (disAdvantage.Type == DisAdvantageType.Advantage)
-                                    {
-                                        <td>"+"</td>
-                                    }
-                                    else
-                                    {
-                                        <td>"-"</td>
-                                    }
-                                    <td>@disAdvantage.Name</td>
-                                    <td>@disAdvantage.Value</td>
-                                    <td>@disAdvantage.Specialization</td>
-                                </tr>
-                            }
-                        </table>
-                    </td>
-                    @if (!string.IsNullOrEmpty(sheet.CoatOfArms?.Base64String))
-                    {
-                        <td>
-                            <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.CoatOfArms")</h4>
-                            <img src="data:image/png;base64,@sheet.CoatOfArms.Base64String" />
-                        </td>
-                    }
-                </tr>
-            </table>
-        </section>
+    page.h1 { page-break-after: avoid; }
+</style>
 
-        <h3 style="text-align: center">@LanguageManager.Translate("CharacterSheet.BaseValues")</h3>
+<div class="page">
+    <section>
+        <h1 style="text-align: center">@LanguageManager.Translate("CharacterSheet.Title")</h1>
 
         <table>
             <tr>
-                <td>
-                    <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
-                        @if (sheet.Attributes != null)
-                        {
-                            foreach (var attributeItem in sheet.Attributes)
-                            {
-                                <tr>
-                                    <td>@attributeItem.Name</td>
-                                    <td>@attributeItem.Modifier</td>
-                                    <td>@attributeItem.StartValue</td>
-                                    <td>@attributeItem.Value</td>
-                                </tr>
-                            }
-                        }
-                    </table>
-                </td>
-                <td>
-                    <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
-                        @if (sheet.BaseValues != null)
-                        {
-                            foreach (var baseValue in sheet.BaseValues)
-                            {
-                                <tr>
-                                    <td>@baseValue.Name</td>
-                                    <td>@baseValue.Modifier</td>
-                                    <td>@baseValue.StartValue</td>
-                                    <td>@baseValue.Value</td>
-                                </tr>
-                            }
-                        }
-                    </table>
-                </td>
+                <td>@LanguageManager.Translate("Characteristics.Name")</td>
+                <td colspan="5">@sheet.Characteristics.Name</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.Family")</td>
+                <td>@sheet.Characteristics.Family</td>
+                <td>@LanguageManager.Translate("Characteristics.PlaceOfBirth")</td>
+                <td colspan="3">@sheet.Characteristics.PlaceOfBirth</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.BirthDate")</td>
+                <td>@sheet.Characteristics.BirthDate</td>
+                <td>@LanguageManager.Translate("Characteristics.Age")</td>
+                <td>@sheet.Characteristics.Age</td>
+                <td>@LanguageManager.Translate("Characteristics.Gender")</td>
+                <td>@LanguageManager.Translate("Gender." + sheet.Characteristics.Gender)</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.Race")</td>
+                <td>@sheet.Characteristics.Race.Name</td>
+                <td>@LanguageManager.Translate("Characteristics.Height")</td>
+                <td>@sheet.Characteristics.Height</td>
+                <td>@LanguageManager.Translate("Characteristics.Weight")</td>
+                <td>@sheet.Characteristics.Weight</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.HairColor")</td>
+                <td>@sheet.Characteristics.HairColor</td>
+                <td>@LanguageManager.Translate("Characteristics.EyeColor")</td>
+                <td colspan="3">@sheet.Characteristics.EyeColor</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.Culture")</td>
+                <td>@sheet.Characteristics.Culture.Name</td>
+                <td>@LanguageManager.Translate("Characteristics.Profession")</td>
+                <td colspan="3">@sheet.Characteristics.Profession.Name</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.Title")</td>
+                <td>@sheet.Characteristics.Title</td>
+                <td>@LanguageManager.Translate("Characteristics.SocialStatus")</td>
+                <td colspan="3">@sheet.Characteristics.SocialStatus</td>
+            </tr>
+            <tr>
+                <td>@LanguageManager.Translate("Characteristics.Other")</td>
+                <td colspan="5">@sheet.Characteristics.Other</td>
             </tr>
         </table>
+    </section>
 
+    <section>
         <table>
             <tr>
-                <td>@LanguageManager.Translate("CharacterSheet.TotalAP")</td>
-                <td>@sheet.AdventurePoints?.Total</td>
-                <td>@LanguageManager.Translate("CharacterSheet.UsedAP")</td>
-                <td>@sheet.AdventurePoints?.Used</td>
-                <td>@LanguageManager.Translate("CharacterSheet.LeftoverAP")</td>
-                <td>@sheet.AdventurePoints?.CurrentLeft</td>
-            </tr>
-        </table>
-
-        @if (sheet.Skills != null)
-        {
-            <table>
-                <tr>
-                    <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
-                    <th>@LanguageManager.Translate("CharacterSheet.Attributes")</th>
-                    <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
-                </tr>
-                @{ string currentGroup = null;}
-                @foreach (var skill in sheet.Skills)
-                {
-                    if (currentGroup != skill.Category)
-                    {
-                        currentGroup = skill.Category;
+                <td>
+                    <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.DisAdvantages")</h4>
+                    <table>
                         <tr>
-                            <th colspan="5" style="text-align: left; background: lightgray">@skill.Category</th>
+                            <th/>
+                            <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+                            <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
+                            <th>@LanguageManager.Translate("CharacterSheet.Specialization")</th>
                         </tr>
-                    }
-
-                    <tr>
-                        <td>@skill.Name</td>
-                        <td>@skill.RollAttributes</td>
-                    </tr>
-                }
-            </table>
-        }
-
-        @if (sheet.SpecialSkills != null)
-        {
-            <table>
-                @foreach (var specialSkill in sheet.SpecialSkills)
+                        @foreach (var disAdvantage in sheet.DisAdvantages)
+                        {
+                            <tr>
+                                @if (disAdvantage.Type == DisAdvantageType.Advantage)
+                                {
+                                    <td>"+"</td>
+                                }
+                                else
+                                {
+                                    <td>"-"</td>
+                                }
+                                <td>@disAdvantage.Name</td>
+                                <td>@disAdvantage.Value</td>
+                                <td>@disAdvantage.Specialization</td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                @if (!string.IsNullOrEmpty(sheet.CoatOfArms?.Base64String))
                 {
+                    <td>
+                        <h4 style="text-align: center">@LanguageManager.Translate("CharacterSheet.CoatOfArms")</h4>
+                        <img src="data:image/png;base64,@sheet.CoatOfArms.Base64String"/>
+                    </td>
+                }
+            </tr>
+        </table>
+    </section>
+
+    <h3 style="text-align: center">@LanguageManager.Translate("CharacterSheet.BaseValues")</h3>
+
+    <table>
+        <tr>
+            <td>
+                <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
+                    @if (sheet.Attributes != null)
+                    {
+                        foreach (var attributeItem in sheet.Attributes)
+                        {
+                            <tr>
+                                <td>@attributeItem.Name</td>
+                                <td>@attributeItem.Modifier</td>
+                                <td>@attributeItem.StartValue</td>
+                                <td>@attributeItem.Value</td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </td>
+            <td>
+                <table border="1" style="margin: 0px; padding: 0px; width: 100%;">
+                    @if (sheet.BaseValues != null)
+                    {
+                        foreach (var baseValue in sheet.BaseValues)
+                        {
+                            <tr>
+                                <td>@baseValue.Name</td>
+                                <td>@baseValue.Modifier</td>
+                                <td>@baseValue.StartValue</td>
+                                <td>@baseValue.Value</td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>@LanguageManager.Translate("CharacterSheet.TotalAP")</td>
+            <td>@sheet.AdventurePoints?.Total</td>
+            <td>@LanguageManager.Translate("CharacterSheet.UsedAP")</td>
+            <td>@sheet.AdventurePoints?.Used</td>
+            <td>@LanguageManager.Translate("CharacterSheet.LeftoverAP")</td>
+            <td>@sheet.AdventurePoints?.CurrentLeft</td>
+        </tr>
+    </table>
+
+    @if (sheet.Skills != null)
+    {
+        <table>
+            <tr>
+                <th>@LanguageManager.Translate("CharacterSheet.Name")</th>
+                <th>@LanguageManager.Translate("CharacterSheet.Attributes")</th>
+                <th>@LanguageManager.Translate("CharacterSheet.Value")</th>
+            </tr>
+            @{ string currentGroup = null; }
+            @foreach (var skill in sheet.Skills)
+            {
+                if (currentGroup != skill.Category)
+                {
+                    currentGroup = skill.Category;
                     <tr>
-                        <td>@specialSkill.Name</td>
+                        <th colspan="5" style="background: lightgray; text-align: left;">@skill.Category</th>
                     </tr>
                 }
-            </table>
-        }
-    </div>
+
+                <tr>
+                    <td>@skill.Name</td>
+                    <td>@skill.RollAttributes</td>
+                </tr>
+            }
+        </table>
+    }
+
+    @if (sheet.SpecialSkills != null)
+    {
+        <table>
+            @foreach (var specialSkill in sheet.SpecialSkills)
+            {
+                <tr>
+                    <td>@specialSkill.Name</td>
+                </tr>
+            }
+        </table>
+    }
+</div>
 
 </body>
 </html>

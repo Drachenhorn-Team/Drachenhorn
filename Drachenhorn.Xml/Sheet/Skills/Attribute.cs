@@ -15,6 +15,39 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class Attribute : CalculationValue, IInfoObject, IFormulaKeyItem
     {
+        /// <inheritdoc />
+        [XmlAttribute("Key")]
+        public string Key
+        {
+            get => _key;
+            set
+            {
+                if (_key == value)
+                    return;
+                _key = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #region InfoObject
+
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Key))
+                result.Add("%Info.Key", Key);
+            if (!string.IsNullOrEmpty(Name))
+                result.Add("%Info.Name", Name);
+
+            GetInformation(ref result);
+
+            return result;
+        }
+
+        #endregion InfoObject
+
         #region c'tor
 
         internal Attribute() : base(null)
@@ -58,38 +91,5 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion
-
-        /// <inheritdoc />
-        [XmlAttribute("Key")]
-        public string Key
-        {
-            get => _key;
-            set
-            {
-                if (_key == value)
-                    return;
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #region InfoObject
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Key))
-                result.Add("%Info.Key", Key);
-            if (!string.IsNullOrEmpty(Name))
-                result.Add("%Info.Name", Name);
-
-            GetInformation(ref result);
-
-            return result;
-        }
-
-        #endregion InfoObject
     }
 }

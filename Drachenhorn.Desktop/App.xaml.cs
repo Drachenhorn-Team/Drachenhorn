@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
@@ -9,7 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using Drachenhorn.Core.Downloader;
 using Drachenhorn.Core.IO;
 using Drachenhorn.Core.Settings;
 using Drachenhorn.Core.UI;
@@ -27,7 +25,6 @@ using Easy.Logger;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using log4net.Config;
 using MahApps.Metro;
 using Microsoft.Win32;
 using SplashScreen = Drachenhorn.Desktop.UI.Splash.SplashScreen;
@@ -40,6 +37,12 @@ namespace Drachenhorn.Desktop
     /// </summary>
     public partial class App : Application
     {
+        #region Properties
+
+        private bool _isClosing;
+
+        #endregion
+
         #region c'tor
 
         public App()
@@ -58,12 +61,6 @@ namespace Drachenhorn.Desktop
             });
             instance.Start();
         }
-
-        #endregion
-
-        #region Properties
-
-        private bool _isClosing;
 
         #endregion
 
@@ -106,7 +103,7 @@ namespace Drachenhorn.Desktop
             if (templates != null)
                 new TemplateImportDialog(
                     from x in templates select new TemplateMetadata(x.FullName)
-                    ).ShowDialog();
+                ).ShowDialog();
 
             if (args.UrlScheme != null)
             {
@@ -127,7 +124,7 @@ namespace Drachenhorn.Desktop
             if (MainWindow != null)
                 MainWindow.Closed += (s, a) => { _isClosing = true; };
 
-            
+
 #if DEBUG
             //Auto-Close Debug Console on Window Close
             if (MainWindow != null)
@@ -140,6 +137,52 @@ namespace Drachenhorn.Desktop
 
             MainWindow?.Show();
         }
+
+        #region Theme
+
+        public static void SetAccentAndTheme(string name, VisualThemeType theme)
+        {
+            Current.Dispatcher.Invoke(() =>
+            {
+                if (theme == VisualThemeType.System)
+                {
+                    var isDark = Registry.GetValue(
+                        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                        "AppsUseLightTheme", null);
+
+                    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
+                }
+
+                var uri = "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml";
+
+
+                if (!string.IsNullOrEmpty(uri))
+                {
+                    var res = Current.Resources;
+
+                    res.BeginInit();
+
+                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary
+                    {
+                        Source = new Uri(uri, UriKind.Relative)
+                    })
+                        if (!res.Contains(dictionaryEntry.Key))
+                            res.Add(dictionaryEntry.Key, dictionaryEntry.Value);
+                        else
+                            res[dictionaryEntry.Key] = dictionaryEntry.Value;
+
+                    res.EndInit();
+                }
+
+                var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
+                var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
+
+                if (mahTheme != null)
+                    ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
+            });
+        }
+
+        #endregion Theme
 
         #region WindowsStartup
 
@@ -200,10 +243,7 @@ namespace Drachenhorn.Desktop
 
             //args = temp;
 
-            foreach (var s in args)
-            {
-                SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(s);
-            }
+            foreach (var s in args) SimpleIoc.Default.GetInstance<ILogService>().GetLogger("Arguments").Info(s);
 
             var manager = new ArgumentManager(args);
 
@@ -213,52 +253,6 @@ namespace Drachenhorn.Desktop
         }
 
         #endregion Init
-
-        #region Theme
-
-        public static void SetAccentAndTheme(string name, VisualThemeType theme)
-        {
-            Current.Dispatcher.Invoke(() =>
-            {
-                if (theme == VisualThemeType.System)
-                {
-                    var isDark = Registry.GetValue(
-                        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                        "AppsUseLightTheme", null);
-
-                    theme = isDark as int? == 0 ? VisualThemeType.Dark : VisualThemeType.Light;
-                }
-
-                var uri = "UI/Themes/Images/" + (theme == VisualThemeType.Dark ? "White" : "Black") + ".xaml";
-
-
-                if (!string.IsNullOrEmpty(uri))
-                {
-                    var res = Current.Resources;
-
-                    res.BeginInit();
-
-                    foreach (DictionaryEntry dictionaryEntry in new ResourceDictionary
-                    {
-                        Source = new Uri(uri, UriKind.Relative)
-                    })
-                        if (!res.Contains(dictionaryEntry.Key))
-                            res.Add(dictionaryEntry.Key, dictionaryEntry.Value);
-                        else
-                            res[dictionaryEntry.Key] = dictionaryEntry.Value;
-
-                    res.EndInit();
-                }
-
-                var mahTheme = ThemeManager.GetAppTheme(theme == VisualThemeType.Dark ? "BaseDark" : "BaseLight");
-                var mahAccent = ThemeManager.GetAccent(string.IsNullOrEmpty(name) ? "Emerald" : name);
-
-                if (mahTheme != null)
-                    ThemeManager.ChangeAppStyle(Current, mahAccent, mahTheme);
-            });
-        }
-
-        #endregion Theme
 
         #region SingleInstance
 

@@ -16,9 +16,9 @@
     <local:CurrencyPartConverter x:Key="CurrencyPartConverter" />
 
     <local:TemplateMetadataConverter x:Key="TemplateMetadataConverter" />
-    <local:SkillCategoryConverter x:Key="SkillCategoryConverter"/>
+    <local:SkillCategoryConverter x:Key="SkillCategoryConverter" />
 
     <local:TemplatePathOpenConverter x:Key="TemplatePathOpenConverter" />
-    <local:NullVisibilityConverter x:Key="NullVisibilityConverter"/>
+    <local:NullVisibilityConverter x:Key="NullVisibilityConverter" />
 
 </ResourceDictionary>

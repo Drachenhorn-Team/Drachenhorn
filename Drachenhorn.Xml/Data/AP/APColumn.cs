@@ -11,6 +11,51 @@ namespace Drachenhorn.Xml.Data.AP
     [Serializable]
     public class APColumn : ChildChangedBase
     {
+        #region Calculation
+
+        /// <summary>
+        ///     Calculates the costs.
+        /// </summary>
+        /// <param name="from">From.</param>
+        /// <param name="to">To.</param>
+        /// <returns></returns>
+        public uint CalculateCosts(int from, int to)
+        {
+            uint result = 0;
+            var start = from;
+
+            if (from < 0)
+            {
+                result += Negative * (uint) (from * -1);
+                start = 0;
+            }
+
+
+            for (var i = start; i <= to; ++i)
+                if (i < Costs.Count)
+                    result += Costs[i].Value;
+                else
+                    result += Costs[Costs.Count - 1].Value;
+
+            return result;
+        }
+
+        #endregion Calculation
+
+
+        #region Misc
+
+        /// <summary>
+        ///     Add new Value to the Column
+        /// </summary>
+        /// <param name="value">Value to be added.</param>
+        public void Add(ushort value)
+        {
+            Costs.Add(new APValue(value));
+        }
+
+        #endregion Misc
+
         #region c'tor
 
         /// <summary>
@@ -122,50 +167,5 @@ namespace Drachenhorn.Xml.Data.AP
         }
 
         #endregion
-
-        #region Calculation
-
-        /// <summary>
-        ///     Calculates the costs.
-        /// </summary>
-        /// <param name="from">From.</param>
-        /// <param name="to">To.</param>
-        /// <returns></returns>
-        public uint CalculateCosts(int from, int to)
-        {
-            uint result = 0;
-            var start = from;
-
-            if (from < 0)
-            {
-                result += Negative * (uint) (from * -1);
-                start = 0;
-            }
-
-
-            for (var i = start; i <= to; ++i)
-                if (i < Costs.Count)
-                    result += Costs[i].Value;
-                else
-                    result += Costs[Costs.Count - 1].Value;
-
-            return result;
-        }
-
-        #endregion Calculation
-
-
-        #region Misc
-
-        /// <summary>
-        ///     Add new Value to the Column
-        /// </summary>
-        /// <param name="value">Value to be added.</param>
-        public void Add(ushort value)
-        {
-            Costs.Add(new APValue(value));
-        }
-
-        #endregion Misc
     }
 }

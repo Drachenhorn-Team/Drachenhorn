@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Drachenhorn.Core.UI
@@ -12,7 +11,6 @@ namespace Drachenhorn.Core.UI
 
         Task<int> ShowMessageExternal(string message, string title = null, IEnumerable<string> buttons = null,
             Action<int> afterHideCallback = null);
-
 
 
         Task ShowException(Exception e, string title, Action afterHideCallback);

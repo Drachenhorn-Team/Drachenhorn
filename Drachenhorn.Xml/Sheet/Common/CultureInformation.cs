@@ -14,6 +14,31 @@ namespace Drachenhorn.Xml.Sheet.Common
     [Serializable]
     public class CultureInformation : ChildChangedBase, IInfoObject
     {
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
+
+            var baseValues = "";
+            foreach (var baseValue in BaseValues)
+                baseValues += baseValue.Name + ": " + baseValue.Value + " (" + baseValue.Key + ")" + "\n";
+
+            if (!string.IsNullOrEmpty(baseValues))
+                result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
+
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Name;
+        }
+
         #region Properties
 
         [XmlIgnore] private ObservableCollection<BonusValue> _baseValues = new ObservableCollection<BonusValue>();
@@ -101,30 +126,5 @@ namespace Drachenhorn.Xml.Sheet.Common
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-
-            var baseValues = "";
-            foreach (var baseValue in BaseValues)
-                baseValues += baseValue.Name + ": " + baseValue.Value + " (" + baseValue.Key + ")" + "\n";
-
-            if (!string.IsNullOrEmpty(baseValues))
-                result.Add("%Info.BaseValues", baseValues.Substring(0, baseValues.Length - 1));
-
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

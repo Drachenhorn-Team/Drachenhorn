@@ -32,13 +32,6 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
         #endregion
 
-        #region Properties
-
-        private readonly List<string> _exceptionInformationList = new List<string>();
-        private readonly string _userExceptionMessage;
-
-        #endregion
-
         private void BuildTreeLayer(Exception e, TreeViewItem parent)
         {
             var exceptionInformation = "\n\r\n\r" + e.GetType() + "\n\r\n\r";
@@ -90,17 +83,24 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
         private class TreeViewStringSet
         {
+            public override string ToString()
+            {
+                return Content;
+            }
+
             #region Properties
 
             public string Header { get; set; }
             public string Content { get; set; }
 
             #endregion
-
-            public override string ToString()
-            {
-                return Content;
-            }
         }
+
+        #region Properties
+
+        private readonly List<string> _exceptionInformationList = new List<string>();
+        private readonly string _userExceptionMessage;
+
+        #endregion
     }
 }

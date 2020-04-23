@@ -14,25 +14,6 @@ namespace Drachenhorn.Core.Objects
 
         #endregion
 
-        #region Properties
-
-        private uint _limit;
-
-        public uint Limit
-        {
-            get => _limit;
-            private set
-            {
-                if (_limit == value)
-                    return;
-                _limit = value;
-            }
-        }
-
-        public List<T> List { get; } = new List<T>();
-
-        #endregion
-
         public int Count => List.Count;
 
         public bool IsReadOnly => false;
@@ -101,5 +82,24 @@ namespace Drachenhorn.Core.Objects
             foreach (var item in list)
                 Add(item);
         }
+
+        #region Properties
+
+        private uint _limit;
+
+        public uint Limit
+        {
+            get => _limit;
+            private set
+            {
+                if (_limit == value)
+                    return;
+                _limit = value;
+            }
+        }
+
+        public List<T> List { get; } = new List<T>();
+
+        #endregion
     }
 }

@@ -20,7 +20,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Styles.xaml" />-->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
 
                 <ResourceDictionary Source="UI/Themes/Controls.xaml" />
@@ -32,16 +33,16 @@
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
                     <ObjectDataProvider x:Key="TemplateManager"
                                         ObjectType="{x:Type template:TemplateManager}"
-                                        MethodName="get_Manager"/>
+                                        MethodName="get_Manager" />
                     <userSettings:Settings x:Key="Settings" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
-            <SolidColorBrush x:Key="BackgroundSelected" Color="{DynamicResource AccentColor}"/>
-            <SolidColorBrush x:Key="BorderBrushSelected" Color="{DynamicResource AccentColor2}"/>
-            <SolidColorBrush x:Key="WindowGlowBrush" Color="{DynamicResource AccentColor4}"/>
-            <SolidColorBrush x:Key="CloseButtonBackgroundHighlighted" Color="{DynamicResource AccentBaseColor}"/>
-            <SolidColorBrush x:Key="CloseButtonBackgroundPressed" Color="{DynamicResource AccentColor4}"/>
+            <SolidColorBrush x:Key="BackgroundSelected" Color="{DynamicResource AccentColor}" />
+            <SolidColorBrush x:Key="BorderBrushSelected" Color="{DynamicResource AccentColor2}" />
+            <SolidColorBrush x:Key="WindowGlowBrush" Color="{DynamicResource AccentColor4}" />
+            <SolidColorBrush x:Key="CloseButtonBackgroundHighlighted" Color="{DynamicResource AccentBaseColor}" />
+            <SolidColorBrush x:Key="CloseButtonBackgroundPressed" Color="{DynamicResource AccentColor4}" />
 
             <Style TargetType="Control">
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />

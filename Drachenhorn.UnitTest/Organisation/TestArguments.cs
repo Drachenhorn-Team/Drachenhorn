@@ -1,5 +1,4 @@
-﻿using System;
-using Drachenhorn.Organisation.Arguments;
+﻿using Drachenhorn.Organisation.Arguments;
 using Drachenhorn.Xml.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -14,6 +14,23 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class Skill : ChildChangedBase, IInfoObject
     {
+        #region Info
+
+        /// <inheritdoc />
+        public virtual Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Category)) result.Add("%Info.Description", Category);
+            if (!string.IsNullOrEmpty(RollAttributes.ToString(",")))
+                result.Add("%Info.RollAttributes", RollAttributes.ToString(", "));
+
+            return result;
+        }
+
+        #endregion Info
+
         #region Properties
 
         [XmlIgnore] private string _category;
@@ -98,22 +115,5 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion
-
-        #region Info
-
-        /// <inheritdoc />
-        public virtual Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Category)) result.Add("%Info.Description", Category);
-            if (!string.IsNullOrEmpty(RollAttributes.ToString(",")))
-                result.Add("%Info.RollAttributes", RollAttributes.ToString(", "));
-
-            return result;
-        }
-
-        #endregion Info
     }
 }

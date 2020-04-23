@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Runtime.Remoting.Channels;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -36,6 +35,34 @@ namespace Drachenhorn.Desktop.UserElements
 
         #endregion
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            ((Button) Template.FindName("PART_AddButton", this)).Click += (sender, args) =>
+            {
+                if (!(DataContext is IList)) return;
+
+                var context = (IList) DataContext;
+                context?.Add(Activator.CreateInstance(ContentType));
+                ((ListBox) Template.FindName("PART_List", this)).SelectedIndex = context.Count - 1;
+            };
+
+            ((Button) Template.FindName("PART_RemoveButton", this)).Click += (sender, args) =>
+            {
+                if (!(DataContext is IList)) return;
+
+                var displayList = (ListBox) Template.FindName("PART_List", this);
+                var selected = displayList.SelectedIndex;
+
+                var context = (IList) DataContext;
+                context.Remove(displayList.SelectedItem);
+
+                displayList.SelectedIndex = Math.Min(selected, context.Count - 1);
+            };
+        }
+
         #region Properties
 
         public DataTemplate ContentTemplate
@@ -57,33 +84,5 @@ namespace Drachenhorn.Desktop.UserElements
         }
 
         #endregion
-
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-
-            ((Button) Template.FindName("PART_AddButton", this)).Click += (sender, args) =>
-            {
-                if (!(DataContext is IList)) return;
-
-                var context = (IList)DataContext;
-                context?.Add(Activator.CreateInstance(ContentType));
-                ((ListBox) Template.FindName("PART_List", this)).SelectedIndex = context.Count - 1;
-            };
-
-            ((Button) Template.FindName("PART_RemoveButton", this)).Click += (sender, args) =>
-            {
-                if (!(DataContext is IList)) return;
-
-                var displayList = (ListBox) Template.FindName("PART_List", this);
-                var selected = displayList.SelectedIndex;
-
-                var context = (IList)DataContext;
-                context.Remove(displayList.SelectedItem);
-                
-                displayList.SelectedIndex = Math.Min(selected, context.Count - 1);
-            };
-        }
     }
 }

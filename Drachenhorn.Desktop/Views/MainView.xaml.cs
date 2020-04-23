@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Drachenhorn.Core.Lang;
@@ -18,11 +17,9 @@ using Drachenhorn.Desktop.UserSettings;
 using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Sheet;
 using Enterwell.Clients.Wpf.Notifications;
-using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
 
 namespace Drachenhorn.Desktop.Views
 {
@@ -43,10 +40,7 @@ namespace Drachenhorn.Desktop.Views
             if (files != null && files.Any())
                 Loaded += (sender, args) =>
                 {
-                    foreach (var file in files)
-                    {
-                        OpenFile(file);
-                    }
+                    foreach (var file in files) OpenFile(file);
                 };
 
             Messenger.Default.Register<NotificationMessage>(this, RecieveMessage);
@@ -124,6 +118,27 @@ namespace Drachenhorn.Desktop.Views
             HamburgerMenuControl.IsPaneOpen = false;
         }
 
+        private void BaseMetroTabControl_OnTabItemClosing(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
+        {
+            if (!(e.ClosingTabItem.DataContext as CharacterSheetViewModel)?.CurrentSheet?.HasChanged == true)
+                return;
+
+            var result = this.ShowModalMessageExternal(
+                LanguageManager.Translate("Dialog.ShouldClose_Caption"),
+                LanguageManager.Translate("Dialog.ShouldClose"),
+                MessageDialogStyle.AffirmativeAndNegative,
+                new MetroDialogSettings
+                {
+                    AffirmativeButtonText = LanguageManager.Translate("Dialog.Yes"),
+                    NegativeButtonText = LanguageManager.Translate("Dialog.No"),
+                    AnimateHide = false,
+                    AnimateShow = false
+                });
+
+            if (result == MessageDialogResult.Negative)
+                e.Cancel = true;
+        }
+
         #region Update
 
         private void MainView_OnLoaded(object sender, RoutedEventArgs e)
@@ -149,7 +164,7 @@ namespace Drachenhorn.Desktop.Views
 
         private (string, string) FirstLineSplitter(string val)
         {
-            string message = "";
+            var message = "";
             var header = val;
 
             if (header.Contains('\n'))
@@ -157,10 +172,8 @@ namespace Drachenhorn.Desktop.Views
                 var split = header.Split('\n');
                 header = split[0];
                 foreach (var s in split)
-                {
                     if (s != header)
                         message += s + "\n";
-                }
 
                 message = message.Substring(0, message.Length - 2);
             }
@@ -223,34 +236,10 @@ namespace Drachenhorn.Desktop.Views
         {
             var dialog = new ChangelogDialog(SquirrelManager.GetReleaseNotes());
 
-            if (dialog.ShowDialog() == true)
-            {
-                DoUpdate(null);
-            }
+            if (dialog.ShowDialog() == true) DoUpdate(null);
         }
 
         #endregion Update
-
-        private void BaseMetroTabControl_OnTabItemClosing(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
-        {
-            if (!(e.ClosingTabItem.DataContext as CharacterSheetViewModel)?.CurrentSheet?.HasChanged == true)
-                return;
-
-            var result = this.ShowModalMessageExternal(
-                LanguageManager.Translate("Dialog.ShouldClose_Caption"),
-                LanguageManager.Translate("Dialog.ShouldClose"),
-                MessageDialogStyle.AffirmativeAndNegative,
-                new MetroDialogSettings()
-                {
-                    AffirmativeButtonText = LanguageManager.Translate("Dialog.Yes"),
-                    NegativeButtonText = LanguageManager.Translate("Dialog.No"),
-                    AnimateHide = false,
-                    AnimateShow = false
-                });
-
-            if (result == MessageDialogResult.Negative)
-                e.Cancel = true;
-        }
 
         #region WindowDrag
 
@@ -262,9 +251,7 @@ namespace Drachenhorn.Desktop.Views
             {
                 if (ResizeMode != ResizeMode.CanResize &&
                     ResizeMode != ResizeMode.CanResizeWithGrip)
-                {
                     return;
-                }
 
                 WindowState = WindowState == WindowState.Maximized
                     ? WindowState.Normal
@@ -285,11 +272,11 @@ namespace Drachenhorn.Desktop.Views
 
                 var point = PointToScreen(e.MouseDevice.GetPosition(this));
 
-                var fullWidth = this.Width;
+                var fullWidth = Width;
 
                 WindowState = WindowState.Normal;
 
-                Left = point.X - (RestoreBounds.Width * (point.X / fullWidth));
+                Left = point.X - RestoreBounds.Width * (point.X / fullWidth);
                 Top = 1;
 
                 DragMove();

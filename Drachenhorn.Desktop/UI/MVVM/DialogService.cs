@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows;
 using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.UI;
 using Drachenhorn.Desktop.UI.Dialogs;
@@ -24,7 +23,7 @@ namespace Drachenhorn.Desktop.UI.MVVM
             IEnumerable<string> buttons = null, Action<int> afterHideCallback = null)
         {
             if (buttons == null || !buttons.Any())
-                buttons = new List<string> { LanguageManager.Translate("UI.OK") };
+                buttons = new List<string> {LanguageManager.Translate("UI.OK")};
 
             var result = new CommonMessageBox(message, title, buttons.ToArray()).ShowDialog();
 

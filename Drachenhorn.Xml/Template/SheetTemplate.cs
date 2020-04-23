@@ -43,19 +43,20 @@ namespace Drachenhorn.Xml.Template
 
         [XmlIgnore] private TemplateInformation _information = new TemplateInformation();
 
-        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures = new ObservableCollection<CultureInformation>();
+        [XmlIgnore] private ObservableCollection<CultureInformation> _cultures =
+            new ObservableCollection<CultureInformation>();
 
         [XmlIgnore] private ObservableCollection<Currency> _currencies = new ObservableCollection<Currency>();
 
         [XmlIgnore] private ObservableCollection<RaceInformation> _races = new ObservableCollection<RaceInformation>();
 
-        [XmlIgnore] private ObservableCollection<ProfessionInformation> _professions = new ObservableCollection<ProfessionInformation>();
+        [XmlIgnore] private ObservableCollection<ProfessionInformation> _professions =
+            new ObservableCollection<ProfessionInformation>();
 
         [XmlIgnore]
         private ObservableCollection<SpecialSkill> _specialSkills = new ObservableCollection<SpecialSkill>();
 
-        [XmlIgnore]
-        private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
+        [XmlIgnore] private ObservableCollection<Skill> _skills = new ObservableCollection<Skill>();
 
         /// <summary>
         ///     Gets or sets the information.

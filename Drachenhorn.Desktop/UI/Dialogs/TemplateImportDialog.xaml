@@ -12,7 +12,7 @@
         Title="TemplateImportDialog" SizeToContent="Height" Width="500">
     <DockPanel>
         <TextBlock Text="{lang:Translate Template.DoYouWantToAdd}" Margin="5"
-                   TextWrapping="WrapWithOverflow" DockPanel.Dock="Top"/>
+                   TextWrapping="WrapWithOverflow" DockPanel.Dock="Top" />
 
         <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom">
             <Button Name="YesButton" Content="{lang:Translate UI.Yes}" Margin="5" Width="100" />
@@ -24,25 +24,26 @@
                 <DataTemplate DataType="template:TemplateMetadata">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{lang:Translate Template.Name}" Margin="5" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Name}" Margin="5" Grid.Column="1"/>
+                        <TextBlock Text="{lang:Translate Template.Name}" Margin="5" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Name}" Margin="5" Grid.Column="1" />
 
-                        <TextBlock Text="{lang:Translate Template.Version}" Margin="10 5 5 5" FontWeight="Bold" Grid.Column="2"/>
-                        <TextBlock Text="{Binding Version}" Margin="5" Grid.Column="3"/>
+                        <TextBlock Text="{lang:Translate Template.Version}" Margin="10 5 5 5" FontWeight="Bold"
+                                   Grid.Column="2" />
+                        <TextBlock Text="{Binding Version}" Margin="5" Grid.Column="3" />
 
                         <Image Height="23" Source="{DynamicResource YesIconDynamic}"
                                Grid.Column="4" VerticalAlignment="Center"
-                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToInVisibilityConverter}}"/>
+                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToInVisibilityConverter}}" />
 
                         <Image Height="23" Source="{DynamicResource NoIconDynamic}"
                                Grid.Column="4" VerticalAlignment="Center"
-                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                               Visibility="{Binding IsInstalled, Converter={StaticResource BoolToVisibilityConverter}}" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

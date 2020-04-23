@@ -13,6 +13,17 @@ namespace Drachenhorn.Xml.Sheet.Skills
     [Serializable]
     public class SpecialSkill : BindableBase, IInfoObject
     {
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
+            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
+
+            return result;
+        }
+
         #region c'tor
 
         /// <summary>
@@ -78,16 +89,5 @@ namespace Drachenhorn.Xml.Sheet.Skills
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(Name)) result.Add("%Info.Name", Name);
-            if (!string.IsNullOrEmpty(Description)) result.Add("%Info.Description", Description);
-
-            return result;
-        }
     }
 }

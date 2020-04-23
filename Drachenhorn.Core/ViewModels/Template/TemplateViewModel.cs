@@ -1,9 +1,7 @@
-﻿using Drachenhorn.Core.Lang;
-using Drachenhorn.Core.UI;
+﻿using Drachenhorn.Core.UI;
 using Drachenhorn.Xml.Template;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace Drachenhorn.Core.ViewModels.Template

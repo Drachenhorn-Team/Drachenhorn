@@ -69,9 +69,9 @@
                                 <Separator Grid.Row="2" Height="4" />
 
                                 <TextBox Text="{Binding Negative}" GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
-                                         HorizontalContentAlignment="Center" Grid.Row="3" Margin="0"/>
+                                         HorizontalContentAlignment="Center" Grid.Row="3" Margin="0" />
                                 <TextBox Text="{Binding Factor}" GotKeyboardFocus="TextBox_OnGotKeyboardFocus"
-                                         HorizontalContentAlignment="Center" Grid.Row="4" Margin="0"/>
+                                         HorizontalContentAlignment="Center" Grid.Row="4" Margin="0" />
                                 <Grid Grid.Row="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />

@@ -11,6 +11,20 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo.Magic
     [Serializable]
     public class Spell : Skill
     {
+        #region Info
+
+        /// <inheritdoc />
+        public override Dictionary<string, string> GetInformation()
+        {
+            var result = base.GetInformation();
+
+            result.Add("%Info.Cost", Cost.ToString());
+
+            return result;
+        }
+
+        #endregion Info
+
         #region Properties
 
         [XmlIgnore] private int _cost;
@@ -32,19 +46,5 @@ namespace Drachenhorn.Xml.Sheet.CombatInfo.Magic
         }
 
         #endregion
-
-        #region Info
-
-        /// <inheritdoc />
-        public override Dictionary<string, string> GetInformation()
-        {
-            var result = base.GetInformation();
-
-            result.Add("%Info.Cost", Cost.ToString());
-
-            return result;
-        }
-
-        #endregion Info
     }
 }

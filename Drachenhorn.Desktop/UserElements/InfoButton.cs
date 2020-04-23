@@ -31,22 +31,6 @@ namespace Drachenhorn.Desktop.UserElements
 
         #endregion
 
-        #region Properties
-
-        public IInfoObject InfoObject
-        {
-            get => (IInfoObject) GetValue(InfoObjectProperty);
-            set => SetValue(InfoObjectProperty, value);
-        }
-
-        public bool CanShowInfo
-        {
-            get => (bool) GetValue(CanShowInfoProperty);
-            set => SetValue(CanShowInfoProperty, value);
-        }
-
-        #endregion
-
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -63,5 +47,21 @@ namespace Drachenhorn.Desktop.UserElements
         {
             CanShowInfo = InfoObject?.GetInformation()?.Any(x => x.Key != "%Info.Name") == true;
         }
+
+        #region Properties
+
+        public IInfoObject InfoObject
+        {
+            get => (IInfoObject) GetValue(InfoObjectProperty);
+            set => SetValue(InfoObjectProperty, value);
+        }
+
+        public bool CanShowInfo
+        {
+            get => (bool) GetValue(CanShowInfoProperty);
+            set => SetValue(CanShowInfoProperty, value);
+        }
+
+        #endregion
     }
 }

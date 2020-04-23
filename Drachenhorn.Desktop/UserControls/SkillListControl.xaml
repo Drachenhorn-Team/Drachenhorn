@@ -69,12 +69,12 @@
                     </DataGrid.GroupStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lang:Translate CharacterSheet.Name}"
-                                            Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
-                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll1}" IsReadOnly="True" Width="Auto"/>
-                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll2}" IsReadOnly="True" Width="Auto"/>
-                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll3}" IsReadOnly="True" Width="Auto"/>
+                                            Binding="{Binding Name}" IsReadOnly="True" Width="Auto" />
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll1}" IsReadOnly="True" Width="Auto" />
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll2}" IsReadOnly="True" Width="Auto" />
+                        <DataGridTextColumn Binding="{Binding RollAttributes.Roll3}" IsReadOnly="True" Width="Auto" />
                         <DataGridTextColumn Header="{lang:Translate CharacterSheet.Value}"
-                                            Binding="{Binding Value}" IsReadOnly="True" Width="*"/>
+                                            Binding="{Binding Value}" IsReadOnly="True" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -111,7 +111,7 @@
                                       Margin="5"
                                       ItemsSource="{Binding DataContext, ElementName=List,
                                                             Converter={StaticResource SkillCategoryConverter}}"
-                                      Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+                                      Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
         </Grid>
     </Grid>
 </UserControl>

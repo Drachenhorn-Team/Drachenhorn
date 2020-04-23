@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Data;
@@ -14,7 +12,6 @@ namespace Drachenhorn.Xml.Template
     [Serializable]
     public class TemplateMetadata : ChildChangedBase, ITemplateMetadata
     {
-
         #region c'tor
 
         /// <summary>
@@ -168,7 +165,7 @@ namespace Drachenhorn.Xml.Template
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            return obj is ITemplateMetadata metadata && this.Equals(metadata);
+            return obj is ITemplateMetadata metadata && Equals(metadata);
         }
 
         /// <inheritdoc />
@@ -179,13 +176,13 @@ namespace Drachenhorn.Xml.Template
                 return (Version.GetHashCode() * 397) ^ (Name != null ? Name.GetHashCode() : 1);
             }
         }
-        
+
         /// <inheritdoc />
         public bool Equals(ITemplateMetadata obj)
         {
             if (obj == null) return false;
 
-            return this.Name == obj.Name && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+            return Name == obj.Name && Math.Abs(Version - obj.Version) < double.Epsilon;
         }
 
         /// <summary>

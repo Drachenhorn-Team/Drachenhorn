@@ -22,11 +22,12 @@
                   CanUserAddRows="True"
                   PreviewMouseWheel="DataGrid_PreviewMouseWheel" ScrollViewer.PanningMode="None">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Type, Converter={StaticResource DisAdvantageTypeStringConverter}}"
-                                    Width="Auto" MinWidth="20" IsReadOnly="True" FontSize="16">
+                <DataGridTextColumn
+                    Binding="{Binding Type, Converter={StaticResource DisAdvantageTypeStringConverter}}"
+                    Width="Auto" MinWidth="20" IsReadOnly="True" FontSize="16">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="TextAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>

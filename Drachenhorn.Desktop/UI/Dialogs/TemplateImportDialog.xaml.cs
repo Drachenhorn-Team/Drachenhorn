@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows;
 using Drachenhorn.Xml.Data;
 using Drachenhorn.Xml.Template;
@@ -18,7 +15,9 @@ namespace Drachenhorn.Desktop.UI.Dialogs
     {
         #region c'tor
 
-        public TemplateImportDialog(ITemplateMetadata template) : this(new[] { template }) { }
+        public TemplateImportDialog(ITemplateMetadata template) : this(new[] {template})
+        {
+        }
 
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
         public TemplateImportDialog(IEnumerable<ITemplateMetadata> templates)
@@ -38,6 +37,7 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
                     template.InstallAsync();
                 }
+
                 Close();
             };
         }

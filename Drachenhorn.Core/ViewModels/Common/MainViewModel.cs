@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Drachenhorn.Core.IO;
-using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.Printing;
 using Drachenhorn.Core.UI;
 using Drachenhorn.Core.ViewModels.Sheet;
-using Drachenhorn.Xml.Calculation;
 using Drachenhorn.Xml.Exceptions;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
 
 namespace Drachenhorn.Core.ViewModels.Common
 {

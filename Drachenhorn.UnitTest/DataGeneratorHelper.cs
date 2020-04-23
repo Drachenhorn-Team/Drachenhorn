@@ -17,10 +17,9 @@ namespace Drachenhorn.UnitTest
                 new BonusValue {Key = "KKB", Value = 2}
             };
 
-            sheet.Characteristics.Race = new RaceInformation { BaseValues = values };
+            sheet.Characteristics.Race = new RaceInformation {BaseValues = values};
 
-            sheet.Attributes.Add(new Attribute(sheet) { FormulaText = "[CHB] + 4" });
-
+            sheet.Attributes.Add(new Attribute(sheet) {FormulaText = "[CHB] + 4"});
 
 
             return sheet;

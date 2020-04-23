@@ -10,7 +10,7 @@
     xmlns:lang="clr-namespace:Drachenhorn.Desktop.UI.Lang"
     mc:Ignorable="d">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Drachenhorn.Desktop;component/Converter/Converter.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Drachenhorn.Desktop;component/Converter/Converter.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="DsaMonthEnum">
         <ObjectDataProvider.MethodParameters>

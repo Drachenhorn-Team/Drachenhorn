@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace Drachenhorn.Xml.Objects
@@ -113,10 +112,7 @@ namespace Drachenhorn.Xml.Objects
         {
             var result = 0L;
 
-            foreach (var currencyPart in CurrencyParts)
-            {
-                result += currencyPart.Parse(text);
-            }
+            foreach (var currencyPart in CurrencyParts) result += currencyPart.Parse(text);
 
             return result;
         }

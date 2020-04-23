@@ -11,17 +11,18 @@ namespace Drachenhorn.Xml.Template
     /// </summary>
     public class TemplateManager : BindableBase
     {
+        #region c'tor
+
+        private TemplateManager()
+        {
+        }
+
+        #endregion c'tor
+
         /// <summary>
         ///     Manager for all instances of SheetTemplates
         /// </summary>
-        public static TemplateManager Manager { get; private set; } = new TemplateManager();
-
-
-        #region c'tor
-
-        private TemplateManager() { }
-
-        #endregion c'tor
+        public static TemplateManager Manager { get; } = new TemplateManager();
 
         #region Templates
 
@@ -75,7 +76,7 @@ namespace Drachenhorn.Xml.Template
         public void ResetAvailableTemplates()
         {
             _availableTemplates = null;
-            OnPropertyChanged($"AvailableTemplates");
+            OnPropertyChanged("AvailableTemplates");
         }
 
         #endregion Templates

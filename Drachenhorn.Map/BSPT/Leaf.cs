@@ -19,15 +19,6 @@ namespace Drachenhorn.Map.BSPT
 
         #endregion
 
-        #region Properties
-
-        internal readonly int _top, _left, _width, _height;
-        internal Leaf Dungeon;
-        internal Leaf LeftChild;
-        internal Leaf RightChild;
-
-        #endregion
-
         internal bool Split()
         {
             if (LeftChild != null) //if already split, bail out
@@ -75,5 +66,14 @@ namespace Drachenhorn.Map.BSPT
                 Dungeon = new Leaf(_top + dungeonTop, _left + dungeonLeft, dungeonHeight, dungeonWidth);
             }
         }
+
+        #region Properties
+
+        internal readonly int _top, _left, _width, _height;
+        internal Leaf Dungeon;
+        internal Leaf LeftChild;
+        internal Leaf RightChild;
+
+        #endregion
     }
 }

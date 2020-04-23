@@ -97,7 +97,7 @@
 
                         <DockPanel Margin="10">
                             <mah:ProgressRing Name="UpdateRing" IsActive="False" Height="55" Width="55"
-                                              Foreground="{DynamicResource AccentColorBrush}" DockPanel.Dock="Right"/>
+                                              Foreground="{DynamicResource AccentColorBrush}" DockPanel.Dock="Right" />
 
                             <TextBlock Margin="5 3 5 0" DockPanel.Dock="Bottom" FontSize="12">
                                 <Hyperlink NavigateUri="https://github.com/lightlike"
@@ -107,25 +107,29 @@
                             </TextBlock>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Drachenhorn" FontSize="30" Margin="0 0 10 0" FontFamily="{StaticResource Morpheus}"/>
-                                <TextBlock Text="v" FontSize="20" FontFamily="{StaticResource Morpheus}" VerticalAlignment="Bottom"/>
-                                <TextBlock Text="{Binding Settings.Version}" FontSize="20" FontFamily="{StaticResource Morpheus}" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="Drachenhorn" FontSize="30" Margin="0 0 10 0"
+                                           FontFamily="{StaticResource Morpheus}" />
+                                <TextBlock Text="v" FontSize="20" FontFamily="{StaticResource Morpheus}"
+                                           VerticalAlignment="Bottom" />
+                                <TextBlock Text="{Binding Settings.Version}" FontSize="20"
+                                           FontFamily="{StaticResource Morpheus}" VerticalAlignment="Bottom" />
                             </StackPanel>
                         </DockPanel>
 
-                        <WrapPanel Margin="20 5 10 0" Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
-                            <TextBlock Text="{lang:Translate Dialog.UpdateAvailable}" FontSize="18"/>
-                            <TextBlock Text="{Binding Settings.NewVersion}" FontSize="18"/>
+                        <WrapPanel Margin="20 5 10 0"
+                                   Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
+                            <TextBlock Text="{lang:Translate Dialog.UpdateAvailable}" FontSize="18" />
+                            <TextBlock Text="{Binding Settings.NewVersion}" FontSize="18" />
                         </WrapPanel>
 
                         <Button Content="{lang:Translate Dialog.Update_Check}"
                                 Click="CheckUpdateButton_OnClick" HorizontalAlignment="Right"
-                                Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}, ConverterParameter=Invert}"/>
+                                Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}, ConverterParameter=Invert}" />
 
                         <WrapPanel HorizontalAlignment="Right" Margin="10 5 10 0"
                                    Visibility="{Binding Settings.NewVersion, Converter={StaticResource NullVisibilityConverter}}">
-                            <Button Content="{lang:Translate Dialog.Update_Do}"/>
-                            <Button Content="{lang:Translate Dialog.Update_Changelog}"/>
+                            <Button Content="{lang:Translate Dialog.Update_Do}" />
+                            <Button Content="{lang:Translate Dialog.Update_Changelog}" />
                         </WrapPanel>
                     </StackPanel>
                 </Border>

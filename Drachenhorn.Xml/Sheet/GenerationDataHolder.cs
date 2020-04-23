@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Text;
 using System.Xml.Serialization;
 using Drachenhorn.Xml.Interfaces;
 using Drachenhorn.Xml.Sheet.Common;
@@ -15,6 +13,23 @@ namespace Drachenhorn.Xml.Sheet
     /// </summary>
     public class GenerationDataHolder : ChildChangedBase, IInfoObject
     {
+        /// <inheritdoc />
+        public Dictionary<string, string> GetInformation()
+        {
+            var result = new Dictionary<string, string>();
+
+            if (GenerationCost != 0)
+                result.Add("%Info.GPCost", GenerationCost.ToString(CultureInfo.CurrentCulture));
+
+            foreach (var baseValue in BaseValues)
+                result.Add(baseValue.Name, baseValue.Value.ToString());
+
+            foreach (var skill in Skills)
+                result.Add(skill.Name, skill.Value.ToString());
+
+            return result;
+        }
+
         #region Properties
 
         [XmlIgnore] private int _generationCost;
@@ -82,22 +97,5 @@ namespace Drachenhorn.Xml.Sheet
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetInformation()
-        {
-            var result = new Dictionary<string, string>();
-            
-            if (GenerationCost != 0)
-                result.Add("%Info.GPCost", GenerationCost.ToString(CultureInfo.CurrentCulture));
-
-            foreach (var baseValue in BaseValues)
-                result.Add(baseValue.Name, baseValue.Value.ToString());
-
-            foreach (var skill in Skills)
-                result.Add(skill.Name, skill.Value.ToString());
-
-            return result;
-        }
     }
 }

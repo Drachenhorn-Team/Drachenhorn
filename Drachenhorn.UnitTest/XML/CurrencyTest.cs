@@ -13,9 +13,9 @@ namespace Drachenhorn.UnitTest.XML
         {
             _currency = new Currency();
             _currency.Name = "test";
-            _currency.CurrencyParts.Add(new CurrencyPart() {Name = "test1", Symbol = "% t1", Value = 1});
-            _currency.CurrencyParts.Add(new CurrencyPart() {Name = "test2", Symbol = " t2", Value = 10});
-            _currency.CurrencyParts.Add(new CurrencyPart() {Name = "test3", Symbol = "% t3", Value = 100});
+            _currency.CurrencyParts.Add(new CurrencyPart {Name = "test1", Symbol = "% t1", Value = 1});
+            _currency.CurrencyParts.Add(new CurrencyPart {Name = "test2", Symbol = " t2", Value = 10});
+            _currency.CurrencyParts.Add(new CurrencyPart {Name = "test3", Symbol = "% t3", Value = 100});
         }
 
 

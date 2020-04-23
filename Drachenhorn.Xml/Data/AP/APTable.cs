@@ -13,6 +13,22 @@ namespace Drachenhorn.Xml.Data.AP
     [Serializable]
     public class APTable : ChildChangedBase
     {
+        #region Calculation
+
+        /// <summary>
+        ///     Calculates the leveling cost for the specified key.
+        /// </summary>
+        /// <param name="key">The Column-Key.</param>
+        /// <param name="from">Current Skill value.</param>
+        /// <param name="to">Target Skill value.</param>
+        /// <returns></returns>
+        public uint Calculate(string key, int from, int to)
+        {
+            return this[key].CalculateCosts(from, to);
+        }
+
+        #endregion Calculation
+
         #region Properties
 
         [XmlIgnore] private ObservableCollection<APColumn> _apColumns = new ObservableCollection<APColumn>();
@@ -80,21 +96,5 @@ namespace Drachenhorn.Xml.Data.AP
         public IEnumerable<string> ColumnNames => from x in APColumns select x.Name;
 
         #endregion
-
-        #region Calculation
-
-        /// <summary>
-        ///     Calculates the leveling cost for the specified key.
-        /// </summary>
-        /// <param name="key">The Column-Key.</param>
-        /// <param name="from">Current Skill value.</param>
-        /// <param name="to">Target Skill value.</param>
-        /// <returns></returns>
-        public uint Calculate(string key, int from, int to)
-        {
-            return this[key].CalculateCosts(from, to);
-        }
-
-        #endregion Calculation
     }
 }

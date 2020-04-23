@@ -22,13 +22,6 @@ namespace Drachenhorn.Desktop.UserControls
 
         #endregion
 
-        #region Properties
-
-        private ICollectionView _armorCollectionView;
-        private ICollectionView _weaponCollectionView;
-
-        #endregion
-
         private void List_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             if (e.Handled || e.MouseDevice.Captured is ComboBox)
@@ -77,5 +70,12 @@ namespace Drachenhorn.Desktop.UserControls
 
             ((Inventory) DataContext).Items.Add(new ArmorPart());
         }
+
+        #region Properties
+
+        private ICollectionView _armorCollectionView;
+        private ICollectionView _weaponCollectionView;
+
+        #endregion
     }
 }

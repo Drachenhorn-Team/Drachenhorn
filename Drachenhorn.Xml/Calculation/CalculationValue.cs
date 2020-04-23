@@ -27,6 +27,20 @@ namespace Drachenhorn.Xml.Calculation
 
         #endregion
 
+        /// <summary>
+        ///     Gets the information.
+        /// </summary>
+        /// <param name="dictionary">The dictionary to add the Information to.</param>
+        public void GetInformation(ref Dictionary<string, string> dictionary)
+        {
+            if (!string.IsNullOrEmpty(Formula.Expression))
+                dictionary.Add("%Info.Formula", Formula.Expression);
+
+            dictionary.Add("%CharacterSheet.StartValue", StartValue.ToString());
+            dictionary.Add("%CharacterSheet.Modifier", Modifier.ToString());
+            dictionary.Add("%CharacterSheet.Value", Value.ToString());
+        }
+
         #region Properties
 
         [XmlIgnore] private int _currentValueDiff;
@@ -136,19 +150,5 @@ namespace Drachenhorn.Xml.Calculation
         }
 
         #endregion
-
-        /// <summary>
-        ///     Gets the information.
-        /// </summary>
-        /// <param name="dictionary">The dictionary to add the Information to.</param>
-        public void GetInformation(ref Dictionary<string, string> dictionary)
-        {
-            if (!string.IsNullOrEmpty(Formula.Expression))
-                dictionary.Add("%Info.Formula", Formula.Expression);
-
-            dictionary.Add("%CharacterSheet.StartValue", StartValue.ToString());
-            dictionary.Add("%CharacterSheet.Modifier", Modifier.ToString());
-            dictionary.Add("%CharacterSheet.Value", Value.ToString());
-        }
     }
 }

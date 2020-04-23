@@ -3,10 +3,8 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using Drachenhorn.Core.Downloader;
-using Drachenhorn.Core.Lang;
 using Drachenhorn.Core.UI;
 using Drachenhorn.Xml.Template;
-using GalaSoft.MvvmLight.Ioc;
 
 namespace Drachenhorn.Desktop.UI.Dialogs
 {

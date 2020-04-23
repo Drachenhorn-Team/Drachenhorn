@@ -5,15 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using NuGet;
 using Squirrel;
-using Application = System.Windows.Application;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
@@ -48,7 +47,7 @@ namespace Drachenhorn.Desktop.UserSettings
                     {
                         using (var mgr = new UpdateManager("C:"))
                         {
-                            if (mgr.CurrentlyInstalledVersion() != null) 
+                            if (mgr.CurrentlyInstalledVersion() != null)
                                 _currentVersion = mgr.CurrentlyInstalledVersion();
                         }
                     }
@@ -273,7 +272,8 @@ namespace Drachenhorn.Desktop.UserSettings
 
         public static IEnumerable<string> GetReleaseNotes()
         {
-            if (NewVersion == null) throw new InvalidOperationException("Can't get Release-Notes without checking for Update first.");
+            if (NewVersion == null)
+                throw new InvalidOperationException("Can't get Release-Notes without checking for Update first.");
 
             var currentCommit = GetCommit(CurrentVersion.ToString());
             var newCommit = GetCommit(NewVersion);
@@ -294,13 +294,13 @@ namespace Drachenhorn.Desktop.UserSettings
 
         private static string ApiGet(string url)
         {
-            HttpWebRequest request = (HttpWebRequest) WebRequest.Create(url);
+            var request = (HttpWebRequest) WebRequest.Create(url);
             request.Method = "GET";
             request.ContentType = "application/json; charset=utf-8";
             request.UserAgent = "Drachenhorn";
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
+            var response = request.GetResponse() as HttpWebResponse;
+            using (var stream = response.GetResponseStream())
+            using (var reader = new StreamReader(stream))
             {
                 return reader.ReadToEnd();
             }
@@ -332,7 +332,7 @@ namespace Drachenhorn.Desktop.UserSettings
 
             return from item in result orderby item.Item1 select item;
         }
-        
+
         #endregion Helper
     }
 }

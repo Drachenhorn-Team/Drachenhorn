@@ -111,11 +111,11 @@ namespace Drachenhorn.Xml.Objects
             var part = Regex.Match(text, regex).Value;
 
             var before = containsChar ? Symbol.Substring(0, Symbol.IndexOf('%')) : "";
-            var after  = containsChar ? Symbol.Substring(Symbol.IndexOf('%') + 1) : Symbol;
+            var after = containsChar ? Symbol.Substring(Symbol.IndexOf('%') + 1) : Symbol;
 
-            if (!String.IsNullOrEmpty(before))
+            if (!string.IsNullOrEmpty(before))
                 part = part.Replace(before, "");
-            if (!String.IsNullOrEmpty(after))
+            if (!string.IsNullOrEmpty(after))
                 part = part.Replace(after, "");
 
             long.TryParse(part, out var result);

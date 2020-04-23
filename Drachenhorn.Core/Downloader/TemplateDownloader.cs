@@ -15,6 +15,58 @@ namespace Drachenhorn.Core.Downloader
         private static readonly string RawPath =
             "https://gist.githubusercontent.com/lightlike/2a26930578a805d1739fe598404e60cb/raw/";
 
+        #region Loading
+
+        /// <summary>
+        ///     Loads the templates from an online Source
+        /// </summary>
+        /// <returns>true if connection is successful.</returns>
+        private async Task<ObservableCollection<OnlineTemplate>> LoadTemplatesAsync()
+        {
+            return await Task.Run(() =>
+            {
+                var textFromFile = "";
+
+                IsLoading = true;
+
+                var result = new ObservableCollection<OnlineTemplate>();
+
+                try
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
+                        .Info("Downloading online Templates.");
+
+                    textFromFile = new WebClient().DownloadString(RawPath);
+                }
+                catch (WebException e)
+                {
+                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
+                        .Warn("Could not connect to Template-Service", e);
+                    result = null;
+                }
+
+                var lines = textFromFile.Split('\r', '\n');
+
+                if (result != null)
+                    foreach (var line in lines)
+                        try
+                        {
+                            result.Add(new OnlineTemplate(line));
+                        }
+                        catch (InvalidOperationException e)
+                        {
+                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
+                                .Warn("Unable to read online Link.", e);
+                        }
+
+                IsLoading = false;
+
+                return result;
+            });
+        }
+
+        #endregion Loading
+
         #region Properties
 
         private bool _isConnectionSuccessful = true;
@@ -73,58 +125,6 @@ namespace Drachenhorn.Core.Downloader
         }
 
         #endregion
-
-        #region Loading
-
-        /// <summary>
-        ///     Loads the templates from an online Source
-        /// </summary>
-        /// <returns>true if connection is successful.</returns>
-        private async Task<ObservableCollection<OnlineTemplate>> LoadTemplatesAsync()
-        {
-            return await Task.Run(() =>
-            {
-                var textFromFile = "";
-
-                IsLoading = true;
-
-                var result = new ObservableCollection<OnlineTemplate>();
-
-                try
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
-                        .Info("Downloading online Templates.");
-
-                    textFromFile = new WebClient().DownloadString(RawPath);
-                }
-                catch (WebException e)
-                {
-                    SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
-                        .Warn("Could not connect to Template-Service", e);
-                    result = null;
-                }
-
-                var lines = textFromFile.Split('\r', '\n');
-
-                if (result != null)
-                    foreach (var line in lines)
-                        try
-                        {
-                            result.Add(new OnlineTemplate(line));
-                        }
-                        catch (InvalidOperationException e)
-                        {
-                            SimpleIoc.Default.GetInstance<ILogService>().GetLogger<TemplateDownloader>()
-                                .Warn("Unable to read online Link.", e);
-                        }
-
-                IsLoading = false;
-
-                return result;
-            });
-        }
-
-        #endregion Loading
 
 
         #region Download

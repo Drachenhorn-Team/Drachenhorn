@@ -14,6 +14,82 @@ namespace Drachenhorn.Xml.Calculation
     /// <seealso cref="Drachenhorn.Xml.ChildChangedBase" />
     public class Formula : ChildChangedBase
     {
+        private void ResetParameters()
+        {
+            _parameters.Clear();
+
+            // Adding All Parameters
+            AddParameterList(ParentSheet?.Attributes);
+            AddParameterList(ParentSheet?.Characteristics.Race.BaseValues);
+            AddParameterList(ParentSheet?.Characteristics.Culture.BaseValues);
+            AddParameterList(ParentSheet?.Characteristics.Profession.BaseValues);
+
+            // Set Unknown Parameters to 0
+            foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))
+            {
+                var parameter = match.ToString().Replace("[", "").Replace("]", "");
+
+                if (!_parameters.ContainsKey(parameter))
+                    _parameters[parameter] = 0;
+            }
+        }
+
+        /// <summary>
+        ///     Calculates this instance.
+        /// </summary>
+        /// <returns>The calculated Value.</returns>
+        public double Calculate()
+        {
+            if (string.IsNullOrEmpty(Expression))
+                return 0;
+
+            var e = new Expression(Expression);
+
+            // Adding custom Expressions
+            e.EvaluateFunction += CustomCalculationExpression;
+
+            e.Parameters = _parameters;
+
+            try
+            {
+                var result = e.Evaluate();
+
+                if (result != null)
+                    return Convert.ToDouble(result);
+            }
+            catch (ArgumentException)
+            {
+            }
+
+            return 0.0;
+        }
+
+        /// <summary>
+        ///     Calculates the value asynchronous.
+        /// </summary>
+        /// <param name="finished">Action executed on finish.</param>
+        /// <returns>The running task.</returns>
+        public Task CalculateAsync(Action<double> finished)
+        {
+            return Task.Run(() => { finished(Calculate()); });
+        }
+
+        #region CustomCalculationFunctions
+
+        private static void CustomCalculationExpression(string name, FunctionArgs args)
+        {
+            if (name.ToLower() == "random")
+                if (args.Parameters.Length == 0)
+                    args.Result = new Random().Next();
+                else if (args.Parameters.Length == 1)
+                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate());
+                else if (args.Parameters.Length == 2)
+                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate(),
+                        (int) args.Parameters[1].Evaluate());
+        }
+
+        #endregion CustomCalculationFunctions
+
         #region c'tor
 
         /// <summary>
@@ -84,82 +160,7 @@ namespace Drachenhorn.Xml.Calculation
         /// </summary>
         private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
 
-
         #endregion
-
-        private void ResetParameters()
-        {
-            _parameters.Clear();
-
-            // Adding All Parameters
-            AddParameterList(ParentSheet?.Attributes);
-            AddParameterList(ParentSheet?.Characteristics.Race.BaseValues);
-            AddParameterList(ParentSheet?.Characteristics.Culture.BaseValues);
-            AddParameterList(ParentSheet?.Characteristics.Profession.BaseValues);
-
-            // Set Unknown Parameters to 0
-            foreach (var match in Regex.Matches(Expression, "\\[[a-zA-Z0-9]*\\]"))
-            {
-                var parameter = match.ToString().Replace("[", "").Replace("]", "");
-
-                if (!_parameters.ContainsKey(parameter))
-                    _parameters[parameter] = 0;
-            }
-        }
-
-        /// <summary>
-        ///     Calculates this instance.
-        /// </summary>
-        /// <returns>The calculated Value.</returns>
-        public double Calculate()
-        {
-            if (string.IsNullOrEmpty(Expression))
-                return 0;
-
-            var e = new Expression(Expression);
-
-            // Adding custom Expressions
-            e.EvaluateFunction += CustomCalculationExpression;
-
-            e.Parameters = _parameters;
-
-            try
-            {
-                var result = e.Evaluate();
-
-                if (result != null)
-                    return Convert.ToDouble(result);
-            }
-            catch (ArgumentException) { }
-
-            return 0.0;
-        }
-
-        /// <summary>
-        ///     Calculates the value asynchronous.
-        /// </summary>
-        /// <param name="finished">Action executed on finish.</param>
-        /// <returns>The running task.</returns>
-        public Task CalculateAsync(Action<double> finished)
-        {
-            return Task.Run(() => { finished(Calculate()); });
-        }
-
-        #region CustomCalculationFunctions
-
-        private static void CustomCalculationExpression(string name, FunctionArgs args)
-        {
-            if (name.ToLower() == "random")
-                if (args.Parameters.Length == 0)
-                    args.Result = new Random().Next();
-                else if (args.Parameters.Length == 1)
-                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate());
-                else if (args.Parameters.Length == 2)
-                    args.Result = new Random().Next((int) args.Parameters[0].Evaluate(),
-                        (int) args.Parameters[1].Evaluate());
-        }
-
-        #endregion CustomCalculationFunctions
 
 
         #region Validation
@@ -243,7 +244,7 @@ namespace Drachenhorn.Xml.Calculation
                     item.PropertyChanged -= ChangedHandler;
                 }
             }
-            
+
             item.PropertyChanged += ChangedHandler;
         }
 

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Drachenhorn.Xml.Data;
@@ -50,7 +48,7 @@ namespace Drachenhorn.Xml.Template
     /// <summary>
     ///     Extension Methods for ITemplateMetadata
     /// </summary>
-    public static partial class Extension
+    public static class Extension
     {
         internal static void SetVersionAndNameFromXmlLine(this ITemplateMetadata meta, string line)
         {

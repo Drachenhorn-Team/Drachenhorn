@@ -19,6 +19,12 @@ namespace Drachenhorn.Desktop.UI.Dialogs
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
 
+        #region Properties
+
+        public bool ShouldClose = false;
+
+        #endregion
+
         #region c'tor
 
         public ConsoleWindow()
@@ -29,12 +35,6 @@ namespace Drachenhorn.Desktop.UI.Dialogs
 
             RichTextBoxAppender.rtb = RichTextBox;
         }
-
-        #endregion
-
-        #region Properties
-
-        public bool ShouldClose = false;
 
         #endregion
 

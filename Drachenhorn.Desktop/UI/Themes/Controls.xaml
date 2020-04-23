@@ -24,10 +24,10 @@
         <Setter Property="FontSize" Value="16" />
     </Style>
 
-    <Style TargetType="DataGrid" BasedOn="{StaticResource AzureDataGrid}"/>
+    <Style TargetType="DataGrid" BasedOn="{StaticResource AzureDataGrid}" />
 
     <Style TargetType="{x:Type mah:NumericUpDown}">
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="16" />
     </Style>
 
 </ResourceDictionary>

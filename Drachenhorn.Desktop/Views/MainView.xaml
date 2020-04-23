@@ -140,8 +140,8 @@
                             </StackPanel>
                         </mah:HamburgerMenuItem.ToolTip>
                         <mah:HamburgerMenuItem.Tag>
-                            <characterSheet:CharacterSheetTabControl 
-                                DataContext="{Binding Data, Source={StaticResource MainViewModel}}"/>
+                            <characterSheet:CharacterSheetTabControl
+                                DataContext="{Binding Data, Source={StaticResource MainViewModel}}" />
                             <!--<mah:MetroTabControl ItemsSource="{Binding CharacterSheetViewModels}"
                                                  SelectedItem="{Binding CurrentSheetViewModel}"
                                                  DataContext="{Binding Data, Source={StaticResource MainViewModel}}"

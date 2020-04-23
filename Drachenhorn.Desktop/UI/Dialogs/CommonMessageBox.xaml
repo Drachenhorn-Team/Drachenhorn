@@ -19,13 +19,13 @@
         <ItemsControl Name="ButtonControl">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Right"/>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Right" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button Content="{Binding .}" Margin="5" MinWidth="80" Padding="5 2 5 2"
-                            Click="DialogButton_OnClick"/>
+                            Click="DialogButton_OnClick" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

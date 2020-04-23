@@ -13,9 +13,6 @@ using Drachenhorn.Xml.Template;
 using Easy.Logger.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using MahApps.Metro;
-using NuGet;
-using IDialogService = GalaSoft.MvvmLight.Views.IDialogService;
-using ISettings = Drachenhorn.Core.Settings.ISettings;
 
 namespace Drachenhorn.Desktop.UserSettings
 {
@@ -28,57 +25,6 @@ namespace Drachenhorn.Desktop.UserSettings
         {
             PropertyChanged += (sender, args) => { Save(); };
             LastOpenFiles.CollectionChanged += (sender, args) => { Save(); };
-        }
-
-        #endregion
-
-        #region Properties
-
-        [XmlIgnore] private string _accentColor;
-
-        [XmlIgnore] private SheetTemplate _currentTemplate;
-
-        [XmlIgnore] private bool _isNew = true;
-
-        [XmlIgnore] private VisualThemeType _visualTheme;
-
-        [XmlIgnore] private ObservableCollection<string> _lastOpenFiles = new ObservableCollection<string>();
-
-        [XmlElement("CurrentCulture")]
-        public string CurrentCultureString
-        {
-            get => CurrentCulture.Name;
-            set
-            {
-                try
-                {
-                    CurrentCulture = new CultureInfo(value);
-                }
-                catch (Exception)
-                {
-                    CurrentCulture = CultureInfo.CurrentUICulture;
-                }
-            }
-        }
-
-        [XmlElement("AccentColor")]
-        public string AccentColor
-        {
-            get => _accentColor;
-            set
-            {
-                if (_accentColor == value)
-                    return;
-                _accentColor = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [XmlElement("CurrentTemplatePath")]
-        public string CurrentTemplatePath
-        {
-            get => CurrentTemplate?.Path;
-            set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
         }
 
         #endregion
@@ -110,11 +56,29 @@ namespace Drachenhorn.Desktop.UserSettings
             }
         }
 
-        [XmlIgnore]
-        public string Version => SquirrelManager.CurrentVersion.ToString();
+        [XmlIgnore] public string Version => SquirrelManager.CurrentVersion.ToString();
 
-        [XmlIgnore]
-        public string NewVersion => SquirrelManager.NewVersion;
+        [XmlIgnore] public string NewVersion => SquirrelManager.NewVersion;
+
+        [XmlElement("AccentColor")]
+        public string AccentColor
+        {
+            get => _accentColor;
+            set
+            {
+                if (_accentColor == value)
+                    return;
+                _accentColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [XmlElement("CurrentTemplatePath")]
+        public string CurrentTemplatePath
+        {
+            get => CurrentTemplate?.Path;
+            set => CurrentTemplate = TemplateManager.Manager.GetTemplate(value).EntireTemplate;
+        }
 
         [XmlElement("VisualTheme")]
         public VisualThemeType VisualTheme
@@ -165,6 +129,37 @@ namespace Drachenhorn.Desktop.UserSettings
         }
 
         #endregion AccentColors
+
+        #region Properties
+
+        [XmlIgnore] private string _accentColor;
+
+        [XmlIgnore] private SheetTemplate _currentTemplate;
+
+        [XmlIgnore] private bool _isNew = true;
+
+        [XmlIgnore] private VisualThemeType _visualTheme;
+
+        [XmlIgnore] private ObservableCollection<string> _lastOpenFiles = new ObservableCollection<string>();
+
+        [XmlElement("CurrentCulture")]
+        public string CurrentCultureString
+        {
+            get => CurrentCulture.Name;
+            set
+            {
+                try
+                {
+                    CurrentCulture = new CultureInfo(value);
+                }
+                catch (Exception)
+                {
+                    CurrentCulture = CultureInfo.CurrentUICulture;
+                }
+            }
+        }
+
+        #endregion
 
         #region Save/Load
 

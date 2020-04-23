@@ -29,7 +29,7 @@ namespace Drachenhorn.UnitTest.XML
         [TestMethod]
         public void APCalculationTest()
         {
-            Assert.AreEqual((uint)66, _table.Calculate("A", -2, 9));
+            Assert.AreEqual((uint) 66, _table.Calculate("A", -2, 9));
         }
     }
 }

@@ -13,6 +13,15 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
     [Serializable]
     public class Inventory : ChildChangedBase
     {
+        /// <summary>
+        ///     Gets the whole weight in the Inventory.
+        /// </summary>
+        /// <returns></returns>
+        public double GetWholeWeight()
+        {
+            return Items.Sum(item => { return item.Weight; });
+        }
+
         #region Properties
 
         [XmlIgnore] private ObservableCollection<InventoryItem> _items = new ObservableCollection<InventoryItem>();
@@ -58,14 +67,5 @@ namespace Drachenhorn.Xml.Sheet.InventoryInfo
         }
 
         #endregion
-
-        /// <summary>
-        ///     Gets the whole weight in the Inventory.
-        /// </summary>
-        /// <returns></returns>
-        public double GetWholeWeight()
-        {
-            return Items.Sum(item => { return item.Weight; });
-        }
     }
 }

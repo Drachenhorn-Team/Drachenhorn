@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Drachenhorn.Core.Lang;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace Drachenhorn.Core.UI
 {
@@ -19,12 +17,12 @@ namespace Drachenhorn.Core.UI
 
     public class MessageFactory
     {
+        private Action<int> _afterHideCallback;
+        private readonly List<string> _buttons = new List<string>();
         private Exception _exception;
+        private MessageIcon _icons;
         private string _message;
         private string _title = "Message";
-        private List<string> _buttons = new List<string>();
-        private Action<int> _afterHideCallback;
-        private MessageIcon _icons;
 
         public static MessageFactory NewMessage()
         {
@@ -117,25 +115,15 @@ namespace Drachenhorn.Core.UI
             var service = SimpleIoc.Default.GetInstance<IDialogService>();
 
             if (_exception != null)
-            {
                 return Task.Run(() =>
                 {
-                    service.ShowException(_exception, _title, () =>
-                    {
-                        _afterHideCallback?.Invoke(0);
-                    }).Wait();
+                    service.ShowException(_exception, _title, () => { _afterHideCallback?.Invoke(0); }).Wait();
                     return 0;
                 });
-            }
 
             if (allowInternal)
-            {
                 return service.ShowMessage(_message, _title, _buttons, _afterHideCallback);
-            }
-            else
-            {
-                return service.ShowMessageExternal(_message, _title, _buttons, _afterHideCallback);
-            }
+            return service.ShowMessageExternal(_message, _title, _buttons, _afterHideCallback);
         }
     }
 }

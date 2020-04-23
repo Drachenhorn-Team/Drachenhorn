@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -8,12 +7,43 @@ using Drachenhorn.Xml.Data;
 
 namespace Drachenhorn.Xml.Template
 {
-    /// <inheritdoc cref="ITemplateMetadata"/>
+    /// <inheritdoc cref="ITemplateMetadata" />
     /// <summary>
     ///     Template for downloading Templates from the Web
     /// </summary>
     public class OnlineTemplate : BindableBase, ITemplateMetadata
     {
+        #region c'tor
+
+        /// <summary>
+        ///     Constructor for Online Templates
+        /// </summary>
+        /// <param name="uri">Uri to Template</param>
+        /// <exception cref="ArgumentException">Uri is not valid</exception>
+        public OnlineTemplate(string uri)
+        {
+            Path = uri ?? throw new ArgumentException("Uri can not be null");
+
+            try
+            {
+                // ReSharper disable once AssignNullToNotNullAttribute
+                using (var sr = new StreamReader(new WebClient().OpenRead(uri)))
+                {
+                    sr.ReadLine();
+                    var secondLine = sr.ReadLine();
+
+                    if (!string.IsNullOrEmpty(secondLine))
+                        this.SetVersionAndNameFromXmlLine(secondLine);
+                }
+            }
+            catch (WebException e)
+            {
+                throw new ArgumentException(uri + " is no valid URI.", e);
+            }
+        }
+
+        #endregion c'tor
+
         #region Properties
 
         private string _path;
@@ -66,37 +96,6 @@ namespace Drachenhorn.Xml.Template
         public bool IsInstalled => this.CheckInstalled();
 
         #endregion Properties
-
-        #region c'tor
-
-        /// <summary>
-        ///     Constructor for Online Templates
-        /// </summary>
-        /// <param name="uri">Uri to Template</param>
-        /// <exception cref="ArgumentException">Uri is not valid</exception>
-        public OnlineTemplate(string uri)
-        {
-            Path = uri ?? throw new ArgumentException("Uri can not be null");
-
-            try
-            {
-                // ReSharper disable once AssignNullToNotNullAttribute
-                using (var sr = new StreamReader(new WebClient().OpenRead(uri)))
-                {
-                    sr.ReadLine();
-                    var secondLine = sr.ReadLine();
-
-                    if (!string.IsNullOrEmpty(secondLine))
-                        this.SetVersionAndNameFromXmlLine(secondLine);
-                }
-            }
-            catch (WebException e)
-            {
-                throw new ArgumentException(uri + " is no valid URI.", e);
-            }
-        }
-
-        #endregion c'tor
 
         #region Install
 
@@ -172,7 +171,7 @@ namespace Drachenhorn.Xml.Template
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            return obj is ITemplateMetadata metadata && this.Equals(metadata);
+            return obj is ITemplateMetadata metadata && Equals(metadata);
         }
 
         /// <inheritdoc />
@@ -189,7 +188,7 @@ namespace Drachenhorn.Xml.Template
         {
             if (obj == null) return false;
 
-            return this.Name == obj.Name && Math.Abs(this.Version - obj.Version) < double.Epsilon;
+            return Name == obj.Name && Math.Abs(Version - obj.Version) < double.Epsilon;
         }
 
         #endregion Equal
