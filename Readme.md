@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=5&view=buildsHistory" target="_blank">
+  <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=11&_a=summary" target="_blank">
     <img src="https://img.shields.io/azure-devops/build/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/11?label=Debug&style=flat-square" alt="Debug-Build">
   </a>
-  <a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=9&view=buildsHistory" target="_blank">
+  <a href="https://lightlike.visualstudio.com/Drachenhorn/_release?_a=releases&view=mine&definitionId=1" target="_blank">
     <img src="https://img.shields.io/azure-devops/release/lightlike/af40eca3-51a6-4d41-89f9-acfeafe7da4f/1/1?label=Release&style=flat-square" alt="Release-Build">
   </a>
   <!--<a href="https://lightlike.visualstudio.com/Drachenhorn/_build?definitionId=6&view=buildsHistory" target="_blank">
