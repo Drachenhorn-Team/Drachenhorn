@@ -199,7 +199,7 @@ namespace Drachenhorn.Desktop.UserSettings
                     File.WriteAllText(tempFile, reg);
 
                     // ReSharper disable once PossibleNullReferenceException
-                    Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
+                    Process.Start("regedit.exe", "/s \"" + tempFile + "\"").WaitForExit();
 
                     Application.Current.Shutdown();
                 }
@@ -264,7 +264,7 @@ namespace Drachenhorn.Desktop.UserSettings
                 File.WriteAllText(tempFile, reg);
 
                 // ReSharper disable once PossibleNullReferenceException
-                Process.Start("regedit.exe", "/s " + tempFile).WaitForExit();
+                Process.Start("regedit.exe", "/s \"" + tempFile + "\"").WaitForExit();
             }
         }
 
