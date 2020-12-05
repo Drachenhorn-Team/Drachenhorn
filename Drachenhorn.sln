@@ -7,6 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.Files", "src\Dr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn", "src\Drachenhorn\Drachenhorn.csproj", "{39E6F919-ABC1-4E5D-AFA5-C38176067009}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A6A2CBA2-1A14-4DA2-B235-81A00F32383D}"
+	ProjectSection(SolutionItems) = preProject
+		img\Banner.jpg = img\Banner.jpg
+		img\Banner_large.png = img\Banner_large.png
+		img\Cover.jpg = img\Cover.jpg
+		img\Cover_tr.png = img\Cover_tr.png
+		img\Drachenhorn.ico = img\Drachenhorn.ico
+		img\Logo.png = img\Logo.png
+		img\Readme.md = img\Readme.md
+		img\SaveFileIcon.ico = img\SaveFileIcon.ico
+		img\SaveTemplateIcon.ico = img\SaveTemplateIcon.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

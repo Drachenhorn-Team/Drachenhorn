@@ -34,15 +34,10 @@ namespace Drachenhorn
 
         private static OptionSet SetupOptions()
         {
-            // these variables will be set when the command line is parsed
-            
-            _verbosity = VerbosityLevel.Fatal;
-            // thses are the available options, not that they set the variables
-
             var options = new OptionSet {
-                { "v|verbosity=", "set verbosity to None(0), Fatal(1), Error(2), Warning(3), Info(4), Debug(5)", value =>
+                { "v|verbosity=", "set verbosity to Fatal(1), Error(2), Warning(3), Info(4), Debug(5)", value =>
                     {
-                        _verbosity = Enum.TryParse(value, out _verbosity) ? _verbosity : VerbosityLevel.Debug;
+                        _verbosity = Enum.TryParse(value, out _verbosity) ? _verbosity : VerbosityLevel.Error;
                     }
                 },
                 { "h|help", "show this message and exit", h => _showHelp = h != null },
@@ -55,7 +50,7 @@ namespace Drachenhorn
         {
             //TODO: Proper messages
 
-            Console.WriteLine("Usage: OptionsSample.exe [OPTIONS]+ message");
+            Console.WriteLine("Usage: Drachenhorn.exe [OPTIONS]+ file");
             Console.WriteLine("Generates Character-Sheets based on the 'the dark eye' rule system.");
             Console.WriteLine();
 
