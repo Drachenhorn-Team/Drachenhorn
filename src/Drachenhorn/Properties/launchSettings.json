@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Drachenhorn": {
+      "commandName": "Project",
+      "commandLineArgs": "-h"
+    }
+  }
+}
