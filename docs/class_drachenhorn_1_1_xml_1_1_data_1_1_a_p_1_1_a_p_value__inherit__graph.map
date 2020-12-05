@@ -1,5 +1,0 @@
-<map id="Drachenhorn.Xml.Data.AP.APValue" name="Drachenhorn.Xml.Data.AP.APValue">
-<area shape="rect" id="node2" href="$class_drachenhorn_1_1_xml_1_1_child_changed_base.html" title="Base class notifying ChildChanged " alt="" coords="91,155,223,181"/>
-<area shape="rect" id="node3" href="$class_drachenhorn_1_1_xml_1_1_bindable_base.html" title="Bindable Base Class " alt="" coords="33,80,136,107"/>
-<area shape="rect" id="node5" href="$interface_drachenhorn_1_1_xml_1_1_interfaces_1_1_i_notify_child_changed.html" title="Interface to note if a child has changed. " alt="" coords="161,80,299,107"/>
-</map>

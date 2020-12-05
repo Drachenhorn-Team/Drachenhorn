@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['efferd',['Efferd',['../namespace_drachenhorn_1_1_xml_1_1_objects.html#a015d2fb490050b708863d3024dfd3711ae3e2f38129a4e3565c4605e4b97a09bd',1,'Drachenhorn::Xml::Objects']]],
-  ['entiretemplate',['EntireTemplate',['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_metadata.html#a9d601fea9fab71a848c21448a94762e2',1,'Drachenhorn::Xml::Template::TemplateMetadata']]],
-  ['equals',['Equals',['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a2cfe886926ade4d952568684d0fb8c05',1,'Drachenhorn.Xml.Objects.DSADate.Equals(object obj)'],['../class_drachenhorn_1_1_xml_1_1_objects_1_1_d_s_a_date.html#a4040887e993363e4c1c384f3e8214d2e',1,'Drachenhorn.Xml.Objects.DSADate.Equals(DSADate other)'],['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_metadata.html#af28efb767bc80e24058ecdc7c5726b6f',1,'Drachenhorn.Xml.Template.TemplateMetadata.Equals(object obj)'],['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_metadata.html#a3168d2562452a9580cdc255af8ede75b',1,'Drachenhorn.Xml.Template.TemplateMetadata.Equals(TemplateMetadata obj)']]],
-  ['extension',['Extension',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_character_sheet.html#a96d2901113455a17e47ed70678792fbc',1,'Drachenhorn.Xml.Sheet.CharacterSheet.Extension()'],['../class_drachenhorn_1_1_xml_1_1_template_1_1_template_metadata.html#a91dacd55ef96085f0c567573f96da767',1,'Drachenhorn.Xml.Template.TemplateMetadata.Extension()']]],
-  ['eyecolor',['EyeColor',['../class_drachenhorn_1_1_xml_1_1_sheet_1_1_common_1_1_characteristics.html#adc6915dc46b234534ea2db19a26ea33b',1,'Drachenhorn::Xml::Sheet::Common::Characteristics']]]
-];

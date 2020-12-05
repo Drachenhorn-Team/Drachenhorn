@@ -1,6 +1,0 @@
-<map id="Drachenhorn.Xml.Sheet.Skills.BaseValue" name="Drachenhorn.Xml.Sheet.Skills.BaseValue">
-<area shape="rect" id="node2" href="$class_drachenhorn_1_1_xml_1_1_calculation_1_1_calculation_value.html" title="Base&#45;Class for calculated values. " alt="" coords="5,155,124,181"/>
-<area shape="rect" id="node3" href="$class_drachenhorn_1_1_xml_1_1_bindable_base.html" title="Bindable Base Class " alt="" coords="23,80,125,107"/>
-<area shape="rect" id="node5" href="$interface_drachenhorn_1_1_xml_1_1_interfaces_1_1_i_info_object.html" title="Interface to display information about a Class. " alt="" coords="149,155,231,181"/>
-<area shape="rect" id="node6" href="$interface_drachenhorn_1_1_xml_1_1_calculation_1_1_i_formula_key_item.html" title="Interface to use as Parameter in Calculation. " alt="" coords="209,80,329,107"/>
-</map>
