@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn.Files", "src\Drachenhorn.Files\Drachenhorn.Files.csproj", "{D8D0EC84-A881-43AE-866B-E96232766F97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn.Files", "src\Drachenhorn.Files\Drachenhorn.Files.csproj", "{D8D0EC84-A881-43AE-866B-E96232766F97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drachenhorn", "src\Drachenhorn\Drachenhorn.csproj", "{39E6F919-ABC1-4E5D-AFA5-C38176067009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drachenhorn", "src\Drachenhorn\Drachenhorn.csproj", "{39E6F919-ABC1-4E5D-AFA5-C38176067009}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A6A2CBA2-1A14-4DA2-B235-81A00F32383D}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,6 +19,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A6A2CBA2-1A1
 		img\SaveFileIcon.ico = img\SaveFileIcon.ico
 		img\SaveTemplateIcon.ico = img\SaveTemplateIcon.ico
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1AEA22E6-DA65-48EA-B5B6-B321387F53BC}"
+	ProjectSection(SolutionItems) = preProject
+		.github\config.yml = .github\config.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{EC17A8E5-A52D-41E0-B99A-59A90C05FED4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{BD0E8F33-8326-40B0-BAB8-7393E438FBE7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.imgbotconfig = .imgbotconfig
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		LICENSE = LICENSE
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D78D6D6-4971-4456-B2FC-BFB92DA4C1E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +59,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8D0EC84-A881-43AE-866B-E96232766F97} = {1D78D6D6-4971-4456-B2FC-BFB92DA4C1E5}
+		{39E6F919-ABC1-4E5D-AFA5-C38176067009} = {1D78D6D6-4971-4456-B2FC-BFB92DA4C1E5}
+		{EC17A8E5-A52D-41E0-B99A-59A90C05FED4} = {1AEA22E6-DA65-48EA-B5B6-B321387F53BC}
+		{BD0E8F33-8326-40B0-BAB8-7393E438FBE7} = {1AEA22E6-DA65-48EA-B5B6-B321387F53BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B99ED330-B11B-4721-8245-0ED84F66041E}
